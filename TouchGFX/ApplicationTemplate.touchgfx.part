@@ -1,0 +1,21 @@
+
+{
+  "Application": {
+    "Name": "GUI_Time_counter",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "AvailableColorDepths": [ 16 ],
+    "AvailableLCDs":
+    {
+      "16": "LCD16bpp"
+    },
+    "AvailableResolutions" : [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PostGenerateTargetCommand" : "touchgfx update_project --project-file=../GUI_Time_counter.ioc --platform=m7",
+    "Family" : "STM32F7"
+  },
+  "Version": "4.16.1"
+}
