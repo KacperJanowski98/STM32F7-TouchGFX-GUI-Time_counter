@@ -1,24 +1,29 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/widgets/canvas/CWRUtil.hpp>
+#include <touchgfx/widgets/canvas/Canvas.hpp>
+#include <touchgfx/widgets/canvas/CanvasWidget.hpp>
+#include <touchgfx/widgets/graph/AbstractDataGraph.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 
 namespace touchgfx
 {
 AbstractGraphElement::AbstractGraphElement()
-    : dataScale(1)
+    : CanvasWidget(),
+      dataScale(1)
 {
 }
 
@@ -123,10 +128,10 @@ bool AbstractGraphElement::isCenterInvisible(const AbstractDataGraph* graph, int
 {
     const int16_t screenXCenter = indexToScreenXQ5(graph, index).round();
     const int16_t screenYCenter = indexToScreenYQ5(graph, index).round();
-    return (screenXCenter < graph->getGraphAreaPaddingLeft()
-            || screenXCenter >= graph->getGraphAreaPaddingLeft() + graph->getGraphAreaWidth()
-            || screenYCenter < graph->getGraphAreaPaddingTop()
-            || screenYCenter >= graph->getGraphAreaPaddingTop() + graph->getGraphAreaHeight());
+    return screenXCenter < graph->getGraphAreaPaddingLeft() ||
+           screenXCenter >= graph->getGraphAreaPaddingLeft() + graph->getGraphAreaWidth() ||
+           screenYCenter < graph->getGraphAreaPaddingTop() ||
+           screenYCenter >= graph->getGraphAreaPaddingTop() + graph->getGraphAreaHeight();
 }
 
 AbstractGraphElementNoCWR::AbstractGraphElementNoCWR()
@@ -663,7 +668,7 @@ void GraphElementLine::drawIndexRange(Canvas& canvas, const AbstractDataGraph* g
         const CWRUtil::Q5 screenYendQ5 = roundQ5(indexToScreenYQ5(graph, index));
         CWRUtil::Q5 dxQ5 = screenXendQ5 - screenXstartQ5;
         CWRUtil::Q5 dyQ5 = screenYendQ5 - screenYstartQ5;
-        const CWRUtil::Q5 dQ5 = CWRUtil::sqrtQ10(dyQ5 * dyQ5 + dxQ5 * dxQ5);
+        const CWRUtil::Q5 dQ5 = CWRUtil::length(dxQ5, dyQ5);
         if (dQ5)
         {
             dyQ5 = CWRUtil::muldivQ5(lineWidthQ5, dyQ5, dQ5) / 2;
@@ -712,17 +717,22 @@ void GraphElementVerticalGapLine::draw(const Rect& invalidatedArea) const
     }
 }
 
-void GraphElementVerticalGapLine::invalidateGraphPointAt(int16_t /*index*/)
+void GraphElementVerticalGapLine::invalidateGraphPointAt(int16_t index)
 {
     const AbstractDataGraph* graph = getGraph();
-    const int16_t gapIndex = graph->getGapBeforeIndex();
-    if (gapIndex > 0)
+    invalidateIndex(graph, graph->getGapBeforeIndex());
+    invalidateIndex(graph, index);
+}
+
+void GraphElementVerticalGapLine::invalidateIndex(const AbstractDataGraph* graph, int16_t index)
+{
+    if (index > 0)
     {
-        const int16_t screenXmin = indexToScreenXQ5(graph, gapIndex - 1).round();
+        const int16_t screenXmin = indexToScreenXQ5(graph, index - 1).round();
         int16_t screenXmax = screenXmin + lineWidth;
         if (lineWidth == 0)
         {
-            screenXmax = indexToScreenXQ5(graph, gapIndex).round();
+            screenXmax = indexToScreenXQ5(graph, index).round();
         }
         Rect dirty(screenXmin, graph->getGraphAreaPaddingTop(), screenXmax - screenXmin, graph->getGraphAreaHeight());
         normalizeRect(dirty);

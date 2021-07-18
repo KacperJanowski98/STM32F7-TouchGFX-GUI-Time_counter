@@ -1,39 +1,32 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file platform/driver/lcd/LCD4bpp.hpp
  *
- * Declares the touchgfx::LCD4bpp and touchgfx::LCD4DebugPrinter classes.
+ * Declares the touchgfx::LCD4bpp class.
  */
-#ifndef LCD4BPP_HPP
-#define LCD4BPP_HPP
+#ifndef TOUCHGFX_LCD4BPP_HPP
+#define TOUCHGFX_LCD4BPP_HPP
 
-#include <stdarg.h>
-#include <touchgfx/Bitmap.hpp>
-#include <touchgfx/Font.hpp>
-#include <touchgfx/TextProvider.hpp>
-#include <touchgfx/TextureMapTypes.hpp>
-#include <touchgfx/Unicode.hpp>
-#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Color.hpp>
+#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/lcd/LCD4DebugPrinter.hpp>
 
 namespace touchgfx
 {
-#undef LCD
 #define USE_LSB
 
 /**
@@ -59,6 +52,8 @@ public:
 
     virtual void fillRect(const Rect& rect, colortype color, uint8_t alpha = 255);
 
+    virtual void fillBuffer(uint8_t* const destination, uint16_t pixelStride, const Rect& rect, const colortype color, const uint8_t alpha);
+
     virtual uint8_t bitDepth() const
     {
         return 4;
@@ -74,6 +69,12 @@ public:
         return getFramebufferStride();
     }
 
+    virtual void setDefaultColor(colortype color)
+    {
+        LCD::setDefaultColor(color);
+        defaultColor4 = getNativeColor(color);
+    }
+
     /**
      * Framebuffer stride in bytes. The distance (in bytes) from the start of one
      * framebuffer row, to the next.
@@ -86,11 +87,6 @@ public:
         return (HAL::FRAME_BUFFER_WIDTH + 1) / 2;
     }
 
-    virtual colortype getColorFrom24BitRGB(uint8_t red, uint8_t green, uint8_t blue) const
-    {
-        return getColorFromRGB(red, green, blue);
-    }
-
     /**
      * Generates a color representation to be used on the LCD, based on 24 bit RGB values.
      *
@@ -100,61 +96,22 @@ public:
      *
      * @return The color representation depending on LCD color format.
      */
-    FORCE_INLINE_FUNCTION static colortype getColorFromRGB(uint8_t red, uint8_t green, uint8_t blue)
+    FORCE_INLINE_FUNCTION static uint8_t getNativeColorFromRGB(uint8_t red, uint8_t green, uint8_t blue)
     {
         // Find the GRAY value (http://en.wikipedia.org/wiki/Luma_%28video%29) rounded to nearest integer
         return (red * 54 + green * 183 + blue * 19) >> 12;
     }
 
-    virtual uint8_t getRedColor(colortype color) const
-    {
-        return getRedFromColor(color);
-    }
-
     /**
-     * Gets red from color.
+     * Generates a color representation to be used on the LCD, based on 24 bit RGB values.
      *
      * @param  color The color.
      *
-     * @return The red from color.
+     * @return The color representation depending on LCD color format.
      */
-    FORCE_INLINE_FUNCTION static uint8_t getRedFromColor(colortype color)
+    FORCE_INLINE_FUNCTION static uint8_t getNativeColor(colortype color)
     {
-        return (color & 0xF) * 0x11;
-    }
-
-    virtual uint8_t getGreenColor(colortype color) const
-    {
-        return getGreenFromColor(color);
-    }
-
-    /**
-     * Gets green from color.
-     *
-     * @param  color The color.
-     *
-     * @return The green from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getGreenFromColor(colortype color)
-    {
-        return (color & 0xF) * 0x11;
-    }
-
-    virtual uint8_t getBlueColor(colortype color) const
-    {
-        return getBlueFromColor(color);
-    }
-
-    /**
-     * Gets blue from color.
-     *
-     * @param  color The color.
-     *
-     * @return The blue from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getBlueFromColor(colortype color)
-    {
-        return (color & 0xF) * 0x11;
+        return getNativeColorFromRGB(Color::getRed(color), Color::getGreen(color), Color::getBlue(color));
     }
 
     /**
@@ -274,6 +231,8 @@ public:
     }
 
 protected:
+    static uint8_t defaultColor4; ///< Default Color to use when displaying transparency-only elements, e.g. A4 bitmaps
+
     virtual DrawTextureMapScanLineBase* getTextureMapperDrawScanLine(const TextureSurface& texture, RenderingVariant renderVariant, uint8_t alpha);
 
     /**
@@ -425,18 +384,6 @@ private:
     };
 };
 
-/**
- * The class LCD4DebugPrinter implements the DebugPrinter interface for printing debug messages
- * on top of 8bit framebuffer.
- *
- * @see DebugPrinter
- */
-class LCD4DebugPrinter : public DebugPrinter
-{
-public:
-    virtual void draw(const Rect& rect) const;
-};
-
 } // namespace touchgfx
 
-#endif // LCD4BPP_HPP
+#endif // TOUCHGFX_LCD4BPP_HPP

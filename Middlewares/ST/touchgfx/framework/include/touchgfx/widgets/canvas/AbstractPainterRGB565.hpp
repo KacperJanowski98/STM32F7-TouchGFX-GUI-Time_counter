@@ -1,28 +1,25 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/canvas/AbstractPainterRGB565.hpp
  *
  * Declares the touchgfx::AbstractPainterRGB565 class.
  */
-#ifndef ABSTRACTPAINTERRGB565_HPP
-#define ABSTRACTPAINTERRGB565_HPP
+#ifndef TOUCHGFX_ABSTRACTPAINTERRGB565_HPP
+#define TOUCHGFX_ABSTRACTPAINTERRGB565_HPP
 
-#include <assert.h>
-#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/canvas/AbstractPainter.hpp>
 
@@ -79,9 +76,9 @@ public:
     FORCE_INLINE_FUNCTION uint16_t mixColors(uint16_t R, uint16_t G, uint16_t B, uint16_t bufpix, uint8_t alpha)
     {
         const uint8_t ialpha = 0xFF - alpha;
-        return (((R * alpha + (bufpix & RMASK) * ialpha) / 255) & RMASK)
-               | (((G * alpha + (bufpix & GMASK) * ialpha) / 255) & GMASK)
-               | (((B * alpha + (bufpix & BMASK) * ialpha) / 255) & BMASK);
+        return (((R * alpha + (bufpix & RMASK) * ialpha) / 255) & RMASK) |
+               (((G * alpha + (bufpix & GMASK) * ialpha) / 255) & GMASK) |
+               (((B * alpha + (bufpix & BMASK) * ialpha) / 255) & BMASK);
     }
 
 protected:
@@ -124,4 +121,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // ABSTRACTPAINTERRGB565_HPP
+#endif // TOUCHGFX_ABSTRACTPAINTERRGB565_HPP

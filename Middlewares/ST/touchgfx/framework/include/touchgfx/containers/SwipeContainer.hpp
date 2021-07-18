@@ -1,27 +1,29 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/containers/SwipeContainer.hpp
  *
  * Declares the touchgfx::SwipeContainer class.
  */
-#ifndef SWIPECONTAINER_HPP
-#define SWIPECONTAINER_HPP
+#ifndef TOUCHGFX_SWIPECONTAINER_HPP
+#define TOUCHGFX_SWIPECONTAINER_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
+#include <touchgfx/events/DragEvent.hpp>
+#include <touchgfx/events/GestureEvent.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 
 namespace touchgfx
@@ -40,9 +42,9 @@ public:
     virtual ~SwipeContainer();
 
     virtual void handleTickEvent();
-    virtual void handleClickEvent(const ClickEvent& evt);
-    virtual void handleDragEvent(const DragEvent& evt);
-    virtual void handleGestureEvent(const GestureEvent& evt);
+    virtual void handleClickEvent(const ClickEvent& event);
+    virtual void handleDragEvent(const DragEvent& event);
+    virtual void handleGestureEvent(const GestureEvent& event);
 
     /**
      * Adds a page to the container.
@@ -63,8 +65,8 @@ public:
     virtual void remove(Drawable& page);
 
     /**
-     * Set the swipe cutoff which indicates how far you should drag a page before it results
-     * in a page change.
+     * Set the swipe cutoff which indicates how far you should drag a page before it results in
+     * a page change.
      *
      * @param  cutoff The cutoff in pixels.
      */
@@ -75,7 +77,8 @@ public:
      *
      * @param  x The x coordinate.
      * @param  y The y coordinate.
-     * @see setPageIndicatorXYWithCenteredX
+     *
+     * @see setPageIndicatorXYWithCenteredX, setPageIndicatorCenteredX
      */
     void setPageIndicatorXY(int16_t x, int16_t y);
 
@@ -86,16 +89,45 @@ public:
      * @param  x The center x coordinate.
      * @param  y The y coordinate.
      *
+     * @see setPageIndicatorCenteredX, setPageIndicatorXY
+     *
      * @note This method should not be used until all pages have been added, the
-     *       setPageIndicatorBitmaps() has been called and the page indicator therefore
-     *       has the correct width.
+     *       setPageIndicatorBitmaps() has been called and the page indicator therefore has the
+     *       correct width.
      */
     void setPageIndicatorXYWithCenteredX(int16_t x, int16_t y);
 
     /**
-     * Sets the bitmaps that are used by the page indicator. The bitmap for the normal page
-     * is repeated side-by-side and the bitmap for a highlighted page is put in the proper
+     * Sets the page indicator centered inside the SwipeContainer without changing the y
      * position.
+     *
+     * @see setPageIndicatorXYWithCenteredX, setPageIndicatorXY
+     *
+     * @note This method should not be used until all pages have been added, the
+     *       setPageIndicatorBitmaps() has been called and the page indicator therefore has the
+     *       correct width.
+     *
+     * ### param  x The center x coordinate.
+     */
+    void setPageIndicatorCenteredX();
+
+    /**
+     * Sets the x position of the page indicator without changing the y position. The value
+     * specified as x will be the center coordinate of the page indicators.
+     *
+     * @param  x The center x coordinate.
+     *
+     * @see setPageIndicatorXYWithCenteredX, setPageIndicatorXY
+     *
+     * @note This method should not be used until all pages have been added, the
+     *       setPageIndicatorBitmaps() has been called and the page indicator therefore has the
+     *       correct width.
+     */
+    void setPageIndicatorCenteredX(int16_t x);
+
+    /**
+     * Sets the bitmaps that are used by the page indicator. The bitmap for the normal page is
+     * repeated side-by-side and the bitmap for a highlighted page is put in the proper position.
      *
      * @param  normalPage      The normal page.
      * @param  highlightedPage The highlighted page.
@@ -103,9 +135,9 @@ public:
     void setPageIndicatorBitmaps(const Bitmap& normalPage, const Bitmap& highlightedPage);
 
     /**
-     * When dragging either one of the end pages a part of the background will become
-     * visible until the user stop dragging and the end page swipes back to its position.
-     * The width of this area is set by this method.
+     * When dragging either one of the end pages a part of the background will become visible
+     * until the user stop dragging and the end page swipes back to its position. The width of
+     * this area is set by this method.
      *
      * @param  width The width in pixels.
      */
@@ -189,4 +221,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // SWIPECONTAINER_HPP
+#endif // TOUCHGFX_SWIPECONTAINER_HPP

@@ -1,32 +1,25 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/Box.hpp
  *
  * Declares the touchgfx::Box class.
  */
-#ifndef BOX_HPP
-#define BOX_HPP
+#ifndef TOUCHGFX_BOX_HPP
+#define TOUCHGFX_BOX_HPP
 
-#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/hal/Types.hpp>
-#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/widgets/Widget.hpp>
-
-#include <touchgfx/widgets/Button.hpp>
 
 namespace touchgfx
 {
@@ -77,7 +70,7 @@ public:
      *
      * @return The current color of the box.
      *
-     * @see setColor, Color::getRedColor, Color::getGreenColor, Color::getRedColor
+     * @see setColor, Color::getRed, Color::getGreen, Color::getRed
      */
     FORCE_INLINE_FUNCTION colortype getColor() const
     {
@@ -109,4 +102,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // BOX_HPP
+#endif // TOUCHGFX_BOX_HPP

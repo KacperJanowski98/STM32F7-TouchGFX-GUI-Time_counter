@@ -1,27 +1,23 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/canvas/PainterRGB565.hpp
  *
  * Declares the touchgfx::PainterRGB565 class.
  */
-#ifndef PAINTERRGB565_HPP
-#define PAINTERRGB565_HPP
+#ifndef TOUCHGFX_PAINTERRGB565_HPP
+#define TOUCHGFX_PAINTERRGB565_HPP
 
-#include <stdint.h>
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/widgets/canvas/AbstractPainterRGB565.hpp>
 
@@ -40,13 +36,11 @@ public:
      * Initializes a new instance of the PainterRGB565 class.
      *
      * @param  color (Optional) the color, default is black.
-     * @param  alpha (Optional) the alpha, default is 255 i.e. solid.
      */
-    PainterRGB565(colortype color = 0, uint8_t alpha = 255)
-        : AbstractPainterRGB565()
+    PainterRGB565(colortype color = 0)
+        : AbstractPainterRGB565(), painterColor(0)
     {
         setColor(color);
-        setAlpha(alpha);
     }
 
     /**
@@ -57,9 +51,6 @@ public:
     void setColor(colortype color)
     {
         painterColor = color;
-        painterRed = painterColor & RMASK;
-        painterGreen = painterColor & GMASK;
-        painterBlue = painterColor & BMASK;
     }
 
     /**
@@ -77,12 +68,9 @@ public:
 protected:
     virtual bool renderNext(uint8_t& red, uint8_t& green, uint8_t& blue, uint8_t& alpha);
 
-    uint16_t painterColor; ///< The color
-    uint16_t painterRed;   ///< The red part of the color
-    uint16_t painterGreen; ///< The green part of the color
-    uint16_t painterBlue;  ///< The blue part of the color
+    colortype painterColor; ///< The color
 };
 
 } // namespace touchgfx
 
-#endif // PAINTERRGB565_HPP
+#endif // TOUCHGFX_PAINTERRGB565_HPP

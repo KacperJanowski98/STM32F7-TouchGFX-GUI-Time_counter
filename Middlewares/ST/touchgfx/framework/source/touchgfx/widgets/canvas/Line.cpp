@@ -1,18 +1,20 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/widgets/canvas/CWRUtil.hpp>
+#include <touchgfx/widgets/canvas/Canvas.hpp>
+#include <touchgfx/widgets/canvas/CanvasWidget.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 
 namespace touchgfx
@@ -22,6 +24,7 @@ Line::Line()
       startX(0), startY(0), endX(0), endY(0),
       lineWidth(CWRUtil::toQ5<int>(1)),
       lineEnding(BUTT_CAP_ENDING),
+      minimalRect(),
       lineCapArcIncrement(18)
 {
     Drawable::setWidthHeight(0, 0);
@@ -48,6 +51,7 @@ void Line::updateStart(CWRUtil::Q5 xQ5, CWRUtil::Q5 yQ5)
     }
 
     Rect rectBefore = getMinimalRect();
+    invalidateRect(rectBefore);
 
     startX = xQ5;
     startY = yQ5;
@@ -55,8 +59,7 @@ void Line::updateStart(CWRUtil::Q5 xQ5, CWRUtil::Q5 yQ5)
     updateCachedShape();
 
     Rect rectAfter = getMinimalRect();
-    rectBefore.expandToFit(rectAfter);
-    invalidateRect(rectBefore);
+    invalidateRect(rectAfter);
 }
 
 void Line::setEnd(CWRUtil::Q5 xQ5, CWRUtil::Q5 yQ5)
@@ -80,6 +83,7 @@ void Line::updateEnd(CWRUtil::Q5 xQ5, CWRUtil::Q5 yQ5)
     }
 
     Rect rectBefore = getMinimalRect();
+    invalidateRect(rectBefore);
 
     endX = xQ5;
     endY = yQ5;
@@ -87,8 +91,7 @@ void Line::updateEnd(CWRUtil::Q5 xQ5, CWRUtil::Q5 yQ5)
     updateCachedShape();
 
     Rect rectAfter = getMinimalRect();
-    rectBefore.expandToFit(rectAfter);
-    invalidateRect(rectBefore);
+    invalidateRect(rectAfter);
 }
 
 void Line::setLineEndingStyle(Line::LINE_ENDING_STYLE lineEndingStyle)
@@ -197,7 +200,7 @@ void Line::updateCachedShape()
             dx = CWRUtil::Q5((int32_t)dx / divi);
             dy = CWRUtil::Q5((int32_t)dy / divi);
         }
-        d = CWRUtil::sqrtQ10(dy * dy + dx * dx);
+        d = CWRUtil::length(dx, dy);
     }
 
     dy = CWRUtil::muldivQ5(lineWidth, dy, d) / 2;

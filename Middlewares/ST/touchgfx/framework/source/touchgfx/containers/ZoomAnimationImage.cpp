@@ -1,19 +1,21 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Application.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/ZoomAnimationImage.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 namespace touchgfx
 {
@@ -22,6 +24,10 @@ ZoomAnimationImage::ZoomAnimationImage()
       currentState(NO_ANIMATION),
       animationCounter(0),
       zoomAnimationDelay(0),
+      smallBmp(),
+      largeBmp(),
+      image(),
+      scalableImage(),
       currentZoomMode(FIXED_LEFT_AND_TOP),
       zoomAnimationStartWidth(0),
       zoomAnimationStartHeight(0),
@@ -142,11 +148,6 @@ void ZoomAnimationImage::setHeight(int16_t height)
     invalidate();
     Container::setHeight(height);
     updateRenderingMethod();
-}
-
-void ZoomAnimationImage::setDimension(int16_t width, int16_t height)
-{
-    Container::setWidthHeight(width, height);
 }
 
 void ZoomAnimationImage::setScalingMode(ScalableImage::ScalingAlgorithm mode)

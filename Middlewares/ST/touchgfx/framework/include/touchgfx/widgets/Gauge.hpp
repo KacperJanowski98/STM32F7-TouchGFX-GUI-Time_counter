@@ -1,26 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/Gauge.hpp
  *
  * Declares the gauge class.
  */
-#ifndef GAUGE_HPP
-#define GAUGE_HPP
+#ifndef TOUCHGFX_GAUGE_HPP
+#define TOUCHGFX_GAUGE_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp>
 #include <touchgfx/widgets/TextureMapper.hpp>
 #include <touchgfx/widgets/canvas/Circle.hpp>
@@ -182,11 +180,6 @@ public:
      */
     virtual void setAlpha(uint8_t newAlpha);
 
-    /**
-     * @copydoc Image::getAlpha()
-     */
-    virtual uint8_t getAlpha() const;
-
 protected:
     TextureMapper needle;                              ///< The textureMapper
     TextureMapper::RenderingAlgorithm algorithmMoving; ///< The algorithm used when the needle is moving
@@ -213,4 +206,4 @@ protected:
     virtual void setProgressIndicatorPosition(int16_t x, int16_t y, int16_t width, int16_t height);
 };
 } // namespace touchgfx
-#endif // GAUGE_HPP
+#endif // TOUCHGFX_GAUGE_HPP

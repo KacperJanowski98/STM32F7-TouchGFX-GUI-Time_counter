@@ -1,26 +1,27 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/graph/GraphElements.hpp
  *
  * Declares the various graph element classes. Instances of these classes can be added to a graph.
  */
-#ifndef GRAPHELEMENTS_HPP
-#define GRAPHELEMENTS_HPP
+#ifndef TOUCHGFX_GRAPHELEMENTS_HPP
+#define TOUCHGFX_GRAPHELEMENTS_HPP
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/widgets/canvas/CWRUtil.hpp>
+#include <touchgfx/widgets/canvas/Canvas.hpp>
+#include <touchgfx/widgets/canvas/CanvasWidget.hpp>
 #include <touchgfx/widgets/graph/AbstractDataGraph.hpp>
 
 namespace touchgfx
@@ -248,7 +249,7 @@ protected:
      *
      * @param [in] painter The painter.
      */
-    virtual void setPainter(AbstractPainter& painter) {};
+    virtual void setPainter(AbstractPainter& painter){};
 };
 
 /**
@@ -537,6 +538,9 @@ public:
 
 protected:
     uint16_t lineWidth; ///< Width of the line
+
+private:
+    void invalidateIndex(const AbstractDataGraph* graph, int16_t index);
 };
 
 /**
@@ -756,4 +760,4 @@ protected:
 };
 } // namespace touchgfx
 
-#endif // GRAPHELEMENTS_HPP
+#endif // TOUCHGFX_GRAPHELEMENTS_HPP

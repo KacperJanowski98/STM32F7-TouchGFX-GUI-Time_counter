@@ -1,39 +1,33 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file platform/driver/lcd/LCD16bpp.hpp
  *
- * Declares the touchgfx::LCD16bpp and touchgfx::LCD16DebugPrinter classes.
+ * Declares the touchgfx::LCD16bpp class.
  */
-#ifndef LCD16BPP_HPP
-#define LCD16BPP_HPP
+#ifndef TOUCHGFX_LCD16BPP_HPP
+#define TOUCHGFX_LCD16BPP_HPP
 
-#include <stdarg.h>
-#include <touchgfx/Bitmap.hpp>
-#include <touchgfx/Font.hpp>
-#include <touchgfx/TextProvider.hpp>
-#include <touchgfx/TextureMapTypes.hpp>
-#include <touchgfx/Unicode.hpp>
-#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Color.hpp>
+#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/lcd/LCD16DebugPrinter.hpp>
 
 namespace touchgfx
 {
-#undef LCD
+struct GlyphNode;
 
 /**
  * This class contains the various low-level drawing routines for drawing bitmaps, texts and
@@ -57,6 +51,8 @@ public:
     virtual uint16_t* copyFrameBufferRegionToMemory(const Rect& visRegion, const Rect& absRegion, const BitmapId bitmapId);
 
     virtual void fillRect(const Rect& rect, colortype color, uint8_t alpha = 255);
+
+    virtual void fillBuffer(uint8_t* const destination, uint16_t pixelStride, const Rect& rect, const colortype color, const uint8_t alpha);
 
     virtual uint8_t bitDepth() const
     {
@@ -85,11 +81,6 @@ public:
         return HAL::FRAME_BUFFER_WIDTH * 2;
     }
 
-    virtual colortype getColorFrom24BitRGB(uint8_t red, uint8_t green, uint8_t blue) const
-    {
-        return getColorFromRGB(red, green, blue);
-    }
-
     /**
      * Generates a color representation to be used on the LCD, based on 24 bit RGB values.
      *
@@ -99,60 +90,21 @@ public:
      *
      * @return The color representation depending on LCD color format.
      */
-    FORCE_INLINE_FUNCTION static colortype getColorFromRGB(uint8_t red, uint8_t green, uint8_t blue)
+    FORCE_INLINE_FUNCTION static uint16_t getNativeColorFromRGB(uint8_t red, uint8_t green, uint8_t blue)
     {
         return ((red << 8) & 0xF800) | ((green << 3) & 0x07E0) | ((blue >> 3) & 0x001F);
     }
 
-    virtual uint8_t getRedColor(colortype color) const
-    {
-        return getRedFromColor(color);
-    }
-
     /**
-     * Gets red from color.
+     * Generates a color representation to be used on the LCD, based on 24 bit RGB values.
      *
      * @param  color The color.
      *
-     * @return The red from color.
+     * @return The color representation depending on LCD color format.
      */
-    FORCE_INLINE_FUNCTION static uint8_t getRedFromColor(colortype color)
+    FORCE_INLINE_FUNCTION static uint16_t getNativeColor(colortype color)
     {
-        return (color & 0xF800) >> 8;
-    }
-
-    virtual uint8_t getGreenColor(colortype color) const
-    {
-        return getGreenFromColor(color);
-    }
-
-    /**
-     * Gets green from color.
-     *
-     * @param  color The color.
-     *
-     * @return The green from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getGreenFromColor(colortype color)
-    {
-        return (color & 0x07E0) >> 3;
-    }
-
-    virtual uint8_t getBlueColor(colortype color) const
-    {
-        return getBlueFromColor(color);
-    }
-
-    /**
-     * Gets blue from color.
-     *
-     * @param  color The color.
-     *
-     * @return The blue from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getBlueFromColor(colortype color)
-    {
-        return (color & 0x001F) << 3;
+        return getNativeColorFromRGB(Color::getRed(color), Color::getGreen(color), Color::getBlue(color));
     }
 
     /**
@@ -359,13 +311,26 @@ protected:
      * specified. If ARGB8888 is not supported by the DMA a software blend is performed.
      *
      * @param  sourceData The source-array pointer (points to the beginning of the data). The
-     *                    sourceData must be stored as 32- bits ARGB8888 values.
+     *                    sourceData must be stored as 32 bits ARGB8888 values.
      * @param  source     The location and dimensions of the source.
      * @param  blitRect   A rectangle describing what region is to be drawn.
      * @param  alpha      The alpha value to use for blending applied to the whole image (255 =
      *                    solid, no blending)
      */
     static void blitCopyARGB8888(const uint32_t* sourceData, const Rect& source, const Rect& blitRect, uint8_t alpha);
+
+    /**
+     * Blits a 2D source-array to the framebuffer performing alpha-blending per pixel as specified.
+     * If RGB888 is not supported by the DMA a software blend is performed.
+     *
+     * @param   sourceData  The source-array pointer (points to the beginning of the data). The
+     *                      sourceData must be stored as 24 bits RGB888 values.
+     * @param   source      The location and dimensions of the source.
+     * @param   blitRect    A rectangle describing what region is to be drawn.
+     * @param   alpha       The alpha value to use for blending applied to the whole image (255 =
+     *                      solid, no blending)
+     */
+    static void blitCopyRGB888(const uint8_t* sourceData, const Rect& source, const Rect& blitRect, uint8_t alpha);
 
     /**
      * Blits a 2D indexed 8-bit source to the framebuffer performing alpha-blending per
@@ -537,8 +502,8 @@ private:
         uint16_t xy10 = 16 * x;
         uint16_t xy00 = 256 - xy10;
 
-        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10) >> 8) & 0xFF00FF)
-               | ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10) >> 8) & 0x00FF00);
+        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10) >> 8) & 0xFF00FF) |
+               ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10) >> 8) & 0x00FF00);
     }
 
     FORCE_INLINE_FUNCTION static uint32_t bilinearInterpolate888(uint32_t c00, uint32_t c10, uint32_t c01, uint32_t c11, uint8_t x, uint8_t y)
@@ -549,8 +514,8 @@ private:
         uint16_t xy01 = 16 * y - xy11;
         uint16_t xy00 = 256 - (xy11 + xy10 + xy01);
 
-        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10 + (c01 & 0xFF00FF) * xy01 + (c11 & 0xFF00FF) * xy11) >> 8) & 0xFF00FF)
-               | ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10 + (c01 & 0x00FF00) * xy01 + (c11 & 0x00FF00) * xy11) >> 8) & 0x00FF00);
+        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10 + (c01 & 0xFF00FF) * xy01 + (c11 & 0xFF00FF) * xy11) >> 8) & 0xFF00FF) |
+               ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10 + (c01 & 0x00FF00) * xy01 + (c11 & 0x00FF00) * xy11) >> 8) & 0x00FF00);
     }
 
     FORCE_INLINE_FUNCTION static uint32_t div255_888(uint32_t val, uint8_t factor)
@@ -859,18 +824,6 @@ private:
     };
 };
 
-/**
- * The class LCD16DebugPrinter implements the DebugPrinter interface for printing debug messages
- * on top of 16bit framebuffer.
- *
- * @see DebugPrinter
- */
-class LCD16DebugPrinter : public DebugPrinter
-{
-public:
-    virtual void draw(const Rect& rect) const;
-};
-
 } // namespace touchgfx
 
-#endif // LCD16BPP_HPP
+#endif // TOUCHGFX_LCD16BPP_HPP

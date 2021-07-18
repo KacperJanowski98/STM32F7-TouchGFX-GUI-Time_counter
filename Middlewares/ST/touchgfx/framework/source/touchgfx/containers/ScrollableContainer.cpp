@@ -1,21 +1,27 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
-#include <touchgfx/containers/ScrollableContainer.hpp>
-#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Application.hpp>
 #include <touchgfx/Color.hpp>
+#include <touchgfx/Drawable.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/Utils.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/events/ClickEvent.hpp>
+#include <touchgfx/events/DragEvent.hpp>
+#include <touchgfx/events/GestureEvent.hpp>
+#include <touchgfx/hal/HAL.hpp>
 
 namespace touchgfx
 {
@@ -25,6 +31,7 @@ ScrollableContainer::ScrollableContainer()
       scrollbarWidth(2),
       scrollbarAlpha(120),
       scrollbarColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF)),
+      maxVelocity(SCROLLBAR_MAX_VELOCITY),
       accelDirection(GestureEvent::SWIPE_HORIZONTAL),
       xSlider(0, 0, scrollbarColor, scrollbarAlpha),
       ySlider(0, 0, scrollbarColor, scrollbarAlpha),
@@ -54,13 +61,12 @@ ScrollableContainer::ScrollableContainer()
 {
     xSlider.setVisible(false);
     ySlider.setVisible(false);
-    maxVelocity = SCROLLBAR_MAX_VELOCITY;
     setTouchable(true);
 }
 
-void ScrollableContainer::handleClickEvent(const ClickEvent& evt)
+void ScrollableContainer::handleClickEvent(const ClickEvent& event)
 {
-    if (evt.getType() == ClickEvent::PRESSED)
+    if (event.getType() == ClickEvent::PRESSED)
     {
         isPressed = true;
 
@@ -100,14 +106,14 @@ void ScrollableContainer::handleClickEvent(const ClickEvent& evt)
                     Drawable* d = 0;
                     int16_t deltaX = samplePoints[sampleIndex][0] * distance;
                     int16_t deltaY = samplePoints[sampleIndex][1] * distance;
-                    if (me.intersect(evt.getX() + deltaX, evt.getY() + deltaY))
+                    if (me.intersect(event.getX() + deltaX, event.getY() + deltaY))
                     {
-                        Container::getLastChild(evt.getX() + deltaX, evt.getY() + deltaY, &d);
+                        Container::getLastChild(event.getX() + deltaX, event.getY() + deltaY, &d);
                         if (d && d != last && d != this)
                         {
                             Rect absRect = d->getAbsoluteRect();
-                            int x = meAbs.x + evt.getX() - (absRect.x + (absRect.width / 2));
-                            int y = meAbs.y + evt.getY() - (absRect.y + (absRect.height / 2));
+                            int x = meAbs.x + event.getX() - (absRect.x + (absRect.width / 2));
+                            int y = meAbs.y + event.getY() - (absRect.y + (absRect.height / 2));
                             uint32_t dist = x * x + y * y;
                             if (dist < bestDistance)
                             {
@@ -124,7 +130,7 @@ void ScrollableContainer::handleClickEvent(const ClickEvent& evt)
         }
         else
         {
-            Container::getLastChild(evt.getX(), evt.getY(), &pressedDrawable);
+            Container::getLastChild(event.getX(), event.getY(), &pressedDrawable);
         }
 
         if (pressedDrawable == this)
@@ -135,24 +141,24 @@ void ScrollableContainer::handleClickEvent(const ClickEvent& evt)
         if (pressedDrawable)
         {
             hasIssuedCancelEvent = false;
-            pressedX = evt.getX();
-            pressedY = evt.getY();
+            pressedX = event.getX();
+            pressedY = event.getY();
             Rect r = pressedDrawable->getAbsoluteRect();
-            ClickEvent relative(evt.getType(), evt.getX() + rect.x + fingerAdjustmentX - r.x, evt.getY() + rect.y + fingerAdjustmentY - r.y);
+            ClickEvent relative(event.getType(), event.getX() + rect.x + fingerAdjustmentX - r.x, event.getY() + rect.y + fingerAdjustmentY - r.y);
             pressedDrawable->handleClickEvent(relative);
             lastDraggableChild = pressedDrawable;
         }
     }
-    else if (evt.getType() == ClickEvent::CANCEL)
+    else if (event.getType() == ClickEvent::CANCEL)
     {
         return;
     }
-    else // if (evt.getType() == ClickEvent::RELEASED)
+    else // if (event.getType() == ClickEvent::RELEASED)
     {
         if (pressedDrawable)
         {
             Rect r = pressedDrawable->getAbsoluteRect();
-            ClickEvent relative(evt.getType(), evt.getX() + rect.x + fingerAdjustmentX - r.x, evt.getY() + rect.y + fingerAdjustmentY - r.y);
+            ClickEvent relative(event.getType(), event.getX() + rect.x + fingerAdjustmentX - r.x, event.getY() + rect.y + fingerAdjustmentY - r.y);
             pressedDrawable->handleClickEvent(relative);
         }
 
@@ -169,9 +175,9 @@ void ScrollableContainer::handleClickEvent(const ClickEvent& evt)
     invalidateScrollbars();
 }
 
-void ScrollableContainer::handleDragEvent(const DragEvent& evt)
+void ScrollableContainer::handleDragEvent(const DragEvent& event)
 {
-    DragEvent actualDrag = evt;
+    DragEvent actualDrag = event;
     bool acceptInitialScroll = false;
 
     bool canScrollX = false;
@@ -182,10 +188,10 @@ void ScrollableContainer::handleDragEvent(const DragEvent& evt)
     {
         // Also send this drag event to the appropriate child widget
         Rect r = pressedDrawable->getAbsoluteRect();
-        int16_t oldX = evt.getOldX() + rect.x + fingerAdjustmentX - r.x;
-        int16_t oldY = evt.getOldY() + rect.y + fingerAdjustmentY - r.y;
-        int16_t newX = canScrollX ? oldX : evt.getNewX() + rect.x + fingerAdjustmentX - r.x;
-        int16_t newY = canScrollY ? oldY : evt.getNewY() + rect.y + fingerAdjustmentY - r.y;
+        int16_t oldX = event.getOldX() + rect.x + fingerAdjustmentX - r.x;
+        int16_t oldY = event.getOldY() + rect.y + fingerAdjustmentY - r.y;
+        int16_t newX = canScrollX ? oldX : event.getNewX() + rect.x + fingerAdjustmentX - r.x;
+        int16_t newY = canScrollY ? oldY : event.getNewY() + rect.y + fingerAdjustmentY - r.y;
 
         // but only in the direction(s) where the scrollable container itself
         // cannot scroll.
@@ -201,10 +207,10 @@ void ScrollableContainer::handleDragEvent(const DragEvent& evt)
     if (!isScrolling)
     {
         // Only consider the delta in directions that are actually scrollable.
-        // Note: Do not use the delta from received evt since that only reflects
+        // Note: Do not use the delta from received event since that only reflects
         // change since last drag. What we want to check here is if the total
         // delta from the point of click has now exceeded the threshold.
-        actualDrag = DragEvent(DragEvent::DRAGGED, pressedX + fingerAdjustmentX, pressedY + fingerAdjustmentY, evt.getNewX() + fingerAdjustmentX, evt.getNewY() + fingerAdjustmentY);
+        actualDrag = DragEvent(DragEvent::DRAGGED, pressedX + fingerAdjustmentX, pressedY + fingerAdjustmentY, event.getNewX() + fingerAdjustmentX, event.getNewY() + fingerAdjustmentY);
         if (canScrollX)
         {
             // Can scroll in X.
@@ -234,7 +240,7 @@ void ScrollableContainer::handleDragEvent(const DragEvent& evt)
             if (pressedDrawable && !hasIssuedCancelEvent)
             {
                 Drawable* child = 0;
-                Container::getLastChild(evt.getNewX() + fingerAdjustmentX, evt.getNewY() + fingerAdjustmentY, &child);
+                Container::getLastChild(event.getNewX() + fingerAdjustmentX, event.getNewY() + fingerAdjustmentY, &child);
                 if (pressedDrawable != child)
                 {
                     ClickEvent ce(ClickEvent::CANCEL, 0, 0);
@@ -312,16 +318,16 @@ void ScrollableContainer::handleDragEvent(const DragEvent& evt)
     doScroll(deltaX, deltaY);
 }
 
-void ScrollableContainer::handleGestureEvent(const GestureEvent& evt)
+void ScrollableContainer::handleGestureEvent(const GestureEvent& event)
 {
     bool canScrollX = false;
     bool canScrollY = false;
     isScrollableXY(canScrollX, canScrollY);
 
-    if ((canScrollX && (evt.getType() == GestureEvent::SWIPE_HORIZONTAL)) ||
-            (canScrollY && (evt.getType() == GestureEvent::SWIPE_VERTICAL)))
+    if ((canScrollX && (event.getType() == GestureEvent::SWIPE_HORIZONTAL)) ||
+        (canScrollY && (event.getType() == GestureEvent::SWIPE_VERTICAL)))
     {
-        int16_t velocityAbsolute = abs(evt.getVelocity());
+        int16_t velocityAbsolute = abs(event.getVelocity());
 
         // Ignore gestures with velocity lower than threshold
         if (velocityAbsolute < scrollThreshold)
@@ -335,14 +341,14 @@ void ScrollableContainer::handleGestureEvent(const GestureEvent& evt)
 
         // Try to set some reasonable values for how long the resulting scroll should be, and how many ticks is should take
         scrollDuration = velocityAbsolute * scrollDurationSpeedup / scrollDurationSlowdown;
-        targetValue = ((evt.getVelocity() > 0) ? 1 : -1) * (velocityAbsolute - 4) * 72;
+        targetValue = ((event.getVelocity() > 0) ? 1 : -1) * (velocityAbsolute - 4) * 72;
         scrollDuration = MIN(scrollDuration, abs(targetValue));
 
         // Get ready to animate scroll: Initialize values
-        beginningValue = (evt.getType() == GestureEvent::SWIPE_VERTICAL) ? getContainedArea().y : getContainedArea().x;
+        beginningValue = (event.getType() == GestureEvent::SWIPE_VERTICAL) ? getContainedArea().y : getContainedArea().x;
         animate = true;
         Application::getInstance()->registerTimerWidget(this);
-        accelDirection = evt.getType();
+        accelDirection = event.getType();
 
         if (pressedDrawable && !hasIssuedCancelEvent)
         {

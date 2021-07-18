@@ -1,25 +1,22 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/canvas_widget_renderer/Cell.hpp
  *
  * Declares the touchgfx::Cell struct. Used internally by CanvasWidgetRenderer.
  */
-#ifndef CELL_HPP
-#define CELL_HPP
+#ifndef TOUCHGFX_CELL_HPP
+#define TOUCHGFX_CELL_HPP
 
 #include <touchgfx/hal/Types.hpp>
 
@@ -88,12 +85,26 @@ struct Cell
     }
 
     /**
-     * Packed coordinates of the Cell. By packing the x coordinate and y coordinate into one
-     * int, it is possible to sort Cells using a single comparison.
+     * Packed coordinates of the Cell. By packing the x coordinate and y coordinate into one int,
+     * it is possible to sort Cells using a single comparison.
      *
      * @return The packed coordinates with y in the high part and x in the low part.
      */
-    int packedCoord() const
+    FORCE_INLINE_FUNCTION int packedCoord() const
+    {
+        return packedCoord(x, y);
+    }
+
+    /**
+     * Packed x,y coordinates. By packing the x coordinate and y coordinate into one int, it is
+     * possible to sort Cells using a single comparison.
+     *
+     * @param  x The x coordinate.
+     * @param  y The y coordinate.
+     *
+     * @return The packed coordinates with y in the high part and x in the low part.
+     */
+    FORCE_INLINE_FUNCTION static int packedCoord(int16_t x, int16_t y)
     {
         return (y << 16) + x;
     }
@@ -102,4 +113,4 @@ struct Cell
 } // namespace touchgfx
 /// @endcond
 
-#endif // CELL_HPP
+#endif // TOUCHGFX_CELL_HPP

@@ -1,18 +1,20 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Color.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
 #include <touchgfx/widgets/canvas/PainterARGB8888Bitmap.hpp>
 
 namespace touchgfx
@@ -27,7 +29,7 @@ void PainterARGB8888Bitmap::setBitmap(const Bitmap& bmp)
 
 void PainterARGB8888Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsigned count, const uint8_t* covers)
 {
-    uint8_t* RESTRICT p = ptr + ((x + xAdjust) * 4);
+    uint8_t* RESTRICT p = ptr + (x + xAdjust) * 4;
 
     currentX = x + areaOffsetX;
     currentY = y + areaOffsetY;
@@ -42,203 +44,142 @@ void PainterARGB8888Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
         count = bitmapRectToFrameBuffer.width - currentX;
     }
 
-    const uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
+    const uint8_t* const p_lineend = p + 4 * count;
     if (bitmap.getFormat() == Bitmap::ARGB8888)
     {
         const uint32_t* RESTRICT src = bitmapARGB8888Pointer;
-        if (totalAlpha == 0xFF)
+        do
         {
-            do
+            const uint8_t srcAlpha = (*src) >> 24;
+            const uint8_t alphaFg = LCD::div255((*covers++) * LCD::div255(srcAlpha * widgetAlpha));
+            const uint8_t alphaBg = p[3];
+            if (0 /*alphaFg == 255 || alphaBg == 0*/)
             {
-                const uint8_t srcAlpha = (*src) >> 24;
-                const uint8_t alpha = LCD::div255((*covers++) * srcAlpha);
-                if (alpha == 0xFF)
-                {
-                    // Solid pixel
-                    *p++ = (*src);       // Blue
-                    *p++ = (*src) >> 8;  // Green
-                    *p++ = (*src) >> 16; // Red
-                    *p++ = 0xff;         // Alpha
-                }
-                else
-                {
-                    // Non-Transparent pixel
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    uint8_t cByte = (*src);
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 8;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 16;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 24;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
-                }
-                src++;
-            } while (--count != 0);
-        }
-        else
-        {
-            do
+                const uint8_t blueFg = *src;
+                *p++ = blueFg;
+                const uint8_t greenFg = (*src) >> 8;
+                *p++ = greenFg;
+                const uint8_t redFg = (*src) >> 16;
+                *p++ = redFg;
+                *p++ = alphaFg;
+            }
+            else if (alphaFg)
             {
-                const uint8_t srcAlpha = (*src) >> 24;
-                const uint8_t alpha = LCD::div255((*covers++) * LCD::div255(srcAlpha * totalAlpha));
-                if (alpha)
-                {
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    uint8_t cByte = (*src);
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 8;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 16;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = (*src) >> 24;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
-                }
-                else
-                {
-                    p += 4;
-                }
-                src++;
-            } while (--count != 0);
-        }
+                const uint8_t alphaMult = LCD::div255(alphaFg * alphaBg);
+                const uint8_t alphaOut = alphaFg + alphaBg - alphaMult;
+
+                const uint8_t blueBg = *p;
+                const uint8_t blueFg = *src;
+                *p++ = (blueFg * alphaFg + blueBg * (alphaBg - alphaMult)) / alphaOut;
+                const uint8_t greenBg = *p;
+                const uint8_t greenFg = (*src) >> 8;
+                *p++ = (greenFg * alphaFg + greenBg * (alphaBg - alphaMult)) / alphaOut;
+                const uint8_t redBg = *p;
+                const uint8_t redFg = (*src) >> 16;
+                *p++ = (redFg * alphaFg + redBg * (alphaBg - alphaMult)) / alphaOut;
+                *p++ = alphaOut;
+            }
+            else
+            {
+                p += 4;
+            }
+            src++;
+        } while (p < p_lineend);
     }
     else if (bitmap.getFormat() == Bitmap::RGB888)
     {
         const uint8_t* RESTRICT src = bitmapRGB888Pointer;
-        if (totalAlpha == 0xFF)
+        do
         {
-            do
+            const uint8_t alphaFg = LCD::div255((*covers++) * widgetAlpha);
+            if (alphaFg)
             {
-                const uint8_t alpha = *covers++;
-                if (alpha == 0xFF)
-                {
-                    // Solid pixel
-                    *p++ = *src++; // Blue
-                    *p++ = *src++; // Green
-                    *p++ = *src++; // Red
-                    *p++ = 0xff;   // Alpha
-                }
-                else
-                {
-                    // Non-Transparent pixel
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    uint8_t cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
-                }
-            } while (--count != 0);
-        }
-        else
-        {
-            do
+                const uint8_t alphaBg = p[3];
+                const uint8_t alphaMult = LCD::div255(alphaFg * alphaBg);
+                const uint8_t alphaOut = alphaFg + alphaBg - alphaMult;
+
+                const uint8_t blueBg = *p;
+                const uint8_t blueFg = *src++;
+                *p++ = (blueFg * alphaFg + blueBg * alphaBg - blueBg * alphaMult) / alphaOut;
+                const uint8_t greenBg = *p;
+                const uint8_t greenFg = *src++;
+                *p++ = (greenFg * alphaFg + greenBg * alphaBg - greenBg * alphaMult) / alphaOut;
+                const uint8_t redBg = *p;
+                const uint8_t redFg = *src++;
+                *p++ = (redFg * alphaFg + redBg * alphaBg - redBg * alphaMult) / alphaOut;
+                *p++ = alphaOut;
+            }
+            else
             {
-                const uint8_t alpha = LCD::div255((*covers++) * totalAlpha);
-                if (alpha)
-                {
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    uint8_t cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    cByte = *src++;
-                    *p++ = LCD::div255(cByte * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
-                }
-                else
-                {
-                    p += 4;
-                    src += 3;
-                }
-            } while (--count != 0);
-        }
+                src += 3;
+                p += 4;
+            }
+        } while (p < p_lineend);
     }
     else if (bitmap.getFormat() == Bitmap::RGB565)
     {
         const uint16_t* RESTRICT src = bitmapRGB565Pointer;
-        if (totalAlpha == 0xFF)
+        if (bitmapRGB565AlphaPointer == 0)
         {
             do
             {
-                const uint8_t alpha = *covers++;
-                const uint16_t srcpix = *src++;
-                uint16_t red = (srcpix & 0xF800) >> 11;
-                uint16_t green = (srcpix & 0x07E0) >> 5;
-                uint16_t blue = srcpix & 0x001F;
-                red = (red * 527 + 23) >> 6;
-                green = (green * 259 + 33) >> 6;
-                blue = (blue * 527 + 23) >> 6;
-                if (alpha == 0xFF)
+                const uint8_t alphaFg = LCD::div255((*covers++) * widgetAlpha);
+                if (alphaFg)
                 {
-                    // Solid pixel
-                    *p++ = (uint8_t)blue;
-                    *p++ = (uint8_t)green;
-                    *p++ = (uint8_t)red;
-                    *p++ = 0xff;
+                    const uint8_t alphaBg = p[3];
+                    const uint8_t alphaMult = LCD::div255(alphaFg * alphaBg);
+                    const uint8_t alphaOut = alphaFg + alphaBg - alphaMult;
+
+                    const uint8_t blueBg = *p;
+                    const uint8_t blueFg = Color::getBlueFromRGB565(*src);
+                    *p++ = (blueFg * alphaFg + blueBg * alphaBg - blueBg * alphaMult) / alphaOut;
+                    const uint8_t greenBg = *p;
+                    const uint8_t greenFg = Color::getGreenFromRGB565(*src);
+                    *p++ = (greenFg * alphaFg + greenBg * alphaBg - greenBg * alphaMult) / alphaOut;
+                    const uint8_t redBg = *p;
+                    const uint8_t redFg = Color::getRedFromRGB565(*src);
+                    *p++ = (redFg * alphaFg + redBg * alphaBg - redBg * alphaMult) / alphaOut;
+                    *p++ = alphaOut;
                 }
                 else
                 {
-                    // Non-Transparent pixel
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    *p++ = LCD::div255(blue * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = LCD::div255(green * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = LCD::div255(red * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
+                    src++;
+                    p += 4;
                 }
-            } while (--count != 0);
+                src++;
+            } while (p < p_lineend);
         }
         else
         {
+            const uint8_t* RESTRICT srcAlphaPtr = bitmapRGB565AlphaPointer;
             do
             {
-                const uint8_t alpha = LCD::div255((*covers++) * totalAlpha);
-                uint16_t srcpix = *src++;
-                uint16_t red = (srcpix & 0xF800) >> 11;
-                uint16_t green = (srcpix & 0x07E0) >> 5;
-                uint16_t blue = srcpix & 0x001F;
-                red = (red * 527 + 23) >> 6;
-                green = (green * 259 + 33) >> 6;
-                blue = (blue * 527 + 23) >> 6;
-                if (alpha)
+                const uint8_t srcAlpha = *srcAlphaPtr++;
+                const uint8_t alphaFg = LCD::div255((*covers++) * LCD::div255(srcAlpha * widgetAlpha));
+                if (alphaFg)
                 {
-                    const uint8_t ialpha = 0xFF - alpha;
-                    uint8_t pByte = *p;
-                    *p++ = LCD::div255(blue * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = LCD::div255(green * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = LCD::div255(red * alpha + pByte * ialpha);
-                    pByte = *p;
-                    *p++ = pByte + alpha - LCD::div255(pByte * alpha);
+                    const uint8_t alphaBg = p[3];
+                    const uint8_t alphaMult = LCD::div255(alphaFg * alphaBg);
+                    const uint8_t alphaOut = alphaFg + alphaBg - alphaMult;
+
+                    const uint8_t blueBg = *p;
+                    const uint8_t blueFg = Color::getBlueFromRGB565(*src);
+                    *p++ = (blueFg * alphaFg + blueBg * alphaBg - blueBg * alphaMult) / alphaOut;
+                    const uint8_t greenBg = *p;
+                    const uint8_t greenFg = Color::getGreenFromRGB565(*src);
+                    *p++ = (greenFg * alphaFg + greenBg * alphaBg - greenBg * alphaMult) / alphaOut;
+                    const uint8_t redBg = *p;
+                    const uint8_t redFg = Color::getRedFromRGB565(*src);
+                    *p++ = (redFg * alphaFg + redBg * alphaBg - redBg * alphaMult) / alphaOut;
+                    *p++ = alphaOut;
                 }
                 else
                 {
+                    src++;
                     p += 4;
                 }
-            } while (--count != 0);
+                src++;
+            } while (p < p_lineend);
         }
     }
 }
@@ -246,8 +187,9 @@ void PainterARGB8888Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsi
 bool PainterARGB8888Bitmap::renderInit()
 {
     bitmapARGB8888Pointer = 0;
-    bitmapRGB565Pointer = 0;
     bitmapRGB888Pointer = 0;
+    bitmapRGB565Pointer = 0;
+    bitmapRGB565AlphaPointer = 0;
 
     if (bitmap.getId() == BITMAP_INVALID)
     {
@@ -293,6 +235,11 @@ bool PainterARGB8888Bitmap::renderInit()
             return false;
         }
         bitmapRGB565Pointer += currentX + currentY * bitmapRectToFrameBuffer.width;
+        bitmapRGB565AlphaPointer = bitmap.getExtraData();
+        if (bitmapRGB565AlphaPointer)
+        {
+            bitmapRGB565AlphaPointer += currentX + currentY * bitmapRectToFrameBuffer.width;
+        }
         return true;
     }
 
@@ -309,10 +256,10 @@ bool PainterARGB8888Bitmap::renderNext(uint8_t& red, uint8_t& green, uint8_t& bl
     if (bitmapARGB8888Pointer != 0)
     {
         uint32_t argb8888 = *bitmapARGB8888Pointer++;
-        alpha = (argb8888 >> 24) & 0xFF;
-        red = (argb8888 >> 16) & 0xFF;
-        green = (argb8888 >> 8) & 0xFF;
-        blue = (argb8888) & 0xFF;
+        alpha = argb8888 >> 24;
+        red = argb8888 >> 16;
+        green = argb8888 >> 8;
+        blue = argb8888;
     }
     else if (bitmapRGB888Pointer != 0)
     {
@@ -324,17 +271,19 @@ bool PainterARGB8888Bitmap::renderNext(uint8_t& red, uint8_t& green, uint8_t& bl
     else if (bitmapRGB565Pointer != 0)
     {
         uint16_t srcpix = *bitmapRGB565Pointer++;
-        red = (srcpix & 0xF800) >> 11;
-        green = (srcpix & 0x07E0) >> 5;
-        blue = srcpix & 0x001F;
-        red = (red * 527 + 23) >> 6;
-        green = (green * 259 + 33) >> 6;
-        blue = (blue * 527 + 23) >> 6;
-        alpha = 0xff;
+        red = Color::getRedFromRGB565(srcpix);
+        green = Color::getGreenFromRGB565(srcpix);
+        blue = Color::getBlueFromRGB565(srcpix);
+        if (bitmapRGB565AlphaPointer != 0)
+        {
+            alpha = *bitmapRGB565AlphaPointer++;
+        }
+        else
+        {
+            alpha = 0xff;
+        }
     }
 
-    // Apply given alpha from setAlpha()
-    alpha = LCD::div255(alpha * painterAlpha);
     return true;
 }
 } // namespace touchgfx

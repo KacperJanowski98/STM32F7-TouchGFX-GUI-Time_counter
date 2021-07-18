@@ -1,24 +1,27 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/widgets/TextureMapper.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
 
 namespace touchgfx
 {
 Gauge::Gauge()
     : AbstractProgressIndicator(),
+      needle(),
       algorithmMoving(TextureMapper::BILINEAR_INTERPOLATION),
       algorithmSteady(TextureMapper::BILINEAR_INTERPOLATION),
       needleStartAngle(0),
@@ -26,7 +29,8 @@ Gauge::Gauge()
       gaugeCenterX(0),
       gaugeCenterY(0),
       needleCenterX(0),
-      needleCenterY(0)
+      needleCenterY(0),
+      arc()
 {
     remove(progressIndicatorContainer);
     add(arc);
@@ -123,7 +127,7 @@ void Gauge::putArcOnTop(bool onTop /*= true*/)
     }
 }
 
-touchgfx::Circle& Gauge::getArc()
+Circle& Gauge::getArc()
 {
     return arc;
 }
@@ -154,14 +158,9 @@ void Gauge::setValue(int value)
 
 void Gauge::setAlpha(uint8_t newAlpha)
 {
-    background.setAlpha(newAlpha);
+    AbstractProgressIndicator::setAlpha(newAlpha);
     needle.setAlpha(newAlpha);
     arc.setAlpha(newAlpha);
-}
-
-uint8_t Gauge::getAlpha() const
-{
-    return needle.getAlpha();
 }
 
 void Gauge::setupNeedleTextureMapper()
@@ -174,7 +173,6 @@ void Gauge::setupNeedleTextureMapper()
     needle.setCamera(needle.getOrigoX(), needle.getOrigoY());
     needle.setRenderingAlgorithm(TextureMapper::BILINEAR_INTERPOLATION);
 }
-
 
 void Gauge::setProgressIndicatorPosition(int16_t /*x*/, int16_t /*y*/, int16_t /*width*/, int16_t /*height*/)
 {

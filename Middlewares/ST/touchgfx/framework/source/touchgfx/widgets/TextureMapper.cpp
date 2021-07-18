@@ -1,22 +1,26 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <math.h>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/Drawable.hpp>
 #include <touchgfx/Math3D.hpp>
 #include <touchgfx/TextureMapTypes.hpp>
+#include <touchgfx/Utils.hpp>
 #include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/transforms/DisplayTransformation.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextureMapper.hpp>
 
 namespace touchgfx
@@ -65,8 +69,7 @@ void TextureMapper::applyTransformation()
     int imgWidth = Bitmap(bitmap).getWidth() + 1;
     int imgHeight = Bitmap(bitmap).getHeight() + 1;
 
-    Point4 vertices[n] =
-    {
+    Point4 vertices[n] = {
         Point4(xBitmapPosition - 1, yBitmapPosition - 1, cameraDistance),
         Point4(xBitmapPosition - 1 + imgWidth, yBitmapPosition - 1, cameraDistance),
         Point4(xBitmapPosition - 1 + imgWidth, yBitmapPosition - 1 + imgHeight, cameraDistance),
@@ -152,26 +155,42 @@ Rect TextureMapper::getBoundingRect() const
     return Rect(minX, minY, maxX - minX, maxY - minY);
 }
 
-void TextureMapper::updateAngles(float newXAngle, float newYAngle, float newZAngle)
+void TextureMapper::setAngles(float newXAngle, float newYAngle, float newZAngle)
 {
-    Rect rBefore = getBoundingRect();
-
     xAngle = newXAngle;
     yAngle = newYAngle;
     zAngle = newZAngle;
 
     applyTransformation();
-
-    Rect rAfter = getBoundingRect();
-    rAfter.expandToFit(rBefore);
-    invalidateRect(rAfter);
 }
 
-void TextureMapper::setScale(float _scale)
+void TextureMapper::updateAngles(float newXAngle, float newYAngle, float newZAngle)
 {
-    this->scale = _scale;
+    Rect rectBefore = getBoundingRect();
+    invalidateRect(rectBefore);
+
+    setAngles(newXAngle, newYAngle, newZAngle);
+
+    Rect rectAfter = getBoundingRect();
+    invalidateRect(rectAfter);
+}
+
+void TextureMapper::setScale(float newScale)
+{
+    this->scale = newScale;
 
     applyTransformation();
+}
+
+void TextureMapper::updateScale(float newScale)
+{
+    Rect rectBefore = getBoundingRect();
+    invalidateRect(rectBefore);
+
+    setScale(newScale);
+
+    Rect rectAfter = getBoundingRect();
+    invalidateRect(rectAfter);
 }
 
 void TextureMapper::draw(const Rect& invalidatedArea) const
@@ -297,8 +316,8 @@ void TextureMapper::drawQuad(const Rect& invalidatedArea, uint16_t* fb, const fl
     float x1 = triangleXs[1];
     float x2 = triangleXs[2];
     float x3 = triangleXs[3];
-    float y0 = triangleYs[0]; //lint !e578
-    float y1 = triangleYs[1]; //lint !e578
+    float y0 = triangleYs[0];
+    float y1 = triangleYs[1];
     float y2 = triangleYs[2];
     float y3 = triangleYs[3];
 

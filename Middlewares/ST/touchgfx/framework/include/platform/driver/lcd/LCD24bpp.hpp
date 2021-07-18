@@ -1,40 +1,31 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file platform/driver/lcd/LCD24bpp.hpp
  *
- * Declares the touchgfx::LCD24bpp and touchgfx::LCD24DebugPrinter classes.
+ * Declares the touchgfx::LCD24bpp class.
  */
-#ifndef LCD24BPP_HPP
-#define LCD24BPP_HPP
+#ifndef TOUCHGFX_LCD24BPP_HPP
+#define TOUCHGFX_LCD24BPP_HPP
 
-#include <stdarg.h>
-#include <touchgfx/Bitmap.hpp>
-#include <touchgfx/Font.hpp>
-#include <touchgfx/TextProvider.hpp>
-#include <touchgfx/TextureMapTypes.hpp>
-#include <touchgfx/Unicode.hpp>
-#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/lcd/LCD24DebugPrinter.hpp>
 
 namespace touchgfx
 {
-#undef LCD
-
 /**
  * This class contains the various low-level drawing routines for drawing bitmaps, texts and
  * rectangles on 16 bits per pixel displays.
@@ -57,6 +48,8 @@ public:
     virtual uint16_t* copyFrameBufferRegionToMemory(const Rect& visRegion, const Rect& absRegion, const BitmapId bitmapId);
 
     virtual void fillRect(const Rect& rect, colortype color, uint8_t alpha = 255);
+
+    virtual void fillBuffer(uint8_t* const destination, uint16_t pixelStride, const Rect& rect, const colortype color, const uint8_t alpha);
 
     virtual uint8_t bitDepth() const
     {
@@ -83,76 +76,6 @@ public:
     {
         assert(HAL::FRAME_BUFFER_WIDTH > 0 && "HAL has not been initialized yet");
         return HAL::FRAME_BUFFER_WIDTH * 3;
-    }
-
-    virtual colortype getColorFrom24BitRGB(uint8_t red, uint8_t green, uint8_t blue) const
-    {
-        return getColorFromRGB(red, green, blue);
-    }
-
-    /**
-     * Gets color from RGB.
-     *
-     * @param  red   The red.
-     * @param  green The green.
-     * @param  blue  The blue.
-     *
-     * @return The color from RGB.
-     */
-    FORCE_INLINE_FUNCTION static colortype getColorFromRGB(uint8_t red, uint8_t green, uint8_t blue)
-    {
-        return (red << 16) | (green << 8) | (blue);
-    }
-
-    virtual uint8_t getRedColor(colortype color) const
-    {
-        return getRedFromColor(color);
-    }
-
-    /**
-     * Gets red from color.
-     *
-     * @param  color The color.
-     *
-     * @return The red from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getRedFromColor(colortype color)
-    {
-        return color >> 16;
-    }
-
-    virtual uint8_t getGreenColor(colortype color) const
-    {
-        return getGreenFromColor(color);
-    }
-
-    /**
-     * Gets green from color.
-     *
-     * @param  color The color.
-     *
-     * @return The green from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getGreenFromColor(colortype color)
-    {
-        return color >> 8;
-    }
-
-    virtual uint8_t getBlueColor(colortype color) const
-    {
-        return getBlueFromColor(color);
-    }
-
-    /**
-     * Gets blue from color.
-     *
-     * @param  color The color.
-     *
-     * @return The blue from color.
-     */
-    FORCE_INLINE_FUNCTION static uint8_t getBlueFromColor(colortype color)
-    {
-        return color;
     }
 
     /**
@@ -431,8 +354,8 @@ private:
         assert(x < 16);
         const uint16_t xy00 = 16 - x;
 
-        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * x) >> 4) & 0xFF00FF)
-               | ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * x) >> 4) & 0x00FF00);
+        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * x) >> 4) & 0xFF00FF) |
+               ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * x) >> 4) & 0x00FF00);
     }
 
     FORCE_INLINE_FUNCTION static uint32_t bilinearInterpolate888(uint32_t c00, uint32_t c10, uint32_t c01, uint32_t c11, uint8_t x, uint8_t y)
@@ -443,8 +366,8 @@ private:
         const uint16_t xy01 = 16 * y - xy11;
         const uint16_t xy00 = 256 - (xy11 + xy10 + xy01);
 
-        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10 + (c01 & 0xFF00FF) * xy01 + (c11 & 0xFF00FF) * xy11) >> 8) & 0xFF00FF)
-               | ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10 + (c01 & 0x00FF00) * xy01 + (c11 & 0x00FF00) * xy11) >> 8) & 0x00FF00);
+        return ((((c00 & 0xFF00FF) * xy00 + (c10 & 0xFF00FF) * xy10 + (c01 & 0xFF00FF) * xy01 + (c11 & 0xFF00FF) * xy11) >> 8) & 0xFF00FF) |
+               ((((c00 & 0x00FF00) * xy00 + (c10 & 0x00FF00) * xy10 + (c01 & 0x00FF00) * xy01 + (c11 & 0x00FF00) * xy11) >> 8) & 0x00FF00);
     }
 
     FORCE_INLINE_FUNCTION static uint32_t div255_888(uint32_t val, uint8_t factor)
@@ -655,18 +578,6 @@ private:
     };
 };
 
-/**
- * The class LCD24DebugPrinter implements the DebugPrinter interface for printing debug messages
- * on top of 24bit framebuffer.
- *
- * @see DebugPrinter
- */
-class LCD24DebugPrinter : public DebugPrinter
-{
-public:
-    virtual void draw(const Rect& rect) const;
-};
-
 } // namespace touchgfx
 
-#endif // LCD24BPP_HPP
+#endif // TOUCHGFX_LCD24BPP_HPP

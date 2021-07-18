@@ -1,35 +1,25 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Utils.hpp
  *
  * Declares various helper functions.
  */
-#ifndef UTILS_HPP
-#define UTILS_HPP
+#ifndef TOUCHGFX_UTILS_HPP
+#define TOUCHGFX_UTILS_HPP
 
-#ifdef SIMULATOR
-#include <stdarg.h>
-#ifndef __linux__
-#include <windows.h>
-#endif
-#include <stdio.h>
-#endif
-#include <touchgfx/Bitmap.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
 
 #if defined(SIMULATOR) && !defined(__linux__)
 
@@ -229,4 +219,4 @@ int32_t muldiv(int32_t factor1, int32_t factor2, int32_t divisor);
 
 } // namespace touchgfx
 
-#endif // UTILS_HPP
+#endif // TOUCHGFX_UTILS_HPP

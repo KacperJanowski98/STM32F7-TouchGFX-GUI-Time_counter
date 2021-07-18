@@ -1,31 +1,30 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file platform/hal/simulator/sdl2/HALSDL2.hpp
  *
  * Declares the touchgfx::HALSDL2 class.
  */
-#ifndef HALSDL2_HPP
-#define HALSDL2_HPP
+#ifndef TOUCHGFX_HALSDL2_HPP
+#define TOUCHGFX_HALSDL2_HPP
 
+#include <stdio.h>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_video.h>
 #include <platform/driver/touch/TouchController.hpp>
-#include <touchgfx/hal/HAL.hpp>
-#include <touchgfx/lcd/LCD.hpp>
 
 namespace touchgfx
 {
@@ -67,6 +66,7 @@ public:
           isWindowBorderless(false),
           isWindowVisible(true),
           isConsoleVisible(true),
+          printFile(0),
           windowDrag(false)
     {
         setVsyncInterval(30.f); // Simulate 20Hz per default for backward compatibility
@@ -264,28 +264,24 @@ public:
     /**
      * Scale framebuffer to 24bpp. The format of the framebuffer (src) is given in parameter
      * format. The result is placed in the pre-allocated memory pointed to by parameter dst.
-     * If the frambebuffer is in format Bitmap::RGB888, parameter dst is not used and the
+     * If the framebuffer is in format Bitmap::RGB888, parameter dst is not used and the
      * parameter src is simply returned.
      *
-     * @param [out] dst    Destination for the framebuffer. must be non-null unless format is
-     *                     Bitmap::RGB888.
      * @param [in]  src    The framebuffer.
      * @param       format Describes the format of the framebuffer (lcd().framebufferFormat()).
      *
      * @return Null if it fails, else a pointer to an uint8_t.
      */
-    static uint8_t* scaleTo24bpp(uint8_t* dst, uint16_t* src, Bitmap::BitmapFormat format);
+    static uint8_t* scaleTo24bpp(uint16_t* src, Bitmap::BitmapFormat format);
 
     /**
      * Rotates a framebuffer if the display is rotated.
      *
-     * @param [out] dst Destination for the rotated framebuffer. must be non-null if the
-     *                  screen is rotated.
      * @param [in]  src The framebuffer.
      *
      * @return Null if it fails, else a pointer to an uint8_t.
      */
-    static uint8_t* doRotate(uint8_t* dst, uint8_t* src);
+    static uint8_t* doRotate(uint8_t* src);
 
     /**
      * Change visibility of window (hidden vs. shown) as well as (due to
@@ -347,6 +343,27 @@ public:
     bool getConsoleVisible() const
     {
         return isConsoleVisible;
+    }
+
+    /**
+     * Also write touchgfx_printf() to a file. The file will be generated (no appended to).
+     *
+     * @param filename The name of the file to write to (or null to stop writing to a file).
+     *
+     * @return True if the operation succeeds, false otherwise.
+     */
+    bool printToFile(const char* filename);
+
+    /**
+     * Get file handle to output file (if set).
+     *
+     * @return A file handle to the file where output is copied to.
+     *
+     * @see printToFile
+     */
+    FILE* getPrintFile() const
+    {
+        return printFile;
     }
 
 protected:
@@ -446,6 +463,7 @@ private:
     bool isWindowBorderless;
     bool isWindowVisible;
     bool isConsoleVisible;
+    FILE* printFile;
     static bool flashInvalidatedRect;
 
     bool windowDrag;
@@ -473,4 +491,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // HALSDL2_HPP
+#endif // TOUCHGFX_HALSDL2_HPP

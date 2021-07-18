@@ -1,18 +1,19 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 
 namespace touchgfx
@@ -42,14 +43,14 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
         count = bitmapRectToFrameBuffer.width - currentX;
     }
 
-    const uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
+    const uint16_t* const p_lineend = p + count;
     if (bitmap.getFormat() == Bitmap::RGB565)
     {
         const uint16_t* src = bitmapRGB565Pointer;
         const uint8_t* srcAlpha = bitmapAlphaPointer;
         if (srcAlpha)
         {
-            if (totalAlpha == 0xFF)
+            if (widgetAlpha == 0xFF)
             {
                 do
                 {
@@ -66,13 +67,13 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
                     }
                     p++;
                     src++;
-                } while (--count != 0);
+                } while (p < p_lineend);
             }
             else
             {
                 do
                 {
-                    const uint8_t alpha = LCD::div255((*covers++) * LCD::div255((*srcAlpha++) * totalAlpha));
+                    const uint8_t alpha = LCD::div255((*covers++) * LCD::div255((*srcAlpha++) * widgetAlpha));
                     if (alpha) // This can never get to max=0XFF as totalAlpha<0xFF
                     {
                         // Non-Transparent pixel
@@ -80,12 +81,12 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
                     }
                     p++;
                     src++;
-                } while (--count != 0);
+                } while (p < p_lineend);
             }
         }
         else
         {
-            if (totalAlpha == 0xFF)
+            if (widgetAlpha == 0xFF)
             {
                 do
                 {
@@ -103,26 +104,26 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
                     }
                     p++;
                     src++;
-                } while (--count != 0);
+                } while (p < p_lineend);
             }
             else
             {
                 do
                 {
-                    const uint8_t alpha = LCD::div255((*covers++) * totalAlpha);
+                    const uint8_t alpha = LCD::div255((*covers++) * widgetAlpha);
 
                     *p = mixColors(*src, *p, alpha);
 
                     p++;
                     src++;
-                } while (--count != 0);
+                } while (p < p_lineend);
             }
         }
     }
     else if (bitmap.getFormat() == Bitmap::ARGB8888)
     {
         const uint32_t* src = bitmapARGB8888Pointer;
-        if (totalAlpha == 0xFF)
+        if (widgetAlpha == 0xFF)
         {
             uint32_t newpix;
             do
@@ -142,7 +143,7 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
                 }
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
         else
         {
@@ -150,7 +151,7 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
             do
             {
                 const uint8_t srcAlpha = (*src) >> 24;
-                const uint8_t alpha = LCD::div255((*covers++) * LCD::div255(srcAlpha * totalAlpha));
+                const uint8_t alpha = LCD::div255((*covers++) * LCD::div255(srcAlpha * widgetAlpha));
                 if (alpha)
                 {
                     // Non-Transparent pixel
@@ -159,7 +160,7 @@ void PainterRGB565Bitmap::render(uint8_t* ptr, int x, int xAdjust, int y, unsign
                 }
                 p++;
                 src++;
-            } while (--count != 0);
+            } while (p < p_lineend);
         }
     }
 }
@@ -251,8 +252,6 @@ bool PainterRGB565Bitmap::renderNext(uint8_t& red, uint8_t& green, uint8_t& blue
             alpha = 0xFF; // No alpha per pixel in the image, it is solid
         }
     }
-    // Apply given alpha from setAlpha()
-    alpha = LCD::div255(alpha * painterAlpha);
     return true;
 }
 } // namespace touchgfx

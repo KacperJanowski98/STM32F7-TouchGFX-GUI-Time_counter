@@ -1,25 +1,22 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/hal/OSWrappers.hpp
  *
  * Declares the touchgfx::OSWrappers class.
  */
-#ifndef OSWRAPPERS_HPP
-#define OSWRAPPERS_HPP
+#ifndef TOUCHGFX_OSWRAPPERS_HPP
+#define TOUCHGFX_OSWRAPPERS_HPP
 
 #include <touchgfx/hal/Types.hpp>
 
@@ -103,8 +100,20 @@ public:
      * @see HAL::setFrameRefreshStrategy, HAL::registerTaskDelayFunction
      */
     static void taskDelay(uint16_t ms);
+
+    /**
+     * A function that causes the executing task to yield control to
+     * another thread. This function is used by the framework when it
+     * is necessary to wait a little before continuing (e.g. drawing).
+     *
+     * The implementation should typically request the operating
+     * system to change to another task of similar priority. When
+     * running without an operating system, the implementation can run
+     * a very short task and return.
+     */
+    static void taskYield();
 };
 
 } // namespace touchgfx
 
-#endif // OSWRAPPERS_HPP
+#endif // TOUCHGFX_OSWRAPPERS_HPP

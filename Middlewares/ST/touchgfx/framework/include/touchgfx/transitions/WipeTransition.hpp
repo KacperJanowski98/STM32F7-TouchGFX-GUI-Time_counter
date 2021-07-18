@@ -1,43 +1,38 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/transitions/WipeTransition.hpp
  *
  * Declares the touchgfx::WipeTransition class.
  */
-#ifndef WIPETRANSITION_HPP
-#define WIPETRANSITION_HPP
+#ifndef TOUCHGFX_WIPETRANSITION_HPP
+#define TOUCHGFX_WIPETRANSITION_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/EasingEquations.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/hal/HAL.hpp>
-#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/transitions/Transition.hpp>
 #include <touchgfx/widgets/Widget.hpp>
 
 namespace touchgfx
 {
-class Container;
-class Widget;
-
 /**
  * A Transition that expands the new screen over the previous from
  * the given direction.  This transition only draws the pixels in the
  * framebuffer once, and never moves any pixels. It is therefore very
- * usefull on MCUs with limited performance.
+ * useful on MCUs with limited performance.
  */
 template <Direction templateDirection>
 class WipeTransition : public Transition
@@ -239,4 +234,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // WIPETRANSITION_HPP
+#endif // TOUCHGFX_WIPETRANSITION_HPP

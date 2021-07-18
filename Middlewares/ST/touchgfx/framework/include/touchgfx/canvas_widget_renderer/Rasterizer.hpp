@@ -1,28 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/canvas_widget_renderer/Rasterizer.hpp
  *
  * Declares the touchgfx::Rasterizer class. Used internally by CanvasWidgetRenderer.
  */
-#ifndef RASTERIZER_HPP
-#define RASTERIZER_HPP
+#ifndef TOUCHGFX_RASTERIZER_HPP
+#define TOUCHGFX_RASTERIZER_HPP
 
 #include <touchgfx/canvas_widget_renderer/Outline.hpp>
-#include <touchgfx/canvas_widget_renderer/Rasterizer.hpp>
 #include <touchgfx/canvas_widget_renderer/Renderer.hpp>
 #include <touchgfx/canvas_widget_renderer/Scanline.hpp>
 
@@ -74,7 +70,7 @@ public:
 
     /**
      * Determine the area accuracy, to be more precise, the number of bits of the fractional
-     * part of the areas when calculating scanlines.
+     * part of the areas when calculating scan lines.
      */
     enum
     {
@@ -88,13 +84,13 @@ public:
     /** Values that represent filling rules. */
     enum FillingRule
     {
-        FILL_NON_ZERO, ///< Filling rule to fill anything inside the outmost border of the outline.
+        FILL_NON_ZERO, ///< Filling rule to fill anything inside the outermost border of the outline.
         FILL_EVEN_ODD  ///< Filling rule to fill using xor rule inside the outline.
     };
 
     /** Initializes a new instance of the Rasterizer class. */
     Rasterizer()
-        : fillingRule(FILL_NON_ZERO)
+        : outline(), scanline(), fillingRule(FILL_NON_ZERO)
     {
     }
 
@@ -155,7 +151,7 @@ public:
      */
     unsigned calculateAlpha(int area) const
     {
-        int cover = area >> (Rasterizer::POLY_BASE_SHIFT * 2 + 1 - AA_SHIFT);
+        int cover = area >> (POLY_BASE_SHIFT * 2 + 1 - AA_SHIFT);
 
         if (cover < 0)
         {
@@ -236,7 +232,7 @@ public:
 
             if (area)
             {
-                alpha = calculateAlpha((cover << (Rasterizer::POLY_BASE_SHIFT + 1)) - area);
+                alpha = calculateAlpha((cover << (POLY_BASE_SHIFT + 1)) - area);
                 if (alpha)
                 {
                     if (scanline.isReady(y))
@@ -256,7 +252,7 @@ public:
 
             if (curCell->x > x)
             {
-                alpha = calculateAlpha(cover << (Rasterizer::POLY_BASE_SHIFT + 1));
+                alpha = calculateAlpha(cover << (POLY_BASE_SHIFT + 1));
                 if (alpha)
                 {
                     if (scanline.isReady(y))
@@ -322,4 +318,4 @@ private:
 } // namespace touchgfx
 /// @endcond
 
-#endif // RASTERIZER_HPP
+#endif // TOUCHGFX_RASTERIZER_HPP

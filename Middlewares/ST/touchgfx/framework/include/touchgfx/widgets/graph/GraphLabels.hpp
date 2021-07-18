@@ -1,26 +1,27 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/graph/GraphLabels.hpp
  *
  * Declares classes for adding labels and title to the graph.
  */
-#ifndef GRAPHLABELS_HPP
-#define GRAPHLABELS_HPP
+#ifndef TOUCHGFX_GRAPHLABELS_HPP
+#define TOUCHGFX_GRAPHLABELS_HPP
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Font.hpp>
+#include <touchgfx/TypedText.hpp>
+#include <touchgfx/Unicode.hpp>
 #include <touchgfx/widgets/graph/AbstractDataGraph.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 
@@ -316,4 +317,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // GRAPHLABELS_HPP
+#endif // TOUCHGFX_GRAPHLABELS_HPP

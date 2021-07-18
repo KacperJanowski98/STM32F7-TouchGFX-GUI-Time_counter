@@ -55,4 +55,4 @@ int8_t CachedFont::getKerning(Unicode::UnicodeChar prevChar, const GlyphNode* gl
     //Kerning is not supported by Font Caching
     return 0;
 }
-}
+} // namespace touchgfx

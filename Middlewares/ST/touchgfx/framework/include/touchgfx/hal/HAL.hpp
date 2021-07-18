@@ -1,44 +1,39 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/hal/HAL.hpp
  *
  * Declares the touchgfx::HAL class.
  */
-#ifndef HAL_HPP
-#define HAL_HPP
+#ifndef TOUCHGFX_HAL_HPP
+#define TOUCHGFX_HAL_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/Drawable.hpp>
-#include <touchgfx/Unicode.hpp>
 #include <touchgfx/hal/BlitOp.hpp>
 #include <touchgfx/hal/DMA.hpp>
 #include <touchgfx/hal/FrameBufferAllocator.hpp>
 #include <touchgfx/hal/Gestures.hpp>
-#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/lcd/LCD.hpp>
-
 #include <platform/core/MCUInstrumentation.hpp>
 #include <platform/driver/button/ButtonController.hpp>
 #include <platform/driver/touch/TouchController.hpp>
 
 namespace touchgfx
 {
-class UIEventListener;
 class FlashDataReader;
+class UIEventListener;
 
 /**
  * Hardware Abstraction Layer.
@@ -64,6 +59,8 @@ public:
           mcuInstrumentation(0),
           buttonController(0),
           frameBufferAllocator(0),
+          gestures(),
+          nativeDisplayOrientation(ORIENTATION_LANDSCAPE),
           taskDelayFunc(0),
           frameBuffer0(0),
           frameBuffer1(0),
@@ -71,7 +68,12 @@ public:
           refreshStrategy(REFRESH_STRATEGY_DEFAULT),
           fingerSize(1),
           lockDMAToPorch(false),
+          frameBufferUpdatedThisFrame(false),
           auxiliaryLCD(0),
+          partialFrameBufferRect(),
+          listener(0),
+          lastX(0),
+          lastY(0),
           touchSampleRate(1),
           mcuLoadPct(0),
           vSyncCnt(0),
@@ -82,10 +84,11 @@ public:
           lastTouched(false),
           updateMCULoad(0),
           cc_begin(0),
+          requestedOrientation(ORIENTATION_LANDSCAPE),
           displayOrientationChangeRequested(false),
           useAuxiliaryLCD(false),
           useDMAAcceleration(true),
-          lastRenderVariant(HARDWARE)
+          lastRenderMethod(HARDWARE)
     {
         instance = this;
         DISPLAY_WIDTH = width;
@@ -150,8 +153,12 @@ public:
         dma.signalDMAInterrupt();
     }
 
-    /** This function is responsible for initializing the entire framework. */
-    void initialize();
+    /**
+     * This function initializes the HAL, DMA, TouchController, and interrupts.
+     *
+     * @see configureInterrupts
+     */
+    virtual void initialize();
 
     /**
      * Main event loop. Will wait for VSYNC signal, and then process next frame. Call this
@@ -229,10 +236,7 @@ public:
         {
             return *instance->auxiliaryLCD;
         }
-        else
-        {
-            return instance->lcdRef;
-        }
+        return instance->lcdRef;
     }
 
     /**
@@ -327,7 +331,7 @@ public:
      * @note Alpha=255 is assumed "solid" and shall be used if HAL does not support
      *       BLIT_OP_COPY_WITH_ALPHA.
      */
-    void blitCopy(const uint16_t* pSrc, const uint8_t* pClut, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t srcWidth, uint8_t alpha, bool hasTransparentPixels, uint16_t dstWidth, Bitmap::BitmapFormat srcFormat, Bitmap::BitmapFormat dstFormat);
+    virtual void blitCopy(const uint16_t* pSrc, const uint8_t* pClut, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t srcWidth, uint8_t alpha, bool hasTransparentPixels, uint16_t dstWidth, Bitmap::BitmapFormat srcFormat, Bitmap::BitmapFormat dstFormat);
 
     /**
      * Blits a 2D source-array to the framebuffer performing alpha-blending as specified.
@@ -373,6 +377,43 @@ public:
      *       BLIT_OP_COPY_WITH_ALPHA.
      */
     virtual void blitCopy(const uint16_t* pSrc, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t srcWidth, uint8_t alpha, bool hasTransparentPixels);
+
+    /**
+     * Blits a 2D source-array to the framebuffer using 16-bit copy
+     * without conversion. This operation can be used to perform
+     * hardware accelerated copies to the framebuffer even when the
+     * image (and framebuffer) format is not 16-bit.
+     *
+     * All parameters (e.g. x) must correspond to their 16-bit
+     * values. I.e. the 10th bytes corresponds to x=5.
+     *
+     * @param pSrc     Pointer to the source data (points to first value to copy)
+     * @param x        The destination x coordinate in the framebuffer with 16-bit pixels.
+     * @param y        The destination y coordinate in the framebuffer with 16-bit pixels.
+     * @param width    The width of the area to copy in 16-bit pixels.
+     * @param height   The height of the area to copy
+     * @param srcWidth The width of the source bitmap (stride) in 16-bit pixels.
+     * @param dstWidth The width of the framebuffer in 16-bit pixels.
+     */
+    virtual void blitCopyWord(const uint16_t* pSrc, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t srcWidth, uint16_t dstWidth);
+
+    /**
+     * Fills a part of the framebuffer using 16-bit fill without
+     * conversion. This operation can be used to perform hardware
+     * accelerated fills in the framebuffer even when the framebuffer
+     * format is not 16-bit.
+     *
+     * All parameters (e.g. x) must correspond to their 16-bit
+     * values. I.e. the 10th bytes corresponds to x=5.
+     *
+     * @param colorValue The 16-bit value to fill in the framebuffer.
+     * @param x          The destination x coordinate in the framebuffer with 16-bit pixels.
+     * @param y          The destination y coordinate in the framebuffer with 16-bit pixels.
+     * @param width      The width of the area to copy in 16-bit pixels.
+     * @param height     The height of the area to copy
+     * @param dstWidth   The width of the framebuffer in 16-bit pixels.
+     */
+    virtual void blitFillWord(uint16_t colorValue, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t dstWidth);
 
     /**
      * Blits a 2D source-array to the framebuffer performing per-pixel alpha blending.
@@ -804,12 +845,12 @@ public:
      *
      * @see setFrameRefreshStrategy
      */
-    typedef enum
+    enum FrameRefreshStrategy
     {
         REFRESH_STRATEGY_DEFAULT,                      ///< If not explicitly set, this strategy is used.
         REFRESH_STRATEGY_OPTIM_SINGLE_BUFFER_TFT_CTRL, ///< Strategy optimized for single framebuffer on systems with TFT controller.
         REFRESH_STRATEGY_PARTIAL_FRAMEBUFFER           ///< Strategy using less than a full framebuffer.
-    } FrameRefreshStrategy;
+    };
 
     /**
      * Set a specific strategy for handling timing and mechanism of framebuffer drawing.
@@ -988,24 +1029,24 @@ public:
     }
 
     /**
-     * A list of rendering variants.
+     * A list of rendering methods.
      *
-     * @see setRenderingVariant
+     * @see setRenderingMethod
      */
-    typedef enum
+    enum RenderingMethod
     {
         SOFTWARE,
         HARDWARE
-    } RenderingVariant;
+    };
 
     /**
-     * Set current rendering variant for cache maintenance.
+     * Set current rendering method for cache maintenance.
      *
-     * This function is used to keep track of previous rendering variant and will determine if cache should be flush or invalidated depending on transition state.
+     * This function is used to keep track of previous rendering method and will determine if cache should be flush or invalidated depending on transition state.
      *
-     * @param variant The rendering variant used.
+     * @param method The rendering method used.
      */
-    void setRenderingVariant(RenderingVariant variant);
+    void setRenderingMethod(RenderingMethod method);
 
 protected:
     /** This function is called at each timer tick, depending on platform implementation. */
@@ -1080,23 +1121,21 @@ protected:
     /**
      * Invalidate D-Cache.
      *
-     * Called by setRenderingVariant when chaning rendering variant
+     * Called by setRenderingMethod when changing rendering method
      * from Hardware to Software indicating the cache should be invalidated.
      */
     virtual void InvalidateCache()
     {
-
     }
 
     /**
      * Flush D-Cache.
      *
-     * Called by setRenderingVariant when chaning rendering variant
+     * Called by setRenderingMethod when changing rendering method
      * from Software to Hardware indicating the cache should be invalidated.
      */
     virtual void FlushCache()
     {
-
     }
 
     DMA_Interface& dma;                          ///< A reference to the DMA interface.
@@ -1138,7 +1177,7 @@ private:
     bool displayOrientationChangeRequested;
     bool useAuxiliaryLCD;
     bool useDMAAcceleration;
-    RenderingVariant lastRenderVariant;
+    RenderingMethod lastRenderMethod;
 
     uint16_t* getDstAddress(uint16_t x, uint16_t y, uint16_t* startAddress, uint16_t dstWidth, Bitmap::BitmapFormat dstFormat) const;
     uint16_t* getDstAddress(uint16_t x, uint16_t y, uint16_t* startAddress) const;
@@ -1147,4 +1186,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // HAL_HPP
+#endif // TOUCHGFX_HAL_HPP

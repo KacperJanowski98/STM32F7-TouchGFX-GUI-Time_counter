@@ -9,8 +9,7 @@
 extern touchgfx::<%= font_class_name%>& <%= font%>();
 <% end %>
 
-const touchgfx::Font* touchgfx_fonts[] =
-{
+const touchgfx::Font* touchgfx_fonts[] = {
 <% if fonts.empty? %>
     0
 <% end %>
@@ -27,8 +26,7 @@ extern const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[];
 
 <% if generate_binary_files? %>
 TEXT_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::Unicode::UnicodeChar EmptyLanguageTexts[] TEXT_LOCATION_FLASH_ATTRIBUTE =
-{
+KEEP extern const touchgfx::Unicode::UnicodeChar EmptyLanguageTexts[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
 <% layouts.each do |layout| %>
 <% typed_texts(layout).each_with_index do |entry, index| %>
     <%= '0' << ((index==typed_texts(layout).length-1) ? ' ': ',') %>
@@ -38,8 +36,7 @@ KEEP extern const touchgfx::Unicode::UnicodeChar EmptyLanguageTexts[] TEXT_LOCAT
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
-KEEP extern const uint32_t EmptyLanguageIndices[] TEXT_LOCATION_FLASH_ATTRIBUTE =
-{
+KEEP extern const uint32_t EmptyLanguageIndices[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
 <% layouts.each do |layout| %>
 <% index_acc = 0 %><% typed_texts(layout).each_with_index do |entry, index| %>
     <%= index_acc.to_s << ((index==typed_texts(layout).length-1) ? ' ': ',') %><% index_acc += 1 %>
@@ -49,8 +46,7 @@ KEEP extern const uint32_t EmptyLanguageIndices[] TEXT_LOCATION_FLASH_ATTRIBUTE 
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
-const touchgfx::TypedText::TypedTextData typedText_database_EMPTY[] TEXT_LOCATION_FLASH_ATTRIBUTE =
-{
+const touchgfx::TypedText::TypedTextData typedText_database_EMPTY[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
 <% layouts.each do |layout| %>
 <% typed_texts(layout).each_with_index do |entry, index| %>
     <%= ('{ 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }').to_s << ((index==typed_texts(layout).length-1) ? ' ': ',') %>
@@ -61,8 +57,7 @@ const touchgfx::TypedText::TypedTextData typedText_database_EMPTY[] TEXT_LOCATIO
 <% else %>
 <% layouts.each do |layout| %>
 TEXT_LOCATION_FLASH_PRAGMA
-const touchgfx::TypedText::TypedTextData typedText_database_<%= layout %>[] TEXT_LOCATION_FLASH_ATTRIBUTE =
-{
+const touchgfx::TypedText::TypedTextData typedText_database_<%= layout %>[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
 <% if typed_texts(layout).empty?%>
     { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
 <% end %>
@@ -78,8 +73,7 @@ const touchgfx::TypedText::TypedTextData typedText_database_<%= layout %>[] TEXT
 <% end %>
 
 TEXT_LOCATION_FLASH_PRAGMA
-const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[] TEXT_LOCATION_FLASH_ATTRIBUTE =
-{
+const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
 <% if generate_binary_files? %>
 <% text_entries.languages.each_with_index do |entry,index| %>
 <% if (index==text_entries.languages.length-1) %>
@@ -142,4 +136,4 @@ void resetFont(touchgfx::FontId fontId)
     }
 <% end %>
 }
-}  // namespace TypedTextDatabase
+} // namespace TypedTextDatabase

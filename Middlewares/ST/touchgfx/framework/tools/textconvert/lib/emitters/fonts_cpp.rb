@@ -1,16 +1,13 @@
-##############################################################################
-# This file is part of the TouchGFX 4.16.1 distribution.
+# Copyright (c) 2018(-2021) STMicroelectronics.
+# All rights reserved.
 #
-# <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-# All rights reserved.</center></h2>
+# This file is part of the TouchGFX 4.17.0 distribution.
 #
-# This software component is licensed by ST under Ultimate Liberty license
-# SLA0044, the "License"; You may not use this file except in compliance with
-# the License. You may obtain a copy of the License at:
-#                             www.st.com/SLA0044
+# This software is licensed under terms that can be found in the LICENSE file in
+# the root directory of this software component.
+# If no LICENSE file comes with this software, it is provided AS-IS.
 #
-##############################################################################
-
+###############################################################################/
 class FontsCpp
   def self.font_convert=(font_convert)
     @@font_convert = font_convert
@@ -63,15 +60,20 @@ class FontsCpp
       end
     end
 
+    context_tables_is_generated = {}
+    generate_contextual_table = false
     unique_typographies.sort_by { |t| sprintf("%s %04d %d",t.font_file,t.font_size,t.bpp) }.each do |typography|
-      fonts_directory = File.expand_path(@output_directory)
-      font_file = File.expand_path("#{@font_asset_path}/#{typography.font_file}")
+      fonts_directory = @output_directory
+      font_file = "#{@font_asset_path}/#{typography.font_file}"
       font_index = fontmap["getFont_#{typography.cpp_name}_#{typography.font_size}_#{typography.bpp}bpp"]
       fallback_char = typography[:fallback_character]
       fallback_char ||= 0
       ellipsis_char = typography[:ellipsis_character]
       ellipsis_char ||= 0
       byte_align = @data_format.match("A#{typography.bpp}") ? "-ba" : ""
+      #generate contextual forms table for font if not already done
+      generate_contextual_table = context_tables_is_generated[typography.cpp_name] ? "no" : "yes"
+      context_tables_is_generated[typography.cpp_name] = true #set done for next font with this name
       cmd = "\"#{@@font_convert}\" \
 -f \"#{font_file}\" \
 -i #{font_index} \
@@ -83,6 +85,7 @@ class FontsCpp
 -b #{typography.bpp} \
 -d #{fallback_char} \
 -e #{ellipsis_char} \
+-ct #{generate_contextual_table} \
 -bf #{@generate_binary_fonts} \
 -ff #{@generate_font_format} \
 #{byte_align}"

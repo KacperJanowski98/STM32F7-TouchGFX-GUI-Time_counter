@@ -1,28 +1,25 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Font.hpp
  *
  * Declares the touchgfx::Font class.
  */
-#ifndef FONT_HPP
-#define FONT_HPP
+#ifndef TOUCHGFX_FONT_HPP
+#define TOUCHGFX_FONT_HPP
 
-#include <touchgfx/Unicode.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Unicode.hpp>
 
 namespace touchgfx
 {
@@ -40,7 +37,7 @@ enum GlyphFlags
 #pragma pack(2)
 
 /** struct providing information about a glyph. Used by LCD when rendering. */
-typedef struct GlyphNode
+struct GlyphNode
 {
     uint32_t dataOffset;          ///< The index to the data of this glyph
     Unicode::UnicodeChar unicode; ///< The Unicode of this glyph.
@@ -116,7 +113,7 @@ typedef struct GlyphNode
     {
         return ((flags & GLYPH_DATA_ADVANCE_BIT8) << 1) | _advance;
     }
-} GlyphNode;
+};
 #pragma pack()
 
 #pragma pack(2)
@@ -125,15 +122,39 @@ typedef struct GlyphNode
  * Structure providing information about a kerning for a given pair of characters. Used by LCD
  * when rendering, calculating text width etc.
  */
-typedef struct
+struct KerningNode
 {
     Unicode::UnicodeChar unicodePrevChar; ///< The Unicode for the first character in the kerning pair
     int8_t distance;                      ///< The kerning distance
-} KerningNode;
+};
 #pragma pack()
 
 /** Defines an alias representing a Font ID. */
 typedef uint16_t FontId;
+
+/**
+ * Structure providing information about the contextual forms
+ * available in a font.
+ */
+struct FontContextualFormsTable
+{
+    /** Defines pointer to array of 5 unicodes type */
+    typedef const Unicode::UnicodeChar (*arrayOf5UnicodesPtr)[5];
+
+    /** Defines pointer to array of 4 unicodes type */
+    typedef const Unicode::UnicodeChar (*arrayOf4UnicodesPtr)[4];
+
+    const Unicode::UnicodeChar (*contextualForms4Long)[5];     ///< Table of contextual forms for sequences of 4 glyphs
+    const Unicode::UnicodeChar (*contextualForms3Long)[5];     ///< Table of contextual forms for sequences of 3 glyphs
+    const Unicode::UnicodeChar (*contextualForms2Long)[5];     ///< Table of contextual forms for sequences of 2 glyphs
+    const Unicode::UnicodeChar (*contextualForms0621_063a)[4]; ///< Table of contextual forms for glyphs 0x0621 to 0x63A
+    const Unicode::UnicodeChar (*contextualForms0641_064a)[4]; ///< Table of contextual forms for glyphs 0x0641 to 0x64A
+    const Unicode::UnicodeChar (*contextualForms06XX)[5];      ///< Table of contextual forms for remaining glyphs 0x06XX
+    uint16_t contextualForms4LongSize;                         ///< Length of the table
+    uint16_t contextualForms3LongSize;                         ///< Length of the table
+    uint16_t contextualForms2LongSize;                         ///< Length of the table
+    uint16_t contextualForms06XXSize;                          ///< Length of the table
+};
 
 /**
  * The font base class. This class is abstract and requires the implementation of getGlyph. It
@@ -390,6 +411,16 @@ public:
     }
 
     /**
+     * Gets the contextual forms table used in arabic fonts.
+     *
+     * @return The FontContextualFormsTable or null if the font has no table.
+     */
+    virtual const FontContextualFormsTable* getContextualFormsTable() const
+    {
+        return 0;
+    }
+
+    /**
      * Query if 'character' is invisible, zero width.
      *
      * @param  character The character.
@@ -477,4 +508,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // FONT_HPP
+#endif // TOUCHGFX_FONT_HPP

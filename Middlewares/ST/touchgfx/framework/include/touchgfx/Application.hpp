@@ -1,31 +1,28 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Application.hpp
  *
  * Declares the application class.
  */
-#ifndef APPLICATION_HPP
-#define APPLICATION_HPP
+#ifndef TOUCHGFX_APPLICATION_HPP
+#define TOUCHGFX_APPLICATION_HPP
 
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/UIEventListener.hpp>
 #include <touchgfx/events/ClickEvent.hpp>
 #include <touchgfx/events/DragEvent.hpp>
 #include <touchgfx/events/GestureEvent.hpp>
-#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/lcd/LCD.hpp>
 
 namespace touchgfx
@@ -89,13 +86,11 @@ public:
     virtual void requestRedraw(Rect& rect)
     {
         redraw = rect;
-    };
+    }
 
     /**
      * Initiate a draw operation of the entire screen. Standard implementation is to
      * delegate draw request to the current Screen.
-     *
-     * @deprecated Use draw(Rect&)
      */
     virtual void draw();
 
@@ -116,25 +111,25 @@ public:
      * screen. Called by the framework when a click is detected by some platform specific
      * means.
      *
-     * @param evt The ClickEvent.
+     * @param event The ClickEvent.
      */
-    virtual void handleClickEvent(const ClickEvent& evt);
+    virtual void handleClickEvent(const ClickEvent& event);
 
     /**
      * Handle drag events. Called by the framework when a drag is detected by some platform
      * specific means. Standard implementation is to delegate drag event to current screen.
      *
-     * @param evt The drag event, expressed in absolute coordinates.
+     * @param event The drag event, expressed in absolute coordinates.
      */
-    virtual void handleDragEvent(const DragEvent& evt);
+    virtual void handleDragEvent(const DragEvent& event);
 
     /**
      * Handle gestures. Called by the framework when a gesture is detected by some platform
      * specific means. Standard implementation is to delegate drag event to current screen.
      *
-     * @param evt The gesture event.
+     * @param event The gesture event.
      */
-    virtual void handleGestureEvent(const GestureEvent& evt);
+    virtual void handleGestureEvent(const GestureEvent& event);
 
     /**
      * Handle tick. Standard implementation is to delegate tick to the widgets that have
@@ -297,4 +292,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // APPLICATION_HPP
+#endif // TOUCHGFX_APPLICATION_HPP

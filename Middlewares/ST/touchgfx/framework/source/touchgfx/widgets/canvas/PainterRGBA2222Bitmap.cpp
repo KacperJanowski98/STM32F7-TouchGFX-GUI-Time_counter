@@ -1,19 +1,21 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/Bitmap.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/transforms/DisplayTransformation.hpp>
 #include <touchgfx/widgets/canvas/PainterRGBA2222Bitmap.hpp>
+#include <platform/driver/lcd/LCD8bpp_RGBA2222.hpp>
 
 namespace touchgfx
 {
@@ -47,9 +49,9 @@ void PainterRGBA2222Bitmap::render(uint8_t* ptr,
         count = bitmapRectToFrameBuffer.width - currentX;
     }
 
-    const uint8_t totalAlpha = LCD::div255(widgetAlpha * painterAlpha);
+    const uint8_t* const p_lineend = p + count;
     const uint8_t* src = bitmapRGBA2222Pointer;
-    if (totalAlpha == 0xFF)
+    if (widgetAlpha == 0xFF)
     {
         do
         {
@@ -67,7 +69,7 @@ void PainterRGBA2222Bitmap::render(uint8_t* ptr,
             }
             p++;
             src++;
-        } while (--count != 0);
+        } while (p < p_lineend);
     }
     else
     {
@@ -82,7 +84,7 @@ void PainterRGBA2222Bitmap::render(uint8_t* ptr,
             }
             p++;
             src++;
-        } while (--count != 0);
+        } while (p < p_lineend);
     }
 }
 
@@ -126,14 +128,12 @@ bool PainterRGBA2222Bitmap::renderNext(uint8_t& red, uint8_t& green, uint8_t& bl
     }
     else if (bitmapRGBA2222Pointer != 0)
     {
-        uint16_t RGBA2222 = *bitmapRGBA2222Pointer++;
-        red = LCD8bpp_RGBA2222::getRedFromColor(RGBA2222);
-        green = LCD8bpp_RGBA2222::getGreenFromColor(RGBA2222);
-        blue = LCD8bpp_RGBA2222::getBlueFromColor(RGBA2222);
-        alpha = (RGBA2222 & 0x03) * 0x55; // To get full range 0-0xFF
+        uint8_t RGBA2222 = *bitmapRGBA2222Pointer++;
+        red = LCD8bpp_RGBA2222::getRedFromNativeColor(RGBA2222);
+        green = LCD8bpp_RGBA2222::getGreenFromNativeColor(RGBA2222);
+        blue = LCD8bpp_RGBA2222::getBlueFromNativeColor(RGBA2222);
+        alpha = LCD8bpp_RGBA2222::getAlphaFromNativeColor(RGBA2222);
     }
-    // Apply given alpha from setAlpha()
-    alpha = LCD::div255(alpha * painterAlpha);
     return true;
 }
 } // namespace touchgfx

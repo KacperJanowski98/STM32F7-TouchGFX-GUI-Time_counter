@@ -1,27 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/widgets/TextureMapper.hpp
  *
  * Declares the touchgfx::TextureMapper class.
  */
-#ifndef TEXTUREMAPPER_HPP
-#define TEXTUREMAPPER_HPP
+#ifndef TOUCHGFX_TEXTUREMAPPER_HPP
+#define TOUCHGFX_TEXTUREMAPPER_HPP
 
-#include <math.h> //lint !e829
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
@@ -107,6 +104,61 @@ public:
     }
 
     /**
+     * Sets the angles of the image.
+     *
+     * @param  newXAngle The new x Angle.
+     * @param  newYAngle The new y Angle.
+     * @param  newZAngle The new x Angle.
+     *
+     * @see updateAngles, getXAngle, getYAngle, getZAngle
+     *
+     * @note The area covered by the image before/after changing the angles is NOT invalidated.
+     */
+    virtual void setAngles(float newXAngle, float newYAngle, float newZAngle);
+
+    /**
+     * Sets the x angle.
+     *
+     * @param  newXAngle The new x angle.
+     *
+     * @see setAngles, updateXAngle, getXAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
+     */
+    virtual void setXAngle(float newXAngle)
+    {
+        setAngles(newXAngle, yAngle, zAngle);
+    }
+
+    /**
+     * Sets the y angle.
+     *
+     * @param  newYAngle The new y angle.
+     *
+     * @see setAngles, updateYAngle, getYAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
+     */
+    virtual void setYAngle(float newYAngle)
+    {
+        setAngles(xAngle, newYAngle, zAngle);
+    }
+
+    /**
+     * Sets the z angle.
+     *
+     * @param  newZAngle The new z angle.
+     *
+     * @see setAngles, updateZAngle, getZAngle
+     *
+     * @note The area covered by the image before/after changing the angle is NOT invalidated.
+     */
+    virtual void setZAngle(float newZAngle)
+    {
+        setAngles(xAngle, yAngle, newZAngle);
+    }
+
+    /**
      * Updates the angles of the image. The area covered by the image before and after
      * changing the angles is invalidated, which is the smallest required rectangle.
      *
@@ -114,7 +166,7 @@ public:
      * @param  newYAngle The new y Angle.
      * @param  newZAngle The new x Angle.
      *
-     * @see updateXAngle, updateYAngle, updateZAngle, getXAngle, getYAngle, getZAngle
+     * @see setAngles, updateXAngle, updateYAngle, updateZAngle, getXAngle, getYAngle, getZAngle
      */
     virtual void updateAngles(float newXAngle, float newYAngle, float newZAngle);
 
@@ -193,11 +245,21 @@ public:
     /**
      * Sets the scale of the image.
      *
-     * @param  scale The new scale value.
+     * @param  newScale The new scale value.
      *
-     * @see getScale
+     * @see updateScale, getScale
      */
-    virtual void setScale(float scale);
+    virtual void setScale(float newScale);
+
+    /**
+     * Updates the scale of the image. This implies invalidating the area covered by the texture
+     * mapper.
+     *
+     * @param  newScale The new scale value.
+     *
+     * @see setScale, getScale
+     */
+    virtual void updateScale(float newScale);
 
     /**
      * Gets the scale of the image.
@@ -607,4 +669,4 @@ protected:
 
 } // namespace touchgfx
 
-#endif // TEXTUREMAPPER_HPP
+#endif // TOUCHGFX_TEXTUREMAPPER_HPP

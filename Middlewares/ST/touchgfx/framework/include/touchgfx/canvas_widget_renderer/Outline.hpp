@@ -1,25 +1,22 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/canvas_widget_renderer/Outline.hpp
  *
  * Declares the touchgfx::Outline class. Used internally by CanvasWidgetRenderer.
  */
-#ifndef OUTLINE_HPP
-#define OUTLINE_HPP
+#ifndef TOUCHGFX_OUTLINE_HPP
+#define TOUCHGFX_OUTLINE_HPP
 
 #include <touchgfx/canvas_widget_renderer/Cell.hpp>
 
@@ -28,7 +25,7 @@ namespace touchgfx
 {
 /**
  * An internal class that implements the main rasterization algorithm. Used in the Rasterizer.
- * Should not be used direcly.
+ * Should not be used directly.
  */
 class Outline
 {
@@ -117,6 +114,14 @@ private:
      */
     void setCurCell(int x, int y);
 
+    /**
+     * Sets coordinate of the current Cell without checking if x,y differs from the curCell's x,y.
+     *
+     * @param  x The x coordinate.
+     * @param  y The y coordinate.
+     */
+    void setCurCellNew(int x, int y);
+
     /** Adds current cell to the Outline. */
     void addCurCell();
 
@@ -156,7 +161,6 @@ private:
      */
     static void qsortCells(Cell* const start, unsigned num);
 
-private:
     unsigned maxCells;
     unsigned numCells;
     Cell* cells;
@@ -182,4 +186,4 @@ private:
 } // namespace touchgfx
 /// @endcond
 
-#endif // OUTLINE_HPP
+#endif // TOUCHGFX_OUTLINE_HPP

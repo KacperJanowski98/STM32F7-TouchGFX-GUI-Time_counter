@@ -1,27 +1,24 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/TextProvider.hpp
  *
  * Declares the touchgfx::TextProvider class.
  */
-#ifndef TEXTPROVIDER_HPP
-#define TEXTPROVIDER_HPP
+#ifndef TOUCHGFX_TEXTPROVIDER_HPP
+#define TOUCHGFX_TEXTPROVIDER_HPP
 
-#include <stdarg.h>
+#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Font.hpp>
 #include <touchgfx/Unicode.hpp>
 
@@ -55,8 +52,9 @@ public:
      * @param  stringFormat The string to format.
      * @param  pArg         Format arguments in the form of a va_list.
      * @param  gsubTable    (Optional) Pointer to GSUB table with Unicode substitution rules.
+     * @param  formsTable   (Optional) Pointer to contextual forms table with Unicode substitution rules (for arabic).
      */
-    void initialize(const Unicode::UnicodeChar* stringFormat, va_list pArg, const uint16_t* gsubTable = 0);
+    void initialize(const Unicode::UnicodeChar* stringFormat, va_list pArg, const uint16_t* gsubTable = 0, const FontContextualFormsTable* formsTable = 0);
 
     /**
      * Initializes the TextProvider. Each '\2' character in the format is replaced by one
@@ -64,9 +62,10 @@ public:
      *
      * @param  stringFormat The string to format.
      * @param  gsubTable    (Optional) Pointer to GSUB table with Unicode substitution rules.
+     * @param  formsTable   (Optional) Pointer to contextual forms table with Unicode substitution rules (for arabic).
      * @param  ...          Variable arguments providing additional information.
      */
-    void initialize(const Unicode::UnicodeChar* stringFormat, const uint16_t* gsubTable = 0, ...);
+    void initialize(const Unicode::UnicodeChar* stringFormat, const uint16_t* gsubTable = 0, const FontContextualFormsTable* formsTable = 0, ...);
 
     /**
      * Gets the next character. For Arabic and Thai, it is important to use the
@@ -291,6 +290,7 @@ private:
     void replaceInputCharacters(uint16_t existingNumChars, uint16_t newNumChars, const Unicode::UnicodeChar* newChars);
     void fillInputBuffer();
     const uint16_t* fontGsubTable;
+    const FontContextualFormsTable* contextualFormsTable;
     void substituteGlyphs();
     uint16_t gsubTableBinarySearch(const uint16_t numEntries, const uint16_t* unicodeLookupTable, const Unicode::UnicodeChar key) const;
     bool applyGsubRules(const uint16_t* nextTableEntry, const Unicode::UnicodeChar key);
@@ -315,14 +315,8 @@ private:
 
     bool isContextualBeginning;
     bool lastGlyphIsAccent;
-    static const Unicode::UnicodeChar contextualForms4Long[][5];
-    static const Unicode::UnicodeChar contextualForms3Long[][5];
-    static const Unicode::UnicodeChar contextualForms2Long[][5];
-    static const Unicode::UnicodeChar contextualForms0621_063a[][4];
-    static const Unicode::UnicodeChar contextualForms0641_064a[][4];
-    static const Unicode::UnicodeChar contextualForms06XX[][5];
 };
 
 } // namespace touchgfx
 
-#endif // TEXTPROVIDER_HPP
+#endif // TOUCHGFX_TEXTPROVIDER_HPP

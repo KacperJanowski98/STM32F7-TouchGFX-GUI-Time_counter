@@ -1,25 +1,22 @@
-/**
-  ******************************************************************************
-  * This file is part of the TouchGFX 4.16.1 distribution.
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under Ultimate Liberty license
-  * SLA0044, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0044
-  *
-  ******************************************************************************
-  */
+/******************************************************************************
+* Copyright (c) 2018(-2021) STMicroelectronics.
+* All rights reserved.
+*
+* This file is part of the TouchGFX 4.17.0 distribution.
+*
+* This software is licensed under terms that can be found in the LICENSE file in
+* the root directory of this software component.
+* If no LICENSE file comes with this software, it is provided AS-IS.
+*
+*******************************************************************************/
 
 /**
  * @file touchgfx/Callback.hpp
  *
  * Declares the touchgfx::GenericCallback and touchgfx::Callback classes.
  */
-#ifndef CALLBACK_HPP
-#define CALLBACK_HPP
+#ifndef TOUCHGFX_CALLBACK_HPP
+#define TOUCHGFX_CALLBACK_HPP
 
 namespace touchgfx
 {
@@ -238,9 +235,8 @@ struct Callback : public GenericCallback<T1, T2, T3>
      *                       three arguments.
      */
     Callback(dest_type* pobject, void (dest_type::*pmemfun_3)(T1, T2, T3))
+        : pobject(pobject), pmemfun_3(pmemfun_3)
     {
-        this->pobject = pobject;
-        this->pmemfun_3 = pmemfun_3;
     }
 
     /**
@@ -308,9 +304,8 @@ struct Callback<dest_type, T1, T2, void> : public GenericCallback<T1, T2>
      *                       two arguments.
      */
     Callback(dest_type* pobject, void (dest_type::*pmemfun_2)(T1, T2))
+        : pobject(pobject), pmemfun_2(pmemfun_2)
     {
-        this->pobject = pobject;
-        this->pmemfun_2 = pmemfun_2;
     }
 
     /**
@@ -376,9 +371,8 @@ struct Callback<dest_type, T1, void, void> : public GenericCallback<T1>
      *                       one argument.
      */
     Callback(dest_type* pobject, void (dest_type::*pmemfun_1)(T1))
+        : pobject(pobject), pmemfun_1(pmemfun_1)
     {
-        this->pobject = pobject;
-        this->pmemfun_1 = pmemfun_1;
     }
 
     /**
@@ -444,9 +438,8 @@ struct Callback<dest_type, void, void, void> : public GenericCallback<>
      *                       zero arguments.
      */
     Callback(dest_type* pobject, void (dest_type::*pmemfun_0)())
+        : pobject(pobject), pmemfun_0(pmemfun_0)
     {
-        this->pobject = pobject;
-        this->pmemfun_0 = pmemfun_0;
     }
 
     /**
@@ -475,4 +468,4 @@ private:
 
 } // namespace touchgfx
 
-#endif // CALLBACK_HPP
+#endif // TOUCHGFX_CALLBACK_HPP
