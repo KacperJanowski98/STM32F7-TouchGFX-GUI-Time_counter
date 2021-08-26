@@ -13,19 +13,14 @@ Screen1ViewBase::Screen1ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(22, 11, 235));
+    box1.setColor(touchgfx::Color::getColorFromRGB(85, 82, 158));
 
-    toggleButton2.setXY(336, 221);
-    toggleButton2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
-    toggleButton2.setAction(buttonCallback);
-
-    button1.setXY(315, 306);
+    button1.setXY(612, 398);
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     button1.setAction(buttonCallback);
 
     add(__background);
     add(box1);
-    add(toggleButton2);
     add(button1);
 }
 
@@ -36,18 +31,11 @@ void Screen1ViewBase::setupScreen()
 
 void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &toggleButton2)
-    {
-        //Interaction1
-        //When toggleButton2 clicked change screen to screen
-        //Go to screen with screen transition towards East
-        application().gotoscreenScreenSlideTransitionEast();
-    }
-    else if (&src == &button1)
+    if (&src == &button1)
     {
         //Interaction2
-        //When button1 clicked change screen to screen
-        //Go to screen with no screen transition
-        application().gotoscreenScreenNoTransition();
+        //When button1 clicked change screen to ScreenLPS25
+        //Go to ScreenLPS25 with no screen transition
+        application().gotoScreenLPS25ScreenNoTransition();
     }
 }

@@ -15,8 +15,8 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
-#include <gui/screen_screen/screenView.hpp>
-#include <gui/screen_screen/screenPresenter.hpp>
+#include <gui/screenlps25_screen/ScreenLPS25View.hpp>
+#include <gui/screenlps25_screen/ScreenLPS25Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -41,7 +41,7 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< screenView,
+    typedef touchgfx::meta::TypeList< ScreenLPS25View,
             touchgfx::meta::TypeList< Screen1View,
             touchgfx::meta::Nil >
             > GeneratedViewTypes;
@@ -55,7 +55,7 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< screenPresenter,
+    typedef touchgfx::meta::TypeList< ScreenLPS25Presenter,
             touchgfx::meta::TypeList< Screen1Presenter,
             touchgfx::meta::Nil >
             > GeneratedPresenterTypes;
@@ -82,7 +82,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoscreenScreenNoTransition();
+        app.gotoScreenLPS25ScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

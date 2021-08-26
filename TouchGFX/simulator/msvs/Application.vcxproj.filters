@@ -142,9 +142,6 @@
     <Filter Include="Source Files\generated\gui_generated">
       <UniqueIdentifier>3A5FED73-D203-7CD9-4953-D5FAFA6283E9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\screen_screen">
-      <UniqueIdentifier>24673DC5-0A24-07E7-098F-96B20137BC3A</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>AE9BE476-4685-BF30-3A2B-D0DD8E15D355</UniqueIdentifier>
     </Filter>
@@ -154,17 +151,8 @@
     <Filter Include="Source Files\gui\model">
       <UniqueIdentifier>5FCBACFB-A9E3-AB4A-96F0-81043248AB7F</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\screen_screen">
-      <UniqueIdentifier>29C72753-6326-F88D-B4EB-251BB23801EE</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\common">
       <UniqueIdentifier>E2989116-F241-6081-D8B0-7DC3A49E35C9</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\screen_screen">
-      <UniqueIdentifier>99725CE5-B72A-8314-9CC9-501E24739D1A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\screen_screen">
-      <UniqueIdentifier>BAE95B3F-4DA3-BD4A-F64D-2402B813DC60</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\common">
       <UniqueIdentifier>B28D6D17-F436-B76E-0BD8-C85F6D4E5D49</UniqueIdentifier>
@@ -183,6 +171,18 @@
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\screen1_screen">
       <UniqueIdentifier>AE85222A-9645-5DC8-74DB-FE78C211594E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenlps25_screen">
+      <UniqueIdentifier>860D7589-2D47-F1A6-6999-0E3D37BB151C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screenlps25_screen">
+      <UniqueIdentifier>A5553DD9-7ED6-E5B0-21EA-3A8D0A59FB26</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenlps25_screen">
+      <UniqueIdentifier>B0536805-7B35-9933-C5C5-EE279F9BDF33</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenlps25_screen">
+      <UniqueIdentifier>8C09367C-9089-3D71-FC54-738B786F709F</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -213,15 +213,6 @@
     <ClCompile Include="..\..\gui\src\model\Model.cpp">
       <Filter>Source Files\gui\model</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen_screen\screenPresenter.cpp">
-      <Filter>Source Files\gui\screen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen_screen\screenView.cpp">
-      <Filter>Source Files\gui\screen_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen_screen\screenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\screen_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp">
       <Filter>Source Files\gui\screen1_screen</Filter>
     </ClCompile>
@@ -230,6 +221,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenlps25_screen\ScreenLPS25Presenter.cpp">
+      <Filter>Source Files\gui\screenlps25_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenlps25_screen\ScreenLPS25View.cpp">
+      <Filter>Source Files\gui\screenlps25_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenlps25_screen\ScreenLPS25ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenlps25_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -661,15 +661,6 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
       <Filter>Header Files\gui\model</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen_screen\screenPresenter.hpp">
-      <Filter>Header Files\gui\screen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen_screen\screenView.hpp">
-      <Filter>Header Files\gui\screen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen_screen\screenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\screen_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
@@ -681,6 +672,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenlps25_screen\ScreenLPS25Presenter.hpp">
+      <Filter>Header Files\gui\screenlps25_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenlps25_screen\ScreenLPS25View.hpp">
+      <Filter>Header Files\gui\screenlps25_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenlps25_screen\ScreenLPS25ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenlps25_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

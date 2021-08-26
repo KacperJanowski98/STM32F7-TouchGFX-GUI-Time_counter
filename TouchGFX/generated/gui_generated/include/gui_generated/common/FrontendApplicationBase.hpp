@@ -15,10 +15,10 @@ public:
     FrontendApplicationBase(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplicationBase() { }
 
-    // screen
-    void gotoscreenScreenNoTransition();
+    // ScreenLPS25
+    void gotoScreenLPS25ScreenNoTransition();
 
-    void gotoscreenScreenSlideTransitionEast();
+    void gotoScreenLPS25ScreenSlideTransitionEast();
 
     // Screen1
     void gotoScreen1ScreenCoverTransitionEast();
@@ -28,10 +28,10 @@ protected:
     FrontendHeap& frontendHeap;
     Model& model;
 
-    // screen
-    void gotoscreenScreenNoTransitionImpl();
+    // ScreenLPS25
+    void gotoScreenLPS25ScreenNoTransitionImpl();
 
-    void gotoscreenScreenSlideTransitionEastImpl();
+    void gotoScreenLPS25ScreenSlideTransitionEastImpl();
 
     // Screen1
     void gotoScreen1ScreenCoverTransitionEastImpl();

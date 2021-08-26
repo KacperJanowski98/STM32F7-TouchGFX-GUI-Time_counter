@@ -6,9 +6,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 235,
-              "Green": 54,
-              "Blue": 54
+              "Red": 64,
+              "Green": 62,
+              "Blue": 62
             },
             "Alpha": 255,
             "Name": "box1",
@@ -24,17 +24,72 @@
             "Moveable": false
           },
           {
-            "Type": "ToggleButton",
-            "InitialStatePressed": false,
-            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
-            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
             "Alpha": 255,
             "Style": "Style4",
-            "Name": "toggleButton1",
-            "X": 336,
-            "Y": 221,
-            "Width": 128,
+            "Name": "buttonLPS25",
+            "X": 595,
+            "Y": 392,
+            "Width": 170,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textAreaTemp",
+            "X": 90,
+            "Y": 93,
+            "Width": 550,
             "Height": 38,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 245,
+              "Blue": 245
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": false,
+              "BufferSize": 0
+            },
+            "Name": "textAreaPres",
+            "X": 90,
+            "Y": 138,
+            "Width": 550,
+            "Height": 40,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -45,11 +100,11 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "ChangeLPS25Screen",
             "HasCompletedTrigger": false,
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "toggleButton1"
+              "TriggerComponent": "buttonLPS25"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -59,7 +114,7 @@
             }
           }
         ],
-        "Name": "screen",
+        "Name": "ScreenLPS25",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
       },
@@ -68,9 +123,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 22,
-              "Green": 11,
-              "Blue": 235
+              "Red": 85,
+              "Green": 82,
+              "Blue": 158
             },
             "Alpha": 255,
             "Name": "box1",
@@ -78,25 +133,6 @@
             "Y": 0,
             "Width": 800,
             "Height": 480,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "ToggleButton",
-            "InitialStatePressed": false,
-            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
-            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
-            "Alpha": 255,
-            "Style": "Style4",
-            "Name": "toggleButton2",
-            "X": 336,
-            "Y": 221,
-            "Width": 128,
-            "Height": 38,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -111,8 +147,8 @@
             "Alpha": 255,
             "Style": "Style4",
             "Name": "button1",
-            "X": 315,
-            "Y": 306,
+            "X": 612,
+            "Y": 398,
             "Width": 170,
             "Height": 60,
             "Visible": true,
@@ -128,14 +164,13 @@
             "InteractionName": "Interaction1",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "toggleButton2"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "screen"
+              "ActionComponent": "ScreenLPS25"
             }
           },
           {
@@ -148,7 +183,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "screen"
+              "ActionComponent": "ScreenLPS25"
             }
           }
         ],
@@ -158,13 +193,23 @@
       }
     ],
     "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId1",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      }
+    ],
     "Name": "GUI_Time_counter",
     "Resolution": {
       "Width": 800,
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "screen",
+    "StartupScreenName": "ScreenLPS25",
     "SelectedStartupLanguage": "GB",
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
