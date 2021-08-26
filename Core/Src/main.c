@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "../mx25l512/mx25l512.h"
 #include "../otm8009a/otm8009a.h"
+#include "lps25hb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -1519,10 +1520,12 @@ __weak void TouchGFX_Task(void *argument)
 void StartTaskLPS25(void *argument)
 {
   /* USER CODE BEGIN StartTaskLPS25 */
+	lps25hbInit();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  lps25hb();
+	  osDelay(1000);
   }
   /* USER CODE END StartTaskLPS25 */
 }
