@@ -37,6 +37,8 @@ protected:
      */
     static const uint16_t TEXTAREATEMP_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textAreaTempBuffer[TEXTAREATEMP_SIZE];
+    static const uint16_t TEXTAREAPRES_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaPresBuffer[TEXTAREAPRES_SIZE];
 
 private:
 

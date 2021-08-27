@@ -11,6 +11,7 @@ public:
     virtual ~ScreenLPS25View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void lps25hbMsgRdy(int16_t temp1, int16_t temp2, int16_t pres1, int16_t pres2);
 protected:
 };
 

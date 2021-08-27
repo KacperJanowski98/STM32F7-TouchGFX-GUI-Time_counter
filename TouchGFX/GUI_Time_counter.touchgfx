@@ -82,8 +82,8 @@
             "AutoSize": false,
             "LineSpacing": 0,
             "Wildcard1": {
-              "UseBuffer": false,
-              "BufferSize": 0
+              "UseBuffer": true,
+              "BufferSize": 10
             },
             "Name": "textAreaPres",
             "X": 90,

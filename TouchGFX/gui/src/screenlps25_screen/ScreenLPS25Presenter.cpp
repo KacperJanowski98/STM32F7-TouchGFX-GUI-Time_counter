@@ -16,3 +16,8 @@ void ScreenLPS25Presenter::deactivate()
 {
 
 }
+
+void ScreenLPS25Presenter::lps25hbMsgRdy(int16_t temp1, int16_t temp2, int16_t pres1, int16_t pres2)
+{
+	view.lps25hbMsgRdy(temp1, temp2, pres1, pres2);
+}

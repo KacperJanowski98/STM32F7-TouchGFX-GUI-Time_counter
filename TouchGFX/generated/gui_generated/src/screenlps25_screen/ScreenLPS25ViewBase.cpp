@@ -30,6 +30,8 @@ ScreenLPS25ViewBase::ScreenLPS25ViewBase() :
     textAreaPres.setPosition(90, 138, 550, 40);
     textAreaPres.setColor(touchgfx::Color::getColorFromRGB(245, 245, 245));
     textAreaPres.setLinespacing(0);
+    textAreaPresBuffer[0] = 0;
+    textAreaPres.setWildcard(textAreaPresBuffer);
     textAreaPres.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
 
     add(__background);

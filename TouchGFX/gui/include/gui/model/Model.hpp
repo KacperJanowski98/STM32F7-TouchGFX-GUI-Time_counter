@@ -14,6 +14,7 @@ public:
     }
 
     void tick();
+    void lps25hbMsgRdy();
 protected:
     ModelListener* modelListener;
 };
