@@ -26,7 +26,6 @@
 /* USER CODE BEGIN Includes */
 #include "../mx25l512/mx25l512.h"
 #include "../otm8009a/otm8009a.h"
-#include "lps25hb.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,6 +104,9 @@ const osSemaphoreAttr_t binarySemLPS25_attributes = {
   .name = "binarySemLPS25"
 };
 /* USER CODE BEGIN PV */
+
+LPS25HB_Result_t Result;
+LPS25HB_measurement_t Measure;
 
 /* USER CODE END PV */
 
@@ -1520,11 +1522,11 @@ __weak void TouchGFX_Task(void *argument)
 void StartTaskLPS25(void *argument)
 {
   /* USER CODE BEGIN StartTaskLPS25 */
-	lps25hbInit();
+	lps25hbInit(&Measure, &Result, Rate_12Hz5, SPI4w);
   /* Infinite loop */
   for(;;)
   {
-	  lps25hb();
+	  lps25hb(&Measure, &Result);
 	  osDelay(1000);
   }
   /* USER CODE END StartTaskLPS25 */

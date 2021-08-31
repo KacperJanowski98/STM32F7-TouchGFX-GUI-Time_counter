@@ -11,7 +11,7 @@ public:
     
     virtual ~ModelListener() {}
 
-    virtual void lps25hbMsgRdy(int16_t temp1, int16_t temp2, int16_t pres1, int16_t pres2) {}
+    virtual void lps25hbMsgRdy(LPS25HB_Result_t &result) {}
 
     void bind(Model* m)
     {

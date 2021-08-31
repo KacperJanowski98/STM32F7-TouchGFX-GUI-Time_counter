@@ -3,6 +3,11 @@
 
 class ModelListener;
 
+#include <main.h>
+
+extern LPS25HB_Result_t Result;
+extern LPS25HB_measurement_t Measure;
+
 class Model
 {
 public:

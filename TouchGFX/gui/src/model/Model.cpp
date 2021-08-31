@@ -8,11 +8,6 @@
 
 extern osSemaphoreId_t binarySemLPS25Handle;
 
-extern int16_t result1T;
-extern int16_t result2T;
-extern int16_t result1P;
-extern int16_t result2P;
-
 Model::Model() : modelListener(0)
 {
 
@@ -31,5 +26,5 @@ void Model::tick()
 
 void Model::lps25hbMsgRdy()
 {
-	modelListener->lps25hbMsgRdy(result1T, result2T, result1P, result2P);
+	modelListener->lps25hbMsgRdy(Result);
 }
