@@ -16,6 +16,8 @@ protected:
     bool increase = true;
     int max;
     int min;
+    int currentValue;
+    int nextValue;
 };
 
 #endif // SCREENCALIBRATIONVIEW_HPP

@@ -17,7 +17,7 @@ void ScreenCalibrationView::tearDownScreen()
 
 void ScreenCalibrationView::handleTickEvent()
 {
-    int currentValue = calibrationProgress.getValue();
+    currentValue = calibrationProgress.getValue();
     calibrationProgress.getRange(min, max);
 
     if (currentValue == min)
@@ -29,7 +29,12 @@ void ScreenCalibrationView::handleTickEvent()
         application().gotoScreenLPS25ScreenNoTransition();
     }
 
-    int nextValue = increase == true ? currentValue + 1 : currentValue - 1;
+    nextValue = increase == true ? currentValue + 1 : currentValue - 1;
+
+    if (nextValue == 20 || nextValue == 38 || nextValue == 70 || nextValue == 92)
+    {
+    	osDelay(1000);
+    }
 
     calibrationProgress.setValue(nextValue);
 }
