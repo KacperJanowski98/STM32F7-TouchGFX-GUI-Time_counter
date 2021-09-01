@@ -26,6 +26,9 @@
     <ClCompile Include="..\..\gui\src\screenlps25_screen\ScreenLPS25Presenter.cpp"/>
     <ClCompile Include="..\..\gui\src\screenlps25_screen\ScreenLPS25View.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\screenlps25_screen\ScreenLPS25ViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\screencalibration_screen\ScreenCalibrationPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\screencalibration_screen\ScreenCalibrationView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencalibration_screen\ScreenCalibrationViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -179,6 +182,9 @@
     <ClInclude Include="..\..\gui\include\gui\screenlps25_screen\ScreenLPS25Presenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\screenlps25_screen\ScreenLPS25View.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenlps25_screen\ScreenLPS25ViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\screencalibration_screen\ScreenCalibrationPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\screencalibration_screen\ScreenCalibrationView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencalibration_screen\ScreenCalibrationViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

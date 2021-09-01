@@ -15,6 +15,8 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
+#include <gui/screencalibration_screen/ScreenCalibrationView.hpp>
+#include <gui/screencalibration_screen/ScreenCalibrationPresenter.hpp>
 #include <gui/screenlps25_screen/ScreenLPS25View.hpp>
 #include <gui/screenlps25_screen/ScreenLPS25Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
@@ -41,9 +43,10 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< ScreenLPS25View,
+    typedef touchgfx::meta::TypeList< ScreenCalibrationView,
+            touchgfx::meta::TypeList< ScreenLPS25View,
             touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil >
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -55,9 +58,10 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< ScreenLPS25Presenter,
+    typedef touchgfx::meta::TypeList< ScreenCalibrationPresenter,
+            touchgfx::meta::TypeList< ScreenLPS25Presenter,
             touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil >
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**
@@ -82,7 +86,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoScreenLPS25ScreenNoTransition();
+        app.gotoScreenCalibrationScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

@@ -184,6 +184,18 @@
     <Filter Include="Header Files\generated\gui_generated\screenlps25_screen">
       <UniqueIdentifier>8C09367C-9089-3D71-FC54-738B786F709F</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\screencalibration_screen">
+      <UniqueIdentifier>9DB3CBEB-A20B-8C4E-6410-EF7BE19A7F4F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencalibration_screen">
+      <UniqueIdentifier>195297C5-95C0-66A3-D8A5-D0943F419984</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencalibration_screen">
+      <UniqueIdentifier>80135674-A0D3-94CD-5CC9-32BA7FA192A7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencalibration_screen">
+      <UniqueIdentifier>2A767500-3D82-B857-44E3-39E224145F44</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -230,6 +242,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screenlps25_screen\ScreenLPS25ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screenlps25_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencalibration_screen\ScreenCalibrationPresenter.cpp">
+      <Filter>Source Files\gui\screencalibration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencalibration_screen\ScreenCalibrationView.cpp">
+      <Filter>Source Files\gui\screencalibration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencalibration_screen\ScreenCalibrationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencalibration_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -681,6 +702,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenlps25_screen\ScreenLPS25ViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\screenlps25_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencalibration_screen\ScreenCalibrationPresenter.hpp">
+      <Filter>Header Files\gui\screencalibration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencalibration_screen\ScreenCalibrationView.hpp">
+      <Filter>Header Files\gui\screencalibration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencalibration_screen\ScreenCalibrationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencalibration_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
