@@ -1,17 +1,17 @@
-#ifndef SCREENLPS25PRESENTER_HPP
-#define SCREENLPS25PRESENTER_HPP
+#ifndef CALIBRATIONPROGRESSBARPRESENTER_HPP
+#define CALIBRATIONPROGRESSBARPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class ScreenLPS25View;
+class CalibrationProgressBarView;
 
-class ScreenLPS25Presenter : public touchgfx::Presenter, public ModelListener
+class CalibrationProgressBarPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    ScreenLPS25Presenter(ScreenLPS25View& v);
+    CalibrationProgressBarPresenter(CalibrationProgressBarView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,14 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~ScreenLPS25Presenter() {};
-
-    virtual void lps25hbMsgRdy(LPS25HB_Result_t &result);
+    virtual ~CalibrationProgressBarPresenter() {};
 
 private:
-    ScreenLPS25Presenter();
+    CalibrationProgressBarPresenter();
 
-    ScreenLPS25View& view;
+    CalibrationProgressBarView& view;
 };
 
-#endif // SCREENLPS25PRESENTER_HPP
+#endif // CALIBRATIONPROGRESSBARPRESENTER_HPP

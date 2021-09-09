@@ -10,7 +10,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     switch (typography)
     {
     case Typography::DEFAULT:
-        // verdana_30_4bpp
+        // verdana_20_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
     case Typography::LARGE:
         // verdana_40_4bpp

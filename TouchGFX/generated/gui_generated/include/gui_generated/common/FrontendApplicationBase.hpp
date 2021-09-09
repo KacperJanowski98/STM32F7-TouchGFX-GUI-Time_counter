@@ -15,32 +15,22 @@ public:
     FrontendApplicationBase(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplicationBase() { }
 
-    // ScreenCalibration
-    void gotoScreenCalibrationScreenNoTransition();
-
-    // ScreenLPS25
-    void gotoScreenLPS25ScreenSlideTransitionEast();
-
-    void gotoScreenLPS25ScreenNoTransition();
+    // CalibrationProgressBar
+    void gotoCalibrationProgressBarScreenNoTransition();
 
     // Screen1
-    void gotoScreen1ScreenCoverTransitionEast();
+    void gotoScreen1ScreenSlideTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
-    // ScreenCalibration
-    void gotoScreenCalibrationScreenNoTransitionImpl();
-
-    // ScreenLPS25
-    void gotoScreenLPS25ScreenSlideTransitionEastImpl();
-
-    void gotoScreenLPS25ScreenNoTransitionImpl();
+    // CalibrationProgressBar
+    void gotoCalibrationProgressBarScreenNoTransitionImpl();
 
     // Screen1
-    void gotoScreen1ScreenCoverTransitionEastImpl();
+    void gotoScreen1ScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

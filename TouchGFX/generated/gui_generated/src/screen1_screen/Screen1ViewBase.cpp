@@ -3,39 +3,21 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include "BitmapDatabase.hpp"
 
-Screen1ViewBase::Screen1ViewBase() :
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
+Screen1ViewBase::Screen1ViewBase()
 {
 
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(85, 82, 158));
-
-    button1.setXY(612, 398);
-    button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    button1.setAction(buttonCallback);
+    box1.setColor(touchgfx::Color::getColorFromRGB(22, 11, 235));
 
     add(__background);
     add(box1);
-    add(button1);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
-}
-
-void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &button1)
-    {
-        //Interaction2
-        //When button1 clicked change screen to ScreenLPS25
-        //Go to ScreenLPS25 with no screen transition
-        application().gotoScreenLPS25ScreenNoTransition();
-    }
 }

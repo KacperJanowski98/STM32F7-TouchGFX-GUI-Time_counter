@@ -33,8 +33,6 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "lps25hb.h"
-
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -62,10 +60,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define VSYNC_FREQ2_Pin GPIO_PIN_13
 #define VSYNC_FREQ2_GPIO_Port GPIOJ
-#define LPS25_SCK_Pin GPIO_PIN_12
-#define LPS25_SCK_GPIO_Port GPIOA
-#define LPS25_SS_Pin GPIO_PIN_11
-#define LPS25_SS_GPIO_Port GPIOA
 #define DSI_RESET_Pin GPIO_PIN_15
 #define DSI_RESET_GPIO_Port GPIOJ
 #define RENDER_TIME_Pin GPIO_PIN_7
@@ -76,10 +70,6 @@ void Error_Handler(void);
 #define RENDER_TIME2_GPIO_Port GPIOJ
 #define FRAMERATE_Pin GPIO_PIN_1
 #define FRAMERATE_GPIO_Port GPIOJ
-#define LPS25_MISO_Pin GPIO_PIN_14
-#define LPS25_MISO_GPIO_Port GPIOB
-#define LPS25_MOSI_Pin GPIO_PIN_15
-#define LPS25_MOSI_GPIO_Port GPIOB
 void   MX_I2C4_Init(void);
 /* USER CODE BEGIN Private defines */
 

@@ -34,7 +34,7 @@ void MX_TouchGFX_Init(void)
  */
 void MX_TouchGFX_Process(void)
 {
-  // Calling farward to touchgfx_taskEntry in C++ domain
+  // Calling farward to touchgfx_init in C++ domain
   touchgfx_taskEntry();
 }
 
@@ -43,7 +43,7 @@ void MX_TouchGFX_Process(void)
  */
 void TouchGFX_Task(void *argument)
 {
-  // Calling farward to touchgfx_taskEntry in C++ domain
+  // Calling farward to touchgfx_init in C++ domain
   touchgfx_taskEntry();
 }
 

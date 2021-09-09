@@ -9,16 +9,13 @@
 #include <mvp/MVPHeap.hpp>
 
 #include <touchgfx/transitions/NoTransition.hpp>
-#include <touchgfx/transitions/CoverTransition.hpp>
 #include <touchgfx/transitions/SlideTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
-#include <gui/screencalibration_screen/ScreenCalibrationView.hpp>
-#include <gui/screencalibration_screen/ScreenCalibrationPresenter.hpp>
-#include <gui/screenlps25_screen/ScreenLPS25View.hpp>
-#include <gui/screenlps25_screen/ScreenLPS25Presenter.hpp>
+#include <gui/calibrationprogressbar_screen/CalibrationProgressBarView.hpp>
+#include <gui/calibrationprogressbar_screen/CalibrationProgressBarPresenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -43,10 +40,9 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< ScreenCalibrationView,
-            touchgfx::meta::TypeList< ScreenLPS25View,
+    typedef touchgfx::meta::TypeList< CalibrationProgressBarView,
             touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedViewTypes;
 
     /**
@@ -58,10 +54,9 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< ScreenCalibrationPresenter,
-            touchgfx::meta::TypeList< ScreenLPS25Presenter,
+    typedef touchgfx::meta::TypeList< CalibrationProgressBarPresenter,
             touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedPresenterTypes;
 
     /**
@@ -74,9 +69,8 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
-            touchgfx::meta::TypeList< CoverTransition<EAST>,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedTransitionTypes;
 
     /**
@@ -86,7 +80,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoScreenCalibrationScreenNoTransition();
+        app.gotoCalibrationProgressBarScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

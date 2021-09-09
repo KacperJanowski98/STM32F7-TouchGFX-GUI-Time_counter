@@ -9,10 +9,8 @@
 #include <touchgfx/Texts.hpp>
 #include <touchgfx/hal/HAL.hpp>
 #include <platform/driver/lcd/LCD16bpp.hpp>
-#include <gui/screencalibration_screen/ScreenCalibrationView.hpp>
-#include <gui/screencalibration_screen/ScreenCalibrationPresenter.hpp>
-#include <gui/screenlps25_screen/ScreenLPS25View.hpp>
-#include <gui/screenlps25_screen/ScreenLPS25Presenter.hpp>
+#include <gui/calibrationprogressbar_screen/CalibrationProgressBarView.hpp>
+#include <gui/calibrationprogressbar_screen/CalibrationProgressBarPresenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 
@@ -25,7 +23,6 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
       model(m)
 {
     touchgfx::HAL::getInstance()->setDisplayOrientation(touchgfx::ORIENTATION_LANDSCAPE);
-    touchgfx::Texts::setLanguage(GB);
     reinterpret_cast<touchgfx::LCD16bpp&>(touchgfx::HAL::lcd()).enableTextureMapperAll();
 }
 
@@ -33,52 +30,28 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  * Screen Transition Declarations
  */
 
-// ScreenCalibration
+// CalibrationProgressBar
 
-void FrontendApplicationBase::gotoScreenCalibrationScreenNoTransition()
+void FrontendApplicationBase::gotoCalibrationProgressBarScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenCalibrationScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCalibrationProgressBarScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreenCalibrationScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoCalibrationProgressBarScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<ScreenCalibrationView, ScreenCalibrationPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// ScreenLPS25
-
-void FrontendApplicationBase::gotoScreenLPS25ScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenLPS25ScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreenLPS25ScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<ScreenLPS25View, ScreenLPS25Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoScreenLPS25ScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenLPS25ScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreenLPS25ScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<ScreenLPS25View, ScreenLPS25Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<CalibrationProgressBarView, CalibrationProgressBarPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Screen1
 
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionEast()
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenCoverTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen1ScreenCoverTransitionEastImpl()
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

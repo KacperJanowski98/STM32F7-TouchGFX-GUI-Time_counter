@@ -80,8 +80,6 @@ LTDC_HandleTypeDef hltdc;
 
 QSPI_HandleTypeDef hqspi;
 
-SPI_HandleTypeDef hspi2;
-
 SDRAM_HandleTypeDef hsdram1;
 
 /* Definitions for TouchGFXTask */
@@ -91,22 +89,7 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .stack_size = 4096 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for taskLPS25 */
-osThreadId_t taskLPS25Handle;
-const osThreadAttr_t taskLPS25_attributes = {
-  .name = "taskLPS25",
-  .stack_size = 512 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for binarySemLPS25 */
-osSemaphoreId_t binarySemLPS25Handle;
-const osSemaphoreAttr_t binarySemLPS25_attributes = {
-  .name = "binarySemLPS25"
-};
 /* USER CODE BEGIN PV */
-
-LPS25HB_Result_t Result;
-LPS25HB_measurement_t Measure;
 
 /* USER CODE END PV */
 
@@ -120,9 +103,7 @@ static void MX_LTDC_Init(void);
 static void MX_FMC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_DMA2D_Init(void);
-static void MX_SPI2_Init(void);
 void TouchGFX_Task(void *argument);
-void StartTaskLPS25(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -186,7 +167,6 @@ int main(void)
   MX_QUADSPI_Init();
   MX_DMA2D_Init();
   MX_I2C4_Init();
-  MX_SPI2_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
@@ -198,10 +178,6 @@ int main(void)
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
-
-  /* Create the semaphores(s) */
-  /* creation of binarySemLPS25 */
-  binarySemLPS25Handle = osSemaphoreNew(1, 1, &binarySemLPS25_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -218,9 +194,6 @@ int main(void)
   /* Create the thread(s) */
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
-
-  /* creation of taskLPS25 */
-  taskLPS25Handle = osThreadNew(StartTaskLPS25, NULL, &taskLPS25_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -270,7 +243,6 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLN = 400;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
-  RCC_OscInitStruct.PLL.PLLR = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -711,46 +683,6 @@ static void MX_QUADSPI_Init(void)
 
 }
 
-/**
-  * @brief SPI2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI2_Init(void)
-{
-
-  /* USER CODE BEGIN SPI2_Init 0 */
-
-  /* USER CODE END SPI2_Init 0 */
-
-  /* USER CODE BEGIN SPI2_Init 1 */
-
-  /* USER CODE END SPI2_Init 1 */
-  /* SPI2 parameter configuration*/
-  hspi2.Instance = SPI2;
-  hspi2.Init.Mode = SPI_MODE_MASTER;
-  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi2.Init.CLKPolarity = SPI_POLARITY_HIGH;
-  hspi2.Init.CLKPhase = SPI_PHASE_2EDGE;
-  hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
-  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi2.Init.CRCPolynomial = 7;
-  hspi2.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-  hspi2.Init.NSSPMode = SPI_NSS_PULSE_DISABLE;
-  if (HAL_SPI_Init(&hspi2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SPI2_Init 2 */
-
-  /* USER CODE END SPI2_Init 2 */
-
-}
-
 /* FMC initialization function */
 static void MX_FMC_Init(void)
 {
@@ -821,16 +753,12 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOJ_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOJ, VSYNC_FREQ2_Pin|RENDER_TIME2_Pin|FRAMERATE_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LPS25_SS_GPIO_Port, LPS25_SS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(DSI_RESET_GPIO_Port, DSI_RESET_Pin, GPIO_PIN_SET);
@@ -844,13 +772,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LPS25_SS_Pin */
-  GPIO_InitStruct.Pin = LPS25_SS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(LPS25_SS_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : DSI_RESET_Pin */
   GPIO_InitStruct.Pin = DSI_RESET_Pin;
@@ -1512,26 +1433,6 @@ __weak void TouchGFX_Task(void *argument)
   /* USER CODE END 5 */
 }
 
-/* USER CODE BEGIN Header_StartTaskLPS25 */
-/**
-* @brief Function implementing the taskLPS25 thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTaskLPS25 */
-void StartTaskLPS25(void *argument)
-{
-  /* USER CODE BEGIN StartTaskLPS25 */
-	lps25hbInit(&Measure, &Result, Rate_12Hz5, SPI4w);
-  /* Infinite loop */
-  for(;;)
-  {
-	  lps25hb(&Measure, &Result);
-	  osDelay(1000);
-  }
-  /* USER CODE END StartTaskLPS25 */
-}
-
 /* MPU Configuration */
 
 void MPU_Config(void)
@@ -1597,7 +1498,6 @@ void MPU_Config(void)
   HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
 
 }
-
 /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM6 interrupt took place, inside

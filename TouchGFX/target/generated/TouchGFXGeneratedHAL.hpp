@@ -136,25 +136,6 @@ public:
     virtual bool blockCopy(void* RESTRICT dest, const void* RESTRICT src, uint32_t numBytes);
 
     /**
-     * @fn virtual void TouchGFXGeneratedHAL::beginFrame();
-     *
-     * @brief Called when beginning to rendering a frame.
-     *
-     *        Called when beginning to rendering a frame.
-     *
-     * @return true if rendering can begin, false otherwise.
-     */
-    virtual bool beginFrame();
-
-    /**
-     * @fn virtual void TouchGFXGeneratedHAL::endFrame();
-     *
-     * @brief Called when a rendering pass is completed.
-     *
-     *        Called when a rendering pass is completed.
-     */
-    virtual void endFrame();
-    /**
      *
      * @fn inline uint8_t* TouchGFXGeneratedHAL::advanceFrameBufferToRect(uint8_t* fbPtr, const touchgfx::Rect& rect) const;
      *

@@ -6,12 +6,12 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 69,
-              "Green": 80,
-              "Blue": 110
+              "Red": 50,
+              "Green": 51,
+              "Blue": 66
             },
             "Alpha": 255,
-            "Name": "box1",
+            "Name": "backgroundCalibration",
             "X": 0,
             "Y": 0,
             "Width": 800,
@@ -50,173 +50,10 @@
             "ProgressRangeStepsMin": 0,
             "ProgressInitialValue": 0,
             "Name": "calibrationProgress",
-            "X": 359,
+            "X": 348,
             "Y": 188,
             "Width": 104,
             "Height": 104,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          }
-        ],
-        "Interactions": [],
-        "Name": "ScreenCalibration",
-        "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 12000
-      },
-      {
-        "Components": [
-          {
-            "Type": "Box",
-            "Color": {
-              "Red": 64,
-              "Green": 62,
-              "Blue": 62
-            },
-            "Alpha": 255,
-            "Name": "box1",
-            "X": 0,
-            "Y": 0,
-            "Width": 800,
-            "Height": 480,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "Button",
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "Alpha": 255,
-            "Style": "Style4",
-            "Name": "buttonLPS25",
-            "X": 595,
-            "Y": 392,
-            "Width": 170,
-            "Height": 60,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId1",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textAreaTemp",
-            "X": 90,
-            "Y": 93,
-            "Width": 550,
-            "Height": 38,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId2",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 245,
-              "Green": 245,
-              "Blue": 245
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textAreaPres",
-            "X": 90,
-            "Y": 138,
-            "Width": 550,
-            "Height": 40,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "ChangeLPS25Screen",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonLPS25"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Screen1"
-            }
-          }
-        ],
-        "Name": "ScreenLPS25",
-        "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 0
-      },
-      {
-        "Components": [
-          {
-            "Type": "Box",
-            "Color": {
-              "Red": 85,
-              "Green": 82,
-              "Blue": 158
-            },
-            "Alpha": 255,
-            "Name": "box1",
-            "X": 0,
-            "Y": 0,
-            "Width": 800,
-            "Height": 480,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "Button",
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "Alpha": 255,
-            "Style": "Style4",
-            "Name": "button1",
-            "X": 612,
-            "Y": 398,
-            "Width": 170,
-            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -230,52 +67,57 @@
             "InteractionName": "Interaction1",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerScreenTransitionBegins"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "ScreenLPS25"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "ScreenLPS25"
+              "ActionComponent": "Screen1"
             }
           }
         ],
+        "Name": "CalibrationProgressBar",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 12000
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 22,
+              "Green": 11,
+              "Blue": 235
+            },
+            "Alpha": 255,
+            "Name": "box1",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
         "Name": "Screen1",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
       }
     ],
     "CustomContainerDefinitions": [],
-    "TextEntries": [
-      {
-        "TextEntryId": "SingleUseId1",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId2",
-        "IsResource": false
-      }
-    ],
     "Name": "GUI_Time_counter",
     "Resolution": {
       "Width": 800,
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "ScreenCalibration",
+    "StartupScreenName": "CalibrationProgressBar",
     "SelectedStartupLanguage": "GB",
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
