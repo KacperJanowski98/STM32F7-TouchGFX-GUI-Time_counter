@@ -515,6 +515,65 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId18",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textChannelINPUT",
+                    "X": 201,
+                    "Y": 50,
+                    "Width": 71,
+                    "Height": 35,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ScrollWheel",
+                    "SelectedItemOffset": 120,
+                    "UseSelectedStyle": true,
+                    "SelectedItemTemplateName": "ChannelContainerCenter",
+                    "ExtraSizeBefore": 0,
+                    "ExtraSizeAfter": 0,
+                    "MarginBefore": 0,
+                    "MarginAfter": 0,
+                    "IsHorizontal": false,
+                    "IsCircular": false,
+                    "ItemTemplateName": "ChannelContainer",
+                    "NumberofItems": 8,
+                    "InitialElement": 0,
+                    "ItemMargin": 0,
+                    "Easing": "Circ",
+                    "EasingOption": "Out",
+                    "SwipeAcceleration": 4.0,
+                    "DragAcceleration": 1.0,
+                    "Name": "scrollWheelINPUT",
+                    "X": 36,
+                    "Y": 85,
+                    "Width": 100,
+                    "Height": 300,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -1441,7 +1500,86 @@
         "CanvasBufferSize": 0
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Components": [
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId16",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId17",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textChannel",
+            "X": 0,
+            "Y": 12,
+            "Width": 100,
+            "Height": 36,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "ChannelContainer",
+        "X": 0,
+        "Y": 0,
+        "Width": 100,
+        "Height": 60
+      },
+      {
+        "Components": [
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId15",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textChannel",
+            "X": 0,
+            "Y": 10,
+            "Width": 100,
+            "Height": 40,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "ChannelContainerCenter",
+        "X": 0,
+        "Y": 0,
+        "Width": 100,
+        "Height": 60
+      }
+    ],
     "TextEntries": [
       {
         "TextEntryId": "SingleUseId1",
@@ -1493,6 +1631,26 @@
       },
       {
         "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId16",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId17",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId15",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId18",
         "IsResource": false
       }
     ],
