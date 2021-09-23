@@ -32,6 +32,9 @@
     <ClCompile Include="..\..\gui\src\timemode_screen\TimeModePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\timemode_screen\TimeModeView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\timemode_screen\TimeModeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\timemodeconfig_screen\TimeModeConfigViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -191,6 +194,9 @@
     <ClInclude Include="..\..\gui\include\gui\timemode_screen\TimeModePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\timemode_screen\TimeModeView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemode_screen\TimeModeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemodeconfig_screen\TimeModeConfigViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

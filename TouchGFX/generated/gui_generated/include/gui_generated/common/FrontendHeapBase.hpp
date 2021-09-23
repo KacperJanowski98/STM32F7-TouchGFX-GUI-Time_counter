@@ -21,6 +21,8 @@
 #include <gui/menu_screen/MenuPresenter.hpp>
 #include <gui/timemode_screen/TimeModeView.hpp>
 #include <gui/timemode_screen/TimeModePresenter.hpp>
+#include <gui/timemodeconfig_screen/TimeModeConfigView.hpp>
+#include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
 #include <gui/freqmode_screen/FreqModeView.hpp>
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
 
@@ -48,8 +50,9 @@ public:
     typedef touchgfx::meta::TypeList< CalibrationProgressBarView,
             touchgfx::meta::TypeList< MenuView,
             touchgfx::meta::TypeList< TimeModeView,
+            touchgfx::meta::TypeList< TimeModeConfigView,
             touchgfx::meta::TypeList< FreqModeView,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -64,8 +67,9 @@ public:
     typedef touchgfx::meta::TypeList< CalibrationProgressBarPresenter,
             touchgfx::meta::TypeList< MenuPresenter,
             touchgfx::meta::TypeList< TimeModePresenter,
+            touchgfx::meta::TypeList< TimeModeConfigPresenter,
             touchgfx::meta::TypeList< FreqModePresenter,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -208,6 +208,18 @@
     <Filter Include="Header Files\generated\gui_generated\timemode_screen">
       <UniqueIdentifier>DF47DE68-1AB1-8144-D6EF-84D2C15A9E9B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\timemodeconfig_screen">
+      <UniqueIdentifier>5FD2D3DA-C284-E619-2956-BC7A14DD15C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\timemodeconfig_screen">
+      <UniqueIdentifier>39F181A1-EDFE-EABC-948A-13DCD944CC5C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\timemodeconfig_screen">
+      <UniqueIdentifier>C6F1FFC2-042F-7B9B-5C5F-7902BF12E27B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\timemodeconfig_screen">
+      <UniqueIdentifier>38024F27-C4E5-6AD2-A3AA-090DC46C8F0E</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -272,6 +284,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\timemode_screen\TimeModeViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\timemode_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigPresenter.cpp">
+      <Filter>Source Files\gui\timemodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigView.cpp">
+      <Filter>Source Files\gui\timemodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\timemodeconfig_screen\TimeModeConfigViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\timemodeconfig_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -741,6 +762,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemode_screen\TimeModeViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\timemode_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigPresenter.hpp">
+      <Filter>Header Files\gui\timemodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigView.hpp">
+      <Filter>Header Files\gui\timemodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemodeconfig_screen\TimeModeConfigViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\timemodeconfig_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

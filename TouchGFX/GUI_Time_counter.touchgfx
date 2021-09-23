@@ -201,9 +201,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 31,
-              "Green": 46,
-              "Blue": 76
+              "Red": 56,
+              "Green": 69,
+              "Blue": 120
             },
             "Alpha": 255,
             "Name": "boxBackgroundTime",
@@ -234,6 +234,24 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "Style": "Style4",
+            "Name": "buttonConfig",
+            "X": 570,
+            "Y": 420,
+            "Width": 170,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -250,9 +268,531 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Menu"
             }
+          },
+          {
+            "InteractionName": "GoToConfigTime",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfig"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "TimeModeConfig"
+            }
           }
         ],
         "Name": "TimeMode",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 56,
+              "Green": 69,
+              "Blue": 120
+            },
+            "Alpha": 255,
+            "Name": "boxLeftBackG",
+            "X": -1,
+            "Y": 60,
+            "Width": 75,
+            "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 56,
+              "Green": 69,
+              "Blue": 120
+            },
+            "Alpha": 255,
+            "Name": "boxRightBackG",
+            "X": 725,
+            "Y": 60,
+            "Width": 75,
+            "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "boxConfigTime",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Alpha": 255,
+            "Name": "buttonBackTime",
+            "X": 740,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 15,
+            "Y": 18,
+            "Width": 390,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 56,
+              "Green": 69,
+              "Blue": 120
+            },
+            "Alpha": 255,
+            "Name": "boxBacgroundTC",
+            "X": 0,
+            "Y": 60,
+            "Width": 800,
+            "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 119,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "Name": "boxINPUT",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 800,
+                    "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Next_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowR",
+                    "X": 770,
+                    "Y": 180,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId4",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "labelINPUT",
+                    "X": 15,
+                    "Y": 16,
+                    "Width": 62,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  }
+                ],
+                "Type": "Container",
+                "IsCacheableContainer": false,
+                "Name": "swipeContainerTimeINPUT",
+                "X": 0,
+                "Y": 0,
+                "Width": 800,
+                "Height": 420,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Color": {
+                      "Red": 68,
+                      "Green": 72,
+                      "Blue": 94
+                    },
+                    "Alpha": 255,
+                    "Name": "boxCLOCK",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 800,
+                    "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Back_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowCL",
+                    "X": 11,
+                    "Y": 178,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Next_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowCR",
+                    "X": 770,
+                    "Y": 178,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId5",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "labelCLOCK",
+                    "X": 15,
+                    "Y": 16,
+                    "Width": 68,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  }
+                ],
+                "Type": "Container",
+                "IsCacheableContainer": false,
+                "Name": "swipeContainerTimeCLOCK",
+                "X": 0,
+                "Y": 0,
+                "Width": 800,
+                "Height": 420,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Color": {
+                      "Red": 54,
+                      "Green": 50,
+                      "Blue": 125
+                    },
+                    "Alpha": 255,
+                    "Name": "boxTISETUP",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 800,
+                    "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Back_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowTL",
+                    "X": 11,
+                    "Y": 178,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Next_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowTR",
+                    "X": 770,
+                    "Y": 178,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId6",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "labelTISETUP",
+                    "X": 15,
+                    "Y": 16,
+                    "Width": 93,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  }
+                ],
+                "Type": "Container",
+                "IsCacheableContainer": false,
+                "Name": "swipeContainerTimeTISETUP",
+                "X": 0,
+                "Y": 0,
+                "Width": 800,
+                "Height": 420,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Color": {
+                      "Red": 77,
+                      "Green": 114,
+                      "Blue": 148
+                    },
+                    "Alpha": 255,
+                    "Name": "boxSESSIONSETUP",
+                    "X": -1,
+                    "Y": 0,
+                    "Width": 801,
+                    "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "__designer\\Dark_Icons_Back_arrow_32.png",
+                    "Alpha": 255,
+                    "Name": "imageArrowSL",
+                    "X": 11,
+                    "Y": 178,
+                    "Width": 19,
+                    "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId7",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "labelSESSIONSETUP",
+                    "X": 15,
+                    "Y": 16,
+                    "Width": 165,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  }
+                ],
+                "Type": "Container",
+                "IsCacheableContainer": false,
+                "Name": "swipeContainerTimeSESSION",
+                "X": 0,
+                "Y": 0,
+                "Width": 800,
+                "Height": 420,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "Type": "SwipeContainer",
+            "SwipeCutoff": 50,
+            "ShowPageIndicator": true,
+            "PageIndicatorX": 0,
+            "PageIndicatorY": 0,
+            "CenteredX": false,
+            "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
+            "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
+            "EndSwipeElasticWidth": 50,
+            "SelectedPage": "swipeContainerTimeINPUT",
+            "Style": "Style1",
+            "Name": "swipeContainerTime",
+            "X": 0,
+            "Y": 60,
+            "Width": 800,
+            "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BackToTimeMode",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBackTime"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "TimeMode"
+            }
+          }
+        ],
+        "Name": "TimeModeConfig",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
       },
@@ -325,6 +865,26 @@
       },
       {
         "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId3",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId5",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId6",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId7",
         "IsResource": false
       }
     ],

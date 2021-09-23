@@ -15,6 +15,8 @@
 #include <gui/menu_screen/MenuPresenter.hpp>
 #include <gui/timemode_screen/TimeModeView.hpp>
 #include <gui/timemode_screen/TimeModePresenter.hpp>
+#include <gui/timemodeconfig_screen/TimeModeConfigView.hpp>
+#include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
 #include <gui/freqmode_screen/FreqModeView.hpp>
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
 
@@ -72,6 +74,30 @@ void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEast()
 void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEastImpl()
 {
     touchgfx::makeTransition<TimeModeView, TimeModePresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoTimeModeScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoTimeModeScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<TimeModeView, TimeModePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// TimeModeConfig
+
+void FrontendApplicationBase::gotoTimeModeConfigScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeConfigScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoTimeModeConfigScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<TimeModeConfigView, TimeModeConfigPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // FreqMode

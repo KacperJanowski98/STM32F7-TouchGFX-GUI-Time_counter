@@ -24,6 +24,11 @@ public:
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEast();
 
+    void gotoTimeModeScreenNoTransition();
+
+    // TimeModeConfig
+    void gotoTimeModeConfigScreenNoTransition();
+
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEast();
 
@@ -40,6 +45,11 @@ protected:
 
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEastImpl();
+
+    void gotoTimeModeScreenNoTransitionImpl();
+
+    // TimeModeConfig
+    void gotoTimeModeConfigScreenNoTransitionImpl();
 
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEastImpl();
