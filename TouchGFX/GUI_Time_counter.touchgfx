@@ -122,7 +122,7 @@
             "TextRotation": "0",
             "Name": "buttonFrequency",
             "X": 220,
-            "Y": 274,
+            "Y": 297,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -151,7 +151,36 @@
             "TextRotation": "0",
             "Name": "buttonTime",
             "X": 220,
-            "Y": 140,
+            "Y": 180,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId13",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Name": "buttonCalibration",
+            "X": 220,
+            "Y": 70,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -189,6 +218,19 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "FreqMode"
+            }
+          },
+          {
+            "InteractionName": "OpenCalibration",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCalibration"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "CalibrationProgressBar"
             }
           }
         ],
@@ -1447,6 +1489,10 @@
       },
       {
         "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
         "IsResource": false
       }
     ],

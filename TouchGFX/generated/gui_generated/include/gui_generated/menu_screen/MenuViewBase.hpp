@@ -29,6 +29,7 @@ protected:
     touchgfx::Box boxBackgroundMenu;
     touchgfx::ButtonWithLabel buttonFrequency;
     touchgfx::ButtonWithLabel buttonTime;
+    touchgfx::ButtonWithLabel buttonCalibration;
 
 private:
 

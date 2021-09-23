@@ -18,6 +18,8 @@ public:
     // CalibrationProgressBar
     void gotoCalibrationProgressBarScreenNoTransition();
 
+    void gotoCalibrationProgressBarScreenBlockTransition();
+
     // Menu
     void gotoMenuScreenSlideTransitionEast();
 
@@ -44,6 +46,8 @@ protected:
 
     // CalibrationProgressBar
     void gotoCalibrationProgressBarScreenNoTransitionImpl();
+
+    void gotoCalibrationProgressBarScreenBlockTransitionImpl();
 
     // Menu
     void gotoMenuScreenSlideTransitionEastImpl();
