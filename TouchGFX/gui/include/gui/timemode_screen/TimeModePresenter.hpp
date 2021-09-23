@@ -1,17 +1,17 @@
-#ifndef SCREEN1PRESENTER_HPP
-#define SCREEN1PRESENTER_HPP
+#ifndef TIMEMODEPRESENTER_HPP
+#define TIMEMODEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Screen1View;
+class TimeModeView;
 
-class Screen1Presenter : public touchgfx::Presenter, public ModelListener
+class TimeModePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Screen1Presenter(Screen1View& v);
+    TimeModePresenter(TimeModeView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Screen1Presenter() {};
+    virtual ~TimeModePresenter() {};
 
 private:
-    Screen1Presenter();
+    TimeModePresenter();
 
-    Screen1View& view;
+    TimeModeView& view;
 };
 
-#endif // SCREEN1PRESENTER_HPP
+#endif // TIMEMODEPRESENTER_HPP

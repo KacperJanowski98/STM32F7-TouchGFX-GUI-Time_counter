@@ -10,14 +10,19 @@
 
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/SlideTransition.hpp>
+#include <touchgfx/transitions/CoverTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
 #include <gui/calibrationprogressbar_screen/CalibrationProgressBarView.hpp>
 #include <gui/calibrationprogressbar_screen/CalibrationProgressBarPresenter.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/menu_screen/MenuView.hpp>
+#include <gui/menu_screen/MenuPresenter.hpp>
+#include <gui/timemode_screen/TimeModeView.hpp>
+#include <gui/timemode_screen/TimeModePresenter.hpp>
+#include <gui/freqmode_screen/FreqModeView.hpp>
+#include <gui/freqmode_screen/FreqModePresenter.hpp>
 
 
 /**
@@ -41,8 +46,10 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< CalibrationProgressBarView,
-            touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< MenuView,
+            touchgfx::meta::TypeList< TimeModeView,
+            touchgfx::meta::TypeList< FreqModeView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -55,8 +62,10 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< CalibrationProgressBarPresenter,
-            touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< MenuPresenter,
+            touchgfx::meta::TypeList< TimeModePresenter,
+            touchgfx::meta::TypeList< FreqModePresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -70,7 +79,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< CoverTransition<EAST>,
+            touchgfx::meta::Nil > >
             > GeneratedTransitionTypes;
 
     /**

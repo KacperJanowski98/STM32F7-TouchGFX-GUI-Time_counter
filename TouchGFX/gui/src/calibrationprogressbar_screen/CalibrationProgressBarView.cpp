@@ -26,7 +26,7 @@ void CalibrationProgressBarView::handleTickEvent()
     }
     else if (currentValue == max)
     {
-        application().gotoScreen1ScreenSlideTransitionEast();
+        application().gotoMenuScreenSlideTransitionEast();
     }
 
     int nextValue = increase == true ? currentValue + 1 : currentValue - 1;

@@ -37,8 +37,8 @@ void CalibrationProgressBarViewBase::setupScreen()
 {
 
     //Interaction1
-    //When screen transition begins change screen to Screen1
-    //Go to Screen1 with screen transition towards East
-    application().gotoScreen1ScreenSlideTransitionEast();
+    //When screen transition begins change screen to Menu
+    //Go to Menu with screen transition towards East
+    application().gotoMenuScreenSlideTransitionEast();
 
 }

@@ -20,12 +20,18 @@
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\calibrationprogressbar_screen\CalibrationProgressBarPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\calibrationprogressbar_screen\CalibrationProgressBarView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\calibrationprogressbar_screen\CalibrationProgressBarViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu_screen\MenuPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\menu_screen\MenuView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\menu_screen\MenuViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqmode_screen\FreqModePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqmode_screen\FreqModeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqmode_screen\FreqModeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\timemode_screen\TimeModePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\timemode_screen\TimeModeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\timemode_screen\TimeModeViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -173,12 +179,18 @@
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\calibrationprogressbar_screen\CalibrationProgressBarPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\calibrationprogressbar_screen\CalibrationProgressBarView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\calibrationprogressbar_screen\CalibrationProgressBarViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu_screen\MenuPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\menu_screen\MenuView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\menu_screen\MenuViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqmode_screen\FreqModePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqmode_screen\FreqModeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqmode_screen\FreqModeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timemode_screen\TimeModePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timemode_screen\TimeModeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemode_screen\TimeModeViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

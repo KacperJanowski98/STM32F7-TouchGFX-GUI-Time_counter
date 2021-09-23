@@ -11,8 +11,12 @@
 #include <platform/driver/lcd/LCD16bpp.hpp>
 #include <gui/calibrationprogressbar_screen/CalibrationProgressBarView.hpp>
 #include <gui/calibrationprogressbar_screen/CalibrationProgressBarPresenter.hpp>
-#include <gui/screen1_screen/Screen1View.hpp>
-#include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/menu_screen/MenuView.hpp>
+#include <gui/menu_screen/MenuPresenter.hpp>
+#include <gui/timemode_screen/TimeModeView.hpp>
+#include <gui/timemode_screen/TimeModePresenter.hpp>
+#include <gui/freqmode_screen/FreqModeView.hpp>
+#include <gui/freqmode_screen/FreqModePresenter.hpp>
 
 using namespace touchgfx;
 
@@ -23,6 +27,7 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
       model(m)
 {
     touchgfx::HAL::getInstance()->setDisplayOrientation(touchgfx::ORIENTATION_LANDSCAPE);
+    touchgfx::Texts::setLanguage(GB);
     reinterpret_cast<touchgfx::LCD16bpp&>(touchgfx::HAL::lcd()).enableTextureMapperAll();
 }
 
@@ -43,15 +48,41 @@ void FrontendApplicationBase::gotoCalibrationProgressBarScreenNoTransitionImpl()
     touchgfx::makeTransition<CalibrationProgressBarView, CalibrationProgressBarPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Screen1
+// Menu
 
-void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoMenuScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMenuScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoMenuScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<MenuView, MenuPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// TimeMode
+
+void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeScreenCoverTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEastImpl()
+{
+    touchgfx::makeTransition<TimeModeView, TimeModePresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// FreqMode
+
+void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeScreenCoverTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionEastImpl()
+{
+    touchgfx::makeTransition<FreqModeView, FreqModePresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

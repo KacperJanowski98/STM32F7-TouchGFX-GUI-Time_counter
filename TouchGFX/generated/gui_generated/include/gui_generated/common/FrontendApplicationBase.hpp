@@ -18,8 +18,14 @@ public:
     // CalibrationProgressBar
     void gotoCalibrationProgressBarScreenNoTransition();
 
-    // Screen1
-    void gotoScreen1ScreenSlideTransitionEast();
+    // Menu
+    void gotoMenuScreenSlideTransitionEast();
+
+    // TimeMode
+    void gotoTimeModeScreenCoverTransitionEast();
+
+    // FreqMode
+    void gotoFreqModeScreenCoverTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -29,8 +35,14 @@ protected:
     // CalibrationProgressBar
     void gotoCalibrationProgressBarScreenNoTransitionImpl();
 
-    // Screen1
-    void gotoScreen1ScreenSlideTransitionEastImpl();
+    // Menu
+    void gotoMenuScreenSlideTransitionEastImpl();
+
+    // TimeMode
+    void gotoTimeModeScreenCoverTransitionEastImpl();
+
+    // FreqMode
+    void gotoFreqModeScreenCoverTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

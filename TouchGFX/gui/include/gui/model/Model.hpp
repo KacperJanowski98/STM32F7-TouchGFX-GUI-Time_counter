@@ -1,7 +1,10 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
-#include "cmsis_os.h"
+extern "C"
+{
+	#include "cmsis_os.h"
+}
 
 class ModelListener;
 
