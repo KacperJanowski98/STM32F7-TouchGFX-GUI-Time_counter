@@ -28,6 +28,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box boxBackgroungFreq;
     touchgfx::Button buttonToMenuF;
+    touchgfx::Button buttonConfig;
 
 private:
 

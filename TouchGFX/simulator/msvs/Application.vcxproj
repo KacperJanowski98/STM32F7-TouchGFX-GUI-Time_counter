@@ -35,6 +35,9 @@
     <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\timemodeconfig_screen\TimeModeConfigView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\timemodeconfig_screen\TimeModeConfigViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqmodeconfig_screen\FreqModeConfigViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -197,6 +200,9 @@
     <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\timemodeconfig_screen\TimeModeConfigView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemodeconfig_screen\TimeModeConfigViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqmodeconfig_screen\FreqModeConfigViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

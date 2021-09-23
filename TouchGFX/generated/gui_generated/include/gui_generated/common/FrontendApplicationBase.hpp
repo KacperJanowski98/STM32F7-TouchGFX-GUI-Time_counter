@@ -24,13 +24,18 @@ public:
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEast();
 
-    void gotoTimeModeScreenNoTransition();
+    void gotoTimeModeScreenCoverTransitionWest();
 
     // TimeModeConfig
     void gotoTimeModeConfigScreenNoTransition();
 
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEast();
+
+    void gotoFreqModeScreenCoverTransitionWest();
+
+    // FreqModeConfig
+    void gotoFreqModeConfigScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -46,13 +51,18 @@ protected:
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEastImpl();
 
-    void gotoTimeModeScreenNoTransitionImpl();
+    void gotoTimeModeScreenCoverTransitionWestImpl();
 
     // TimeModeConfig
     void gotoTimeModeConfigScreenNoTransitionImpl();
 
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEastImpl();
+
+    void gotoFreqModeScreenCoverTransitionWestImpl();
+
+    // FreqModeConfig
+    void gotoFreqModeConfigScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

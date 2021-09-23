@@ -26,10 +26,10 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBackTime.setAction(buttonCallback);
 
-    textArea1.setXY(15, 18);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
+    labelTimeConfig.setXY(15, 18);
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelTimeConfig.setLinespacing(0);
+    labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
     boxBacgroundTC.setPosition(0, 60, 800, 420);
     boxBacgroundTC.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
@@ -126,7 +126,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(boxRightBackG);
     add(boxConfigTime);
     add(buttonBackTime);
-    add(textArea1);
+    add(labelTimeConfig);
     add(boxBacgroundTC);
     add(swipeContainerTime);
 }
@@ -142,7 +142,7 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
     {
         //BackToTimeMode
         //When buttonBackTime clicked change screen to TimeMode
-        //Go to TimeMode with no screen transition
-        application().gotoTimeModeScreenNoTransition();
+        //Go to TimeMode with screen transition towards West
+        application().gotoTimeModeScreenCoverTransitionWest();
     }
 }

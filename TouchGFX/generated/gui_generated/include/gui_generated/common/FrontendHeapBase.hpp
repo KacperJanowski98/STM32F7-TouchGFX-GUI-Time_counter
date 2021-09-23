@@ -25,6 +25,8 @@
 #include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
 #include <gui/freqmode_screen/FreqModeView.hpp>
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
+#include <gui/freqmodeconfig_screen/FreqModeConfigView.hpp>
+#include <gui/freqmodeconfig_screen/FreqModeConfigPresenter.hpp>
 
 
 /**
@@ -52,7 +54,8 @@ public:
             touchgfx::meta::TypeList< TimeModeView,
             touchgfx::meta::TypeList< TimeModeConfigView,
             touchgfx::meta::TypeList< FreqModeView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< FreqModeConfigView,
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -69,7 +72,8 @@ public:
             touchgfx::meta::TypeList< TimeModePresenter,
             touchgfx::meta::TypeList< TimeModeConfigPresenter,
             touchgfx::meta::TypeList< FreqModePresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< FreqModeConfigPresenter,
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -84,7 +88,8 @@ public:
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
             touchgfx::meta::TypeList< CoverTransition<EAST>,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< CoverTransition<WEST>,
+            touchgfx::meta::Nil > > >
             > GeneratedTransitionTypes;
 
     /**

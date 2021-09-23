@@ -220,6 +220,18 @@
     <Filter Include="Header Files\generated\gui_generated\timemodeconfig_screen">
       <UniqueIdentifier>38024F27-C4E5-6AD2-A3AA-090DC46C8F0E</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\freqmodeconfig_screen">
+      <UniqueIdentifier>E1DE5CBF-0878-198D-A2C9-80DD383BF848</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\freqmodeconfig_screen">
+      <UniqueIdentifier>9E90ECC6-5EC0-F200-2978-1690707735D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\freqmodeconfig_screen">
+      <UniqueIdentifier>A7EF44B4-449D-DD05-3249-E1CAED33D047</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\freqmodeconfig_screen">
+      <UniqueIdentifier>3FC87212-D720-B723-2370-92B797E2CD0D</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -293,6 +305,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\timemodeconfig_screen\TimeModeConfigViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\timemodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigPresenter.cpp">
+      <Filter>Source Files\gui\freqmodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigView.cpp">
+      <Filter>Source Files\gui\freqmodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqmodeconfig_screen\FreqModeConfigViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\freqmodeconfig_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -771,6 +792,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timemodeconfig_screen\TimeModeConfigViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\timemodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigPresenter.hpp">
+      <Filter>Header Files\gui\freqmodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigView.hpp">
+      <Filter>Header Files\gui\freqmodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqmodeconfig_screen\FreqModeConfigViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\freqmodeconfig_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

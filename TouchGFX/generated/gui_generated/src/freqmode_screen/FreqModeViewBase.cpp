@@ -19,9 +19,14 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonToMenuF.setAction(buttonCallback);
 
+    buttonConfig.setXY(570, 420);
+    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfig.setAction(buttonCallback);
+
     add(__background);
     add(boxBackgroungFreq);
     add(buttonToMenuF);
+    add(buttonConfig);
 }
 
 void FreqModeViewBase::setupScreen()
@@ -37,5 +42,12 @@ void FreqModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When buttonToMenuF clicked change screen to Menu
         //Go to Menu with screen transition towards East
         application().gotoMenuScreenSlideTransitionEast();
+    }
+    else if (&src == &buttonConfig)
+    {
+        //GoToConfigFreq
+        //When buttonConfig clicked change screen to FreqModeConfig
+        //Go to FreqModeConfig with no screen transition
+        application().gotoFreqModeConfigScreenNoTransition();
     }
 }
