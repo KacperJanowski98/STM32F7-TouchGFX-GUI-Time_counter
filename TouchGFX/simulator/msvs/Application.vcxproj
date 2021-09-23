@@ -38,6 +38,10 @@
     <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\freqmodeconfig_screen\FreqModeConfigView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\freqmodeconfig_screen\FreqModeConfigViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\ChannelContainer.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\ChannelContainerCenter.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerCenterBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -203,6 +207,10 @@
     <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\freqmodeconfig_screen\FreqModeConfigView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqmodeconfig_screen\FreqModeConfigViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\ChannelContainer.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\ChannelContainerCenter.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerCenterBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

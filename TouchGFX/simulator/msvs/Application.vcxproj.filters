@@ -232,6 +232,18 @@
     <Filter Include="Header Files\generated\gui_generated\freqmodeconfig_screen">
       <UniqueIdentifier>3FC87212-D720-B723-2370-92B797E2CD0D</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>7A1A0547-5B84-B5CD-C462-146E49DC8CE0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>396DEE55-BBCF-D50E-2A35-7760D565033A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>613C4734-D376-F2DF-6849-F1F34D25CD2B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>FA2FF8A2-386B-7175-3A7E-FA61534FDCE6</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -314,6 +326,18 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\freqmodeconfig_screen\FreqModeConfigViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\freqmodeconfig_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ChannelContainer.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ChannelContainerCenter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerCenterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -801,6 +825,18 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqmodeconfig_screen\FreqModeConfigViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\freqmodeconfig_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ChannelContainer.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ChannelContainerCenter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerCenterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

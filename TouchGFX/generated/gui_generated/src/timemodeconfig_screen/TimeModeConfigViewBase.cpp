@@ -7,7 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 TimeModeConfigViewBase::TimeModeConfigViewBase() :
-    buttonCallback(this, &TimeModeConfigViewBase::buttonCallbackHandler)
+    buttonCallback(this, &TimeModeConfigViewBase::buttonCallbackHandler),
+    updateItemCallback(this, &TimeModeConfigViewBase::updateItemCallbackHandler)
 {
 
     __background.setPosition(0, 0, 800, 480);
@@ -56,6 +57,30 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
     swipeContainerTimeINPUT.add(labelINPUT);
+
+    textChannelINPUT.setPosition(201, 50, 71, 35);
+    textChannelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textChannelINPUT.setLinespacing(0);
+    textChannelINPUTBuffer[0] = 0;
+    textChannelINPUT.setWildcard(textChannelINPUTBuffer);
+    textChannelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID18));
+    swipeContainerTimeINPUT.add(textChannelINPUT);
+
+    scrollWheelINPUT.setPosition(36, 85, 100, 300);
+    scrollWheelINPUT.setHorizontal(false);
+    scrollWheelINPUT.setCircular(false);
+    scrollWheelINPUT.setEasingEquation(touchgfx::EasingEquations::circEaseOut);
+    scrollWheelINPUT.setSwipeAcceleration(40);
+    scrollWheelINPUT.setDragAcceleration(10);
+    scrollWheelINPUT.setNumberOfItems(8);
+    scrollWheelINPUT.setSelectedItemOffset(120);
+    scrollWheelINPUT.setSelectedItemExtraSize(0, 0);
+    scrollWheelINPUT.setSelectedItemMargin(0, 0);
+    scrollWheelINPUT.setDrawableSize(60, 0);
+    scrollWheelINPUT.setDrawables(scrollWheelINPUTListItems, updateItemCallback,
+                              scrollWheelINPUTSelectedListItems, updateItemCallback);
+    scrollWheelINPUT.animateToItem(0, 0);
+    swipeContainerTimeINPUT.add(scrollWheelINPUT);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -133,7 +158,15 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
 void TimeModeConfigViewBase::setupScreen()
 {
-
+    scrollWheelINPUT.initialize();
+    for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelINPUTListItems[i].initialize();
+    }
+    for (int i = 0; i < scrollWheelINPUTSelectedListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelINPUTSelectedListItems[i].initialize();
+    }
 }
 
 void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -144,5 +177,21 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonBackTime clicked change screen to TimeMode
         //Go to TimeMode with screen transition towards West
         application().gotoTimeModeScreenCoverTransitionWest();
+    }
+}
+
+void TimeModeConfigViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
+{
+    if (items == &scrollWheelINPUTListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainer* cc = (ChannelContainer*)d;
+        scrollWheelINPUTUpdateItem(*cc, itemIndex);
+    }
+    else if (items == &scrollWheelINPUTSelectedListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainerCenter* cc = (ChannelContainerCenter*)d;
+        scrollWheelINPUTUpdateCenterItem(*cc, itemIndex);
     }
 }

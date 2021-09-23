@@ -13,6 +13,10 @@
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
+#include <gui/containers/ChannelContainer.hpp>
+#include <gui/containers/ChannelContainerCenter.hpp>
 
 class TimeModeConfigViewBase : public touchgfx::View<TimeModeConfigPresenter>
 {
@@ -20,6 +24,16 @@ public:
     TimeModeConfigViewBase();
     virtual ~TimeModeConfigViewBase() {}
     virtual void setupScreen();
+
+    virtual void scrollWheelINPUTUpdateItem(ChannelContainer& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
 
 protected:
     FrontendApplication& application() {
@@ -41,6 +55,10 @@ protected:
     touchgfx::Box boxINPUT;
     touchgfx::Image imageArrowR;
     touchgfx::TextArea labelINPUT;
+    touchgfx::TextAreaWithOneWildcard textChannelINPUT;
+    touchgfx::ScrollWheelWithSelectionStyle scrollWheelINPUT;
+    touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;
+    touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelINPUTSelectedListItems;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -56,17 +74,25 @@ protected:
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
 
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
+
 private:
 
     /*
      * Callback Declarations
      */
     touchgfx::Callback<TimeModeConfigViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<TimeModeConfigViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
 
 };
 

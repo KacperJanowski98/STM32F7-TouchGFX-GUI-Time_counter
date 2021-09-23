@@ -16,14 +16,18 @@ struct Typography
     static const touchgfx::FontId DEFAULT = 0;
     static const touchgfx::FontId LARGE = 1;
     static const touchgfx::FontId SMALL = 2;
+    static const touchgfx::FontId SCROLLWHEEL = 3;
+    static const touchgfx::FontId SCROLLWHEELCENTER = 4;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0; // verdana_20_4bpp
-    static const touchgfx::FontId LARGE = 1;   // verdana_40_4bpp
-    static const touchgfx::FontId SMALL = 2;   // verdana_10_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 3;
+    static const touchgfx::FontId DEFAULT = 0;           // verdana_20_4bpp
+    static const touchgfx::FontId LARGE = 1;             // verdana_40_4bpp
+    static const touchgfx::FontId SMALL = 2;             // verdana_10_4bpp
+    static const touchgfx::FontId SCROLLWHEEL = 3;       // Roboto_Bold_25_4bpp
+    static const touchgfx::FontId SCROLLWHEELCENTER = 4; // Roboto_Bold_35_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 5;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider
