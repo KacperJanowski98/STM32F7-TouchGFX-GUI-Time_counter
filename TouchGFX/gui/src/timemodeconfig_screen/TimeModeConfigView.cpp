@@ -7,6 +7,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
+//	, Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupThreshold.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
@@ -31,9 +32,10 @@ void TimeModeConfigView::setupScreen()
     TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 
     // Implementacja kanalow		-- remove
-    TimeModeParameter Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2);
+//    TimeModeParameter Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2);
     // implementacja wskaznikow   -- remove
-    TimeModeConfigView::pChannel1 = std::make_unique<TimeModeParameter>(Channel1);
+//    TimeModeConfigView::pChannel1 = std::make_unique<TimeModeParameter>(model.getChannel1());
+    TimeModeConfigView::pChannel1 = model.getChannel1();
 }
 
 void TimeModeConfigView::tearDownScreen()
