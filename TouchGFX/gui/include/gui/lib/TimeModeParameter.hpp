@@ -93,7 +93,7 @@ private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
 	Slope m_slope;
-	Threshold m_setThreshold;
+	Threshold m_thresholdMode;
 	uint32_t m_threshold;
 	uint8_t m_startChannel;
 	uint8_t m_stopChannel;
