@@ -1,5 +1,7 @@
 #include <gui/timemodeconfig_screen/TimeModeConfigView.hpp>
 
+
+
 TimeModeConfigView::TimeModeConfigView()
 	: scrollWheelAnimateToCallback(this, &TimeModeConfigView::scrollWheelAnimateToHandler)
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
@@ -26,7 +28,12 @@ void TimeModeConfigView::setupScreen()
     sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
     sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    -- remove
-    TimeModeConfigView::setChannelParameter(toggleChannel.getState());
+    TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
+
+    // Implementacja kanalow		-- remove
+    TimeModeParameter Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2);
+    // implementacja wskaznikow   -- remove
+    TimeModeConfigView::pChannel1 = std::make_unique<TimeModeParameter>(Channel1);
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -49,12 +56,13 @@ void TimeModeConfigView::scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter
 void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
 {
 	textChannelINPUT.invalidate();
-	int16_t numberChannel = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", numberChannel);
-	switch(numberChannel)
+//	int16_t numberChannel = itemSelected + 1;		-- remove
+	m_numberChannel = itemSelected + 1;
+	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);
+	switch(m_numberChannel)
 	{
 	case 1:
-		toggleChannel.forceState(true);
+		toggleChannel.forceState(pChannel1->getStateChannel());
 		break;
 	case 2:
 		toggleChannel.forceState(false);
@@ -78,8 +86,8 @@ void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
 		toggleChannel.forceState(false);
 		break;
 	}
+	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 	toggleChannel.invalidate();
-	TimeModeConfigView::setChannelParameter(toggleChannel.getState());
 }
 
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
@@ -139,11 +147,13 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 
 void TimeModeConfigView::ChangeChannelState()
 {
-	TimeModeConfigView::setChannelParameter(toggleChannel.getState());
+	bool CurrentState = toggleChannel.getState();
+	TimeModeConfigView::setGuiTouchable(CurrentState);
+	setChannelStateUI(CurrentState);
 }
 
 // moje funkcje
-void  TimeModeConfigView::setChannelParameter(bool state)
+void  TimeModeConfigView::setGuiTouchable(bool state)
 {
     if (state == false)
     {
@@ -164,5 +174,49 @@ void  TimeModeConfigView::setChannelParameter(bool state)
     	buttonDetect.setTouchable(true);
     }
 }
+
+uint16_t TimeModeConfigView::getCurrentChannel()
+{
+	return m_numberChannel;
+}
+
+void TimeModeConfigView::setChannelStateUI(bool state)
+{
+	switch(m_numberChannel)
+	{
+	case 1:
+		pChannel1->setStateChannel(state);
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+
+		break;
+	case 6:
+
+		break;
+	case 7:
+
+		break;
+	case 8:
+
+		break;
+	}
+}
+
+
+
+
+
+
+
+
 
 

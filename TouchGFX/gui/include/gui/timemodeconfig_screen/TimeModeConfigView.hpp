@@ -3,6 +3,9 @@
 
 #include <gui_generated/timemodeconfig_screen/TimeModeConfigViewBase.hpp>
 #include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
+#include <gui/lib/TimeModeParameter.hpp>
+
+//extern TimeModeParameter Channel1;
 
 class TimeModeConfigView : public TimeModeConfigViewBase
 {
@@ -16,6 +19,10 @@ public:
     virtual void scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
     virtual void ChangeChannelState();
+    // moje funkcje do GUI   -- remove
+    void setGuiTouchable(bool state);
+    uint16_t getCurrentChannel();
+    void setChannelStateUI(bool state);
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
@@ -36,8 +43,12 @@ protected:
 
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
 
-    // moje funkcje do GUI   -- remove
-    void setChannelParameter(bool state);
+
+private:
+    // wskazniki do kanalow		-- remove
+    std::unique_ptr<TimeModeParameter> pChannel1;
+
+    int16_t m_numberChannel;
 };
 
 #endif // TIMEMODECONFIGVIEW_HPP

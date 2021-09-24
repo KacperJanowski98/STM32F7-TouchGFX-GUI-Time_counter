@@ -164,6 +164,38 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTDefined.setLinespacing(0);
     textTDefined.setTypedText(touchgfx::TypedText(T_SINGLEUSEID24));
     swipeContainerTimeINPUT.add(textTDefined);
+
+    textTestChanel1.setPosition(491, 10, 101, 31);
+    textTestChanel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTestChanel1.setLinespacing(0);
+    textTestChanel1Buffer[0] = 0;
+    textTestChanel1.setWildcard(textTestChanel1Buffer);
+    textTestChanel1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID27));
+    swipeContainerTimeINPUT.add(textTestChanel1);
+
+    textTestChanel2.setPosition(627, 7, 101, 31);
+    textTestChanel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTestChanel2.setLinespacing(0);
+    textTestChanel2Buffer[0] = 0;
+    textTestChanel2.setWildcard(textTestChanel2Buffer);
+    textTestChanel2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID28));
+    swipeContainerTimeINPUT.add(textTestChanel2);
+
+    textTestChanel3.setPosition(500, 54, 101, 31);
+    textTestChanel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTestChanel3.setLinespacing(0);
+    textTestChanel3Buffer[0] = 0;
+    textTestChanel3.setWildcard(textTestChanel3Buffer);
+    textTestChanel3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID29));
+    swipeContainerTimeINPUT.add(textTestChanel3);
+
+    textTestChanel4.setPosition(627, 57, 101, 31);
+    textTestChanel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTestChanel4.setLinespacing(0);
+    textTestChanel4Buffer[0] = 0;
+    textTestChanel4.setWildcard(textTestChanel4Buffer);
+    textTestChanel4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID30));
+    swipeContainerTimeINPUT.add(textTestChanel4);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);

@@ -32,9 +32,9 @@ public:
 	 */
 	TimeModeParameter(uint8_t numberChannel = 0,
 						bool stateChannel = false,
-						Slope slope = Slope::UP,
+						Slope slopeChannel = Slope::UP,
 						Threshold setThreshold = Threshold::Manula,
-						uint32_t threshold = 100,
+						uint32_t thresholdVal = 100,
 						uint8_t startChannel = 0,
 						uint8_t stopChannel = 0);
 
