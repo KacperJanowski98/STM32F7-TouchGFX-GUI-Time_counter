@@ -58,7 +58,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
     swipeContainerTimeINPUT.add(labelINPUT);
 
-    textChannelINPUT.setPosition(201, 50, 71, 35);
+    textChannelINPUT.setPosition(201, 41, 71, 35);
     textChannelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textChannelINPUT.setLinespacing(0);
     textChannelINPUTBuffer[0] = 0;
@@ -81,6 +81,80 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
                               scrollWheelINPUTSelectedListItems, updateItemCallback);
     scrollWheelINPUT.animateToItem(0, 0);
     swipeContainerTimeINPUT.add(scrollWheelINPUT);
+
+    toggleButton1.setXY(341, 38);
+    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    swipeContainerTimeINPUT.add(toggleButton1);
+
+    radioSlopeDown.setXY(178, 285);
+    radioSlopeDown.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioSlopeDown.setSelected(false);
+    radioSlopeDown.setDeselectionEnabled(false);
+    swipeContainerTimeINPUT.add(radioSlopeDown);
+
+    radioSlopeUp.setXY(178, 174);
+    radioSlopeUp.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioSlopeUp.setSelected(false);
+    radioSlopeUp.setDeselectionEnabled(false);
+    swipeContainerTimeINPUT.add(radioSlopeUp);
+
+    textThreshold.setXY(491, 111);
+    textThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textThreshold.setLinespacing(0);
+    textThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID20));
+    swipeContainerTimeINPUT.add(textThreshold);
+
+    textSlope.setXY(201, 111);
+    textSlope.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textSlope.setLinespacing(0);
+    textSlope.setTypedText(touchgfx::TypedText(T_SINGLEUSEID19));
+    swipeContainerTimeINPUT.add(textSlope);
+
+    buttonDetect.setXY(468, 194);
+    buttonDetect.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID21));
+    buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainerTimeINPUT.add(buttonDetect);
+
+    textSliderThreshold.setPosition(468, 151, 170, 29);
+    textSliderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textSliderThreshold.setLinespacing(0);
+    textSliderThresholdBuffer[0] = 0;
+    textSliderThreshold.setWildcard(textSliderThresholdBuffer);
+    textSliderThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID22));
+    swipeContainerTimeINPUT.add(textSliderThreshold);
+
+    sliderThreshold.setXY(677, 91);
+    sliderThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
+    sliderThreshold.setupVerticalSlider(7, 3, 0, 0, 125);
+    sliderThreshold.setValueRange(0, 1000);
+    sliderThreshold.setValue(0);
+    swipeContainerTimeINPUT.add(sliderThreshold);
+
+    radioThresholdManual.setXY(405, 270);
+    radioThresholdManual.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioThresholdManual.setSelected(false);
+    radioThresholdManual.setDeselectionEnabled(false);
+    swipeContainerTimeINPUT.add(radioThresholdManual);
+
+    radioThresholdDefined.setXY(405, 341);
+    radioThresholdDefined.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioThresholdDefined.setSelected(false);
+    radioThresholdDefined.setDeselectionEnabled(false);
+    swipeContainerTimeINPUT.add(radioThresholdDefined);
+
+    textTManual.setXY(517, 280);
+    textTManual.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTManual.setLinespacing(0);
+    textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
+    swipeContainerTimeINPUT.add(textTManual);
+
+    textTDefined.setXY(512, 351);
+    textTDefined.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTDefined.setLinespacing(0);
+    textTDefined.setTypedText(touchgfx::TypedText(T_SINGLEUSEID24));
+    swipeContainerTimeINPUT.add(textTDefined);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -154,6 +228,10 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(labelTimeConfig);
     add(boxBacgroundTC);
     add(swipeContainerTime);
+    radioButtonGroup1.add(radioSlopeDown);
+    radioButtonGroup1.add(radioSlopeUp);
+    radioButtonGroup1.add(radioThresholdManual);
+    radioButtonGroup1.add(radioThresholdDefined);
 }
 
 void TimeModeConfigViewBase::setupScreen()

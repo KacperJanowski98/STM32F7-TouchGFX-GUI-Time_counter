@@ -17,6 +17,11 @@
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/RadioButton.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class TimeModeConfigViewBase : public touchgfx::View<TimeModeConfigPresenter>
 {
@@ -59,6 +64,19 @@ protected:
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelINPUT;
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelINPUTSelectedListItems;
+
+    touchgfx::ToggleButton toggleButton1;
+    touchgfx::RadioButton radioSlopeDown;
+    touchgfx::RadioButton radioSlopeUp;
+    touchgfx::TextArea textThreshold;
+    touchgfx::TextArea textSlope;
+    touchgfx::ButtonWithLabel buttonDetect;
+    touchgfx::TextAreaWithOneWildcard textSliderThreshold;
+    touchgfx::Slider sliderThreshold;
+    touchgfx::RadioButton radioThresholdManual;
+    touchgfx::RadioButton radioThresholdDefined;
+    touchgfx::TextArea textTManual;
+    touchgfx::TextArea textTDefined;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -73,12 +91,15 @@ protected:
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
+    touchgfx::RadioButtonGroup<4> radioButtonGroup1;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
+    static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
 
 private:
 
