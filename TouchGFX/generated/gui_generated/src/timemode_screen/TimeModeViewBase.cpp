@@ -15,11 +15,11 @@ TimeModeViewBase::TimeModeViewBase() :
     boxBackgroundTime.setPosition(0, 0, 800, 480);
     boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
 
-    buttonBackMenuT.setXY(740, 420);
+    buttonBackMenuT.setXY(740, 0);
     buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBackMenuT.setAction(buttonCallback);
 
-    buttonConfig.setXY(570, 420);
+    buttonConfig.setXY(630, 420);
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 

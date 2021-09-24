@@ -15,11 +15,11 @@ FreqModeViewBase::FreqModeViewBase() :
     boxBackgroungFreq.setPosition(0, 0, 800, 480);
     boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(13, 122, 255));
 
-    buttonToMenuF.setXY(740, 420);
+    buttonToMenuF.setXY(740, 0);
     buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonToMenuF.setAction(buttonCallback);
 
-    buttonConfig.setXY(570, 420);
+    buttonConfig.setXY(630, 420);
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 

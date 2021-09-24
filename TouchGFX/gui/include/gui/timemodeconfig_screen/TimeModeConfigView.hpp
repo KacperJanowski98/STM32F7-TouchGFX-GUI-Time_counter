@@ -35,6 +35,9 @@ protected:
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
 
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
+
+    // moje funkcje do GUI   -- remove
+    void setChannelParameter(bool state);
 };
 
 #endif // TIMEMODECONFIGVIEW_HPP

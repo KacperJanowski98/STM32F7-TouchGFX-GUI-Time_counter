@@ -26,24 +26,7 @@ void TimeModeConfigView::setupScreen()
     sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
     sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    -- remove
-    if (toggleChannel.getState() == false)
-    {
-    	radioSlopeUp.setTouchable(false);
-    	radioSlopeDown.setTouchable(false);
-    	radioThresholdManual.setTouchable(false);
-    	radioThresholdDefined.setTouchable(false);
-    	sliderThreshold.setTouchable(false);
-    	buttonDetect.setTouchable(false);
-    }
-    else
-    {
-    	radioSlopeUp.setTouchable(true);
-    	radioSlopeDown.setTouchable(true);
-    	radioThresholdManual.setTouchable(true);
-    	radioThresholdDefined.setTouchable(true);
-    	sliderThreshold.setTouchable(true);
-    	buttonDetect.setTouchable(true);
-    }
+    TimeModeConfigView::setChannelParameter(toggleChannel.getState());
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -66,8 +49,37 @@ void TimeModeConfigView::scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter
 void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
 {
 	textChannelINPUT.invalidate();
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", itemSelected + 1);
-
+	int16_t numberChannel = itemSelected + 1;
+	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", numberChannel);
+	switch(numberChannel)
+	{
+	case 1:
+		toggleChannel.forceState(true);
+		break;
+	case 2:
+		toggleChannel.forceState(false);
+		break;
+	case 3:
+		toggleChannel.forceState(true);
+		break;
+	case 4:
+		toggleChannel.forceState(false);
+		break;
+	case 5:
+		toggleChannel.forceState(true);
+		break;
+	case 6:
+		toggleChannel.forceState(false);
+		break;
+	case 7:
+		toggleChannel.forceState(true);
+		break;
+	case 8:
+		toggleChannel.forceState(false);
+		break;
+	}
+	toggleChannel.invalidate();
+	TimeModeConfigView::setChannelParameter(toggleChannel.getState());
 }
 
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
@@ -127,7 +139,13 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 
 void TimeModeConfigView::ChangeChannelState()
 {
-    if (toggleChannel.getState() == false)
+	TimeModeConfigView::setChannelParameter(toggleChannel.getState());
+}
+
+// moje funkcje
+void  TimeModeConfigView::setChannelParameter(bool state)
+{
+    if (state == false)
     {
     	radioSlopeUp.setTouchable(false);
     	radioSlopeDown.setTouchable(false);
@@ -146,6 +164,5 @@ void TimeModeConfigView::ChangeChannelState()
     	buttonDetect.setTouchable(true);
     }
 }
-
 
 
