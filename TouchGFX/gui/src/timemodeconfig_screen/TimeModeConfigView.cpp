@@ -2,6 +2,8 @@
 
 TimeModeConfigView::TimeModeConfigView()
 	: scrollWheelAnimateToCallback(this, &TimeModeConfigView::scrollWheelAnimateToHandler)
+	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
+	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 {
 
 }
@@ -17,6 +19,9 @@ void TimeModeConfigView::setupScreen()
 	}
 	scrollWheelINPUT.animateToItem(3);
 //    TimeModeConfigViewBase::setupScreen();
+    sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
+    sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
+    sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -41,3 +46,34 @@ void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
 	textChannelINPUT.invalidate();
 	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", itemSelected + 1);
 }
+
+void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &sliderThreshold)
+    {
+        //execute code whenever the slider starts changing value.
+        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+        textSliderThreshold.invalidate();
+    }
+}
+
+void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &sliderThreshold)
+    {
+        //execute code whenever the slider starts changing value.
+        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+        textSliderThreshold.invalidate();
+    }
+}
+
+void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &sliderThreshold)
+    {
+        //execute code whenever the slider starts changing value.
+        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+        textSliderThreshold.invalidate();
+    }
+}
+

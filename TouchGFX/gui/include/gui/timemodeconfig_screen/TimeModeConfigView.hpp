@@ -19,6 +19,16 @@ protected:
     // The parameter itemSelected is the selected item.
     Callback<TimeModeConfigView, int16_t> scrollWheelAnimateToCallback;
     void scrollWheelAnimateToHandler(int16_t itemSelected);
+
+    // Callback Declaration.
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueStartedChangeCallback;
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueChangedCallback;
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
+
+    // Callback Handler Declarations.
+    void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+    void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
 };
 
 #endif // TIMEMODECONFIGVIEW_HPP
