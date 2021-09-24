@@ -42,6 +42,7 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ChannelContainerCenter.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerCenterBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\lib\TimeModeParameter.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -211,6 +212,7 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ChannelContainerCenter.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerCenterBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\lib\TimeModeParameter.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

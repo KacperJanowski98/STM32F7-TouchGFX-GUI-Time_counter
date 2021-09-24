@@ -857,8 +857,8 @@
                       "BufferSize": 20
                     },
                     "Name": "textTest",
-                    "X": 279,
-                    "Y": 200,
+                    "X": 287,
+                    "Y": 206,
                     "Width": 126,
                     "Height": 24,
                     "Visible": true,

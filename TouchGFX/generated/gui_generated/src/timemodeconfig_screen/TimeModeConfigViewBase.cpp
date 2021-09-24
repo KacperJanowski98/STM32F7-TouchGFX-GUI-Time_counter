@@ -151,7 +151,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
     swipeContainerTimeINPUT.add(textTManual);
 
-    textTest.setPosition(279, 200, 126, 24);
+    textTest.setPosition(287, 206, 126, 24);
     textTest.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTest.setLinespacing(0);
     textTestBuffer[0] = 0;

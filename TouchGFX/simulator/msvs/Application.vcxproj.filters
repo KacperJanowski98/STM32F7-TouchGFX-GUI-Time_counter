@@ -244,6 +244,12 @@
     <Filter Include="Header Files\generated\gui_generated\containers">
       <UniqueIdentifier>FA2FF8A2-386B-7175-3A7E-FA61534FDCE6</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\lib">
+      <UniqueIdentifier>3F5E6094-F1DA-7EC1-5A58-87B4212551B7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\lib">
+      <UniqueIdentifier>7150B4B7-2A6D-78CC-62E9-D95D94EF58C6</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -338,6 +344,9 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ChannelContainerCenterBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\lib\TimeModeParameter.cpp">
+      <Filter>Source Files\gui\lib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -837,6 +846,9 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ChannelContainerCenterBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\lib\TimeModeParameter.hpp">
+      <Filter>Header Files\gui\lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
