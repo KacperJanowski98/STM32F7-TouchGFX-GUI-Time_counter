@@ -65,7 +65,7 @@ protected:
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelINPUTSelectedListItems;
 
-    touchgfx::ToggleButton toggleButton1;
+    touchgfx::ToggleButton toggleChannel;
     touchgfx::RadioButton radioSlopeDown;
     touchgfx::RadioButton radioSlopeUp;
     touchgfx::TextArea textThreshold;
@@ -91,7 +91,8 @@ protected:
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
-    touchgfx::RadioButtonGroup<4> radioButtonGroup1;
+    touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
+    touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
 
     /*
      * Wildcard Buffers

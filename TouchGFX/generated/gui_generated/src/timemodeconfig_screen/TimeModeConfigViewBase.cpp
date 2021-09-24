@@ -82,11 +82,11 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelINPUT.animateToItem(0, 0);
     swipeContainerTimeINPUT.add(scrollWheelINPUT);
 
-    toggleButton1.setXY(341, 38);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
-    swipeContainerTimeINPUT.add(toggleButton1);
+    toggleChannel.setXY(336, 38);
+    toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
+    swipeContainerTimeINPUT.add(toggleChannel);
 
-    radioSlopeDown.setXY(178, 285);
+    radioSlopeDown.setXY(178, 283);
     radioSlopeDown.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioSlopeDown.setSelected(false);
     radioSlopeDown.setDeselectionEnabled(false);
@@ -120,7 +120,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textSliderThreshold.setPosition(468, 151, 170, 29);
     textSliderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textSliderThreshold.setLinespacing(0);
-    textSliderThresholdBuffer[0] = 0;
+    Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID25).getText());
     textSliderThreshold.setWildcard(textSliderThresholdBuffer);
     textSliderThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID22));
     swipeContainerTimeINPUT.add(textSliderThreshold);
@@ -129,7 +129,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     sliderThreshold.setupVerticalSlider(7, 3, 0, 0, 125);
     sliderThreshold.setValueRange(0, 1000);
-    sliderThreshold.setValue(0);
+    sliderThreshold.setValue(100);
     swipeContainerTimeINPUT.add(sliderThreshold);
 
     radioThresholdManual.setXY(405, 270);
@@ -228,10 +228,10 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(labelTimeConfig);
     add(boxBacgroundTC);
     add(swipeContainerTime);
-    radioButtonGroup1.add(radioSlopeDown);
-    radioButtonGroup1.add(radioSlopeUp);
-    radioButtonGroup1.add(radioThresholdManual);
-    radioButtonGroup1.add(radioThresholdDefined);
+    radioButtonGroupSlope.add(radioSlopeDown);
+    radioButtonGroupSlope.add(radioSlopeUp);
+    radioButtonGroupThreshold.add(radioThresholdManual);
+    radioButtonGroupThreshold.add(radioThresholdDefined);
 }
 
 void TimeModeConfigViewBase::setupScreen()
