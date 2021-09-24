@@ -842,6 +842,34 @@
                   },
                   {
                     "Type": "TextArea",
+                    "TextId": "SingleUseId26",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    },
+                    "Name": "textTest",
+                    "X": 279,
+                    "Y": 200,
+                    "Width": 126,
+                    "Height": 24,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
                     "TextId": "SingleUseId24",
                     "TextRotation": "0",
                     "Color": {
@@ -1180,6 +1208,18 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "TimeMode"
+            }
+          },
+          {
+            "InteractionName": "TurnOnOffChannel",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleChannel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ChangeChannelState"
             }
           }
         ],
@@ -1968,6 +2008,10 @@
       },
       {
         "TextEntryId": "SingleUseId25",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId26",
         "IsResource": false
       }
     ],

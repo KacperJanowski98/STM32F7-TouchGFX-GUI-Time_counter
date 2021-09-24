@@ -40,6 +40,14 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void ChangeChannelState()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -76,6 +84,7 @@ protected:
     touchgfx::RadioButton radioThresholdManual;
     touchgfx::RadioButton radioThresholdDefined;
     touchgfx::TextArea textTManual;
+    touchgfx::TextAreaWithOneWildcard textTest;
     touchgfx::TextArea textTDefined;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
@@ -101,6 +110,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
+    static const uint16_t TEXTTEST_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textTestBuffer[TEXTTEST_SIZE];
 
 private:
 

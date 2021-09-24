@@ -14,6 +14,8 @@ public:
 
     virtual void scrollWheelINPUTUpdateItem(ChannelContainer& item, int16_t itemIndex);
     virtual void scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
+
+    virtual void ChangeChannelState();
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
@@ -25,10 +27,14 @@ protected:
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueChangedCallback;
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSlopeCallback;
+
     // Callback Handler Declarations.
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
+
+    void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
 };
 
 #endif // TIMEMODECONFIGVIEW_HPP

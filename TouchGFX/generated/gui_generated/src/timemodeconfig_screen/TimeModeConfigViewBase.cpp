@@ -84,6 +84,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
     toggleChannel.setXY(336, 38);
     toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
+    toggleChannel.setAction(buttonCallback);
     swipeContainerTimeINPUT.add(toggleChannel);
 
     radioSlopeDown.setXY(178, 283);
@@ -149,6 +150,14 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTManual.setLinespacing(0);
     textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
     swipeContainerTimeINPUT.add(textTManual);
+
+    textTest.setPosition(279, 200, 126, 24);
+    textTest.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTest.setLinespacing(0);
+    textTestBuffer[0] = 0;
+    textTest.setWildcard(textTestBuffer);
+    textTest.setTypedText(touchgfx::TypedText(T_SINGLEUSEID26));
+    swipeContainerTimeINPUT.add(textTest);
 
     textTDefined.setXY(512, 351);
     textTDefined.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -255,6 +264,13 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonBackTime clicked change screen to TimeMode
         //Go to TimeMode with screen transition towards West
         application().gotoTimeModeScreenCoverTransitionWest();
+    }
+    else if (&src == &toggleChannel)
+    {
+        //TurnOnOffChannel
+        //When toggleChannel clicked call virtual function
+        //Call ChangeChannelState
+        ChangeChannelState();
     }
 }
 
