@@ -85,10 +85,10 @@ void TimeModeConfigView::scrollWheelTISetupUpdateCenterItem(ChannelContainerCent
 // The callback updates the selectedVal on the itemSelected parameter
 void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
-	textChannelINPUT.invalidate();	-- remove
-//	int16_t numberChannel = itemSelected + 1;		-- remove
+	textChannelINPUT.invalidate();	//-- remove
+//	int16_t numberChannel = itemSelected + 1;		//-- remove
 	m_numberChannel = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);	-- remove
+	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);	//-- remove
 	switch(m_numberChannel)
 	{
 	case 1:
@@ -143,6 +143,12 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	toggleChannel.invalidate();
 	bool CurrentState = toggleChannel.getState();
 	setChannelStateUI(CurrentState);
+	TimeModeConfigView::setGuiTouchable(CurrentState);
+}
+
+void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected)
+{
+
 }
 
 // obsluga slidera threshold
