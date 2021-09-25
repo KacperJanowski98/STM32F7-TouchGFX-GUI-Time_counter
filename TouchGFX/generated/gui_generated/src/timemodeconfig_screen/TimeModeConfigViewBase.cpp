@@ -253,7 +253,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelTISetup.animateToItem(0, 0);
     swipeContainerTimeTISETUP.add(scrollWheelTISetup);
 
-    textOnOffChannel.setPosition(305, 76, 50, 38);
+    textOnOffChannel.setPosition(151, 219, 50, 38);
     textOnOffChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textOnOffChannel.setLinespacing(0);
     textOnOffChannelBuffer[0] = 0;
@@ -261,31 +261,79 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textOnOffChannel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID29));
     swipeContainerTimeTISETUP.add(textOnOffChannel);
 
-    textTiStop.setXY(355, 293);
+    textTiStop.setXY(409, 280);
     textTiStop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiStop.setLinespacing(0);
     textTiStop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID31));
     swipeContainerTimeTISETUP.add(textTiStop);
 
-    textTiStart.setXY(345, 158);
+    textTiStart.setXY(399, 102);
     textTiStart.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiStart.setLinespacing(0);
     textTiStart.setTypedText(touchgfx::TypedText(T_SINGLEUSEID30));
     swipeContainerTimeTISETUP.add(textTiStart);
 
-    textOnState.setPosition(375, 76, 50, 38);
+    textOnState.setPosition(222, 219, 50, 38);
     textOnState.setVisible(false);
     textOnState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textOnState.setLinespacing(0);
     textOnState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID32));
     swipeContainerTimeTISETUP.add(textOnState);
 
-    textOffState.setPosition(375, 76, 50, 38);
+    textOffState.setPosition(222, 219, 50, 38);
     textOffState.setVisible(false);
     textOffState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textOffState.setLinespacing(0);
     textOffState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID33));
     swipeContainerTimeTISETUP.add(textOffState);
+
+    scrollWheelStart.setPosition(610, 24, 100, 180);
+    scrollWheelStart.setHorizontal(false);
+    scrollWheelStart.setCircular(false);
+    scrollWheelStart.setEasingEquation(touchgfx::EasingEquations::circEaseOut);
+    scrollWheelStart.setSwipeAcceleration(40);
+    scrollWheelStart.setDragAcceleration(10);
+    scrollWheelStart.setNumberOfItems(8);
+    scrollWheelStart.setSelectedItemOffset(60);
+    scrollWheelStart.setSelectedItemExtraSize(0, 0);
+    scrollWheelStart.setSelectedItemMargin(0, 0);
+    scrollWheelStart.setDrawableSize(60, 0);
+    scrollWheelStart.setDrawables(scrollWheelStartListItems, updateItemCallback,
+                              scrollWheelStartSelectedListItems, updateItemCallback);
+    scrollWheelStart.animateToItem(0, 0);
+    swipeContainerTimeTISETUP.add(scrollWheelStart);
+
+    textStartChannel.setPosition(539, 102, 71, 25);
+    textStartChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textStartChannel.setLinespacing(0);
+    textStartChannelBuffer[0] = 0;
+    textStartChannel.setWildcard(textStartChannelBuffer);
+    textStartChannel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID34));
+    swipeContainerTimeTISETUP.add(textStartChannel);
+
+    textStopChannel.setPosition(539, 280, 71, 25);
+    textStopChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textStopChannel.setLinespacing(0);
+    textStopChannelBuffer[0] = 0;
+    textStopChannel.setWildcard(textStopChannelBuffer);
+    textStopChannel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID35));
+    swipeContainerTimeTISETUP.add(textStopChannel);
+
+    scrollWheelStop.setPosition(611, 204, 100, 180);
+    scrollWheelStop.setHorizontal(false);
+    scrollWheelStop.setCircular(false);
+    scrollWheelStop.setEasingEquation(touchgfx::EasingEquations::circEaseOut);
+    scrollWheelStop.setSwipeAcceleration(40);
+    scrollWheelStop.setDragAcceleration(10);
+    scrollWheelStop.setNumberOfItems(8);
+    scrollWheelStop.setSelectedItemOffset(60);
+    scrollWheelStop.setSelectedItemExtraSize(0, 0);
+    scrollWheelStop.setSelectedItemMargin(0, 0);
+    scrollWheelStop.setDrawableSize(60, 0);
+    scrollWheelStop.setDrawables(scrollWheelStopListItems, updateItemCallback,
+                              scrollWheelStopSelectedListItems, updateItemCallback);
+    scrollWheelStop.animateToItem(0, 0);
+    swipeContainerTimeTISETUP.add(scrollWheelStop);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 
     swipeContainerTimeSESSION.setWidth(800);
@@ -344,6 +392,24 @@ void TimeModeConfigViewBase::setupScreen()
     {
         scrollWheelTISetupSelectedListItems[i].initialize();
     }
+    scrollWheelStart.initialize();
+    for (int i = 0; i < scrollWheelStartListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelStartListItems[i].initialize();
+    }
+    for (int i = 0; i < scrollWheelStartSelectedListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelStartSelectedListItems[i].initialize();
+    }
+    scrollWheelStop.initialize();
+    for (int i = 0; i < scrollWheelStopListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelStopListItems[i].initialize();
+    }
+    for (int i = 0; i < scrollWheelStopSelectedListItems.getNumberOfDrawables(); i++)
+    {
+        scrollWheelStopSelectedListItems[i].initialize();
+    }
 }
 
 void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -389,5 +455,29 @@ void TimeModeConfigViewBase::updateItemCallbackHandler(touchgfx::DrawableListIte
         touchgfx::Drawable* d = items->getDrawable(containerIndex);
         ChannelContainerCenter* cc = (ChannelContainerCenter*)d;
         scrollWheelTISetupUpdateCenterItem(*cc, itemIndex);
+    }
+    if (items == &scrollWheelStartListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainer* cc = (ChannelContainer*)d;
+        scrollWheelStartUpdateItem(*cc, itemIndex);
+    }
+    else if (items == &scrollWheelStartSelectedListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainerCenter* cc = (ChannelContainerCenter*)d;
+        scrollWheelStartUpdateCenterItem(*cc, itemIndex);
+    }
+    if (items == &scrollWheelStopListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainer* cc = (ChannelContainer*)d;
+        scrollWheelStopUpdateItem(*cc, itemIndex);
+    }
+    else if (items == &scrollWheelStopSelectedListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ChannelContainerCenter* cc = (ChannelContainerCenter*)d;
+        scrollWheelStopUpdateCenterItem(*cc, itemIndex);
     }
 }

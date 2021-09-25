@@ -5,6 +5,7 @@
 TimeModeConfigView::TimeModeConfigView()
 	: scrollWheelINPUTAnimateToCallback(this, &TimeModeConfigView::scrollWheelINPUTAnimateToHandler)
 	, scrollWheelTISetupAnimateToCallback(this, &TimeModeConfigView::scrollWheelTISetupAnimateToHandler)
+	, scrollWheelStartAnimateToCallback(this, &TimeModeConfigView::scrollWheelStartAnimateToHandler)
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
@@ -33,6 +34,7 @@ void TimeModeConfigView::setupScreen()
 {
 	scrollWheelINPUT.setAnimateToCallback(scrollWheelINPUTAnimateToCallback);
 	scrollWheelTISetup.setAnimateToCallback(scrollWheelTISetupAnimateToCallback);
+	scrollWheelStart.setAnimateToCallback(scrollWheelStartAnimateToCallback);
 
 	// The scroll wheel is updated to show the selected numbers.
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
@@ -42,6 +44,10 @@ void TimeModeConfigView::setupScreen()
 	}
 	scrollWheelINPUT.animateToItem(3);
 	scrollWheelTISetup.animateToItem(3);
+
+	// The scroll wheel for start in and stop in channels is updated to show the selected numbers.
+	updateScrollTiSetup();
+
 //    TimeModeConfigViewBase::setupScreen();
 	// obsluga slidera    -- remove
     sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
@@ -80,6 +86,16 @@ void TimeModeConfigView::scrollWheelTISetupUpdateItem(ChannelContainer& item, in
 void TimeModeConfigView::scrollWheelTISetupUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
 {
 	item.updateText(itemIndex + 1);
+}
+
+void TimeModeConfigView::scrollWheelStartUpdateItem(ChannelContainer& item, int16_t itemIndex)
+{
+	item.updateText(activeChannels[itemIndex]);
+}
+
+void TimeModeConfigView::scrollWheelStartUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+{
+	item.updateText(activeChannels[itemIndex]);
 }
 
 // The callback updates the selectedVal on the itemSelected parameter
@@ -180,6 +196,40 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 	}
 }
 
+void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
+{
+	textStartChannel.invalidate();
+	m_channelTiSetupStart = activeChannels[itemSelected];
+	Unicode::snprintf(textStartChannelBuffer, TEXTSTARTCHANNEL_SIZE, "%d", m_channelTiSetupStart);	//-- remove
+	switch(m_channelTiSetupStart)
+	{
+	case 1:
+		pChannel1->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 2:
+		pChannel2->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 3:
+		pChannel3->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 4:
+		pChannel4->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 5:
+		pChannel5->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 6:
+		pChannel6->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 7:
+		pChannel7->setStartChannel(m_channelTiSetupStart);
+		break;
+	case 8:
+		pChannel8->setStartChannel(m_channelTiSetupStart);
+		break;
+	}
+}
+
 // obsluga slidera threshold
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
@@ -246,6 +296,9 @@ void TimeModeConfigView::ChangeChannelState()
 	bool CurrentState = toggleChannel.getState();
 	TimeModeConfigView::setGuiTouchable(CurrentState);
 	setChannelStateUI(CurrentState);
+
+	setActiveListChannels(m_channelInput, CurrentState);
+	updateScrollTiSetup();
 }
 
 // moje funkcje
@@ -472,5 +525,23 @@ void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState
 	}
 }
 
-
+void TimeModeConfigView::updateScrollTiSetup()
+{
+	if (activeChannels.size() == 0)
+	{
+		scrollWheelStart.setVisible(false);
+		textStartChannel.setVisible(false);
+	}
+	else
+	{
+		scrollWheelStart.setVisible(true);
+		textStartChannel.setVisible(true);
+		scrollWheelStart.setNumberOfItems(activeChannels.size());
+		for (int i = 0; i < scrollWheelStartListItems.getNumberOfDrawables(); i++)
+		{
+			scrollWheelStart.itemChanged(i);
+		}
+		scrollWheelStart.animateToItem(0);
+	}
+}
 

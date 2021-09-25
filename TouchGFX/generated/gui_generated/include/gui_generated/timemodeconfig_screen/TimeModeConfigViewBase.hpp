@@ -50,6 +50,26 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void scrollWheelStartUpdateItem(ChannelContainer& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void scrollWheelStartUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void scrollWheelStopUpdateItem(ChannelContainer& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void scrollWheelStopUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
     /*
      * Virtual Action Handlers
      */
@@ -120,6 +140,15 @@ protected:
     touchgfx::TextArea textTiStart;
     touchgfx::TextArea textOnState;
     touchgfx::TextArea textOffState;
+    touchgfx::ScrollWheelWithSelectionStyle scrollWheelStart;
+    touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStartListItems;
+    touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStartSelectedListItems;
+
+    touchgfx::TextAreaWithOneWildcard textStartChannel;
+    touchgfx::TextAreaWithOneWildcard textStopChannel;
+    touchgfx::ScrollWheelWithSelectionStyle scrollWheelStop;
+    touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStopListItems;
+    touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStopSelectedListItems;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
@@ -137,6 +166,10 @@ protected:
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
     static const uint16_t TEXTONOFFCHANNEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textOnOffChannelBuffer[TEXTONOFFCHANNEL_SIZE];
+    static const uint16_t TEXTSTARTCHANNEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStartChannelBuffer[TEXTSTARTCHANNEL_SIZE];
+    static const uint16_t TEXTSTOPCHANNEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStopChannelBuffer[TEXTSTOPCHANNEL_SIZE];
 
 private:
 
