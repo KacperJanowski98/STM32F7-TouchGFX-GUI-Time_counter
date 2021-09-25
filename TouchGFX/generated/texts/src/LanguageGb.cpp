@@ -12,30 +12,34 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     54, // T_SingleUseId1
     32, // T_SingleUseId2
     0, // T_SingleUseId3
-    203, // T_SingleUseId4
-    215, // T_SingleUseId5
-    164, // T_SingleUseId6
+    236, // T_SingleUseId4
+    230, // T_SingleUseId5
+    185, // T_SingleUseId6
     104, // T_SingleUseId7
     32, // T_SingleUseId8
-    203, // T_SingleUseId9
-    209, // T_SingleUseId10
-    135, // T_SingleUseId11
+    236, // T_SingleUseId9
+    224, // T_SingleUseId10
+    156, // T_SingleUseId11
     104, // T_SingleUseId12
     118, // T_SingleUseId13
-    181, // T_SingleUseId16
-    223, // T_SingleUseId17
-    181, // T_SingleUseId14
-    223, // T_SingleUseId15
-    181, // T_SingleUseId18
-    197, // T_SingleUseId19
-    145, // T_SingleUseId20
-    190, // T_SingleUseId21
-    130, // T_SingleUseId22
-    183, // T_SingleUseId23
-    173, // T_SingleUseId24
-    221, // T_SingleUseId25
+    194, // T_SingleUseId16
+    251, // T_SingleUseId17
+    194, // T_SingleUseId14
+    251, // T_SingleUseId15
+    194, // T_SingleUseId18
+    218, // T_SingleUseId19
+    146, // T_SingleUseId20
+    204, // T_SingleUseId21
+    141, // T_SingleUseId22
+    211, // T_SingleUseId23
+    196, // T_SingleUseId24
+    249, // T_SingleUseId25
     73, // T_SingleUseId26
     89, // T_SingleUseId27
-    155, // T_SingleUseId28
-    181 // T_SingleUseId29
+    176, // T_SingleUseId28
+    194, // T_SingleUseId29
+    130, // T_SingleUseId30
+    166, // T_SingleUseId31
+    246, // T_SingleUseId32
+    242 // T_SingleUseId33
 };

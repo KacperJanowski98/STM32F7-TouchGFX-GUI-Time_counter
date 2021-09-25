@@ -253,13 +253,39 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelTISetup.animateToItem(0, 0);
     swipeContainerTimeTISETUP.add(scrollWheelTISetup);
 
-    textOnOffChannel.setPosition(353, 76, 105, 38);
+    textOnOffChannel.setPosition(305, 76, 50, 38);
     textOnOffChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textOnOffChannel.setLinespacing(0);
     textOnOffChannelBuffer[0] = 0;
     textOnOffChannel.setWildcard(textOnOffChannelBuffer);
     textOnOffChannel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID29));
     swipeContainerTimeTISETUP.add(textOnOffChannel);
+
+    textTiStop.setXY(355, 293);
+    textTiStop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTiStop.setLinespacing(0);
+    textTiStop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID31));
+    swipeContainerTimeTISETUP.add(textTiStop);
+
+    textTiStart.setXY(345, 158);
+    textTiStart.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTiStart.setLinespacing(0);
+    textTiStart.setTypedText(touchgfx::TypedText(T_SINGLEUSEID30));
+    swipeContainerTimeTISETUP.add(textTiStart);
+
+    textOnState.setPosition(375, 76, 50, 38);
+    textOnState.setVisible(false);
+    textOnState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textOnState.setLinespacing(0);
+    textOnState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID32));
+    swipeContainerTimeTISETUP.add(textOnState);
+
+    textOffState.setPosition(375, 76, 50, 38);
+    textOffState.setVisible(false);
+    textOffState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textOffState.setLinespacing(0);
+    textOffState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID33));
+    swipeContainerTimeTISETUP.add(textOffState);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 
     swipeContainerTimeSESSION.setWidth(800);

@@ -116,6 +116,10 @@ protected:
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelTISetupSelectedListItems;
 
     touchgfx::TextAreaWithOneWildcard textOnOffChannel;
+    touchgfx::TextArea textTiStop;
+    touchgfx::TextArea textTiStart;
+    touchgfx::TextArea textOnState;
+    touchgfx::TextArea textOffState;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;

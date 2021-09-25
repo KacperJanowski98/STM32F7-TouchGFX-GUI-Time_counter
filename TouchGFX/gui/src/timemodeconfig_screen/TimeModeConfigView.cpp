@@ -87,9 +87,9 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
 	textChannelINPUT.invalidate();	//-- remove
 //	int16_t numberChannel = itemSelected + 1;		//-- remove
-	m_numberChannel = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);	//-- remove
-	switch(m_numberChannel)
+	m_channelInput = itemSelected + 1;
+	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_channelInput);	//-- remove
+	switch(m_channelInput)
 	{
 	case 1:
 		toggleChannel.forceState(pChannel1->getStateChannel());
@@ -148,7 +148,36 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 
 void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected)
 {
-
+	textOnOffChannel.invalidate();
+	m_channelTiSetup = itemSelected + 1;
+	Unicode::snprintf(textOnOffChannelBuffer, TEXTONOFFCHANNEL_SIZE, "%d", m_channelTiSetup);	//-- remove
+	switch(m_channelTiSetup)
+	{
+	case 1:
+		readStateChannel(pChannel1->getStateChannel());
+		break;
+	case 2:
+		readStateChannel(pChannel2->getStateChannel());
+		break;
+	case 3:
+		readStateChannel(pChannel3->getStateChannel());
+		break;
+	case 4:
+		readStateChannel(pChannel4->getStateChannel());
+		break;
+	case 5:
+		readStateChannel(pChannel5->getStateChannel());
+		break;
+	case 6:
+		readStateChannel(pChannel6->getStateChannel());
+		break;
+	case 7:
+		readStateChannel(pChannel7->getStateChannel());
+		break;
+	case 8:
+		readStateChannel(pChannel8->getStateChannel());
+		break;
+	}
 }
 
 // obsluga slidera threshold
@@ -245,12 +274,12 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
 
 uint16_t TimeModeConfigView::getCurrentChannel()
 {
-	return m_numberChannel;
+	return m_channelInput;
 }
 
 void TimeModeConfigView::setChannelStateUI(bool state)
 {
-	switch(m_numberChannel)
+	switch(m_channelInput)
 	{
 	case 1:
 		pChannel1->setStateChannel(state);
@@ -297,7 +326,7 @@ void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
 // funkcja do ustawienia zboczy (wpisywanie do obiektow)
 void TimeModeConfigView::setSlopeUI(SlopeName slopeUi)
 {
-	switch(m_numberChannel)
+	switch(m_channelInput)
 	{
 	case 1:
 		pChannel1->setSlope(slopeUi);
@@ -342,7 +371,7 @@ void TimeModeConfigView::readThresholdModeUI(ThresholdName ThresholdMode)
 
 void TimeModeConfigView::setThresholdModeUI(ThresholdName ThresholdMode)
 {
-	switch(m_numberChannel)
+	switch(m_channelInput)
 	{
 	case 1:
 		pChannel1->setThresholdMode(ThresholdMode);
@@ -380,7 +409,7 @@ void TimeModeConfigView::readThresholdUI(uint32_t value)
 
 void TimeModeConfigView::setThresholdUI(uint32_t value)
 {
-	switch(m_numberChannel)
+	switch(m_channelInput)
 	{
 	case 1:
 		pChannel1->setThreshold(value);
@@ -409,7 +438,21 @@ void TimeModeConfigView::setThresholdUI(uint32_t value)
 	}
 }
 
-
+void TimeModeConfigView::readStateChannel(bool stateChannel)
+{
+	if (stateChannel == true)
+	{
+		textOnState.setVisible(true);
+		textOffState.setVisible(false);
+	}
+	else
+	{
+		textOnState.setVisible(false);
+		textOffState.setVisible(true);
+	}
+	textOnState.invalidate();
+	textOffState.invalidate();
+}
 
 
 
