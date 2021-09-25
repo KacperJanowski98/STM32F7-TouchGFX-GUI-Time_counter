@@ -84,17 +84,18 @@ protected:
     touchgfx::RadioButton radioThresholdManual;
     touchgfx::RadioButton radioThresholdDefined;
     touchgfx::TextArea textTManual;
-    touchgfx::TextAreaWithOneWildcard textTest;
     touchgfx::TextArea textTDefined;
-    touchgfx::TextAreaWithOneWildcard textTestChanel1;
-    touchgfx::TextAreaWithOneWildcard textTestChanel2;
-    touchgfx::TextAreaWithOneWildcard textTestChanel3;
-    touchgfx::TextAreaWithOneWildcard textTestChanel4;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
     touchgfx::Image imageArrowCR;
     touchgfx::TextArea labelCLOCK;
+    touchgfx::TextArea textClockExternal;
+    touchgfx::RadioButton radioClockExternal;
+    touchgfx::TextArea textClockRubid;
+    touchgfx::RadioButton radioClockRubid;
+    touchgfx::TextArea textClockQuartz;
+    touchgfx::RadioButton radioClockQuartz;
     touchgfx::Container swipeContainerTimeTISETUP;
     touchgfx::Box boxTISETUP;
     touchgfx::Image imageArrowTL;
@@ -106,6 +107,7 @@ protected:
     touchgfx::TextArea labelSESSIONSETUP;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
+    touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 
     /*
      * Wildcard Buffers
@@ -114,16 +116,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
-    static const uint16_t TEXTTEST_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar textTestBuffer[TEXTTEST_SIZE];
-    static const uint16_t TEXTTESTCHANEL1_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textTestChanel1Buffer[TEXTTESTCHANEL1_SIZE];
-    static const uint16_t TEXTTESTCHANEL2_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textTestChanel2Buffer[TEXTTESTCHANEL2_SIZE];
-    static const uint16_t TEXTTESTCHANEL3_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textTestChanel3Buffer[TEXTTESTCHANEL3_SIZE];
-    static const uint16_t TEXTTESTCHANEL4_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textTestChanel4Buffer[TEXTTESTCHANEL4_SIZE];
 
 private:
 

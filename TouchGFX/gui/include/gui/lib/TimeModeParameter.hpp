@@ -11,14 +11,15 @@
 #pragma once
 
 #include <iostream>
+#include <cstdint>
 
-enum class Slope
+enum class SlopeName
 {
 	UP,
 	DOWN
 };
 
-enum class Threshold
+enum class ThresholdName
 {
 	Manula,
 	Defined
@@ -30,10 +31,10 @@ public:
 	/**
 	 * Constructor.
 	 */
-	TimeModeParameter(uint8_t numberChannel,
+	explicit TimeModeParameter(uint8_t numberChannel,
 						bool stateChannel,
-						Slope slopeChannel,
-						Threshold setThreshold,
+						SlopeName slopeChannel,
+						ThresholdName setThreshold,
 						uint32_t thresholdVal,
 						uint8_t startChannel,
 						uint8_t stopChannel);
@@ -65,9 +66,9 @@ public:
 
 	void setStateChannel(bool state);
 
-	void setSlope(Slope slope);
+	void setSlope(SlopeName slope);
 
-	void setThresholdMode(Threshold mode);
+	void setThresholdMode(ThresholdName mode);
 
 	void setThreshold(uint32_t value);
 
@@ -79,9 +80,9 @@ public:
 
 	bool getStateChannel();
 
-	Slope getSlope();
+	SlopeName getSlope();
 
-	Threshold getThresholdMode();
+	ThresholdName getThresholdMode();
 
 	uint32_t getThreshold();
 
@@ -92,8 +93,8 @@ public:
 private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
-	Slope m_slope;
-	Threshold m_thresholdMode;
+	SlopeName m_slope;
+	ThresholdName m_thresholdMode;
 	uint32_t m_threshold;
 	uint8_t m_startChannel;
 	uint8_t m_stopChannel;

@@ -23,11 +23,11 @@ public:
     }
 
     void tick();
-    std::unique_ptr<TimeModeParameter> getChannel1();
+//    std::unique_ptr<TimeModeParameter> getChannel1();
 protected:
     ModelListener* modelListener;
-private:
-    TimeModeParameter Channel1;
+//private:
+//    TimeModeParameter Channel1;
 };
 
 #endif // MODEL_HPP

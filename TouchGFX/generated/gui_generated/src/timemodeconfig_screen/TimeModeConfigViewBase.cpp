@@ -44,7 +44,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeINPUT.setWidth(800);
     swipeContainerTimeINPUT.setHeight(420);
 
-    boxINPUT.setPosition(0, 0, 800, 420);
+    boxINPUT.setPosition(0, 2, 800, 420);
     boxINPUT.setColor(touchgfx::Color::getColorFromRGB(0, 119, 255));
     swipeContainerTimeINPUT.add(boxINPUT);
 
@@ -130,7 +130,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     sliderThreshold.setupVerticalSlider(7, 3, 0, 0, 125);
     sliderThreshold.setValueRange(0, 1000);
-    sliderThreshold.setValue(100);
+    sliderThreshold.setValue(0);
     swipeContainerTimeINPUT.add(sliderThreshold);
 
     radioThresholdManual.setXY(405, 270);
@@ -151,51 +151,11 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
     swipeContainerTimeINPUT.add(textTManual);
 
-    textTest.setPosition(287, 206, 126, 24);
-    textTest.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textTest.setLinespacing(0);
-    textTestBuffer[0] = 0;
-    textTest.setWildcard(textTestBuffer);
-    textTest.setTypedText(touchgfx::TypedText(T_SINGLEUSEID26));
-    swipeContainerTimeINPUT.add(textTest);
-
     textTDefined.setXY(512, 351);
     textTDefined.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTDefined.setLinespacing(0);
     textTDefined.setTypedText(touchgfx::TypedText(T_SINGLEUSEID24));
     swipeContainerTimeINPUT.add(textTDefined);
-
-    textTestChanel1.setPosition(491, 10, 101, 31);
-    textTestChanel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textTestChanel1.setLinespacing(0);
-    textTestChanel1Buffer[0] = 0;
-    textTestChanel1.setWildcard(textTestChanel1Buffer);
-    textTestChanel1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID27));
-    swipeContainerTimeINPUT.add(textTestChanel1);
-
-    textTestChanel2.setPosition(627, 7, 101, 31);
-    textTestChanel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textTestChanel2.setLinespacing(0);
-    textTestChanel2Buffer[0] = 0;
-    textTestChanel2.setWildcard(textTestChanel2Buffer);
-    textTestChanel2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID28));
-    swipeContainerTimeINPUT.add(textTestChanel2);
-
-    textTestChanel3.setPosition(500, 54, 101, 31);
-    textTestChanel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textTestChanel3.setLinespacing(0);
-    textTestChanel3Buffer[0] = 0;
-    textTestChanel3.setWildcard(textTestChanel3Buffer);
-    textTestChanel3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID29));
-    swipeContainerTimeINPUT.add(textTestChanel3);
-
-    textTestChanel4.setPosition(627, 57, 101, 31);
-    textTestChanel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textTestChanel4.setLinespacing(0);
-    textTestChanel4Buffer[0] = 0;
-    textTestChanel4.setWildcard(textTestChanel4Buffer);
-    textTestChanel4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID30));
-    swipeContainerTimeINPUT.add(textTestChanel4);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -218,6 +178,42 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
     swipeContainerTimeCLOCK.add(labelCLOCK);
+
+    textClockExternal.setXY(597, 210);
+    textClockExternal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textClockExternal.setLinespacing(0);
+    textClockExternal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID28));
+    swipeContainerTimeCLOCK.add(textClockExternal);
+
+    radioClockExternal.setXY(616, 114);
+    radioClockExternal.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockExternal.setSelected(false);
+    radioClockExternal.setDeselectionEnabled(false);
+    swipeContainerTimeCLOCK.add(radioClockExternal);
+
+    textClockRubid.setXY(361, 194);
+    textClockRubid.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textClockRubid.setLinespacing(0);
+    textClockRubid.setTypedText(touchgfx::TypedText(T_SINGLEUSEID27));
+    swipeContainerTimeCLOCK.add(textClockRubid);
+
+    radioClockRubid.setXY(378, 114);
+    radioClockRubid.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockRubid.setSelected(false);
+    radioClockRubid.setDeselectionEnabled(false);
+    swipeContainerTimeCLOCK.add(radioClockRubid);
+
+    textClockQuartz.setXY(119, 194);
+    textClockQuartz.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textClockQuartz.setLinespacing(0);
+    textClockQuartz.setTypedText(touchgfx::TypedText(T_SINGLEUSEID26));
+    swipeContainerTimeCLOCK.add(textClockQuartz);
+
+    radioClockQuartz.setXY(136, 114);
+    radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockQuartz.setSelected(true);
+    radioClockQuartz.setDeselectionEnabled(false);
+    swipeContainerTimeCLOCK.add(radioClockQuartz);
     swipeContainerTime.add(swipeContainerTimeCLOCK);
 
     swipeContainerTimeTISETUP.setWidth(800);
@@ -273,6 +269,9 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     radioButtonGroupSlope.add(radioSlopeUp);
     radioButtonGroupThreshold.add(radioThresholdManual);
     radioButtonGroupThreshold.add(radioThresholdDefined);
+    radioButtonGroupClock.add(radioClockExternal);
+    radioButtonGroupClock.add(radioClockRubid);
+    radioButtonGroupClock.add(radioClockQuartz);
 }
 
 void TimeModeConfigViewBase::setupScreen()

@@ -3,19 +3,34 @@
 
 
 TimeModeConfigView::TimeModeConfigView()
-	: scrollWheelAnimateToCallback(this, &TimeModeConfigView::scrollWheelAnimateToHandler)
+	: scrollWheelINPUTAnimateToCallback(this, &TimeModeConfigView::scrollWheelINPUTAnimateToHandler)
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
-//	, Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2)
+	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel4(4, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel5(5, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel6(6, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupThreshold.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
+	TimeModeConfigView::pChannel1 = std::make_unique<TimeModeParameter>(Channel1);
+	TimeModeConfigView::pChannel2 = std::make_unique<TimeModeParameter>(Channel2);
+	TimeModeConfigView::pChannel3 = std::make_unique<TimeModeParameter>(Channel3);
+	TimeModeConfigView::pChannel4 = std::make_unique<TimeModeParameter>(Channel4);
+	TimeModeConfigView::pChannel5 = std::make_unique<TimeModeParameter>(Channel5);
+	TimeModeConfigView::pChannel6 = std::make_unique<TimeModeParameter>(Channel6);
+	TimeModeConfigView::pChannel7 = std::make_unique<TimeModeParameter>(Channel7);
+	TimeModeConfigView::pChannel8 = std::make_unique<TimeModeParameter>(Channel8);
 }
 
 void TimeModeConfigView::setupScreen()
 {
-	scrollWheelINPUT.setAnimateToCallback(scrollWheelAnimateToCallback);
+	scrollWheelINPUT.setAnimateToCallback(scrollWheelINPUTAnimateToCallback);
 
 	// The scroll wheel is updated to show the selected numbers.
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
@@ -29,13 +44,12 @@ void TimeModeConfigView::setupScreen()
     sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
     sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    -- remove
-    TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
+	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 
-    // Implementacja kanalow		-- remove
+    // Implementacja kanalow, stara wersja		-- remove
 //    TimeModeParameter Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2);
     // implementacja wskaznikow   -- remove
-//    TimeModeConfigView::pChannel1 = std::make_unique<TimeModeParameter>(model.getChannel1());
-    TimeModeConfigView::pChannel1 = model.getChannel1();
+//    TimeModeConfigView::pChannel1 = model.getChannel1();		//- wersja z pobiraniem obiektow z klasy model (version 1)
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -55,7 +69,7 @@ void TimeModeConfigView::scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter
 }
 
 // The callback updates the selectedVal on the itemSelected parameter
-void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
+void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
 	textChannelINPUT.invalidate();
 //	int16_t numberChannel = itemSelected + 1;		-- remove
@@ -65,58 +79,89 @@ void TimeModeConfigView::scrollWheelAnimateToHandler(int16_t itemSelected)
 	{
 	case 1:
 		toggleChannel.forceState(pChannel1->getStateChannel());
+		readSlopeUI(pChannel1->getSlope());
+		readThresholdModeUI(pChannel1->getThresholdMode());
+		readThresholdUI(pChannel1->getThreshold());
 		break;
 	case 2:
-		toggleChannel.forceState(false);
+		toggleChannel.forceState(pChannel2->getStateChannel());
+		readSlopeUI(pChannel2->getSlope());
+		readThresholdModeUI(pChannel2->getThresholdMode());
+		readThresholdUI(pChannel2->getThreshold());
 		break;
 	case 3:
-		toggleChannel.forceState(true);
+		toggleChannel.forceState(pChannel3->getStateChannel());
+		readSlopeUI(pChannel3->getSlope());
+		readThresholdModeUI(pChannel3->getThresholdMode());
+		readThresholdUI(pChannel3->getThreshold());
 		break;
 	case 4:
-		toggleChannel.forceState(false);
+		toggleChannel.forceState(pChannel4->getStateChannel());
+		readSlopeUI(pChannel4->getSlope());
+		readThresholdModeUI(pChannel4->getThresholdMode());
+		readThresholdUI(pChannel4->getThreshold());
 		break;
 	case 5:
-		toggleChannel.forceState(true);
+		toggleChannel.forceState(pChannel5->getStateChannel());
+		readSlopeUI(pChannel5->getSlope());
+		readThresholdModeUI(pChannel5->getThresholdMode());
+		readThresholdUI(pChannel5->getThreshold());
 		break;
 	case 6:
-		toggleChannel.forceState(false);
+		toggleChannel.forceState(pChannel6->getStateChannel());
+		readSlopeUI(pChannel6->getSlope());
+		readThresholdModeUI(pChannel6->getThresholdMode());
+		readThresholdUI(pChannel6->getThreshold());
 		break;
 	case 7:
-		toggleChannel.forceState(true);
+		toggleChannel.forceState(pChannel7->getStateChannel());
+		readSlopeUI(pChannel7->getSlope());
+		readThresholdModeUI(pChannel7->getThresholdMode());
+		readThresholdUI(pChannel7->getThreshold());
 		break;
 	case 8:
-		toggleChannel.forceState(false);
+		toggleChannel.forceState(pChannel8->getStateChannel());
+		readSlopeUI(pChannel8->getSlope());
+		readThresholdModeUI(pChannel8->getThresholdMode());
+		readThresholdUI(pChannel8->getThreshold());
 		break;
 	}
-	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 	toggleChannel.invalidate();
+	bool CurrentState = toggleChannel.getState();
+	setChannelStateUI(CurrentState);
 }
 
+// obsluga slidera threshold
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
         //execute code whenever the slider starts changing value.
+    	setThresholdUI((uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
 }
 
+// obsluga slidera threshold
 void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
         //execute code whenever the slider starts changing value.
+    	setThresholdUI((uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
 }
 
+// obsluga slidera threshold
 void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
         //execute code whenever the slider starts changing value.
+    	setThresholdUI((uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
@@ -127,24 +172,24 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 {
 	if(&src == &radioSlopeUp)
 	{
-		Unicode::snprintf(textTestBuffer, TEXTTEST_SIZE, "%d", 1);
-		textTest.invalidate();
+		setSlopeUI(SlopeName::UP);
 	}
 	else if(&src == &radioSlopeDown)
 	{
-		Unicode::snprintf(textTestBuffer, TEXTTEST_SIZE, "%d", 2);
-		textTest.invalidate();
+		setSlopeUI(SlopeName::DOWN);
 	}
 	else if(&src == &radioThresholdManual)
 	{
-		Unicode::snprintf(textTestBuffer, TEXTTEST_SIZE, "%d", 11);
-		textTest.invalidate();
+		setThresholdModeUI(ThresholdName::Manula);
 	}
 	else if(&src == &radioThresholdDefined)
 	{
-		Unicode::snprintf(textTestBuffer, TEXTTEST_SIZE, "%d", 22);
-		textTest.invalidate();
+		setThresholdModeUI(ThresholdName::Defined);
 	}
+	radioSlopeUp.invalidate();
+	radioSlopeDown.invalidate();
+	radioThresholdManual.invalidate();
+	radioThresholdDefined.invalidate();
 }
 
 void TimeModeConfigView::ChangeChannelState()
@@ -155,6 +200,7 @@ void TimeModeConfigView::ChangeChannelState()
 }
 
 // moje funkcje
+
 void  TimeModeConfigView::setGuiTouchable(bool state)
 {
     if (state == false)
@@ -190,31 +236,158 @@ void TimeModeConfigView::setChannelStateUI(bool state)
 		pChannel1->setStateChannel(state);
 		break;
 	case 2:
-
+		pChannel2->setStateChannel(state);
 		break;
 	case 3:
-
+		pChannel3->setStateChannel(state);
 		break;
 	case 4:
-
+		pChannel4->setStateChannel(state);
 		break;
 	case 5:
-
+		pChannel5->setStateChannel(state);
 		break;
 	case 6:
-
+		pChannel6->setStateChannel(state);
 		break;
 	case 7:
-
+		pChannel7->setStateChannel(state);
 		break;
 	case 8:
-
+		pChannel8->setStateChannel(state);
 		break;
 	}
 }
 
+// funkcja do ustawienia zboczy (odczytywanie z obiektow)
+void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
+{
+	if (slopeUi == SlopeName::UP)
+	{
+		radioSlopeUp.setSelected(true);
+		radioSlopeDown.setSelected(false);
+	}
+	else
+	{
+		radioSlopeUp.setSelected(false);
+		radioSlopeDown.setSelected(true);
+	}
+}
 
+// funkcja do ustawienia zboczy (wpisywanie do obiektow)
+void TimeModeConfigView::setSlopeUI(SlopeName slopeUi)
+{
+	switch(m_numberChannel)
+	{
+	case 1:
+		pChannel1->setSlope(slopeUi);
+		break;
+	case 2:
+		pChannel2->setSlope(slopeUi);
+		break;
+	case 3:
+		pChannel3->setSlope(slopeUi);
+		break;
+	case 4:
+		pChannel4->setSlope(slopeUi);
+		break;
+	case 5:
+		pChannel5->setSlope(slopeUi);
+		break;
+	case 6:
+		pChannel6->setSlope(slopeUi);
+		break;
+	case 7:
+		pChannel7->setSlope(slopeUi);
+		break;
+	case 8:
+		pChannel8->setSlope(slopeUi);
+		break;
+	}
+}
 
+void TimeModeConfigView::readThresholdModeUI(ThresholdName ThresholdMode)
+{
+	if (ThresholdMode == ThresholdName::Manula)
+	{
+		radioThresholdManual.setSelected(true);
+		radioThresholdDefined.setSelected(false);
+	}
+	else
+	{
+		radioThresholdManual.setSelected(false);
+		radioThresholdDefined.setSelected(true);
+	}
+}
+
+void TimeModeConfigView::setThresholdModeUI(ThresholdName ThresholdMode)
+{
+	switch(m_numberChannel)
+	{
+	case 1:
+		pChannel1->setThresholdMode(ThresholdMode);
+		break;
+	case 2:
+		pChannel2->setThresholdMode(ThresholdMode);
+		break;
+	case 3:
+		pChannel3->setThresholdMode(ThresholdMode);
+		break;
+	case 4:
+		pChannel4->setThresholdMode(ThresholdMode);
+		break;
+	case 5:
+		pChannel5->setThresholdMode(ThresholdMode);
+		break;
+	case 6:
+		pChannel6->setThresholdMode(ThresholdMode);
+		break;
+	case 7:
+		pChannel7->setThresholdMode(ThresholdMode);
+		break;
+	case 8:
+		pChannel8->setThresholdMode(ThresholdMode);
+		break;
+	}
+}
+
+void TimeModeConfigView::readThresholdUI(uint32_t value)
+{
+    Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+    textSliderThreshold.invalidate();
+    sliderThreshold.setValue((uint32_t)value);
+}
+
+void TimeModeConfigView::setThresholdUI(uint32_t value)
+{
+	switch(m_numberChannel)
+	{
+	case 1:
+		pChannel1->setThreshold(value);
+		break;
+	case 2:
+		pChannel2->setThreshold(value);
+		break;
+	case 3:
+		pChannel3->setThreshold(value);
+		break;
+	case 4:
+		pChannel4->setThreshold(value);
+		break;
+	case 5:
+		pChannel5->setThreshold(value);
+		break;
+	case 6:
+		pChannel6->setThreshold(value);
+		break;
+	case 7:
+		pChannel7->setThreshold(value);
+		break;
+	case 8:
+		pChannel8->setThreshold(value);
+		break;
+	}
+}
 
 
 

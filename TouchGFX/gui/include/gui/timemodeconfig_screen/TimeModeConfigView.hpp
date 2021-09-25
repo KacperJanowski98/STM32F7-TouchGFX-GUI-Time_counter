@@ -22,12 +22,17 @@ public:
     void setGuiTouchable(bool state);
     uint16_t getCurrentChannel();
     void setChannelStateUI(bool state);
-    Model model;
+    void readSlopeUI(SlopeName slopeUi);
+    void setSlopeUI(SlopeName slopeUi);
+    void readThresholdModeUI(ThresholdName ThresholdMode);
+    void setThresholdModeUI(ThresholdName ThresholdMode);
+    void readThresholdUI(uint32_t value);
+    void setThresholdUI(uint32_t value);
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
-    Callback<TimeModeConfigView, int16_t> scrollWheelAnimateToCallback;
-    void scrollWheelAnimateToHandler(int16_t itemSelected);
+    Callback<TimeModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
+    void scrollWheelINPUTAnimateToHandler(int16_t itemSelected);
 
     // Callback Declaration.
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueStartedChangeCallback;
@@ -43,9 +48,16 @@ protected:
 
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
 private:
-//    TimeModeParameter Channel1;
+    TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
     // wskazniki do kanalow		-- remove
     std::unique_ptr<TimeModeParameter> pChannel1;
+    std::unique_ptr<TimeModeParameter> pChannel2;
+    std::unique_ptr<TimeModeParameter> pChannel3;
+    std::unique_ptr<TimeModeParameter> pChannel4;
+    std::unique_ptr<TimeModeParameter> pChannel5;
+    std::unique_ptr<TimeModeParameter> pChannel6;
+    std::unique_ptr<TimeModeParameter> pChannel7;
+    std::unique_ptr<TimeModeParameter> pChannel8;
 
     int16_t m_numberChannel;
 };
