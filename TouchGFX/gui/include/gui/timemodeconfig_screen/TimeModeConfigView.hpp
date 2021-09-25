@@ -33,6 +33,7 @@ public:
     void setThresholdUI(uint32_t value);
     // funkcje dla panelu TI SETUP
     void readStateChannel(bool stateChannel);
+    void setActiveListChannels(int16_t channel, bool chanelState);
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
@@ -69,6 +70,7 @@ private:
 
     int16_t m_channelInput;
     int16_t m_channelTiSetup;
+    std::vector<int16_t> activeChannels;
 };
 
 #endif // TIMEMODECONFIGVIEW_HPP

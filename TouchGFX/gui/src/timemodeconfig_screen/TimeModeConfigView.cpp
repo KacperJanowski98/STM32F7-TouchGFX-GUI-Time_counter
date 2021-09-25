@@ -454,7 +454,23 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 	textOffState.invalidate();
 }
 
-
+void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState)
+{
+	if (chanelState == true)
+	{
+		if (!(std::find(activeChannels.begin(), activeChannels.end(), channel)!=activeChannels.end()))
+		{
+			activeChannels.push_back(channel);
+		}
+	}
+	else
+	{
+		if (std::find(activeChannels.begin(), activeChannels.end(), channel)!=activeChannels.end())
+		{
+			activeChannels.erase(std::remove(activeChannels.begin(), activeChannels.end(), channel), activeChannels.end());
+		}
+	}
+}
 
 
 

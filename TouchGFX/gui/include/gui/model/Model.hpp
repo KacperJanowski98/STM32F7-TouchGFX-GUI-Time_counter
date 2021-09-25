@@ -4,6 +4,8 @@
 #include <gui/lib/TimeModeParameter.hpp>
 #include <memory>
 #include <cstdint>
+#include <algorithm>
+#include <vector>
 
 extern "C"
 {
