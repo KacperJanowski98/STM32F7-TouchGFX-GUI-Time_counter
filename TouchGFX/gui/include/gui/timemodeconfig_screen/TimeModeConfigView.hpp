@@ -17,6 +17,9 @@ public:
     virtual void scrollWheelINPUTUpdateItem(ChannelContainer& item, int16_t itemIndex);
     virtual void scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
+    virtual void scrollWheelTISetupUpdateItem(ChannelContainer& item, int16_t itemIndex);
+    virtual void scrollWheelTISetupUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
+
     virtual void ChangeChannelState();
     // moje funkcje do GUI   -- remove
     void setGuiTouchable(bool state);
@@ -33,6 +36,9 @@ protected:
     // The parameter itemSelected is the selected item.
     Callback<TimeModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
     void scrollWheelINPUTAnimateToHandler(int16_t itemSelected);
+
+    Callback<TimeModeConfigView, int16_t> scrollWheelTISetupAnimateToCallback;
+    void scrollWheelTISetupAnimateToHandler(int16_t itemSelected);
 
     // Callback Declaration.
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueStartedChangeCallback;

@@ -1190,6 +1190,65 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "ScrollWheel",
+                    "SelectedItemOffset": 120,
+                    "UseSelectedStyle": true,
+                    "SelectedItemTemplateName": "ChannelContainerCenter",
+                    "ExtraSizeBefore": 0,
+                    "ExtraSizeAfter": 0,
+                    "MarginBefore": 0,
+                    "MarginAfter": 0,
+                    "IsHorizontal": false,
+                    "IsCircular": false,
+                    "ItemTemplateName": "ChannelContainer",
+                    "NumberofItems": 8,
+                    "InitialElement": 0,
+                    "ItemMargin": 0,
+                    "Easing": "Circ",
+                    "EasingOption": "Out",
+                    "SwipeAcceleration": 4.0,
+                    "DragAcceleration": 1.0,
+                    "Name": "scrollWheelTISetup",
+                    "X": 36,
+                    "Y": 85,
+                    "Width": 100,
+                    "Height": 300,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId29",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textOnOffChannel",
+                    "X": 353,
+                    "Y": 76,
+                    "Width": 105,
+                    "Height": 38,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -1293,7 +1352,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerTimeINPUT",
+            "SelectedPage": "swipeContainerTimeTISETUP",
             "Style": "Style1",
             "Name": "swipeContainerTime",
             "X": 0,
@@ -2133,6 +2192,10 @@
       },
       {
         "TextEntryId": "SingleUseId28",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId29",
         "IsResource": false
       }
     ],

@@ -40,6 +40,16 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void scrollWheelTISetupUpdateItem(ChannelContainer& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void scrollWheelTISetupUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
     /*
      * Virtual Action Handlers
      */
@@ -101,6 +111,11 @@ protected:
     touchgfx::Image imageArrowTL;
     touchgfx::Image imageArrowTR;
     touchgfx::TextArea labelTISETUP;
+    touchgfx::ScrollWheelWithSelectionStyle scrollWheelTISetup;
+    touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelTISetupListItems;
+    touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelTISetupSelectedListItems;
+
+    touchgfx::TextAreaWithOneWildcard textOnOffChannel;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
@@ -116,6 +131,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
+    static const uint16_t TEXTONOFFCHANNEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textOnOffChannelBuffer[TEXTONOFFCHANNEL_SIZE];
 
 private:
 

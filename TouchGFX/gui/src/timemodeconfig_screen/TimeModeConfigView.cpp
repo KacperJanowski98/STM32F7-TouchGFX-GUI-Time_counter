@@ -4,6 +4,7 @@
 
 TimeModeConfigView::TimeModeConfigView()
 	: scrollWheelINPUTAnimateToCallback(this, &TimeModeConfigView::scrollWheelINPUTAnimateToHandler)
+	, scrollWheelTISetupAnimateToCallback(this, &TimeModeConfigView::scrollWheelTISetupAnimateToHandler)
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
@@ -31,13 +32,16 @@ TimeModeConfigView::TimeModeConfigView()
 void TimeModeConfigView::setupScreen()
 {
 	scrollWheelINPUT.setAnimateToCallback(scrollWheelINPUTAnimateToCallback);
+	scrollWheelTISetup.setAnimateToCallback(scrollWheelTISetupAnimateToCallback);
 
 	// The scroll wheel is updated to show the selected numbers.
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
 	{
 		scrollWheelINPUT.itemChanged(i);
+		scrollWheelTISetup.itemChanged(i);
 	}
 	scrollWheelINPUT.animateToItem(3);
+	scrollWheelTISetup.animateToItem(3);
 //    TimeModeConfigViewBase::setupScreen();
 	// obsluga slidera    -- remove
     sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
@@ -68,13 +72,23 @@ void TimeModeConfigView::scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter
 	item.updateText(itemIndex + 1);
 }
 
+void TimeModeConfigView::scrollWheelTISetupUpdateItem(ChannelContainer& item, int16_t itemIndex)
+{
+	item.updateText(itemIndex + 1);
+}
+
+void TimeModeConfigView::scrollWheelTISetupUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+{
+	item.updateText(itemIndex + 1);
+}
+
 // The callback updates the selectedVal on the itemSelected parameter
 void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
-	textChannelINPUT.invalidate();
+	textChannelINPUT.invalidate();	-- remove
 //	int16_t numberChannel = itemSelected + 1;		-- remove
 	m_numberChannel = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);
+	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_numberChannel);	-- remove
 	switch(m_numberChannel)
 	{
 	case 1:
