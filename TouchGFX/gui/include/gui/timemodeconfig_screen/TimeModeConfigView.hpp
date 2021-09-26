@@ -30,20 +30,19 @@ public:
     // moje funkcje do GUI   -- remove
     void setGuiTouchable(bool state);
     uint16_t getCurrentChannel();
-    void setChannelStateUI(bool state);
+    void setChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state);
     void readSlopeUI(SlopeName slopeUi);
-    void setSlopeUI(SlopeName slopeUi);
+    void setSlopeUI(std::shared_ptr<TimeModeParameter>& channel, SlopeName slopeUi);
     void readThresholdModeUI(ThresholdName ThresholdMode);
-    void setThresholdModeUI(ThresholdName ThresholdMode);
+    void setThresholdModeUI(std::shared_ptr<TimeModeParameter>& channel, ThresholdName ThresholdMode);
     void readThresholdUI(uint32_t value);
-    void setThresholdUI(uint32_t value);
+    void setThresholdUI(std::shared_ptr<TimeModeParameter>& channel, uint32_t value);
     // funkcje dla panelu TI SETUP
     void readStateChannel(bool stateChannel);
     void setActiveListChannels(int16_t channel, bool chanelState);
     int16_t getIndexActiveListChannel(int16_t element);
     void updateScrollTiSetup();
-
-    void updateStartStopIn(std::unique_ptr<TimeModeParameter>& channel);
+    void updateStartStopIn(std::shared_ptr<TimeModeParameter>& channel);
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
@@ -75,16 +74,17 @@ protected:
 private:
     TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
     // wskazniki do kanalow		-- remove
-    std::unique_ptr<TimeModeParameter> pChannel1;
-    std::unique_ptr<TimeModeParameter> pChannel2;
-    std::unique_ptr<TimeModeParameter> pChannel3;
-    std::unique_ptr<TimeModeParameter> pChannel4;
-    std::unique_ptr<TimeModeParameter> pChannel5;
-    std::unique_ptr<TimeModeParameter> pChannel6;
-    std::unique_ptr<TimeModeParameter> pChannel7;
-    std::unique_ptr<TimeModeParameter> pChannel8;
+    std::shared_ptr<TimeModeParameter> pChannel1;
+    std::shared_ptr<TimeModeParameter> pChannel2;
+    std::shared_ptr<TimeModeParameter> pChannel3;
+    std::shared_ptr<TimeModeParameter> pChannel4;
+    std::shared_ptr<TimeModeParameter> pChannel5;
+    std::shared_ptr<TimeModeParameter> pChannel6;
+    std::shared_ptr<TimeModeParameter> pChannel7;
+    std::shared_ptr<TimeModeParameter> pChannel8;
 
     int16_t m_channelInput;
+    std::shared_ptr<TimeModeParameter> pChannelInput;
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
