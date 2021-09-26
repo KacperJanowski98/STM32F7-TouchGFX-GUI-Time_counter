@@ -183,27 +183,35 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 	{
 	case 1:
 		readStateChannel(pChannel1->getStateChannel());
+		updateStartStopIn(pChannel1);
 		break;
 	case 2:
 		readStateChannel(pChannel2->getStateChannel());
+		updateStartStopIn(pChannel2);
 		break;
 	case 3:
 		readStateChannel(pChannel3->getStateChannel());
+		updateStartStopIn(pChannel3);
 		break;
 	case 4:
 		readStateChannel(pChannel4->getStateChannel());
+		updateStartStopIn(pChannel4);
 		break;
 	case 5:
 		readStateChannel(pChannel5->getStateChannel());
+		updateStartStopIn(pChannel5);
 		break;
 	case 6:
 		readStateChannel(pChannel6->getStateChannel());
+		updateStartStopIn(pChannel6);
 		break;
 	case 7:
 		readStateChannel(pChannel7->getStateChannel());
+		updateStartStopIn(pChannel7);
 		break;
 	case 8:
 		readStateChannel(pChannel8->getStateChannel());
+		updateStartStopIn(pChannel8);
 		break;
 	}
 }
@@ -217,27 +225,35 @@ void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
 	{
 	case 1:
 		pChannel1->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel1);
 		break;
 	case 2:
 		pChannel2->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel2);
 		break;
 	case 3:
 		pChannel3->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel3);
 		break;
 	case 4:
 		pChannel4->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel4);
 		break;
 	case 5:
 		pChannel5->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel5);
 		break;
 	case 6:
 		pChannel6->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel6);
 		break;
 	case 7:
 		pChannel7->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel7);
 		break;
 	case 8:
 		pChannel8->setStartChannel(m_channelTiSetupStart);
+		updateStartStopIn(pChannel8);
 		break;
 	}
 }
@@ -251,27 +267,35 @@ void TimeModeConfigView::scrollWheelStopAnimateToHandler(int16_t itemSelected)
 	{
 	case 1:
 		pChannel1->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel1);
 		break;
 	case 2:
 		pChannel2->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel2);
 		break;
 	case 3:
 		pChannel3->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel3);
 		break;
 	case 4:
 		pChannel4->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel4);
 		break;
 	case 5:
 		pChannel5->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel5);
 		break;
 	case 6:
 		pChannel6->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel6);
 		break;
 	case 7:
 		pChannel7->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel7);
 		break;
 	case 8:
 		pChannel8->setStopChannel(m_channelTiSetupStop);
+		updateStartStopIn(pChannel8);
 		break;
 	}
 }
@@ -344,6 +368,7 @@ void TimeModeConfigView::ChangeChannelState()
 	setChannelStateUI(CurrentState);
 
 	setActiveListChannels(m_channelInput, CurrentState);
+	readStateChannel(pChannel4->getStateChannel());
 	updateScrollTiSetup();
 }
 
@@ -543,14 +568,20 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 	{
 		textOnState.setVisible(true);
 		textOffState.setVisible(false);
+		textStartChannel.setVisible(false);
+		textStopChannel.setVisible(false);
 	}
 	else
 	{
 		textOnState.setVisible(false);
 		textOffState.setVisible(true);
+		textStartChannel.setVisible(true);
+		textStopChannel.setVisible(true);
 	}
 	textOnState.invalidate();
 	textOffState.invalidate();
+	textStartChannel.invalidate();
+	textStopChannel.invalidate();
 }
 
 void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState)
@@ -596,5 +627,47 @@ void TimeModeConfigView::updateScrollTiSetup()
 		scrollWheelStart.animateToItem(0);
 		scrollWheelStop.animateToItem(0);
 	}
+}
+
+void TimeModeConfigView::updateStartStopIn(std::unique_ptr<TimeModeParameter>& channel)
+{
+
+	if (channel->getStartChannel() == 0)
+	{
+		textStartChannel.setVisible(false);
+	}
+	else
+	{
+		textStartChannel.setVisible(true);
+	}
+	if (channel->getStopChannel() == 0)
+	{
+		textStopChannel.setVisible(false);
+	}
+	else
+	{
+		textStopChannel.setVisible(true);
+	}
+
+	Unicode::snprintf(textStartChannelBuffer, TEXTSTARTCHANNEL_SIZE, "%d", channel->getStartChannel());
+	Unicode::snprintf(textStopChannelBuffer, TEXTSTOPCHANNEL_SIZE, "%d", channel->getStopChannel());
+	textStartChannel.invalidate();
+	textStopChannel.invalidate();
+}
+
+int16_t TimeModeConfigView::getIndexActiveListChannel(int16_t element)
+{
+    auto it = std::find(activeChannels.begin(), activeChannels.end(), element);
+
+    // If element was found
+    if (it != activeChannels.end())
+    {
+        // calculating the index
+        // of K
+    	return (int16_t)(it - activeChannels.begin());
+    }
+    else {
+        return 0;
+    }
 }
 

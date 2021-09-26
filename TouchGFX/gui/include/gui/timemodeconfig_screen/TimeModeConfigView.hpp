@@ -40,7 +40,10 @@ public:
     // funkcje dla panelu TI SETUP
     void readStateChannel(bool stateChannel);
     void setActiveListChannels(int16_t channel, bool chanelState);
+    int16_t getIndexActiveListChannel(int16_t element);
     void updateScrollTiSetup();
+
+    void updateStartStopIn(std::unique_ptr<TimeModeParameter>& channel);
 protected:
     // Callback which is executed when an item in the scroll wheel is selected to as selected style.
     // The parameter itemSelected is the selected item.
