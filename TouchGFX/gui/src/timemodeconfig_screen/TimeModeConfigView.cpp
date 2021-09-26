@@ -6,6 +6,7 @@ TimeModeConfigView::TimeModeConfigView()
 	: scrollWheelINPUTAnimateToCallback(this, &TimeModeConfigView::scrollWheelINPUTAnimateToHandler)
 	, scrollWheelTISetupAnimateToCallback(this, &TimeModeConfigView::scrollWheelTISetupAnimateToHandler)
 	, scrollWheelStartAnimateToCallback(this, &TimeModeConfigView::scrollWheelStartAnimateToHandler)
+	, scrollWheelStopAnimateToCallback(this, &TimeModeConfigView::scrollWheelStopAnimateToHandler)
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
@@ -35,6 +36,7 @@ void TimeModeConfigView::setupScreen()
 	scrollWheelINPUT.setAnimateToCallback(scrollWheelINPUTAnimateToCallback);
 	scrollWheelTISetup.setAnimateToCallback(scrollWheelTISetupAnimateToCallback);
 	scrollWheelStart.setAnimateToCallback(scrollWheelStartAnimateToCallback);
+	scrollWheelStop.setAnimateToCallback(scrollWheelStopAnimateToCallback);
 
 	// The scroll wheel is updated to show the selected numbers.
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
@@ -94,6 +96,16 @@ void TimeModeConfigView::scrollWheelStartUpdateItem(ChannelContainer& item, int1
 }
 
 void TimeModeConfigView::scrollWheelStartUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
+{
+	item.updateText(activeChannels[itemIndex]);
+}
+
+void TimeModeConfigView::scrollWheelStopUpdateItem(ChannelContainer& item, int16_t itemIndex)
+{
+	item.updateText(activeChannels[itemIndex]);
+}
+
+void TimeModeConfigView::scrollWheelStopUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex)
 {
 	item.updateText(activeChannels[itemIndex]);
 }
@@ -226,6 +238,40 @@ void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
 		break;
 	case 8:
 		pChannel8->setStartChannel(m_channelTiSetupStart);
+		break;
+	}
+}
+
+void TimeModeConfigView::scrollWheelStopAnimateToHandler(int16_t itemSelected)
+{
+	textStopChannel.invalidate();
+	m_channelTiSetupStop = activeChannels[itemSelected];
+	Unicode::snprintf(textStopChannelBuffer, TEXTSTOPCHANNEL_SIZE, "%d", m_channelTiSetupStop);	//-- remove
+	switch(m_channelTiSetup)
+	{
+	case 1:
+		pChannel1->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 2:
+		pChannel2->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 3:
+		pChannel3->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 4:
+		pChannel4->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 5:
+		pChannel5->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 6:
+		pChannel6->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 7:
+		pChannel7->setStopChannel(m_channelTiSetupStop);
+		break;
+	case 8:
+		pChannel8->setStopChannel(m_channelTiSetupStop);
 		break;
 	}
 }
@@ -531,17 +577,24 @@ void TimeModeConfigView::updateScrollTiSetup()
 	{
 		scrollWheelStart.setVisible(false);
 		textStartChannel.setVisible(false);
+		scrollWheelStop.setVisible(false);
+		textStopChannel.setVisible(false);
 	}
 	else
 	{
 		scrollWheelStart.setVisible(true);
 		textStartChannel.setVisible(true);
+		scrollWheelStop.setVisible(true);
+		textStopChannel.setVisible(true);
 		scrollWheelStart.setNumberOfItems(activeChannels.size());
+		scrollWheelStop.setNumberOfItems(activeChannels.size());
 		for (int i = 0; i < scrollWheelStartListItems.getNumberOfDrawables(); i++)
 		{
 			scrollWheelStart.itemChanged(i);
+			scrollWheelStop.itemChanged(i);
 		}
 		scrollWheelStart.animateToItem(0);
+		scrollWheelStop.animateToItem(0);
 	}
 }
 

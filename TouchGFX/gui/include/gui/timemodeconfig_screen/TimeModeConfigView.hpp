@@ -23,6 +23,9 @@ public:
     virtual void scrollWheelStartUpdateItem(ChannelContainer& item, int16_t itemIndex);
     virtual void scrollWheelStartUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
+    virtual void scrollWheelStopUpdateItem(ChannelContainer& item, int16_t itemIndex);
+    virtual void scrollWheelStopUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
+
     virtual void ChangeChannelState();
     // moje funkcje do GUI   -- remove
     void setGuiTouchable(bool state);
@@ -49,6 +52,9 @@ protected:
 
     Callback<TimeModeConfigView, int16_t> scrollWheelStartAnimateToCallback;
     void scrollWheelStartAnimateToHandler(int16_t itemSelected);
+
+    Callback<TimeModeConfigView, int16_t> scrollWheelStopAnimateToCallback;
+    void scrollWheelStopAnimateToHandler(int16_t itemSelected);
 
     // Callback Declaration.
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueStartedChangeCallback;
@@ -78,6 +84,7 @@ private:
     int16_t m_channelInput;
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
+    int16_t m_channelTiSetupStop;
     std::vector<int16_t> activeChannels;
 };
 
