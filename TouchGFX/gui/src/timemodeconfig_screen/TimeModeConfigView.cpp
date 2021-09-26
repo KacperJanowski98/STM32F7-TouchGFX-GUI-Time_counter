@@ -201,7 +201,7 @@ void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
 	textStartChannel.invalidate();
 	m_channelTiSetupStart = activeChannels[itemSelected];
 	Unicode::snprintf(textStartChannelBuffer, TEXTSTARTCHANNEL_SIZE, "%d", m_channelTiSetupStart);	//-- remove
-	switch(m_channelTiSetupStart)
+	switch(m_channelTiSetup)
 	{
 	case 1:
 		pChannel1->setStartChannel(m_channelTiSetupStart);
