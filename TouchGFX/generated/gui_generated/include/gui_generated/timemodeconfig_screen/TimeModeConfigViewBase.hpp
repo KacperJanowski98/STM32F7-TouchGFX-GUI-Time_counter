@@ -153,9 +153,28 @@ protected:
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
+    touchgfx::RadioButton radioTiMaxRange;
+    touchgfx::TextArea textTiMaxRange;
+    touchgfx::ButtonWithLabel buttonSingle;
+    touchgfx::RadioButton radioTiMeasRate;
+    touchgfx::TextArea textMeasRate;
+    touchgfx::TextAreaWithOneWildcard textRangeVal;
+    touchgfx::ButtonWithLabel buttonContinuous;
+    touchgfx::Slider sliderRange;
+    touchgfx::TextAreaWithOneWildcard textStampsVal;
+    touchgfx::TextArea textSampsNumber;
+    touchgfx::TextArea textX;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textRepeatVal;
+    touchgfx::Slider sliderStampsNumber;
+    touchgfx::Slider sliderRepeat;
+    touchgfx::Slider sliderRate;
+    touchgfx::TextAreaWithOneWildcard textRateVal;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
+    touchgfx::RadioButtonGroup<1> radioButtonGroupTiMaxRange;
+    touchgfx::RadioButtonGroup<1> radioButtonGroupMeasRate;
 
     /*
      * Wildcard Buffers
@@ -170,6 +189,14 @@ protected:
     touchgfx::Unicode::UnicodeChar textStartChannelBuffer[TEXTSTARTCHANNEL_SIZE];
     static const uint16_t TEXTSTOPCHANNEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textStopChannelBuffer[TEXTSTOPCHANNEL_SIZE];
+    static const uint16_t TEXTRANGEVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textRangeValBuffer[TEXTRANGEVAL_SIZE];
+    static const uint16_t TEXTSTAMPSVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStampsValBuffer[TEXTSTAMPSVAL_SIZE];
+    static const uint16_t TEXTREPEATVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textRepeatValBuffer[TEXTREPEATVAL_SIZE];
+    static const uint16_t TEXTRATEVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textRateValBuffer[TEXTRATEVAL_SIZE];
 
 private:
 
