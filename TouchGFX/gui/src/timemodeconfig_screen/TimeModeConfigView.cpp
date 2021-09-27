@@ -36,7 +36,7 @@ void TimeModeConfigView::setupScreen()
 	scrollWheelStart.setAnimateToCallback(scrollWheelStartAnimateToCallback);
 	scrollWheelStop.setAnimateToCallback(scrollWheelStopAnimateToCallback);
 
-	// The scroll wheel is updated to show the selected numbers.
+	// Elementy Scroll wheel sa aktualizowane zgodnie z wybranymi numerami.
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
 	{
 		scrollWheelINPUT.itemChanged(i);
@@ -45,21 +45,17 @@ void TimeModeConfigView::setupScreen()
 	scrollWheelINPUT.animateToItem(3);
 	scrollWheelTISetup.animateToItem(3);
 
-	// The scroll wheel for start in and stop in channels is updated to show the selected numbers.
+	// Aktualizacja elementow scroll wheel dla ustawienia kanalu start i stop.
 	updateScrollTiSetup();
 
 //    TimeModeConfigViewBase::setupScreen();
-	// obsluga slidera    -- remove
+
+	// obsluga slidera   
     sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
     sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
     sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
-    // obsluga toggle butona    -- remove
+    // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
-
-    // Implementacja kanalow, stara wersja		-- remove
-//    TimeModeParameter Channel1(1, false, Slope::UP, Threshold::Manula, 200, 1, 2);
-    // implementacja wskaznikow   -- remove
-//    TimeModeConfigView::pChannel1 = model.getChannel1();		//- wersja z pobiraniem obiektow z klasy model (version 1)
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -67,7 +63,6 @@ void TimeModeConfigView::tearDownScreen()
 //    TimeModeConfigViewBase::tearDownScreen();
 }
 
-// Updates the text in the scroll wheel based on the item's index
 void TimeModeConfigView::scrollWheelINPUTUpdateItem(ChannelContainer& item, int16_t itemIndex)
 {
 	item.updateText(itemIndex + 1);
@@ -108,11 +103,10 @@ void TimeModeConfigView::scrollWheelStopUpdateCenterItem(ChannelContainerCenter&
 	item.updateText(activeChannels[itemIndex]);
 }
 
-// The callback updates the selectedVal on the itemSelected parameter
+// Wywołanie zwrotne aktualizuje selectedVal poprzez parametr itemSelected.
 void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
 	textChannelINPUT.invalidate();	//-- remove
-//	int16_t numberChannel = itemSelected + 1;		//-- remove
 	m_channelInput = itemSelected + 1;
 	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_channelInput);	//-- remove
 	switch(m_channelInput)
@@ -306,43 +300,40 @@ void TimeModeConfigView::scrollWheelStopAnimateToHandler(int16_t itemSelected)
 	}
 }
 
-// obsluga slidera threshold
+// Obsluga slidera threshold.
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
-        //execute code whenever the slider starts changing value.
     	setThresholdUI(pChannelInput, (uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
 }
 
-// obsluga slidera threshold
+// Obsluga slidera threshold.
 void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
-        //execute code whenever the slider starts changing value.
     	setThresholdUI(pChannelInput, (uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
 }
 
-// obsluga slidera threshold
+// Obsluga slidera threshold.
 void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
     {
-        //execute code whenever the slider starts changing value.
     	setThresholdUI(pChannelInput, (uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
 }
 
-// obsluga radiobutton   -- remove
+// Obsluga radiobutton. 
 void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src)
 {
 	if(&src == &radioSlopeUp)
@@ -378,8 +369,6 @@ void TimeModeConfigView::ChangeChannelState()
 	updateScrollTiSetup();
 }
 
-// moje funkcje
-
 void  TimeModeConfigView::setGuiTouchable(bool state)
 {
     if (state == false)
@@ -412,7 +401,6 @@ void TimeModeConfigView::setChannelStateUI(std::shared_ptr<TimeModeParameter>& c
 	channel->setStateChannel(state);
 }
 
-// funkcja do ustawienia zboczy (odczytywanie z obiektow)
 void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
 {
 	if (slopeUi == SlopeName::UP)
@@ -427,7 +415,6 @@ void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
 	}
 }
 
-// funkcja do ustawienia zboczy (wpisywanie do obiektow)
 void TimeModeConfigView::setSlopeUI(std::shared_ptr<TimeModeParameter>& channel, SlopeName slopeUi)
 {
 	channel->setSlope(slopeUi);
@@ -563,4 +550,3 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 		textStopChannel.invalidate();
 	}
 }
-

@@ -1,8 +1,12 @@
-/*
- * TimeModeParameter.cpp
- *
- *  Created on: 24 wrz 2021
- *      Author: Kacper Janowski
+/**
+ * @file TimeModeParameter.cpp
+ * @author Kacper Janowski
+ * @brief 
+ * @version 0.1
+ * @date 2021-09-24
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <gui/lib/TimeModeParameter.hpp>
@@ -42,32 +46,6 @@ TimeModeParameter::TimeModeParameter(TimeModeParameter&& other) noexcept
 	, m_startChannel(std::move(other.m_startChannel))
 	, m_stopChannel(std::move(other.m_stopChannel))
 {}
-
-//TimeModeParameter::TimeModeParameter(TimeModeParameter&& other) noexcept
-//	: m_numberChannel(0)
-//	, m_stateChannel(false)
-//	, m_slope(Slope::UP)
-//	, m_thresholdMode(Threshold::Manula)
-//	, m_threshold(100)
-//	, m_startChannel(0)
-//	, m_stopChannel(0)
-//{
-//	TimeModeParameter::m_numberChannel = other.m_numberChannel;
-//	TimeModeParameter::m_stateChannel = other.m_stateChannel;
-//	TimeModeParameter::m_slope = other.m_slope;
-//	TimeModeParameter::m_thresholdMode = other.m_thresholdMode;
-//	TimeModeParameter::m_threshold = other.m_threshold;
-//	TimeModeParameter::m_startChannel = other.m_startChannel;
-//	TimeModeParameter::m_stopChannel = other.m_stopChannel;
-//
-//	other.m_numberChannel = 0;
-//	other.m_stateChannel = false;
-//	other.m_slope = Slope::UP;
-//	other.m_thresholdMode = Threshold::Manula;
-//	other.m_threshold = 100;
-//	other.m_startChannel = 0;
-//	other.m_stopChannel = 0;
-//}
 
 TimeModeParameter &TimeModeParameter::operator=(const TimeModeParameter& other)
 {
