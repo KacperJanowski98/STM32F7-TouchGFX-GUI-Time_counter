@@ -1,8 +1,12 @@
-/*
- * SessionSetup.cpp
- *
- *  Created on: 27 wrz 2021
- *      Author: kacpe
+/**
+ * @file SessionSetup.cpp
+ * @author Kacper Janowski
+ * @brief 
+ * @version 0.1
+ * @date 2021-09-27
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <gui/lib/SessionSetup.hpp>
