@@ -50,10 +50,26 @@ void TimeModeConfigView::setupScreen()
 
 //    TimeModeConfigViewBase::setupScreen();
 
-	// obsluga slidera   
+	// obsluga sliderow
     sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
     sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
     sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
+
+    sliderRange.setStartValueCallback(sliderValueStartedChangeCallback);
+    sliderRange.setNewValueCallback(sliderValueChangedCallback);
+    sliderRange.setStopValueCallback(sliderValueConfirmedCallback);
+
+    sliderRepeat.setStartValueCallback(sliderValueStartedChangeCallback);
+    sliderRepeat.setNewValueCallback(sliderValueChangedCallback);
+    sliderRepeat.setStopValueCallback(sliderValueConfirmedCallback);
+
+    sliderRate.setStartValueCallback(sliderValueStartedChangeCallback);
+    sliderRate.setNewValueCallback(sliderValueChangedCallback);
+    sliderRate.setStopValueCallback(sliderValueConfirmedCallback);
+
+    sliderStampsNumber.setStartValueCallback(sliderValueStartedChangeCallback);
+    sliderStampsNumber.setNewValueCallback(sliderValueChangedCallback);
+    sliderStampsNumber.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 }
@@ -309,6 +325,26 @@ void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
+    else if (&src == &sliderRange)
+    {
+    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
+    	textRangeVal.invalidate();
+    }
+    else if (&src == &sliderStampsNumber)
+    {
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
+    }
+    else if (&src == &sliderRepeat)
+    {
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
+    }
+    else if(&src == &sliderRate)
+    {
+    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
+    	textRateVal.invalidate();
+    }
 }
 
 // Obsluga slidera threshold.
@@ -320,6 +356,26 @@ void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
     }
+    else if (&src == &sliderRange)
+    {
+    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
+    	textRangeVal.invalidate();
+    }
+    else if (&src == &sliderStampsNumber)
+    {
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
+    }
+    else if (&src == &sliderRepeat)
+    {
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
+    }
+    else if(&src == &sliderRate)
+    {
+    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
+    	textRateVal.invalidate();
+    }
 }
 
 // Obsluga slidera threshold.
@@ -330,6 +386,26 @@ void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
     	setThresholdUI(pChannelInput, (uint32_t)value);
         Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
         textSliderThreshold.invalidate();
+    }
+    else if (&src == &sliderRange)
+    {
+    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
+    	textRangeVal.invalidate();
+    }
+    else if (&src == &sliderStampsNumber)
+    {
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
+    }
+    else if (&src == &sliderRepeat)
+    {
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
+    }
+    else if(&src == &sliderRate)
+    {
+    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
+    	textRateVal.invalidate();
     }
 }
 
