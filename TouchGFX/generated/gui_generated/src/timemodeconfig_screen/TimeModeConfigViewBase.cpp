@@ -353,13 +353,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);
 
-    radioTiMaxRange.setXY(60, 70);
-    radioTiMaxRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioTiMaxRange.setSelected(false);
-    radioTiMaxRange.setDeselectionEnabled(false);
-    swipeContainerTimeSESSION.add(radioTiMaxRange);
-
-    textTiMaxRange.setXY(119, 80);
+    textTiMaxRange.setXY(158, 80);
     textTiMaxRange.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiMaxRange.setLinespacing(0);
     textTiMaxRange.setTypedText(touchgfx::TypedText(T_SINGLEUSEID36));
@@ -372,13 +366,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     swipeContainerTimeSESSION.add(buttonSingle);
 
-    radioTiMeasRate.setXY(64, 346);
-    radioTiMeasRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioTiMeasRate.setSelected(false);
-    radioTiMeasRate.setDeselectionEnabled(false);
-    swipeContainerTimeSESSION.add(radioTiMeasRate);
-
-    textMeasRate.setXY(133, 356);
+    textMeasRate.setXY(147, 356);
     textMeasRate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textMeasRate.setLinespacing(0);
     textMeasRate.setTypedText(touchgfx::TypedText(T_SINGLEUSEID39));
@@ -468,6 +456,14 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textRateVal.setWildcard(textRateValBuffer);
     textRateVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID50));
     swipeContainerTimeSESSION.add(textRateVal);
+
+    toggleTiMeasRate.setXY(26, 349);
+    toggleTiMeasRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    swipeContainerTimeSESSION.add(toggleTiMeasRate);
+
+    toggleTiMaxRange.setXY(26, 73);
+    toggleTiMaxRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    swipeContainerTimeSESSION.add(toggleTiMaxRange);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(3);
 
@@ -486,8 +482,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);
-    radioButtonGroupTiMaxRange.add(radioTiMaxRange);
-    radioButtonGroupMeasRate.add(radioTiMeasRate);
 }
 
 void TimeModeConfigViewBase::setupScreen()

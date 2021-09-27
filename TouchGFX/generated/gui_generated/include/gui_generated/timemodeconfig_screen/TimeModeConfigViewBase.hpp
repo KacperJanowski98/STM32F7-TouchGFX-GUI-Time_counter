@@ -153,10 +153,8 @@ protected:
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
-    touchgfx::RadioButton radioTiMaxRange;
     touchgfx::TextArea textTiMaxRange;
     touchgfx::ButtonWithLabel buttonSingle;
-    touchgfx::RadioButton radioTiMeasRate;
     touchgfx::TextArea textMeasRate;
     touchgfx::TextAreaWithOneWildcard textRangeVal;
     touchgfx::ButtonWithLabel buttonContinuous;
@@ -170,11 +168,11 @@ protected:
     touchgfx::Slider sliderRepeat;
     touchgfx::Slider sliderRate;
     touchgfx::TextAreaWithOneWildcard textRateVal;
+    touchgfx::ToggleButton toggleTiMeasRate;
+    touchgfx::ToggleButton toggleTiMaxRange;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
-    touchgfx::RadioButtonGroup<1> radioButtonGroupTiMaxRange;
-    touchgfx::RadioButtonGroup<1> radioButtonGroupMeasRate;
 
     /*
      * Wildcard Buffers
