@@ -27,6 +27,11 @@ public:
 
     virtual ~TimeModeConfigPresenter() {};
 
+    /**
+     * My function
+     */
+    virtual void askForDataTime();
+
 private:
     TimeModeConfigPresenter();
 

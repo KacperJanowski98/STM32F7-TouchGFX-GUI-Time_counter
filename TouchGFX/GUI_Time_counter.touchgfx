@@ -2087,7 +2087,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerTimeSESSION",
+            "SelectedPage": "swipeContainerTimeINPUT",
             "Style": "Style1",
             "Name": "swipeContainerTime",
             "X": 0,

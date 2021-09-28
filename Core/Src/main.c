@@ -89,7 +89,22 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .stack_size = 4096 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for myTaskTimeCount */
+osThreadId_t myTaskTimeCountHandle;
+const osThreadAttr_t myTaskTimeCount_attributes = {
+  .name = "myTaskTimeCount",
+  .stack_size = 1024 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for myBinarySemGetDataTime */
+osSemaphoreId_t myBinarySemGetDataTimeHandle;
+const osSemaphoreAttr_t myBinarySemGetDataTime_attributes = {
+  .name = "myBinarySemGetDataTime"
+};
 /* USER CODE BEGIN PV */
+
+// -- remove
+int testDisplay = 10;
 
 /* USER CODE END PV */
 
@@ -104,6 +119,7 @@ static void MX_FMC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_DMA2D_Init(void);
 void TouchGFX_Task(void *argument);
+void StartTaskTimeCount(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -179,6 +195,10 @@ int main(void)
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* creation of myBinarySemGetDataTime */
+  myBinarySemGetDataTimeHandle = osSemaphoreNew(1, 1, &myBinarySemGetDataTime_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -194,6 +214,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
+
+  /* creation of myTaskTimeCount */
+  myTaskTimeCountHandle = osThreadNew(StartTaskTimeCount, NULL, &myTaskTimeCount_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -243,6 +266,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLN = 400;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLR = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -1433,6 +1457,31 @@ __weak void TouchGFX_Task(void *argument)
   /* USER CODE END 5 */
 }
 
+/* USER CODE BEGIN Header_StartTaskTimeCount */
+/**
+* @brief Function implementing the myTaskTimeCount thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskTimeCount */
+void StartTaskTimeCount(void *argument)
+{
+  /* USER CODE BEGIN StartTaskTimeCount */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if (myBinarySemGetDataTimeHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t)10) == osOK)
+		  {
+			  testDisplay += 10;
+		  }
+	  }
+	  osDelay(1);
+  }
+  /* USER CODE END StartTaskTimeCount */
+}
+
 /* MPU Configuration */
 
 void MPU_Config(void)
@@ -1498,6 +1547,7 @@ void MPU_Config(void)
   HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
 
 }
+
 /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM6 interrupt took place, inside

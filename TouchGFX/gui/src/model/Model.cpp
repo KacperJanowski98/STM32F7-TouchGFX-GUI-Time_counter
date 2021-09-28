@@ -1,6 +1,8 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
+extern osSemaphoreId_t myBinarySemGetDataTimeHandle;
+
 Model::Model() : modelListener(0)
 //				, Channel1(1, false, Slope::UP, Threshold::Manula, 100, 1, 2) -- version 1
 {
@@ -10,6 +12,12 @@ Model::Model() : modelListener(0)
 void Model::tick()
 {
 
+}
+
+//
+void Model::getDataTime()
+{
+	osSemaphoreRelease(myBinarySemGetDataTimeHandle);
 }
 
 // Inna wrsja - remove

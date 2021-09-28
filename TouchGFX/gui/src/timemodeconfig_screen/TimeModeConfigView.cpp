@@ -652,7 +652,9 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 	}
 }
 
+//
 void TimeModeConfigView::FinishSetupTimeMode()
 {
-
+	presenter->askForDataTime();
+	application().gotoTimeModeScreenCoverTransitionWest();
 }

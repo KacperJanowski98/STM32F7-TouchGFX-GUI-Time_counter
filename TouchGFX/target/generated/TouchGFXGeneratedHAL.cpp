@@ -26,7 +26,6 @@ using namespace touchgfx;
 void TouchGFXGeneratedHAL::initialize()
 {
     HAL::initialize();
-
     registerEventListener(*(Application::getInstance()));
     setFrameBufferStartAddresses((void*)0xC0000000, (void*)0, (void*)0);
     /*
@@ -57,6 +56,16 @@ void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()
 {
 }
 
+bool TouchGFXGeneratedHAL::beginFrame()
+{
+    return HAL::beginFrame();
+}
+
+void TouchGFXGeneratedHAL::endFrame()
+{
+    HAL::endFrame();
+}
+
 inline uint8_t* TouchGFXGeneratedHAL::advanceFrameBufferToRect(uint8_t* fbPtr, const touchgfx::Rect& rect) const
 {
     //       Advance vertically                   Advance horizontally
@@ -77,32 +86,44 @@ void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t* adr)
 
 void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect& rect)
 {
-  HAL::flushFrameBuffer(rect);
-// If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then we need
-// to flush the Dcache prior to letting DMA2D accessing it. That's done
-// using SCB_CleanInvalidateDCache().
-SCB_CleanInvalidateDCache();
+    HAL::flushFrameBuffer(rect);
+    // If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then
+    // the DCache must be flushed prior to DMA2D accessing it. That's done
+    // using the function SCB_CleanInvalidateDCache(). Remember to enable "CPU Cache" in the
+    // "System Core" settings for "Cortex M7" in CubeMX in order for this function call to work.
+    if (SCB->CCR & SCB_CCR_DC_Msk)
+    {
+        SCB_CleanInvalidateDCache();
+    }
 }
 
 bool TouchGFXGeneratedHAL::blockCopy(void* RESTRICT dest, const void* RESTRICT src, uint32_t numBytes)
 {
-  return HAL::blockCopy(dest, src, numBytes);
+    return HAL::blockCopy(dest, src, numBytes);
 }
 
 void TouchGFXGeneratedHAL::InvalidateCache()
 {
-// If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then we need
-// to flush the Dcache prior to letting DMA2D accessing it. That's done
-// using SCB_CleanInvalidateDCache().
-SCB_CleanInvalidateDCache();
+    // If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then
+    // the DCache must be flushed prior to DMA2D accessing it. That's done
+    // using the function SCB_CleanInvalidateDCache(). Remember to enable "CPU Cache" in the
+    // "System Core" settings for "Cortex M7" in CubeMX in order for this function call to work.
+    if (SCB->CCR & SCB_CCR_DC_Msk)
+    {
+        SCB_CleanInvalidateDCache();
+    }
 }
 
 void TouchGFXGeneratedHAL::FlushCache()
 {
-// If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then we need
-// to flush the Dcache prior to letting DMA2D accessing it. That's done
-// using SCB_CleanInvalidateDCache().
-SCB_CleanInvalidateDCache();
+    // If the framebuffer is placed in Write Through cached memory (e.g. SRAM) then
+    // the DCache must be flushed prior to DMA2D accessing it. That's done
+    // using the function SCB_CleanInvalidateDCache(). Remember to enable "CPU Cache" in the
+    // "System Core" settings for "Cortex M7" in CubeMX in order for this function call to work.
+    if (SCB->CCR & SCB_CCR_DC_Msk)
+    {
+        SCB_CleanInvalidateDCache();
+    }
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

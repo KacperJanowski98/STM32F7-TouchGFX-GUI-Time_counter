@@ -16,3 +16,8 @@ void TimeModeConfigPresenter::deactivate()
 {
 
 }
+
+void TimeModeConfigPresenter::askForDataTime()
+{
+	model->getDataTime();
+}

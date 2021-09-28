@@ -15,7 +15,8 @@
       }
     ],
     "PostGenerateTargetCommand" : "touchgfx update_project --project-file=../GUI_Time_counter.ioc --platform=m7",
-    "Family" : "STM32F7"
+    "Family" : "STM32F7",
+    "SubFamily" : "STM32F7x9"
   },
-  "Version": "4.16.1"
+  "Version": "4.17.0"
 }
