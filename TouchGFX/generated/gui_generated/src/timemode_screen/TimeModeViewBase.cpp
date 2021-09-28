@@ -4,6 +4,7 @@
 #include <gui_generated/timemode_screen/TimeModeViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
+#include <texts/TextKeysAndLanguages.hpp>
 
 TimeModeViewBase::TimeModeViewBase() :
     buttonCallback(this, &TimeModeViewBase::buttonCallbackHandler)
@@ -23,10 +24,18 @@ TimeModeViewBase::TimeModeViewBase() :
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
+    textMain.setPosition(261, 228, 278, 25);
+    textMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textMain.setLinespacing(0);
+    textMainBuffer[0] = 0;
+    textMain.setWildcard(textMainBuffer);
+    textMain.setTypedText(touchgfx::TypedText(T_SINGLEUSEID54));
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
     add(buttonConfig);
+    add(textMain);
 }
 
 void TimeModeViewBase::setupScreen()

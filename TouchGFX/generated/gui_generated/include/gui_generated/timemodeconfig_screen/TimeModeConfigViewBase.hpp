@@ -88,6 +88,11 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void FinishSetupTimeMode()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -182,6 +187,7 @@ protected:
     touchgfx::RadioButton radioContinuous;
     touchgfx::TextArea textSingle;
     touchgfx::TextArea textContinuous;
+    touchgfx::Button buttonOkConfigTime;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;

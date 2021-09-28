@@ -449,6 +449,16 @@ void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::Abs
 	}
 }
 
+void TimeModeConfigView::turnTiMaxRange()
+{
+
+}
+
+void TimeModeConfigView::turnMeasRate()
+{
+
+}
+
 void TimeModeConfigView::ChangeChannelState()
 {
 	bool CurrentState = toggleChannel.getState();
@@ -640,4 +650,9 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 		textStartChannel.invalidate();
 		textStopChannel.invalidate();
 	}
+}
+
+void TimeModeConfigView::FinishSetupTimeMode()
+{
+
 }

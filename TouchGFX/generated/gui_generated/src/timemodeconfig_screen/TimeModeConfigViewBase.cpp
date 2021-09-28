@@ -476,6 +476,11 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textContinuous.setLinespacing(0);
     textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID53));
     swipeContainerTimeSESSION.add(textContinuous);
+
+    buttonOkConfigTime.setXY(732, 351);
+    buttonOkConfigTime.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonOkConfigTime.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(buttonOkConfigTime);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(3);
 
@@ -567,6 +572,13 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleTiMaxRange clicked call virtual function
         //Call turnTiMaxRange
         turnTiMaxRange();
+    }
+    else if (&src == &buttonOkConfigTime)
+    {
+        //OkFinishTimeMode
+        //When buttonOkConfigTime clicked call virtual function
+        //Call FinishSetupTimeMode
+        FinishSetupTimeMode();
     }
 }
 

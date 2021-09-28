@@ -99,6 +99,11 @@ public:
     virtual void turnMeasRate();
 
     /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku OK ktora konczy konfiguracje.
+     */
+    virtual void FinishSetupTimeMode();
+
+    /**
      * @brief Funkcja blokujaca elemnty ekranu.
      * 
      * @param state True elementy odblokowane, false elementy zablokowona.
