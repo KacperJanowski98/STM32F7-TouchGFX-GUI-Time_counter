@@ -9,7 +9,7 @@ void TimeModeView::setupScreen()
 {
     TimeModeViewBase::setupScreen();
 
-    // testy
+    // testy :TODO
     Unicode::snprintf(textMainBuffer, TEXTMAIN_SIZE, "%d", testDisplay);
     textMain.invalidate();
 }

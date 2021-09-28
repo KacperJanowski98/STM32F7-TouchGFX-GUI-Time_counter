@@ -319,6 +319,7 @@ void TimeModeConfigView::scrollWheelStopAnimateToHandler(int16_t itemSelected)
 }
 
 // Obsluga slidera threshold.
+// :TODO slider dla panelu session setup
 void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &sliderThreshold)
@@ -436,7 +437,7 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 	radioThresholdDefined.invalidate();
 }
 
-// Obsluga radiobutton.
+// :TODO
 void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
 {
 	if(&src == &radioSingle)
@@ -449,11 +450,13 @@ void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::Abs
 	}
 }
 
+// :TODO
 void TimeModeConfigView::turnTiMaxRange()
 {
 
 }
 
+// :TODO
 void TimeModeConfigView::turnMeasRate()
 {
 
