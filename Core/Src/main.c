@@ -105,6 +105,7 @@ const osSemaphoreAttr_t myBinarySemGetDataTime_attributes = {
 
 // -- remove
 int testDisplay = 10;
+int counter = 0;
 
 /* USER CODE END PV */
 
@@ -1472,9 +1473,12 @@ void StartTaskTimeCount(void *argument)
   {
 	  if (myBinarySemGetDataTimeHandle != NULL)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t)10) == osOK)
+		  counter++;
+		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t) 10) == osOK && counter > 1)
 		  {
 			  testDisplay += 10;
+
+			  counter = 2;
 		  }
 	  }
 	  osDelay(1);
