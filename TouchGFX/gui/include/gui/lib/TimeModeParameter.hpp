@@ -45,7 +45,15 @@ class TimeModeParameter
 {
 public:
 	/**
-	 * Konstruktor.
+	 * @brief Konstrukto.
+	 * 
+	 * @param numberChannel Numer kanalu.
+	 * @param stateChannel Stan kanalu.
+	 * @param slopeChannel Rodzaj zbocza kanalu.
+	 * @param setThreshold Sposob definicji progu wyzwalania.
+	 * @param thresholdVal Wartosc progu wyzwalania kanalu.
+	 * @param startChannel Numer kanalu poczatkowego.
+	 * @param stopChannel Numer kanalu koncowego.
 	 */
 	explicit TimeModeParameter(uint8_t numberChannel,
 						bool stateChannel,
@@ -56,27 +64,38 @@ public:
 						uint8_t stopChannel);
 
 	/**
-	 * Konstruktor kopiujacy.
+	 * @brief Konstruktor kopiujacy.
+	 * 
+	 * @param other Obiekt klasy TimeModeParameter.
 	 */
 	TimeModeParameter(const TimeModeParameter& other);
 
 	/**
-	 * Konstruktor przenoszacy.
+	 * @brief Konstruktor przenoszacy.
+	 * 
+	 * @param other Obiekt klasy TimeModeParameter.
 	 */
 	TimeModeParameter(TimeModeParameter&& other) noexcept;
 
 	/**
-	 * Operator kopiujacy.
+	 * @brief Operator kopiujacy.
+	 * 
+	 * @param other Obiekt klasy TimeModeParameter.
+	 * @return Obiekt klasy TimeModeParameter.
 	 */
 	TimeModeParameter& operator=(const TimeModeParameter& other);
 
 	/**
-	 * Operator przenoszacy.
+	 * @brief Operator przenoszacy.
+	 * 
+	 * @param other Obiekt klasy TimeModeParameter.
+	 * @return Obiekt klasy TimeModeParameter.
 	 */
 	TimeModeParameter& operator=(TimeModeParameter&& other) noexcept;
 
 	/**
-	 * Destruktor.
+	 * @brief Destruktor.
+	 * 
 	 */
 	~TimeModeParameter();
 
