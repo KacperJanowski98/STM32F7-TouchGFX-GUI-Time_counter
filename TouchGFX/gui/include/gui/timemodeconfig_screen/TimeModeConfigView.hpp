@@ -83,11 +83,21 @@ public:
     virtual void scrollWheelStopUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
     /**
-     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button (przycisk OFF/ON)
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button (przycisk OFF/ON).
      * 
      */
     virtual void ChangeChannelState();
     
+    /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button dla TI MAX RANGE.
+     */
+    virtual void turnTiMaxRange();
+
+    /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button dla Meas Rate.
+     */
+    virtual void turnMeasRate();
+
     /**
      * @brief Funkcja blokujaca elemnty ekranu.
      * 
@@ -225,12 +235,14 @@ protected:
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
     touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSlopeCallback;
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
 
     // Deklaracje obsługi wywołań zwrotnych.
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
+    void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
 private:
     TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
 

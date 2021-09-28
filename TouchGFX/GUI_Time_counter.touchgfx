@@ -1566,36 +1566,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "ButtonWithLabel",
-                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-                    "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-                    "Alpha": 255,
-                    "TextId": "SingleUseId37",
-                    "ReleasedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "TextRotation": "0",
-                    "Style": "Style4",
-                    "Name": "buttonSingle",
-                    "X": 107,
-                    "Y": 144,
-                    "Width": 170,
-                    "Height": 60,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "TextArea",
                     "TextId": "SingleUseId39",
                     "TextRotation": "0",
@@ -1641,36 +1611,6 @@
                     "Y": 77,
                     "Width": 162,
                     "Height": 28,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "ButtonWithLabel",
-                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_medium_pressed.png",
-                    "Released": "__designer\\Blue_Buttons_Round_Edge_medium.png",
-                    "Alpha": 255,
-                    "TextId": "SingleUseId41",
-                    "ReleasedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "TextRotation": "0",
-                    "Style": "Style3",
-                    "Name": "buttonContinuous",
-                    "X": 424,
-                    "Y": 144,
-                    "Width": 230,
-                    "Height": 60,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -1982,6 +1922,100 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Alpha": 255,
+                    "Selected": false,
+                    "Deselectable": false,
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
+                    "Style": "Style4",
+                    "RadioButtonGroup": "radioButtonGroupModeSession",
+                    "Name": "radioSingle",
+                    "X": 111,
+                    "Y": 146,
+                    "Width": 44,
+                    "Height": 44,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Alpha": 255,
+                    "Selected": false,
+                    "Deselectable": false,
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
+                    "Style": "Style4",
+                    "RadioButtonGroup": "radioButtonGroupModeSession",
+                    "Name": "radioContinuous",
+                    "X": 442,
+                    "Y": 146,
+                    "Width": 44,
+                    "Height": 44,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId52",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 252,
+                      "Green": 252,
+                      "Blue": 252
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textSingle",
+                    "X": 198,
+                    "Y": 156,
+                    "Width": 62,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId53",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textContinuous",
+                    "X": 518,
+                    "Y": 155,
+                    "Width": 113,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -2048,6 +2082,30 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "ChangeChannelState"
+            }
+          },
+          {
+            "InteractionName": "OnOffMaxRange",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleTiMaxRange"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "turnTiMaxRange"
+            }
+          },
+          {
+            "InteractionName": "OnOffMeasRate",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleTiMeasRate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "turnMeasRate"
             }
           }
         ],
@@ -2883,19 +2941,11 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId37",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId39",
         "IsResource": false
       },
       {
         "TextEntryId": "SingleUseId40",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId41",
         "IsResource": false
       },
       {
@@ -2936,6 +2986,14 @@
       },
       {
         "TextEntryId": "SingleUseId51",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId52",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId53",
         "IsResource": false
       }
     ],

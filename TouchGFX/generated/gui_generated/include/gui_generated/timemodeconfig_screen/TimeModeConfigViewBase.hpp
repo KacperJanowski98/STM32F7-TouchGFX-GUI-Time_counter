@@ -78,6 +78,16 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void turnTiMaxRange()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void turnMeasRate()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -154,10 +164,8 @@ protected:
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
     touchgfx::TextArea textTiMaxRange;
-    touchgfx::ButtonWithLabel buttonSingle;
     touchgfx::TextArea textMeasRate;
     touchgfx::TextAreaWithOneWildcard textRangeVal;
-    touchgfx::ButtonWithLabel buttonContinuous;
     touchgfx::Slider sliderRange;
     touchgfx::TextAreaWithOneWildcard textStampsVal;
     touchgfx::TextArea textSampsNumber;
@@ -170,9 +178,14 @@ protected:
     touchgfx::TextAreaWithOneWildcard textRateVal;
     touchgfx::ToggleButton toggleTiMeasRate;
     touchgfx::ToggleButton toggleTiMaxRange;
+    touchgfx::RadioButton radioSingle;
+    touchgfx::RadioButton radioContinuous;
+    touchgfx::TextArea textSingle;
+    touchgfx::TextArea textContinuous;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
+    touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;
 
     /*
      * Wildcard Buffers

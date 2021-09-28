@@ -65,7 +65,7 @@ public:
 	/**
 	 * @brief Ustawienie tempa pomiaru.
 	 * 
-	 * @param state True zezwolenie na sutawinie, false brak zezwolenia.
+	 * @param state True zezwolenie na ustawinie, false brak zezwolenia.
 	 */
 	void setMeasRate(bool state);
 

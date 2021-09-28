@@ -8,6 +8,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
+	, RadioBtnGroupSessionCallback(this, &TimeModeConfigView::RadioBtnGroupSessionCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
 	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
 	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
@@ -19,6 +20,7 @@ TimeModeConfigView::TimeModeConfigView()
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupThreshold.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
+	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	TimeModeConfigView::pChannel1 = std::make_shared<TimeModeParameter>(Channel1);
 	TimeModeConfigView::pChannel2 = std::make_shared<TimeModeParameter>(Channel2);
 	TimeModeConfigView::pChannel3 = std::make_shared<TimeModeParameter>(Channel3);
@@ -434,11 +436,24 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 	radioThresholdDefined.invalidate();
 }
 
+// Obsluga radiobutton.
+void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if(&src == &radioSingle)
+	{
+
+	}
+	else if(&src == &radioContinuous)
+	{
+
+	}
+}
+
 void TimeModeConfigView::ChangeChannelState()
 {
 	bool CurrentState = toggleChannel.getState();
 	TimeModeConfigView::setGuiTouchable(CurrentState);
-	setChannelStateUI(pChannelInput ,CurrentState);
+	setChannelStateUI(pChannelInput, CurrentState);
 
 	setActiveListChannels(m_channelInput, CurrentState);
 	readStateChannel(pChannel4->getStateChannel());
