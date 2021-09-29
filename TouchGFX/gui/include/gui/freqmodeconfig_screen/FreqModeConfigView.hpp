@@ -35,6 +35,14 @@ protected:
     Callback<FreqModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
     void scrollWheelINPUTAnimateToHandler(int16_t itemSelected);
 
+    touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueStartedChangeCallback;
+    touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueChangedCallback;
+    touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
+
+    void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+    void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
+
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
 

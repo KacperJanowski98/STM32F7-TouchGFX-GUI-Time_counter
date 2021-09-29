@@ -2,6 +2,9 @@
 
 FreqModeConfigView::FreqModeConfigView()
 	: scrollWheelINPUTAnimateToCallback(this, &FreqModeConfigView::scrollWheelINPUTAnimateToHandler)
+	, sliderValueStartedChangeCallback(this, &FreqModeConfigView::sliderValueStartedChangeCallbackHandler)
+	, sliderValueChangedCallback(this, &FreqModeConfigView::sliderValueChangedCallbackHandler)
+	, sliderValueConfirmedCallback(this, &FreqModeConfigView::sliderValueConfirmedCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
@@ -36,6 +39,11 @@ void FreqModeConfigView::setupScreen()
 
 	// obsluga toggle button
 	FreqModeConfigView::setGuiTouchable(toggleChannel.getState());
+
+	// obsluga sliderow
+	sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
+	sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
+	sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
 }
 
 void FreqModeConfigView::tearDownScreen()
@@ -123,6 +131,37 @@ void FreqModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	FreqModeConfigView::setGuiTouchable(CurrentStateUI);
 }
 
+// obsluga sliderow
+void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
+{
+	if (&src == &sliderThreshold)
+	{
+		setThresholdUI(pChannelInput, (uint32_t)value);
+		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+		textSliderThreshold.invalidate();
+	}
+}
+
+void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+	if (&src == &sliderThreshold)
+	{
+		setThresholdUI(pChannelInput, (uint32_t)value);
+		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+		textSliderThreshold.invalidate();
+	}
+}
+
+void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+	if (&src == &sliderThreshold)
+	{
+		setThresholdUI(pChannelInput, (uint32_t)value);
+		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+		textSliderThreshold.invalidate();
+	}
+}
+
 // obsluga przycisku toogle button
 void FreqModeConfigView::toggleChannelState()
 {
@@ -140,6 +179,7 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(false);
 		radioThresholdManual.setTouchable(false);
 		radioThresholdDefined.setTouchable(false);
+		sliderThreshold.setTouchable(false);
 		buttonDetect.setTouchable(false);
 	}
 	else
@@ -148,6 +188,7 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(true);
 		radioThresholdManual.setTouchable(true);
 		radioThresholdDefined.setTouchable(true);
+		sliderThreshold.setTouchable(true);
 		buttonDetect.setTouchable(true);
 	}
 }
