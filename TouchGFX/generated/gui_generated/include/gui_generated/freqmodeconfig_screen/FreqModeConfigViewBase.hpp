@@ -84,6 +84,7 @@ protected:
     touchgfx::TextArea textTDefined;
     touchgfx::TextArea textTManual;
     touchgfx::RadioButton radioThresholdDefined;
+    touchgfx::TextAreaWithOneWildcard textChannelINPUT;
     touchgfx::Container swipeContainerFreqCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -113,6 +114,8 @@ protected:
      */
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
+    static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
 
 private:
 

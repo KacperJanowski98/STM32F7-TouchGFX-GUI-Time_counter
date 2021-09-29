@@ -148,6 +148,14 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     radioThresholdDefined.setSelected(false);
     radioThresholdDefined.setDeselectionEnabled(false);
     swipeContainerFreqINPUT.add(radioThresholdDefined);
+
+    textChannelINPUT.setPosition(201, 41, 71, 35);
+    textChannelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textChannelINPUT.setLinespacing(0);
+    textChannelINPUTBuffer[0] = 0;
+    textChannelINPUT.setWildcard(textChannelINPUTBuffer);
+    textChannelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID65));
+    swipeContainerFreqINPUT.add(textChannelINPUT);
     swipeContainerFreq.add(swipeContainerFreqINPUT);
 
     swipeContainerFreqCLOCK.setWidth(800);

@@ -2767,6 +2767,34 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId65",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textChannelINPUT",
+                    "X": 201,
+                    "Y": 41,
+                    "Width": 71,
+                    "Height": 35,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -2852,7 +2880,7 @@
                     "Name": "labelCLOCK",
                     "X": 15,
                     "Y": 16,
-                    "Width": 63,
+                    "Width": 69,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -3568,6 +3596,10 @@
       },
       {
         "TextEntryId": "SingleUseId64",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId65",
         "IsResource": false
       }
     ],
