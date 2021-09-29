@@ -97,10 +97,21 @@ protected:
     touchgfx::TextArea textClockQuartz;
     touchgfx::RadioButton radioClockQuartz;
     touchgfx::Container swipeContainerFreqMESSETUP;
-    touchgfx::Box boxTISETUP;
     touchgfx::Image imageArrowTL;
     touchgfx::Image imageArrowTR;
     touchgfx::TextArea labelTISETUP;
+    touchgfx::Box boxTISETUP;
+    touchgfx::TextArea labelHfInput;
+    touchgfx::Image imageArrowML;
+    touchgfx::Image imageArrowMR;
+    touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButton radioButton2;
+    touchgfx::TextArea textON;
+    touchgfx::TextArea textOFF;
+    touchgfx::TextArea labelGate;
+    touchgfx::TextAreaWithOneWildcard textGateVal;
+    touchgfx::Slider sliderGate;
+    touchgfx::TextArea labelMesSetup;
     touchgfx::Container swipeContainerFreqSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
@@ -108,6 +119,7 @@ protected:
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThresholdFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
+    touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;
 
     /*
      * Wildcard Buffers
@@ -116,6 +128,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
     static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
+    static const uint16_t TEXTGATEVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textGateValBuffer[TEXTGATEVAL_SIZE];
 
 private:
 

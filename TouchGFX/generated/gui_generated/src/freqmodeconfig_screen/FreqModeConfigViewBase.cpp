@@ -219,10 +219,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqMESSETUP.setWidth(800);
     swipeContainerFreqMESSETUP.setHeight(420);
 
-    boxTISETUP.setPosition(0, 0, 800, 420);
-    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(54, 50, 125));
-    swipeContainerFreqMESSETUP.add(boxTISETUP);
-
     imageArrowTL.setXY(11, 178);
     imageArrowTL.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_32_ID));
     swipeContainerFreqMESSETUP.add(imageArrowTL);
@@ -236,6 +232,75 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     labelTISETUP.setLinespacing(0);
     labelTISETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID11));
     swipeContainerFreqMESSETUP.add(labelTISETUP);
+
+    boxTISETUP.setPosition(0, 0, 800, 420);
+    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(54, 50, 125));
+    swipeContainerFreqMESSETUP.add(boxTISETUP);
+
+    labelHfInput.setXY(82, 76);
+    labelHfInput.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
+    labelHfInput.setLinespacing(0);
+    labelHfInput.setTypedText(touchgfx::TypedText(T_SINGLEUSEID66));
+    swipeContainerFreqMESSETUP.add(labelHfInput);
+
+    imageArrowML.setXY(11, 178);
+    imageArrowML.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_32_ID));
+    swipeContainerFreqMESSETUP.add(imageArrowML);
+
+    imageArrowMR.setXY(770, 178);
+    imageArrowMR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
+    swipeContainerFreqMESSETUP.add(imageArrowMR);
+
+    radioButton1.setXY(159, 120);
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioButton1.setSelected(false);
+    radioButton1.setDeselectionEnabled(false);
+    swipeContainerFreqMESSETUP.add(radioButton1);
+
+    radioButton2.setXY(449, 123);
+    radioButton2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioButton2.setSelected(true);
+    radioButton2.setDeselectionEnabled(false);
+    swipeContainerFreqMESSETUP.add(radioButton2);
+
+    textON.setXY(266, 118);
+    textON.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textON.setLinespacing(0);
+    textON.setTypedText(touchgfx::TypedText(T_SINGLEUSEID67));
+    swipeContainerFreqMESSETUP.add(textON);
+
+    textOFF.setXY(560, 118);
+    textOFF.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textOFF.setLinespacing(0);
+    textOFF.setTypedText(touchgfx::TypedText(T_SINGLEUSEID68));
+    swipeContainerFreqMESSETUP.add(textOFF);
+
+    labelGate.setXY(86, 224);
+    labelGate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelGate.setLinespacing(0);
+    labelGate.setTypedText(touchgfx::TypedText(T_SINGLEUSEID69));
+    swipeContainerFreqMESSETUP.add(labelGate);
+
+    textGateVal.setPosition(328, 274, 142, 31);
+    textGateVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textGateVal.setLinespacing(0);
+    textGateValBuffer[0] = 0;
+    textGateVal.setWildcard(textGateValBuffer);
+    textGateVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID70));
+    swipeContainerFreqMESSETUP.add(textGateVal);
+
+    sliderGate.setXY(230, 334);
+    sliderGate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
+    sliderGate.setupHorizontalSlider(2, 6, 0, 0, 284);
+    sliderGate.setValueRange(0, 100);
+    sliderGate.setValue(0);
+    swipeContainerFreqMESSETUP.add(sliderGate);
+
+    labelMesSetup.setXY(17, 16);
+    labelMesSetup.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelMesSetup.setLinespacing(0);
+    labelMesSetup.setTypedText(touchgfx::TypedText(T_SINGLEUSEID71));
+    swipeContainerFreqMESSETUP.add(labelMesSetup);
     swipeContainerFreq.add(swipeContainerFreqMESSETUP);
 
     swipeContainerFreqSESSION.setWidth(800);
@@ -255,7 +320,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID12));
     swipeContainerFreqSESSION.add(labelSESSIONSETUP);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(0);
+    swipeContainerFreq.setSelectedPage(2);
 
     add(__background);
     add(boxLeftBackG);
@@ -272,6 +337,8 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);
+    radioButtonGroupHfInput.add(radioButton1);
+    radioButtonGroupHfInput.add(radioButton2);
 }
 
 void FreqModeConfigViewBase::setupScreen()
