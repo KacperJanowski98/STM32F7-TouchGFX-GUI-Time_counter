@@ -5,6 +5,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, sliderValueStartedChangeCallback(this, &FreqModeConfigView::sliderValueStartedChangeCallbackHandler)
 	, sliderValueChangedCallback(this, &FreqModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &FreqModeConfigView::sliderValueConfirmedCallbackHandler)
+	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
@@ -14,6 +15,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
 {
+	radioButtonGroupThresholdFreq.setRadioButtonSelectedHandler(RadioBtnGroupFreqCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
 	FreqModeConfigView::pChannel2 = std::make_shared<FreqModeParameter>(Channel2);
 	FreqModeConfigView::pChannel3 = std::make_shared<FreqModeParameter>(Channel3);
@@ -160,6 +162,31 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
 		textSliderThreshold.invalidate();
 	}
+}
+
+// obsluga radio button
+void FreqModeConfigView::RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if (&src == &radioSlopeUp)
+	{
+		setSlopeUI(pChannelInput, SlopeName::UP);
+	}
+	else if (&src == &radioSlopeDown)
+	{
+		setSlopeUI(pChannelInput, SlopeName::DOWN);
+	}
+	else if (&src == &radioThresholdManual)
+	{
+		setThresholdModeUI(pChannelInput, ThresholdName::Manula);
+	}
+	else if (&src == &radioThresholdDefined)
+	{
+		setThresholdModeUI(pChannelInput, ThresholdName::Defined);
+	}
+	radioSlopeUp.invalidate();
+	radioSlopeDown.invalidate();
+	radioThresholdManual.invalidate();
+	radioThresholdDefined.invalidate();
 }
 
 // obsluga przycisku toogle button

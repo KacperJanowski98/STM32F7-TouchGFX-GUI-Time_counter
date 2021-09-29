@@ -39,9 +39,12 @@ protected:
     touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueChangedCallback;
     touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
+	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupFreqCallback;
+
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
+    void RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src);
 
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
