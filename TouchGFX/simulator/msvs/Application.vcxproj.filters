@@ -351,6 +351,9 @@
     <ClCompile Include="..\..\gui\src\lib\SessionSetup.cpp">
       <Filter>Source Files\gui\lib</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\lib\FreqModeParameter.cpp">
+      <Filter>Source Files\gui\lib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx">
@@ -854,6 +857,9 @@
       <Filter>Header Files\gui\lib</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\lib\SessionSetup.hpp">
+      <Filter>Header Files\gui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\lib\FreqModeParameter.hpp">
       <Filter>Header Files\gui\lib</Filter>
     </ClInclude>
   </ItemGroup>
