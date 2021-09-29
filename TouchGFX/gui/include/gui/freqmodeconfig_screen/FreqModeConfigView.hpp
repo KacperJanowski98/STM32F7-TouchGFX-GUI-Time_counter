@@ -21,6 +21,15 @@ public:
     // funkcja dla przycisku onoff INPUT
     virtual void toggleChannelState();
 
+    void setGuiTouchable(bool state);
+    void setChannelStateUI(std::shared_ptr<FreqModeParameter>& channel, bool state);
+    void readSlopeUI(SlopeName slopeUi);
+    void setSlopeUI(std::shared_ptr<FreqModeParameter>& channel, SlopeName slopeUi);
+    void readThresholdModeUI(ThresholdName ThresholdM);
+    void setThresholdModeUI(std::shared_ptr<FreqModeParameter>& channel, ThresholdName ThresholdMode);
+    void readThresholdUI(uint32_t value);
+    void setThresholdUI(std::shared_ptr<FreqModeParameter>& channel, uint32_t value);
+
 protected:
     // obsluga scroll wheel
     Callback<FreqModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
