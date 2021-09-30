@@ -40,9 +40,7 @@ public:
 							bool stateChannel,
 							SlopeName slopeChannel,
 							ThresholdName setThreshold,
-							uint32_t thresholdVal,
-							bool hfInput,
-							uint16_t gate);
+							uint32_t thresholdVal);
 
 	/**
 	 * @brief Konstruktor kopiujacy.
@@ -109,20 +107,6 @@ public:
 	void setThreshold(uint32_t value);
 
 	/**
-	 * @brief Ustawienie stanu HF INPUT.
-	 * 
-	 * @param state True oznacza stan ON, false oznacza stan OFF.
-	 */
-	void setHfInput(bool state);
-
-	/**
-	 * @brief Ustawienie wartosci bramki.
-	 * 
-	 * @param value Wartosc bramki.
-	 */
-	void setGate(uint16_t value);
-
-	/**
 	 * @brief Funckja zwracajaca numer kanalu.
 	 * 
 	 * @return uint8_t Numer kanalu.
@@ -158,29 +142,12 @@ public:
 	 */
 	uint32_t getThreshold();
 
-	/**
-	 * @brief Funkcja zwraca stan HF INPUT.
-	 * 
-	 * @return true HF INPUT jest w stanie ON.
-	 * @return false HF INPUT jest w stanie OFF.
-	 */
-	bool getHfInput();
-
-	/**
-	 * @brief Funkcja zwraca wartosc bramki.
-	 * 
-	 * @return uint16_t Wartosc bramki.
-	 */
-	uint16_t getGate();
-
 private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
 	SlopeName m_slope;
 	ThresholdName m_thresholdMode;
 	uint32_t m_threshold;
-	bool m_hfInput;
-	uint16_t m_gate;
 };
 
 #endif /* GUI_INCLUDE_GUI_LIB_FREQMODEPARAMETER_HPP_ */

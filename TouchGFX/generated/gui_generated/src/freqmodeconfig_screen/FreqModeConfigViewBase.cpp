@@ -251,17 +251,17 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     imageArrowMR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerFreqMESSETUP.add(imageArrowMR);
 
-    radioButton1.setXY(159, 120);
-    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioButton1.setSelected(false);
-    radioButton1.setDeselectionEnabled(false);
-    swipeContainerFreqMESSETUP.add(radioButton1);
+    radioHfInputOn.setXY(159, 120);
+    radioHfInputOn.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioHfInputOn.setSelected(false);
+    radioHfInputOn.setDeselectionEnabled(false);
+    swipeContainerFreqMESSETUP.add(radioHfInputOn);
 
-    radioButton2.setXY(449, 123);
-    radioButton2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioButton2.setSelected(true);
-    radioButton2.setDeselectionEnabled(false);
-    swipeContainerFreqMESSETUP.add(radioButton2);
+    radioHfInputOff.setXY(449, 123);
+    radioHfInputOff.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
+    radioHfInputOff.setSelected(true);
+    radioHfInputOff.setDeselectionEnabled(false);
+    swipeContainerFreqMESSETUP.add(radioHfInputOff);
 
     textON.setXY(266, 118);
     textON.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -337,8 +337,8 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);
-    radioButtonGroupHfInput.add(radioButton1);
-    radioButtonGroupHfInput.add(radioButton2);
+    radioButtonGroupHfInput.add(radioHfInputOn);
+    radioButtonGroupHfInput.add(radioHfInputOff);
 }
 
 void FreqModeConfigViewBase::setupScreen()

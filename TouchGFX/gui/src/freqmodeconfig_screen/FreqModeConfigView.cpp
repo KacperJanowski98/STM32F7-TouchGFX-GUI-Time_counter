@@ -6,16 +6,18 @@ FreqModeConfigView::FreqModeConfigView()
 	, sliderValueChangedCallback(this, &FreqModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &FreqModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
-	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel4(4, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel5(5, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel6(6, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
-	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0, false, 0)
+	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
+	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel4(4, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel5(5, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel6(6, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0)
 {
 	radioButtonGroupThresholdFreq.setRadioButtonSelectedHandler(RadioBtnGroupFreqCallback);
+	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
 	FreqModeConfigView::pChannel2 = std::make_shared<FreqModeParameter>(Channel2);
 	FreqModeConfigView::pChannel3 = std::make_shared<FreqModeParameter>(Channel3);
@@ -46,6 +48,12 @@ void FreqModeConfigView::setupScreen()
 	sliderThreshold.setStartValueCallback(sliderValueStartedChangeCallback);
 	sliderThreshold.setNewValueCallback(sliderValueChangedCallback);
 	sliderThreshold.setStopValueCallback(sliderValueConfirmedCallback);
+
+	sliderGate.setStartValueCallback(sliderValueStartedChangeCallback);
+	sliderGate.setNewValueCallback(sliderValueChangedCallback);
+	sliderGate.setStopValueCallback(sliderValueConfirmedCallback);
+
+	initMesSetupUI();
 }
 
 void FreqModeConfigView::tearDownScreen()
@@ -139,8 +147,11 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 	if (&src == &sliderThreshold)
 	{
 		setThresholdUI(pChannelInput, (uint32_t)value);
-		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-		textSliderThreshold.invalidate();
+		setValueSliderThresholdUI(value);
+	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
 	}
 }
 
@@ -149,8 +160,11 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 	if (&src == &sliderThreshold)
 	{
 		setThresholdUI(pChannelInput, (uint32_t)value);
-		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-		textSliderThreshold.invalidate();
+		setValueSliderThresholdUI(value);
+	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
 	}
 }
 
@@ -159,8 +173,11 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 	if (&src == &sliderThreshold)
 	{
 		setThresholdUI(pChannelInput, (uint32_t)value);
-		Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-		textSliderThreshold.invalidate();
+		setValueSliderThresholdUI(value);
+	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
 	}
 }
 
@@ -187,6 +204,26 @@ void FreqModeConfigView::RadioBtnGroupFreqCallbackHandler(const touchgfx::Abstra
 	radioSlopeDown.invalidate();
 	radioThresholdManual.invalidate();
 	radioThresholdDefined.invalidate();
+}
+
+// obsluga radio button
+void FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if (&src == &radioHfInputOff)
+	{
+		m_hfInput = false;
+		textGateVal.setVisible(false);
+		sliderGate.setTouchable(false);
+	}
+	else if (&src == &radioHfInputOn)
+	{
+		m_hfInput = true;
+		textGateVal.setVisible(true);
+		sliderGate.setTouchable(true);
+	}
+	radioHfInputOff.invalidate();
+	radioHfInputOn.invalidate();
+	textGateVal.invalidate();
 }
 
 // obsluga przycisku toogle button
@@ -276,8 +313,26 @@ void FreqModeConfigView::setThresholdUI(std::shared_ptr<FreqModeParameter>& chan
 	channel->setThreshold(value);
 }
 
+void FreqModeConfigView::setValueSliderThresholdUI(int value)
+{
+	Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+	textSliderThreshold.invalidate();
+}
 
+void FreqModeConfigView::initMesSetupUI()
+{
+	m_hfInput = false;
+	textGateVal.setVisible(false);
+	sliderGate.setTouchable(false);
+	textGateVal.invalidate();
+}
 
+void FreqModeConfigView::setValueSliderGateUI(int value)
+{
+	Unicode::snprintf(textGateValBuffer, TEXTGATEVAL_SIZE, "%d", value);
+	textGateVal.invalidate();
+	m_gate = static_cast<uint16_t>(value);
+}
 
 
 

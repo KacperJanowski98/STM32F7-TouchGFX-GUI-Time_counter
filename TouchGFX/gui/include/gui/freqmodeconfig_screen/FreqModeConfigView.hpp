@@ -30,6 +30,10 @@ public:
     void readThresholdUI(uint32_t value);
     void setThresholdUI(std::shared_ptr<FreqModeParameter>& channel, uint32_t value);
 
+    void setValueSliderThresholdUI(int value);
+    void initMesSetupUI();
+    void setValueSliderGateUI(int value);
+
 protected:
     // obsluga scroll wheel
     Callback<FreqModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
@@ -40,11 +44,13 @@ protected:
     touchgfx::Callback<FreqModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupFreqCallback;
+	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupHfInputCallback;
 
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src);
+    void RadioBtnGroupHfInputCallbackHandler(const touchgfx::AbstractButton& src);
 
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
@@ -60,6 +66,9 @@ private:
 
     int16_t m_channelInput;
     std::shared_ptr<FreqModeParameter> pChannelInput;
+
+	bool m_hfInput;
+	uint16_t m_gate;
 };
 
 #endif // FREQMODECONFIGVIEW_HPP

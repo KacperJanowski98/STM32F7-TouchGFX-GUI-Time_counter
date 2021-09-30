@@ -104,8 +104,8 @@ protected:
     touchgfx::TextArea labelHfInput;
     touchgfx::Image imageArrowML;
     touchgfx::Image imageArrowMR;
-    touchgfx::RadioButton radioButton1;
-    touchgfx::RadioButton radioButton2;
+    touchgfx::RadioButton radioHfInputOn;
+    touchgfx::RadioButton radioHfInputOff;
     touchgfx::TextArea textON;
     touchgfx::TextArea textOFF;
     touchgfx::TextArea labelGate;
