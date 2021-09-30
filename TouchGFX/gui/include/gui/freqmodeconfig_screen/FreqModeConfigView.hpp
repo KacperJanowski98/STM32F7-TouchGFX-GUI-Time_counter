@@ -21,6 +21,7 @@ public:
     // funkcja dla przycisku onoff INPUT
     virtual void toggleChannelState();
 
+    void initUIChannel(std::shared_ptr<FreqModeParameter>& channel);
     void setGuiTouchable(bool state);
     void setChannelStateUI(std::shared_ptr<FreqModeParameter>& channel, bool state);
     void readSlopeUI(SlopeName slopeUi);

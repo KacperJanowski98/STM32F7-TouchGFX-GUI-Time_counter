@@ -104,6 +104,12 @@ public:
     virtual void FinishSetupTimeMode();
 
     /**
+     * @brief Funkcja ustawiajaca elementy konfiguracji w UI okreslonego kanalu.
+     *
+     * @param channel Obiekt kanalu.
+     */
+    void initUIChannel(std::shared_ptr<TimeModeParameter>& channel);
+    /**
      * @brief Funkcja blokujaca elemnty ekranu.
      * 
      * @param state True elementy odblokowane, false elementy zablokowona.

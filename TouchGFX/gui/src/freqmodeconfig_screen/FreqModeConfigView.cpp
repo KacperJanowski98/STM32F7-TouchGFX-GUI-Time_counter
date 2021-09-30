@@ -81,60 +81,37 @@ void FreqModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	case 1:
 		pChannelInput = pChannel1;
 		toggleChannel.forceState(pChannel1->getStateChannel());
-		readSlopeUI(pChannel1->getSlope());
-		readThresholdModeUI(pChannel1->getThresholdMode());
-		readThresholdUI(pChannel1->getThreshold());
 		break;
 	case 2:
 		pChannelInput = pChannel2;
 		toggleChannel.forceState(pChannel2->getStateChannel());
-		readSlopeUI(pChannel2->getSlope());
-		readThresholdModeUI(pChannel2->getThresholdMode());
-		readThresholdUI(pChannel2->getThreshold());
 		break;
 	case 3:
 		pChannelInput = pChannel3;
 		toggleChannel.forceState(pChannel3->getStateChannel());
-		readSlopeUI(pChannel3->getSlope());
-		readThresholdModeUI(pChannel3->getThresholdMode());
-		readThresholdUI(pChannel3->getThreshold());
 		break;
 	case 4:
 		pChannelInput = pChannel4;
 		toggleChannel.forceState(pChannel4->getStateChannel());
-		readSlopeUI(pChannel4->getSlope());
-		readThresholdModeUI(pChannel4->getThresholdMode());
-		readThresholdUI(pChannel4->getThreshold());
 		break;
 	case 5:
 		pChannelInput = pChannel5;
 		toggleChannel.forceState(pChannel5->getStateChannel());
-		readSlopeUI(pChannel5->getSlope());
-		readThresholdModeUI(pChannel5->getThresholdMode());
-		readThresholdUI(pChannel5->getThreshold());
 		break;
 	case 6:
 		pChannelInput = pChannel6;
 		toggleChannel.forceState(pChannel6->getStateChannel());
-		readSlopeUI(pChannel6->getSlope());
-		readThresholdModeUI(pChannel6->getThresholdMode());
-		readThresholdUI(pChannel6->getThreshold());
 		break;
 	case 7:
 		pChannelInput = pChannel7;
 		toggleChannel.forceState(pChannel7->getStateChannel());
-		readSlopeUI(pChannel7->getSlope());
-		readThresholdModeUI(pChannel7->getThresholdMode());
-		readThresholdUI(pChannel7->getThreshold());
 		break;
 	case 8:
 		pChannelInput = pChannel8;
 		toggleChannel.forceState(pChannel8->getStateChannel());
-		readSlopeUI(pChannel8->getSlope());
-		readThresholdModeUI(pChannel8->getThresholdMode());
-		readThresholdUI(pChannel8->getThreshold());
 		break;
 	}
+	initUIChannel(pChannelInput);
 	toggleChannel.invalidate();
 	bool CurrentStateUI = toggleChannel.getState();
 	setChannelStateUI(pChannelInput, CurrentStateUI);
@@ -232,6 +209,14 @@ void FreqModeConfigView::toggleChannelState()
 	bool CurrentState = toggleChannel.getState();
 	FreqModeConfigView::setGuiTouchable(CurrentState);
 	setChannelStateUI(pChannelInput, CurrentState);
+}
+
+// funkcja ustawiajaca w UI wartosci zapisane w obiektach
+void FreqModeConfigView::initUIChannel(std::shared_ptr<FreqModeParameter>& channel)
+{
+	readSlopeUI(channel->getSlope());
+	readThresholdModeUI(channel->getThresholdMode());
+	readThresholdUI(channel->getThreshold());
 }
 
 // Funkcja pomocnicza dla toogle button
