@@ -417,6 +417,11 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     textContinuous.setLinespacing(0);
     textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID83));
     swipeContainerFreqSESSION.add(textContinuous);
+
+    buttonOkConfigFreq.setXY(732, 351);
+    buttonOkConfigFreq.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonOkConfigFreq.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(buttonOkConfigFreq);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
     swipeContainerFreq.setSelectedPage(3);
 
@@ -476,6 +481,13 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleTiMeasRate clicked call virtual function
         //Call turnMeasRate
         turnMeasRate();
+    }
+    else if (&src == &buttonOkConfigFreq)
+    {
+        //FinishConfigOkButton
+        //When buttonOkConfigFreq clicked call virtual function
+        //Call FinishSetupFreqMode
+        FinishSetupFreqMode();
     }
 }
 

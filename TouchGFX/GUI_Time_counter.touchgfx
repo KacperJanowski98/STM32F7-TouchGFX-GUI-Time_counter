@@ -2226,6 +2226,62 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId84",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textMain",
+            "X": 261,
+            "Y": 228,
+            "Width": 278,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId85",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textMainF",
+            "X": 261,
+            "Y": 228,
+            "Width": 278,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -3827,6 +3883,23 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "Button",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "Name": "buttonOkConfigFreq",
+                    "X": 732,
+                    "Y": 351,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -3905,6 +3978,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "turnMeasRate"
+            }
+          },
+          {
+            "InteractionName": "FinishConfigOkButton",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonOkConfigFreq"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupFreqMode"
             }
           }
         ],
@@ -4312,6 +4397,14 @@
       },
       {
         "TextEntryId": "SingleUseId83",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId84",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId85",
         "IsResource": false
       }
     ],

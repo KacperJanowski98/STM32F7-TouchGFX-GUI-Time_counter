@@ -9,6 +9,7 @@
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class FreqModeViewBase : public touchgfx::View<FreqModePresenter>
 {
@@ -29,6 +30,16 @@ protected:
     touchgfx::Box boxBackgroungFreq;
     touchgfx::Button buttonToMenuF;
     touchgfx::Button buttonConfig;
+    touchgfx::TextAreaWithOneWildcard textMain;
+    touchgfx::TextAreaWithOneWildcard textMainF;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTMAIN_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textMainBuffer[TEXTMAIN_SIZE];
+    static const uint16_t TEXTMAINF_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textMainFBuffer[TEXTMAINF_SIZE];
 
 private:
 

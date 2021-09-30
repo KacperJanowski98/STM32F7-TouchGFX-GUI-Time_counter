@@ -388,7 +388,11 @@ void FreqModeConfigView::setValueSliderGateUI(int value)
 	m_gate = static_cast<uint16_t>(value);
 }
 
+void FreqModeConfigView::FinishSetupFreqMode()
+{
 
+	application().gotoFreqModeScreenCoverTransitionWest();
+}
 
 
 
