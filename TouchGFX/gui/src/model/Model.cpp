@@ -20,6 +20,11 @@ void Model::getDataTime()
 	osSemaphoreRelease(myBinarySemGetDataTimeHandle);
 }
 
+void Model::getDataFreq()
+{
+
+}
+
 // Inna wrsja - remove
 //std::unique_ptr<TimeModeParameter> Model::getChannel1()
 //{

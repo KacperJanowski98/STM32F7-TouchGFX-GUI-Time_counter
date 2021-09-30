@@ -390,7 +390,7 @@ void FreqModeConfigView::setValueSliderGateUI(int value)
 
 void FreqModeConfigView::FinishSetupFreqMode()
 {
-
+	presenter->askForDataFreq();
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 

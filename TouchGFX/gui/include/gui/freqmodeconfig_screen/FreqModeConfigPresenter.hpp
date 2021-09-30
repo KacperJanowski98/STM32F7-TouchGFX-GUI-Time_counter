@@ -27,6 +27,11 @@ public:
 
     virtual ~FreqModeConfigPresenter() {};
 
+    /**
+     * My function
+     */
+    virtual void askForDataFreq();
+
 private:
     FreqModeConfigPresenter();
 

@@ -16,3 +16,8 @@ void FreqModeConfigPresenter::deactivate()
 {
 
 }
+
+void FreqModeConfigPresenter::askForDataFreq()
+{
+	model->getDataFreq();
+}

@@ -32,6 +32,8 @@ public:
 
     void getDataTime();
 
+    void getDataFreq();
+
 //    std::unique_ptr<TimeModeParameter> getChannel1();
 protected:
     ModelListener* modelListener;
