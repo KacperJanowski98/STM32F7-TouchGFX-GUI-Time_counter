@@ -96,16 +96,30 @@ const osThreadAttr_t myTaskTimeCount_attributes = {
   .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for myTaskFreqCount */
+osThreadId_t myTaskFreqCountHandle;
+const osThreadAttr_t myTaskFreqCount_attributes = {
+  .name = "myTaskFreqCount",
+  .stack_size = 1024 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for myBinarySemGetDataTime */
 osSemaphoreId_t myBinarySemGetDataTimeHandle;
 const osSemaphoreAttr_t myBinarySemGetDataTime_attributes = {
   .name = "myBinarySemGetDataTime"
 };
+/* Definitions for myBinarySemGetDataFreq */
+osSemaphoreId_t myBinarySemGetDataFreqHandle;
+const osSemaphoreAttr_t myBinarySemGetDataFreq_attributes = {
+  .name = "myBinarySemGetDataFreq"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
 int testDisplay = 10;
-int counter = 0;
+int testDisplayFreq = 0;
+uint8_t counterT = 0;
+uint8_t counterF = 0;
 
 /* USER CODE END PV */
 
@@ -121,6 +135,7 @@ static void MX_QUADSPI_Init(void);
 static void MX_DMA2D_Init(void);
 void TouchGFX_Task(void *argument);
 void StartTaskTimeCount(void *argument);
+void StartTaskFreqCount(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -200,6 +215,9 @@ int main(void)
   /* creation of myBinarySemGetDataTime */
   myBinarySemGetDataTimeHandle = osSemaphoreNew(1, 1, &myBinarySemGetDataTime_attributes);
 
+  /* creation of myBinarySemGetDataFreq */
+  myBinarySemGetDataFreqHandle = osSemaphoreNew(1, 1, &myBinarySemGetDataFreq_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -218,6 +236,9 @@ int main(void)
 
   /* creation of myTaskTimeCount */
   myTaskTimeCountHandle = osThreadNew(StartTaskTimeCount, NULL, &myTaskTimeCount_attributes);
+
+  /* creation of myTaskFreqCount */
+  myTaskFreqCountHandle = osThreadNew(StartTaskFreqCount, NULL, &myTaskFreqCount_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1473,17 +1494,45 @@ void StartTaskTimeCount(void *argument)
   {
 	  if (myBinarySemGetDataTimeHandle != NULL)
 	  {
-		  counter++;
-		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t) 10) == osOK && counter > 1)
+		  counterT++;
+		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t) 10) == osOK && counterT > 1)
 		  {
 			  testDisplay += 10;
 
-			  counter = 2;
+			  counterT = 2;
 		  }
 	  }
 	  osDelay(1);
   }
   /* USER CODE END StartTaskTimeCount */
+}
+
+/* USER CODE BEGIN Header_StartTaskFreqCount */
+/**
+* @brief Function implementing the myTaskFreqCount thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskFreqCount */
+void StartTaskFreqCount(void *argument)
+{
+  /* USER CODE BEGIN StartTaskFreqCount */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if (myBinarySemGetDataFreqHandle != NULL)
+	  {
+		  counterF++;
+		  if (osSemaphoreAcquire(myBinarySemGetDataFreqHandle, (uint32_t) 10) == osOK && counterF > 1)
+		  {
+			  testDisplayFreq += 5;
+
+			  counterF = 2;
+		  }
+	  }
+	  osDelay(1);
+  }
+  /* USER CODE END StartTaskFreqCount */
 }
 
 /* MPU Configuration */

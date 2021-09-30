@@ -2,6 +2,7 @@
 #include <gui/model/ModelListener.hpp>
 
 extern osSemaphoreId_t myBinarySemGetDataTimeHandle;
+extern osSemaphoreId_t myBinarySemGetDataFreqHandle;
 
 Model::Model() : modelListener(0)
 //				, Channel1(1, false, Slope::UP, Threshold::Manula, 100, 1, 2) -- version 1
@@ -22,7 +23,7 @@ void Model::getDataTime()
 
 void Model::getDataFreq()
 {
-
+	osSemaphoreRelease(myBinarySemGetDataFreqHandle);
 }
 
 // Inna wrsja - remove

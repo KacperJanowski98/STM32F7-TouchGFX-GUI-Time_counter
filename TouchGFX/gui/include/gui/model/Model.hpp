@@ -9,6 +9,7 @@
 
 
 extern int testDisplay;
+extern int testDisplayFreq;
 
 extern "C"
 {
