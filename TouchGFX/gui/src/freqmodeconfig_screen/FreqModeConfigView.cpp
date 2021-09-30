@@ -7,6 +7,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, sliderValueConfirmedCallback(this, &FreqModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
+	, RadioBtnGroupSessionCallback(this, &FreqModeConfigView::RadioBtnGroupSessionCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0)
 	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0)
 	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0)
@@ -18,6 +19,7 @@ FreqModeConfigView::FreqModeConfigView()
 {
 	radioButtonGroupThresholdFreq.setRadioButtonSelectedHandler(RadioBtnGroupFreqCallback);
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
+	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
 	FreqModeConfigView::pChannel2 = std::make_shared<FreqModeParameter>(Channel2);
 	FreqModeConfigView::pChannel3 = std::make_shared<FreqModeParameter>(Channel3);
@@ -52,6 +54,18 @@ void FreqModeConfigView::setupScreen()
 	sliderGate.setStartValueCallback(sliderValueStartedChangeCallback);
 	sliderGate.setNewValueCallback(sliderValueChangedCallback);
 	sliderGate.setStopValueCallback(sliderValueConfirmedCallback);
+
+	sliderStampsNumber.setStartValueCallback(sliderValueStartedChangeCallback);
+	sliderStampsNumber.setNewValueCallback(sliderValueChangedCallback);
+	sliderStampsNumber.setStopValueCallback(sliderValueConfirmedCallback);
+
+	sliderRepeat.setStartValueCallback(sliderValueStartedChangeCallback);
+	sliderRepeat.setNewValueCallback(sliderValueChangedCallback);
+	sliderRepeat.setStopValueCallback(sliderValueConfirmedCallback);
+
+	sliderRate.setStartValueCallback(sliderValueStartedChangeCallback);
+	sliderRate.setNewValueCallback(sliderValueChangedCallback);
+	sliderRate.setStopValueCallback(sliderValueConfirmedCallback);
 
 	initMesSetupUI();
 }
@@ -118,7 +132,7 @@ void FreqModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	FreqModeConfigView::setGuiTouchable(CurrentStateUI);
 }
 
-// obsluga sliderow
+// obsluga sliderow :TODO oprogramowac slidery z panelu sessionsetup
 void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
 	if (&src == &sliderThreshold)
@@ -129,6 +143,18 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 	else if (&src == &sliderGate)
 	{
 		setValueSliderGateUI(value);
+	}
+	else if (&src == &sliderStampsNumber)
+	{
+
+	}
+	else if (&src == &sliderRepeat)
+	{
+
+	}
+	else if (&src == &sliderRate)
+	{
+
 	}
 }
 
@@ -143,6 +169,18 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 	{
 		setValueSliderGateUI(value);
 	}
+	else if (&src == &sliderStampsNumber)
+	{
+
+	}
+	else if (&src == &sliderRepeat)
+	{
+
+	}
+	else if (&src == &sliderRate)
+	{
+
+	}
 }
 
 void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
@@ -155,6 +193,18 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 	else if (&src == &sliderGate)
 	{
 		setValueSliderGateUI(value);
+	}
+	else if (&src == &sliderStampsNumber)
+	{
+
+	}
+	else if (&src == &sliderRepeat)
+	{
+
+	}
+	else if (&src == &sliderRate)
+	{
+
 	}
 }
 
@@ -201,6 +251,25 @@ void FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler(const touchgfx::Abs
 	radioHfInputOff.invalidate();
 	radioHfInputOn.invalidate();
 	textGateVal.invalidate();
+}
+
+// obsluga radio button :TODO
+void FreqModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if(&src == &radioSingle)
+	{
+
+	}
+	else if(&src == &radioContinuous)
+	{
+
+	}
+}
+
+// :TODO
+void FreqModeConfigView::turnMeasRate()
+{
+
 }
 
 // obsluga przycisku toogle button

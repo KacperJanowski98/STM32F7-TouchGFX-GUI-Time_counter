@@ -48,6 +48,11 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void turnMeasRate()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -116,10 +121,26 @@ protected:
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
+    touchgfx::TextArea textMeasRate;
+    touchgfx::TextAreaWithOneWildcard textStampsVal;
+    touchgfx::TextArea textSampsNumber;
+    touchgfx::TextArea textX;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textRepeatVal;
+    touchgfx::Slider sliderStampsNumber;
+    touchgfx::Slider sliderRepeat;
+    touchgfx::Slider sliderRate;
+    touchgfx::TextAreaWithOneWildcard textRateVal;
+    touchgfx::ToggleButton toggleTiMeasRate;
+    touchgfx::RadioButton radioSingle;
+    touchgfx::RadioButton radioContinuous;
+    touchgfx::TextArea textSingle;
+    touchgfx::TextArea textContinuous;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<2> radioButtonGroupThresholdFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;
+    touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;
 
     /*
      * Wildcard Buffers
@@ -130,6 +151,12 @@ protected:
     touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTGATEVAL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textGateValBuffer[TEXTGATEVAL_SIZE];
+    static const uint16_t TEXTSTAMPSVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStampsValBuffer[TEXTSTAMPSVAL_SIZE];
+    static const uint16_t TEXTREPEATVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textRepeatValBuffer[TEXTREPEATVAL_SIZE];
+    static const uint16_t TEXTRATEVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textRateValBuffer[TEXTRATEVAL_SIZE];
 
 private:
 

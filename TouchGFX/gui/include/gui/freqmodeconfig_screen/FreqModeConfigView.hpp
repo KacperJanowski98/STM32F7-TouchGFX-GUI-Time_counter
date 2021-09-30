@@ -20,6 +20,7 @@ public:
 
     // funkcja dla przycisku onoff INPUT
     virtual void toggleChannelState();
+    virtual void turnMeasRate();
 
     void initUIChannel(std::shared_ptr<FreqModeParameter>& channel);
     void setGuiTouchable(bool state);
@@ -46,12 +47,14 @@ protected:
 
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupFreqCallback;
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupHfInputCallback;
+	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
 
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupHfInputCallbackHandler(const touchgfx::AbstractButton& src);
+    void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
 
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;

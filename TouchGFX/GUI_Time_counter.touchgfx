@@ -2087,7 +2087,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerTimeINPUT",
+            "SelectedPage": "swipeContainerTimeSESSION",
             "Style": "Style1",
             "Name": "swipeContainerTime",
             "X": 0,
@@ -3450,6 +3450,383 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId72",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textMeasRate",
+                    "X": 147,
+                    "Y": 344,
+                    "Width": 103,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId73",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "TextId": "SingleUseId74",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textStampsVal",
+                    "X": 244,
+                    "Y": 192,
+                    "Width": 128,
+                    "Height": 29,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId75",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textSampsNumber",
+                    "X": 60,
+                    "Y": 192,
+                    "Width": 163,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId76",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textX",
+                    "X": 386,
+                    "Y": 182,
+                    "Width": 27,
+                    "Height": 49,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId77",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textArea1",
+                    "X": 464,
+                    "Y": 196,
+                    "Width": 70,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId78",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "TextId": "SingleUseId79",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textRepeatVal",
+                    "X": 620,
+                    "Y": 197,
+                    "Width": 120,
+                    "Height": 24,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Slider",
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_back.png",
+                    "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_fill.png",
+                    "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_round_knob.png",
+                    "BackgroundX": 3,
+                    "BackgroundY": 7,
+                    "IndicatorPos": 0,
+                    "IndicatorMax": 125,
+                    "IndicatorMin": 0,
+                    "ValueMax": 100,
+                    "ValueMin": 0,
+                    "InitValue": 0,
+                    "Style": "Style13",
+                    "Name": "sliderStampsNumber",
+                    "X": 112,
+                    "Y": 263,
+                    "Width": 179,
+                    "Height": 34,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Slider",
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_back.png",
+                    "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_fill.png",
+                    "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_round_knob.png",
+                    "BackgroundX": 3,
+                    "BackgroundY": 7,
+                    "IndicatorPos": 0,
+                    "IndicatorMax": 125,
+                    "IndicatorMin": 0,
+                    "ValueMax": 100,
+                    "ValueMin": 0,
+                    "InitValue": 0,
+                    "Style": "Style13",
+                    "Name": "sliderRepeat",
+                    "X": 501,
+                    "Y": 263,
+                    "Width": 179,
+                    "Height": 34,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Slider",
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_back.png",
+                    "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_fill.png",
+                    "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_round_knob.png",
+                    "BackgroundX": 3,
+                    "BackgroundY": 7,
+                    "IndicatorPos": 0,
+                    "IndicatorMax": 125,
+                    "IndicatorMin": 0,
+                    "ValueMax": 100,
+                    "ValueMin": 0,
+                    "InitValue": 0,
+                    "Style": "Style13",
+                    "Name": "sliderRate",
+                    "X": 501,
+                    "Y": 342,
+                    "Width": 179,
+                    "Height": 34,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId80",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": false,
+                    "LineSpacing": 0,
+                    "Wildcard1": {
+                      "TextId": "SingleUseId81",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "Name": "textRateVal",
+                    "X": 358,
+                    "Y": 344,
+                    "Width": 94,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "InitialStatePressed": false,
+                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
+                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
+                    "Alpha": 255,
+                    "Style": "Style3",
+                    "Name": "toggleTiMeasRate",
+                    "X": 26,
+                    "Y": 337,
+                    "Width": 96,
+                    "Height": 38,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Alpha": 255,
+                    "Selected": false,
+                    "Deselectable": false,
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
+                    "Style": "Style4",
+                    "RadioButtonGroup": "radioButtonGroupModeSession",
+                    "Name": "radioSingle",
+                    "X": 112,
+                    "Y": 98,
+                    "Width": 44,
+                    "Height": 44,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Alpha": 255,
+                    "Selected": false,
+                    "Deselectable": false,
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
+                    "Style": "Style4",
+                    "RadioButtonGroup": "radioButtonGroupModeSession",
+                    "Name": "radioContinuous",
+                    "X": 440,
+                    "Y": 101,
+                    "Width": 44,
+                    "Height": 44,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId82",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 252,
+                      "Green": 252,
+                      "Blue": 252
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textSingle",
+                    "X": 199,
+                    "Y": 108,
+                    "Width": 62,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId83",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textContinuous",
+                    "X": 517,
+                    "Y": 111,
+                    "Width": 113,
+                    "Height": 25,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -3476,7 +3853,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqMESSETUP",
+            "SelectedPage": "swipeContainerFreqSESSION",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,
@@ -3516,6 +3893,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "toggleChannelState"
+            }
+          },
+          {
+            "InteractionName": "OnOfMeasRate",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleTiMeasRate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "turnMeasRate"
             }
           }
         ],
@@ -3875,6 +4264,54 @@
       },
       {
         "TextEntryId": "SingleUseId71",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId72",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId73",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId74",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId75",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId76",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId77",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId78",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId79",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId80",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId81",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId82",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId83",
         "IsResource": false
       }
     ],
