@@ -61,8 +61,8 @@ FreqModeParameter &FreqModeParameter::operator=(FreqModeParameter&& other) noexc
 	return *this;
 }
 
-FreqModeParameter::~FreqModeParameter()
-{}
+FreqModeParameter::~FreqModeParameter() = default;
+
 
 void FreqModeParameter::setStateChannel(bool state)
 {

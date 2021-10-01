@@ -71,8 +71,8 @@ TimeModeParameter &TimeModeParameter::operator=(TimeModeParameter&& other) noexc
 	return *this;
 }
 
-TimeModeParameter::~TimeModeParameter()
-{}
+TimeModeParameter::~TimeModeParameter() = default;
+
 
 void TimeModeParameter::setStateChannel(bool state)
 {

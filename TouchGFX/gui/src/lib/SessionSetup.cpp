@@ -66,8 +66,7 @@ SessionSetup &SessionSetup::operator=(SessionSetup&& other) noexcept
 	return *this;
 }
 
-SessionSetup::~SessionSetup()
-{}
+SessionSetup::~SessionSetup()= default;
 
 void SessionSetup::setMaxRange(bool state)
 {
