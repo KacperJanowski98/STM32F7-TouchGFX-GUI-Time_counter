@@ -235,7 +235,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
 
     radioHfInputOff.setXY(449, 123);
     radioHfInputOff.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioHfInputOff.setSelected(true);
+    radioHfInputOff.setSelected(false);
     radioHfInputOff.setDeselectionEnabled(false);
     swipeContainerFreqMESSETUP.add(radioHfInputOff);
 
@@ -373,7 +373,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonOkConfigFreq.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonOkConfigFreq);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(3);
+    swipeContainerFreq.setSelectedPage(2);
 
     add(__background);
     add(boxLeftBackG);

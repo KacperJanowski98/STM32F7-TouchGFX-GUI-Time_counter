@@ -48,11 +48,6 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
-    virtual void turnMeasRate()
-    {
-        // Override and implement this function in FreqModeConfig
-    }
-
     virtual void FinishSetupFreqMode()
     {
         // Override and implement this function in FreqModeConfig

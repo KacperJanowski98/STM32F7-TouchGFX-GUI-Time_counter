@@ -72,6 +72,11 @@ void FreqModeConfigView::setupScreen()
 
 	updateClockSourceUI(m_clockSource);
 
+	FreqModeConfigView::m_hfInput = false;
+	FreqModeConfigView::m_gate = 10;
+
+	updateMesSetupUI(m_hfInput);
+
 	updateSessionSetupUI(pSession);
 }
 
@@ -240,6 +245,7 @@ void FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler(const touchgfx::Abs
 		m_hfInput = true;
 		textGateVal.setVisible(true);
 		sliderGate.setTouchable(true);
+		sliderGate.setValue(m_gate);
 	}
 	radioHfInputOff.invalidate();
 	radioHfInputOn.invalidate();
@@ -390,6 +396,23 @@ void FreqModeConfigView::updateClockSourceUI(ClockName clk)
 	else if (clk == ClockName::EXTERNAL)
 	{
 		radioClockExternal.setSelected(true);
+	}
+}
+
+void FreqModeConfigView::updateMesSetupUI(bool state)
+{
+	if (state == true)
+	{
+		radioHfInputOn.setSelected(true);
+		textGateVal.setVisible(true);
+		sliderGate.setTouchable(true);
+		sliderGate.setValue(m_gate);
+	}
+	else
+	{
+		radioHfInputOff.setSelected(true);
+		textGateVal.setVisible(false);
+		sliderGate.setTouchable(false);
 	}
 }
 

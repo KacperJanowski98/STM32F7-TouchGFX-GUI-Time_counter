@@ -83,11 +83,6 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
-    virtual void turnMeasRate()
-    {
-        // Override and implement this function in TimeModeConfig
-    }
-
     virtual void FinishSetupTimeMode()
     {
         // Override and implement this function in TimeModeConfig

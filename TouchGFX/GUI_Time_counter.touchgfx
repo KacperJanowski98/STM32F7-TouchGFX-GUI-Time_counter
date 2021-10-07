@@ -1973,8 +1973,7 @@
             "InteractionName": "OnOffMeasRate",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "toggleTiMeasRate"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -3008,7 +3007,7 @@
                   {
                     "Type": "RadioButton",
                     "Alpha": 255,
-                    "Selected": true,
+                    "Selected": false,
                     "Deselectable": false,
                     "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
                     "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
@@ -3575,7 +3574,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqSESSION",
+            "SelectedPage": "swipeContainerFreqMESSETUP",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,
@@ -3621,8 +3620,7 @@
             "InteractionName": "OnOfMeasRate",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "toggleTiMeasRate"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionCustom",

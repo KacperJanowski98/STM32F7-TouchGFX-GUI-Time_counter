@@ -40,6 +40,8 @@ public:
 
     void updateClockSourceUI(ClockName clk);
 
+    void updateMesSetupUI(bool state);
+
     void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
 
 protected:
