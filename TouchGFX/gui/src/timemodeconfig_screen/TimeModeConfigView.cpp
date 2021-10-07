@@ -130,42 +130,33 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	{
 	case 1:
 		pChannelInput = pChannel1;
-//		toggleChannel.forceState(pChannel1->getStateChannel());
 		break;
 	case 2:
 		pChannelInput = pChannel2;
-//		toggleChannel.forceState(pChannel2->getStateChannel());
 		break;
 	case 3:
 		pChannelInput = pChannel3;
-//		toggleChannel.forceState(pChannel3->getStateChannel());
 		break;
 	case 4:
 		pChannelInput = pChannel4;
-//		toggleChannel.forceState(pChannel4->getStateChannel());
 		break;
 	case 5:
 		pChannelInput = pChannel5;
-//		toggleChannel.forceState(pChannel5->getStateChannel());
 		break;
 	case 6:
 		pChannelInput = pChannel6;
-//		toggleChannel.forceState(pChannel6->getStateChannel());
 		break;
 	case 7:
 		pChannelInput = pChannel7;
-//		toggleChannel.forceState(pChannel7->getStateChannel());
 		break;
 	case 8:
 		pChannelInput = pChannel8;
-//		toggleChannel.forceState(pChannel8->getStateChannel());
 		break;
 	}
 	initUIChannel(pChannelInput);
 	toggleChannel.forceState(pChannelInput->getStateChannel());
 	toggleChannel.invalidate();
 	bool CurrentState = toggleChannel.getState();
-//	setChannelStateUI(pChannelInput, CurrentState);
 	TimeModeConfigView::setGuiTouchable(CurrentState);
 }
 
@@ -177,58 +168,32 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 	switch(m_channelTiSetup)
 	{
 	case 1:
-//		readStateChannel(pChannel1->getStateChannel());
 		pChannelTI = pChannel1;
-//		updateStartStopIn(pChannel1);
-//		toggleTiSetup.forceState(pChannel1->getTiState());
 		break;
 	case 2:
-//		readStateChannel(pChannel2->getStateChannel());
 		pChannelTI = pChannel2;
-//		updateStartStopIn(pChannel2);
-//		toggleTiSetup.forceState(pChannel2->getTiState());
 		break;
 	case 3:
-//		readStateChannel(pChannel3->getStateChannel());
 		pChannelTI = pChannel3;
-//		updateStartStopIn(pChannel3);
-//		toggleTiSetup.forceState(pChannel3->getTiState());
 		break;
 	case 4:
-//		readStateChannel(pChannel4->getStateChannel());
 		pChannelTI = pChannel4;
-//		updateStartStopIn(pChannel4);
-//		toggleTiSetup.forceState(pChannel4->getTiState());
 		break;
 	case 5:
-//		readStateChannel(pChannel5->getStateChannel());
 		pChannelTI = pChannel5;
-//		updateStartStopIn(pChannel5);
-//		toggleTiSetup.forceState(pChannel5->getTiState());
 		break;
 	case 6:
-//		readStateChannel(pChannel6->getStateChannel());
 		pChannelTI = pChannel6;
-//		updateStartStopIn(pChannel6);
-//		toggleTiSetup.forceState(pChannel6->getTiState());
 		break;
 	case 7:
-//		readStateChannel(pChannel7->getStateChannel());
 		pChannelTI = pChannel7;
-//		updateStartStopIn(pChannel7);
-//		toggleTiSetup.forceState(pChannel7->getTiState());
 		break;
 	case 8:
-//		readStateChannel(pChannel8->getStateChannel());
 		pChannelTI = pChannel8;
-//		updateStartStopIn(pChannel8);
-//		toggleTiSetup.forceState(pChannel8->getTiState());
 		break;
 	}
 	updateStartStopIn(pChannelTI);
 	toggleTiSetup.forceState(pChannelTI->getTiState());
-//	bool CurrentState = toggleTiSetup.getState();
-//	setTiChannelStateUI(pChannelTI, CurrentState);
 	toggleTiSetup.invalidate();
 }
 void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
