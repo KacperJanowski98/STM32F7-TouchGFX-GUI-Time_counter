@@ -24,11 +24,9 @@ public:
 	 * Konstruktor.
 	 */
 	explicit SessionSetup(bool maxRange,
-							bool measRate,
 							uint16_t range,
 							uint16_t stamps,
-							uint16_t repeat,
-							uint16_t rate);
+							uint16_t repeat);
 
 	/**
 	 * Konstruktor kopiujacy.
@@ -61,13 +59,6 @@ public:
 	 * @param state True ustawienie maksymalnego zakresu, false ustawienie manualne.
 	 */
 	void setMaxRange(bool state);
-
-	/**
-	 * @brief Ustawienie tempa pomiaru.
-	 * 
-	 * @param state True zezwolenie na ustawinie, false brak zezwolenia.
-	 */
-	void setMeasRate(bool state);
 
 	/**
 	 * @brief Ustawienie zakresu.
@@ -106,14 +97,6 @@ public:
 	bool getMaxRange();
 
 	/**
-	 * @brief Funkcja zwaracajaca czy ustawione jest tempo wykonywania pomiarow.
-	 * 
-	 * @return true Ustawione tempo.
-	 * @return false Nieustawione tempo.
-	 */
-	bool getMeasRate();
-
-	/**
 	 * @brief Funkcja zwracajaca wartosc zakresu.
 	 * 
 	 * @return uint16_t Zakres.
@@ -143,11 +126,9 @@ public:
 
 private:
 	bool m_maxRange;
-	bool m_measRate;
 	uint16_t m_range;
 	uint16_t m_stamps;
 	uint16_t m_repeat;
-	uint16_t m_rate;
 };
 
 #endif /* GUI_INCLUDE_GUI_LIB_SESSIONSETUP_HPP_ */

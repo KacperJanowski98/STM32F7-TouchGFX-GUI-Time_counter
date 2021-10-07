@@ -18,6 +18,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
+	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
@@ -30,6 +31,7 @@ TimeModeConfigView::TimeModeConfigView()
 	TimeModeConfigView::pChannel6 = std::make_shared<TimeModeParameter>(Channel6);
 	TimeModeConfigView::pChannel7 = std::make_shared<TimeModeParameter>(Channel7);
 	TimeModeConfigView::pChannel8 = std::make_shared<TimeModeParameter>(Channel8);
+	TimeModeConfigView::pSession = std::make_shared<SessionSetup>(Session);
 }
 
 void TimeModeConfigView::setupScreen()
@@ -66,19 +68,16 @@ void TimeModeConfigView::setupScreen()
     sliderRepeat.setNewValueCallback(sliderValueChangedCallback);
     sliderRepeat.setStopValueCallback(sliderValueConfirmedCallback);
 
-    sliderRate.setStartValueCallback(sliderValueStartedChangeCallback);
-    sliderRate.setNewValueCallback(sliderValueChangedCallback);
-    sliderRate.setStopValueCallback(sliderValueConfirmedCallback);
-
     sliderStampsNumber.setStartValueCallback(sliderValueStartedChangeCallback);
     sliderStampsNumber.setNewValueCallback(sliderValueChangedCallback);
     sliderStampsNumber.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 	// ustawienie zegara
-	TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+	TimeModeConfigView::m_clockSource = ClockName(1);
 	// aktualizacja panelu konfiguracyjnego zegara
 	updateClockSourceUI(m_clockSource);
+	// aktualizacaj session setup :TODO
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -299,23 +298,21 @@ void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
     }
     else if (&src == &sliderRange)
     {
+    	setRangeUI(pSession, value);
     	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
     	textRangeVal.invalidate();
     }
     else if (&src == &sliderStampsNumber)
     {
+    	setStampsUI(pSession, value);
     	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
     	textStampsVal.invalidate();
     }
     else if (&src == &sliderRepeat)
     {
+    	setRepeatUI(pSession, value);
     	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
     	textRepeatVal.invalidate();
-    }
-    else if(&src == &sliderRate)
-    {
-    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
-    	textRateVal.invalidate();
     }
 }
 
@@ -330,23 +327,21 @@ void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
     }
     else if (&src == &sliderRange)
     {
+    	setRangeUI(pSession, value);
     	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
     	textRangeVal.invalidate();
     }
     else if (&src == &sliderStampsNumber)
     {
+    	setStampsUI(pSession, value);
     	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
     	textStampsVal.invalidate();
     }
     else if (&src == &sliderRepeat)
     {
+    	setRepeatUI(pSession, value);
     	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
     	textRepeatVal.invalidate();
-    }
-    else if(&src == &sliderRate)
-    {
-    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
-    	textRateVal.invalidate();
     }
 }
 
@@ -361,23 +356,21 @@ void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
     }
     else if (&src == &sliderRange)
     {
+    	setRangeUI(pSession, value);
     	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
     	textRangeVal.invalidate();
     }
     else if (&src == &sliderStampsNumber)
     {
+    	setStampsUI(pSession, value);
     	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
     	textStampsVal.invalidate();
     }
     else if (&src == &sliderRepeat)
     {
+    	setRepeatUI(pSession, value);
     	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
     	textRepeatVal.invalidate();
-    }
-    else if(&src == &sliderRate)
-    {
-    	Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%d", value);
-    	textRateVal.invalidate();
     }
 }
 
@@ -431,12 +424,6 @@ void TimeModeConfigView::turnTiMaxRange()
 
 }
 
-// :TODO
-void TimeModeConfigView::turnMeasRate()
-{
-
-}
-
 void TimeModeConfigView::ChangeChannelState()
 {
 	bool CurrentState = toggleChannel.getState();
@@ -447,7 +434,6 @@ void TimeModeConfigView::ChangeChannelState()
 	updateScrollTiSetup();
 }
 
-//:TODO
 void TimeModeConfigView::ChangeStateTI()
 {
 	bool CurrentState = toggleTiSetup.getState();
@@ -524,6 +510,21 @@ void TimeModeConfigView::readThresholdUI(uint32_t value)
 void TimeModeConfigView::setThresholdUI(std::shared_ptr<TimeModeParameter>& channel, uint32_t value)
 {
 	channel->setThreshold(value);
+}
+
+void TimeModeConfigView::setRangeUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
+{
+	session->setRange(value);
+}
+
+void TimeModeConfigView::setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
+{
+	session->setStampsNumber(value);
+}
+
+void TimeModeConfigView::setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
+{
+	session->setRepeat(value);
 }
 
 void TimeModeConfigView::readStateChannel(bool stateChannel)

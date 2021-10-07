@@ -64,10 +64,6 @@ void FreqModeConfigView::setupScreen()
 	sliderRepeat.setNewValueCallback(sliderValueChangedCallback);
 	sliderRepeat.setStopValueCallback(sliderValueConfirmedCallback);
 
-	sliderRate.setStartValueCallback(sliderValueStartedChangeCallback);
-	sliderRate.setNewValueCallback(sliderValueChangedCallback);
-	sliderRate.setStopValueCallback(sliderValueConfirmedCallback);
-
 	initMesSetupUI();
 	// aktualizacja zrodla zegarowego
 	FreqModeConfigView::m_clockSource = ClockName(1);
@@ -157,10 +153,6 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 	{
 
 	}
-	else if (&src == &sliderRate)
-	{
-
-	}
 }
 
 void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
@@ -182,10 +174,6 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 	{
 
 	}
-	else if (&src == &sliderRate)
-	{
-
-	}
 }
 
 void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
@@ -204,10 +192,6 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 
 	}
 	else if (&src == &sliderRepeat)
-	{
-
-	}
-	else if (&src == &sliderRate)
 	{
 
 	}
@@ -275,12 +259,6 @@ void FreqModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::Abs
 	{
 
 	}
-}
-
-// :TODO
-void FreqModeConfigView::turnMeasRate()
-{
-
 }
 
 // obsluga przycisku toogle button

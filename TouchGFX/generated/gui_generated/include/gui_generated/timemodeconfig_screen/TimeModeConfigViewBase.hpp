@@ -172,7 +172,6 @@ protected:
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
     touchgfx::TextArea textTiMaxRange;
-    touchgfx::TextArea textMeasRate;
     touchgfx::TextAreaWithOneWildcard textRangeVal;
     touchgfx::Slider sliderRange;
     touchgfx::TextAreaWithOneWildcard textStampsVal;
@@ -182,9 +181,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard textRepeatVal;
     touchgfx::Slider sliderStampsNumber;
     touchgfx::Slider sliderRepeat;
-    touchgfx::Slider sliderRate;
-    touchgfx::TextAreaWithOneWildcard textRateVal;
-    touchgfx::ToggleButton toggleTiMeasRate;
     touchgfx::ToggleButton toggleTiMaxRange;
     touchgfx::RadioButton radioSingle;
     touchgfx::RadioButton radioContinuous;
@@ -214,8 +210,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textStampsValBuffer[TEXTSTAMPSVAL_SIZE];
     static const uint16_t TEXTREPEATVAL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textRepeatValBuffer[TEXTREPEATVAL_SIZE];
-    static const uint16_t TEXTRATEVAL_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textRateValBuffer[TEXTRATEVAL_SIZE];
 
 private:
 

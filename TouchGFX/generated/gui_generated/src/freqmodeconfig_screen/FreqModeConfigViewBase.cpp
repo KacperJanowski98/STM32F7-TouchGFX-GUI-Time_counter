@@ -187,7 +187,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
 
     radioClockQuartz.setXY(136, 114);
     radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioClockQuartz.setSelected(true);
+    radioClockQuartz.setSelected(false);
     radioClockQuartz.setDeselectionEnabled(false);
     swipeContainerFreqCLOCK.add(radioClockQuartz);
     swipeContainerFreq.add(swipeContainerFreqCLOCK);
@@ -296,12 +296,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID12));
     swipeContainerFreqSESSION.add(labelSESSIONSETUP);
 
-    textMeasRate.setXY(147, 344);
-    textMeasRate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textMeasRate.setLinespacing(0);
-    textMeasRate.setTypedText(touchgfx::TypedText(T_SINGLEUSEID72));
-    swipeContainerFreqSESSION.add(textMeasRate);
-
     textStampsVal.setPosition(244, 192, 128, 29);
     textStampsVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textStampsVal.setLinespacing(0);
@@ -350,26 +344,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderRepeat.setValue(0);
     swipeContainerFreqSESSION.add(sliderRepeat);
 
-    sliderRate.setXY(501, 342);
-    sliderRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
-    sliderRate.setupHorizontalSlider(3, 7, 0, 0, 125);
-    sliderRate.setValueRange(0, 100);
-    sliderRate.setValue(0);
-    swipeContainerFreqSESSION.add(sliderRate);
-
-    textRateVal.setPosition(358, 344, 94, 25);
-    textRateVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textRateVal.setLinespacing(0);
-    Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID81).getText());
-    textRateVal.setWildcard(textRateValBuffer);
-    textRateVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID80));
-    swipeContainerFreqSESSION.add(textRateVal);
-
-    toggleTiMeasRate.setXY(26, 337);
-    toggleTiMeasRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
-    toggleTiMeasRate.setAction(buttonCallback);
-    swipeContainerFreqSESSION.add(toggleTiMeasRate);
-
     radioSingle.setXY(112, 98);
     radioSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
     radioSingle.setSelected(false);
@@ -399,7 +373,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonOkConfigFreq.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonOkConfigFreq);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(1);
+    swipeContainerFreq.setSelectedPage(3);
 
     add(__background);
     add(boxLeftBackG);
@@ -448,13 +422,6 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleChannel clicked call virtual function
         //Call toggleChannelState
         toggleChannelState();
-    }
-    else if (&src == &toggleTiMeasRate)
-    {
-        //OnOfMeasRate
-        //When toggleTiMeasRate clicked call virtual function
-        //Call turnMeasRate
-        turnMeasRate();
     }
     else if (&src == &buttonOkConfigFreq)
     {

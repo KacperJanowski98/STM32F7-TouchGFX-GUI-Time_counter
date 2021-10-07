@@ -4,6 +4,7 @@
 #include <gui_generated/timemodeconfig_screen/TimeModeConfigViewBase.hpp>
 #include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
 #include <gui/lib/TimeModeParameter.hpp>
+#include <gui/lib/SessionSetup.hpp>
 #include <gui/model/Model.hpp>
 
 class TimeModeConfigView : public TimeModeConfigViewBase
@@ -94,11 +95,6 @@ public:
     virtual void turnTiMaxRange();
 
     /**
-     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button dla Meas Rate.
-     */
-    virtual void turnMeasRate();
-
-    /**
      * @brief Funkcja wykonujaca sie po nacisnieciu przycisku OK ktora konczy konfiguracje.
      */
     virtual void FinishSetupTimeMode();
@@ -168,6 +164,15 @@ public:
      * @param value Wartosc progu wyzwalania.
      */
     void setThresholdUI(std::shared_ptr<TimeModeParameter>& channel, uint32_t value);
+
+    //:TODO
+    void setRangeUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
+
+    //:TODO
+    void setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
+
+    //:TODO
+    void setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
     /**
      * @brief Ustawienie elementow UI na podstawie stanu kanalu.
      * 
@@ -273,6 +278,10 @@ protected:
     void RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src);
 private:
     TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
+
+    SessionSetup Session;
+
+    std::shared_ptr<SessionSetup> pSession;
 
     std::shared_ptr<TimeModeParameter> pChannel1;
     std::shared_ptr<TimeModeParameter> pChannel2;

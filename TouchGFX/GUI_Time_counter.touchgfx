@@ -1522,30 +1522,6 @@
                   },
                   {
                     "Type": "TextArea",
-                    "TextId": "SingleUseId39",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Alpha": 255,
-                    "AutoSize": true,
-                    "LineSpacing": 0,
-                    "Name": "textMeasRate",
-                    "X": 147,
-                    "Y": 356,
-                    "Width": 103,
-                    "Height": 25,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "TextArea",
                     "TextId": "SingleUseId40",
                     "TextRotation": "0",
                     "Color": {
@@ -1777,81 +1753,6 @@
                     "Y": 275,
                     "Width": 179,
                     "Height": 34,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "Slider",
-                    "IsHorizontalSlider": true,
-                    "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_back.png",
-                    "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_fill.png",
-                    "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_round_knob.png",
-                    "BackgroundX": 3,
-                    "BackgroundY": 7,
-                    "IndicatorPos": 0,
-                    "IndicatorMax": 125,
-                    "IndicatorMin": 0,
-                    "ValueMax": 100,
-                    "ValueMin": 0,
-                    "InitValue": 0,
-                    "Style": "Style13",
-                    "Name": "sliderRate",
-                    "X": 499,
-                    "Y": 351,
-                    "Width": 179,
-                    "Height": 34,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "TextArea",
-                    "TextId": "SingleUseId50",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Alpha": 255,
-                    "AutoSize": false,
-                    "LineSpacing": 0,
-                    "Wildcard1": {
-                      "TextId": "SingleUseId51",
-                      "UseBuffer": true,
-                      "BufferSize": 10
-                    },
-                    "Name": "textRateVal",
-                    "X": 358,
-                    "Y": 356,
-                    "Width": 94,
-                    "Height": 25,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
-                    "Alpha": 255,
-                    "Style": "Style3",
-                    "Name": "toggleTiMeasRate",
-                    "X": 26,
-                    "Y": 349,
-                    "Width": 96,
-                    "Height": 38,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -2913,7 +2814,7 @@
                   {
                     "Type": "RadioButton",
                     "Alpha": 255,
-                    "Selected": true,
+                    "Selected": false,
                     "Deselectable": false,
                     "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
                     "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
@@ -3356,30 +3257,6 @@
                   },
                   {
                     "Type": "TextArea",
-                    "TextId": "SingleUseId72",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Alpha": 255,
-                    "AutoSize": true,
-                    "LineSpacing": 0,
-                    "Name": "textMeasRate",
-                    "X": 147,
-                    "Y": 344,
-                    "Width": 103,
-                    "Height": 25,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "TextArea",
                     "TextId": "SingleUseId73",
                     "TextRotation": "0",
                     "Color": {
@@ -3563,81 +3440,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "Slider",
-                    "IsHorizontalSlider": true,
-                    "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_back.png",
-                    "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_round_fill.png",
-                    "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_round_knob.png",
-                    "BackgroundX": 3,
-                    "BackgroundY": 7,
-                    "IndicatorPos": 0,
-                    "IndicatorMax": 125,
-                    "IndicatorMin": 0,
-                    "ValueMax": 100,
-                    "ValueMin": 0,
-                    "InitValue": 0,
-                    "Style": "Style13",
-                    "Name": "sliderRate",
-                    "X": 501,
-                    "Y": 342,
-                    "Width": 179,
-                    "Height": 34,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "TextArea",
-                    "TextId": "SingleUseId80",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Alpha": 255,
-                    "AutoSize": false,
-                    "LineSpacing": 0,
-                    "Wildcard1": {
-                      "TextId": "SingleUseId81",
-                      "UseBuffer": true,
-                      "BufferSize": 10
-                    },
-                    "Name": "textRateVal",
-                    "X": 358,
-                    "Y": 344,
-                    "Width": 94,
-                    "Height": 25,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
-                    "Alpha": 255,
-                    "Style": "Style3",
-                    "Name": "toggleTiMeasRate",
-                    "X": 26,
-                    "Y": 337,
-                    "Width": 96,
-                    "Height": 38,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "RadioButton",
                     "Alpha": 255,
                     "Selected": false,
@@ -3773,7 +3575,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqCLOCK",
+            "SelectedPage": "swipeContainerFreqSESSION",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,
@@ -4063,10 +3865,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId39",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId40",
         "IsResource": false
       },
@@ -4100,14 +3898,6 @@
       },
       {
         "TextEntryId": "SingleUseId49",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId50",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId51",
         "IsResource": false
       },
       {
@@ -4183,10 +3973,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId72",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId73",
         "IsResource": false
       },
@@ -4212,14 +3998,6 @@
       },
       {
         "TextEntryId": "SingleUseId79",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId80",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId81",
         "IsResource": false
       },
       {

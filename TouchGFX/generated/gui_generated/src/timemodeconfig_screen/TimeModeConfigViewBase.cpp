@@ -340,12 +340,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTiMaxRange.setTypedText(touchgfx::TypedText(T_SINGLEUSEID36));
     swipeContainerTimeSESSION.add(textTiMaxRange);
 
-    textMeasRate.setXY(147, 356);
-    textMeasRate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textMeasRate.setLinespacing(0);
-    textMeasRate.setTypedText(touchgfx::TypedText(T_SINGLEUSEID39));
-    swipeContainerTimeSESSION.add(textMeasRate);
-
     textRangeVal.setPosition(530, 77, 162, 28);
     textRangeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textRangeVal.setLinespacing(0);
@@ -408,26 +402,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderRepeat.setValueRange(0, 100);
     sliderRepeat.setValue(0);
     swipeContainerTimeSESSION.add(sliderRepeat);
-
-    sliderRate.setXY(499, 351);
-    sliderRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
-    sliderRate.setupHorizontalSlider(3, 7, 0, 0, 125);
-    sliderRate.setValueRange(0, 100);
-    sliderRate.setValue(0);
-    swipeContainerTimeSESSION.add(sliderRate);
-
-    textRateVal.setPosition(358, 356, 94, 25);
-    textRateVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textRateVal.setLinespacing(0);
-    Unicode::snprintf(textRateValBuffer, TEXTRATEVAL_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID51).getText());
-    textRateVal.setWildcard(textRateValBuffer);
-    textRateVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID50));
-    swipeContainerTimeSESSION.add(textRateVal);
-
-    toggleTiMeasRate.setXY(26, 349);
-    toggleTiMeasRate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
-    toggleTiMeasRate.setAction(buttonCallback);
-    swipeContainerTimeSESSION.add(toggleTiMeasRate);
 
     toggleTiMaxRange.setXY(26, 73);
     toggleTiMaxRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
@@ -544,13 +518,6 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleTiSetup clicked call virtual function
         //Call ChangeStateTI
         ChangeStateTI();
-    }
-    else if (&src == &toggleTiMeasRate)
-    {
-        //OnOffMeasRate
-        //When toggleTiMeasRate clicked call virtual function
-        //Call turnMeasRate
-        turnMeasRate();
     }
     else if (&src == &toggleTiMaxRange)
     {
