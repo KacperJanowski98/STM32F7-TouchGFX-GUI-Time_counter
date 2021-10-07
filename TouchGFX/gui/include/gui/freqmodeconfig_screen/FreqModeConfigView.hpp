@@ -3,7 +3,7 @@
 
 #include <gui_generated/freqmodeconfig_screen/FreqModeConfigViewBase.hpp>
 #include <gui/freqmodeconfig_screen/FreqModeConfigPresenter.hpp>
-
+#include <gui/lib/SessionSetup.hpp>
 #include <gui/lib/FreqModeParameter.hpp>
 
 class FreqModeConfigView : public FreqModeConfigViewBase
@@ -35,7 +35,12 @@ public:
     void initMesSetupUI();
     void setValueSliderGateUI(int value);
 
+    void setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
+    void setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
+
     void updateClockSourceUI(ClockName clk);
+
+    void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
 
 protected:
     // obsluga scroll wheel
@@ -61,6 +66,10 @@ protected:
 
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
+
+    SessionSetup Session;
+
+    std::shared_ptr<SessionSetup> pSession;
 
     std::shared_ptr<FreqModeParameter> pChannel1;
     std::shared_ptr<FreqModeParameter> pChannel2;

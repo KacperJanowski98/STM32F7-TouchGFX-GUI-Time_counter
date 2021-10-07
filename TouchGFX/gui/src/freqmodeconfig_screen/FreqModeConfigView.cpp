@@ -17,6 +17,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, Channel6(6, false, SlopeName::UP, 0)
 	, Channel7(7, false, SlopeName::UP, 0)
 	, Channel8(8, false, SlopeName::UP, 0)
+	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
@@ -29,6 +30,7 @@ FreqModeConfigView::FreqModeConfigView()
 	FreqModeConfigView::pChannel6 = std::make_shared<FreqModeParameter>(Channel6);
 	FreqModeConfigView::pChannel7 = std::make_shared<FreqModeParameter>(Channel7);
 	FreqModeConfigView::pChannel8 = std::make_shared<FreqModeParameter>(Channel8);
+	FreqModeConfigView::pSession = std::make_shared<SessionSetup>(Session);
 }
 
 void FreqModeConfigView::setupScreen()
@@ -69,6 +71,8 @@ void FreqModeConfigView::setupScreen()
 	FreqModeConfigView::m_clockSource = ClockName(1);
 
 	updateClockSourceUI(m_clockSource);
+
+	updateSessionSetupUI(pSession);
 }
 
 void FreqModeConfigView::tearDownScreen()
@@ -147,7 +151,9 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 	}
 	else if (&src == &sliderStampsNumber)
 	{
-
+    	setStampsUI(pSession, value);
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
 	}
 	else if (&src == &sliderRepeat)
 	{
@@ -168,11 +174,15 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 	}
 	else if (&src == &sliderStampsNumber)
 	{
-
+    	setStampsUI(pSession, value);
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
 	}
 	else if (&src == &sliderRepeat)
 	{
-
+    	setRepeatUI(pSession, value);
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
 	}
 }
 
@@ -189,11 +199,15 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 	}
 	else if (&src == &sliderStampsNumber)
 	{
-
+    	setStampsUI(pSession, value);
+    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+    	textStampsVal.invalidate();
 	}
 	else if (&src == &sliderRepeat)
 	{
-
+    	setRepeatUI(pSession, value);
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
 	}
 }
 
@@ -301,6 +315,16 @@ void FreqModeConfigView::setChannelStateUI(std::shared_ptr<FreqModeParameter>& c
 	channel->setStateChannel(state);
 }
 
+void FreqModeConfigView::setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
+{
+	session->setStampsNumber(value);
+}
+
+void FreqModeConfigView::setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
+{
+	session->setRepeat(value);
+}
+
 void FreqModeConfigView::readSlopeUI(SlopeName slopeUi)
 {
 	if (slopeUi == SlopeName::UP)
@@ -367,6 +391,17 @@ void FreqModeConfigView::updateClockSourceUI(ClockName clk)
 	{
 		radioClockExternal.setSelected(true);
 	}
+}
+
+void FreqModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& session)
+{
+	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", session->getStampsNumber());
+	textStampsVal.invalidate();
+	sliderStampsNumber.setValue(session->getStampsNumber());
+
+	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", session->getRepeat());
+	textRepeatVal.invalidate();
+	sliderRepeat.setValue(session->getRepeat());
 }
 
 void FreqModeConfigView::FinishSetupFreqMode()
