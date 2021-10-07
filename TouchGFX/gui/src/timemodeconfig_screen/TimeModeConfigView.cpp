@@ -18,7 +18,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
-	, Session(false, 0, 0, 0)
+	, Session(false, 800, 10, 50)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
@@ -77,7 +77,8 @@ void TimeModeConfigView::setupScreen()
 	TimeModeConfigView::m_clockSource = ClockName(1);
 	// aktualizacja panelu konfiguracyjnego zegara
 	updateClockSourceUI(m_clockSource);
-	// aktualizacaj session setup :TODO
+	// aktualizacaj session setup
+	updateSessionSetupUI(pSession);
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -654,6 +655,21 @@ void TimeModeConfigView::updateClockSourceUI(ClockName clk)
 	{
 		radioClockExternal.setSelected(true);
 	}
+}
+
+void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& session)
+{
+	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", session->getRange());
+	textRangeVal.invalidate();
+	sliderRange.setValue(session->getRange());
+
+	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", session->getStampsNumber());
+	textStampsVal.invalidate();
+	sliderStampsNumber.setValue(session->getStampsNumber());
+
+	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", session->getRepeat());
+	textRepeatVal.invalidate();
+	sliderRepeat.setValue(session->getRepeat());
 }
 
 //

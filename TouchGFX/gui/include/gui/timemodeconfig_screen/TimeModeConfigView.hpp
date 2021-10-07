@@ -211,6 +211,10 @@ public:
      * @param ClockName Nazwa zrodla zegarowego.
      */
     void updateClockSourceUI(ClockName clk);
+
+    //:TODO
+    void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
+
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony
