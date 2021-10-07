@@ -23,8 +23,19 @@
  */
 enum class SlopeName
 {
-	UP,
-	DOWN
+	UP = 1,
+	DOWN = 2
+};
+
+/**
+ * @brief Klasa typu enum zawierajaca nazwy dostepnych zrodel zegarowych.
+ *
+ */
+enum class ClockName
+{
+	INTERNAL_QUARTZ = 1,
+	INTERNAL_RUBID = 2,
+	EXTERNAL = 3
 };
 
 /**

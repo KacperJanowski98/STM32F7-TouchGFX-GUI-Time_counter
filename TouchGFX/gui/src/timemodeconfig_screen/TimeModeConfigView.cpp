@@ -9,6 +9,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
 	, RadioBtnGroupSessionCallback(this, &TimeModeConfigView::RadioBtnGroupSessionCallbackHandler)
+	, RadioBtnGroupClockCallback(this, &TimeModeConfigView::RadioBtnGroupClockCallbackHandler)
 	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel3(3, false, false, SlopeName::UP, 0, 0, 0)
@@ -20,6 +21,7 @@ TimeModeConfigView::TimeModeConfigView()
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
+	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
 	TimeModeConfigView::pChannel1 = std::make_shared<TimeModeParameter>(Channel1);
 	TimeModeConfigView::pChannel2 = std::make_shared<TimeModeParameter>(Channel2);
 	TimeModeConfigView::pChannel3 = std::make_shared<TimeModeParameter>(Channel3);
@@ -73,6 +75,10 @@ void TimeModeConfigView::setupScreen()
     sliderStampsNumber.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
+	// ustawienie zegara
+	TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+	// aktualizacja panelu konfiguracyjnego zegara
+	updateClockSourceUI(m_clockSource);
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -403,6 +409,22 @@ void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::Abs
 	}
 }
 
+void TimeModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if(&src == &radioClockQuartz)
+	{
+		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+	}
+	else if (&src == &radioClockRubid)
+	{
+		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
+	}
+	else if (&src == &radioClockExternal)
+	{
+		TimeModeConfigView::m_clockSource = ClockName::EXTERNAL;
+	}
+}
+
 // :TODO
 void TimeModeConfigView::turnTiMaxRange()
 {
@@ -614,6 +636,22 @@ void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParam
 	{
 		scrollWheelStart.animateToItem(static_cast<int16_t>(channel->getStartChannel() - 1));
 		scrollWheelStop.animateToItem(static_cast<int16_t>(channel->getStopChannel() - 1));
+	}
+}
+
+void TimeModeConfigView::updateClockSourceUI(ClockName clk)
+{
+	if (clk == ClockName::INTERNAL_QUARTZ)
+	{
+		radioClockQuartz.setSelected(true);
+	}
+	else if (clk == ClockName::INTERNAL_RUBID)
+	{
+		radioClockRubid.setSelected(true);
+	}
+	else if (clk == ClockName::EXTERNAL)
+	{
+		radioClockExternal.setSelected(true);
 	}
 }
 

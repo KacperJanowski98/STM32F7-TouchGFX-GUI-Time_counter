@@ -8,6 +8,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
 	, RadioBtnGroupSessionCallback(this, &FreqModeConfigView::RadioBtnGroupSessionCallbackHandler)
+	, RadioBtnGroupClockCallback(this, &FreqModeConfigView::RadioBtnGroupClockCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, 0)
 	, Channel2(2, false, SlopeName::UP, 0)
 	, Channel3(3, false, SlopeName::UP, 0)
@@ -19,6 +20,7 @@ FreqModeConfigView::FreqModeConfigView()
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
+	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
 	FreqModeConfigView::pChannel2 = std::make_shared<FreqModeParameter>(Channel2);
 	FreqModeConfigView::pChannel3 = std::make_shared<FreqModeParameter>(Channel3);
@@ -67,6 +69,10 @@ void FreqModeConfigView::setupScreen()
 	sliderRate.setStopValueCallback(sliderValueConfirmedCallback);
 
 	initMesSetupUI();
+	// aktualizacja zrodla zegarowego
+	FreqModeConfigView::m_clockSource = ClockName(1);
+
+	updateClockSourceUI(m_clockSource);
 }
 
 void FreqModeConfigView::tearDownScreen()
@@ -242,6 +248,22 @@ void FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler(const touchgfx::Abs
 	textGateVal.invalidate();
 }
 
+void FreqModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src)
+{
+	if (&src == &radioClockQuartz)
+	{
+		FreqModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+	}
+	else if (&src == &radioClockRubid)
+	{
+		FreqModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
+	}
+	else if (&src == &radioClockExternal)
+	{
+		FreqModeConfigView::m_clockSource = ClockName::EXTERNAL;
+	}
+}
+
 // obsluga radio button :TODO
 void FreqModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
 {
@@ -351,6 +373,22 @@ void FreqModeConfigView::setValueSliderGateUI(int value)
 	Unicode::snprintf(textGateValBuffer, TEXTGATEVAL_SIZE, "%d", value);
 	textGateVal.invalidate();
 	m_gate = static_cast<uint16_t>(value);
+}
+
+void FreqModeConfigView::updateClockSourceUI(ClockName clk)
+{
+	if (clk == ClockName::INTERNAL_QUARTZ)
+	{
+		radioClockQuartz.setSelected(true);
+	}
+	else if (clk == ClockName::INTERNAL_RUBID)
+	{
+		radioClockRubid.setSelected(true);
+	}
+	else if (clk == ClockName::EXTERNAL)
+	{
+		radioClockExternal.setSelected(true);
+	}
 }
 
 void FreqModeConfigView::FinishSetupFreqMode()

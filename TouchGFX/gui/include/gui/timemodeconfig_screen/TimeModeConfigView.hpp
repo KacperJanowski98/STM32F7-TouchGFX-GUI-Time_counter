@@ -199,6 +199,13 @@ public:
      * @param channel Obiekt kanalu.
      */
     void updateStartStopScroolList(std::shared_ptr<TimeModeParameter>& channel);
+
+    /**
+     * @brief Funkcja aktualizujaca elementu UI panelu konfiguracji zegara na podstawie zmiennej.
+     *
+     * @param ClockName Nazwa zrodla zegarowego.
+     */
+    void updateClockSourceUI(ClockName clk);
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony
@@ -255,6 +262,7 @@ protected:
 
     touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSlopeCallback;
     touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
+    touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupClockCallback;
 
     // Deklaracje obsługi wywołań zwrotnych.
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
@@ -262,6 +270,7 @@ protected:
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
+    void RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src);
 private:
     TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
 
@@ -280,6 +289,7 @@ private:
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
+    ClockName m_clockSource;
     std::vector<int16_t> activeChannels;
 };
 

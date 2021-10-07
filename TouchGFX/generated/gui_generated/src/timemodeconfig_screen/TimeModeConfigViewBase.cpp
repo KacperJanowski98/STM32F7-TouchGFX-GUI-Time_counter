@@ -187,7 +187,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
     radioClockQuartz.setXY(136, 114);
     radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioClockQuartz.setSelected(true);
+    radioClockQuartz.setSelected(false);
     radioClockQuartz.setDeselectionEnabled(false);
     swipeContainerTimeCLOCK.add(radioClockQuartz);
     swipeContainerTime.add(swipeContainerTimeCLOCK);
@@ -463,7 +463,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonOkConfigTime.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonOkConfigTime);
     swipeContainerTime.add(swipeContainerTimeSESSION);
-    swipeContainerTime.setSelectedPage(2);
+    swipeContainerTime.setSelectedPage(3);
 
     add(__background);
     add(boxLeftBackG);

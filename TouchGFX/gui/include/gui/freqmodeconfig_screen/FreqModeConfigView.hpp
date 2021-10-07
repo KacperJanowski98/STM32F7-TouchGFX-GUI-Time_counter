@@ -36,6 +36,8 @@ public:
     void initMesSetupUI();
     void setValueSliderGateUI(int value);
 
+    void updateClockSourceUI(ClockName clk);
+
 protected:
     // obsluga scroll wheel
     Callback<FreqModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;
@@ -48,6 +50,7 @@ protected:
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupFreqCallback;
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupHfInputCallback;
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
+	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupClockCallback;
 
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
@@ -55,6 +58,7 @@ protected:
     void RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupHfInputCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
+    void RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src);
 
 private:
     FreqModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;
@@ -73,6 +77,7 @@ private:
 
 	bool m_hfInput;
 	uint16_t m_gate;
+	ClockName m_clockSource;
 };
 
 #endif // FREQMODECONFIGVIEW_HPP
