@@ -193,7 +193,7 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 		break;
 	}
 	updateStartStopIn(pChannelTI);
-//	updateStartStopScroolList(pChannelTI);
+	updateStartStopScroolList(pChannelTI);
 	toggleTiSetup.forceState(pChannelTI->getTiState());
 	toggleTiSetup.invalidate();
 }
@@ -422,7 +422,6 @@ void TimeModeConfigView::ChangeChannelState()
 	setChannelStateUI(pChannelInput, CurrentState);
 
 	setActiveListChannels(m_channelInput, CurrentState);
-//	readStateChannel(pChannel4->getStateChannel());
 	updateScrollTiSetup();
 }
 
@@ -431,9 +430,8 @@ void TimeModeConfigView::ChangeStateTI()
 {
 	bool CurrentState = toggleTiSetup.getState();
 	setTiChannelStateUI(pChannelTI, CurrentState);
-//	readStateChannel(CurrentState);
 	updateStartStopIn(pChannelTI);
-//	updateStartStopScroolList(pChannelTI);
+	updateStartStopScroolList(pChannelTI);
 }
 
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)
@@ -610,14 +608,14 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 	}
 }
 
-//void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParameter>& channel)
-//{
-//	if ((channel->getStartChannel() != 0) && (channel->getStopChannel() != 0) && (channel->getTiState() == true))
-//	{
-//		scrollWheelStart.animateToItem(static_cast<int16_t>(channel->getStartChannel()));
-//		scrollWheelStop.animateToItem(static_cast<int16_t>(channel->getStopChannel()));
-//	}
-//}
+void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParameter>& channel)
+{
+	if ((channel->getStartChannel() != 0) && (channel->getStopChannel() != 0) && (channel->getTiState() == true))
+	{
+		scrollWheelStart.animateToItem(static_cast<int16_t>(channel->getStartChannel() - 1));
+		scrollWheelStop.animateToItem(static_cast<int16_t>(channel->getStopChannel() - 1));
+	}
+}
 
 //
 void TimeModeConfigView::FinishSetupTimeMode()
