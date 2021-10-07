@@ -83,7 +83,7 @@ public:
     virtual void scrollWheelStopUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
     /**
-     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button (przycisk OFF/ON).
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button, ustawia stan kanału.
      * 
      */
     virtual void ChangeChannelState();
@@ -103,7 +103,10 @@ public:
      */
     virtual void FinishSetupTimeMode();
 
-    //:TODO
+    /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button, ustawia stan odcinka czasowego.
+     *
+     */
     virtual void ChangeStateTI();
 
     /**
@@ -132,7 +135,12 @@ public:
      */
     void setChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state);
 
-    //:TODO
+    /**
+     * @brief Funkcja ustawiajaca stan okreslonego odcinka czasowego.
+     *
+     * @param channel Obiekt kanalu.
+     * @param state True oznacza stan ON, false stan OFF.
+     */
     void setTiChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state);
     /**
      * @brief Funkcja ustawiajaca odpowiednie zbocze w UI odczytane z obiektu kanalu.
@@ -184,6 +192,13 @@ public:
      * @param channel Obiekt kanalu.
      */
     void updateStartStopIn(std::shared_ptr<TimeModeParameter>& channel);
+
+    /**
+     * @brief Funkcja aktualizujaca elementu UI na podstawie obiektu kanalu, panelu TI setup, elementy scroll wheel start i stop.
+     *
+     * @param channel Obiekt kanalu.
+     */
+    void updateStartStopScroolList(std::shared_ptr<TimeModeParameter>& channel);
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony
