@@ -18,7 +18,7 @@ TimeModeConfigView::TimeModeConfigView()
 	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
-	, Session(false, 800, 10, 50)
+	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
@@ -422,7 +422,19 @@ void TimeModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::Abstr
 // :TODO
 void TimeModeConfigView::turnTiMaxRange()
 {
-
+	bool CurrentState = toggleTiMaxRange.getState();
+	if (CurrentState == true)
+	{
+		Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", sliderRange.getMaxValue());
+		textRangeVal.invalidate();
+		sliderRange.setValue(sliderRange.getMaxValue());
+		setRangeUI(pSession, sliderRange.getMaxValue());
+		sliderRange.setTouchable(false);
+	}
+	else
+	{
+		sliderRange.setTouchable(true);
+	}
 }
 
 void TimeModeConfigView::ChangeChannelState()
@@ -659,6 +671,17 @@ void TimeModeConfigView::updateClockSourceUI(ClockName clk)
 
 void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& session)
 {
+	toggleTiMaxRange.forceState(session->getMaxRange());
+
+	if (session->getMaxRange() == true)
+	{
+		sliderRange.setTouchable(false);
+	}
+	else
+	{
+		sliderRange.setTouchable(true);
+	}
+
 	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", session->getRange());
 	textRangeVal.invalidate();
 	sliderRange.setValue(session->getRange());
