@@ -126,10 +126,6 @@ protected:
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
     touchgfx::Slider sliderThreshold;
-    touchgfx::RadioButton radioThresholdManual;
-    touchgfx::RadioButton radioThresholdDefined;
-    touchgfx::TextArea textTManual;
-    touchgfx::TextArea textTDefined;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -189,7 +185,6 @@ protected:
     touchgfx::TextArea textContinuous;
     touchgfx::Button buttonOkConfigTime;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
-    touchgfx::RadioButtonGroup<2> radioButtonGroupThreshold;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;
 

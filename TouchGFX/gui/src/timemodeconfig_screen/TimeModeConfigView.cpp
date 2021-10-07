@@ -9,17 +9,16 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
 	, RadioBtnGroupSessionCallback(this, &TimeModeConfigView::RadioBtnGroupSessionCallbackHandler)
-	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel4(4, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel5(5, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel6(6, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
-	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0, 0, 0)
+	, Channel1(1, false, SlopeName::UP, 0, 0, 0)
+	, Channel2(2, false, SlopeName::UP, 0, 0, 0)
+	, Channel3(3, false, SlopeName::UP, 0, 0, 0)
+	, Channel4(4, false, SlopeName::UP, 0, 0, 0)
+	, Channel5(5, false, SlopeName::UP, 0, 0, 0)
+	, Channel6(6, false, SlopeName::UP, 0, 0, 0)
+	, Channel7(7, false, SlopeName::UP, 0, 0, 0)
+	, Channel8(8, false, SlopeName::UP, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
-	radioButtonGroupThreshold.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	TimeModeConfigView::pChannel1 = std::make_shared<TimeModeParameter>(Channel1);
 	TimeModeConfigView::pChannel2 = std::make_shared<TimeModeParameter>(Channel2);
@@ -400,18 +399,8 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 	{
 		setSlopeUI(pChannelInput, SlopeName::DOWN);
 	}
-	else if(&src == &radioThresholdManual)
-	{
-		setThresholdModeUI(pChannelInput, ThresholdName::Manula);
-	}
-	else if(&src == &radioThresholdDefined)
-	{
-		setThresholdModeUI(pChannelInput, ThresholdName::Defined);
-	}
 	radioSlopeUp.invalidate();
 	radioSlopeDown.invalidate();
-	radioThresholdManual.invalidate();
-	radioThresholdDefined.invalidate();
 }
 
 // :TODO
@@ -453,7 +442,6 @@ void TimeModeConfigView::ChangeChannelState()
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)
 {
 	readSlopeUI(channel->getSlope());
-	readThresholdModeUI(channel->getThresholdMode());
 	readThresholdUI(channel->getThreshold());
 }
 
@@ -463,8 +451,6 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     {
     	radioSlopeUp.setTouchable(false);
     	radioSlopeDown.setTouchable(false);
-    	radioThresholdManual.setTouchable(false);
-    	radioThresholdDefined.setTouchable(false);
     	sliderThreshold.setTouchable(false);
     	buttonDetect.setTouchable(false);
     }
@@ -472,8 +458,6 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     {
     	radioSlopeUp.setTouchable(true);
     	radioSlopeDown.setTouchable(true);
-    	radioThresholdManual.setTouchable(true);
-    	radioThresholdDefined.setTouchable(true);
     	sliderThreshold.setTouchable(true);
     	buttonDetect.setTouchable(true);
     }
@@ -506,25 +490,6 @@ void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
 void TimeModeConfigView::setSlopeUI(std::shared_ptr<TimeModeParameter>& channel, SlopeName slopeUi)
 {
 	channel->setSlope(slopeUi);
-}
-
-void TimeModeConfigView::readThresholdModeUI(ThresholdName ThresholdMode)
-{
-	if (ThresholdMode == ThresholdName::Manula)
-	{
-		radioThresholdManual.setSelected(true);
-		radioThresholdDefined.setSelected(false);
-	}
-	else
-	{
-		radioThresholdManual.setSelected(false);
-		radioThresholdDefined.setSelected(true);
-	}
-}
-
-void TimeModeConfigView::setThresholdModeUI(std::shared_ptr<TimeModeParameter>& channel, ThresholdName ThresholdMode)
-{
-	channel->setThresholdMode(ThresholdMode);
 }
 
 void TimeModeConfigView::readThresholdUI(uint32_t value)

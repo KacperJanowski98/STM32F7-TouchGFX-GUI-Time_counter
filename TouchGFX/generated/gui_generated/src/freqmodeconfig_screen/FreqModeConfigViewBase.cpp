@@ -125,30 +125,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderThreshold.setValue(0);
     swipeContainerFreqINPUT.add(sliderThreshold);
 
-    radioThresholdManual.setXY(405, 270);
-    radioThresholdManual.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioThresholdManual.setSelected(false);
-    radioThresholdManual.setDeselectionEnabled(false);
-    swipeContainerFreqINPUT.add(radioThresholdManual);
-
-    textTDefined.setXY(512, 351);
-    textTDefined.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textTDefined.setLinespacing(0);
-    textTDefined.setTypedText(touchgfx::TypedText(T_SINGLEUSEID61));
-    swipeContainerFreqINPUT.add(textTDefined);
-
-    textTManual.setXY(517, 280);
-    textTManual.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textTManual.setLinespacing(0);
-    textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID60));
-    swipeContainerFreqINPUT.add(textTManual);
-
-    radioThresholdDefined.setXY(405, 341);
-    radioThresholdDefined.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioThresholdDefined.setSelected(false);
-    radioThresholdDefined.setDeselectionEnabled(false);
-    swipeContainerFreqINPUT.add(radioThresholdDefined);
-
     textChannelINPUT.setPosition(201, 41, 71, 35);
     textChannelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textChannelINPUT.setLinespacing(0);
@@ -423,7 +399,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonOkConfigFreq.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonOkConfigFreq);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(3);
+    swipeContainerFreq.setSelectedPage(0);
 
     add(__background);
     add(boxLeftBackG);
@@ -435,8 +411,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     add(swipeContainerFreq);
     radioButtonGroupSlopeFreq.add(radioSlopeDown);
     radioButtonGroupSlopeFreq.add(radioSlopeUp);
-    radioButtonGroupThresholdFreq.add(radioThresholdManual);
-    radioButtonGroupThresholdFreq.add(radioThresholdDefined);
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);

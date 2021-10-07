@@ -8,16 +8,15 @@ FreqModeConfigView::FreqModeConfigView()
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
 	, RadioBtnGroupSessionCallback(this, &FreqModeConfigView::RadioBtnGroupSessionCallbackHandler)
-	, Channel1(1, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel2(2, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel3(3, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel4(4, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel5(5, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel6(6, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel7(7, false, SlopeName::UP, ThresholdName::Manula, 0)
-	, Channel8(8, false, SlopeName::UP, ThresholdName::Manula, 0)
+	, Channel1(1, false, SlopeName::UP, 0)
+	, Channel2(2, false, SlopeName::UP, 0)
+	, Channel3(3, false, SlopeName::UP, 0)
+	, Channel4(4, false, SlopeName::UP, 0)
+	, Channel5(5, false, SlopeName::UP, 0)
+	, Channel6(6, false, SlopeName::UP, 0)
+	, Channel7(7, false, SlopeName::UP, 0)
+	, Channel8(8, false, SlopeName::UP, 0)
 {
-	radioButtonGroupThresholdFreq.setRadioButtonSelectedHandler(RadioBtnGroupFreqCallback);
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
@@ -219,18 +218,8 @@ void FreqModeConfigView::RadioBtnGroupFreqCallbackHandler(const touchgfx::Abstra
 	{
 		setSlopeUI(pChannelInput, SlopeName::DOWN);
 	}
-	else if (&src == &radioThresholdManual)
-	{
-		setThresholdModeUI(pChannelInput, ThresholdName::Manula);
-	}
-	else if (&src == &radioThresholdDefined)
-	{
-		setThresholdModeUI(pChannelInput, ThresholdName::Defined);
-	}
 	radioSlopeUp.invalidate();
 	radioSlopeDown.invalidate();
-	radioThresholdManual.invalidate();
-	radioThresholdDefined.invalidate();
 }
 
 // obsluga radio button
@@ -284,7 +273,6 @@ void FreqModeConfigView::toggleChannelState()
 void FreqModeConfigView::initUIChannel(std::shared_ptr<FreqModeParameter>& channel)
 {
 	readSlopeUI(channel->getSlope());
-	readThresholdModeUI(channel->getThresholdMode());
 	readThresholdUI(channel->getThreshold());
 }
 
@@ -295,8 +283,6 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 	{
 		radioSlopeUp.setTouchable(false);
 		radioSlopeDown.setTouchable(false);
-		radioThresholdManual.setTouchable(false);
-		radioThresholdDefined.setTouchable(false);
 		sliderThreshold.setTouchable(false);
 		buttonDetect.setTouchable(false);
 	}
@@ -304,8 +290,6 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 	{
 		radioSlopeUp.setTouchable(true);
 		radioSlopeDown.setTouchable(true);
-		radioThresholdManual.setTouchable(true);
-		radioThresholdDefined.setTouchable(true);
 		sliderThreshold.setTouchable(true);
 		buttonDetect.setTouchable(true);
 	}
@@ -334,25 +318,6 @@ void FreqModeConfigView::readSlopeUI(SlopeName slopeUi)
 void FreqModeConfigView::setSlopeUI(std::shared_ptr<FreqModeParameter>& channel, SlopeName slopeUi)
 {
 	channel->setSlope(slopeUi);
-}
-
-void FreqModeConfigView::readThresholdModeUI(ThresholdName ThresholdM)
-{
-	if (ThresholdM == ThresholdName::Manula)
-	{
-		radioThresholdManual.setSelected(true);
-		radioThresholdDefined.setSelected(false);
-	}
-	else
-	{
-		radioThresholdManual.setSelected(false);
-		radioThresholdDefined.setSelected(true);
-	}
-}
-
-void FreqModeConfigView::setThresholdModeUI(std::shared_ptr<FreqModeParameter>& channel, ThresholdName ThresholdMode)
-{
-	channel->setThresholdMode(ThresholdMode);
 }
 
 void FreqModeConfigView::readThresholdUI(uint32_t value)

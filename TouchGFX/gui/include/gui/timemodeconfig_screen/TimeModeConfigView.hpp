@@ -142,19 +142,6 @@ public:
      */
     void setSlopeUI(std::shared_ptr<TimeModeParameter>& channel, SlopeName slopeUi);
     /**
-     * @brief Ustawienie trybu ustawienia progu wyzwalania wyzwalania kanalu w UI.
-     * 
-     * @param ThresholdMode Sposob ustawienia progu wyzwalania.  
-     */
-    void readThresholdModeUI(ThresholdName ThresholdMode);
-    /**
-     * @brief Ustawienie trybu definiowania progu wyzwalania w obiekcie kanalu.
-     * 
-     * @param channel Konfigurowany kanal.
-     * @param ThresholdMode Sposob ustawienia progu wyzwalania.
-     */
-    void setThresholdModeUI(std::shared_ptr<TimeModeParameter>& channel, ThresholdName ThresholdMode);
-    /**
      * @brief Funkcja ustawiajaca w UI wartosc progu wyzwalania z obiektu kanalu.
      * 
      * @param value Wartosc progu wyzwalania.

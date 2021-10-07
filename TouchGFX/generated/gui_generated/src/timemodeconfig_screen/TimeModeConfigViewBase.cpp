@@ -132,30 +132,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderThreshold.setValueRange(0, 1000);
     sliderThreshold.setValue(0);
     swipeContainerTimeINPUT.add(sliderThreshold);
-
-    radioThresholdManual.setXY(405, 270);
-    radioThresholdManual.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioThresholdManual.setSelected(false);
-    radioThresholdManual.setDeselectionEnabled(false);
-    swipeContainerTimeINPUT.add(radioThresholdManual);
-
-    radioThresholdDefined.setXY(405, 341);
-    radioThresholdDefined.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
-    radioThresholdDefined.setSelected(false);
-    radioThresholdDefined.setDeselectionEnabled(false);
-    swipeContainerTimeINPUT.add(radioThresholdDefined);
-
-    textTManual.setXY(517, 280);
-    textTManual.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textTManual.setLinespacing(0);
-    textTManual.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
-    swipeContainerTimeINPUT.add(textTManual);
-
-    textTDefined.setXY(512, 351);
-    textTDefined.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textTDefined.setLinespacing(0);
-    textTDefined.setTypedText(touchgfx::TypedText(T_SINGLEUSEID24));
-    swipeContainerTimeINPUT.add(textTDefined);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -482,7 +458,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonOkConfigTime.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonOkConfigTime);
     swipeContainerTime.add(swipeContainerTimeSESSION);
-    swipeContainerTime.setSelectedPage(3);
+    swipeContainerTime.setSelectedPage(0);
 
     add(__background);
     add(boxLeftBackG);
@@ -494,8 +470,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(swipeContainerTime);
     radioButtonGroupSlope.add(radioSlopeDown);
     radioButtonGroupSlope.add(radioSlopeUp);
-    radioButtonGroupThreshold.add(radioThresholdManual);
-    radioButtonGroupThreshold.add(radioThresholdDefined);
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);

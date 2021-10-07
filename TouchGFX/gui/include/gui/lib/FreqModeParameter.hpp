@@ -39,7 +39,6 @@ public:
 	explicit FreqModeParameter(uint8_t numberChannel,
 							bool stateChannel,
 							SlopeName slopeChannel,
-							ThresholdName setThreshold,
 							uint32_t thresholdVal);
 
 	/**
@@ -93,13 +92,6 @@ public:
 	void setSlope(SlopeName slope);
 
 	/**
-	 * @brief Ustawienie sposobu wyzwalania dla obiektu kanalu.
-	 * 
-	 * @param mode Manual oznacza reczne wybranie wartosci wyzwalania, defined ustawienie okreslonej wartosci.
-	 */
-	void setThresholdMode(ThresholdName mode);
-
-	/**
 	 * @brief Ustawienie progu wyzwalania dla obiektu kanalu.
 	 * 
 	 * @param value Wartosc progu wyzwolenia.
@@ -129,13 +121,6 @@ public:
 	SlopeName getSlope();
 
 	/**
-	 * @brief Funkcja zwracajaca tryb ustawiania progu wyzwalnia kanalu.
-	 * 
-	 * @return ThresholdName Tryb progu wyzwalania.
-	 */
-	ThresholdName getThresholdMode();
-
-	/**
 	 * @brief Funkcja zwracajaca wartosc progu wyzwolenia kanalu.
 	 * 
 	 * @return uint32_t Wartosc progu wyzwolenia.
@@ -146,7 +131,6 @@ private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
 	SlopeName m_slope;
-	ThresholdName m_thresholdMode;
 	uint32_t m_threshold;
 };
 

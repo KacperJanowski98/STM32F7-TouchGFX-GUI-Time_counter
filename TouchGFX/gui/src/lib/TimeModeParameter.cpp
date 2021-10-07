@@ -14,14 +14,12 @@
 TimeModeParameter::TimeModeParameter(uint8_t numberChannel,
 									bool stateChannel,
 									SlopeName slope,
-									ThresholdName setThreshold,
 									uint32_t threshold,
 									uint8_t startChannel,
 									uint8_t stopChannel)
 	: m_numberChannel(numberChannel)
 	, m_stateChannel(stateChannel)
 	, m_slope(slope)
-	, m_thresholdMode(setThreshold)
 	, m_threshold(threshold)
 	, m_startChannel(startChannel)
 	, m_stopChannel(stopChannel)
@@ -31,7 +29,6 @@ TimeModeParameter::TimeModeParameter(const TimeModeParameter& other)
 	: m_numberChannel(other.m_numberChannel)
 	, m_stateChannel(other.m_stateChannel)
 	, m_slope(other.m_slope)
-	, m_thresholdMode(other.m_thresholdMode)
 	, m_threshold(other.m_threshold)
 	, m_startChannel(other.m_startChannel)
 	, m_stopChannel(other.m_stopChannel)
@@ -41,7 +38,6 @@ TimeModeParameter::TimeModeParameter(TimeModeParameter&& other) noexcept
 	: m_numberChannel(std::move(other.m_numberChannel))
 	, m_stateChannel(std::move(other.m_stateChannel))
 	, m_slope(std::move(other.m_slope))
-	, m_thresholdMode(std::move(other.m_thresholdMode))
 	, m_threshold(std::move(other.m_threshold))
 	, m_startChannel(std::move(other.m_startChannel))
 	, m_stopChannel(std::move(other.m_stopChannel))
@@ -63,7 +59,6 @@ TimeModeParameter &TimeModeParameter::operator=(TimeModeParameter&& other) noexc
 		std::swap(TimeModeParameter::m_numberChannel, other.m_numberChannel);
 		std::swap(TimeModeParameter::m_stateChannel, other.m_stateChannel);
 		std::swap(TimeModeParameter::m_slope, other.m_slope);
-		std::swap(TimeModeParameter::m_thresholdMode, other.m_thresholdMode);
 		std::swap(TimeModeParameter::m_threshold, other.m_threshold);
 		std::swap(TimeModeParameter::m_startChannel, other.m_startChannel);
 		std::swap(TimeModeParameter::m_stopChannel, other.m_stopChannel);
@@ -82,11 +77,6 @@ void TimeModeParameter::setStateChannel(bool state)
 void TimeModeParameter::setSlope(SlopeName slope)
 {
 	TimeModeParameter::m_slope = slope;
-}
-
-void TimeModeParameter::setThresholdMode(ThresholdName mode)
-{
-	TimeModeParameter::m_thresholdMode = mode;
 }
 
 void TimeModeParameter::setThreshold(uint32_t value)
@@ -117,11 +107,6 @@ bool TimeModeParameter::getStateChannel()
 SlopeName TimeModeParameter::getSlope()
 {
 	return TimeModeParameter::m_slope;
-}
-
-ThresholdName TimeModeParameter::getThresholdMode()
-{
-	return TimeModeParameter::m_thresholdMode;
 }
 
 uint32_t TimeModeParameter::getThreshold()

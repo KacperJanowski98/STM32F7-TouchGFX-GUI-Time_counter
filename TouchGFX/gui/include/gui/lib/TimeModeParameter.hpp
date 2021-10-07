@@ -28,16 +28,6 @@ enum class SlopeName
 };
 
 /**
- * @brief Klasa typu enum zawierajaca nazwy dostep trybow ustawienia progu wyzwalania.
- * 
- */
-enum class ThresholdName
-{
-	Manula,
-	Defined
-};
-
-/**
  * @brief Klasa do utworzenia kanalow w trybie Time Interval Independent.
  * 
  */
@@ -58,7 +48,6 @@ public:
 	explicit TimeModeParameter(uint8_t numberChannel,
 						bool stateChannel,
 						SlopeName slopeChannel,
-						ThresholdName setThreshold,
 						uint32_t thresholdVal,
 						uint8_t startChannel,
 						uint8_t stopChannel);
@@ -114,13 +103,6 @@ public:
 	void setSlope(SlopeName slope);
 
 	/**
-	 * @brief Ustawienie sposobu wyzwalania dla obiektu kanalu.
-	 * 
-	 * @param mode Manual oznacza reczne wybranie wartosci wyzwalania, defined ustawienie okreslonej wartosci.
-	 */
-	void setThresholdMode(ThresholdName mode);
-
-	/**
 	 * @brief Ustawienie progu wyzwalania dla obiektu kanalu.
 	 * 
 	 * @param value Wartosc progu wyzwolenia.
@@ -164,13 +146,6 @@ public:
 	SlopeName getSlope();
 
 	/**
-	 * @brief Funkcja zwracajaca tryb ustawiania progu wyzwalnia kanalu.
-	 * 
-	 * @return ThresholdName Tryb progu wyzwalania.
-	 */
-	ThresholdName getThresholdMode();
-
-	/**
 	 * @brief Funkcja zwracajaca wartosc progu wyzwolenia kanalu.
 	 * 
 	 * @return uint32_t Wartosc progu wyzwolenia.
@@ -195,7 +170,6 @@ private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
 	SlopeName m_slope;
-	ThresholdName m_thresholdMode;
 	uint32_t m_threshold;
 	uint8_t m_startChannel;
 	uint8_t m_stopChannel;

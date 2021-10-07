@@ -14,12 +14,10 @@
 FreqModeParameter::FreqModeParameter(uint8_t numberChannel,
 									bool stateChannel,
 									SlopeName slopeChannel,
-									ThresholdName setThreshold,
 									uint32_t thresholdVal)
 	: m_numberChannel(numberChannel)
 	, m_stateChannel(stateChannel)
 	, m_slope(slopeChannel)
-	, m_thresholdMode(setThreshold)
 	, m_threshold(thresholdVal)
 {}
 
@@ -27,7 +25,6 @@ FreqModeParameter::FreqModeParameter(const FreqModeParameter& other)
 	: m_numberChannel(other.m_numberChannel)
 	, m_stateChannel(other.m_stateChannel)
 	, m_slope(other.m_slope)
-	, m_thresholdMode(other.m_thresholdMode)
 	, m_threshold(other.m_threshold)
 {}
 
@@ -35,7 +32,6 @@ FreqModeParameter::FreqModeParameter(FreqModeParameter&& other) noexcept
 	: m_numberChannel(std::move(other.m_numberChannel))
 	, m_stateChannel(std::move(other.m_stateChannel))
 	, m_slope(std::move(other.m_slope))
-	, m_thresholdMode(std::move(other.m_thresholdMode))
 	, m_threshold(std::move(other.m_threshold))
 {}
 
@@ -55,7 +51,6 @@ FreqModeParameter &FreqModeParameter::operator=(FreqModeParameter&& other) noexc
 		std::swap(FreqModeParameter::m_numberChannel, other.m_numberChannel);
 		std::swap(FreqModeParameter::m_stateChannel, other.m_stateChannel);
 		std::swap(FreqModeParameter::m_slope, other.m_slope);
-		std::swap(FreqModeParameter::m_thresholdMode, other.m_thresholdMode);
 		std::swap(FreqModeParameter::m_threshold, other.m_threshold);
 	}
 	return *this;
@@ -72,11 +67,6 @@ void FreqModeParameter::setStateChannel(bool state)
 void FreqModeParameter::setSlope(SlopeName slope)
 {
 	FreqModeParameter::m_slope = slope;
-}
-
-void FreqModeParameter::setThresholdMode(ThresholdName mode)
-{
-	FreqModeParameter::m_thresholdMode = mode;
 }
 
 void FreqModeParameter::setThreshold(uint32_t value)
@@ -97,11 +87,6 @@ bool FreqModeParameter::getStateChannel()
 SlopeName FreqModeParameter::getSlope()
 {
 	return FreqModeParameter::m_slope;
-}
-
-ThresholdName FreqModeParameter::getThresholdMode()
-{
-	return FreqModeParameter::m_thresholdMode;
 }
 
 uint32_t FreqModeParameter::getThreshold()
