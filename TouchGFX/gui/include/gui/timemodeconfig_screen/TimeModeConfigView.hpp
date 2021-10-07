@@ -103,6 +103,9 @@ public:
      */
     virtual void FinishSetupTimeMode();
 
+    //:TODO
+    virtual void ChangeStateTI();
+
     /**
      * @brief Funkcja ustawiajaca elementy konfiguracji w UI okreslonego kanalu.
      *
@@ -128,6 +131,9 @@ public:
      * @param state True oznacza stan ON, false stan OFF.
      */
     void setChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state);
+
+    //:TODO
+    void setTiChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state);
     /**
      * @brief Funkcja ustawiajaca odpowiednie zbocze w UI odczytane z obiektu kanalu.
      * 
@@ -255,6 +261,7 @@ private:
 
     int16_t m_channelInput;
     std::shared_ptr<TimeModeParameter> pChannelInput;
+    std::shared_ptr<TimeModeParameter> pChannelTI;
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;

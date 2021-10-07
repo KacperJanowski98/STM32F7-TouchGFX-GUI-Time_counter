@@ -1399,6 +1399,25 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "InitialStatePressed": false,
+                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
+                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
+                    "Alpha": 255,
+                    "Style": "Style3",
+                    "Name": "toggleTiSetup",
+                    "X": 188,
+                    "Y": 83,
+                    "Width": 96,
+                    "Height": 38,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -1995,7 +2014,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerTimeINPUT",
+            "SelectedPage": "swipeContainerTimeTISETUP",
             "Style": "Style1",
             "Name": "swipeContainerTime",
             "X": 0,
@@ -2071,6 +2090,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "FinishSetupTimeMode"
+            }
+          },
+          {
+            "InteractionName": "TurnOnOfTiChannel",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleTiSetup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ChangeStateTI"
             }
           }
         ],

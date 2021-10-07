@@ -9,14 +9,14 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
 	, RadioBtnGroupSessionCallback(this, &TimeModeConfigView::RadioBtnGroupSessionCallbackHandler)
-	, Channel1(1, false, SlopeName::UP, 0, 0, 0)
-	, Channel2(2, false, SlopeName::UP, 0, 0, 0)
-	, Channel3(3, false, SlopeName::UP, 0, 0, 0)
-	, Channel4(4, false, SlopeName::UP, 0, 0, 0)
-	, Channel5(5, false, SlopeName::UP, 0, 0, 0)
-	, Channel6(6, false, SlopeName::UP, 0, 0, 0)
-	, Channel7(7, false, SlopeName::UP, 0, 0, 0)
-	, Channel8(8, false, SlopeName::UP, 0, 0, 0)
+	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel3(3, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel4(4, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel5(5, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
+	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
@@ -130,41 +130,42 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	{
 	case 1:
 		pChannelInput = pChannel1;
-		toggleChannel.forceState(pChannel1->getStateChannel());
+//		toggleChannel.forceState(pChannel1->getStateChannel());
 		break;
 	case 2:
 		pChannelInput = pChannel2;
-		toggleChannel.forceState(pChannel2->getStateChannel());
+//		toggleChannel.forceState(pChannel2->getStateChannel());
 		break;
 	case 3:
 		pChannelInput = pChannel3;
-		toggleChannel.forceState(pChannel3->getStateChannel());
+//		toggleChannel.forceState(pChannel3->getStateChannel());
 		break;
 	case 4:
 		pChannelInput = pChannel4;
-		toggleChannel.forceState(pChannel4->getStateChannel());
+//		toggleChannel.forceState(pChannel4->getStateChannel());
 		break;
 	case 5:
 		pChannelInput = pChannel5;
-		toggleChannel.forceState(pChannel5->getStateChannel());
+//		toggleChannel.forceState(pChannel5->getStateChannel());
 		break;
 	case 6:
 		pChannelInput = pChannel6;
-		toggleChannel.forceState(pChannel6->getStateChannel());
+//		toggleChannel.forceState(pChannel6->getStateChannel());
 		break;
 	case 7:
 		pChannelInput = pChannel7;
-		toggleChannel.forceState(pChannel7->getStateChannel());
+//		toggleChannel.forceState(pChannel7->getStateChannel());
 		break;
 	case 8:
 		pChannelInput = pChannel8;
-		toggleChannel.forceState(pChannel8->getStateChannel());
+//		toggleChannel.forceState(pChannel8->getStateChannel());
 		break;
 	}
 	initUIChannel(pChannelInput);
+	toggleChannel.forceState(pChannelInput->getStateChannel());
 	toggleChannel.invalidate();
 	bool CurrentState = toggleChannel.getState();
-	setChannelStateUI(pChannelInput, CurrentState);
+//	setChannelStateUI(pChannelInput, CurrentState);
 	TimeModeConfigView::setGuiTouchable(CurrentState);
 }
 
@@ -176,40 +177,60 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 	switch(m_channelTiSetup)
 	{
 	case 1:
-		readStateChannel(pChannel1->getStateChannel());
-		updateStartStopIn(pChannel1);
+//		readStateChannel(pChannel1->getStateChannel());
+		pChannelTI = pChannel1;
+//		updateStartStopIn(pChannel1);
+//		toggleTiSetup.forceState(pChannel1->getTiState());
 		break;
 	case 2:
-		readStateChannel(pChannel2->getStateChannel());
-		updateStartStopIn(pChannel2);
+//		readStateChannel(pChannel2->getStateChannel());
+		pChannelTI = pChannel2;
+//		updateStartStopIn(pChannel2);
+//		toggleTiSetup.forceState(pChannel2->getTiState());
 		break;
 	case 3:
-		readStateChannel(pChannel3->getStateChannel());
-		updateStartStopIn(pChannel3);
+//		readStateChannel(pChannel3->getStateChannel());
+		pChannelTI = pChannel3;
+//		updateStartStopIn(pChannel3);
+//		toggleTiSetup.forceState(pChannel3->getTiState());
 		break;
 	case 4:
-		readStateChannel(pChannel4->getStateChannel());
-		updateStartStopIn(pChannel4);
+//		readStateChannel(pChannel4->getStateChannel());
+		pChannelTI = pChannel4;
+//		updateStartStopIn(pChannel4);
+//		toggleTiSetup.forceState(pChannel4->getTiState());
 		break;
 	case 5:
-		readStateChannel(pChannel5->getStateChannel());
-		updateStartStopIn(pChannel5);
+//		readStateChannel(pChannel5->getStateChannel());
+		pChannelTI = pChannel5;
+//		updateStartStopIn(pChannel5);
+//		toggleTiSetup.forceState(pChannel5->getTiState());
 		break;
 	case 6:
-		readStateChannel(pChannel6->getStateChannel());
-		updateStartStopIn(pChannel6);
+//		readStateChannel(pChannel6->getStateChannel());
+		pChannelTI = pChannel6;
+//		updateStartStopIn(pChannel6);
+//		toggleTiSetup.forceState(pChannel6->getTiState());
 		break;
 	case 7:
-		readStateChannel(pChannel7->getStateChannel());
-		updateStartStopIn(pChannel7);
+//		readStateChannel(pChannel7->getStateChannel());
+		pChannelTI = pChannel7;
+//		updateStartStopIn(pChannel7);
+//		toggleTiSetup.forceState(pChannel7->getTiState());
 		break;
 	case 8:
-		readStateChannel(pChannel8->getStateChannel());
-		updateStartStopIn(pChannel8);
+//		readStateChannel(pChannel8->getStateChannel());
+		pChannelTI = pChannel8;
+//		updateStartStopIn(pChannel8);
+//		toggleTiSetup.forceState(pChannel8->getTiState());
 		break;
 	}
+	updateStartStopIn(pChannelTI);
+	toggleTiSetup.forceState(pChannelTI->getTiState());
+//	bool CurrentState = toggleTiSetup.getState();
+//	setTiChannelStateUI(pChannelTI, CurrentState);
+	toggleTiSetup.invalidate();
 }
-
 void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
 {
 	textStartChannel.invalidate();
@@ -439,6 +460,14 @@ void TimeModeConfigView::ChangeChannelState()
 	updateScrollTiSetup();
 }
 
+//:TODO
+void TimeModeConfigView::ChangeStateTI()
+{
+	bool CurrentState = toggleTiSetup.getState();
+	setTiChannelStateUI(pChannelTI, CurrentState);
+	readStateChannel(CurrentState);
+}
+
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)
 {
 	readSlopeUI(channel->getSlope());
@@ -471,6 +500,11 @@ uint16_t TimeModeConfigView::getCurrentChannel()
 void TimeModeConfigView::setChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state)
 {
 	channel->setStateChannel(state);
+}
+
+void TimeModeConfigView::setTiChannelStateUI(std::shared_ptr<TimeModeParameter>& channel, bool state)
+{
+	channel->setTiState(state);
 }
 
 void TimeModeConfigView::readSlopeUI(SlopeName slopeUi)
@@ -573,7 +607,9 @@ void TimeModeConfigView::updateScrollTiSetup()
 
 void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& channel)
 {
-	if (channel->getStateChannel() == false)
+	readStateChannel(channel->getTiState());
+
+	if (channel->getTiState() == false)
 	{
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);

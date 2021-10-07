@@ -93,6 +93,11 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void ChangeStateTI()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -160,6 +165,8 @@ protected:
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelStop;
     touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStopListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStopSelectedListItems;
+
+    touchgfx::ToggleButton toggleTiSetup;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;

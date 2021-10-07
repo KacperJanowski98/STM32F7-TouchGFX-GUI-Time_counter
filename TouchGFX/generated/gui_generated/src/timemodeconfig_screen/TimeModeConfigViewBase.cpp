@@ -310,6 +310,11 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
                               scrollWheelStopSelectedListItems, updateItemCallback);
     scrollWheelStop.animateToItem(0, 0);
     swipeContainerTimeTISETUP.add(scrollWheelStop);
+
+    toggleTiSetup.setXY(188, 83);
+    toggleTiSetup.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    toggleTiSetup.setAction(buttonCallback);
+    swipeContainerTimeTISETUP.add(toggleTiSetup);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 
     swipeContainerTimeSESSION.setWidth(800);
@@ -458,7 +463,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonOkConfigTime.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonOkConfigTime);
     swipeContainerTime.add(swipeContainerTimeSESSION);
-    swipeContainerTime.setSelectedPage(0);
+    swipeContainerTime.setSelectedPage(2);
 
     add(__background);
     add(boxLeftBackG);
@@ -532,6 +537,13 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleChannel clicked call virtual function
         //Call ChangeChannelState
         ChangeChannelState();
+    }
+    else if (&src == &toggleTiSetup)
+    {
+        //TurnOnOfTiChannel
+        //When toggleTiSetup clicked call virtual function
+        //Call ChangeStateTI
+        ChangeStateTI();
     }
     else if (&src == &toggleTiMeasRate)
     {

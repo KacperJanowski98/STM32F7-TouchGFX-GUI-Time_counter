@@ -47,6 +47,7 @@ public:
 	 */
 	explicit TimeModeParameter(uint8_t numberChannel,
 						bool stateChannel,
+						bool tiState,
 						SlopeName slopeChannel,
 						uint32_t thresholdVal,
 						uint8_t startChannel,
@@ -96,6 +97,13 @@ public:
 	void setStateChannel(bool state);
 
 	/**
+	 * @brief Ustawienie stanu odcinka czasowego.
+	 *
+	 * @param state True oznacza stan ON, false oznacza stan OFF.
+	 */
+	void setTiState(bool state);
+
+	/**
 	 * @brief Ustawinie zobacza dla obiektu kanalu.
 	 * 
 	 * @param slope UP oznacza zbocze narastajace, DOWN zbocze opadajace.
@@ -139,6 +147,14 @@ public:
 	bool getStateChannel();
 
 	/**
+	 * @brief Funkcja zwracajaza stan w jakim jest dany odcinek czasowy.
+	 *
+	 * @return true Odcinek jest w stanie ON.
+	 * @return false Odcinek jest w stanie OFF.
+	 */
+	bool getTiState();
+
+	/**
 	 * @brief Funkcja zwracajaca rodzaj zbocza kanalu.
 	 * 
 	 * @return SlopeName Zbocze.
@@ -169,6 +185,7 @@ public:
 private:
 	uint8_t m_numberChannel;
 	bool m_stateChannel;
+	bool m_tiState;
 	SlopeName m_slope;
 	uint32_t m_threshold;
 	uint8_t m_startChannel;

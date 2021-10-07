@@ -13,12 +13,14 @@
 
 TimeModeParameter::TimeModeParameter(uint8_t numberChannel,
 									bool stateChannel,
+									bool tiState,
 									SlopeName slope,
 									uint32_t threshold,
 									uint8_t startChannel,
 									uint8_t stopChannel)
 	: m_numberChannel(numberChannel)
 	, m_stateChannel(stateChannel)
+	, m_tiState(tiState)
 	, m_slope(slope)
 	, m_threshold(threshold)
 	, m_startChannel(startChannel)
@@ -28,6 +30,7 @@ TimeModeParameter::TimeModeParameter(uint8_t numberChannel,
 TimeModeParameter::TimeModeParameter(const TimeModeParameter& other)
 	: m_numberChannel(other.m_numberChannel)
 	, m_stateChannel(other.m_stateChannel)
+	, m_tiState(other.m_tiState)
 	, m_slope(other.m_slope)
 	, m_threshold(other.m_threshold)
 	, m_startChannel(other.m_startChannel)
@@ -37,6 +40,7 @@ TimeModeParameter::TimeModeParameter(const TimeModeParameter& other)
 TimeModeParameter::TimeModeParameter(TimeModeParameter&& other) noexcept
 	: m_numberChannel(std::move(other.m_numberChannel))
 	, m_stateChannel(std::move(other.m_stateChannel))
+	, m_tiState(std::move(other.m_tiState))
 	, m_slope(std::move(other.m_slope))
 	, m_threshold(std::move(other.m_threshold))
 	, m_startChannel(std::move(other.m_startChannel))
@@ -58,6 +62,7 @@ TimeModeParameter &TimeModeParameter::operator=(TimeModeParameter&& other) noexc
 	{
 		std::swap(TimeModeParameter::m_numberChannel, other.m_numberChannel);
 		std::swap(TimeModeParameter::m_stateChannel, other.m_stateChannel);
+		std::swap(TimeModeParameter::m_tiState, other.m_tiState);
 		std::swap(TimeModeParameter::m_slope, other.m_slope);
 		std::swap(TimeModeParameter::m_threshold, other.m_threshold);
 		std::swap(TimeModeParameter::m_startChannel, other.m_startChannel);
@@ -72,6 +77,11 @@ TimeModeParameter::~TimeModeParameter() = default;
 void TimeModeParameter::setStateChannel(bool state)
 {
 	TimeModeParameter::m_stateChannel = state;
+}
+
+void TimeModeParameter::setTiState(bool state)
+{
+	TimeModeParameter::m_tiState = state;
 }
 
 void TimeModeParameter::setSlope(SlopeName slope)
@@ -102,6 +112,11 @@ uint8_t TimeModeParameter::getNumberChannel()
 bool TimeModeParameter::getStateChannel()
 {
 	return TimeModeParameter::m_stateChannel;
+}
+
+bool TimeModeParameter::getTiState()
+{
+	return TimeModeParameter::m_tiState;
 }
 
 SlopeName TimeModeParameter::getSlope()
