@@ -633,8 +633,11 @@ void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParam
 {
 	if ((channel->getStartChannel() != 0) && (channel->getStopChannel() != 0) && (channel->getTiState() == true))
 	{
-		scrollWheelStart.animateToItem(static_cast<int16_t>(channel->getStartChannel() - 1));
-		scrollWheelStop.animateToItem(static_cast<int16_t>(channel->getStopChannel() - 1));
+		std::vector<int16_t>::iterator itrStart = std::find(activeChannels.begin(), activeChannels.end(), channel->getStartChannel());
+		std::vector<int16_t>::iterator itrStop = std::find(activeChannels.begin(), activeChannels.end(), channel->getStopChannel());
+
+		scrollWheelStart.animateToItem(std::distance(activeChannels.begin(), itrStart));
+		scrollWheelStop.animateToItem(std::distance(activeChannels.begin(), itrStop));
 	}
 }
 
