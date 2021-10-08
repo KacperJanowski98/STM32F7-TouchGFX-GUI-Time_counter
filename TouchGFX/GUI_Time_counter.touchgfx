@@ -1972,6 +1972,30 @@
               "Type": "ActionCustom",
               "FunctionName": "ChangeStateTI"
             }
+          },
+          {
+            "InteractionName": "FinishTimeModeConst",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigTimeConst"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupTimeModeConst"
+            }
+          },
+          {
+            "InteractionName": "FinishTimeModeStamps",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigTimeStamps"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupTimeModeStamps"
+            }
           }
         ],
         "Name": "TimeModeConfig",

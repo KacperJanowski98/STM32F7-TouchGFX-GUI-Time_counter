@@ -32,6 +32,10 @@ public:
      */
     virtual void askForDataTimeSingle();
 
+    virtual void askForDataTimeConst();
+
+    virtual void askForDataTimeStamps();
+
 private:
     TimeModeConfigPresenter();
 

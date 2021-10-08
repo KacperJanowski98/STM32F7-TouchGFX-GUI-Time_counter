@@ -421,6 +421,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID85));
     buttonConfigTimeConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigTimeConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeConst.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeConst);
 
     buttonConfigTimeStamps.setXY(315, 336);
@@ -428,6 +429,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID86));
     buttonConfigTimeStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigTimeStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeStamps.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeStamps);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(3);
@@ -523,6 +525,20 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonConfigTimeSingle clicked call virtual function
         //Call FinishSetupTimeModeSingle
         FinishSetupTimeModeSingle();
+    }
+    else if (&src == &buttonConfigTimeConst)
+    {
+        //FinishTimeModeConst
+        //When buttonConfigTimeConst clicked call virtual function
+        //Call FinishSetupTimeModeConst
+        FinishSetupTimeModeConst();
+    }
+    else if (&src == &buttonConfigTimeStamps)
+    {
+        //FinishTimeModeStamps
+        //When buttonConfigTimeStamps clicked call virtual function
+        //Call FinishSetupTimeModeStamps
+        FinishSetupTimeModeStamps();
     }
 }
 

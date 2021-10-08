@@ -21,3 +21,13 @@ void TimeModeConfigPresenter::askForDataTimeSingle()
 {
 	model->getDataTimeSingle();
 }
+
+void TimeModeConfigPresenter::askForDataTimeConst()
+{
+	model->getDataTimeContinuous();
+}
+
+void TimeModeConfigPresenter::askForDataTimeStamps()
+{
+	model->getDataTimeStamps();
+}

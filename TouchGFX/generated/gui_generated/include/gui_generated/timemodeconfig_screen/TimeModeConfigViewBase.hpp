@@ -93,6 +93,16 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void FinishSetupTimeModeConst()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void FinishSetupTimeModeStamps()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

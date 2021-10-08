@@ -95,9 +95,19 @@ public:
     virtual void turnTiMaxRange();
 
     /**
-     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku OK ktora konczy konfiguracje.
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku Single ktora konczy konfiguracje.
      */
     virtual void FinishSetupTimeModeSingle();
+
+    /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku Continuous ktora konczy konfiguracje.
+     */
+    virtual void FinishSetupTimeModeConst();
+
+    /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku Stamps ktora konczy konfiguracje.
+     */
+    virtual void FinishSetupTimeModeStamps();
 
     /**
      * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button, ustawia stan odcinka czasowego.

@@ -686,3 +686,15 @@ void TimeModeConfigView::FinishSetupTimeModeSingle()
 	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();
 }
+
+void TimeModeConfigView::FinishSetupTimeModeConst()
+{
+	presenter->askForDataTimeConst();
+	application().gotoTimeModeScreenCoverTransitionWest();
+}
+
+void TimeModeConfigView::FinishSetupTimeModeStamps()
+{
+	presenter->askForDataTimeStamps();
+	application().gotoTimeModeScreenCoverTransitionWest();
+}
