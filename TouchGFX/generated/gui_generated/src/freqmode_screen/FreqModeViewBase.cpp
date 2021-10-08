@@ -23,10 +23,14 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
+    buttonReset.setXY(448, 420);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+
     add(__background);
     add(boxBackgroungFreq);
     add(buttonToMenuF);
     add(buttonConfig);
+    add(buttonReset);
 }
 
 void FreqModeViewBase::setupScreen()

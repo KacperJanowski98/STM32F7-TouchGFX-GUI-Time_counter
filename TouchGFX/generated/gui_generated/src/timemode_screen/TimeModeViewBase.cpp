@@ -23,10 +23,14 @@ TimeModeViewBase::TimeModeViewBase() :
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
+    buttonReset.setXY(447, 420);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
     add(buttonConfig);
+    add(buttonReset);
 }
 
 void TimeModeViewBase::setupScreen()

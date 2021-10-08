@@ -29,6 +29,7 @@ protected:
     touchgfx::Box boxBackgroundTime;
     touchgfx::Button buttonBackMenuT;
     touchgfx::Button buttonConfig;
+    touchgfx::Button buttonReset;
 
 private:
 
