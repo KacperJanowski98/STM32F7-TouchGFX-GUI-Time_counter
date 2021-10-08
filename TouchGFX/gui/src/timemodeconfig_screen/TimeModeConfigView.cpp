@@ -8,7 +8,6 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueChangedCallback(this, &TimeModeConfigView::sliderValueChangedCallbackHandler)
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
-	, RadioBtnGroupSessionCallback(this, &TimeModeConfigView::RadioBtnGroupSessionCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &TimeModeConfigView::RadioBtnGroupClockCallbackHandler)
 	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
 	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
@@ -21,7 +20,6 @@ TimeModeConfigView::TimeModeConfigView()
 	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
-	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
 	TimeModeConfigView::pChannel1 = std::make_shared<TimeModeParameter>(Channel1);
 	TimeModeConfigView::pChannel2 = std::make_shared<TimeModeParameter>(Channel2);
@@ -388,19 +386,6 @@ void TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler(const touchgfx::Abstr
 	}
 	radioSlopeUp.invalidate();
 	radioSlopeDown.invalidate();
-}
-
-// :TODO
-void TimeModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
-{
-	if(&src == &radioSingle)
-	{
-
-	}
-	else if(&src == &radioContinuous)
-	{
-
-	}
 }
 
 void TimeModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src)

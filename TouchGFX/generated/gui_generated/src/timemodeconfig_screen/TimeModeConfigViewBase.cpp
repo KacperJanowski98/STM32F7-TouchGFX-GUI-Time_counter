@@ -408,34 +408,27 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     toggleTiMaxRange.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(toggleTiMaxRange);
 
-    radioSingle.setXY(111, 146);
-    radioSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioSingle.setSelected(false);
-    radioSingle.setDeselectionEnabled(false);
-    swipeContainerTimeSESSION.add(radioSingle);
+    buttonConfigTimeSingle.setXY(159, 134);
+    buttonConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigTimeSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID84));
+    buttonConfigTimeSingle.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeSingle.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(buttonConfigTimeSingle);
 
-    radioContinuous.setXY(442, 146);
-    radioContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioContinuous.setSelected(false);
-    radioContinuous.setDeselectionEnabled(false);
-    swipeContainerTimeSESSION.add(radioContinuous);
+    buttonConfigTimeConst.setXY(468, 134);
+    buttonConfigTimeConst.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigTimeConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID85));
+    buttonConfigTimeConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainerTimeSESSION.add(buttonConfigTimeConst);
 
-    textSingle.setXY(198, 156);
-    textSingle.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
-    textSingle.setLinespacing(0);
-    textSingle.setTypedText(touchgfx::TypedText(T_SINGLEUSEID52));
-    swipeContainerTimeSESSION.add(textSingle);
-
-    textContinuous.setXY(518, 155);
-    textContinuous.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textContinuous.setLinespacing(0);
-    textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID53));
-    swipeContainerTimeSESSION.add(textContinuous);
-
-    buttonOkConfigTimeSingle.setXY(732, 351);
-    buttonOkConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
-    buttonOkConfigTimeSingle.setAction(buttonCallback);
-    swipeContainerTimeSESSION.add(buttonOkConfigTimeSingle);
+    buttonConfigTimeStamps.setXY(315, 336);
+    buttonConfigTimeStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigTimeStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID86));
+    buttonConfigTimeStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainerTimeSESSION.add(buttonConfigTimeStamps);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(3);
 
@@ -452,8 +445,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     radioButtonGroupClock.add(radioClockExternal);
     radioButtonGroupClock.add(radioClockRubid);
     radioButtonGroupClock.add(radioClockQuartz);
-    radioButtonGroupModeSession.add(radioSingle);
-    radioButtonGroupModeSession.add(radioContinuous);
 }
 
 void TimeModeConfigViewBase::setupScreen()
@@ -526,10 +517,10 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //Call turnTiMaxRange
         turnTiMaxRange();
     }
-    else if (&src == &buttonOkConfigTimeSingle)
+    else if (&src == &buttonConfigTimeSingle)
     {
         //FinishTimeModeSingle
-        //When buttonOkConfigTimeSingle clicked call virtual function
+        //When buttonConfigTimeSingle clicked call virtual function
         //Call FinishSetupTimeModeSingle
         FinishSetupTimeModeSingle();
     }

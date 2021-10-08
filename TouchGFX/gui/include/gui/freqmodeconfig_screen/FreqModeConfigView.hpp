@@ -55,7 +55,6 @@ protected:
 
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupFreqCallback;
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupHfInputCallback;
-	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
 	touchgfx::Callback<FreqModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupClockCallback;
 
     void sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value);
@@ -63,7 +62,6 @@ protected:
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupFreqCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupHfInputCallbackHandler(const touchgfx::AbstractButton& src);
-    void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src);
 
 private:

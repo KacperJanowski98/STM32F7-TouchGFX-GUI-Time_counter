@@ -7,7 +7,6 @@ FreqModeConfigView::FreqModeConfigView()
 	, sliderValueConfirmedCallback(this, &FreqModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
-	, RadioBtnGroupSessionCallback(this, &FreqModeConfigView::RadioBtnGroupSessionCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &FreqModeConfigView::RadioBtnGroupClockCallbackHandler)
 	, Channel1(1, false, SlopeName::UP, 0)
 	, Channel2(2, false, SlopeName::UP, 0)
@@ -20,7 +19,6 @@ FreqModeConfigView::FreqModeConfigView()
 	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
-	radioButtonGroupModeSession.setRadioButtonSelectedHandler(RadioBtnGroupSessionCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
 	FreqModeConfigView::pChannel1 = std::make_shared<FreqModeParameter>(Channel1);
 	FreqModeConfigView::pChannel2 = std::make_shared<FreqModeParameter>(Channel2);
@@ -265,19 +263,6 @@ void FreqModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::Abstr
 	else if (&src == &radioClockExternal)
 	{
 		FreqModeConfigView::m_clockSource = ClockName::EXTERNAL;
-	}
-}
-
-// obsluga radio button :TODO
-void FreqModeConfigView::RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src)
-{
-	if(&src == &radioSingle)
-	{
-
-	}
-	else if(&src == &radioContinuous)
-	{
-
 	}
 }
 

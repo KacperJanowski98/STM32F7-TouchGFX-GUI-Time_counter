@@ -124,15 +124,12 @@ protected:
     touchgfx::TextAreaWithOneWildcard textRepeatVal;
     touchgfx::Slider sliderStampsNumber;
     touchgfx::Slider sliderRepeat;
-    touchgfx::RadioButton radioSingle;
-    touchgfx::RadioButton radioContinuous;
-    touchgfx::TextArea textSingle;
-    touchgfx::TextArea textContinuous;
-    touchgfx::Button buttonOkConfigFreqSingle;
+    touchgfx::ButtonWithLabel buttonConfigFreqStamps;
+    touchgfx::ButtonWithLabel buttonConfigFreqConst;
+    touchgfx::ButtonWithLabel buttonConfigFreqSingle;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;
-    touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;
 
     /*
      * Wildcard Buffers

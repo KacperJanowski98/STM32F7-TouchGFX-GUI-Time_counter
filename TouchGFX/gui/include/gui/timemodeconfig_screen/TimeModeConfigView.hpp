@@ -270,7 +270,6 @@ protected:
     touchgfx::Callback<TimeModeConfigView, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
     touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSlopeCallback;
-    touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupSessionCallback;
     touchgfx::Callback<TimeModeConfigView, const touchgfx::AbstractButton&> RadioBtnGroupClockCallback;
 
     // Deklaracje obsługi wywołań zwrotnych.
@@ -278,7 +277,6 @@ protected:
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
     void RadioBtnGroupSlopeCallbackHandler(const touchgfx::AbstractButton& src);
-    void RadioBtnGroupSessionCallbackHandler(const touchgfx::AbstractButton& src);
     void RadioBtnGroupClockCallbackHandler(const touchgfx::AbstractButton& src);
 private:
     TimeModeParameter Channel1 , Channel2, Channel3, Channel4, Channel5, Channel6, Channel7, Channel8;

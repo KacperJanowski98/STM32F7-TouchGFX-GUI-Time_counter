@@ -344,34 +344,27 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderRepeat.setValue(0);
     swipeContainerFreqSESSION.add(sliderRepeat);
 
-    radioSingle.setXY(112, 98);
-    radioSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioSingle.setSelected(false);
-    radioSingle.setDeselectionEnabled(false);
-    swipeContainerFreqSESSION.add(radioSingle);
+    buttonConfigFreqStamps.setXY(315, 327);
+    buttonConfigFreqStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigFreqStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID89));
+    buttonConfigFreqStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainerFreqSESSION.add(buttonConfigFreqStamps);
 
-    radioContinuous.setXY(440, 101);
-    radioContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioContinuous.setSelected(false);
-    radioContinuous.setDeselectionEnabled(false);
-    swipeContainerFreqSESSION.add(radioContinuous);
+    buttonConfigFreqConst.setXY(485, 84);
+    buttonConfigFreqConst.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigFreqConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID88));
+    buttonConfigFreqConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainerFreqSESSION.add(buttonConfigFreqConst);
 
-    textSingle.setXY(199, 108);
-    textSingle.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
-    textSingle.setLinespacing(0);
-    textSingle.setTypedText(touchgfx::TypedText(T_SINGLEUSEID82));
-    swipeContainerFreqSESSION.add(textSingle);
-
-    textContinuous.setXY(517, 111);
-    textContinuous.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textContinuous.setLinespacing(0);
-    textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID83));
-    swipeContainerFreqSESSION.add(textContinuous);
-
-    buttonOkConfigFreqSingle.setXY(732, 351);
-    buttonOkConfigFreqSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
-    buttonOkConfigFreqSingle.setAction(buttonCallback);
-    swipeContainerFreqSESSION.add(buttonOkConfigFreqSingle);
+    buttonConfigFreqSingle.setXY(141, 81);
+    buttonConfigFreqSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigFreqSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID87));
+    buttonConfigFreqSingle.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqSingle.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(buttonConfigFreqSingle);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
     swipeContainerFreq.setSelectedPage(3);
 
@@ -390,8 +383,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     radioButtonGroupClock.add(radioClockQuartz);
     radioButtonGroupHfInput.add(radioHfInputOn);
     radioButtonGroupHfInput.add(radioHfInputOff);
-    radioButtonGroupModeSession.add(radioSingle);
-    radioButtonGroupModeSession.add(radioContinuous);
 }
 
 void FreqModeConfigViewBase::setupScreen()
@@ -423,10 +414,10 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //Call toggleChannelState
         toggleChannelState();
     }
-    else if (&src == &buttonOkConfigFreqSingle)
+    else if (&src == &buttonConfigFreqSingle)
     {
         //FinishFreqModeSingle
-        //When buttonOkConfigFreqSingle clicked call virtual function
+        //When buttonConfigFreqSingle clicked call virtual function
         //Call FinishSetupFreqModeSingle
         FinishSetupFreqModeSingle();
     }

@@ -177,14 +177,11 @@ protected:
     touchgfx::Slider sliderStampsNumber;
     touchgfx::Slider sliderRepeat;
     touchgfx::ToggleButton toggleTiMaxRange;
-    touchgfx::RadioButton radioSingle;
-    touchgfx::RadioButton radioContinuous;
-    touchgfx::TextArea textSingle;
-    touchgfx::TextArea textContinuous;
-    touchgfx::Button buttonOkConfigTimeSingle;
+    touchgfx::ButtonWithLabel buttonConfigTimeSingle;
+    touchgfx::ButtonWithLabel buttonConfigTimeConst;
+    touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
-    touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;
 
     /*
      * Wildcard Buffers
