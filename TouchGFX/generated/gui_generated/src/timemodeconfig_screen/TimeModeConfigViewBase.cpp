@@ -432,7 +432,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeStamps.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeStamps);
     swipeContainerTime.add(swipeContainerTimeSESSION);
-    swipeContainerTime.setSelectedPage(3);
+    swipeContainerTime.setSelectedPage(0);
 
     add(__background);
     add(boxLeftBackG);
