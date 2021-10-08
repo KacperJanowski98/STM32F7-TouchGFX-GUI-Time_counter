@@ -21,3 +21,13 @@ void FreqModeConfigPresenter::askForDataFreqSingle()
 {
 	model->getDataFreqSingle();
 }
+
+void FreqModeConfigPresenter::askForDataFreqConst()
+{
+	model->getDataFreqContinuous();
+}
+
+void FreqModeConfigPresenter::askForDataFreqStamps()
+{
+	model->getDataFreqStamps();
+}

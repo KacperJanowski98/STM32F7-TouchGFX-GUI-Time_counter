@@ -349,6 +349,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID89));
     buttonConfigFreqStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigFreqStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqStamps.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqStamps);
 
     buttonConfigFreqConst.setXY(485, 84);
@@ -356,6 +357,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID88));
     buttonConfigFreqConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigFreqConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqConst.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqConst);
 
     buttonConfigFreqSingle.setXY(141, 81);
@@ -413,6 +415,20 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleChannel clicked call virtual function
         //Call toggleChannelState
         toggleChannelState();
+    }
+    else if (&src == &buttonConfigFreqStamps)
+    {
+        //FinishFreqModeStamps
+        //When buttonConfigFreqStamps clicked call virtual function
+        //Call FinishSetupFreqModeStamps
+        FinishSetupFreqModeStamps();
+    }
+    else if (&src == &buttonConfigFreqConst)
+    {
+        //FinishFreqModeConst
+        //When buttonConfigFreqConst clicked call virtual function
+        //Call FinishSetupFreqModeConst
+        FinishSetupFreqModeConst();
     }
     else if (&src == &buttonConfigFreqSingle)
     {

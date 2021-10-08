@@ -32,6 +32,10 @@ public:
      */
     virtual void askForDataFreqSingle();
 
+    virtual void askForDataFreqConst();
+
+    virtual void askForDataFreqStamps();
+
 private:
     FreqModeConfigPresenter();
 

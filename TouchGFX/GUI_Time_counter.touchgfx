@@ -3572,6 +3572,30 @@
               "Type": "ActionCustom",
               "FunctionName": "FinishSetupFreqModeSingle"
             }
+          },
+          {
+            "InteractionName": "FinishFreqModeConst",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigFreqConst"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupFreqModeConst"
+            }
+          },
+          {
+            "InteractionName": "FinishFreqModeStamps",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigFreqStamps"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupFreqModeStamps"
+            }
           }
         ],
         "Name": "FreqModeConfig",

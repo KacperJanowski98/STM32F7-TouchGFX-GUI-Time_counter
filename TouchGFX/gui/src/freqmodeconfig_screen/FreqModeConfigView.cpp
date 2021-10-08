@@ -418,10 +418,17 @@ void FreqModeConfigView::FinishSetupFreqModeSingle()
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 
+void FreqModeConfigView::FinishSetupFreqModeConst()
+{
+	presenter->askForDataFreqConst();
+	application().gotoFreqModeScreenCoverTransitionWest();
+}
 
-
-
-
+void FreqModeConfigView::FinishSetupFreqModeStamps()
+{
+	presenter->askForDataFreqStamps();
+	application().gotoFreqModeScreenCoverTransitionWest();
+}
 
 
 

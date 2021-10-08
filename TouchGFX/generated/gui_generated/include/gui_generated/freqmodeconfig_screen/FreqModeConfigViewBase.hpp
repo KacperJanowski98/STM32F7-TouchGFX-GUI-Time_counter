@@ -53,6 +53,16 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void FinishSetupFreqModeConst()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void FinishSetupFreqModeStamps()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
