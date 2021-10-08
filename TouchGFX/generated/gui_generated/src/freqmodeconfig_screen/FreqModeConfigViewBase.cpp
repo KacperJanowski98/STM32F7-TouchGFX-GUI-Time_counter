@@ -368,12 +368,12 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID83));
     swipeContainerFreqSESSION.add(textContinuous);
 
-    buttonOkConfigFreq.setXY(732, 351);
-    buttonOkConfigFreq.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
-    buttonOkConfigFreq.setAction(buttonCallback);
-    swipeContainerFreqSESSION.add(buttonOkConfigFreq);
+    buttonOkConfigFreqSingle.setXY(732, 351);
+    buttonOkConfigFreqSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonOkConfigFreqSingle.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(buttonOkConfigFreqSingle);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(2);
+    swipeContainerFreq.setSelectedPage(3);
 
     add(__background);
     add(boxLeftBackG);
@@ -423,12 +423,12 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //Call toggleChannelState
         toggleChannelState();
     }
-    else if (&src == &buttonOkConfigFreq)
+    else if (&src == &buttonOkConfigFreqSingle)
     {
-        //FinishConfigOkButton
-        //When buttonOkConfigFreq clicked call virtual function
-        //Call FinishSetupFreqMode
-        FinishSetupFreqMode();
+        //FinishFreqModeSingle
+        //When buttonOkConfigFreqSingle clicked call virtual function
+        //Call FinishSetupFreqModeSingle
+        FinishSetupFreqModeSingle();
     }
 }
 

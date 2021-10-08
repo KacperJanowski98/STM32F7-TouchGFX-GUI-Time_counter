@@ -427,9 +427,9 @@ void FreqModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 	sliderRepeat.setValue(session->getRepeat());
 }
 
-void FreqModeConfigView::FinishSetupFreqMode()
+void FreqModeConfigView::FinishSetupFreqModeSingle()
 {
-	presenter->askForDataFreq();
+	presenter->askForDataFreqSingle();
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 

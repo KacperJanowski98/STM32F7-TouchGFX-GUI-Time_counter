@@ -4,7 +4,6 @@
 #include <gui_generated/freqmode_screen/FreqModeViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
-#include <texts/TextKeysAndLanguages.hpp>
 
 FreqModeViewBase::FreqModeViewBase() :
     buttonCallback(this, &FreqModeViewBase::buttonCallbackHandler)
@@ -24,26 +23,10 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
-    textMain.setPosition(261, 228, 278, 25);
-    textMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textMain.setLinespacing(0);
-    textMainBuffer[0] = 0;
-    textMain.setWildcard(textMainBuffer);
-    textMain.setTypedText(touchgfx::TypedText(T_SINGLEUSEID84));
-
-    textMainF.setPosition(261, 228, 278, 25);
-    textMainF.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textMainF.setLinespacing(0);
-    textMainFBuffer[0] = 0;
-    textMainF.setWildcard(textMainFBuffer);
-    textMainF.setTypedText(touchgfx::TypedText(T_SINGLEUSEID85));
-
     add(__background);
     add(boxBackgroungFreq);
     add(buttonToMenuF);
     add(buttonConfig);
-    add(textMain);
-    add(textMainF);
 }
 
 void FreqModeViewBase::setupScreen()

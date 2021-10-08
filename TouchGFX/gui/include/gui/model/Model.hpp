@@ -7,10 +7,6 @@
 #include <algorithm>
 #include <vector>
 
-
-extern int testDisplay;
-extern int testDisplayFreq;
-
 extern "C"
 {
 	#include "cmsis_os.h"
@@ -31,9 +27,17 @@ public:
 
     void tick();
 
-    void getDataTime();
+    void getDataTimeSingle();
 
-    void getDataFreq();
+    void getDataFreqSingle();
+
+    void getDataTimeContinuous();
+
+    void getDataFreqContinuous();
+
+    void getDataTimeStamps();
+
+    void getDataFreqStamps();
 
 //    std::unique_ptr<TimeModeParameter> getChannel1();
 protected:

@@ -17,7 +17,7 @@ void TimeModeConfigPresenter::deactivate()
 
 }
 
-void TimeModeConfigPresenter::askForDataTime()
+void TimeModeConfigPresenter::askForDataTimeSingle()
 {
-	model->getDataTime();
+	model->getDataTimeSingle();
 }

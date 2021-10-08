@@ -8,10 +8,6 @@ TimeModeView::TimeModeView()
 void TimeModeView::setupScreen()
 {
     TimeModeViewBase::setupScreen();
-
-    // testy :TODO
-    Unicode::snprintf(textMainBuffer, TEXTMAIN_SIZE, "%d", testDisplay);
-    textMain.invalidate();
 }
 
 void TimeModeView::tearDownScreen()

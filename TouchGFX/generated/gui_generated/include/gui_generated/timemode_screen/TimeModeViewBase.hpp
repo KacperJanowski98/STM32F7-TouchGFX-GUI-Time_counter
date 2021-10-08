@@ -9,7 +9,6 @@
 #include <gui/timemode_screen/TimeModePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class TimeModeViewBase : public touchgfx::View<TimeModePresenter>
 {
@@ -30,13 +29,6 @@ protected:
     touchgfx::Box boxBackgroundTime;
     touchgfx::Button buttonBackMenuT;
     touchgfx::Button buttonConfig;
-    touchgfx::TextAreaWithOneWildcard textMain;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t TEXTMAIN_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textMainBuffer[TEXTMAIN_SIZE];
 
 private:
 

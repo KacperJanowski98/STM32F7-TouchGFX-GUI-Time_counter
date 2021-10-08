@@ -48,7 +48,7 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
-    virtual void FinishSetupFreqMode()
+    virtual void FinishSetupFreqModeSingle()
     {
         // Override and implement this function in FreqModeConfig
     }
@@ -128,7 +128,7 @@ protected:
     touchgfx::RadioButton radioContinuous;
     touchgfx::TextArea textSingle;
     touchgfx::TextArea textContinuous;
-    touchgfx::Button buttonOkConfigFreq;
+    touchgfx::Button buttonOkConfigFreqSingle;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;

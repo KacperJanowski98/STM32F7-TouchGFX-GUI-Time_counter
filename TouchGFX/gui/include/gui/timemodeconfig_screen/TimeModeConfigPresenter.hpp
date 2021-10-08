@@ -30,7 +30,7 @@ public:
     /**
      * My function
      */
-    virtual void askForDataTime();
+    virtual void askForDataTimeSingle();
 
 private:
     TimeModeConfigPresenter();

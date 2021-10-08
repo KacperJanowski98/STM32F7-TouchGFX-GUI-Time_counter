@@ -30,7 +30,7 @@ public:
     /**
      * My function
      */
-    virtual void askForDataFreq();
+    virtual void askForDataFreqSingle();
 
 private:
     FreqModeConfigPresenter();

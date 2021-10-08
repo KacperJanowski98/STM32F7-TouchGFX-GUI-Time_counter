@@ -17,7 +17,7 @@ void FreqModeConfigPresenter::deactivate()
 
 }
 
-void FreqModeConfigPresenter::askForDataFreq()
+void FreqModeConfigPresenter::askForDataFreqSingle()
 {
-	model->getDataFreq();
+	model->getDataFreqSingle();
 }

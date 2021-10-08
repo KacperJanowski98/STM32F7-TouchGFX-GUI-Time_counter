@@ -89,35 +89,81 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .stack_size = 4096 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myTaskTimeCount */
-osThreadId_t myTaskTimeCountHandle;
-const osThreadAttr_t myTaskTimeCount_attributes = {
-  .name = "myTaskTimeCount",
-  .stack_size = 1024 * 4,
+/* Definitions for TaskTimeSingle */
+osThreadId_t TaskTimeSingleHandle;
+const osThreadAttr_t TaskTimeSingle_attributes = {
+  .name = "TaskTimeSingle",
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myTaskFreqCount */
-osThreadId_t myTaskFreqCountHandle;
-const osThreadAttr_t myTaskFreqCount_attributes = {
-  .name = "myTaskFreqCount",
-  .stack_size = 1024 * 4,
+/* Definitions for TaskFreqSingle */
+osThreadId_t TaskFreqSingleHandle;
+const osThreadAttr_t TaskFreqSingle_attributes = {
+  .name = "TaskFreqSingle",
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myBinarySemGetDataTime */
-osSemaphoreId_t myBinarySemGetDataTimeHandle;
-const osSemaphoreAttr_t myBinarySemGetDataTime_attributes = {
-  .name = "myBinarySemGetDataTime"
+/* Definitions for TaskTimeConst */
+osThreadId_t TaskTimeConstHandle;
+const osThreadAttr_t TaskTimeConst_attributes = {
+  .name = "TaskTimeConst",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myBinarySemGetDataFreq */
-osSemaphoreId_t myBinarySemGetDataFreqHandle;
-const osSemaphoreAttr_t myBinarySemGetDataFreq_attributes = {
-  .name = "myBinarySemGetDataFreq"
+/* Definitions for TaskFreqConst */
+osThreadId_t TaskFreqConstHandle;
+const osThreadAttr_t TaskFreqConst_attributes = {
+  .name = "TaskFreqConst",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskTimeStamps */
+osThreadId_t TaskTimeStampsHandle;
+const osThreadAttr_t TaskTimeStamps_attributes = {
+  .name = "TaskTimeStamps",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskFreqStamps */
+osThreadId_t TaskFreqStampsHandle;
+const osThreadAttr_t TaskFreqStamps_attributes = {
+  .name = "TaskFreqStamps",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for myBinarySemGetTimeSingle */
+osSemaphoreId_t myBinarySemGetTimeSingleHandle;
+const osSemaphoreAttr_t myBinarySemGetTimeSingle_attributes = {
+  .name = "myBinarySemGetTimeSingle"
+};
+/* Definitions for myBinarySemGetFreqSingle */
+osSemaphoreId_t myBinarySemGetFreqSingleHandle;
+const osSemaphoreAttr_t myBinarySemGetFreqSingle_attributes = {
+  .name = "myBinarySemGetFreqSingle"
+};
+/* Definitions for myBinarySemGetTimeConst */
+osSemaphoreId_t myBinarySemGetTimeConstHandle;
+const osSemaphoreAttr_t myBinarySemGetTimeConst_attributes = {
+  .name = "myBinarySemGetTimeConst"
+};
+/* Definitions for myBinarySemGetFreqConst */
+osSemaphoreId_t myBinarySemGetFreqConstHandle;
+const osSemaphoreAttr_t myBinarySemGetFreqConst_attributes = {
+  .name = "myBinarySemGetFreqConst"
+};
+/* Definitions for myBinarySemGetTimeStamps */
+osSemaphoreId_t myBinarySemGetTimeStampsHandle;
+const osSemaphoreAttr_t myBinarySemGetTimeStamps_attributes = {
+  .name = "myBinarySemGetTimeStamps"
+};
+/* Definitions for myBinarySemGetFreqStamps */
+osSemaphoreId_t myBinarySemGetFreqStampsHandle;
+const osSemaphoreAttr_t myBinarySemGetFreqStamps_attributes = {
+  .name = "myBinarySemGetFreqStamps"
 };
 /* USER CODE BEGIN PV */
 
 // -- remove
-int testDisplay = 10;
-int testDisplayFreq = 0;
 uint8_t counterT = 0;
 uint8_t counterF = 0;
 
@@ -134,8 +180,12 @@ static void MX_FMC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_DMA2D_Init(void);
 void TouchGFX_Task(void *argument);
-void StartTaskTimeCount(void *argument);
-void StartTaskFreqCount(void *argument);
+void StartTaskTimeSingle(void *argument);
+void StartTaskFreqSingle(void *argument);
+void StartTaskTimeConst(void *argument);
+void StartTaskFreqConst(void *argument);
+void StartTaskTimeStamps(void *argument);
+void StartTaskFreqStamps(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -212,11 +262,23 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* Create the semaphores(s) */
-  /* creation of myBinarySemGetDataTime */
-  myBinarySemGetDataTimeHandle = osSemaphoreNew(1, 1, &myBinarySemGetDataTime_attributes);
+  /* creation of myBinarySemGetTimeSingle */
+  myBinarySemGetTimeSingleHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeSingle_attributes);
 
-  /* creation of myBinarySemGetDataFreq */
-  myBinarySemGetDataFreqHandle = osSemaphoreNew(1, 1, &myBinarySemGetDataFreq_attributes);
+  /* creation of myBinarySemGetFreqSingle */
+  myBinarySemGetFreqSingleHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqSingle_attributes);
+
+  /* creation of myBinarySemGetTimeConst */
+  myBinarySemGetTimeConstHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeConst_attributes);
+
+  /* creation of myBinarySemGetFreqConst */
+  myBinarySemGetFreqConstHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqConst_attributes);
+
+  /* creation of myBinarySemGetTimeStamps */
+  myBinarySemGetTimeStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeStamps_attributes);
+
+  /* creation of myBinarySemGetFreqStamps */
+  myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqStamps_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -234,11 +296,23 @@ int main(void)
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
 
-  /* creation of myTaskTimeCount */
-  myTaskTimeCountHandle = osThreadNew(StartTaskTimeCount, NULL, &myTaskTimeCount_attributes);
+  /* creation of TaskTimeSingle */
+  TaskTimeSingleHandle = osThreadNew(StartTaskTimeSingle, NULL, &TaskTimeSingle_attributes);
 
-  /* creation of myTaskFreqCount */
-  myTaskFreqCountHandle = osThreadNew(StartTaskFreqCount, NULL, &myTaskFreqCount_attributes);
+  /* creation of TaskFreqSingle */
+  TaskFreqSingleHandle = osThreadNew(StartTaskFreqSingle, NULL, &TaskFreqSingle_attributes);
+
+  /* creation of TaskTimeConst */
+  TaskTimeConstHandle = osThreadNew(StartTaskTimeConst, NULL, &TaskTimeConst_attributes);
+
+  /* creation of TaskFreqConst */
+  TaskFreqConstHandle = osThreadNew(StartTaskFreqConst, NULL, &TaskFreqConst_attributes);
+
+  /* creation of TaskTimeStamps */
+  TaskTimeStampsHandle = osThreadNew(StartTaskTimeStamps, NULL, &TaskTimeStamps_attributes);
+
+  /* creation of TaskFreqStamps */
+  TaskFreqStampsHandle = osThreadNew(StartTaskFreqStamps, NULL, &TaskFreqStamps_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1479,60 +1553,112 @@ __weak void TouchGFX_Task(void *argument)
   /* USER CODE END 5 */
 }
 
-/* USER CODE BEGIN Header_StartTaskTimeCount */
+/* USER CODE BEGIN Header_StartTaskTimeSingle */
 /**
-* @brief Function implementing the myTaskTimeCount thread.
+* @brief Function implementing the TaskTimeSingle thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTaskTimeCount */
-void StartTaskTimeCount(void *argument)
+/* USER CODE END Header_StartTaskTimeSingle */
+void StartTaskTimeSingle(void *argument)
 {
-  /* USER CODE BEGIN StartTaskTimeCount */
+  /* USER CODE BEGIN StartTaskTimeSingle */
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetDataTimeHandle != NULL)
-	  {
-		  counterT++;
-		  if (osSemaphoreAcquire(myBinarySemGetDataTimeHandle, (uint32_t) 10) == osOK && counterT > 1)
-		  {
-			  testDisplay += 10;
-
-			  counterT = 2;
-		  }
-	  }
-	  osDelay(1);
+    osDelay(1);
   }
-  /* USER CODE END StartTaskTimeCount */
+  /* USER CODE END StartTaskTimeSingle */
 }
 
-/* USER CODE BEGIN Header_StartTaskFreqCount */
+/* USER CODE BEGIN Header_StartTaskFreqSingle */
 /**
-* @brief Function implementing the myTaskFreqCount thread.
+* @brief Function implementing the TaskFreqSingle thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTaskFreqCount */
-void StartTaskFreqCount(void *argument)
+/* USER CODE END Header_StartTaskFreqSingle */
+void StartTaskFreqSingle(void *argument)
 {
-  /* USER CODE BEGIN StartTaskFreqCount */
+  /* USER CODE BEGIN StartTaskFreqSingle */
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetDataFreqHandle != NULL)
-	  {
-		  counterF++;
-		  if (osSemaphoreAcquire(myBinarySemGetDataFreqHandle, (uint32_t) 10) == osOK && counterF > 1)
-		  {
-			  testDisplayFreq += 5;
-
-			  counterF = 2;
-		  }
-	  }
-	  osDelay(1);
+    osDelay(1);
   }
-  /* USER CODE END StartTaskFreqCount */
+  /* USER CODE END StartTaskFreqSingle */
+}
+
+/* USER CODE BEGIN Header_StartTaskTimeConst */
+/**
+* @brief Function implementing the TaskTimeConst thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskTimeConst */
+void StartTaskTimeConst(void *argument)
+{
+  /* USER CODE BEGIN StartTaskTimeConst */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskTimeConst */
+}
+
+/* USER CODE BEGIN Header_StartTaskFreqConst */
+/**
+* @brief Function implementing the TaskFreqConst thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskFreqConst */
+void StartTaskFreqConst(void *argument)
+{
+  /* USER CODE BEGIN StartTaskFreqConst */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskFreqConst */
+}
+
+/* USER CODE BEGIN Header_StartTaskTimeStamps */
+/**
+* @brief Function implementing the TaskTimeStamps thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskTimeStamps */
+void StartTaskTimeStamps(void *argument)
+{
+  /* USER CODE BEGIN StartTaskTimeStamps */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskTimeStamps */
+}
+
+/* USER CODE BEGIN Header_StartTaskFreqStamps */
+/**
+* @brief Function implementing the TaskFreqStamps thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskFreqStamps */
+void StartTaskFreqStamps(void *argument)
+{
+  /* USER CODE BEGIN StartTaskFreqStamps */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskFreqStamps */
 }
 
 /* MPU Configuration */

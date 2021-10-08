@@ -432,10 +432,10 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textContinuous.setTypedText(touchgfx::TypedText(T_SINGLEUSEID53));
     swipeContainerTimeSESSION.add(textContinuous);
 
-    buttonOkConfigTime.setXY(732, 351);
-    buttonOkConfigTime.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
-    buttonOkConfigTime.setAction(buttonCallback);
-    swipeContainerTimeSESSION.add(buttonOkConfigTime);
+    buttonOkConfigTimeSingle.setXY(732, 351);
+    buttonOkConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonOkConfigTimeSingle.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(buttonOkConfigTimeSingle);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(3);
 
@@ -526,12 +526,12 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //Call turnTiMaxRange
         turnTiMaxRange();
     }
-    else if (&src == &buttonOkConfigTime)
+    else if (&src == &buttonOkConfigTimeSingle)
     {
-        //OkFinishTimeMode
-        //When buttonOkConfigTime clicked call virtual function
-        //Call FinishSetupTimeMode
-        FinishSetupTimeMode();
+        //FinishTimeModeSingle
+        //When buttonOkConfigTimeSingle clicked call virtual function
+        //Call FinishSetupTimeModeSingle
+        FinishSetupTimeModeSingle();
     }
 }
 

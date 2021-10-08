@@ -18,7 +18,7 @@ public:
     virtual void scrollWheelINPUTUpdateItem(ChannelContainer& item, int16_t itemIndex);
     virtual void scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter& item, int16_t itemIndex);
 
-    virtual void FinishSetupFreqMode();
+    virtual void FinishSetupFreqModeSingle();
 
     // funkcja dla przycisku onoff INPUT
     virtual void toggleChannelState();

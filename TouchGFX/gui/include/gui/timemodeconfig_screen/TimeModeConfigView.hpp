@@ -97,7 +97,7 @@ public:
     /**
      * @brief Funkcja wykonujaca sie po nacisnieciu przycisku OK ktora konczy konfiguracje.
      */
-    virtual void FinishSetupTimeMode();
+    virtual void FinishSetupTimeModeSingle();
 
     /**
      * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button, ustawia stan odcinka czasowego.

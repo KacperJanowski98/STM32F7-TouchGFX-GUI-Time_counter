@@ -83,7 +83,7 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
-    virtual void FinishSetupTimeMode()
+    virtual void FinishSetupTimeModeSingle()
     {
         // Override and implement this function in TimeModeConfig
     }
@@ -181,7 +181,7 @@ protected:
     touchgfx::RadioButton radioContinuous;
     touchgfx::TextArea textSingle;
     touchgfx::TextArea textContinuous;
-    touchgfx::Button buttonOkConfigTime;
+    touchgfx::Button buttonOkConfigTimeSingle;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupModeSession;

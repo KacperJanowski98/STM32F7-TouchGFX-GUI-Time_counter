@@ -696,8 +696,8 @@ void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 }
 
 //
-void TimeModeConfigView::FinishSetupTimeMode()
+void TimeModeConfigView::FinishSetupTimeModeSingle()
 {
-	presenter->askForDataTime();
+	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();
 }

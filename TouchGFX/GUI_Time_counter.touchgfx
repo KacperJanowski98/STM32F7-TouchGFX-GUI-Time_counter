@@ -294,34 +294,6 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId54",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textMain",
-            "X": 261,
-            "Y": 228,
-            "Width": 278,
-            "Height": 25,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
           }
         ],
         "Interactions": [
@@ -1878,7 +1850,7 @@
                     "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
                     "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
                     "Alpha": 255,
-                    "Name": "buttonOkConfigTime",
+                    "Name": "buttonOkConfigTimeSingle",
                     "X": 732,
                     "Y": 351,
                     "Width": 60,
@@ -1981,15 +1953,15 @@
             }
           },
           {
-            "InteractionName": "OkFinishTimeMode",
+            "InteractionName": "FinishTimeModeSingle",
             "HasCompletedTrigger": false,
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonOkConfigTime"
+              "TriggerComponent": "buttonOkConfigTimeSingle"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "FinishSetupTimeMode"
+              "FunctionName": "FinishSetupTimeModeSingle"
             }
           },
           {
@@ -2059,62 +2031,6 @@
             "Y": 420,
             "Width": 170,
             "Height": 60,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId84",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textMain",
-            "X": 261,
-            "Y": 228,
-            "Width": 278,
-            "Height": 25,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId85",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": false,
-            "LineSpacing": 0,
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 10
-            },
-            "Name": "textMainF",
-            "X": 261,
-            "Y": 228,
-            "Width": 278,
-            "Height": 25,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -3537,7 +3453,7 @@
                     "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
                     "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
                     "Alpha": 255,
-                    "Name": "buttonOkConfigFreq",
+                    "Name": "buttonOkConfigFreqSingle",
                     "X": 732,
                     "Y": 351,
                     "Width": 60,
@@ -3574,7 +3490,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqMESSETUP",
+            "SelectedPage": "swipeContainerFreqSESSION",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,
@@ -3628,15 +3544,15 @@
             }
           },
           {
-            "InteractionName": "FinishConfigOkButton",
+            "InteractionName": "FinishFreqModeSingle",
             "HasCompletedTrigger": false,
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonOkConfigFreq"
+              "TriggerComponent": "buttonOkConfigFreqSingle"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "FinishSetupFreqMode"
+              "FunctionName": "FinishSetupFreqModeSingle"
             }
           }
         ],
@@ -3907,10 +3823,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId54",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId55",
         "IsResource": false
       },
@@ -4004,14 +3916,6 @@
       },
       {
         "TextEntryId": "SingleUseId83",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId84",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId85",
         "IsResource": false
       }
     ],
