@@ -9,6 +9,8 @@
 #include <gui/timemode_screen/TimeModePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class TimeModeViewBase : public touchgfx::View<TimeModePresenter>
 {
@@ -30,6 +32,161 @@ protected:
     touchgfx::Button buttonBackMenuT;
     touchgfx::Button buttonConfig;
     touchgfx::Button buttonReset;
+    touchgfx::TextAreaWithOneWildcard textTi1start;
+    touchgfx::TextAreaWithOneWildcard texTi1stop;
+    touchgfx::TextAreaWithOneWildcard textTi2start;
+    touchgfx::TextAreaWithOneWildcard texTi2stop;
+    touchgfx::TextAreaWithOneWildcard textTi3start;
+    touchgfx::TextAreaWithOneWildcard texTi3stop;
+    touchgfx::TextAreaWithOneWildcard textTi4start;
+    touchgfx::TextAreaWithOneWildcard texTi4stop;
+    touchgfx::TextAreaWithOneWildcard textTi5start;
+    touchgfx::TextAreaWithOneWildcard texTi5stop;
+    touchgfx::TextAreaWithOneWildcard textTi6start;
+    touchgfx::TextAreaWithOneWildcard texTi6stop;
+    touchgfx::TextAreaWithOneWildcard textTi7start;
+    touchgfx::TextAreaWithOneWildcard texTi7stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps1start;
+    touchgfx::TextArea textStampsLabel;
+    touchgfx::TextArea textSampleLabel;
+    touchgfx::TextAreaWithTwoWildcards textStamps1stop;
+    touchgfx::TextAreaWithOneWildcard textSample1;
+    touchgfx::TextArea textMeanLabel;
+    touchgfx::TextArea textStdDevLabel;
+    touchgfx::TextAreaWithTwoWildcards textStamps2start;
+    touchgfx::TextAreaWithTwoWildcards textStamps2stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps3start;
+    touchgfx::TextAreaWithTwoWildcards textStamps3stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps4start;
+    touchgfx::TextAreaWithTwoWildcards textStamps4stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps5start;
+    touchgfx::TextAreaWithTwoWildcards textStamps5stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps6start;
+    touchgfx::TextAreaWithTwoWildcards textStamps6stop;
+    touchgfx::TextAreaWithTwoWildcards textStamps7start;
+    touchgfx::TextAreaWithTwoWildcards textStamps7stop;
+    touchgfx::TextAreaWithOneWildcard textSample2;
+    touchgfx::TextAreaWithOneWildcard textSample3;
+    touchgfx::TextAreaWithOneWildcard textSample4;
+    touchgfx::TextAreaWithOneWildcard textSample5;
+    touchgfx::TextAreaWithOneWildcard textSample6;
+    touchgfx::TextAreaWithOneWildcard textSample7;
+    touchgfx::TextAreaWithOneWildcard textMeanVal1;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal1;
+    touchgfx::TextAreaWithOneWildcard textMeanVal2;
+    touchgfx::TextAreaWithOneWildcard textMeanVal3;
+    touchgfx::TextAreaWithOneWildcard textMeanVal4;
+    touchgfx::TextAreaWithOneWildcard textMeanVal5;
+    touchgfx::TextAreaWithOneWildcard textMeanVal6;
+    touchgfx::TextAreaWithOneWildcard textMeanVal7;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal2;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal3;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal4;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal5;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal6;
+    touchgfx::TextAreaWithOneWildcard textStdDevVal7;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTTI1START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi1startBuffer[TEXTTI1START_SIZE];
+    static const uint16_t TEXTI1STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi1stopBuffer[TEXTI1STOP_SIZE];
+    static const uint16_t TEXTTI2START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi2startBuffer[TEXTTI2START_SIZE];
+    static const uint16_t TEXTI2STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi2stopBuffer[TEXTI2STOP_SIZE];
+    static const uint16_t TEXTTI3START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi3startBuffer[TEXTTI3START_SIZE];
+    static const uint16_t TEXTI3STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi3stopBuffer[TEXTI3STOP_SIZE];
+    static const uint16_t TEXTTI4START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi4startBuffer[TEXTTI4START_SIZE];
+    static const uint16_t TEXTI4STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi4stopBuffer[TEXTI4STOP_SIZE];
+    static const uint16_t TEXTTI5START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi5startBuffer[TEXTTI5START_SIZE];
+    static const uint16_t TEXTI5STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi5stopBuffer[TEXTI5STOP_SIZE];
+    static const uint16_t TEXTTI6START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi6startBuffer[TEXTTI6START_SIZE];
+    static const uint16_t TEXTI6STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi6stopBuffer[TEXTI6STOP_SIZE];
+    static const uint16_t TEXTTI7START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTi7startBuffer[TEXTTI7START_SIZE];
+    static const uint16_t TEXTI7STOP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar texTi7stopBuffer[TEXTI7STOP_SIZE];
+    static const uint16_t TEXTSTAMPS1STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps1startBuffer1[TEXTSTAMPS1STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS1STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps1stopBuffer1[TEXTSTAMPS1STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSAMPLE1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample1Buffer[TEXTSAMPLE1_SIZE];
+    static const uint16_t TEXTSTAMPS2STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps2startBuffer1[TEXTSTAMPS2STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS2STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps2stopBuffer1[TEXTSTAMPS2STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS3STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps3startBuffer1[TEXTSTAMPS3STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS3STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps3stopBuffer1[TEXTSTAMPS3STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS4STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps4startBuffer1[TEXTSTAMPS4STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS4STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps4stopBuffer1[TEXTSTAMPS4STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS5STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps5startBuffer1[TEXTSTAMPS5STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS5STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps5stopBuffer1[TEXTSTAMPS5STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS6STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps6startBuffer1[TEXTSTAMPS6STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS6STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps6stopBuffer1[TEXTSTAMPS6STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS7STARTBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps7startBuffer1[TEXTSTAMPS7STARTBUFFER1_SIZE];
+    static const uint16_t TEXTSTAMPS7STOPBUFFER1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStamps7stopBuffer1[TEXTSTAMPS7STOPBUFFER1_SIZE];
+    static const uint16_t TEXTSAMPLE2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample2Buffer[TEXTSAMPLE2_SIZE];
+    static const uint16_t TEXTSAMPLE3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample3Buffer[TEXTSAMPLE3_SIZE];
+    static const uint16_t TEXTSAMPLE4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample4Buffer[TEXTSAMPLE4_SIZE];
+    static const uint16_t TEXTSAMPLE5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample5Buffer[TEXTSAMPLE5_SIZE];
+    static const uint16_t TEXTSAMPLE6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample6Buffer[TEXTSAMPLE6_SIZE];
+    static const uint16_t TEXTSAMPLE7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSample7Buffer[TEXTSAMPLE7_SIZE];
+    static const uint16_t TEXTMEANVAL1_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal1Buffer[TEXTMEANVAL1_SIZE];
+    static const uint16_t TEXTSTDDEVVAL1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal1Buffer[TEXTSTDDEVVAL1_SIZE];
+    static const uint16_t TEXTMEANVAL2_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal2Buffer[TEXTMEANVAL2_SIZE];
+    static const uint16_t TEXTMEANVAL3_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal3Buffer[TEXTMEANVAL3_SIZE];
+    static const uint16_t TEXTMEANVAL4_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal4Buffer[TEXTMEANVAL4_SIZE];
+    static const uint16_t TEXTMEANVAL5_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal5Buffer[TEXTMEANVAL5_SIZE];
+    static const uint16_t TEXTMEANVAL6_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal6Buffer[TEXTMEANVAL6_SIZE];
+    static const uint16_t TEXTMEANVAL7_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textMeanVal7Buffer[TEXTMEANVAL7_SIZE];
+    static const uint16_t TEXTSTDDEVVAL2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal2Buffer[TEXTSTDDEVVAL2_SIZE];
+    static const uint16_t TEXTSTDDEVVAL3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal3Buffer[TEXTSTDDEVVAL3_SIZE];
+    static const uint16_t TEXTSTDDEVVAL4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal4Buffer[TEXTSTDDEVVAL4_SIZE];
+    static const uint16_t TEXTSTDDEVVAL5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal5Buffer[TEXTSTDDEVVAL5_SIZE];
+    static const uint16_t TEXTSTDDEVVAL6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal6Buffer[TEXTSTDDEVVAL6_SIZE];
+    static const uint16_t TEXTSTDDEVVAL7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textStdDevVal7Buffer[TEXTSTDDEVVAL7_SIZE];
 
 private:
 
