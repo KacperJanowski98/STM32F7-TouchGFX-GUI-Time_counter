@@ -26,8 +26,6 @@
 /* USER CODE BEGIN Includes */
 #include "../mx25l512/mx25l512.h"
 #include "../otm8009a/otm8009a.h"
-
-#include "TimeModeData.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -169,9 +167,8 @@ const osSemaphoreAttr_t myBinarySemGetFreqStamps_attributes = {
 uint8_t counterT = 0;
 uint8_t counterF = 0;
 
-TimeMode_t Time;
-
-ResultTime_t ResultTime;
+TimeMode_t TimeBackend;
+ResultTime_t ResultTimeBackend;
 
 /* USER CODE END PV */
 
@@ -258,8 +255,8 @@ int main(void)
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
-  TimeModeInit(&Time);
-  ResultTimeInit(&ResultTime);
+  TimeModeInit(&TimeBackend);
+  ResultTimeInit(&ResultTimeBackend);
 
   /* USER CODE END 2 */
 

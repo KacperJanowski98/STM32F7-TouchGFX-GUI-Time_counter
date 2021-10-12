@@ -6,12 +6,17 @@
 #include <cstdint>
 #include <algorithm>
 #include <vector>
+#include "main.h"
+#include "cmsis_os.h"
+#include "cmsis_os2.h"
 
-extern "C"
-{
-	#include "cmsis_os.h"
-	#include "cmsis_os2.h"
-}
+//extern "C"
+//{
+//
+//}
+
+extern TimeMode_t TimeBackend;
+extern ResultTime_t ResultTimeBackend;
 
 class ModelListener;
 
