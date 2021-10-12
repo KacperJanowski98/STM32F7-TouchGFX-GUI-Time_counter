@@ -392,7 +392,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderStampsNumber.setXY(111, 275);
     sliderStampsNumber.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
     sliderStampsNumber.setupHorizontalSlider(3, 7, 0, 0, 125);
-    sliderStampsNumber.setValueRange(0, 100);
+    sliderStampsNumber.setValueRange(0, 1000);
     sliderStampsNumber.setValue(0);
     swipeContainerTimeSESSION.add(sliderStampsNumber);
 
