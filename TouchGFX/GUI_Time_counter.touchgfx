@@ -357,7 +357,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi1stop",
+            "Name": "textTi1stop",
             "X": 153,
             "Y": 124,
             "Width": 69,
@@ -413,7 +413,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi2stop",
+            "Name": "textTi2stop",
             "X": 153,
             "Y": 171,
             "Width": 69,
@@ -469,7 +469,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi3stop",
+            "Name": "textTi3stop",
             "X": 153,
             "Y": 219,
             "Width": 69,
@@ -525,7 +525,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi4stop",
+            "Name": "textTi4stop",
             "X": 153,
             "Y": 266,
             "Width": 69,
@@ -581,7 +581,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi5stop",
+            "Name": "textTi5stop",
             "X": 153,
             "Y": 315,
             "Width": 69,
@@ -637,7 +637,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi6stop",
+            "Name": "textTi6stop",
             "X": 153,
             "Y": 364,
             "Width": 69,
@@ -693,7 +693,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "texTi7stop",
+            "Name": "textTi7stop",
             "X": 153,
             "Y": 412,
             "Width": 69,
@@ -721,15 +721,11 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps1start",
             "X": 234,
             "Y": 118,
-            "Width": 77,
-            "Height": 19,
+            "Width": 35,
+            "Height": 18,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -801,15 +797,11 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps1stop",
             "X": 234,
             "Y": 137,
-            "Width": 77,
-            "Height": 16,
+            "Width": 35,
+            "Height": 18,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -909,14 +901,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps2start",
             "X": 234,
             "Y": 169,
-            "Width": 77,
+            "Width": 35,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -941,14 +929,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps2stop",
             "X": 234,
             "Y": 188,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -973,14 +957,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps3start",
             "X": 234,
             "Y": 215,
-            "Width": 77,
+            "Width": 35,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -1005,14 +985,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps3stop",
             "X": 234,
             "Y": 234,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -1037,14 +1013,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps4start",
             "X": 234,
             "Y": 262,
-            "Width": 77,
+            "Width": 35,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -1069,14 +1041,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps4stop",
             "X": 234,
             "Y": 281,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -1101,14 +1069,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps5start",
             "X": 234,
             "Y": 311,
-            "Width": 77,
+            "Width": 35,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -1133,14 +1097,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps5stop",
             "X": 234,
             "Y": 330,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -1165,14 +1125,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps6start",
             "X": 234,
             "Y": 360,
-            "Width": 77,
+            "Width": 35,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -1197,14 +1153,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps6stop",
             "X": 234,
             "Y": 379,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -1229,14 +1181,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps7start",
             "X": 235,
             "Y": 408,
-            "Width": 77,
+            "Width": 34,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -1261,14 +1209,10 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Wildcard2": {
-              "UseBuffer": false,
-              "BufferSize": 0
-            },
             "Name": "textStamps7stop",
             "X": 234,
             "Y": 427,
-            "Width": 77,
+            "Width": 35,
             "Height": 16,
             "Visible": true,
             "LockPosition": false,
@@ -1459,7 +1403,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal1",
             "X": 411,
@@ -1515,7 +1459,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal2",
             "X": 411,
@@ -1543,7 +1487,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal3",
             "X": 411,
@@ -1571,7 +1515,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal4",
             "X": 411,
@@ -1599,7 +1543,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal5",
             "X": 411,
@@ -1627,7 +1571,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal6",
             "X": 411,
@@ -1655,7 +1599,7 @@
             "LineSpacing": 0,
             "Wildcard1": {
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 22
             },
             "Name": "textMeanVal7",
             "X": 411,
@@ -1830,6 +1774,398 @@
             "Y": 412,
             "Width": 64,
             "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId143",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps1startVal",
+            "X": 269,
+            "Y": 118,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId144",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps1stopVal",
+            "X": 269,
+            "Y": 137,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId145",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps2startVal",
+            "X": 269,
+            "Y": 168,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId146",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps2stopVal",
+            "X": 269,
+            "Y": 187,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId147",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps3startVal",
+            "X": 269,
+            "Y": 216,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId148",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps3stopVal",
+            "X": 269,
+            "Y": 235,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId149",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps4startVal",
+            "X": 269,
+            "Y": 263,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId150",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps4stopVal",
+            "X": 269,
+            "Y": 282,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId151",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps5startVal",
+            "X": 269,
+            "Y": 311,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId152",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps5stopVal",
+            "X": 269,
+            "Y": 330,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId153",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps6startVal",
+            "X": 269,
+            "Y": 360,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId154",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps6stopVal",
+            "X": 269,
+            "Y": 379,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId155",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps7startVal",
+            "X": 269,
+            "Y": 408,
+            "Width": 45,
+            "Height": 18,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId156",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textStamps7stopVal",
+            "X": 269,
+            "Y": 428,
+            "Width": 45,
+            "Height": 18,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -5702,6 +6038,62 @@
       },
       {
         "TextEntryId": "SingleUseId142",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId143",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId144",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId145",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId146",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId147",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId148",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId149",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId150",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId151",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId152",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId153",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId154",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId155",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId156",
         "IsResource": false
       }
     ],
