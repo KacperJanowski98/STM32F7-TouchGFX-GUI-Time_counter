@@ -8,13 +8,78 @@
 #ifndef INC_TIMEMODEDATA_H_
 #define INC_TIMEMODEDATA_H_
 
-typedef struct {
-	uint8_t startIn;
-	uint8_t stopIn;
-	uint16_t stampsNumber;
-	uint16_t stampleNumber;
-	// mean float or double or uint?
-	// stdDev float or double or uint?
-}TimeMode_t;
+#include "Session.h"
+
+typedef struct
+{
+    bool tiState;
+    uint8_t startIn;
+    uint8_t stopIn;
+} TimeTi_t;
+
+typedef struct
+{
+    bool channelState;
+    Slope_t slope;
+    uint32_t threshold;
+} TimeChannel_t;
+
+typedef struct
+{
+    TimeChannel_t Channel1;
+    TimeChannel_t Channel2;
+    TimeChannel_t Channel3;
+    TimeChannel_t Channel4;
+    TimeChannel_t Channel5;
+    TimeChannel_t Channel6;
+    TimeChannel_t Channel7;
+    TimeChannel_t Channel8;
+    TimeTi_t TiSetup1;
+    TimeTi_t TiSetup2;
+    TimeTi_t TiSetup3;
+    TimeTi_t TiSetup4;
+    TimeTi_t TiSetup5;
+    TimeTi_t TiSetup6;
+    TimeTi_t TiSetup7;
+    SessionSetup_t TimeSession;
+} TimeMode_t;
+
+typedef struct
+{
+    float mean;
+    float stdDev;
+    Unit_t meanUnit;
+} MeasTime_t;
+
+typedef struct
+{
+    MeasTime_t measure1;
+    MeasTime_t measure2;
+    MeasTime_t measure3;
+    MeasTime_t measure4;
+    MeasTime_t measure5;
+    MeasTime_t measure6;
+    MeasTime_t measure7;
+} ResultTime_t;
+
+void TimeChannelInit(TimeChannel_t *pTimeChannel);
+
+void TimeTiInit(TimeTi_t *pTimeTiParam);
+
+void TimeModeInit(TimeMode_t *pTimeMode);
+
+void ResultTimeInit(ResultTime_t *pResultTime);
+
+void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
+
+void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
+
+void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
+
+float calculateSingleMeas(int min, int max);
+
+void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
+
+Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
 #endif /* INC_TIMEMODEDATA_H_ */
