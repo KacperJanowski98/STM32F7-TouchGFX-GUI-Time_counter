@@ -1129,7 +1129,7 @@
                     "IsHorizontal": false,
                     "IsCircular": false,
                     "ItemTemplateName": "ChannelContainer",
-                    "NumberofItems": 8,
+                    "NumberofItems": 7,
                     "InitialElement": 0,
                     "ItemMargin": 0,
                     "Easing": "Circ",

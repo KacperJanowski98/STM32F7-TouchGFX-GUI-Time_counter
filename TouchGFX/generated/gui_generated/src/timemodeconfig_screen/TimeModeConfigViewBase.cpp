@@ -219,7 +219,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelTISetup.setEasingEquation(touchgfx::EasingEquations::circEaseOut);
     scrollWheelTISetup.setSwipeAcceleration(40);
     scrollWheelTISetup.setDragAcceleration(10);
-    scrollWheelTISetup.setNumberOfItems(8);
+    scrollWheelTISetup.setNumberOfItems(7);
     scrollWheelTISetup.setSelectedItemOffset(120);
     scrollWheelTISetup.setSelectedItemExtraSize(0, 0);
     scrollWheelTISetup.setSelectedItemMargin(0, 0);

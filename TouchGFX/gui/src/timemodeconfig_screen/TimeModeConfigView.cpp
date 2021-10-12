@@ -43,9 +43,13 @@ void TimeModeConfigView::setupScreen()
 	for (int i = 0; i < scrollWheelINPUTListItems.getNumberOfDrawables(); i++)
 	{
 		scrollWheelINPUT.itemChanged(i);
-		scrollWheelTISetup.itemChanged(i);
 	}
 	scrollWheelINPUT.animateToItem(3);
+
+	for (int i = 0; i < scrollWheelTISetupListItems.getNumberOfDrawables(); i++)
+	{
+		scrollWheelTISetup.itemChanged(i);
+	}
 	scrollWheelTISetup.animateToItem(3);
 
 	// Aktualizacja elementow scroll wheel dla ustawienia kanalu start i stop.
@@ -191,9 +195,6 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 		break;
 	case 7:
 		pChannelTI = pChannel7;
-		break;
-	case 8:
-		pChannelTI = pChannel8;
 		break;
 	}
 	updateStartStopIn(pChannelTI);
