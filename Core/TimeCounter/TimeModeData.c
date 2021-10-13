@@ -188,6 +188,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         pResultTime->measure7.mean = calculateSingleMeas(min, max);
         pResultTime->measure7.meanUnit = setUnitMeanTime(start, stop);
     }
+    pTimeMode->TimeSession.stampsNumber = 1;
 }
 
 void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
