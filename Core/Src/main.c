@@ -1598,9 +1598,11 @@ void StartTaskTimeSingle(void *argument)
   {
 	  if (myBinarySemGetTimeSingleHandle != NULL)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK)
+		  counterSingleT++;
+		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK && counterSingleT > 1)
 		  {
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
+			  counterSingleT = 2;
 		  }
 	  }
     osDelay(1);
@@ -1713,12 +1715,12 @@ void StartTaskResetParam(void *argument)
   {
 	  if (myBinarySemResetParamHandle != NULL)
 	  {
-//		  countReset++;
-		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK)
+		  countReset++;
+		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK && countReset > 1)
 		  {
 			  TimeModeInit(&TimeBackend);
 			  ResultTimeInit(&ResultTimeBackend);
-//			  countReset = 2;
+			  countReset = 2;
 		  }
 	  }
     osDelay(1);

@@ -64,15 +64,6 @@ void TimeModeConfigView::setupScreen()
 	}
 	scrollWheelINPUT.animateToItem(3);
 
-	for (int i = 0; i < scrollWheelTISetupListItems.getNumberOfDrawables(); i++)
-	{
-		scrollWheelTISetup.itemChanged(i);
-	}
-	scrollWheelTISetup.animateToItem(3);
-
-	// Aktualizacja elementow scroll wheel dla ustawienia kanalu start i stop.
-	updateScrollTiSetup();
-
 //    TimeModeConfigViewBase::setupScreen();
 
 	// obsluga sliderow
@@ -106,6 +97,16 @@ void TimeModeConfigView::setupScreen()
 	setActiveListChannels(6, pChannel6->getStateChannel());
 	setActiveListChannels(7, pChannel7->getStateChannel());
 	setActiveListChannels(8, pChannel8->getStateChannel());
+
+	// Aktualizacja elementow scroll wheel dla ustawienia kanalu start i stop.
+	updateScrollTiSetup();
+
+	for (int i = 0; i < scrollWheelTISetupListItems.getNumberOfDrawables(); i++)
+	{
+		scrollWheelTISetup.itemChanged(i);
+	}
+	scrollWheelTISetup.animateToItem(0);
+
 }
 
 void TimeModeConfigView::tearDownScreen()
@@ -222,9 +223,9 @@ void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected
 		pChannelTI = pChannel7;
 		break;
 	}
-	updateStartStopIn(pChannelTI);
-	updateStartStopScroolList(pChannelTI);
 	toggleTiSetup.forceState(pChannelTI->getTiState());
+	updateStartStopScroolList(pChannelTI);
+	updateStartStopIn(pChannelTI);
 	toggleTiSetup.invalidate();
 }
 void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
@@ -232,40 +233,43 @@ void TimeModeConfigView::scrollWheelStartAnimateToHandler(int16_t itemSelected)
 	textStartChannel.invalidate();
 	m_channelTiSetupStart = activeChannels[itemSelected];
 	Unicode::snprintf(textStartChannelBuffer, TEXTSTARTCHANNEL_SIZE, "%d", m_channelTiSetupStart);	//-- remove
-	switch(m_channelTiSetup)
+	if (swipeContainerTime.getSelectedPage() == 2)
 	{
-	case 1:
-		pChannel1->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel1);
-		break;
-	case 2:
-		pChannel2->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel2);
-		break;
-	case 3:
-		pChannel3->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel3);
-		break;
-	case 4:
-		pChannel4->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel4);
-		break;
-	case 5:
-		pChannel5->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel5);
-		break;
-	case 6:
-		pChannel6->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel6);
-		break;
-	case 7:
-		pChannel7->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel7);
-		break;
-	case 8:
-		pChannel8->setStartChannel(m_channelTiSetupStart);
-		updateStartStopIn(pChannel8);
-		break;
+		switch(m_channelTiSetup)
+		{
+		case 1:
+			pChannel1->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel1);
+			break;
+		case 2:
+			pChannel2->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel2);
+			break;
+		case 3:
+			pChannel3->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel3);
+			break;
+		case 4:
+			pChannel4->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel4);
+			break;
+		case 5:
+			pChannel5->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel5);
+			break;
+		case 6:
+			pChannel6->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel6);
+			break;
+		case 7:
+			pChannel7->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel7);
+			break;
+		case 8:
+			pChannel8->setStartChannel(m_channelTiSetupStart);
+			updateStartStopIn(pChannel8);
+			break;
+		}
 	}
 }
 
@@ -274,40 +278,43 @@ void TimeModeConfigView::scrollWheelStopAnimateToHandler(int16_t itemSelected)
 	textStopChannel.invalidate();
 	m_channelTiSetupStop = activeChannels[itemSelected];
 	Unicode::snprintf(textStopChannelBuffer, TEXTSTOPCHANNEL_SIZE, "%d", m_channelTiSetupStop);	//-- remove
-	switch(m_channelTiSetup)
+	if (swipeContainerTime.getSelectedPage() == 2)
 	{
-	case 1:
-		pChannel1->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel1);
-		break;
-	case 2:
-		pChannel2->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel2);
-		break;
-	case 3:
-		pChannel3->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel3);
-		break;
-	case 4:
-		pChannel4->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel4);
-		break;
-	case 5:
-		pChannel5->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel5);
-		break;
-	case 6:
-		pChannel6->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel6);
-		break;
-	case 7:
-		pChannel7->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel7);
-		break;
-	case 8:
-		pChannel8->setStopChannel(m_channelTiSetupStop);
-		updateStartStopIn(pChannel8);
-		break;
+		switch(m_channelTiSetup)
+		{
+		case 1:
+			pChannel1->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel1);
+			break;
+		case 2:
+			pChannel2->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel2);
+			break;
+		case 3:
+			pChannel3->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel3);
+			break;
+		case 4:
+			pChannel4->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel4);
+			break;
+		case 5:
+			pChannel5->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel5);
+			break;
+		case 6:
+			pChannel6->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel6);
+			break;
+		case 7:
+			pChannel7->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel7);
+			break;
+		case 8:
+			pChannel8->setStopChannel(m_channelTiSetupStop);
+			updateStartStopIn(pChannel8);
+			break;
+		}
 	}
 }
 
@@ -465,8 +472,8 @@ void TimeModeConfigView::ChangeStateTI()
 {
 	bool CurrentState = toggleTiSetup.getState();
 	setTiChannelStateUI(pChannelTI, CurrentState);
-	updateStartStopIn(pChannelTI);
 	updateStartStopScroolList(pChannelTI);
+	updateStartStopIn(pChannelTI);
 }
 
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)
@@ -580,14 +587,14 @@ void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState
 {
 	if (chanelState == true)
 	{
-		if (!(std::find(activeChannels.begin(), activeChannels.end(), channel)!=activeChannels.end()))
+		if (std::find(activeChannels.begin(), activeChannels.end(), channel) == activeChannels.end())
 		{
 			activeChannels.push_back(channel);
 		}
 	}
 	else
 	{
-		if (std::find(activeChannels.begin(), activeChannels.end(), channel)!=activeChannels.end())
+		if (std::find(activeChannels.begin(), activeChannels.end(), channel) != activeChannels.end())
 		{
 			activeChannels.erase(std::remove(activeChannels.begin(), activeChannels.end(), channel), activeChannels.end());
 		}
@@ -616,10 +623,14 @@ void TimeModeConfigView::updateScrollTiSetup()
 		for (int i = 0; i < scrollWheelStartListItems.getNumberOfDrawables(); i++)
 		{
 			scrollWheelStart.itemChanged(i);
+		}
+		for (int i = 0; i < scrollWheelStopListItems.getNumberOfDrawables(); i++)
+		{
 			scrollWheelStop.itemChanged(i);
 		}
-		scrollWheelStart.animateToItem(0);
-		scrollWheelStop.animateToItem(0);
+//		scrollWheelStart.animateToItem(0);
+//		scrollWheelStop.animateToItem(0);
+		updateStartStopScroolList(pChannel1);
 	}
 }
 

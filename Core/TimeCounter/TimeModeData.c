@@ -56,31 +56,31 @@ void TimeModeInit(TimeMode_t *pTimeMode)
     pTimeMode->Channel8.threshold = 0;
 
     pTimeMode->TiSetup1.tiState = false;
-    pTimeMode->TiSetup1.stopIn = 0;
+    pTimeMode->TiSetup1.startIn = 0;
     pTimeMode->TiSetup1.stopIn = 0;
 
     pTimeMode->TiSetup2.tiState = false;
-    pTimeMode->TiSetup2.stopIn = 0;
+    pTimeMode->TiSetup2.startIn = 0;
     pTimeMode->TiSetup2.stopIn = 0;
 
     pTimeMode->TiSetup3.tiState = false;
-    pTimeMode->TiSetup3.stopIn = 0;
+    pTimeMode->TiSetup3.startIn = 0;
     pTimeMode->TiSetup3.stopIn = 0;
 
     pTimeMode->TiSetup4.tiState = false;
-    pTimeMode->TiSetup4.stopIn = 0;
+    pTimeMode->TiSetup4.startIn = 0;
     pTimeMode->TiSetup4.stopIn = 0;
 
     pTimeMode->TiSetup5.tiState = false;
-    pTimeMode->TiSetup5.stopIn = 0;
+    pTimeMode->TiSetup5.startIn = 0;
     pTimeMode->TiSetup5.stopIn = 0;
 
     pTimeMode->TiSetup6.tiState = false;
-    pTimeMode->TiSetup6.stopIn = 0;
+    pTimeMode->TiSetup6.startIn = 0;
     pTimeMode->TiSetup6.stopIn = 0;
 
     pTimeMode->TiSetup7.tiState = false;
-    pTimeMode->TiSetup7.stopIn = 0;
+    pTimeMode->TiSetup7.startIn = 0;
     pTimeMode->TiSetup7.stopIn = 0;
 
     pTimeMode->TimeSession.maxRange = false;
