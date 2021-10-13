@@ -1434,7 +1434,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal1",
-            "X": 695,
+            "X": 689,
             "Y": 124,
             "Width": 64,
             "Height": 25,
@@ -1630,8 +1630,8 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal2",
-            "X": 695,
-            "Y": 174,
+            "X": 689,
+            "Y": 171,
             "Width": 64,
             "Height": 25,
             "Visible": true,
@@ -1658,7 +1658,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal3",
-            "X": 695,
+            "X": 689,
             "Y": 222,
             "Width": 64,
             "Height": 25,
@@ -1686,7 +1686,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal4",
-            "X": 695,
+            "X": 689,
             "Y": 269,
             "Width": 64,
             "Height": 25,
@@ -1714,7 +1714,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal5",
-            "X": 695,
+            "X": 689,
             "Y": 321,
             "Width": 64,
             "Height": 25,
@@ -1742,7 +1742,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal6",
-            "X": 695,
+            "X": 689,
             "Y": 364,
             "Width": 64,
             "Height": 25,
@@ -1770,7 +1770,7 @@
               "BufferSize": 10
             },
             "Name": "textStdDevVal7",
-            "X": 695,
+            "X": 689,
             "Y": 412,
             "Width": 64,
             "Height": 25,

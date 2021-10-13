@@ -248,24 +248,93 @@ void TimeModeView::setupScreen()
 
     // StdDev
 
+    calculateFormatStdDevTime(ResultTimeBackend.measure1.stdDev, &m_totalStdDev1, &m_fracStdDev1);
+    Unicode::snprintf(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, "%d.%d", m_totalStdDev1, m_fracStdDev1);
+    textStdDevVal1.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
+    Unicode::snprintf(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, "%d.%d", m_totalStdDev2, m_fracStdDev2);
+    textStdDevVal2.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
+    Unicode::snprintf(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, "%d.%d", m_totalStdDev3, m_fracStdDev3);
+    textStdDevVal3.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
+    Unicode::snprintf(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, "%d.%d", m_totalStdDev4, m_fracStdDev4);
+    textStdDevVal4.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
+    Unicode::snprintf(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, "%d.%d", m_totalStdDev5, m_fracStdDev5);
+    textStdDevVal5.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
+    Unicode::snprintf(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, "%d.%d", m_totalStdDev6, m_fracStdDev6);
+    textStdDevVal6.invalidate();
+
+    calculateFormatStdDevTime(ResultTimeBackend.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
+    Unicode::snprintf(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, "%d.%d", m_totalStdDev7, m_fracStdDev7);
+    textStdDevVal7.invalidate();
 }
 
 void TimeModeView::tearDownScreen()
 {
     TimeModeViewBase::tearDownScreen();
     // reset variables
+    m_total_ti1 = 0;
+    m_frac1_ti1 = 0;
+    m_frac2_ti1 = 0;
+    m_total_ti2 = 0;
+    m_frac1_ti2 = 0;
+    m_frac2_ti2 = 0;
+    m_total_ti3 = 0;
+    m_frac1_ti3 = 0;
+    m_frac2_ti3 = 0;
+    m_total_ti4 = 0;
+    m_frac1_ti4 = 0;
+    m_frac2_ti4 = 0;
+    m_total_ti5 = 0;
+    m_frac1_ti5 = 0;
+    m_frac2_ti5 = 0;
+    m_total_ti6 = 0;
+    m_frac1_ti6 = 0;
+    m_frac2_ti6 = 0;
+    m_total_ti7 = 0;
+    m_frac1_ti7 = 0;
+    m_frac2_ti7 = 0;
+    m_totalStdDev1 = 0;
+    m_fracStdDev1 = 0;
+    m_totalStdDev2 = 0;
+    m_fracStdDev2 = 0;
+    m_totalStdDev3 = 0;
+    m_fracStdDev3 = 0;
+    m_totalStdDev4 = 0;
+    m_fracStdDev4 = 0;
+    m_totalStdDev5 = 0;
+    m_fracStdDev5 = 0;
+    m_totalStdDev6 = 0;
+    m_fracStdDev6 = 0;
+    m_totalStdDev7 = 0;
+    m_fracStdDev7 = 0;
 }
 
 void TimeModeView::calculateFormatMeanTime(float mean, int *pTotal, int *pFrac1, int *pFrac2)
 {
     int a = 0, b = 0, c = 0;
     *pTotal = mean;
-    float tmpFrac = mean - *pTotal;
-    int tmpInt2 = trunc(tmpFrac * 1000000);
-    *pFrac1 = tmpInt2;
+    float tempFrac = mean - *pTotal;
+    int tempInt2 = trunc(tempFrac * 1000000);
+    *pFrac1 = tempInt2;
     *pFrac1 /= 1000;
-    a = tmpInt2 / 100 % 10;
-    b = tmpInt2 / 10  % 10;
-    c = tmpInt2 / 1 % 10;
+    a = tempInt2 / 100 % 10;
+    b = tempInt2 / 10  % 10;
+    c = tempInt2 / 1 % 10;
     *pFrac2 = a * 100 + b * 10 + c;
+}
+
+void TimeModeView::calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFrac)
+{
+	*pTotal = stdDev;
+	float tempFrac = stdDev - *pTotal;
+	*pFrac = trunc(tempFrac * 100);
 }

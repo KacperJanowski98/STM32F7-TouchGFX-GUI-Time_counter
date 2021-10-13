@@ -275,36 +275,44 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
 {
     uint8_t distance = stop - start;
 
-    switch (distance)
+    if (distance > 0)
     {
-    case 1:
-        *min = rand() % (45 + 1 - 43) + 43;
-        *max = rand() % (53 + 1 - 50) + 50;
-        break;
-    case 2:
-        *min = rand() % (4 + 1 - 3) + 3;
-        *max = rand() % (7 + 1 - 5) + 5;
-        break;
-    case 3:
-        *min = rand() % (20 + 1 - 15) + 15;
-        *max = rand() % (26 + 1 - 21) + 21;
-        break;
-    case 4:
-        *min = rand() % (96 + 1 - 94) + 94;
-        *max = rand() % (102 + 1 - 100) + 100;
-        break;
-    case 5:
-        *min = rand() % (2 + 1 - 1) + 1;
-        *max = rand() % (4 + 1 - 3) + 3;
-        break;
-    case 6:
-        *min = rand() % (9 + 1 - 7) + 7;
-        *max = rand() % (12 + 1 - 10) + 10;
-        break;
-    case 7:
-        *min = rand() % (98 + 1 - 96) + 96;
-        *max = rand() % (102 + 1 - 100) + 100;
-        break;
+        switch (distance)
+        {
+        case 1:
+            *min = rand() % (45 + 1 - 43) + 43;
+            *max = rand() % (53 + 1 - 50) + 50;
+            break;
+        case 2:
+            *min = rand() % (4 + 1 - 3) + 3;
+            *max = rand() % (7 + 1 - 5) + 5;
+            break;
+        case 3:
+            *min = rand() % (20 + 1 - 15) + 15;
+            *max = rand() % (26 + 1 - 21) + 21;
+            break;
+        case 4:
+            *min = rand() % (96 + 1 - 94) + 94;
+            *max = rand() % (102 + 1 - 100) + 100;
+            break;
+        case 5:
+            *min = rand() % (2 + 1 - 1) + 1;
+            *max = rand() % (4 + 1 - 3) + 3;
+            break;
+        case 6:
+            *min = rand() % (9 + 1 - 7) + 7;
+            *max = rand() % (12 + 1 - 10) + 10;
+            break;
+        case 7:
+            *min = rand() % (98 + 1 - 96) + 96;
+            *max = rand() % (102 + 1 - 100) + 100;
+            break;
+        }
+    }
+    else
+    {
+    	*min = 1;
+    	*max = 2;
     }
 }
 
@@ -313,29 +321,37 @@ Unit_t setUnitMeanTime(uint8_t start, uint8_t stop)
     uint8_t distance = stop - start;
     Unit_t result;
 
-    switch (distance)
+    if (distance > 0)
     {
-    case 1:
-        result = NANO;
-        break;
-    case 2:
-        result = MICRO;
-        break;
-    case 3:
-        result = MICRO;
-        break;
-    case 4:
-        result = MICRO;
-        break;
-    case 5:
-        result = MILLI;
-        break;
-    case 6:
-        result = MILLI;
-        break;
-    case 7:
-        result = MILLI;
-        break;
+        switch (distance)
+        {
+        case 1:
+            result = NANO;
+            break;
+        case 2:
+            result = MICRO;
+            break;
+        case 3:
+            result = MICRO;
+            break;
+        case 4:
+            result = MICRO;
+            break;
+        case 5:
+            result = MILLI;
+            break;
+        case 6:
+            result = MILLI;
+            break;
+        case 7:
+            result = MILLI;
+            break;
+        }
     }
+    else
+    {
+    	result = PICO;
+    }
+
     return result;
 }
