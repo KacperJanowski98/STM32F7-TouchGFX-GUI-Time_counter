@@ -83,6 +83,7 @@ void TimeModeInit(TimeMode_t *pTimeMode)
     pTimeMode->TiSetup7.stopIn = 0;
     pTimeMode->TiSetup7.stopIn = 0;
 
+    pTimeMode->TimeSession.maxRange = false;
     pTimeMode->TimeSession.clock = INTERNAL_QUARTZ;
     pTimeMode->TimeSession.repeat = 0;
     pTimeMode->TimeSession.stampsNumber = 0;

@@ -14,6 +14,7 @@
 
 #pragma once
 
+#include <gui/lib/TimeModeParameter.hpp>
 #include <iostream>
 #include <cstdint>
 
@@ -24,6 +25,7 @@ public:
 	 * Konstruktor.
 	 */
 	explicit SessionSetup(bool maxRange,
+							ClockName clock,
 							uint16_t range,
 							uint16_t stamps,
 							uint16_t repeat);
@@ -59,6 +61,13 @@ public:
 	 * @param state True ustawienie maksymalnego zakresu, false ustawienie manualne.
 	 */
 	void setMaxRange(bool state);
+
+	/**
+	 * @brief Ustawienie zrodla zegarowego.
+	 *
+	 * @param Zrodlo zegara.
+	 */
+	void setClockSource(ClockName clock);
 
 	/**
 	 * @brief Ustawienie zakresu.
@@ -97,6 +106,13 @@ public:
 	bool getMaxRange();
 
 	/**
+	 * @brief Funkcja zwracajaca zrodlo sygnalu zegarowego.
+	 *
+	 * @return Zrodlo zegara.
+	 */
+	ClockName getSourceClock();
+
+	/**
 	 * @brief Funkcja zwracajaca wartosc zakresu.
 	 * 
 	 * @return uint16_t Zakres.
@@ -126,6 +142,7 @@ public:
 
 private:
 	bool m_maxRange;
+	ClockName m_clock;
 	uint16_t m_range;
 	uint16_t m_stamps;
 	uint16_t m_repeat;

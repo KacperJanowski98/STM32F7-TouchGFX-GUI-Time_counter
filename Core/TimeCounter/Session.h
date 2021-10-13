@@ -38,6 +38,7 @@ typedef enum
 
 typedef struct
 {
+	bool maxRange;
     Clock_t clock;
     uint16_t tiRange;
     uint16_t stampsNumber;

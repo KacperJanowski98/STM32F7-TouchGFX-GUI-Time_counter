@@ -225,6 +225,8 @@ public:
     //:TODO
     void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
 
+    void updateTimeParameterBackend();
+
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony

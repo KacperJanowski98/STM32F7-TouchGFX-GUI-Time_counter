@@ -9,6 +9,7 @@
 
 void SessionInit(SessionSetup_t *pSessionSetup)
 {
+	pSessionSetup->maxRange = false;
     pSessionSetup->clock = INTERNAL_QUARTZ;
     pSessionSetup->repeat = 0;
     pSessionSetup->stampsNumber = 0;

@@ -16,7 +16,7 @@ FreqModeConfigView::FreqModeConfigView()
 	, Channel6(6, false, SlopeName::UP, 0)
 	, Channel7(7, false, SlopeName::UP, 0)
 	, Channel8(8, false, SlopeName::UP, 0)
-	, Session(false, 0, 0, 0)
+	, Session(false, ClockName::INTERNAL_QUARTZ, 0, 0, 0)
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);

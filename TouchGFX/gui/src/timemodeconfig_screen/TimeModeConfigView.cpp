@@ -9,15 +9,33 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &TimeModeConfigView::RadioBtnGroupClockCallbackHandler)
-	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel3(3, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel4(4, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel5(5, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
-	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
-	, Session(false, 0, 0, 0)
+	, Channel1(1, TimeBackend.Channel1.channelState, TimeBackend.TiSetup1.tiState, static_cast<SlopeName>(TimeBackend.Channel1.slope),
+			TimeBackend.Channel1.threshold, TimeBackend.TiSetup1.startIn, TimeBackend.TiSetup1.stopIn)
+	, Channel2(2, TimeBackend.Channel2.channelState, TimeBackend.TiSetup2.tiState, static_cast<SlopeName>(TimeBackend.Channel2.slope),
+			TimeBackend.Channel2.threshold, TimeBackend.TiSetup2.startIn, TimeBackend.TiSetup2.stopIn)
+	, Channel3(3, TimeBackend.Channel3.channelState, TimeBackend.TiSetup3.tiState, static_cast<SlopeName>(TimeBackend.Channel3.slope),
+			TimeBackend.Channel3.threshold, TimeBackend.TiSetup3.startIn, TimeBackend.TiSetup3.stopIn)
+	, Channel4(4, TimeBackend.Channel4.channelState, TimeBackend.TiSetup4.tiState, static_cast<SlopeName>(TimeBackend.Channel4.slope),
+		TimeBackend.Channel4.threshold, TimeBackend.TiSetup4.startIn, TimeBackend.TiSetup4.stopIn)
+	, Channel5(5, TimeBackend.Channel5.channelState, TimeBackend.TiSetup5.tiState, static_cast<SlopeName>(TimeBackend.Channel5.slope),
+			TimeBackend.Channel5.threshold, TimeBackend.TiSetup5.startIn, TimeBackend.TiSetup5.stopIn)
+	, Channel6(6, TimeBackend.Channel6.channelState, TimeBackend.TiSetup6.tiState, static_cast<SlopeName>(TimeBackend.Channel6.slope),
+		TimeBackend.Channel6.threshold, TimeBackend.TiSetup6.startIn, TimeBackend.TiSetup6.stopIn)
+	, Channel7(7, TimeBackend.Channel7.channelState, TimeBackend.TiSetup7.tiState, static_cast<SlopeName>(TimeBackend.Channel7.slope),
+			TimeBackend.Channel7.threshold, TimeBackend.TiSetup7.startIn, TimeBackend.TiSetup7.stopIn)
+	, Channel8(8, TimeBackend.Channel8.channelState, false, static_cast<SlopeName>(TimeBackend.Channel8.slope),
+			TimeBackend.Channel8.threshold, 0, 0)
+	, Session(TimeBackend.TimeSession.maxRange, static_cast<ClockName>(TimeBackend.TimeSession.clock),
+			TimeBackend.TimeSession.tiRange, TimeBackend.TimeSession.stampsNumber, TimeBackend.TimeSession.repeat)
+//	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel3(3, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel4(4, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel5(5, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
+//	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
+//	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
@@ -75,10 +93,8 @@ void TimeModeConfigView::setupScreen()
     sliderStampsNumber.setStopValueCallback(sliderValueConfirmedCallback);
     // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
-	// ustawienie zegara
-	TimeModeConfigView::m_clockSource = ClockName(1);
 	// aktualizacja panelu konfiguracyjnego zegara
-	updateClockSourceUI(m_clockSource);
+	updateClockSourceUI(Session.getSourceClock());
 	// aktualizacaj session setup
 	updateSessionSetupUI(pSession);
 }
@@ -687,6 +703,8 @@ void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 //
 void TimeModeConfigView::FinishSetupTimeModeSingle()
 {
+	updateTimeParameterBackend();
+
 	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();
 }
@@ -701,4 +719,29 @@ void TimeModeConfigView::FinishSetupTimeModeStamps()
 {
 	presenter->askForDataTimeStamps();
 	application().gotoTimeModeScreenCoverTransitionWest();
+}
+
+void TimeModeConfigView::updateTimeParameterBackend()
+{
+	TimeBackend.Channel1.channelState = Channel1.getStateChannel();
+	TimeBackend.Channel1.slope = static_cast<Slope_t>(Channel1.getSlope());
+	TimeBackend.Channel1.threshold = Channel1.getThreshold();
+	TimeBackend.TiSetup1.tiState = Channel1.getTiState();
+	TimeBackend.TiSetup1.startIn = Channel1.getStartChannel();
+	TimeBackend.TiSetup1.stopIn = Channel1.getStopChannel();
+
+	TimeBackend.Channel2.channelState = Channel2.getStateChannel();
+	TimeBackend.Channel2.slope = static_cast<Slope_t>(Channel2.getSlope());
+	TimeBackend.Channel2.threshold = Channel2.getThreshold();
+	TimeBackend.TiSetup2.tiState = Channel2.getTiState();
+	TimeBackend.TiSetup2.startIn = Channel2.getStartChannel();
+	TimeBackend.TiSetup2.stopIn = Channel2.getStopChannel();
+
+
+
+	TimeBackend.TimeSession.clock = static_cast<Clock_t>(Session.getSourceClock());
+	TimeBackend.TimeSession.maxRange = Session.getMaxRange();
+	TimeBackend.TimeSession.repeat = Session.getRepeat();
+	TimeBackend.TimeSession.stampsNumber = Session.getStampsNumber();
+	TimeBackend.TimeSession.tiRange = Session.getRange();
 }
