@@ -97,6 +97,15 @@ void TimeModeConfigView::setupScreen()
 	updateClockSourceUI(Session.getSourceClock());
 	// aktualizacaj session setup
 	updateSessionSetupUI(pSession);
+	// uzupelnienie listy aktywnych kanalow przy starcie UI
+	setActiveListChannels(1, pChannel1->getStateChannel());
+	setActiveListChannels(2, pChannel2->getStateChannel());
+	setActiveListChannels(3, pChannel3->getStateChannel());
+	setActiveListChannels(4, pChannel4->getStateChannel());
+	setActiveListChannels(5, pChannel5->getStateChannel());
+	setActiveListChannels(6, pChannel6->getStateChannel());
+	setActiveListChannels(7, pChannel7->getStateChannel());
+	setActiveListChannels(8, pChannel8->getStateChannel());
 }
 
 void TimeModeConfigView::tearDownScreen()
