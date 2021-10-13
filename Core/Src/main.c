@@ -131,6 +131,13 @@ const osThreadAttr_t TaskFreqStamps_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for TaskResetParam */
+osThreadId_t TaskResetParamHandle;
+const osThreadAttr_t TaskResetParam_attributes = {
+  .name = "TaskResetParam",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for myBinarySemGetTimeSingle */
 osSemaphoreId_t myBinarySemGetTimeSingleHandle;
 const osSemaphoreAttr_t myBinarySemGetTimeSingle_attributes = {
@@ -161,11 +168,21 @@ osSemaphoreId_t myBinarySemGetFreqStampsHandle;
 const osSemaphoreAttr_t myBinarySemGetFreqStamps_attributes = {
   .name = "myBinarySemGetFreqStamps"
 };
+/* Definitions for myBinarySemResetParam */
+osSemaphoreId_t myBinarySemResetParamHandle;
+const osSemaphoreAttr_t myBinarySemResetParam_attributes = {
+  .name = "myBinarySemResetParam"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
-uint8_t counterT = 0;
-uint8_t counterF = 0;
+uint8_t counterSingleT = 0;
+uint8_t counterConstT = 0;
+uint8_t counterStampsT = 0;
+uint8_t counterSingleF = 0;
+uint8_t counterConstF = 0;
+uint8_t counterStampsF = 0;
+uint8_t countReset = 0;
 
 TimeMode_t TimeBackend;
 ResultTime_t ResultTimeBackend;
@@ -189,6 +206,7 @@ void StartTaskTimeConst(void *argument);
 void StartTaskFreqConst(void *argument);
 void StartTaskTimeStamps(void *argument);
 void StartTaskFreqStamps(void *argument);
+void StartTaskResetParam(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -286,6 +304,9 @@ int main(void)
   /* creation of myBinarySemGetFreqStamps */
   myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqStamps_attributes);
 
+  /* creation of myBinarySemResetParam */
+  myBinarySemResetParamHandle = osSemaphoreNew(1, 1, &myBinarySemResetParam_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -319,6 +340,9 @@ int main(void)
 
   /* creation of TaskFreqStamps */
   TaskFreqStampsHandle = osThreadNew(StartTaskFreqStamps, NULL, &TaskFreqStamps_attributes);
+
+  /* creation of TaskResetParam */
+  TaskResetParamHandle = osThreadNew(StartTaskResetParam, NULL, &TaskResetParam_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1572,6 +1596,13 @@ void StartTaskTimeSingle(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetTimeSingleHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK)
+		  {
+			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskTimeSingle */
@@ -1665,6 +1696,34 @@ void StartTaskFreqStamps(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartTaskFreqStamps */
+}
+
+/* USER CODE BEGIN Header_StartTaskResetParam */
+/**
+* @brief Function implementing the TaskResetParam thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskResetParam */
+void StartTaskResetParam(void *argument)
+{
+  /* USER CODE BEGIN StartTaskResetParam */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if (myBinarySemResetParamHandle != NULL)
+	  {
+//		  countReset++;
+		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK)
+		  {
+			  TimeModeInit(&TimeBackend);
+			  ResultTimeInit(&ResultTimeBackend);
+//			  countReset = 2;
+		  }
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskResetParam */
 }
 
 /* MPU Configuration */

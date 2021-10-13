@@ -16,3 +16,8 @@ void TimeModePresenter::deactivate()
 {
 
 }
+
+void TimeModePresenter::askForReset()
+{
+	model->getReset();
+}

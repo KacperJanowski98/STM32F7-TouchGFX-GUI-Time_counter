@@ -27,6 +27,8 @@ public:
 
     virtual ~TimeModePresenter() {};
 
+    void askForReset();
+
 private:
     TimeModePresenter();
 

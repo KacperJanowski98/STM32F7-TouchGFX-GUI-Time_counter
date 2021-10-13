@@ -39,6 +39,8 @@ public:
 
     void getDataFreqStamps();
 
+    void getReset();
+
 //    std::unique_ptr<TimeModeParameter> getChannel1();
 protected:
     ModelListener* modelListener;

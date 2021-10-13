@@ -26,6 +26,7 @@ TimeModeViewBase::TimeModeViewBase() :
 
     buttonReset.setXY(337, 0);
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonReset.setAction(buttonCallback);
 
     textTi1start.setPosition(11, 124, 114, 31);
     textTi1start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -820,5 +821,12 @@ void TimeModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When buttonConfig clicked change screen to TimeModeConfig
         //Go to TimeModeConfig with no screen transition
         application().gotoTimeModeConfigScreenNoTransition();
+    }
+    else if (&src == &buttonReset)
+    {
+        //Reset
+        //When buttonReset clicked call virtual function
+        //Call ResetParameter
+        ResetParameter();
     }
 }

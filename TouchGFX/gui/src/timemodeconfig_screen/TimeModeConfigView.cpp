@@ -409,15 +409,18 @@ void TimeModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::Abstr
 {
 	if(&src == &radioClockQuartz)
 	{
-		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+//		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+		pSession->setClockSource(ClockName::INTERNAL_QUARTZ);
 	}
 	else if (&src == &radioClockRubid)
 	{
-		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
+//		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
+		pSession->setClockSource(ClockName::INTERNAL_RUBID);
 	}
 	else if (&src == &radioClockExternal)
 	{
-		TimeModeConfigView::m_clockSource = ClockName::EXTERNAL;
+//		TimeModeConfigView::m_clockSource = ClockName::EXTERNAL;
+		pSession->setClockSource(ClockName::EXTERNAL);
 	}
 }
 
@@ -704,8 +707,6 @@ void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 void TimeModeConfigView::FinishSetupTimeModeSingle()
 {
 	updateTimeParameterBackend();
-
-
 
 	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();

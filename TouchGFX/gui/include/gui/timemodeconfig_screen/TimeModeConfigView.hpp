@@ -312,7 +312,7 @@ private:
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
-    ClockName m_clockSource;
+//    ClockName m_clockSource;
     std::vector<int16_t> activeChannels;
 };
 
