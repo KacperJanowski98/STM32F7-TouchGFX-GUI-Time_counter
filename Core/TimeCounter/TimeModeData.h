@@ -78,6 +78,8 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
 
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
+void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
+
 void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
 
 #endif /* INC_TIMEMODEDATA_H_ */

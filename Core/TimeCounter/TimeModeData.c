@@ -109,16 +109,9 @@ void ResultTimeInit(ResultTime_t *pResultTime)
 
 void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 {
-    int min = 0, max = 0;
-    uint8_t start = 0, stop = 0;
-
     if (pTimeMode->TiSetup1.tiState == true)
     {
-        start = pTimeMode->TiSetup1.startIn;
-        stop = pTimeMode->TiSetup1.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure1.mean = calculateSingleMeas(min, max);
-        pResultTime->measure1.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
     }
     else
     {
@@ -127,11 +120,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup2.tiState == true)
     {
-        start = pTimeMode->TiSetup2.startIn;
-        stop = pTimeMode->TiSetup2.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure2.mean = calculateSingleMeas(min, max);
-        pResultTime->measure2.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
     }
     else
     {
@@ -140,11 +129,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup3.tiState == true)
     {
-        start = pTimeMode->TiSetup3.startIn;
-        stop = pTimeMode->TiSetup3.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure3.mean = calculateSingleMeas(min, max);
-        pResultTime->measure3.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
     }
     else
     {
@@ -153,11 +138,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup4.tiState == true)
     {
-        start = pTimeMode->TiSetup4.startIn;
-        stop = pTimeMode->TiSetup4.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure4.mean = calculateSingleMeas(min, max);
-        pResultTime->measure4.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
     }
     else
     {
@@ -166,11 +147,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup5.tiState == true)
     {
-        start = pTimeMode->TiSetup5.startIn;
-        stop = pTimeMode->TiSetup5.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure5.mean = calculateSingleMeas(min, max);
-        pResultTime->measure5.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
     }
     else
     {
@@ -179,11 +156,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup6.tiState == true)
     {
-        start = pTimeMode->TiSetup6.startIn;
-        stop = pTimeMode->TiSetup6.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure6.mean = calculateSingleMeas(min, max);
-        pResultTime->measure6.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
     }
     else
     {
@@ -192,11 +165,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup7.tiState == true)
     {
-        start = pTimeMode->TiSetup7.startIn;
-        stop = pTimeMode->TiSetup7.stopIn;
-        calculateMinMax(start, stop, &min, &max);
-        pResultTime->measure7.mean = calculateSingleMeas(min, max);
-        pResultTime->measure7.meanUnit = setUnitMeanTime(start, stop);
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
     else
     {
@@ -289,7 +258,6 @@ float calculateSingleMeas(int min, int max)
     }
     else
     {
-//        srand(time(NULL));
     	return ((float)rand()/(float)RAND_MAX) * ((float)(max - min) + (float)min);
     }
 }
@@ -300,39 +268,32 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
     switch (distance)
     {
     case 1:
-//    	srand(time(NULL));
         *min = (rand() % (45 + 1 - 43)) + 43;
         *max = (rand() % (53 + 1 - 50)) + 50;
         break;
     case 2:
-//    	srand(time(NULL));
         *min = (rand() % (4 + 1 - 3)) + 3;
-        *max = (rand() % (7 + 1 - 5)) + 5;
+        *max = (rand() % (8 + 1 - 6)) + 6;
         break;
     case 3:
-//    	srand(time(NULL));
         *min = (rand() % (20 + 1 - 15)) + 15;
-        *max = (rand() % (26 + 1 - 21)) + 21;
+        *max = (rand() % (26 + 1 - 22)) + 22;
         break;
     case 4:
-//    	srand(time(NULL));
-        *min = (rand() % (96 + 1 - 94)) + 94;
-        *max = (rand() % (102 + 1 - 100)) + 100;
+        *min = (rand() % (96 + 1 - 93)) + 93;
+        *max = (rand() % (103 + 1 - 100)) + 100;
         break;
     case 5:
-//    	srand(time(NULL));
         *min = (rand() % (2 + 1 - 1)) + 1;
-        *max = (rand() % (4 + 1 - 3)) + 3;
+        *max = (rand() % (6 + 1 - 4)) + 4;
         break;
     case 6:
-//    	srand(time(NULL));
         *min = (rand() % (9 + 1 - 7)) + 7;
-        *max = (rand() % (12 + 1 - 10)) + 10;
+        *max = (rand() % (13 + 1 - 11)) + 11;
         break;
     case 7:
-//    	srand(time(NULL));
-        *min = (rand() % (98 + 1 - 96)) + 96;
-        *max = (rand() % (102 + 1 - 100)) + 100;
+        *min = (rand() % (98 + 1 - 95)) + 95;
+        *max = (rand() % (103 + 1 - 100)) + 100;
         break;
     default:
     	*min = 0;
@@ -373,6 +334,16 @@ Unit_t setUnitMeanTime(uint8_t start, uint8_t stop)
     	result = NANO;
     }
     return result;
+}
+
+void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
+{
+    uint8_t start = Ti->startIn;
+    uint8_t stop = Ti->stopIn;
+    int min = 0, max = 0;
+    calculateMinMax(start, stop, &min, &max);
+    meas->mean = calculateSingleMeas(min, max);
+    meas->meanUnit = setUnitMeanTime(start, stop);
 }
 
 void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
