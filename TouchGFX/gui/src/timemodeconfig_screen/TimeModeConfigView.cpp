@@ -466,6 +466,7 @@ void TimeModeConfigView::ChangeChannelState()
 
 	setActiveListChannels(m_channelInput, CurrentState);
 	updateScrollTiSetup();
+	scrollWheelTISetup.animateToItem(0);
 }
 
 void TimeModeConfigView::ChangeStateTI()
