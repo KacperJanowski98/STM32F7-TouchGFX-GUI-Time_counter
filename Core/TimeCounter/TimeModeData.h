@@ -62,10 +62,6 @@ typedef struct
     MeasTime_t measure7;
 } ResultTime_t;
 
-void TimeChannelInit(TimeChannel_t *pTimeChannel);
-
-void TimeTiInit(TimeTi_t *pTimeTiParam);
-
 void TimeModeInit(TimeMode_t *pTimeMode);
 
 void ResultTimeInit(ResultTime_t *pResultTime);
@@ -81,5 +77,7 @@ float calculateSingleMeas(int min, int max);
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
 
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
+
+void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
 
 #endif /* INC_TIMEMODEDATA_H_ */

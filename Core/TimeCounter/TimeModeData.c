@@ -7,20 +7,6 @@
 
 #include "TimeModeData.h"
 
-void TimeChannelInit(TimeChannel_t *pTimeChannel)
-{
-    pTimeChannel->channelState = false;
-    pTimeChannel->slope = UP;
-    pTimeChannel->threshold = 0;
-}
-
-void TimeTiInit(TimeTi_t *pTimeTiParam)
-{
-    pTimeTiParam->tiState = false;
-    pTimeTiParam->startIn = 0;
-    pTimeTiParam->stopIn = 0;
-}
-
 void TimeModeInit(TimeMode_t *pTimeMode)
 {
     pTimeMode->Channel1.channelState = false;
@@ -134,6 +120,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         pResultTime->measure1.mean = calculateSingleMeas(min, max);
         pResultTime->measure1.meanUnit = setUnitMeanTime(start, stop);
     }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
+    }
 
     if (pTimeMode->TiSetup2.tiState == true)
     {
@@ -142,6 +132,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         calculateMinMax(start, stop, &min, &max);
         pResultTime->measure2.mean = calculateSingleMeas(min, max);
         pResultTime->measure2.meanUnit = setUnitMeanTime(start, stop);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
     }
 
     if (pTimeMode->TiSetup3.tiState == true)
@@ -152,6 +146,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         pResultTime->measure3.mean = calculateSingleMeas(min, max);
         pResultTime->measure3.meanUnit = setUnitMeanTime(start, stop);
     }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
+    }
 
     if (pTimeMode->TiSetup4.tiState == true)
     {
@@ -160,6 +158,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         calculateMinMax(start, stop, &min, &max);
         pResultTime->measure4.mean = calculateSingleMeas(min, max);
         pResultTime->measure4.meanUnit = setUnitMeanTime(start, stop);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
     }
 
     if (pTimeMode->TiSetup5.tiState == true)
@@ -170,6 +172,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         pResultTime->measure5.mean = calculateSingleMeas(min, max);
         pResultTime->measure5.meanUnit = setUnitMeanTime(start, stop);
     }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
+    }
 
     if (pTimeMode->TiSetup6.tiState == true)
     {
@@ -179,6 +185,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         pResultTime->measure6.mean = calculateSingleMeas(min, max);
         pResultTime->measure6.meanUnit = setUnitMeanTime(start, stop);
     }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
+    }
 
     if (pTimeMode->TiSetup7.tiState == true)
     {
@@ -187,6 +197,10 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
         calculateMinMax(start, stop, &min, &max);
         pResultTime->measure7.mean = calculateSingleMeas(min, max);
         pResultTime->measure7.meanUnit = setUnitMeanTime(start, stop);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
     pTimeMode->TimeSession.stampsNumber = 1;
 }
@@ -270,90 +284,95 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 float calculateSingleMeas(int min, int max)
 {
     srand(time(0));
-    return ((float)rand()/RAND_MAX) * (float)(max - min) + (float)min;
+    if (min == 0 && max == 0)
+    {
+    	return 0.0f;
+    }
+    else
+    {
+    	return ((float)rand()/RAND_MAX) * (float)(max - min) + (float)min;
+    }
 }
 
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
 {
-    uint8_t distance = stop - start;
-
-    if (distance > 0)
+    int8_t distance = stop - start;
+    srand(time(0));
+    switch (distance)
     {
-        switch (distance)
-        {
-        case 1:
-            *min = rand() % (45 + 1 - 43) + 43;
-            *max = rand() % (53 + 1 - 50) + 50;
-            break;
-        case 2:
-            *min = rand() % (4 + 1 - 3) + 3;
-            *max = rand() % (7 + 1 - 5) + 5;
-            break;
-        case 3:
-            *min = rand() % (20 + 1 - 15) + 15;
-            *max = rand() % (26 + 1 - 21) + 21;
-            break;
-        case 4:
-            *min = rand() % (96 + 1 - 94) + 94;
-            *max = rand() % (102 + 1 - 100) + 100;
-            break;
-        case 5:
-            *min = rand() % (2 + 1 - 1) + 1;
-            *max = rand() % (4 + 1 - 3) + 3;
-            break;
-        case 6:
-            *min = rand() % (9 + 1 - 7) + 7;
-            *max = rand() % (12 + 1 - 10) + 10;
-            break;
-        case 7:
-            *min = rand() % (98 + 1 - 96) + 96;
-            *max = rand() % (102 + 1 - 100) + 100;
-            break;
-        }
-    }
-    else
-    {
-    	*min = 1;
-    	*max = 2;
+    case 1:
+        *min = rand() % (45 + 1 - 43) + 43;
+        *max = rand() % (53 + 1 - 50) + 50;
+        break;
+    case 2:
+        *min = rand() % (4 + 1 - 3) + 3;
+        *max = rand() % (7 + 1 - 5) + 5;
+        break;
+    case 3:
+        *min = rand() % (20 + 1 - 15) + 15;
+        *max = rand() % (26 + 1 - 21) + 21;
+        break;
+    case 4:
+        *min = rand() % (96 + 1 - 94) + 94;
+        *max = rand() % (102 + 1 - 100) + 100;
+        break;
+    case 5:
+        *min = rand() % (2 + 1 - 1) + 1;
+        *max = rand() % (4 + 1 - 3) + 3;
+        break;
+    case 6:
+        *min = rand() % (9 + 1 - 7) + 7;
+        *max = rand() % (12 + 1 - 10) + 10;
+        break;
+    case 7:
+        *min = rand() % (98 + 1 - 96) + 96;
+        *max = rand() % (102 + 1 - 100) + 100;
+        break;
+    default:
+    	*min = 0;
+    	*max = 0;
+    	break;
     }
 }
 
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop)
 {
-    uint8_t distance = stop - start;
+    int8_t distance = stop - start;
     Unit_t result;
 
-    if (distance > 0)
+    switch (distance)
     {
-        switch (distance)
-        {
-        case 1:
-            result = NANO;
-            break;
-        case 2:
-            result = MICRO;
-            break;
-        case 3:
-            result = MICRO;
-            break;
-        case 4:
-            result = MICRO;
-            break;
-        case 5:
-            result = MILLI;
-            break;
-        case 6:
-            result = MILLI;
-            break;
-        case 7:
-            result = MILLI;
-            break;
-        }
+    case 1:
+        result = NANO;
+        break;
+    case 2:
+        result = MICRO;
+        break;
+    case 3:
+        result = MICRO;
+        break;
+    case 4:
+        result = MICRO;
+        break;
+    case 5:
+        result = MILLI;
+        break;
+    case 6:
+        result = MILLI;
+        break;
+    case 7:
+        result = MILLI;
+        break;
+    default:
+    	result = NANO;
     }
-    else
-    {
-    	result = PICO;
-    }
-
     return result;
+}
+
+void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
+{
+	Ti->startIn = 0;
+	Ti->stopIn = 0;
+	meas->mean = 0.0f;
+	meas->meanUnit = NANO;
 }

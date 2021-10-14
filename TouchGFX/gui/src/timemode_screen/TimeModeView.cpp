@@ -428,42 +428,6 @@ void TimeModeView::setupScreen()
 void TimeModeView::tearDownScreen()
 {
     TimeModeViewBase::tearDownScreen();
-    // reset variables
-//    m_total_ti1 = 0;
-//    m_frac1_ti1 = 0;
-//    m_frac2_ti1 = 0;
-//    m_total_ti2 = 0;
-//    m_frac1_ti2 = 0;
-//    m_frac2_ti2 = 0;
-//    m_total_ti3 = 0;
-//    m_frac1_ti3 = 0;
-//    m_frac2_ti3 = 0;
-//    m_total_ti4 = 0;
-//    m_frac1_ti4 = 0;
-//    m_frac2_ti4 = 0;
-//    m_total_ti5 = 0;
-//    m_frac1_ti5 = 0;
-//    m_frac2_ti5 = 0;
-//    m_total_ti6 = 0;
-//    m_frac1_ti6 = 0;
-//    m_frac2_ti6 = 0;
-//    m_total_ti7 = 0;
-//    m_frac1_ti7 = 0;
-//    m_frac2_ti7 = 0;
-//    m_totalStdDev1 = 0;
-//    m_fracStdDev1 = 0;
-//    m_totalStdDev2 = 0;
-//    m_fracStdDev2 = 0;
-//    m_totalStdDev3 = 0;
-//    m_fracStdDev3 = 0;
-//    m_totalStdDev4 = 0;
-//    m_fracStdDev4 = 0;
-//    m_totalStdDev5 = 0;
-//    m_fracStdDev5 = 0;
-//    m_totalStdDev6 = 0;
-//    m_fracStdDev6 = 0;
-//    m_totalStdDev7 = 0;
-//    m_fracStdDev7 = 0;
 }
 
 void TimeModeView::ResetParameter()
@@ -472,41 +436,6 @@ void TimeModeView::ResetParameter()
 	TimeModeView::draw();
 	TimeModeView::setupScreen();
 
-//    m_total_ti1 = 0;
-//    m_frac1_ti1 = 0;
-//    m_frac2_ti1 = 0;
-//    m_total_ti2 = 0;
-//    m_frac1_ti2 = 0;
-//    m_frac2_ti2 = 0;
-//    m_total_ti3 = 0;
-//    m_frac1_ti3 = 0;
-//    m_frac2_ti3 = 0;
-//    m_total_ti4 = 0;
-//    m_frac1_ti4 = 0;
-//    m_frac2_ti4 = 0;
-//    m_total_ti5 = 0;
-//    m_frac1_ti5 = 0;
-//    m_frac2_ti5 = 0;
-//    m_total_ti6 = 0;
-//    m_frac1_ti6 = 0;
-//    m_frac2_ti6 = 0;
-//    m_total_ti7 = 0;
-//    m_frac1_ti7 = 0;
-//    m_frac2_ti7 = 0;
-//    m_totalStdDev1 = 0;
-//    m_fracStdDev1 = 0;
-//    m_totalStdDev2 = 0;
-//    m_fracStdDev2 = 0;
-//    m_totalStdDev3 = 0;
-//    m_fracStdDev3 = 0;
-//    m_totalStdDev4 = 0;
-//    m_fracStdDev4 = 0;
-//    m_totalStdDev5 = 0;
-//    m_fracStdDev5 = 0;
-//    m_totalStdDev6 = 0;
-//    m_fracStdDev6 = 0;
-//    m_totalStdDev7 = 0;
-//    m_fracStdDev7 = 0;
 }
 
 void TimeModeView::calculateFormatMeanTime(float mean, int *pTotal, int *pFrac1, int *pFrac2)
@@ -529,3 +458,5 @@ void TimeModeView::calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFr
 	float tempFrac = stdDev - *pTotal;
 	*pFrac = trunc(tempFrac * 100);
 }
+
+

@@ -475,6 +475,12 @@ void TimeModeConfigView::ChangeStateTI()
 	setTiChannelStateUI(pChannelTI, CurrentState);
 	updateStartStopScroolList(pChannelTI);
 	updateStartStopIn(pChannelTI);
+	//:TODO nie wiem czy to zostawic?
+	if (CurrentState == false)
+	{
+		pChannelTI->setStartChannel(0);
+		pChannelTI->setStopChannel(0);
+	}
 }
 
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)
@@ -731,7 +737,6 @@ void TimeModeConfigView::FinishSetupTimeModeSingle()
 
 	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();
-//	application().draw();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeConst()
