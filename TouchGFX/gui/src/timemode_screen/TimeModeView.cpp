@@ -469,6 +469,7 @@ void TimeModeView::tearDownScreen()
 void TimeModeView::ResetParameter()
 {
 	presenter->askForReset();
+	TimeModeView::draw();
 	TimeModeView::setupScreen();
 
 //    m_total_ti1 = 0;

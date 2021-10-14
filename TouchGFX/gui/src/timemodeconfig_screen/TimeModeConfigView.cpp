@@ -628,9 +628,9 @@ void TimeModeConfigView::updateScrollTiSetup()
 		{
 			scrollWheelStop.itemChanged(i);
 		}
-//		scrollWheelStart.animateToItem(0);
-//		scrollWheelStop.animateToItem(0);
-		updateStartStopScroolList(pChannel1);
+		scrollWheelStart.animateToItem(0);
+		scrollWheelStop.animateToItem(0);
+//		updateStartStopScroolList(pChannel1);
 	}
 }
 
@@ -730,6 +730,7 @@ void TimeModeConfigView::FinishSetupTimeModeSingle()
 
 	presenter->askForDataTimeSingle();
 	application().gotoTimeModeScreenCoverTransitionWest();
+//	application().draw();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeConst()
