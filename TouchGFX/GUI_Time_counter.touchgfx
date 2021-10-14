@@ -330,9 +330,9 @@
               "BufferSize": 10
             },
             "Name": "textTi1start",
-            "X": 11,
+            "X": 67,
             "Y": 124,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -386,9 +386,9 @@
               "BufferSize": 10
             },
             "Name": "textTi2start",
-            "X": 11,
+            "X": 68,
             "Y": 171,
-            "Width": 114,
+            "Width": 57,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -442,9 +442,9 @@
               "BufferSize": 10
             },
             "Name": "textTi3start",
-            "X": 11,
+            "X": 67,
             "Y": 219,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -498,9 +498,9 @@
               "BufferSize": 10
             },
             "Name": "textTi4start",
-            "X": 11,
+            "X": 67,
             "Y": 266,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -554,9 +554,9 @@
               "BufferSize": 10
             },
             "Name": "textTi5start",
-            "X": 11,
+            "X": 67,
             "Y": 315,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -610,9 +610,9 @@
               "BufferSize": 10
             },
             "Name": "textTi6start",
-            "X": 11,
+            "X": 67,
             "Y": 364,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -666,9 +666,9 @@
               "BufferSize": 10
             },
             "Name": "textTi7start",
-            "X": 11,
+            "X": 67,
             "Y": 412,
-            "Width": 114,
+            "Width": 58,
             "Height": 31,
             "Visible": true,
             "LockPosition": false,
@@ -3007,6 +3007,174 @@
             "Width": 32,
             "Height": 25,
             "Visible": false,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId192",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi1",
+            "X": 18,
+            "Y": 124,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId193",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi2",
+            "X": 18,
+            "Y": 171,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId194",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi3",
+            "X": 19,
+            "Y": 219,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId195",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi4",
+            "X": 18,
+            "Y": 267,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId196",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi5",
+            "X": 18,
+            "Y": 314,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId197",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi6",
+            "X": 18,
+            "Y": 364,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId198",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Name": "textLabelTi7",
+            "X": 18,
+            "Y": 413,
+            "Width": 49,
+            "Height": 31,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -7086,6 +7254,34 @@
       },
       {
         "TextEntryId": "SingleUseId191",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId192",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId193",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId194",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId195",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId196",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId197",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId198",
         "IsResource": false
       }
     ],

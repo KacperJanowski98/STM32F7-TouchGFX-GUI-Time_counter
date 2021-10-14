@@ -142,6 +142,13 @@ protected:
     touchgfx::TextArea textUnitMs5;
     touchgfx::TextArea textUnitMs6;
     touchgfx::TextArea textUnitMs7;
+    touchgfx::TextArea textLabelTi1;
+    touchgfx::TextArea textLabelTi2;
+    touchgfx::TextArea textLabelTi3;
+    touchgfx::TextArea textLabelTi4;
+    touchgfx::TextArea textLabelTi5;
+    touchgfx::TextArea textLabelTi6;
+    touchgfx::TextArea textLabelTi7;
 
     /*
      * Wildcard Buffers

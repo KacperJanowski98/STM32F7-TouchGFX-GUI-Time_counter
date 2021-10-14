@@ -28,7 +28,7 @@ TimeModeViewBase::TimeModeViewBase() :
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonReset.setAction(buttonCallback);
 
-    textTi1start.setPosition(11, 124, 114, 31);
+    textTi1start.setPosition(67, 124, 58, 31);
     textTi1start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi1start.setLinespacing(0);
     textTi1startBuffer[0] = 0;
@@ -42,7 +42,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi1stop.setWildcard(textTi1stopBuffer);
     textTi1stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID91));
 
-    textTi2start.setPosition(11, 171, 114, 31);
+    textTi2start.setPosition(68, 171, 57, 31);
     textTi2start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi2start.setLinespacing(0);
     textTi2startBuffer[0] = 0;
@@ -56,7 +56,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi2stop.setWildcard(textTi2stopBuffer);
     textTi2stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID93));
 
-    textTi3start.setPosition(11, 219, 114, 31);
+    textTi3start.setPosition(67, 219, 58, 31);
     textTi3start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi3start.setLinespacing(0);
     textTi3startBuffer[0] = 0;
@@ -70,7 +70,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi3stop.setWildcard(textTi3stopBuffer);
     textTi3stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID95));
 
-    textTi4start.setPosition(11, 266, 114, 31);
+    textTi4start.setPosition(67, 266, 58, 31);
     textTi4start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi4start.setLinespacing(0);
     textTi4startBuffer[0] = 0;
@@ -84,7 +84,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi4stop.setWildcard(textTi4stopBuffer);
     textTi4stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID97));
 
-    textTi5start.setPosition(11, 315, 114, 31);
+    textTi5start.setPosition(67, 315, 58, 31);
     textTi5start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi5start.setLinespacing(0);
     textTi5startBuffer[0] = 0;
@@ -98,7 +98,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi5stop.setWildcard(textTi5stopBuffer);
     textTi5stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID99));
 
-    textTi6start.setPosition(11, 364, 114, 31);
+    textTi6start.setPosition(67, 364, 58, 31);
     textTi6start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi6start.setLinespacing(0);
     textTi6startBuffer[0] = 0;
@@ -112,7 +112,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi6stop.setWildcard(textTi6stopBuffer);
     textTi6stop.setTypedText(touchgfx::TypedText(T_SINGLEUSEID101));
 
-    textTi7start.setPosition(11, 412, 114, 31);
+    textTi7start.setPosition(67, 412, 58, 31);
     textTi7start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi7start.setLinespacing(0);
     textTi7startBuffer[0] = 0;
@@ -692,6 +692,41 @@ TimeModeViewBase::TimeModeViewBase() :
     textUnitMs7.setLinespacing(0);
     textUnitMs7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID191));
 
+    textLabelTi1.setPosition(18, 124, 49, 31);
+    textLabelTi1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi1.setLinespacing(0);
+    textLabelTi1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID192));
+
+    textLabelTi2.setPosition(18, 171, 49, 31);
+    textLabelTi2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi2.setLinespacing(0);
+    textLabelTi2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID193));
+
+    textLabelTi3.setPosition(19, 219, 49, 31);
+    textLabelTi3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi3.setLinespacing(0);
+    textLabelTi3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID194));
+
+    textLabelTi4.setPosition(18, 267, 49, 31);
+    textLabelTi4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi4.setLinespacing(0);
+    textLabelTi4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID195));
+
+    textLabelTi5.setPosition(18, 314, 49, 31);
+    textLabelTi5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi5.setLinespacing(0);
+    textLabelTi5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID196));
+
+    textLabelTi6.setPosition(18, 364, 49, 31);
+    textLabelTi6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi6.setLinespacing(0);
+    textLabelTi6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID197));
+
+    textLabelTi7.setPosition(18, 413, 49, 31);
+    textLabelTi7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelTi7.setLinespacing(0);
+    textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
@@ -799,6 +834,13 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textUnitMs5);
     add(textUnitMs6);
     add(textUnitMs7);
+    add(textLabelTi1);
+    add(textLabelTi2);
+    add(textLabelTi3);
+    add(textLabelTi4);
+    add(textLabelTi5);
+    add(textLabelTi6);
+    add(textLabelTi7);
 }
 
 void TimeModeViewBase::setupScreen()
