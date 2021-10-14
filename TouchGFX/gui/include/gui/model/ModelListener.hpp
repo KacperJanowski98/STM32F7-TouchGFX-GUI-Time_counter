@@ -10,6 +10,8 @@ public:
     
     virtual ~ModelListener() {}
 
+    virtual void updateUIContinuousTime() {}
+
     void bind(Model* m)
     {
         model = m;

@@ -41,6 +41,8 @@ public:
 
     void getReset();
 
+    void updateScreenContinuousTimeMode();
+
 //    std::unique_ptr<TimeModeParameter> getChannel1();
 protected:
     ModelListener* modelListener;

@@ -29,6 +29,8 @@ public:
 
     void askForReset();
 
+    virtual void updateUIContinuousTime();
+
 private:
     TimeModePresenter();
 

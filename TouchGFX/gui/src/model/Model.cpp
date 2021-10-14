@@ -12,6 +12,8 @@ extern osSemaphoreId_t myBinarySemGetFreqStampsHandle;
 
 extern osSemaphoreId_t myBinarySemResetParamHandle;
 
+extern osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
+
 Model::Model() : modelListener(0)
 {
 
@@ -19,7 +21,18 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
+	if (myBinarySemUpdateTimeDispHandle != NULL)
+	{
+		if (osSemaphoreAcquire(myBinarySemUpdateTimeDispHandle, ( uint32_t ) 10) == osOK)
+		{
+			updateScreenContinuousTimeMode();
+		}
+	}
+}
 
+void Model::updateScreenContinuousTimeMode()
+{
+	modelListener->updateUIContinuousTime();
 }
 
 //
@@ -30,7 +43,7 @@ void Model::getDataTimeSingle()
 
 void Model::getDataTimeContinuous()
 {
-
+	osSemaphoreRelease(myBinarySemGetTimeConstHandle);
 }
 
 void Model::getDataTimeStamps()

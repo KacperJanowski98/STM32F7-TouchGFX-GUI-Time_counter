@@ -741,12 +741,16 @@ void TimeModeConfigView::FinishSetupTimeModeSingle()
 
 void TimeModeConfigView::FinishSetupTimeModeConst()
 {
+	updateTimeParameterBackend();
+
 	presenter->askForDataTimeConst();
 	application().gotoTimeModeScreenCoverTransitionWest();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeStamps()
 {
+	updateTimeParameterBackend();
+
 	presenter->askForDataTimeStamps();
 	application().gotoTimeModeScreenCoverTransitionWest();
 }

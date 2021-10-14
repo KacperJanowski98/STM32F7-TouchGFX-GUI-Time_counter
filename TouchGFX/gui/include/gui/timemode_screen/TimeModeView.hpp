@@ -12,6 +12,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void ResetParameter();
+
+    virtual void updateUIContinuousTime();
 protected:
     void calculateFormatMeanTime(float mean, int *pTotal, int *pFrac1, int *pFrac2);
     void calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFrac);

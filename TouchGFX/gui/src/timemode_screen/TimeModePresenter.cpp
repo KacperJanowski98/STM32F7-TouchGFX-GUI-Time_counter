@@ -21,3 +21,8 @@ void TimeModePresenter::askForReset()
 {
 	model->getReset();
 }
+
+void TimeModePresenter::updateUIContinuousTime()
+{
+	view.updateUIContinuousTime();
+}

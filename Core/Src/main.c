@@ -173,6 +173,11 @@ osSemaphoreId_t myBinarySemResetParamHandle;
 const osSemaphoreAttr_t myBinarySemResetParam_attributes = {
   .name = "myBinarySemResetParam"
 };
+/* Definitions for myBinarySemUpdateTimeDisp */
+osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
+const osSemaphoreAttr_t myBinarySemUpdateTimeDisp_attributes = {
+  .name = "myBinarySemUpdateTimeDisp"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
@@ -183,6 +188,7 @@ uint8_t counterSingleF = 0;
 uint8_t counterConstF = 0;
 uint8_t counterStampsF = 0;
 uint8_t countReset = 0;
+uint8_t condition = 1;
 
 TimeMode_t TimeBackend;
 ResultTime_t ResultTimeBackend;
@@ -308,6 +314,9 @@ int main(void)
 
   /* creation of myBinarySemResetParam */
   myBinarySemResetParamHandle = osSemaphoreNew(1, 1, &myBinarySemResetParam_attributes);
+
+  /* creation of myBinarySemUpdateTimeDisp */
+  myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateTimeDisp_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -1603,6 +1612,8 @@ void StartTaskTimeSingle(void *argument)
 		  counterSingleT++;
 		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK && counterSingleT > 1)
 		  {
+			  condition = 0;
+			  ResultTimeInit(&ResultTimeBackend);
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
 			  counterSingleT = 2;
 		  }
@@ -1643,6 +1654,21 @@ void StartTaskTimeConst(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetTimeConstHandle != NULL)
+	  {
+		  counterConstT++;
+		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK && counterConstT > 1)
+		  {
+			  condition = 1;
+			  while(condition)
+			  {
+				  ResultTimeInit(&ResultTimeBackend);
+				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend);
+				  osDelay(500);
+			  }
+			  counterConstT = 2;
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskTimeConst */
@@ -1722,6 +1748,7 @@ void StartTaskResetParam(void *argument)
 		  {
 			  TimeModeInit(&TimeBackend);
 			  ResultTimeInit(&ResultTimeBackend);
+			  condition = 0;
 			  countReset = 2;
 		  }
 	  }

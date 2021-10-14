@@ -7,6 +7,10 @@
 
 #include "TimeModeData.h"
 
+extern osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
+
+int updateFlag;
+
 void TimeModeInit(TimeMode_t *pTimeMode)
 {
     pTimeMode->Channel1.channelState = false;
@@ -178,38 +182,76 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 {
     if (pTimeMode->TiSetup1.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
     }
 
     if (pTimeMode->TiSetup2.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
     }
 
     if (pTimeMode->TiSetup3.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
     }
 
     if (pTimeMode->TiSetup4.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
     }
 
     if (pTimeMode->TiSetup5.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
     }
 
     if (pTimeMode->TiSetup6.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
+    }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
     }
 
     if (pTimeMode->TiSetup7.tiState == true)
     {
-
+        setCalculatedParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
+    else
+    {
+    	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
+    }
+    pTimeMode->TimeSession.stampsNumber = 1;
+
+    updateFlag = 1;
+
+    if (updateFlag)
+    {
+    	osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
+    	updateFlag = 0;
+    }
+
 }
 
 void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)

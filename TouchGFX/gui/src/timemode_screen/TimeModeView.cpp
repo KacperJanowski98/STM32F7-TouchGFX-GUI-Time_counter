@@ -435,7 +435,12 @@ void TimeModeView::ResetParameter()
 	presenter->askForReset();
 	TimeModeView::draw();
 	TimeModeView::setupScreen();
+}
 
+void TimeModeView::updateUIContinuousTime()
+{
+	TimeModeView::draw();
+	TimeModeView::setupScreen();
 }
 
 void TimeModeView::calculateFormatMeanTime(float mean, int *pTotal, int *pFrac1, int *pFrac2)
