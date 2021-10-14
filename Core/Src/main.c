@@ -276,6 +276,8 @@ int main(void)
   TimeModeInit(&TimeBackend);
   ResultTimeInit(&ResultTimeBackend);
 
+  srand(time(NULL));
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
