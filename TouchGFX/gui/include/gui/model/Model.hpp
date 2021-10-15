@@ -13,6 +13,9 @@
 extern TimeMode_t TimeBackend;
 extern ResultTime_t ResultTimeBackend;
 
+extern uint32_t detectedThresholdTime;
+extern uint32_t detectedThresholdFreq;
+
 class ModelListener;
 
 class Model
@@ -40,6 +43,8 @@ public:
     void getDataFreqStamps();
 
     void getReset();
+
+    void getDetectedThreshold();
 
     void updateScreenContinuousTimeMode();
 

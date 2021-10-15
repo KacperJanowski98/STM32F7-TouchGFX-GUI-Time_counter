@@ -138,6 +138,20 @@ const osThreadAttr_t TaskResetParam_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for TaskDetectThreT */
+osThreadId_t TaskDetectThreTHandle;
+const osThreadAttr_t TaskDetectThreT_attributes = {
+  .name = "TaskDetectThreT",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskDetectThreF */
+osThreadId_t TaskDetectThreFHandle;
+const osThreadAttr_t TaskDetectThreF_attributes = {
+  .name = "TaskDetectThreF",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for myBinarySemGetTimeSingle */
 osSemaphoreId_t myBinarySemGetTimeSingleHandle;
 const osSemaphoreAttr_t myBinarySemGetTimeSingle_attributes = {
@@ -178,6 +192,16 @@ osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
 const osSemaphoreAttr_t myBinarySemUpdateTimeDisp_attributes = {
   .name = "myBinarySemUpdateTimeDisp"
 };
+/* Definitions for myBinarySemDetectThreTime */
+osSemaphoreId_t myBinarySemDetectThreTimeHandle;
+const osSemaphoreAttr_t myBinarySemDetectThreTime_attributes = {
+  .name = "myBinarySemDetectThreTime"
+};
+/* Definitions for myBinarySemDetectThreFreq */
+osSemaphoreId_t myBinarySemDetectThreFreqHandle;
+const osSemaphoreAttr_t myBinarySemDetectThreFreq_attributes = {
+  .name = "myBinarySemDetectThreFreq"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
@@ -188,10 +212,15 @@ uint8_t counterSingleF = 0;
 uint8_t counterConstF = 0;
 uint8_t counterStampsF = 0;
 uint8_t countReset = 0;
-uint8_t condition = 1;
+uint8_t countDetectT = 0;
+uint8_t countDetectF = 0;
+uint8_t conditionT = 1;
 
 TimeMode_t TimeBackend;
 ResultTime_t ResultTimeBackend;
+
+uint32_t detectedThresholdTime = 0;
+uint32_t detectedThresholdFreq = 0;
 
 /* USER CODE END PV */
 
@@ -213,6 +242,8 @@ void StartTaskFreqConst(void *argument);
 void StartTaskTimeStamps(void *argument);
 void StartTaskFreqStamps(void *argument);
 void StartTaskResetParam(void *argument);
+void StartTaskDetectThreT(void *argument);
+void StartTaskDetectThreF(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -229,7 +260,10 @@ static uint8_t BSP_QSPI_EnableMemoryMappedMode(QSPI_HandleTypeDef *hqspi);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void detectedThreshold(uint32_t *threshold)
+{
+	*threshold = (rand() % (1000 + 1 - 50)) + 50;
+}
 /* USER CODE END 0 */
 
 /**
@@ -318,6 +352,12 @@ int main(void)
   /* creation of myBinarySemUpdateTimeDisp */
   myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateTimeDisp_attributes);
 
+  /* creation of myBinarySemDetectThreTime */
+  myBinarySemDetectThreTimeHandle = osSemaphoreNew(1, 1, &myBinarySemDetectThreTime_attributes);
+
+  /* creation of myBinarySemDetectThreFreq */
+  myBinarySemDetectThreFreqHandle = osSemaphoreNew(1, 1, &myBinarySemDetectThreFreq_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -354,6 +394,12 @@ int main(void)
 
   /* creation of TaskResetParam */
   TaskResetParamHandle = osThreadNew(StartTaskResetParam, NULL, &TaskResetParam_attributes);
+
+  /* creation of TaskDetectThreT */
+  TaskDetectThreTHandle = osThreadNew(StartTaskDetectThreT, NULL, &TaskDetectThreT_attributes);
+
+  /* creation of TaskDetectThreF */
+  TaskDetectThreFHandle = osThreadNew(StartTaskDetectThreF, NULL, &TaskDetectThreF_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1612,7 +1658,7 @@ void StartTaskTimeSingle(void *argument)
 		  counterSingleT++;
 		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK && counterSingleT > 1)
 		  {
-			  condition = 0;
+			  conditionT = 0;
 			  ResultTimeInit(&ResultTimeBackend);
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
 			  counterSingleT = 2;
@@ -1659,8 +1705,8 @@ void StartTaskTimeConst(void *argument)
 		  counterConstT++;
 		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK && counterConstT > 1)
 		  {
-			  condition = 1;
-			  while(condition)
+			  conditionT = 1;
+			  while(conditionT)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);
 				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend);
@@ -1748,13 +1794,58 @@ void StartTaskResetParam(void *argument)
 		  {
 			  TimeModeInit(&TimeBackend);
 			  ResultTimeInit(&ResultTimeBackend);
-			  condition = 0;
+			  conditionT = 0;
 			  countReset = 2;
 		  }
 	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskResetParam */
+}
+
+/* USER CODE BEGIN Header_StartTaskDetectThreT */
+/**
+* @brief Function implementing the TaskDetectThreT thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskDetectThreT */
+void StartTaskDetectThreT(void *argument)
+{
+  /* USER CODE BEGIN StartTaskDetectThreT */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if (myBinarySemDetectThreTimeHandle != NULL)
+	  {
+		  countDetectT++;
+		  if (osSemaphoreAcquire(myBinarySemDetectThreTimeHandle, (uint32_t) 10) == osOK && countDetectT > 1)
+		  {
+			  detectedThreshold(&detectedThresholdTime);
+			  countDetectT = 2;
+		  }
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskDetectThreT */
+}
+
+/* USER CODE BEGIN Header_StartTaskDetectThreF */
+/**
+* @brief Function implementing the TaskDetectThreF thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskDetectThreF */
+void StartTaskDetectThreF(void *argument)
+{
+  /* USER CODE BEGIN StartTaskDetectThreF */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskDetectThreF */
 }
 
 /* MPU Configuration */

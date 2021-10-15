@@ -108,6 +108,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID57));
     buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDetect.setAction(buttonCallback);
     swipeContainerFreqINPUT.add(buttonDetect);
 
     textSliderThreshold.setPosition(468, 151, 170, 29);
@@ -415,6 +416,13 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleChannel clicked call virtual function
         //Call toggleChannelState
         toggleChannelState();
+    }
+    else if (&src == &buttonDetect)
+    {
+        //DetectThreshold
+        //When buttonDetect clicked call virtual function
+        //Call detectThreshold
+        detectThreshold();
     }
     else if (&src == &buttonConfigFreqStamps)
     {

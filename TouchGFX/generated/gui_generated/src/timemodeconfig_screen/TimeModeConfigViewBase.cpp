@@ -116,6 +116,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID21));
     buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDetect.setAction(buttonCallback);
     swipeContainerTimeINPUT.add(buttonDetect);
 
     textSliderThreshold.setPosition(468, 151, 170, 29);
@@ -504,6 +505,13 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleChannel clicked call virtual function
         //Call ChangeChannelState
         ChangeChannelState();
+    }
+    else if (&src == &buttonDetect)
+    {
+        //DetectThreshold
+        //When buttonDetect clicked call virtual function
+        //Call detectThreshold
+        detectThreshold();
     }
     else if (&src == &toggleTiSetup)
     {

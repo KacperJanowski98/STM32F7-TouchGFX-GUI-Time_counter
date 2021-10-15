@@ -36,6 +36,8 @@ public:
 
     virtual void askForDataTimeStamps();
 
+    virtual void askForDetectedThreshold();
+
 private:
     TimeModeConfigPresenter();
 

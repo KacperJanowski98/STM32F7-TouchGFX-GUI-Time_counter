@@ -103,6 +103,11 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void detectThreshold()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

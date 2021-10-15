@@ -63,6 +63,11 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void detectThreshold()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

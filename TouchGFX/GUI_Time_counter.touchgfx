@@ -4876,6 +4876,18 @@
               "Type": "ActionCustom",
               "FunctionName": "FinishSetupTimeModeStamps"
             }
+          },
+          {
+            "InteractionName": "DetectThreshold",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDetect"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "detectThreshold"
+            }
           }
         ],
         "Name": "TimeModeConfig",
@@ -6475,6 +6487,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "FinishSetupFreqModeStamps"
+            }
+          },
+          {
+            "InteractionName": "DetectThreshold",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDetect"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "detectThreshold"
             }
           }
         ],

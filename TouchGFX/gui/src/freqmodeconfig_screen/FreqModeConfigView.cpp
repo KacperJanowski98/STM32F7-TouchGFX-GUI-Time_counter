@@ -160,7 +160,9 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 	}
 	else if (&src == &sliderRepeat)
 	{
-
+    	setRepeatUI(pSession, value);
+    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+    	textRepeatVal.invalidate();
 	}
 }
 
@@ -272,6 +274,12 @@ void FreqModeConfigView::toggleChannelState()
 	bool CurrentState = toggleChannel.getState();
 	FreqModeConfigView::setGuiTouchable(CurrentState);
 	setChannelStateUI(pChannelInput, CurrentState);
+}
+
+//:TODO
+void FreqModeConfigView::detectThreshold()
+{
+
 }
 
 // funkcja ustawiajaca w UI wartosci zapisane w obiektach

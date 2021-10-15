@@ -116,6 +116,12 @@ public:
     virtual void ChangeStateTI();
 
     /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku Detect, ustawia wykryta wartosc zbocza wyzwalania.
+     *
+     */
+    virtual void detectThreshold();
+
+    /**
      * @brief Funkcja ustawiajaca elementy konfiguracji w UI okreslonego kanalu.
      *
      * @param channel Obiekt kanalu.

@@ -31,3 +31,8 @@ void TimeModeConfigPresenter::askForDataTimeStamps()
 {
 	model->getDataTimeStamps();
 }
+
+void TimeModeConfigPresenter::askForDetectedThreshold()
+{
+	model->getDetectedThreshold();
+}
