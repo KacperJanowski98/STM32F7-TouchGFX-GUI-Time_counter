@@ -1818,11 +1818,9 @@ void StartTaskDetectThreT(void *argument)
   {
 	  if (myBinarySemDetectThreTimeHandle != NULL)
 	  {
-		  countDetectT++;
-		  if (osSemaphoreAcquire(myBinarySemDetectThreTimeHandle, (uint32_t) 10) == osOK && countDetectT > 1)
+		  if (osSemaphoreAcquire(myBinarySemDetectThreTimeHandle, (uint32_t) 10) == osOK)
 		  {
 			  detectedThreshold(&detectedThresholdTime);
-			  countDetectT = 2;
 		  }
 	  }
     osDelay(1);
@@ -1845,10 +1843,8 @@ void StartTaskDetectThreF(void *argument)
   {
 	  if (myBinarySemDetectThreFreqHandle != NULL)
 	  {
-		  countDetectF++;
-		  if (osSemaphoreAcquire(myBinarySemDetectThreFreqHandle, (uint32_t) 10) == osOK && countDetectF > 1){
+		  if (osSemaphoreAcquire(myBinarySemDetectThreFreqHandle, (uint32_t) 10) == osOK){
 			  detectedThreshold(&detectedThresholdFreq);
-			  countDetectF = 2;
 		  }
 	  }
     osDelay(1);
