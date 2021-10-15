@@ -233,6 +233,15 @@ public:
 
     void updateTimeParameterBackend();
 
+    //:TODO
+    void setValueSliderThresholdUI(int value);
+
+    void setValueSliderRange(int value);
+
+    void setValueSliderStampsNumberUI(int value);
+
+    void setValueSliderRepeatUI(int value);
+
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony

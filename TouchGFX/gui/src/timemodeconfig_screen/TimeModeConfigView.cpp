@@ -324,27 +324,23 @@ void TimeModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 {
     if (&src == &sliderThreshold)
     {
-    	setThresholdUI(pChannelInput, (uint32_t)value);
-        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-        textSliderThreshold.invalidate();
+    	setThresholdUI(pChannelInput, value);
+    	setValueSliderThresholdUI(value);
     }
     else if (&src == &sliderRange)
     {
     	setRangeUI(pSession, value);
-    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
-    	textRangeVal.invalidate();
+    	setValueSliderRange(value);
     }
     else if (&src == &sliderStampsNumber)
     {
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
     }
     else if (&src == &sliderRepeat)
     {
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
     }
 }
 
@@ -354,26 +350,22 @@ void TimeModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
     if (&src == &sliderThreshold)
     {
     	setThresholdUI(pChannelInput, (uint32_t)value);
-        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-        textSliderThreshold.invalidate();
+    	setValueSliderThresholdUI(value);
     }
     else if (&src == &sliderRange)
     {
     	setRangeUI(pSession, value);
-    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
-    	textRangeVal.invalidate();
+    	setValueSliderRange(value);
     }
     else if (&src == &sliderStampsNumber)
     {
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
     }
     else if (&src == &sliderRepeat)
     {
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
     }
 }
 
@@ -383,26 +375,22 @@ void TimeModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
     if (&src == &sliderThreshold)
     {
     	setThresholdUI(pChannelInput, (uint32_t)value);
-        Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
-        textSliderThreshold.invalidate();
+        setValueSliderThresholdUI(value);
     }
     else if (&src == &sliderRange)
     {
     	setRangeUI(pSession, value);
-    	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
-    	textRangeVal.invalidate();
+    	setValueSliderRange(value);
     }
     else if (&src == &sliderStampsNumber)
     {
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
     }
     else if (&src == &sliderRepeat)
     {
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
     }
 }
 
@@ -487,8 +475,7 @@ void TimeModeConfigView::detectThreshold()
 {
 	presenter->askForDetectedThreshold();
 	setThresholdUI(pChannelInput, detectedThresholdTime);
-    Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", detectedThresholdTime);
-    textSliderThreshold.invalidate();
+	setValueSliderThresholdUI(detectedThresholdTime);
     sliderThreshold.setValue(detectedThresholdTime);
 }
 
@@ -575,6 +562,30 @@ void TimeModeConfigView::setStampsUI(std::shared_ptr<SessionSetup>& session, uin
 void TimeModeConfigView::setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value)
 {
 	session->setRepeat(value);
+}
+
+void TimeModeConfigView::setValueSliderThresholdUI(int value)
+{
+    Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
+    textSliderThreshold.invalidate();
+}
+
+void TimeModeConfigView::setValueSliderRange(int value)
+{
+	Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%d", value);
+	textRangeVal.invalidate();
+}
+
+void TimeModeConfigView::setValueSliderStampsNumberUI(int value)
+{
+	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+	textStampsVal.invalidate();
+}
+
+void TimeModeConfigView::setValueSliderRepeatUI(int value)
+{
+	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+	textRepeatVal.invalidate();
 }
 
 void TimeModeConfigView::readStateChannel(bool stateChannel)
