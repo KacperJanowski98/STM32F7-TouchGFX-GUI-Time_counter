@@ -74,7 +74,12 @@ void Model::getReset()
 	osSemaphoreRelease(myBinarySemResetParamHandle);
 }
 
-void Model::getDetectedThreshold()
+void Model::getDetectedTimeThreshold()
 {
 	osSemaphoreRelease(myBinarySemDetectThreTimeHandle);
+}
+
+void Model::getDetectedFreqThreshold()
+{
+	osSemaphoreRelease(myBinarySemDetectThreFreqHandle);
 }

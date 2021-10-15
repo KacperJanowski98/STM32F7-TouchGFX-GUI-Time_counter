@@ -483,7 +483,6 @@ void TimeModeConfigView::ChangeStateTI()
 	}
 }
 
-//:TODO chyba zrobione
 void TimeModeConfigView::detectThreshold()
 {
 	presenter->askForDetectedThreshold();

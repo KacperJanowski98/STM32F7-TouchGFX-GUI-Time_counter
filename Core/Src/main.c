@@ -1843,6 +1843,14 @@ void StartTaskDetectThreF(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemDetectThreFreqHandle != NULL)
+	  {
+		  countDetectF++;
+		  if (osSemaphoreAcquire(myBinarySemDetectThreFreqHandle, (uint32_t) 10) == osOK && countDetectF > 1){
+			  detectedThreshold(&detectedThresholdFreq);
+			  countDetectF = 2;
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskDetectThreF */

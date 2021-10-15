@@ -279,7 +279,10 @@ void FreqModeConfigView::toggleChannelState()
 //:TODO
 void FreqModeConfigView::detectThreshold()
 {
-
+	presenter->askForDetectedThreshold();
+	setThresholdUI(pChannelInput, detectedThresholdFreq);
+	setValueSliderThresholdUI(detectedThresholdFreq);
+	sliderThreshold.setValue(detectedThresholdFreq);
 }
 
 // funkcja ustawiajaca w UI wartosci zapisane w obiektach

@@ -44,7 +44,9 @@ public:
 
     void getReset();
 
-    void getDetectedThreshold();
+    void getDetectedTimeThreshold();
+
+    void getDetectedFreqThreshold();
 
     void updateScreenContinuousTimeMode();
 

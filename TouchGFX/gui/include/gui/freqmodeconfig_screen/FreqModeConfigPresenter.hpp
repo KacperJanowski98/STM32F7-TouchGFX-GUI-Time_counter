@@ -36,6 +36,8 @@ public:
 
     virtual void askForDataFreqStamps();
 
+    virtual void askForDetectedThreshold();
+
 private:
     FreqModeConfigPresenter();
 

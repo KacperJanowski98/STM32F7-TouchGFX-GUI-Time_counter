@@ -31,3 +31,8 @@ void FreqModeConfigPresenter::askForDataFreqStamps()
 {
 	model->getDataFreqStamps();
 }
+
+void FreqModeConfigPresenter::askForDetectedThreshold()
+{
+	model->getDetectedFreqThreshold();
+}
