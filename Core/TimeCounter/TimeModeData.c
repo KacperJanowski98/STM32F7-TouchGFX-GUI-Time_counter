@@ -2,7 +2,7 @@
  * TimeModeData.c
  *
  *  Created on: 28 wrz 2021
- *      Author: kacpe
+ *      Author: Kacper
  */
 
 #include "TimeModeData.h"
@@ -85,30 +85,37 @@ void ResultTimeInit(ResultTime_t *pResultTime)
     pResultTime->measure1.mean = 0.0f;
     pResultTime->measure1.stdDev = 0.0f;
     pResultTime->measure1.meanUnit = NANO;
+    pResultTime->measure1.mean = PICO;
 
     pResultTime->measure2.mean = 0.0f;
     pResultTime->measure2.stdDev = 0.0f;
     pResultTime->measure2.meanUnit = NANO;
+    pResultTime->measure2.mean = PICO;
 
     pResultTime->measure3.mean = 0.0f;
     pResultTime->measure3.stdDev = 0.0f;
     pResultTime->measure3.meanUnit = NANO;
+    pResultTime->measure3.mean = PICO;
 
     pResultTime->measure4.mean = 0.0f;
     pResultTime->measure4.stdDev = 0.0f;
     pResultTime->measure4.meanUnit = NANO;
+    pResultTime->measure4.mean = PICO;
 
     pResultTime->measure5.mean = 0.0f;
     pResultTime->measure5.stdDev = 0.0f;
     pResultTime->measure5.meanUnit = NANO;
+    pResultTime->measure5.mean = PICO;
 
     pResultTime->measure6.mean = 0.0f;
     pResultTime->measure6.stdDev = 0.0f;
     pResultTime->measure6.meanUnit = NANO;
+    pResultTime->measure6.mean = PICO;
 
     pResultTime->measure7.mean = 0.0f;
     pResultTime->measure7.stdDev = 0.0f;
     pResultTime->measure7.meanUnit = NANO;
+    pResultTime->measure7.mean = PICO;
 }
 
 void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
@@ -178,6 +185,7 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
     pTimeMode->TimeSession.stampsNumber = 1;
 }
 
+//:TODO dorobic obliczanie odchylenia standardowego.
 void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 {
     if (pTimeMode->TiSetup1.tiState == true)
@@ -394,4 +402,5 @@ void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
 	Ti->stopIn = 0;
 	meas->mean = 0.0f;
 	meas->meanUnit = NANO;
+	meas->stdDevUnit = PICO;
 }

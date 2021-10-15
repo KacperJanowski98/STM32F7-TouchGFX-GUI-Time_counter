@@ -93,7 +93,6 @@ private:
 
 	bool m_hfInput;
 	uint16_t m_gate;
-	ClockName m_clockSource;
 };
 
 #endif // FREQMODECONFIGVIEW_HPP

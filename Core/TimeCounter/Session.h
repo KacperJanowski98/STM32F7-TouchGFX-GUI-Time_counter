@@ -35,7 +35,10 @@ typedef enum
     PICO = 1,
     NANO = 2,
     MICRO = 3,
-    MILLI = 4
+    MILLI = 4,
+	KILO = 5,
+	MEGA = 6,
+	GIGA = 7
 } Unit_t;
 
 typedef struct

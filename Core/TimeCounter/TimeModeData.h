@@ -2,7 +2,7 @@
  * TimeModeData.h
  *
  *  Created on: 28 wrz 2021
- *      Author: kacpe
+ *      Author: Kacper
  */
 
 #ifndef INC_TIMEMODEDATA_H_
@@ -49,6 +49,7 @@ typedef struct
     float mean;
     float stdDev;
     Unit_t meanUnit;
+    Unit_t stdDevUnit;
 } MeasTime_t;
 
 typedef struct

@@ -85,7 +85,7 @@ void TimeModeConfigView::setupScreen()
     // obsluga toggle butona    
 	TimeModeConfigView::setGuiTouchable(toggleChannel.getState());
 	// aktualizacja panelu konfiguracyjnego zegara
-	updateClockSourceUI(Session.getSourceClock());
+	updateClockSourceUI(pSession->getSourceClock());
 	// aktualizacaj session setup
 	updateSessionSetupUI(pSession);
 	// uzupelnienie listy aktywnych kanalow przy starcie UI

@@ -65,10 +65,9 @@ void FreqModeConfigView::setupScreen()
 	sliderRepeat.setStopValueCallback(sliderValueConfirmedCallback);
 
 	initMesSetupUI();
-	// aktualizacja zrodla zegarowego
-	FreqModeConfigView::m_clockSource = ClockName(1);
 
-	updateClockSourceUI(m_clockSource);
+	// aktualizacja zrodla zegarowego
+	updateClockSourceUI(pSession->getSourceClock());
 
 	FreqModeConfigView::m_hfInput = false;
 	FreqModeConfigView::m_gate = 10;
@@ -238,15 +237,15 @@ void FreqModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::Abstr
 {
 	if (&src == &radioClockQuartz)
 	{
-		FreqModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
+		pSession->setClockSource(ClockName::INTERNAL_QUARTZ);
 	}
 	else if (&src == &radioClockRubid)
 	{
-		FreqModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
+		pSession->setClockSource(ClockName::INTERNAL_RUBID);
 	}
 	else if (&src == &radioClockExternal)
 	{
-		FreqModeConfigView::m_clockSource = ClockName::EXTERNAL;
+		pSession->setClockSource(ClockName::EXTERNAL);
 	}
 }
 
