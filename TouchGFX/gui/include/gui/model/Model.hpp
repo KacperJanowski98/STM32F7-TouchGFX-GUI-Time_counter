@@ -13,6 +13,9 @@
 extern TimeMode_t TimeBackend;
 extern ResultTime_t ResultTimeBackend;
 
+extern FrequencyMode_t FreqBackend;
+extern ResultFreq_t ResultFreqBackend;
+
 extern uint32_t detectedThresholdTime;
 extern uint32_t detectedThresholdFreq;
 

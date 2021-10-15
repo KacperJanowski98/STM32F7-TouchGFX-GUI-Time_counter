@@ -218,6 +218,8 @@ uint8_t conditionT = 1;
 
 TimeMode_t TimeBackend;
 ResultTime_t ResultTimeBackend;
+FrequencyMode_t FreqBackend;
+ResultFreq_t ResultFreqBackend;
 
 uint32_t detectedThresholdTime = 0;
 uint32_t detectedThresholdFreq = 0;
@@ -315,6 +317,9 @@ int main(void)
 
   TimeModeInit(&TimeBackend);
   ResultTimeInit(&ResultTimeBackend);
+
+  FrequencyModeInit(&FreqBackend);
+  ResultFrequencyInit(&ResultFreqBackend);
 
   srand(time(NULL));
 
