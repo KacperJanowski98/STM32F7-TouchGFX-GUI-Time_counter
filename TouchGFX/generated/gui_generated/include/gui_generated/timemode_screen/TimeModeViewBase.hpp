@@ -107,13 +107,13 @@ protected:
     touchgfx::TextAreaWithOneWildcard textStamps6stopVal;
     touchgfx::TextAreaWithOneWildcard textStamps7startVal;
     touchgfx::TextAreaWithOneWildcard textStamps7stopVal;
-    touchgfx::TextArea textLabelPs1;
-    touchgfx::TextArea textLabelPs2;
-    touchgfx::TextArea textLabelPs3;
-    touchgfx::TextArea textLabelPs4;
-    touchgfx::TextArea textLabelPs5;
-    touchgfx::TextArea textLabelPs6;
-    touchgfx::TextArea textLabelPs7;
+    touchgfx::TextArea textUnitSDPs1;
+    touchgfx::TextArea textUnitSDPs2;
+    touchgfx::TextArea textUnitSDPs3;
+    touchgfx::TextArea textUnitSDPs4;
+    touchgfx::TextArea textUnitSDPs5;
+    touchgfx::TextArea textUnitSDPs6;
+    touchgfx::TextArea textUnitSDPs7;
     touchgfx::TextArea textUnitPs1;
     touchgfx::TextArea textUnitPs2;
     touchgfx::TextArea textUnitPs3;
@@ -149,6 +149,13 @@ protected:
     touchgfx::TextArea textLabelTi5;
     touchgfx::TextArea textLabelTi6;
     touchgfx::TextArea textLabelTi7;
+    touchgfx::TextArea textUnitSDNs1;
+    touchgfx::TextArea textUnitSDNs2;
+    touchgfx::TextArea textUnitSDNs3;
+    touchgfx::TextArea textUnitSDNs4;
+    touchgfx::TextArea textUnitSDNs5;
+    touchgfx::TextArea textUnitSDNs6;
+    touchgfx::TextArea textUnitSDNs7;
 
     /*
      * Wildcard Buffers

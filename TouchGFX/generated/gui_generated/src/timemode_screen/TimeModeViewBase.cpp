@@ -489,40 +489,40 @@ TimeModeViewBase::TimeModeViewBase() :
     textStamps7stopVal.setWildcard(textStamps7stopValBuffer);
     textStamps7stopVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID156));
 
-    textLabelPs1.setXY(762, 127);
-    textLabelPs1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs1.setLinespacing(0);
-    textLabelPs1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID157));
+    textUnitSDPs1.setXY(762, 127);
+    textUnitSDPs1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs1.setLinespacing(0);
+    textUnitSDPs1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID157));
 
-    textLabelPs2.setXY(762, 174);
-    textLabelPs2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs2.setLinespacing(0);
-    textLabelPs2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID158));
+    textUnitSDPs2.setXY(762, 174);
+    textUnitSDPs2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs2.setLinespacing(0);
+    textUnitSDPs2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID158));
 
-    textLabelPs3.setXY(762, 226);
-    textLabelPs3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs3.setLinespacing(0);
-    textLabelPs3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID159));
+    textUnitSDPs3.setXY(762, 226);
+    textUnitSDPs3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs3.setLinespacing(0);
+    textUnitSDPs3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID159));
 
-    textLabelPs4.setXY(762, 272);
-    textLabelPs4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs4.setLinespacing(0);
-    textLabelPs4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID160));
+    textUnitSDPs4.setXY(762, 272);
+    textUnitSDPs4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs4.setLinespacing(0);
+    textUnitSDPs4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID160));
 
-    textLabelPs5.setXY(762, 324);
-    textLabelPs5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs5.setLinespacing(0);
-    textLabelPs5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID161));
+    textUnitSDPs5.setXY(762, 324);
+    textUnitSDPs5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs5.setLinespacing(0);
+    textUnitSDPs5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID161));
 
-    textLabelPs6.setXY(762, 367);
-    textLabelPs6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs6.setLinespacing(0);
-    textLabelPs6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID162));
+    textUnitSDPs6.setXY(762, 367);
+    textUnitSDPs6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs6.setLinespacing(0);
+    textUnitSDPs6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID162));
 
-    textLabelPs7.setXY(762, 418);
-    textLabelPs7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textLabelPs7.setLinespacing(0);
-    textLabelPs7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID163));
+    textUnitSDPs7.setXY(762, 418);
+    textUnitSDPs7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDPs7.setLinespacing(0);
+    textUnitSDPs7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID163));
 
     textUnitPs1.setPosition(638, 125, 32, 25);
     textUnitPs1.setVisible(false);
@@ -727,6 +727,48 @@ TimeModeViewBase::TimeModeViewBase() :
     textLabelTi7.setLinespacing(0);
     textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
 
+    textUnitSDNs1.setXY(762, 127);
+    textUnitSDNs1.setVisible(false);
+    textUnitSDNs1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs1.setLinespacing(0);
+    textUnitSDNs1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID242));
+
+    textUnitSDNs2.setXY(762, 174);
+    textUnitSDNs2.setVisible(false);
+    textUnitSDNs2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs2.setLinespacing(0);
+    textUnitSDNs2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID243));
+
+    textUnitSDNs3.setXY(762, 226);
+    textUnitSDNs3.setVisible(false);
+    textUnitSDNs3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs3.setLinespacing(0);
+    textUnitSDNs3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID244));
+
+    textUnitSDNs4.setXY(762, 272);
+    textUnitSDNs4.setVisible(false);
+    textUnitSDNs4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs4.setLinespacing(0);
+    textUnitSDNs4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID245));
+
+    textUnitSDNs5.setXY(762, 324);
+    textUnitSDNs5.setVisible(false);
+    textUnitSDNs5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs5.setLinespacing(0);
+    textUnitSDNs5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID246));
+
+    textUnitSDNs6.setXY(762, 367);
+    textUnitSDNs6.setVisible(false);
+    textUnitSDNs6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs6.setLinespacing(0);
+    textUnitSDNs6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID247));
+
+    textUnitSDNs7.setXY(762, 418);
+    textUnitSDNs7.setVisible(false);
+    textUnitSDNs7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSDNs7.setLinespacing(0);
+    textUnitSDNs7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID248));
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
@@ -799,13 +841,13 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textStamps6stopVal);
     add(textStamps7startVal);
     add(textStamps7stopVal);
-    add(textLabelPs1);
-    add(textLabelPs2);
-    add(textLabelPs3);
-    add(textLabelPs4);
-    add(textLabelPs5);
-    add(textLabelPs6);
-    add(textLabelPs7);
+    add(textUnitSDPs1);
+    add(textUnitSDPs2);
+    add(textUnitSDPs3);
+    add(textUnitSDPs4);
+    add(textUnitSDPs5);
+    add(textUnitSDPs6);
+    add(textUnitSDPs7);
     add(textUnitPs1);
     add(textUnitPs2);
     add(textUnitPs3);
@@ -841,6 +883,13 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textLabelTi5);
     add(textLabelTi6);
     add(textLabelTi7);
+    add(textUnitSDNs1);
+    add(textUnitSDNs2);
+    add(textUnitSDNs3);
+    add(textUnitSDNs4);
+    add(textUnitSDNs5);
+    add(textUnitSDNs6);
+    add(textUnitSDNs7);
 }
 
 void TimeModeViewBase::setupScreen()
