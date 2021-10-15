@@ -38,6 +38,8 @@ public:
     void setThresholdUI(std::shared_ptr<FreqModeParameter>& channel, uint32_t value);
 
     void setValueSliderThresholdUI(int value);
+    void setValueSliderStampsNumberUI(int value);
+    void setValueSliderRepeatUI(int value);
     void initMesSetupUI();
     void setValueSliderGateUI(int value);
 

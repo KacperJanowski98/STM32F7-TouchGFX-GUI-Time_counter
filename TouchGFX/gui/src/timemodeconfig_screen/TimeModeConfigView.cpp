@@ -488,8 +488,8 @@ void TimeModeConfigView::detectThreshold()
 	presenter->askForDetectedThreshold();
 	setThresholdUI(pChannelInput, detectedThresholdTime);
     Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", detectedThresholdTime);
-    sliderThreshold.setValue(detectedThresholdTime);
     textSliderThreshold.invalidate();
+    sliderThreshold.setValue(detectedThresholdTime);
 }
 
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)

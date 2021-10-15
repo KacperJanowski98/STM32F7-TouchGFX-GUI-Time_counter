@@ -148,21 +148,15 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
 	}
-	else if (&src == &sliderGate)
-	{
-		setValueSliderGateUI(value);
-	}
 	else if (&src == &sliderStampsNumber)
 	{
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
 	}
 	else if (&src == &sliderRepeat)
 	{
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
 	}
 }
 
@@ -173,21 +167,15 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
 	}
-	else if (&src == &sliderGate)
-	{
-		setValueSliderGateUI(value);
-	}
 	else if (&src == &sliderStampsNumber)
 	{
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
 	}
 	else if (&src == &sliderRepeat)
 	{
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
 	}
 }
 
@@ -198,21 +186,15 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
 	}
-	else if (&src == &sliderGate)
-	{
-		setValueSliderGateUI(value);
-	}
 	else if (&src == &sliderStampsNumber)
 	{
     	setStampsUI(pSession, value);
-    	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
-    	textStampsVal.invalidate();
+    	setValueSliderStampsNumberUI(value);
 	}
 	else if (&src == &sliderRepeat)
 	{
     	setRepeatUI(pSession, value);
-    	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
-    	textRepeatVal.invalidate();
+    	setValueSliderRepeatUI(value);
 	}
 }
 
@@ -276,7 +258,7 @@ void FreqModeConfigView::toggleChannelState()
 	setChannelStateUI(pChannelInput, CurrentState);
 }
 
-//:TODO
+// funkcja ustawiaja thresold z backendu
 void FreqModeConfigView::detectThreshold()
 {
 	presenter->askForDetectedThreshold();
@@ -362,6 +344,18 @@ void FreqModeConfigView::setValueSliderThresholdUI(int value)
 {
 	Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%d", value);
 	textSliderThreshold.invalidate();
+}
+
+void FreqModeConfigView::setValueSliderStampsNumberUI(int value)
+{
+	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
+	textStampsVal.invalidate();
+}
+//
+void FreqModeConfigView::setValueSliderRepeatUI(int value)
+{
+	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
+	textRepeatVal.invalidate();
 }
 
 void FreqModeConfigView::initMesSetupUI()
