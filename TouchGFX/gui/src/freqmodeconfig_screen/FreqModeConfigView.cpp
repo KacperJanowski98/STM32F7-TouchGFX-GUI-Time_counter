@@ -156,6 +156,10 @@ void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx:
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
 	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
+	}
 	else if (&src == &sliderStampsNumber)
 	{
     	setStampsUI(pSession, value);
@@ -175,6 +179,10 @@ void FreqModeConfigView::sliderValueChangedCallbackHandler(const touchgfx::Slide
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
 	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
+	}
 	else if (&src == &sliderStampsNumber)
 	{
     	setStampsUI(pSession, value);
@@ -193,6 +201,10 @@ void FreqModeConfigView::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
 	{
 		setThresholdUI(pChannelInput, (uint32_t)value);
 		setValueSliderThresholdUI(value);
+	}
+	else if (&src == &sliderGate)
+	{
+		setValueSliderGateUI(value);
 	}
 	else if (&src == &sliderStampsNumber)
 	{

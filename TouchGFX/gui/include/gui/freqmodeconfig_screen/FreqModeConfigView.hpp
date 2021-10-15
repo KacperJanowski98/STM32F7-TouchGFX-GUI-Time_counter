@@ -40,8 +40,8 @@ public:
     void setValueSliderThresholdUI(int value);
     void setValueSliderStampsNumberUI(int value);
     void setValueSliderRepeatUI(int value);
-    void initMesSetupUI();
     void setValueSliderGateUI(int value);
+    void initMesSetupUI();
 
     void setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
     void setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
