@@ -306,237 +306,117 @@ FreqModeViewBase::FreqModeViewBase() :
     textStdDevVal7_1.setWildcard(textStdDevVal7_1Buffer);
     textStdDevVal7_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID241));
 
-    textUnitSDuHz1.setXY(756, 106);
-    textUnitSDuHz1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz1.setLinespacing(0);
-    textUnitSDuHz1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID249));
+    textUnitSD1.setPosition(756, 106, 36, 19);
+    textUnitSD1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD1.setLinespacing(0);
+    textUnitSD1Buffer[0] = 0;
+    textUnitSD1.setWildcard(textUnitSD1Buffer);
+    textUnitSD1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID249));
 
-    textUnitSDuHz2.setXY(756, 153);
-    textUnitSDuHz2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz2.setLinespacing(0);
-    textUnitSDuHz2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID250));
+    textUnitSD2.setPosition(756, 153, 36, 19);
+    textUnitSD2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD2.setLinespacing(0);
+    textUnitSD2Buffer[0] = 0;
+    textUnitSD2.setWildcard(textUnitSD2Buffer);
+    textUnitSD2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID250));
 
-    textUnitSDuHz3.setXY(756, 201);
-    textUnitSDuHz3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz3.setLinespacing(0);
-    textUnitSDuHz3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID251));
+    textUnitSD3.setPosition(756, 201, 36, 19);
+    textUnitSD3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD3.setLinespacing(0);
+    textUnitSD3Buffer[0] = 0;
+    textUnitSD3.setWildcard(textUnitSD3Buffer);
+    textUnitSD3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID251));
 
-    textUnitSDuHz4.setXY(756, 250);
-    textUnitSDuHz4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz4.setLinespacing(0);
-    textUnitSDuHz4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID252));
+    textUnitSD4.setPosition(756, 250, 36, 19);
+    textUnitSD4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD4.setLinespacing(0);
+    textUnitSD4Buffer[0] = 0;
+    textUnitSD4.setWildcard(textUnitSD4Buffer);
+    textUnitSD4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID252));
 
-    textUnitSDuHz5.setXY(756, 297);
-    textUnitSDuHz5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz5.setLinespacing(0);
-    textUnitSDuHz5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID253));
+    textUnitSD5.setPosition(756, 297, 36, 19);
+    textUnitSD5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD5.setLinespacing(0);
+    textUnitSD5Buffer[0] = 0;
+    textUnitSD5.setWildcard(textUnitSD5Buffer);
+    textUnitSD5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID253));
 
-    textUnitSDuHz6.setXY(756, 346);
-    textUnitSDuHz6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz6.setLinespacing(0);
-    textUnitSDuHz6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID254));
+    textUnitSD6.setPosition(756, 346, 36, 19);
+    textUnitSD6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD6.setLinespacing(0);
+    textUnitSD6Buffer[0] = 0;
+    textUnitSD6.setWildcard(textUnitSD6Buffer);
+    textUnitSD6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID254));
 
-    textUnitSDuHz7.setXY(756, 396);
-    textUnitSDuHz7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz7.setLinespacing(0);
-    textUnitSDuHz7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID255));
+    textUnitSD7.setPosition(756, 396, 36, 19);
+    textUnitSD7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD7.setLinespacing(0);
+    textUnitSD7Buffer[0] = 0;
+    textUnitSD7.setWildcard(textUnitSD7Buffer);
+    textUnitSD7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID255));
 
-    textUnitSDuHz8.setXY(756, 442);
-    textUnitSDuHz8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDuHz8.setLinespacing(0);
-    textUnitSDuHz8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID256));
+    textUnitSD8.setPosition(756, 442, 36, 19);
+    textUnitSD8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD8.setLinespacing(0);
+    textUnitSD8Buffer[0] = 0;
+    textUnitSD8.setWildcard(textUnitSD8Buffer);
+    textUnitSD8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID256));
 
-    textUnitSDmHz1.setXY(756, 106);
-    textUnitSDmHz1.setVisible(false);
-    textUnitSDmHz1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz1.setLinespacing(0);
-    textUnitSDmHz1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID257));
+    textUnitMean1.setPosition(630, 106, 36, 19);
+    textUnitMean1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean1.setLinespacing(0);
+    textUnitMean1Buffer[0] = 0;
+    textUnitMean1.setWildcard(textUnitMean1Buffer);
+    textUnitMean1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID265));
 
-    textUnitSDmHz2.setXY(756, 153);
-    textUnitSDmHz2.setVisible(false);
-    textUnitSDmHz2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz2.setLinespacing(0);
-    textUnitSDmHz2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID258));
+    textUnitMean2.setPosition(630, 153, 36, 19);
+    textUnitMean2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean2.setLinespacing(0);
+    textUnitMean2Buffer[0] = 0;
+    textUnitMean2.setWildcard(textUnitMean2Buffer);
+    textUnitMean2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID266));
 
-    textUnitSDmHz3.setXY(756, 201);
-    textUnitSDmHz3.setVisible(false);
-    textUnitSDmHz3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz3.setLinespacing(0);
-    textUnitSDmHz3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID259));
+    textUnitMean3.setPosition(630, 201, 36, 19);
+    textUnitMean3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean3.setLinespacing(0);
+    textUnitMean3Buffer[0] = 0;
+    textUnitMean3.setWildcard(textUnitMean3Buffer);
+    textUnitMean3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID267));
 
-    textUnitSDmHz4.setXY(756, 250);
-    textUnitSDmHz4.setVisible(false);
-    textUnitSDmHz4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz4.setLinespacing(0);
-    textUnitSDmHz4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID260));
+    textUnitMean4.setPosition(630, 250, 36, 19);
+    textUnitMean4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean4.setLinespacing(0);
+    textUnitMean4Buffer[0] = 0;
+    textUnitMean4.setWildcard(textUnitMean4Buffer);
+    textUnitMean4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID268));
 
-    textUnitSDmHz5.setXY(756, 297);
-    textUnitSDmHz5.setVisible(false);
-    textUnitSDmHz5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz5.setLinespacing(0);
-    textUnitSDmHz5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID261));
+    textUnitMean5.setPosition(630, 297, 36, 19);
+    textUnitMean5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean5.setLinespacing(0);
+    textUnitMean5Buffer[0] = 0;
+    textUnitMean5.setWildcard(textUnitMean5Buffer);
+    textUnitMean5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID269));
 
-    textUnitSDmHz6.setXY(756, 346);
-    textUnitSDmHz6.setVisible(false);
-    textUnitSDmHz6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz6.setLinespacing(0);
-    textUnitSDmHz6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID262));
+    textUnitMean6.setPosition(630, 346, 36, 19);
+    textUnitMean6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean6.setLinespacing(0);
+    textUnitMean6Buffer[0] = 0;
+    textUnitMean6.setWildcard(textUnitMean6Buffer);
+    textUnitMean6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID270));
 
-    textUnitSDmHz7.setXY(756, 396);
-    textUnitSDmHz7.setVisible(false);
-    textUnitSDmHz7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz7.setLinespacing(0);
-    textUnitSDmHz7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID263));
+    textUnitMean7.setPosition(630, 396, 36, 19);
+    textUnitMean7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean7.setLinespacing(0);
+    textUnitMean7Buffer[0] = 0;
+    textUnitMean7.setWildcard(textUnitMean7Buffer);
+    textUnitMean7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID271));
 
-    textUnitSDmHz8.setXY(756, 442);
-    textUnitSDmHz8.setVisible(false);
-    textUnitSDmHz8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitSDmHz8.setLinespacing(0);
-    textUnitSDmHz8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID264));
-
-    textUnitkHz1.setXY(630, 106);
-    textUnitkHz1.setVisible(false);
-    textUnitkHz1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz1.setLinespacing(0);
-    textUnitkHz1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID265));
-
-    textUnitkHz2.setXY(630, 153);
-    textUnitkHz2.setVisible(false);
-    textUnitkHz2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz2.setLinespacing(0);
-    textUnitkHz2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID266));
-
-    textUnitkHz3.setXY(630, 201);
-    textUnitkHz3.setVisible(false);
-    textUnitkHz3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz3.setLinespacing(0);
-    textUnitkHz3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID267));
-
-    textUnitkHz4.setXY(630, 250);
-    textUnitkHz4.setVisible(false);
-    textUnitkHz4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz4.setLinespacing(0);
-    textUnitkHz4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID268));
-
-    textUnitkHz5.setXY(630, 297);
-    textUnitkHz5.setVisible(false);
-    textUnitkHz5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz5.setLinespacing(0);
-    textUnitkHz5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID269));
-
-    textUnitkHz6.setXY(630, 346);
-    textUnitkHz6.setVisible(false);
-    textUnitkHz6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz6.setLinespacing(0);
-    textUnitkHz6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID270));
-
-    textUnitkHz7.setXY(630, 396);
-    textUnitkHz7.setVisible(false);
-    textUnitkHz7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz7.setLinespacing(0);
-    textUnitkHz7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID271));
-
-    textUnitkHz8.setXY(630, 442);
-    textUnitkHz8.setVisible(false);
-    textUnitkHz8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitkHz8.setLinespacing(0);
-    textUnitkHz8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
-
-    textUnitMHz1.setXY(630, 106);
-    textUnitMHz1.setVisible(false);
-    textUnitMHz1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz1.setLinespacing(0);
-    textUnitMHz1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID273));
-
-    textUnitMHz2.setXY(630, 153);
-    textUnitMHz2.setVisible(false);
-    textUnitMHz2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz2.setLinespacing(0);
-    textUnitMHz2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID274));
-
-    textUnitMHz3.setXY(630, 201);
-    textUnitMHz3.setVisible(false);
-    textUnitMHz3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz3.setLinespacing(0);
-    textUnitMHz3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID275));
-
-    textUnitMHz4.setXY(630, 250);
-    textUnitMHz4.setVisible(false);
-    textUnitMHz4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz4.setLinespacing(0);
-    textUnitMHz4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID276));
-
-    textUnitMHz5.setXY(630, 297);
-    textUnitMHz5.setVisible(false);
-    textUnitMHz5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz5.setLinespacing(0);
-    textUnitMHz5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID277));
-
-    textUnitMHz6.setXY(630, 346);
-    textUnitMHz6.setVisible(false);
-    textUnitMHz6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz6.setLinespacing(0);
-    textUnitMHz6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID278));
-
-    textUnitMHz7.setXY(630, 396);
-    textUnitMHz7.setVisible(false);
-    textUnitMHz7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz7.setLinespacing(0);
-    textUnitMHz7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID279));
-
-    textUnitMHz8.setXY(630, 442);
-    textUnitMHz8.setVisible(false);
-    textUnitMHz8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitMHz8.setLinespacing(0);
-    textUnitMHz8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID280));
-
-    textUnitGHz1.setXY(630, 106);
-    textUnitGHz1.setVisible(false);
-    textUnitGHz1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz1.setLinespacing(0);
-    textUnitGHz1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID281));
-
-    textUnitGHz2.setXY(630, 153);
-    textUnitGHz2.setVisible(false);
-    textUnitGHz2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz2.setLinespacing(0);
-    textUnitGHz2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID282));
-
-    textUnitGHz3.setXY(630, 201);
-    textUnitGHz3.setVisible(false);
-    textUnitGHz3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz3.setLinespacing(0);
-    textUnitGHz3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID283));
-
-    textUnitGHz4.setXY(630, 250);
-    textUnitGHz4.setVisible(false);
-    textUnitGHz4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz4.setLinespacing(0);
-    textUnitGHz4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID284));
-
-    textUnitGHz5.setXY(630, 297);
-    textUnitGHz5.setVisible(false);
-    textUnitGHz5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz5.setLinespacing(0);
-    textUnitGHz5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID285));
-
-    textUnitGHz6.setXY(630, 346);
-    textUnitGHz6.setVisible(false);
-    textUnitGHz6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz6.setLinespacing(0);
-    textUnitGHz6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID286));
-
-    textUnitGHz7.setXY(630, 396);
-    textUnitGHz7.setVisible(false);
-    textUnitGHz7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz7.setLinespacing(0);
-    textUnitGHz7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID287));
-
-    textUnitGHz8.setXY(630, 442);
-    textUnitGHz8.setVisible(false);
-    textUnitGHz8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textUnitGHz8.setLinespacing(0);
-    textUnitGHz8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID288));
+    textUnitMean8.setPosition(630, 442, 36, 19);
+    textUnitMean8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean8.setLinespacing(0);
+    textUnitMean8Buffer[0] = 0;
+    textUnitMean8.setWildcard(textUnitMean8Buffer);
+    textUnitMean8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
 
     add(__background);
     add(boxBackgroungFreq);
@@ -586,46 +466,22 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textStdDevVal6);
     add(textStdDevVal7);
     add(textStdDevVal7_1);
-    add(textUnitSDuHz1);
-    add(textUnitSDuHz2);
-    add(textUnitSDuHz3);
-    add(textUnitSDuHz4);
-    add(textUnitSDuHz5);
-    add(textUnitSDuHz6);
-    add(textUnitSDuHz7);
-    add(textUnitSDuHz8);
-    add(textUnitSDmHz1);
-    add(textUnitSDmHz2);
-    add(textUnitSDmHz3);
-    add(textUnitSDmHz4);
-    add(textUnitSDmHz5);
-    add(textUnitSDmHz6);
-    add(textUnitSDmHz7);
-    add(textUnitSDmHz8);
-    add(textUnitkHz1);
-    add(textUnitkHz2);
-    add(textUnitkHz3);
-    add(textUnitkHz4);
-    add(textUnitkHz5);
-    add(textUnitkHz6);
-    add(textUnitkHz7);
-    add(textUnitkHz8);
-    add(textUnitMHz1);
-    add(textUnitMHz2);
-    add(textUnitMHz3);
-    add(textUnitMHz4);
-    add(textUnitMHz5);
-    add(textUnitMHz6);
-    add(textUnitMHz7);
-    add(textUnitMHz8);
-    add(textUnitGHz1);
-    add(textUnitGHz2);
-    add(textUnitGHz3);
-    add(textUnitGHz4);
-    add(textUnitGHz5);
-    add(textUnitGHz6);
-    add(textUnitGHz7);
-    add(textUnitGHz8);
+    add(textUnitSD1);
+    add(textUnitSD2);
+    add(textUnitSD3);
+    add(textUnitSD4);
+    add(textUnitSD5);
+    add(textUnitSD6);
+    add(textUnitSD7);
+    add(textUnitSD8);
+    add(textUnitMean1);
+    add(textUnitMean2);
+    add(textUnitMean3);
+    add(textUnitMean4);
+    add(textUnitMean5);
+    add(textUnitMean6);
+    add(textUnitMean7);
+    add(textUnitMean8);
 }
 
 void FreqModeViewBase::setupScreen()

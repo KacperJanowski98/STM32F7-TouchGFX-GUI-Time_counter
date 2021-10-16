@@ -5691,12 +5691,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz1",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD1",
             "X": 756,
             "Y": 106,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5715,12 +5719,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz2",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD2",
             "X": 756,
             "Y": 153,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5739,12 +5747,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz3",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD3",
             "X": 756,
             "Y": 201,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5763,12 +5775,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz4",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD4",
             "X": 756,
             "Y": 250,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5787,12 +5803,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz5",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD5",
             "X": 756,
             "Y": 297,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5811,12 +5831,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz6",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD6",
             "X": 756,
             "Y": 346,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5835,12 +5859,16 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz7",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD7",
             "X": 756,
             "Y": 396,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -5859,206 +5887,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitSDuHz8",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitSD8",
             "X": 756,
             "Y": 442,
-            "Width": 29,
+            "Width": 36,
             "Height": 19,
             "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId257",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz1",
-            "X": 756,
-            "Y": 106,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId258",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz2",
-            "X": 756,
-            "Y": 153,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId259",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz3",
-            "X": 756,
-            "Y": 201,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId260",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz4",
-            "X": 756,
-            "Y": 250,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId261",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz5",
-            "X": 756,
-            "Y": 297,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId262",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz6",
-            "X": 756,
-            "Y": 346,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId263",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz7",
-            "X": 756,
-            "Y": 396,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId264",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitSDmHz8",
-            "X": 756,
-            "Y": 442,
-            "Width": 34,
-            "Height": 19,
-            "Visible": false,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6075,14 +5915,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz1",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean1",
             "X": 630,
             "Y": 106,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6099,14 +5943,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz2",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean2",
             "X": 630,
             "Y": 153,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6123,14 +5971,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz3",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean3",
             "X": 630,
             "Y": 201,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6147,14 +5999,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz4",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean4",
             "X": 630,
             "Y": 250,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6171,14 +6027,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz5",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean5",
             "X": 630,
             "Y": 297,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6195,14 +6055,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz6",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean6",
             "X": 630,
             "Y": 346,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6219,14 +6083,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz7",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean7",
             "X": 630,
             "Y": 396,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -6243,398 +6111,18 @@
               "Blue": 255
             },
             "Alpha": 255,
-            "AutoSize": true,
+            "AutoSize": false,
             "LineSpacing": 0,
-            "Name": "textUnitkHz8",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textUnitMean8",
             "X": 630,
             "Y": 442,
-            "Width": 28,
+            "Width": 36,
             "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId273",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz1",
-            "X": 630,
-            "Y": 106,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId274",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz2",
-            "X": 630,
-            "Y": 153,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId275",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz3",
-            "X": 630,
-            "Y": 201,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId276",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz4",
-            "X": 630,
-            "Y": 250,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId277",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz5",
-            "X": 630,
-            "Y": 297,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId278",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz6",
-            "X": 630,
-            "Y": 346,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId279",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz7",
-            "X": 630,
-            "Y": 396,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId280",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitMHz8",
-            "X": 630,
-            "Y": 442,
-            "Width": 32,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId281",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz1",
-            "X": 630,
-            "Y": 106,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId282",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz2",
-            "X": 630,
-            "Y": 153,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId283",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz3",
-            "X": 630,
-            "Y": 201,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId284",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz4",
-            "X": 630,
-            "Y": 250,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId285",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz5",
-            "X": 630,
-            "Y": 297,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId286",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz6",
-            "X": 630,
-            "Y": 346,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId287",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz7",
-            "X": 630,
-            "Y": 396,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "TextArea",
-            "TextId": "SingleUseId288",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Alpha": 255,
-            "AutoSize": true,
-            "LineSpacing": 0,
-            "Name": "textUnitGHz8",
-            "X": 630,
-            "Y": 442,
-            "Width": 31,
-            "Height": 19,
-            "Visible": false,
+            "Visible": true,
             "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
@@ -9101,38 +8589,6 @@
         "IsResource": false
       },
       {
-        "TextEntryId": "SingleUseId257",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId258",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId259",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId260",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId261",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId262",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId263",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId264",
-        "IsResource": false
-      },
-      {
         "TextEntryId": "SingleUseId265",
         "IsResource": false
       },
@@ -9162,70 +8618,6 @@
       },
       {
         "TextEntryId": "SingleUseId272",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId273",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId274",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId275",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId276",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId277",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId278",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId279",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId280",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId281",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId282",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId283",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId284",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId285",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId286",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId287",
-        "IsResource": false
-      },
-      {
-        "TextEntryId": "SingleUseId288",
         "IsResource": false
       }
     ],
