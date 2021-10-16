@@ -9,6 +9,11 @@ void TimeModeView::setupScreen()
 {
     TimeModeViewBase::setupScreen();
 
+    char ps[] = "ps";
+    char ns[] = "ns";
+    char us[] = "us";
+    char ms[] = "ms";
+
     m_total_ti1 = 0;
     m_frac1_ti1 = 0;
     m_frac2_ti1 = 0;
@@ -168,234 +173,150 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        textUnitPs1.setVisible(true);
-        textUnitNs1.setVisible(false);
-        textUnitUs1.setVisible(false);
-        textUnitMs1.setVisible(false);
+        Unicode::strncpy(textUnitMean1Buffer, (char*)ps, TEXTUNITMEAN1_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        textUnitPs1.setVisible(false);
-        textUnitNs1.setVisible(true);
-        textUnitUs1.setVisible(false);
-        textUnitMs1.setVisible(false);
+        Unicode::strncpy(textUnitMean1Buffer, (char*)ns, TEXTUNITMEAN1_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        textUnitPs1.setVisible(false);
-        textUnitNs1.setVisible(false);
-        textUnitUs1.setVisible(true);
-        textUnitMs1.setVisible(false);
+        Unicode::strncpy(textUnitMean1Buffer, (char*)us, TEXTUNITMEAN1_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        textUnitPs1.setVisible(false);
-        textUnitNs1.setVisible(false);
-        textUnitUs1.setVisible(false);
-        textUnitMs1.setVisible(true);
+        Unicode::strncpy(textUnitMean1Buffer, (char*)ms, TEXTUNITMEAN1_SIZE - 1);
         break;
     default:
-        textUnitPs1.setVisible(false);
-        textUnitNs1.setVisible(false);
-        textUnitUs1.setVisible(false);
-        textUnitMs1.setVisible(false);
+    	Unicode::strncpy(textUnitMean1Buffer, (char*)ns, TEXTUNITMEAN1_SIZE - 1);
     	break;
     }
     textMeanVal1.invalidate();
+    textUnitMean1.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure2.mean, &m_total_ti2, &m_frac1_ti2, &m_frac2_ti2);
     switch (ResultTimeBackend.measure2.meanUnit)
     {
     case PICO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        textUnitPs2.setVisible(true);
-        textUnitNs2.setVisible(false);
-        textUnitUs2.setVisible(false);
-        textUnitMs2.setVisible(false);
+        Unicode::strncpy(textUnitMean2Buffer, (char*)ps, TEXTUNITMEAN2_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        textUnitPs2.setVisible(false);
-        textUnitNs2.setVisible(true);
-        textUnitUs2.setVisible(false);
-        textUnitMs2.setVisible(false);
+        Unicode::strncpy(textUnitMean2Buffer, (char*)ns, TEXTUNITMEAN2_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        textUnitPs2.setVisible(false);
-        textUnitNs2.setVisible(false);
-        textUnitUs2.setVisible(true);
-        textUnitMs2.setVisible(false);
+        Unicode::strncpy(textUnitMean2Buffer, (char*)us, TEXTUNITMEAN2_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        textUnitPs2.setVisible(false);
-        textUnitNs2.setVisible(false);
-        textUnitUs2.setVisible(false);
-        textUnitMs2.setVisible(true);
+        Unicode::strncpy(textUnitMean2Buffer, (char*)ms, TEXTUNITMEAN2_SIZE - 1);
         break;
     default:
-        textUnitPs2.setVisible(false);
-        textUnitNs2.setVisible(false);
-        textUnitUs2.setVisible(false);
-        textUnitMs2.setVisible(false);
+    	Unicode::strncpy(textUnitMean2Buffer, (char*)ns, TEXTUNITMEAN2_SIZE - 1);
     	break;
     }
     textMeanVal2.invalidate();
+    textUnitMean2.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure3.mean, &m_total_ti3, &m_frac1_ti3, &m_frac2_ti3);
     switch (ResultTimeBackend.measure3.meanUnit)
     {
     case PICO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        textUnitPs3.setVisible(true);
-        textUnitNs3.setVisible(false);
-        textUnitUs3.setVisible(false);
-        textUnitMs3.setVisible(false);
+        Unicode::strncpy(textUnitMean3Buffer, (char*)ps, TEXTUNITMEAN3_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        textUnitPs3.setVisible(false);
-        textUnitNs3.setVisible(true);
-        textUnitUs3.setVisible(false);
-        textUnitMs3.setVisible(false);
+        Unicode::strncpy(textUnitMean3Buffer, (char*)ns, TEXTUNITMEAN3_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        textUnitPs3.setVisible(false);
-        textUnitNs3.setVisible(false);
-        textUnitUs3.setVisible(true);
-        textUnitMs3.setVisible(false);
+        Unicode::strncpy(textUnitMean3Buffer, (char*)us, TEXTUNITMEAN3_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        textUnitPs3.setVisible(false);
-        textUnitNs3.setVisible(false);
-        textUnitUs3.setVisible(false);
-        textUnitMs3.setVisible(true);
+        Unicode::strncpy(textUnitMean3Buffer, (char*)ms, TEXTUNITMEAN3_SIZE - 1);
         break;
     default:
-        textUnitPs3.setVisible(false);
-        textUnitNs3.setVisible(false);
-        textUnitUs3.setVisible(false);
-        textUnitMs3.setVisible(false);
+    	Unicode::strncpy(textUnitMean3Buffer, (char*)ns, TEXTUNITMEAN3_SIZE - 1);
     	break;
     }
     textMeanVal3.invalidate();
+    textUnitMean3.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure4.mean, &m_total_ti4, &m_frac1_ti4, &m_frac2_ti4);
     switch (ResultTimeBackend.measure4.meanUnit)
     {
     case PICO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        textUnitPs4.setVisible(true);
-        textUnitNs4.setVisible(false);
-        textUnitUs4.setVisible(false);
-        textUnitMs4.setVisible(false);
+        Unicode::strncpy(textUnitMean4Buffer, (char*)ps, TEXTUNITMEAN4_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        textUnitPs4.setVisible(false);
-        textUnitNs4.setVisible(true);
-        textUnitUs4.setVisible(false);
-        textUnitMs4.setVisible(false);
+        Unicode::strncpy(textUnitMean4Buffer, (char*)ns, TEXTUNITMEAN4_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        textUnitPs4.setVisible(false);
-        textUnitNs4.setVisible(false);
-        textUnitUs4.setVisible(true);
-        textUnitMs4.setVisible(false);
+        Unicode::strncpy(textUnitMean4Buffer, (char*)us, TEXTUNITMEAN4_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        textUnitPs4.setVisible(false);
-        textUnitNs4.setVisible(false);
-        textUnitUs4.setVisible(false);
-        textUnitMs4.setVisible(true);
+        Unicode::strncpy(textUnitMean4Buffer, (char*)ms, TEXTUNITMEAN4_SIZE - 1);
         break;
     default:
-        textUnitPs4.setVisible(false);
-        textUnitNs4.setVisible(false);
-        textUnitUs4.setVisible(false);
-        textUnitMs4.setVisible(false);
+        Unicode::strncpy(textUnitMean4Buffer, (char*)ns, TEXTUNITMEAN4_SIZE - 1);
     	break;
     }
     textMeanVal4.invalidate();
+    textUnitMean4.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure5.mean, &m_total_ti5, &m_frac1_ti5, &m_frac2_ti5);
     switch (ResultTimeBackend.measure5.meanUnit)
     {
     case PICO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        textUnitPs5.setVisible(true);
-        textUnitNs5.setVisible(false);
-        textUnitUs5.setVisible(false);
-        textUnitMs5.setVisible(false);
+        Unicode::strncpy(textUnitMean5Buffer, (char*)ps, TEXTUNITMEAN5_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        textUnitPs5.setVisible(false);
-        textUnitNs5.setVisible(true);
-        textUnitUs5.setVisible(false);
-        textUnitMs5.setVisible(false);
+        Unicode::strncpy(textUnitMean5Buffer, (char*)ns, TEXTUNITMEAN5_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        textUnitPs5.setVisible(false);
-        textUnitNs5.setVisible(false);
-        textUnitUs5.setVisible(true);
-        textUnitMs5.setVisible(false);
+        Unicode::strncpy(textUnitMean5Buffer, (char*)us, TEXTUNITMEAN5_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        textUnitPs5.setVisible(false);
-        textUnitNs5.setVisible(false);
-        textUnitUs5.setVisible(false);
-        textUnitMs5.setVisible(true);
+        Unicode::strncpy(textUnitMean5Buffer, (char*)ms, TEXTUNITMEAN5_SIZE - 1);
         break;
     default:
-        textUnitPs5.setVisible(false);
-        textUnitNs5.setVisible(false);
-        textUnitUs5.setVisible(false);
-        textUnitMs5.setVisible(false);
+        Unicode::strncpy(textUnitMean5Buffer, (char*)ns, TEXTUNITMEAN5_SIZE - 1);
     	break;
     }
     textMeanVal5.invalidate();
+    textUnitMean5.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure6.mean, &m_total_ti6, &m_frac1_ti6, &m_frac2_ti6);
     switch (ResultTimeBackend.measure6.meanUnit)
     {
     case PICO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        textUnitPs6.setVisible(true);
-        textUnitNs6.setVisible(false);
-        textUnitUs6.setVisible(false);
-        textUnitMs6.setVisible(false);
+        Unicode::strncpy(textUnitMean6Buffer, (char*)ps, TEXTUNITMEAN6_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        textUnitPs6.setVisible(false);
-        textUnitNs6.setVisible(true);
-        textUnitUs6.setVisible(false);
-        textUnitMs6.setVisible(false);
+        Unicode::strncpy(textUnitMean6Buffer, (char*)ns, TEXTUNITMEAN6_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        textUnitPs6.setVisible(false);
-        textUnitNs6.setVisible(false);
-        textUnitUs6.setVisible(true);
-        textUnitMs6.setVisible(false);
+        Unicode::strncpy(textUnitMean6Buffer, (char*)us, TEXTUNITMEAN6_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        textUnitPs6.setVisible(false);
-        textUnitNs6.setVisible(false);
-        textUnitUs6.setVisible(false);
-        textUnitMs6.setVisible(true);
+        Unicode::strncpy(textUnitMean6Buffer, (char*)ms, TEXTUNITMEAN6_SIZE - 1);
         break;
     default:
-        textUnitPs6.setVisible(false);
-        textUnitNs6.setVisible(false);
-        textUnitUs6.setVisible(false);
-        textUnitMs6.setVisible(false);
+    	Unicode::strncpy(textUnitMean6Buffer, (char*)ns, TEXTUNITMEAN6_SIZE - 1);
     	break;
     }
     textMeanVal6.invalidate();
+    textUnitMean6.invalidate();
 
     calculateFormatMeanTime(ResultTimeBackend.measure7.mean, &m_total_ti7, &m_frac1_ti7, &m_frac2_ti7);
     Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
@@ -403,39 +324,25 @@ void TimeModeView::setupScreen()
     {
     case PICO:
     	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        textUnitPs7.setVisible(true);
-        textUnitNs7.setVisible(false);
-        textUnitUs7.setVisible(false);
-        textUnitMs7.setVisible(false);
+    	Unicode::strncpy(textUnitMean7Buffer, (char*)ps, TEXTUNITMEAN7_SIZE - 1);
     case NANO:
     	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        textUnitPs7.setVisible(false);
-        textUnitNs7.setVisible(true);
-        textUnitUs7.setVisible(false);
-        textUnitMs7.setVisible(false);
+    	Unicode::strncpy(textUnitMean7Buffer, (char*)ns, TEXTUNITMEAN7_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        textUnitPs7.setVisible(false);
-        textUnitNs7.setVisible(false);
-        textUnitUs7.setVisible(true);
-        textUnitMs7.setVisible(false);
+        Unicode::strncpy(textUnitMean7Buffer, (char*)us, TEXTUNITMEAN7_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        textUnitPs7.setVisible(false);
-        textUnitNs7.setVisible(false);
-        textUnitUs7.setVisible(false);
-        textUnitMs7.setVisible(true);
+        Unicode::strncpy(textUnitMean7Buffer, (char*)ms, TEXTUNITMEAN7_SIZE - 1);
         break;
     default:
-        textUnitPs7.setVisible(false);
-        textUnitNs7.setVisible(false);
-        textUnitUs7.setVisible(false);
-        textUnitMs7.setVisible(false);
+    	Unicode::strncpy(textUnitMean7Buffer, (char*)ns, TEXTUNITMEAN7_SIZE - 1);
     	break;
     }
     textMeanVal7.invalidate();
+    textUnitMean7.invalidate();
 
     // StdDev
 
@@ -445,18 +352,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure1.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs1.setVisible(true);
-    	textUnitSDNs1.setVisible(false);
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)ps, TEXTUNITSD1_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs1.setVisible(false);
-    	textUnitSDNs1.setVisible(true);
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)ns, TEXTUNITSD1_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)us, TEXTUNITSD1_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)ms, TEXTUNITSD1_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs1.setVisible(false);
-    	textUnitSDNs1.setVisible(false);
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)ps, TEXTUNITSD1_SIZE - 1);
     	break;
     }
+    textUnitSD1.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
     Unicode::snprintf(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, "%d.%d", m_totalStdDev2, m_fracStdDev2);
@@ -464,18 +375,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure2.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs2.setVisible(true);
-    	textUnitSDNs2.setVisible(false);
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)ps, TEXTUNITSD2_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs2.setVisible(false);
-    	textUnitSDNs2.setVisible(true);
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)ns, TEXTUNITSD2_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)us, TEXTUNITSD2_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)ms, TEXTUNITSD2_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs2.setVisible(false);
-    	textUnitSDNs2.setVisible(false);
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)ps, TEXTUNITSD2_SIZE - 1);
     	break;
     }
+    textUnitSD2.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
     Unicode::snprintf(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, "%d.%d", m_totalStdDev3, m_fracStdDev3);
@@ -483,18 +398,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure3.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs3.setVisible(true);
-    	textUnitSDNs3.setVisible(false);
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)ps, TEXTUNITSD3_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs3.setVisible(false);
-    	textUnitSDNs3.setVisible(true);
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)ns, TEXTUNITSD3_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)us, TEXTUNITSD3_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)ms, TEXTUNITSD3_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs3.setVisible(false);
-    	textUnitSDNs3.setVisible(false);
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)ps, TEXTUNITSD3_SIZE - 1);
     	break;
     }
+    textUnitSD3.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
     Unicode::snprintf(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, "%d.%d", m_totalStdDev4, m_fracStdDev4);
@@ -502,18 +421,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure4.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs4.setVisible(true);
-    	textUnitSDNs4.setVisible(false);
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)ps, TEXTUNITSD4_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs4.setVisible(false);
-    	textUnitSDNs4.setVisible(true);
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)ns, TEXTUNITSD4_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)us, TEXTUNITSD4_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)ms, TEXTUNITSD4_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs4.setVisible(false);
-    	textUnitSDNs4.setVisible(false);
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)ps, TEXTUNITSD4_SIZE - 1);
     	break;
     }
+    textUnitSD4.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
     Unicode::snprintf(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, "%d.%d", m_totalStdDev5, m_fracStdDev5);
@@ -521,18 +444,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure5.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs5.setVisible(true);
-    	textUnitSDNs5.setVisible(false);
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)ps, TEXTUNITSD5_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs5.setVisible(false);
-    	textUnitSDNs5.setVisible(true);
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)ns, TEXTUNITSD5_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)us, TEXTUNITSD5_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)ms, TEXTUNITSD5_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs5.setVisible(false);
-    	textUnitSDNs5.setVisible(false);
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)ps, TEXTUNITSD5_SIZE - 1);
     	break;
     }
+    textUnitSD5.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
     Unicode::snprintf(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, "%d.%d", m_totalStdDev6, m_fracStdDev6);
@@ -540,18 +467,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure6.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs6.setVisible(true);
-    	textUnitSDNs6.setVisible(false);
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)ps, TEXTUNITSD6_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs6.setVisible(false);
-    	textUnitSDNs6.setVisible(true);
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)ns, TEXTUNITSD6_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)us, TEXTUNITSD6_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)ms, TEXTUNITSD6_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs6.setVisible(false);
-    	textUnitSDNs6.setVisible(false);
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)ps, TEXTUNITSD6_SIZE - 1);
     	break;
     }
+    textUnitSD6.invalidate();
 
     calculateFormatStdDevTime(ResultTimeBackend.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
     Unicode::snprintf(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, "%d.%d", m_totalStdDev7, m_fracStdDev7);
@@ -559,18 +490,22 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure2.stdDevUnit)
     {
     case PICO:
-    	textUnitSDPs7.setVisible(true);
-    	textUnitSDNs7.setVisible(false);
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)ps, TEXTUNITSD7_SIZE - 1);
     	break;
     case NANO:
-    	textUnitSDPs7.setVisible(false);
-    	textUnitSDNs7.setVisible(true);
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)ns, TEXTUNITSD7_SIZE - 1);
+    	break;
+    case MICRO:
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)us, TEXTUNITSD7_SIZE - 1);
+    	break;
+    case MILLI:
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)ms, TEXTUNITSD7_SIZE - 1);
     	break;
     default:
-    	textUnitSDPs7.setVisible(false);
-    	textUnitSDNs7.setVisible(false);
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)ps, TEXTUNITSD7_SIZE - 1);
     	break;
     }
+    textUnitSD7.invalidate();
 }
 
 void TimeModeView::tearDownScreen()

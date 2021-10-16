@@ -3,6 +3,7 @@
 
 #include <gui_generated/timemode_screen/TimeModeViewBase.hpp>
 #include <gui/timemode_screen/TimeModePresenter.hpp>
+#include <string.h>
 
 class TimeModeView : public TimeModeViewBase
 {
