@@ -1794,13 +1794,13 @@ void StartTaskResetParam(void *argument)
   {
 	  if (myBinarySemResetParamHandle != NULL)
 	  {
-		  countReset++;
-		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK && countReset > 1)
+//		  countReset++;
+		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK)
 		  {
 			  TimeModeInit(&TimeBackend);
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
-			  countReset = 2;
+//			  countReset = 2;
 		  }
 	  }
     osDelay(1);
