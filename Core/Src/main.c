@@ -131,10 +131,10 @@ const osThreadAttr_t TaskFreqStamps_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for TaskResetParam */
-osThreadId_t TaskResetParamHandle;
-const osThreadAttr_t TaskResetParam_attributes = {
-  .name = "TaskResetParam",
+/* Definitions for TaskResetParamT */
+osThreadId_t TaskResetParamTHandle;
+const osThreadAttr_t TaskResetParamT_attributes = {
+  .name = "TaskResetParamT",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -149,6 +149,20 @@ const osThreadAttr_t TaskDetectThreT_attributes = {
 osThreadId_t TaskDetectThreFHandle;
 const osThreadAttr_t TaskDetectThreF_attributes = {
   .name = "TaskDetectThreF",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskResetParamF */
+osThreadId_t TaskResetParamFHandle;
+const osThreadAttr_t TaskResetParamF_attributes = {
+  .name = "TaskResetParamF",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskCalibration */
+osThreadId_t TaskCalibrationHandle;
+const osThreadAttr_t TaskCalibration_attributes = {
+  .name = "TaskCalibration",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -182,10 +196,10 @@ osSemaphoreId_t myBinarySemGetFreqStampsHandle;
 const osSemaphoreAttr_t myBinarySemGetFreqStamps_attributes = {
   .name = "myBinarySemGetFreqStamps"
 };
-/* Definitions for myBinarySemResetParam */
-osSemaphoreId_t myBinarySemResetParamHandle;
-const osSemaphoreAttr_t myBinarySemResetParam_attributes = {
-  .name = "myBinarySemResetParam"
+/* Definitions for myBinarySemResetParamT */
+osSemaphoreId_t myBinarySemResetParamTHandle;
+const osSemaphoreAttr_t myBinarySemResetParamT_attributes = {
+  .name = "myBinarySemResetParamT"
 };
 /* Definitions for myBinarySemUpdateTimeDisp */
 osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
@@ -202,6 +216,21 @@ osSemaphoreId_t myBinarySemDetectThreFreqHandle;
 const osSemaphoreAttr_t myBinarySemDetectThreFreq_attributes = {
   .name = "myBinarySemDetectThreFreq"
 };
+/* Definitions for myBinarySemResetParamF */
+osSemaphoreId_t myBinarySemResetParamFHandle;
+const osSemaphoreAttr_t myBinarySemResetParamF_attributes = {
+  .name = "myBinarySemResetParamF"
+};
+/* Definitions for myBinarySemCalibration */
+osSemaphoreId_t myBinarySemCalibrationHandle;
+const osSemaphoreAttr_t myBinarySemCalibration_attributes = {
+  .name = "myBinarySemCalibration"
+};
+/* Definitions for myBinarySemUpdateFreqDisp */
+osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
+const osSemaphoreAttr_t myBinarySemUpdateFreqDisp_attributes = {
+  .name = "myBinarySemUpdateFreqDisp"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
@@ -211,9 +240,9 @@ uint8_t counterStampsT = 0;
 uint8_t counterSingleF = 0;
 uint8_t counterConstF = 0;
 uint8_t counterStampsF = 0;
-uint8_t countReset = 0;
-uint8_t countDetectT = 0;
-uint8_t countDetectF = 0;
+//uint8_t countReset = 0;
+//uint8_t countDetectT = 0;
+//uint8_t countDetectF = 0;
 uint8_t conditionT = 1;
 
 TimeMode_t TimeBackend;
@@ -243,9 +272,11 @@ void StartTaskTimeConst(void *argument);
 void StartTaskFreqConst(void *argument);
 void StartTaskTimeStamps(void *argument);
 void StartTaskFreqStamps(void *argument);
-void StartTaskResetParam(void *argument);
+void StartTaskResetParamT(void *argument);
 void StartTaskDetectThreT(void *argument);
 void StartTaskDetectThreF(void *argument);
+void StartTaskResetParamF(void *argument);
+void StartTaskCalibration(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -262,10 +293,12 @@ static uint8_t BSP_QSPI_EnableMemoryMappedMode(QSPI_HandleTypeDef *hqspi);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 void detectedThreshold(uint32_t *threshold)
 {
 	*threshold = (rand() % (1000 + 1 - 50)) + 50;
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -351,8 +384,8 @@ int main(void)
   /* creation of myBinarySemGetFreqStamps */
   myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqStamps_attributes);
 
-  /* creation of myBinarySemResetParam */
-  myBinarySemResetParamHandle = osSemaphoreNew(1, 1, &myBinarySemResetParam_attributes);
+  /* creation of myBinarySemResetParamT */
+  myBinarySemResetParamTHandle = osSemaphoreNew(1, 1, &myBinarySemResetParamT_attributes);
 
   /* creation of myBinarySemUpdateTimeDisp */
   myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateTimeDisp_attributes);
@@ -362,6 +395,15 @@ int main(void)
 
   /* creation of myBinarySemDetectThreFreq */
   myBinarySemDetectThreFreqHandle = osSemaphoreNew(1, 1, &myBinarySemDetectThreFreq_attributes);
+
+  /* creation of myBinarySemResetParamF */
+  myBinarySemResetParamFHandle = osSemaphoreNew(1, 1, &myBinarySemResetParamF_attributes);
+
+  /* creation of myBinarySemCalibration */
+  myBinarySemCalibrationHandle = osSemaphoreNew(1, 1, &myBinarySemCalibration_attributes);
+
+  /* creation of myBinarySemUpdateFreqDisp */
+  myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateFreqDisp_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -397,14 +439,20 @@ int main(void)
   /* creation of TaskFreqStamps */
   TaskFreqStampsHandle = osThreadNew(StartTaskFreqStamps, NULL, &TaskFreqStamps_attributes);
 
-  /* creation of TaskResetParam */
-  TaskResetParamHandle = osThreadNew(StartTaskResetParam, NULL, &TaskResetParam_attributes);
+  /* creation of TaskResetParamT */
+  TaskResetParamTHandle = osThreadNew(StartTaskResetParamT, NULL, &TaskResetParamT_attributes);
 
   /* creation of TaskDetectThreT */
   TaskDetectThreTHandle = osThreadNew(StartTaskDetectThreT, NULL, &TaskDetectThreT_attributes);
 
   /* creation of TaskDetectThreF */
   TaskDetectThreFHandle = osThreadNew(StartTaskDetectThreF, NULL, &TaskDetectThreF_attributes);
+
+  /* creation of TaskResetParamF */
+  TaskResetParamFHandle = osThreadNew(StartTaskResetParamF, NULL, &TaskResetParamF_attributes);
+
+  /* creation of TaskCalibration */
+  TaskCalibrationHandle = osThreadNew(StartTaskCalibration, NULL, &TaskCalibration_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1779,33 +1827,31 @@ void StartTaskFreqStamps(void *argument)
   /* USER CODE END StartTaskFreqStamps */
 }
 
-/* USER CODE BEGIN Header_StartTaskResetParam */
+/* USER CODE BEGIN Header_StartTaskResetParamT */
 /**
-* @brief Function implementing the TaskResetParam thread.
+* @brief Function implementing the TaskResetParamT thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTaskResetParam */
-void StartTaskResetParam(void *argument)
+/* USER CODE END Header_StartTaskResetParamT */
+void StartTaskResetParamT(void *argument)
 {
-  /* USER CODE BEGIN StartTaskResetParam */
+  /* USER CODE BEGIN StartTaskResetParamT */
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemResetParamHandle != NULL)
+	  if (myBinarySemResetParamTHandle != NULL)
 	  {
-//		  countReset++;
-		  if (osSemaphoreAcquire(myBinarySemResetParamHandle, (uint32_t) 10) == osOK)
+		  if (osSemaphoreAcquire(myBinarySemResetParamTHandle, (uint32_t) 10) == osOK)
 		  {
 			  TimeModeInit(&TimeBackend);
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
-//			  countReset = 2;
 		  }
 	  }
     osDelay(1);
   }
-  /* USER CODE END StartTaskResetParam */
+  /* USER CODE END StartTaskResetParamT */
 }
 
 /* USER CODE BEGIN Header_StartTaskDetectThreT */
@@ -1855,6 +1901,42 @@ void StartTaskDetectThreF(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartTaskDetectThreF */
+}
+
+/* USER CODE BEGIN Header_StartTaskResetParamF */
+/**
+* @brief Function implementing the TaskResetParamF thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskResetParamF */
+void StartTaskResetParamF(void *argument)
+{
+  /* USER CODE BEGIN StartTaskResetParamF */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskResetParamF */
+}
+
+/* USER CODE BEGIN Header_StartTaskCalibration */
+/**
+* @brief Function implementing the TaskCalibration thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskCalibration */
+void StartTaskCalibration(void *argument)
+{
+  /* USER CODE BEGIN StartTaskCalibration */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskCalibration */
 }
 
 /* MPU Configuration */

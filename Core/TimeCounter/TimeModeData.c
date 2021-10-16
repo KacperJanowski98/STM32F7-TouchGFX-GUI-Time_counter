@@ -9,8 +9,6 @@
 
 extern osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
 
-int updateFlag;
-
 void TimeModeInit(TimeMode_t *pTimeMode)
 {
     pTimeMode->Channel1.channelState = false;
@@ -250,16 +248,10 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
     {
     	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
+    //:TODO Wpisywanie numeru iteracji
     pTimeMode->TimeSession.stampsNumber = 1;
 
-    updateFlag = 1;
-
-    if (updateFlag)
-    {
-    	osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
-    	updateFlag = 0;
-    }
-
+    osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
 }
 
 void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)

@@ -13,9 +13,13 @@ extern osSemaphoreId_t myBinarySemGetFreqStampsHandle;
 extern osSemaphoreId_t myBinarySemDetectThreTimeHandle;
 extern osSemaphoreId_t myBinarySemDetectThreFreqHandle;
 
-extern osSemaphoreId_t myBinarySemResetParamHandle;
+extern osSemaphoreId_t myBinarySemResetParamTHandle;
+extern osSemaphoreId_t myBinarySemResetParamFHandle;
 
 extern osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
+extern osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
+
+extern osSemaphoreId_t myBinarySemCalibrationHandle;
 
 Model::Model() : modelListener(0)
 {
@@ -71,7 +75,7 @@ void Model::getDataFreqStamps()
 
 void Model::getReset()
 {
-	osSemaphoreRelease(myBinarySemResetParamHandle);
+	osSemaphoreRelease(myBinarySemResetParamTHandle);
 }
 
 void Model::getDetectedTimeThreshold()
