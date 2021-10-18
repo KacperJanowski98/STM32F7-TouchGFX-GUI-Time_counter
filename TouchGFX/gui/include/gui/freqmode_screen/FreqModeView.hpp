@@ -14,7 +14,8 @@ public:
     virtual void ResetParameter();
 
 protected:
-
+    void calculateFormatMeanFreq(float mean, int *pTotal, int *pFrac1, int *pFrac2);
+    void calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFrac);
 private:
     int m_total_freq1;
     int m_frac1_freq1;

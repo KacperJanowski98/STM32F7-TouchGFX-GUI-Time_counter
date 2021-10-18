@@ -38,7 +38,9 @@ typedef enum
     MILLI = 4,
 	KILO = 5,
 	MEGA = 6,
-	GIGA = 7
+	GIGA = 7,
+	S = 8,
+	HZ = 9
 } Unit_t;
 
 typedef struct

@@ -553,5 +553,3 @@ void TimeModeView::calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFr
 	float tempFrac = stdDev - *pTotal;
 	*pFrac = trunc(tempFrac * 100);
 }
-
-

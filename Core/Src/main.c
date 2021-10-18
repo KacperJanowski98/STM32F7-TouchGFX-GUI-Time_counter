@@ -1922,7 +1922,7 @@ void StartTaskResetParamF(void *argument)
 		  if (osSemaphoreAcquire(myBinarySemResetParamFHandle, (uint32_t) 10) == osOK)
 		  {
 			  FrequencyModeInit(&FreqBackend);
-			  ResultTimeInit(&ResultFreqBackend);
+			  ResultFrequencyInit(&ResultFreqBackend);
 			  conditionF = 0;
 		  }
 	  }

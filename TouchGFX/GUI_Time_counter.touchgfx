@@ -5669,7 +5669,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textStdDevVal7_1",
+            "Name": "textStdDevVal8",
             "X": 683,
             "Y": 439,
             "Width": 64,
@@ -7560,7 +7560,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqMESSETUP",
+            "SelectedPage": "swipeContainerFreqINPUT",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,

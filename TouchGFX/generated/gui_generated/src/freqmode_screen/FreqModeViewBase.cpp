@@ -299,12 +299,12 @@ FreqModeViewBase::FreqModeViewBase() :
     textStdDevVal7.setWildcard(textStdDevVal7Buffer);
     textStdDevVal7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID240));
 
-    textStdDevVal7_1.setPosition(683, 439, 64, 25);
-    textStdDevVal7_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textStdDevVal7_1.setLinespacing(0);
-    textStdDevVal7_1Buffer[0] = 0;
-    textStdDevVal7_1.setWildcard(textStdDevVal7_1Buffer);
-    textStdDevVal7_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID241));
+    textStdDevVal8.setPosition(683, 439, 64, 25);
+    textStdDevVal8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textStdDevVal8.setLinespacing(0);
+    textStdDevVal8Buffer[0] = 0;
+    textStdDevVal8.setWildcard(textStdDevVal8Buffer);
+    textStdDevVal8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID241));
 
     textUnitSD1.setPosition(756, 106, 36, 19);
     textUnitSD1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -465,7 +465,7 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textStdDevVal5);
     add(textStdDevVal6);
     add(textStdDevVal7);
-    add(textStdDevVal7_1);
+    add(textStdDevVal8);
     add(textUnitSD1);
     add(textUnitSD2);
     add(textUnitSD3);
