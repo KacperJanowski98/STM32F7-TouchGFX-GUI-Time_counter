@@ -45,7 +45,9 @@ public:
 
     void getDataFreqStamps();
 
-    void getReset();
+    void getResetTime();
+
+    void getResetFreq();
 
     void getDetectedTimeThreshold();
 

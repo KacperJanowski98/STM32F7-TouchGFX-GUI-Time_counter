@@ -27,6 +27,8 @@ public:
 
     virtual ~FreqModePresenter() {};
 
+    void askForReset();
+
 private:
     FreqModePresenter();
 

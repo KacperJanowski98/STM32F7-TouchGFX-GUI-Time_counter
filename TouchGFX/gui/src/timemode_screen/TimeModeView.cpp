@@ -187,6 +187,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean1Buffer, (char*)ms, TEXTUNITMEAN1_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", 0, 0, 0);
     	Unicode::strncpy(textUnitMean1Buffer, (char*)ns, TEXTUNITMEAN1_SIZE - 1);
     	break;
     }
@@ -212,6 +213,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean2Buffer, (char*)ms, TEXTUNITMEAN2_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", 0, 0, 0);
     	Unicode::strncpy(textUnitMean2Buffer, (char*)ns, TEXTUNITMEAN2_SIZE - 1);
     	break;
     }
@@ -237,6 +239,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean3Buffer, (char*)ms, TEXTUNITMEAN3_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", 0, 0, 0);
     	Unicode::strncpy(textUnitMean3Buffer, (char*)ns, TEXTUNITMEAN3_SIZE - 1);
     	break;
     }
@@ -262,6 +265,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean4Buffer, (char*)ms, TEXTUNITMEAN4_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", 0, 0, 0);
         Unicode::strncpy(textUnitMean4Buffer, (char*)ns, TEXTUNITMEAN4_SIZE - 1);
     	break;
     }
@@ -287,6 +291,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean5Buffer, (char*)ms, TEXTUNITMEAN5_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", 0, 0, 0);
         Unicode::strncpy(textUnitMean5Buffer, (char*)ns, TEXTUNITMEAN5_SIZE - 1);
     	break;
     }
@@ -312,6 +317,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean6Buffer, (char*)ms, TEXTUNITMEAN6_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", 0, 0, 0);
     	Unicode::strncpy(textUnitMean6Buffer, (char*)ns, TEXTUNITMEAN6_SIZE - 1);
     	break;
     }
@@ -338,6 +344,7 @@ void TimeModeView::setupScreen()
         Unicode::strncpy(textUnitMean7Buffer, (char*)ms, TEXTUNITMEAN7_SIZE - 1);
         break;
     default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", 0, 0, 0);
     	Unicode::strncpy(textUnitMean7Buffer, (char*)ns, TEXTUNITMEAN7_SIZE - 1);
     	break;
     }

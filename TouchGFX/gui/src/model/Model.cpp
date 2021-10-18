@@ -73,9 +73,14 @@ void Model::getDataFreqStamps()
 
 }
 
-void Model::getReset()
+void Model::getResetTime()
 {
 	osSemaphoreRelease(myBinarySemResetParamTHandle);
+}
+
+void Model::getResetFreq()
+{
+	osSemaphoreRelease(myBinarySemResetParamFHandle);
 }
 
 void Model::getDetectedTimeThreshold()

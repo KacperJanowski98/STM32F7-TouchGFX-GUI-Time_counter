@@ -244,6 +244,7 @@ uint8_t counterStampsF = 0;
 //uint8_t countDetectT = 0;
 //uint8_t countDetectF = 0;
 uint8_t conditionT = 1;
+uint8_t conditionF = 1;
 
 TimeMode_t TimeBackend;
 ResultTime_t ResultTimeBackend;
@@ -1916,6 +1917,15 @@ void StartTaskResetParamF(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemResetParamFHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemResetParamFHandle, (uint32_t) 10) == osOK)
+		  {
+			  FrequencyModeInit(&FreqBackend);
+			  ResultTimeInit(&ResultFreqBackend);
+			  conditionF = 0;
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskResetParamF */

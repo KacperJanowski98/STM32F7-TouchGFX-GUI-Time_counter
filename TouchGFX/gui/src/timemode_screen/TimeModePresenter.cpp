@@ -19,7 +19,7 @@ void TimeModePresenter::deactivate()
 
 void TimeModePresenter::askForReset()
 {
-	model->getReset();
+	model->getResetTime();
 }
 
 void TimeModePresenter::updateUIContinuousTime()

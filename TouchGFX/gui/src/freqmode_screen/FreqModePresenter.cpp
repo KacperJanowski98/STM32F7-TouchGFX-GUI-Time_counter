@@ -16,3 +16,8 @@ void FreqModePresenter::deactivate()
 {
 
 }
+
+void FreqModePresenter::askForReset()
+{
+	model->getResetFreq();
+}

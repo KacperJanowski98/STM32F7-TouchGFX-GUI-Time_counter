@@ -4537,7 +4537,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi1start",
+            "Name": "textFreq1start",
             "X": 99,
             "Y": 100,
             "Width": 68,
@@ -4565,7 +4565,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi2start",
+            "Name": "textFreq2start",
             "X": 99,
             "Y": 147,
             "Width": 67,
@@ -4593,7 +4593,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi3start",
+            "Name": "textFreq3start",
             "X": 99,
             "Y": 195,
             "Width": 68,
@@ -4621,7 +4621,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi4start",
+            "Name": "textFreq4start",
             "X": 99,
             "Y": 243,
             "Width": 68,
@@ -4649,7 +4649,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi5start",
+            "Name": "textFreq5start",
             "X": 100,
             "Y": 291,
             "Width": 68,
@@ -4677,7 +4677,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi6start",
+            "Name": "textFreq6start",
             "X": 100,
             "Y": 340,
             "Width": 68,
@@ -4705,7 +4705,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi7start",
+            "Name": "textFreq7start",
             "X": 98,
             "Y": 389,
             "Width": 68,
@@ -4901,7 +4901,7 @@
               "UseBuffer": true,
               "BufferSize": 10
             },
-            "Name": "textTi1start_1",
+            "Name": "textFreq1start_1",
             "X": 98,
             "Y": 436,
             "Width": 68,

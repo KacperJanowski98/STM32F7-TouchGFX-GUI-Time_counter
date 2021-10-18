@@ -32,13 +32,13 @@ protected:
     touchgfx::Button buttonToMenuF;
     touchgfx::Button buttonConfig;
     touchgfx::Button buttonReset;
-    touchgfx::TextAreaWithOneWildcard textTi1start;
-    touchgfx::TextAreaWithOneWildcard textTi2start;
-    touchgfx::TextAreaWithOneWildcard textTi3start;
-    touchgfx::TextAreaWithOneWildcard textTi4start;
-    touchgfx::TextAreaWithOneWildcard textTi5start;
-    touchgfx::TextAreaWithOneWildcard textTi6start;
-    touchgfx::TextAreaWithOneWildcard textTi7start;
+    touchgfx::TextAreaWithOneWildcard textFreq1start;
+    touchgfx::TextAreaWithOneWildcard textFreq2start;
+    touchgfx::TextAreaWithOneWildcard textFreq3start;
+    touchgfx::TextAreaWithOneWildcard textFreq4start;
+    touchgfx::TextAreaWithOneWildcard textFreq5start;
+    touchgfx::TextAreaWithOneWildcard textFreq6start;
+    touchgfx::TextAreaWithOneWildcard textFreq7start;
     touchgfx::TextArea textLabelFreq1;
     touchgfx::TextArea textLabelFreq2;
     touchgfx::TextArea textLabelFreq3;
@@ -46,7 +46,7 @@ protected:
     touchgfx::TextArea textLabelFreq5;
     touchgfx::TextArea textLabelFreq6;
     touchgfx::TextArea textLabelFreq7;
-    touchgfx::TextAreaWithOneWildcard textTi1start_1;
+    touchgfx::TextAreaWithOneWildcard textFreq1start_1;
     touchgfx::TextArea textLabeFreq8;
     touchgfx::TextArea textSampleLabel;
     touchgfx::TextArea textMeanLabel;
@@ -95,22 +95,22 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTTI1START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi1startBuffer[TEXTTI1START_SIZE];
-    static const uint16_t TEXTTI2START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi2startBuffer[TEXTTI2START_SIZE];
-    static const uint16_t TEXTTI3START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi3startBuffer[TEXTTI3START_SIZE];
-    static const uint16_t TEXTTI4START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi4startBuffer[TEXTTI4START_SIZE];
-    static const uint16_t TEXTTI5START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi5startBuffer[TEXTTI5START_SIZE];
-    static const uint16_t TEXTTI6START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi6startBuffer[TEXTTI6START_SIZE];
-    static const uint16_t TEXTTI7START_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi7startBuffer[TEXTTI7START_SIZE];
-    static const uint16_t TEXTTI1START_1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textTi1start_1Buffer[TEXTTI1START_1_SIZE];
+    static const uint16_t TEXTFREQ1START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq1startBuffer[TEXTFREQ1START_SIZE];
+    static const uint16_t TEXTFREQ2START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq2startBuffer[TEXTFREQ2START_SIZE];
+    static const uint16_t TEXTFREQ3START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq3startBuffer[TEXTFREQ3START_SIZE];
+    static const uint16_t TEXTFREQ4START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq4startBuffer[TEXTFREQ4START_SIZE];
+    static const uint16_t TEXTFREQ5START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq5startBuffer[TEXTFREQ5START_SIZE];
+    static const uint16_t TEXTFREQ6START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq6startBuffer[TEXTFREQ6START_SIZE];
+    static const uint16_t TEXTFREQ7START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq7startBuffer[TEXTFREQ7START_SIZE];
+    static const uint16_t TEXTFREQ1START_1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq1start_1Buffer[TEXTFREQ1START_1_SIZE];
     static const uint16_t TEXTSAMPLE1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textSample1Buffer[TEXTSAMPLE1_SIZE];
     static const uint16_t TEXTSAMPLE2_SIZE = 10;

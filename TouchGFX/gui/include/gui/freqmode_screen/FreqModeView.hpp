@@ -11,6 +11,8 @@ public:
     virtual ~FreqModeView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void ResetParameter();
+
 protected:
 
 private:
