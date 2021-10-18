@@ -9,35 +9,43 @@
 
 void FrequencyModeInit(FrequencyMode_t *pFrequencyMode)
 {
-    pFrequencyMode->Channel1.channelState = 0;
+	pFrequencyMode->Channel1.numberChanel = 0;
+    pFrequencyMode->Channel1.channelState = false;
     pFrequencyMode->Channel1.slope = UP;
     pFrequencyMode->Channel1.threshold = 0;
 
-    pFrequencyMode->Channel2.channelState = 0;
+    pFrequencyMode->Channel2.numberChanel = 0;
+    pFrequencyMode->Channel2.channelState = false;
     pFrequencyMode->Channel2.slope = UP;
     pFrequencyMode->Channel2.threshold = 0;
 
-    pFrequencyMode->Channel3.channelState = 0;
+    pFrequencyMode->Channel3.numberChanel = 0;
+    pFrequencyMode->Channel3.channelState = false;
     pFrequencyMode->Channel3.slope = UP;
     pFrequencyMode->Channel3.threshold = 0;
 
-    pFrequencyMode->Channel4.channelState = 0;
+    pFrequencyMode->Channel4.numberChanel = 0;
+    pFrequencyMode->Channel4.channelState = false;
     pFrequencyMode->Channel4.slope = UP;
     pFrequencyMode->Channel4.threshold = 0;
 
-    pFrequencyMode->Channel5.channelState = 0;
+    pFrequencyMode->Channel5.numberChanel = 0;
+    pFrequencyMode->Channel5.channelState = false;
     pFrequencyMode->Channel5.slope = UP;
     pFrequencyMode->Channel5.threshold = 0;
 
-    pFrequencyMode->Channel6.channelState = 0;
+    pFrequencyMode->Channel6.numberChanel = 0;
+    pFrequencyMode->Channel6.channelState = false;
     pFrequencyMode->Channel6.slope = UP;
     pFrequencyMode->Channel6.threshold = 0;
 
-    pFrequencyMode->Channel7.channelState = 0;
+    pFrequencyMode->Channel7.numberChanel = 0;
+    pFrequencyMode->Channel7.channelState = false;
     pFrequencyMode->Channel7.slope = UP;
     pFrequencyMode->Channel7.threshold = 0;
 
-    pFrequencyMode->Channel8.channelState = 0;
+    pFrequencyMode->Channel8.numberChanel = 0;
+    pFrequencyMode->Channel8.channelState = false;
     pFrequencyMode->Channel8.slope = UP;
     pFrequencyMode->Channel8.threshold = 0;
 

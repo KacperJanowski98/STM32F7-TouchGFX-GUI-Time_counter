@@ -58,6 +58,10 @@ FreqModeParameter &FreqModeParameter::operator=(FreqModeParameter&& other) noexc
 
 FreqModeParameter::~FreqModeParameter() = default;
 
+void FreqModeParameter::setNumberChannel(uint8_t channel)
+{
+	FreqModeParameter::m_numberChannel = channel;
+}
 
 void FreqModeParameter::setStateChannel(bool state)
 {

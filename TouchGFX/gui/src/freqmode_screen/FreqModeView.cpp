@@ -61,7 +61,60 @@ void FreqModeView::setupScreen()
 
     // Label
 
-//    Unicode::snprintf(textFreq1startBuffer, TEXTFREQ1START_1_SIZE, "%d", FreqBackend.Channel1.);
+    Unicode::snprintf(textFreq1startBuffer, TEXTFREQ1START_SIZE, "%d", FreqBackend.Channel1.numberChanel);
+    textFreq1start.invalidate();
+
+    Unicode::snprintf(textFreq2startBuffer, TEXTFREQ2START_SIZE, "%d", FreqBackend.Channel2.numberChanel);
+    textFreq2start.invalidate();
+
+    Unicode::snprintf(textFreq3startBuffer, TEXTFREQ3START_SIZE, "%d", FreqBackend.Channel3.numberChanel);
+    textFreq3start.invalidate();
+
+    Unicode::snprintf(textFreq4startBuffer, TEXTFREQ4START_SIZE, "%d", FreqBackend.Channel4.numberChanel);
+    textFreq4start.invalidate();
+
+    Unicode::snprintf(textFreq5startBuffer, TEXTFREQ5START_SIZE, "%d", FreqBackend.Channel5.numberChanel);
+    textFreq5start.invalidate();
+
+    Unicode::snprintf(textFreq6startBuffer, TEXTFREQ6START_SIZE, "%d", FreqBackend.Channel6.numberChanel);
+    textFreq6start.invalidate();
+
+    Unicode::snprintf(textFreq7startBuffer, TEXTFREQ7START_SIZE, "%d", FreqBackend.Channel7.numberChanel);
+    textFreq7start.invalidate();
+
+    Unicode::snprintf(textFreq8startBuffer, TEXTFREQ8START_SIZE, "%d", FreqBackend.Channel8.numberChanel);
+    textFreq8start.invalidate();
+
+    // Sample
+
+    Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample1.invalidate();
+
+    Unicode::snprintf(textSample2Buffer, TEXTSAMPLE2_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample2.invalidate();
+
+    Unicode::snprintf(textSample3Buffer, TEXTSAMPLE3_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample3.invalidate();
+
+    Unicode::snprintf(textSample4Buffer, TEXTSAMPLE4_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample4.invalidate();
+
+    Unicode::snprintf(textSample5Buffer, TEXTSAMPLE5_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample5.invalidate();
+
+    Unicode::snprintf(textSample6Buffer, TEXTSAMPLE6_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample6.invalidate();
+
+    Unicode::snprintf(textSample7Buffer, TEXTSAMPLE7_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample7.invalidate();
+
+    Unicode::snprintf(textSample8Buffer, TEXTSAMPLE8_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+    textSample8.invalidate();
+
+    // Mean
+
+
+    // StdDev
 
 }
 

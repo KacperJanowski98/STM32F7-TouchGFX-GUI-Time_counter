@@ -46,7 +46,7 @@ protected:
     touchgfx::TextArea textLabelFreq5;
     touchgfx::TextArea textLabelFreq6;
     touchgfx::TextArea textLabelFreq7;
-    touchgfx::TextAreaWithOneWildcard textFreq1start_1;
+    touchgfx::TextAreaWithOneWildcard textFreq8start;
     touchgfx::TextArea textLabeFreq8;
     touchgfx::TextArea textSampleLabel;
     touchgfx::TextArea textMeanLabel;
@@ -109,8 +109,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textFreq6startBuffer[TEXTFREQ6START_SIZE];
     static const uint16_t TEXTFREQ7START_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textFreq7startBuffer[TEXTFREQ7START_SIZE];
-    static const uint16_t TEXTFREQ1START_1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textFreq1start_1Buffer[TEXTFREQ1START_1_SIZE];
+    static const uint16_t TEXTFREQ8START_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFreq8startBuffer[TEXTFREQ8START_SIZE];
     static const uint16_t TEXTSAMPLE1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textSample1Buffer[TEXTSAMPLE1_SIZE];
     static const uint16_t TEXTSAMPLE2_SIZE = 10;

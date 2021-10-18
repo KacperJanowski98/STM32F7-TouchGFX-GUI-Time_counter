@@ -8,14 +8,14 @@ FreqModeConfigView::FreqModeConfigView()
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &FreqModeConfigView::RadioBtnGroupClockCallbackHandler)
-	, Channel1(1, FreqBackend.Channel1.channelState, static_cast<SlopeName>(FreqBackend.Channel1.slope), FreqBackend.Channel1.threshold)
-	, Channel2(2, FreqBackend.Channel2.channelState, static_cast<SlopeName>(FreqBackend.Channel2.slope), FreqBackend.Channel2.threshold)
-	, Channel3(3, FreqBackend.Channel3.channelState, static_cast<SlopeName>(FreqBackend.Channel3.slope), FreqBackend.Channel3.threshold)
-	, Channel4(4, FreqBackend.Channel4.channelState, static_cast<SlopeName>(FreqBackend.Channel4.slope), FreqBackend.Channel4.threshold)
-	, Channel5(5, FreqBackend.Channel5.channelState, static_cast<SlopeName>(FreqBackend.Channel5.slope), FreqBackend.Channel5.threshold)
-	, Channel6(6, FreqBackend.Channel6.channelState, static_cast<SlopeName>(FreqBackend.Channel6.slope), FreqBackend.Channel6.threshold)
-	, Channel7(7, FreqBackend.Channel7.channelState, static_cast<SlopeName>(FreqBackend.Channel7.slope), FreqBackend.Channel7.threshold)
-	, Channel8(8, FreqBackend.Channel8.channelState, static_cast<SlopeName>(FreqBackend.Channel8.slope), FreqBackend.Channel8.threshold)
+	, Channel1(FreqBackend.Channel1.numberChanel, FreqBackend.Channel1.channelState, static_cast<SlopeName>(FreqBackend.Channel1.slope), FreqBackend.Channel1.threshold)
+	, Channel2(FreqBackend.Channel2.numberChanel, FreqBackend.Channel2.channelState, static_cast<SlopeName>(FreqBackend.Channel2.slope), FreqBackend.Channel2.threshold)
+	, Channel3(FreqBackend.Channel3.numberChanel, FreqBackend.Channel3.channelState, static_cast<SlopeName>(FreqBackend.Channel3.slope), FreqBackend.Channel3.threshold)
+	, Channel4(FreqBackend.Channel4.numberChanel, FreqBackend.Channel4.channelState, static_cast<SlopeName>(FreqBackend.Channel4.slope), FreqBackend.Channel4.threshold)
+	, Channel5(FreqBackend.Channel5.numberChanel, FreqBackend.Channel5.channelState, static_cast<SlopeName>(FreqBackend.Channel5.slope), FreqBackend.Channel5.threshold)
+	, Channel6(FreqBackend.Channel6.numberChanel, FreqBackend.Channel6.channelState, static_cast<SlopeName>(FreqBackend.Channel6.slope), FreqBackend.Channel6.threshold)
+	, Channel7(FreqBackend.Channel7.numberChanel, FreqBackend.Channel7.channelState, static_cast<SlopeName>(FreqBackend.Channel7.slope), FreqBackend.Channel7.threshold)
+	, Channel8(FreqBackend.Channel8.numberChanel, FreqBackend.Channel8.channelState, static_cast<SlopeName>(FreqBackend.Channel8.slope), FreqBackend.Channel8.threshold)
 	, Session(false, static_cast<ClockName>(FreqBackend.FreqSession.clock), 0, FreqBackend.FreqSession.stampsNumber, FreqBackend.FreqSession.repeat)
 //	, Channel1(1, false, SlopeName::UP, 0)
 //	, Channel2(2, false, SlopeName::UP, 0)
@@ -276,6 +276,14 @@ void FreqModeConfigView::toggleChannelState()
 	bool CurrentState = toggleChannel.getState();
 	FreqModeConfigView::setGuiTouchable(CurrentState);
 	setChannelStateUI(pChannelInput, CurrentState);
+	if (CurrentState == true)
+	{
+		pChannelInput->setNumberChannel(m_channelInput);
+	}
+	else
+	{
+		pChannelInput->setNumberChannel(0);
+	}
 }
 
 // funkcja ustawiaja thresold z backendu

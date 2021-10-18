@@ -111,12 +111,12 @@ FreqModeViewBase::FreqModeViewBase() :
     textLabelFreq7.setLinespacing(0);
     textLabelFreq7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID212));
 
-    textFreq1start_1.setPosition(98, 436, 68, 31);
-    textFreq1start_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textFreq1start_1.setLinespacing(0);
-    textFreq1start_1Buffer[0] = 0;
-    textFreq1start_1.setWildcard(textFreq1start_1Buffer);
-    textFreq1start_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID213));
+    textFreq8start.setPosition(98, 436, 68, 31);
+    textFreq8start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textFreq8start.setLinespacing(0);
+    textFreq8startBuffer[0] = 0;
+    textFreq8start.setWildcard(textFreq8startBuffer);
+    textFreq8start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID213));
 
     textLabeFreq8.setPosition(17, 436, 74, 31);
     textLabeFreq8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -437,7 +437,7 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textLabelFreq5);
     add(textLabelFreq6);
     add(textLabelFreq7);
-    add(textFreq1start_1);
+    add(textFreq8start);
     add(textLabeFreq8);
     add(textSampleLabel);
     add(textMeanLabel);

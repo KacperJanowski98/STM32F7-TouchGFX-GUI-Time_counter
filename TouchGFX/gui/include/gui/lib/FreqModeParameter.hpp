@@ -78,6 +78,13 @@ public:
 	~FreqModeParameter();
 
 	/**
+	 * @brief Ustawienie numeru kanalu.
+	 *
+	 * @param channel Kanal.
+	 */
+	void setNumberChannel(uint8_t channel);
+
+	/**
 	 * @brief Ustawienie stanu dla obiektu kanalu.
 	 * 
 	 * @param state True oznacza stan ON, false oznacza stan OFF.

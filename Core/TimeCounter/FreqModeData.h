@@ -18,6 +18,7 @@ typedef struct
 
 typedef struct
 {
+	uint8_t numberChanel;
     bool channelState;
     Slope_t slope;
     uint32_t threshold;
