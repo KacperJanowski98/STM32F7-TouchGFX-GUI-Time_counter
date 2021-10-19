@@ -52,6 +52,8 @@ public:
 
     void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
 
+    void updateFreqParameterBackend();
+
 protected:
     // obsluga scroll wheel
     Callback<FreqModeConfigView, int16_t> scrollWheelINPUTAnimateToCallback;

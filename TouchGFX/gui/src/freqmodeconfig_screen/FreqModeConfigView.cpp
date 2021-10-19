@@ -447,21 +447,76 @@ void FreqModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 
 void FreqModeConfigView::FinishSetupFreqModeSingle()
 {
+	updateFreqParameterBackend();
+
 	presenter->askForDataFreqSingle();
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 
 void FreqModeConfigView::FinishSetupFreqModeConst()
 {
+	updateFreqParameterBackend();
+
 	presenter->askForDataFreqConst();
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 
 void FreqModeConfigView::FinishSetupFreqModeStamps()
 {
+	updateFreqParameterBackend();
+
 	presenter->askForDataFreqStamps();
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 
+void FreqModeConfigView::updateFreqParameterBackend()
+{
+	FreqBackend.Channel1.channelState = pChannel1->getStateChannel();
+	FreqBackend.Channel1.numberChanel = pChannel1->getNumberChannel();
+	FreqBackend.Channel1.slope = static_cast<Slope_t>(pChannel1->getSlope());
+	FreqBackend.Channel1.threshold = pChannel1->getThreshold();
+
+	FreqBackend.Channel2.channelState = pChannel2->getStateChannel();
+	FreqBackend.Channel2.numberChanel = pChannel2->getNumberChannel();
+	FreqBackend.Channel2.slope = static_cast<Slope_t>(pChannel2->getSlope());
+	FreqBackend.Channel2.threshold = pChannel2->getThreshold();
+
+	FreqBackend.Channel3.channelState = pChannel3->getStateChannel();
+	FreqBackend.Channel3.numberChanel = pChannel3->getNumberChannel();
+	FreqBackend.Channel3.slope = static_cast<Slope_t>(pChannel3->getSlope());
+	FreqBackend.Channel3.threshold = pChannel3->getThreshold();
+
+	FreqBackend.Channel4.channelState = pChannel4->getStateChannel();
+	FreqBackend.Channel4.numberChanel = pChannel4->getNumberChannel();
+	FreqBackend.Channel4.slope = static_cast<Slope_t>(pChannel4->getSlope());
+	FreqBackend.Channel4.threshold = pChannel4->getThreshold();
+
+	FreqBackend.Channel5.channelState = pChannel5->getStateChannel();
+	FreqBackend.Channel5.numberChanel = pChannel5->getNumberChannel();
+	FreqBackend.Channel5.slope = static_cast<Slope_t>(pChannel5->getSlope());
+	FreqBackend.Channel5.threshold = pChannel5->getThreshold();
+
+	FreqBackend.Channel6.channelState = pChannel6->getStateChannel();
+	FreqBackend.Channel6.numberChanel = pChannel6->getNumberChannel();
+	FreqBackend.Channel6.slope = static_cast<Slope_t>(pChannel6->getSlope());
+	FreqBackend.Channel6.threshold = pChannel6->getThreshold();
+
+	FreqBackend.Channel7.channelState = pChannel7->getStateChannel();
+	FreqBackend.Channel7.numberChanel = pChannel7->getNumberChannel();
+	FreqBackend.Channel7.slope = static_cast<Slope_t>(pChannel7->getSlope());
+	FreqBackend.Channel7.threshold = pChannel7->getThreshold();
+
+	FreqBackend.Channel8.channelState = pChannel8->getStateChannel();
+	FreqBackend.Channel8.numberChanel = pChannel8->getNumberChannel();
+	FreqBackend.Channel8.slope = static_cast<Slope_t>(pChannel8->getSlope());
+	FreqBackend.Channel8.threshold = pChannel8->getThreshold();
+
+	FreqBackend.MessSetup.hfInputState = m_hfInput;
+	FreqBackend.MessSetup.gate = m_gate;
+
+	FreqBackend.FreqSession.clock = static_cast<Clock_t>(pSession->getSourceClock());
+	FreqBackend.FreqSession.repeat = pSession->getRepeat();
+	FreqBackend.FreqSession.stampsNumber = pSession->getStampsNumber();
+}
 
 
