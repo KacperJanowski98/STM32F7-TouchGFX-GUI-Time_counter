@@ -21,3 +21,8 @@ void FreqModePresenter::askForReset()
 {
 	model->getResetFreq();
 }
+
+void FreqModePresenter::updateUIContinuousFreq()
+{
+	view.updateUIContinuousFreq();
+}

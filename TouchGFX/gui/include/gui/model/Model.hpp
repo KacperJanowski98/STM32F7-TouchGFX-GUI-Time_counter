@@ -55,11 +55,9 @@ public:
 
     void updateScreenContinuousTimeMode();
 
-//    std::unique_ptr<TimeModeParameter> getChannel1();
+    void updateScreenContinuousFreqMode();
 protected:
     ModelListener* modelListener;
-//private:
-//    TimeModeParameter Channel1;
 };
 
 #endif // MODEL_HPP

@@ -529,6 +529,12 @@ void FreqModeView::ResetParameter()
 	FreqModeView::setupScreen();
 }
 
+void FreqModeView::updateUIContinuousFreq()
+{
+	FreqModeView::draw();
+	FreqModeView::setupScreen();
+}
+
 void FreqModeView::calculateFormatMeanFreq(float mean, int *pTotal, int *pFrac1, int *pFrac2)
 {
     int a = 0, b = 0, c = 0;

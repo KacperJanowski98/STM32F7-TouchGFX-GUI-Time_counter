@@ -35,11 +35,24 @@ void Model::tick()
 			updateScreenContinuousTimeMode();
 		}
 	}
+
+	if (myBinarySemUpdateFreqDispHandle != NULL)
+	{
+		if (osSemaphoreAcquire(myBinarySemUpdateFreqDispHandle, ( uint32_t ) 10) == osOK)
+		{
+			updateScreenContinuousFreqMode();
+		}
+	}
 }
 
 void Model::updateScreenContinuousTimeMode()
 {
 	modelListener->updateUIContinuousTime();
+}
+
+void Model::updateScreenContinuousFreqMode()
+{
+	modelListener->updateUIContinuousFreq();
 }
 
 //

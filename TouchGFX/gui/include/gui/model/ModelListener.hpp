@@ -12,6 +12,8 @@ public:
 
     virtual void updateUIContinuousTime() {}
 
+    virtual void updateUIContinuousFreq() {}
+
     void bind(Model* m)
     {
         model = m;

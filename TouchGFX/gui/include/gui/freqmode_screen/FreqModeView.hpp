@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     virtual void ResetParameter();
 
+    virtual void updateUIContinuousFreq();
 protected:
     void calculateFormatMeanFreq(float mean, int *pTotal, int *pFrac1, int *pFrac2);
     void calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFrac);

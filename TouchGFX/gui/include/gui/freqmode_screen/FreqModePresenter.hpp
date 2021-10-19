@@ -29,6 +29,8 @@ public:
 
     void askForReset();
 
+    virtual void updateUIContinuousFreq();
+
 private:
     FreqModePresenter();
 
