@@ -93,14 +93,14 @@ const osThreadAttr_t TouchGFXTask_attributes = {
 osThreadId_t TaskTimeSingleHandle;
 const osThreadAttr_t TaskTimeSingle_attributes = {
   .name = "TaskTimeSingle",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskFreqSingle */
 osThreadId_t TaskFreqSingleHandle;
 const osThreadAttr_t TaskFreqSingle_attributes = {
   .name = "TaskFreqSingle",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskTimeConst */
@@ -121,14 +121,14 @@ const osThreadAttr_t TaskFreqConst_attributes = {
 osThreadId_t TaskTimeStampsHandle;
 const osThreadAttr_t TaskTimeStamps_attributes = {
   .name = "TaskTimeStamps",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskFreqStamps */
 osThreadId_t TaskFreqStampsHandle;
 const osThreadAttr_t TaskFreqStamps_attributes = {
   .name = "TaskFreqStamps",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskResetParamT */
