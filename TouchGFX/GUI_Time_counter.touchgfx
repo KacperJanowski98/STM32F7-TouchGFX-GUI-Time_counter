@@ -6157,6 +6157,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "FreqModeConfig"
             }
+          },
+          {
+            "InteractionName": "Reset",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonReset"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ResetParameter"
+            }
           }
         ],
         "Name": "FreqMode",

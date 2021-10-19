@@ -26,6 +26,7 @@ FreqModeViewBase::FreqModeViewBase() :
 
     buttonReset.setXY(372, 0);
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonReset.setAction(buttonCallback);
 
     textFreq1start.setPosition(99, 100, 68, 31);
     textFreq1start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -504,5 +505,12 @@ void FreqModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When buttonConfig clicked change screen to FreqModeConfig
         //Go to FreqModeConfig with no screen transition
         application().gotoFreqModeConfigScreenNoTransition();
+    }
+    else if (&src == &buttonReset)
+    {
+        //Reset
+        //When buttonReset clicked call virtual function
+        //Call ResetParameter
+        ResetParameter();
     }
 }

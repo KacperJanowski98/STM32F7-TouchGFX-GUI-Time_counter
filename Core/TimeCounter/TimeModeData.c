@@ -393,6 +393,7 @@ void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
 	Ti->startIn = 0;
 	Ti->stopIn = 0;
 	meas->mean = 0.0f;
+	meas->stdDev = 0.0f;
 	meas->meanUnit = NANO;
 	meas->stdDevUnit = PICO;
 }

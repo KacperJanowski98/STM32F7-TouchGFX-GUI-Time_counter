@@ -19,6 +19,14 @@ public:
     virtual ~FreqModeViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void ResetParameter()
+    {
+        // Override and implement this function in FreqMode
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

@@ -102,3 +102,29 @@ void ResultFrequencyInit(ResultFreq_t *pResultFreq)
 	pResultFreq->measure8.stdDevUnit = MICRO;
 }
 
+void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
+{
+
+}
+
+void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
+{
+
+}
+
+void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
+{
+
+}
+
+// pozostale funkcje
+
+void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
+{
+	pFreqChannel->numberChanel = 0;
+	pMeasFreq->mean = 0.0f;
+	pMeasFreq->stdDev = 0.0f;
+	pMeasFreq->meanUnit = KILO;
+	pMeasFreq->stdDevUnit = MICRO;
+}
+
