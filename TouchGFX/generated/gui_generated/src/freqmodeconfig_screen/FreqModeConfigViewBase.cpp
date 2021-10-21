@@ -377,7 +377,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqRepeat.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqRepeat);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(3);
+    swipeContainerFreq.setSelectedPage(0);
 
     add(__background);
     add(boxLeftBackG);

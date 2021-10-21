@@ -10,6 +10,9 @@ extern osSemaphoreId_t myBinarySemGetFreqConstHandle;
 extern osSemaphoreId_t myBinarySemGetTimeStampsHandle;
 extern osSemaphoreId_t myBinarySemGetFreqStampsHandle;
 
+extern osSemaphoreId_t myBinarySemGetTimeRepeatHandle;
+extern osSemaphoreId_t myBinarySemGetFreqRepeatHandle;
+
 extern osSemaphoreId_t myBinarySemDetectThreTimeHandle;
 extern osSemaphoreId_t myBinarySemDetectThreFreqHandle;
 
@@ -71,6 +74,11 @@ void Model::getDataTimeStamps()
 
 }
 
+void Model::getDataTimeRepeat()
+{
+
+}
+
 void Model::getDataFreqSingle()
 {
 	osSemaphoreRelease(myBinarySemGetFreqSingleHandle);
@@ -82,6 +90,11 @@ void Model::getDataFreqContinuous()
 }
 
 void Model::getDataFreqStamps()
+{
+
+}
+
+void Model::getDataFreqRepeat()
 {
 
 }

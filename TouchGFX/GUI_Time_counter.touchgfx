@@ -7644,7 +7644,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqSESSION",
+            "SelectedPage": "swipeContainerFreqINPUT",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,

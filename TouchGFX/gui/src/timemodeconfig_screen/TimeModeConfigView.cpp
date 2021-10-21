@@ -775,6 +775,14 @@ void TimeModeConfigView::FinishSetupTimeModeStamps()
 	application().gotoTimeModeScreenCoverTransitionWest();
 }
 
+void TimeModeConfigView::FinishSetupTimeModeRepeat()
+{
+	updateTimeParameterBackend();
+
+	presenter->askForDataTimeRepeat();
+	application().gotoTimeModeScreenCoverTransitionWest();
+}
+
 void TimeModeConfigView::updateTimeParameterBackend()
 {
 	TimeBackend.Channel1.channelState = pChannel1->getStateChannel();

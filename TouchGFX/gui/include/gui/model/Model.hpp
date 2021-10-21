@@ -45,6 +45,10 @@ public:
 
     void getDataFreqStamps();
 
+    void getDataTimeRepeat();
+
+    void getDataFreqRepeat();
+
     void getResetTime();
 
     void getResetFreq();

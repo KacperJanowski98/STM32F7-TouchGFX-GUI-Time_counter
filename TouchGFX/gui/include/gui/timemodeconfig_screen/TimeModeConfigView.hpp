@@ -110,6 +110,11 @@ public:
     virtual void FinishSetupTimeModeStamps();
 
     /**
+     * @brief Funkcja wykonujaca sie po nacisnieciu przycisku Repeat ktora konczy konfiguracje.
+     */
+    virtual void FinishSetupTimeModeRepeat();
+
+    /**
      * @brief Funkcja wykonujaca sie po nacisnieciu przycisku toggle button, ustawia stan odcinka czasowego.
      *
      */

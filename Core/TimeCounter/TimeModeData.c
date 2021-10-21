@@ -292,6 +292,44 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
     }
 }
 
+void RepeatTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
+{
+    if (pTimeMode->TiSetup1.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup2.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup3.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup4.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup5.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup6.tiState == true)
+    {
+
+    }
+
+    if (pTimeMode->TiSetup7.tiState == true)
+    {
+
+    }
+}
+
 float calculateSingleMeas(int min, int max)
 {
     if (min == 0 && max == 0)
