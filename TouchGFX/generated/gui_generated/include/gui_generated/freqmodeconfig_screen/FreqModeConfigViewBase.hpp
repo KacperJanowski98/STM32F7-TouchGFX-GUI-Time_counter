@@ -68,6 +68,11 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void FinishSetupFreqModeRepeat()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -142,6 +147,7 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqStamps;
     touchgfx::ButtonWithLabel buttonConfigFreqConst;
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;
+    touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;

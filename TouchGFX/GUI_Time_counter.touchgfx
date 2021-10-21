@@ -4280,7 +4280,37 @@
                     "TextRotation": "0",
                     "Style": "Style4",
                     "Name": "buttonConfigTimeStamps",
-                    "X": 315,
+                    "X": 120,
+                    "Y": 336,
+                    "Width": 170,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+                    "Alpha": 255,
+                    "TextId": "SingleUseId273",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0",
+                    "Style": "Style4",
+                    "Name": "buttonConfigTimeRepeat",
+                    "X": 505,
                     "Y": 336,
                     "Width": 170,
                     "Height": 60,
@@ -4439,6 +4469,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "detectThreshold"
+            }
+          },
+          {
+            "InteractionName": "FinishTimeModeRepeat",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigTimeRepeat"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupTimeModeRepeat"
             }
           }
         ],
@@ -7476,7 +7518,7 @@
                     "TextRotation": "0",
                     "Style": "Style4",
                     "Name": "buttonConfigFreqStamps",
-                    "X": 315,
+                    "X": 115,
                     "Y": 327,
                     "Width": 170,
                     "Height": 60,
@@ -7546,6 +7588,36 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+                    "Alpha": 255,
+                    "TextId": "SingleUseId274",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0",
+                    "Style": "Style4",
+                    "Name": "buttonConfigFreqRepeat",
+                    "X": 510,
+                    "Y": 327,
+                    "Width": 170,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -7572,7 +7644,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainerFreqINPUT",
+            "SelectedPage": "swipeContainerFreqSESSION",
             "Style": "Style1",
             "Name": "swipeContainerFreq",
             "X": 0,
@@ -7671,6 +7743,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "detectThreshold"
+            }
+          },
+          {
+            "InteractionName": "FinishFreqModeRepeat",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfigFreqRepeat"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FinishSetupFreqModeRepeat"
             }
           }
         ],
@@ -8630,6 +8714,14 @@
       },
       {
         "TextEntryId": "SingleUseId272",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId273",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId274",
         "IsResource": false
       }
     ],

@@ -345,7 +345,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderRepeat.setValue(0);
     swipeContainerFreqSESSION.add(sliderRepeat);
 
-    buttonConfigFreqStamps.setXY(315, 327);
+    buttonConfigFreqStamps.setXY(115, 327);
     buttonConfigFreqStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID89));
     buttonConfigFreqStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -368,8 +368,16 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigFreqSingle.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqSingle);
+
+    buttonConfigFreqRepeat.setXY(510, 327);
+    buttonConfigFreqRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfigFreqRepeat.setLabelText(touchgfx::TypedText(T_SINGLEUSEID274));
+    buttonConfigFreqRepeat.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqRepeat.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(buttonConfigFreqRepeat);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
-    swipeContainerFreq.setSelectedPage(0);
+    swipeContainerFreq.setSelectedPage(3);
 
     add(__background);
     add(boxLeftBackG);
@@ -444,6 +452,13 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonConfigFreqSingle clicked call virtual function
         //Call FinishSetupFreqModeSingle
         FinishSetupFreqModeSingle();
+    }
+    else if (&src == &buttonConfigFreqRepeat)
+    {
+        //FinishFreqModeRepeat
+        //When buttonConfigFreqRepeat clicked call virtual function
+        //Call FinishSetupFreqModeRepeat
+        FinishSetupFreqModeRepeat();
     }
 }
 
