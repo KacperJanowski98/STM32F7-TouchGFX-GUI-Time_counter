@@ -469,6 +469,14 @@ void FreqModeConfigView::FinishSetupFreqModeStamps()
 	application().gotoFreqModeScreenCoverTransitionWest();
 }
 
+void FreqModeConfigView::FinishSetupFreqModeRepeat()
+{
+	updateFreqParameterBackend();
+
+	presenter->askForDataFreqRepeat();
+	application().gotoFreqModeScreenCoverTransitionWest();
+}
+
 void FreqModeConfigView::updateFreqParameterBackend()
 {
 	FreqBackend.Channel1.channelState = pChannel1->getStateChannel();

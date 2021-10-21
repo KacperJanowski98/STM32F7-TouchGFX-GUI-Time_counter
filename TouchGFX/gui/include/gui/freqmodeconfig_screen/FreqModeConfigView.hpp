@@ -24,6 +24,8 @@ public:
 
     virtual void FinishSetupFreqModeStamps();
 
+    virtual void FinishSetupFreqModeRepeat();
+
     // funkcja dla przycisku onoff INPUT
     virtual void toggleChannelState();
 

@@ -36,6 +36,8 @@ public:
 
     virtual void askForDataFreqStamps();
 
+    virtual void askForDataFreqRepeat();
+
     virtual void askForDetectedThreshold();
 
 private:
