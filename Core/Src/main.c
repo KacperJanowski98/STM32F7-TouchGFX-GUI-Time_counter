@@ -107,14 +107,14 @@ const osThreadAttr_t TaskFreqSingle_attributes = {
 osThreadId_t TaskTimeConstHandle;
 const osThreadAttr_t TaskTimeConst_attributes = {
   .name = "TaskTimeConst",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskFreqConst */
 osThreadId_t TaskFreqConstHandle;
 const osThreadAttr_t TaskFreqConst_attributes = {
   .name = "TaskFreqConst",
-  .stack_size = 512 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for TaskTimeStamps */
@@ -164,6 +164,20 @@ osThreadId_t TaskCalibrationHandle;
 const osThreadAttr_t TaskCalibration_attributes = {
   .name = "TaskCalibration",
   .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskTimeRepeat */
+osThreadId_t TaskTimeRepeatHandle;
+const osThreadAttr_t TaskTimeRepeat_attributes = {
+  .name = "TaskTimeRepeat",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for TaskFreqRepeat */
+osThreadId_t TaskFreqRepeatHandle;
+const osThreadAttr_t TaskFreqRepeat_attributes = {
+  .name = "TaskFreqRepeat",
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for myBinarySemGetTimeSingle */
@@ -231,6 +245,16 @@ osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
 const osSemaphoreAttr_t myBinarySemUpdateFreqDisp_attributes = {
   .name = "myBinarySemUpdateFreqDisp"
 };
+/* Definitions for myBinarySemGetTimeRepeat */
+osSemaphoreId_t myBinarySemGetTimeRepeatHandle;
+const osSemaphoreAttr_t myBinarySemGetTimeRepeat_attributes = {
+  .name = "myBinarySemGetTimeRepeat"
+};
+/* Definitions for myBinarySemGetFreqRepeat */
+osSemaphoreId_t myBinarySemGetFreqRepeatHandle;
+const osSemaphoreAttr_t myBinarySemGetFreqRepeat_attributes = {
+  .name = "myBinarySemGetFreqRepeat"
+};
 /* USER CODE BEGIN PV */
 
 // -- remove
@@ -278,6 +302,8 @@ void StartTaskDetectThreT(void *argument);
 void StartTaskDetectThreF(void *argument);
 void StartTaskResetParamF(void *argument);
 void StartTaskCalibration(void *argument);
+void StartTaskTaskTimeRepeat(void *argument);
+void StartTaskFreqRepeat(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -406,6 +432,12 @@ int main(void)
   /* creation of myBinarySemUpdateFreqDisp */
   myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateFreqDisp_attributes);
 
+  /* creation of myBinarySemGetTimeRepeat */
+  myBinarySemGetTimeRepeatHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeRepeat_attributes);
+
+  /* creation of myBinarySemGetFreqRepeat */
+  myBinarySemGetFreqRepeatHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqRepeat_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -454,6 +486,12 @@ int main(void)
 
   /* creation of TaskCalibration */
   TaskCalibrationHandle = osThreadNew(StartTaskCalibration, NULL, &TaskCalibration_attributes);
+
+  /* creation of TaskTimeRepeat */
+  TaskTimeRepeatHandle = osThreadNew(StartTaskTaskTimeRepeat, NULL, &TaskTimeRepeat_attributes);
+
+  /* creation of TaskFreqRepeat */
+  TaskFreqRepeatHandle = osThreadNew(StartTaskFreqRepeat, NULL, &TaskFreqRepeat_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1947,6 +1985,42 @@ void StartTaskCalibration(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartTaskCalibration */
+}
+
+/* USER CODE BEGIN Header_StartTaskTaskTimeRepeat */
+/**
+* @brief Function implementing the TaskTimeRepeat thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskTaskTimeRepeat */
+void StartTaskTaskTimeRepeat(void *argument)
+{
+  /* USER CODE BEGIN StartTaskTaskTimeRepeat */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskTaskTimeRepeat */
+}
+
+/* USER CODE BEGIN Header_StartTaskFreqRepeat */
+/**
+* @brief Function implementing the TaskFreqRepeat thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskFreqRepeat */
+void StartTaskFreqRepeat(void *argument)
+{
+  /* USER CODE BEGIN StartTaskFreqRepeat */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTaskFreqRepeat */
 }
 
 /* MPU Configuration */
