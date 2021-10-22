@@ -51,9 +51,57 @@
             "ProgressInitialValue": 0,
             "Name": "calibrationProgress",
             "X": 348,
-            "Y": 188,
+            "Y": 221,
             "Width": 104,
             "Height": 104,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId275",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textLabelName",
+            "X": 312,
+            "Y": 62,
+            "Width": 176,
+            "Height": 49,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId276",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textLabelDescription",
+            "X": 209,
+            "Y": 153,
+            "Width": 382,
+            "Height": 25,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -8735,6 +8783,14 @@
       },
       {
         "TextEntryId": "SingleUseId274",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId275",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId276",
         "IsResource": false
       }
     ],

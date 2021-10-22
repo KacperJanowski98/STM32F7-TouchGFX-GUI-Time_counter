@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class CalibrationProgressBarViewBase : public touchgfx::View<CalibrationProgressBarPresenter>
 {
@@ -30,6 +31,8 @@ protected:
     touchgfx::Box backgroundCalibration;
     touchgfx::CircleProgress calibrationProgress;
     touchgfx::PainterRGB565Bitmap calibrationProgressPainter;
+    touchgfx::TextArea textLabelName;
+    touchgfx::TextArea textLabelDescription;
 
 private:
 

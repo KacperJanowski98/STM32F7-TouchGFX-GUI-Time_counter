@@ -4,6 +4,7 @@
 #include <gui_generated/calibrationprogressbar_screen/CalibrationProgressBarViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
+#include <texts/TextKeysAndLanguages.hpp>
 
 CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
 {
@@ -16,7 +17,7 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     backgroundCalibration.setPosition(0, 0, 800, 480);
     backgroundCalibration.setColor(touchgfx::Color::getColorFromRGB(50, 51, 66));
 
-    calibrationProgress.setXY(348, 188);
+    calibrationProgress.setXY(348, 221);
     calibrationProgress.setProgressIndicatorPosition(0, 0, 104, 104);
     calibrationProgress.setRange(0, 100);
     calibrationProgress.setCenter(52, 52);
@@ -28,9 +29,21 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     calibrationProgress.setPainter(calibrationProgressPainter);
     calibrationProgress.setValue(0);
 
+    textLabelName.setXY(312, 62);
+    textLabelName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelName.setLinespacing(0);
+    textLabelName.setTypedText(touchgfx::TypedText(T_SINGLEUSEID275));
+
+    textLabelDescription.setXY(209, 153);
+    textLabelDescription.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabelDescription.setLinespacing(0);
+    textLabelDescription.setTypedText(touchgfx::TypedText(T_SINGLEUSEID276));
+
     add(__background);
     add(backgroundCalibration);
     add(calibrationProgress);
+    add(textLabelName);
+    add(textLabelDescription);
 }
 
 void CalibrationProgressBarViewBase::setupScreen()
