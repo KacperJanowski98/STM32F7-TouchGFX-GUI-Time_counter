@@ -54,15 +54,26 @@ typedef struct
 
 typedef struct
 {
-	CalcParam_t parameters1;
-	CalcParam_t parameters2;
-	CalcParam_t parameters3;
-	CalcParam_t parameters4;
-	CalcParam_t parameters5;
-	CalcParam_t parameters6;
-	CalcParam_t parameters7;
+	CalcConstParam_t parameters1;
+	CalcConstParam_t parameters2;
+	CalcConstParam_t parameters3;
+	CalcConstParam_t parameters4;
+	CalcConstParam_t parameters5;
+	CalcConstParam_t parameters6;
+	CalcConstParam_t parameters7;
 	uint16_t iteration;
-} ResultCalc_t;
+} ResultConstCalc_t;
+
+typedef struct
+{
+	CalcStampParam_t parameters1;
+	CalcStampParam_t parameters2;
+	CalcStampParam_t parameters3;
+	CalcStampParam_t parameters4;
+	CalcStampParam_t parameters5;
+	CalcStampParam_t parameters6;
+	CalcStampParam_t parameters7;
+} ResultStampsCalc_t;
 
 typedef struct
 {
@@ -77,15 +88,17 @@ typedef struct
 
 void TimeModeInit(TimeMode_t *pTimeMode);
 
-void ResultTimeParameterInit(ResultCalc_t *pResultCalc);
+void ResultTimeParameterConstInit(ResultConstCalc_t *pResultCalc);
+
+void ResultTimeParameterStampsInit(ResultStampsCalc_t *pResultCalc);
 
 void ResultTimeInit(ResultTime_t *pResultTime);
 
 void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
 
-void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultCalc_t *pResultCalc);
+void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultConstCalc_t *pResultCalc);
 
-void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
+void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStampsCalc_t *pResultCalc);
 
 void RepeatTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
 
@@ -97,7 +110,9 @@ Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
 void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
 
-void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcParam_t *pCalcParam);
+void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcConstParam_t *pCalcParam);
+
+void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasTime_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam);
 
 void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
 

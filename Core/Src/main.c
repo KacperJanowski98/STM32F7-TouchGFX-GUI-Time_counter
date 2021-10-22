@@ -271,7 +271,8 @@ uint8_t conditionT = 1;
 uint8_t conditionF = 1;
 
 TimeMode_t TimeBackend;
-ResultCalc_t ResultCalcTime;
+ResultConstCalc_t ResultCalcConstTime;
+ResultStampsCalc_t ResultCalcStampsTime;
 ResultTime_t ResultTimeBackend;
 FrequencyMode_t FreqBackend;
 ResultFreq_t ResultFreqBackend;
@@ -377,7 +378,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   TimeModeInit(&TimeBackend);
-  ResultTimeParameterInit(&ResultCalcTime);
+  ResultTimeParameterConstInit(&ResultCalcConstTime);
+  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
   ResultTimeInit(&ResultTimeBackend);
 
   FrequencyModeInit(&FreqBackend);
@@ -1803,7 +1805,7 @@ void StartTaskTimeConst(void *argument)
 			  while(conditionT)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);
-				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcTime);
+				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
 				  osDelay(500);
 			  }
 //			  counterConstT = 2;
@@ -1845,6 +1847,15 @@ void StartTaskTimeStamps(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetTimeStampsHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetTimeStampsHandle, (uint32_t) 10) == osOK) // && counterSingleT > 1)
+		  {
+			  conditionT = 0;
+			  ResultTimeInit(&ResultTimeBackend);
+			  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskTimeStamps */
@@ -1886,7 +1897,8 @@ void StartTaskResetParamT(void *argument)
 		  if (osSemaphoreAcquire(myBinarySemResetParamTHandle, (uint32_t) 10) == osOK)
 		  {
 			  TimeModeInit(&TimeBackend);
-			  ResultTimeParameterInit(&ResultCalcTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
+			  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
+			  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
 		  }

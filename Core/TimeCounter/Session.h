@@ -59,12 +59,24 @@ typedef struct
     float measureBuffer[2000];
     float calculateMean;
     float calculateStdDev;
-} CalcParam_t;
+} CalcConstParam_t;
+
+typedef struct
+{
+	uint16_t sizeBuffer;
+    float measureBuffer[1000];
+    float calculateMean;
+    float calculateStdDev;
+} CalcStampParam_t;
 
 void SessionInit(SessionSetup_t *pSessionSetup);
 
-void CalcParamInit(CalcParam_t *pCalcParam);
+void CalcParamConstInit(CalcConstParam_t *pCalcParam);
 
-void calculateMeanStdDev(CalcParam_t *pCalcParam);
+void CalcParamStampsInit(CalcStampParam_t * pCalcParam);
+
+void calculateMeanStdDevConst(CalcConstParam_t *pCalcParam);
+
+void calculateMeanStdDevStamps(CalcStampParam_t *pCalcParam);
 
 #endif /* TIMECOUNTER_SESSION_H_ */
