@@ -52,15 +52,15 @@ void FrontendApplicationBase::gotoCalibrationProgressBarScreenNoTransitionImpl()
     touchgfx::makeTransition<CalibrationProgressBarView, CalibrationProgressBarPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-void FrontendApplicationBase::gotoCalibrationProgressBarScreenBlockTransition()
+void FrontendApplicationBase::gotoCalibrationProgressBarScreenCoverTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCalibrationProgressBarScreenBlockTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCalibrationProgressBarScreenCoverTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoCalibrationProgressBarScreenBlockTransitionImpl()
+void FrontendApplicationBase::gotoCalibrationProgressBarScreenCoverTransitionEastImpl()
 {
-    touchgfx::makeTransition<CalibrationProgressBarView, CalibrationProgressBarPresenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<CalibrationProgressBarView, CalibrationProgressBarPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Menu

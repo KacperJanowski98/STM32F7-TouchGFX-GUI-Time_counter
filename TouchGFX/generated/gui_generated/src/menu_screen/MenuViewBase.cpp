@@ -69,7 +69,7 @@ void MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     {
         //OpenCalibration
         //When buttonCalibration clicked change screen to CalibrationProgressBar
-        //Go to CalibrationProgressBar with block transition
-        application().gotoCalibrationProgressBarScreenBlockTransition();
+        //Go to CalibrationProgressBar with screen transition towards East
+        application().gotoCalibrationProgressBarScreenCoverTransitionEast();
     }
 }
