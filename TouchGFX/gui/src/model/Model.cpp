@@ -120,3 +120,8 @@ void Model::getDetectedFreqThreshold()
 {
 	osSemaphoreRelease(myBinarySemDetectThreFreqHandle);
 }
+
+void Model::getCalibration()
+{
+	osSemaphoreRelease(myBinarySemCalibrationHandle);
+}

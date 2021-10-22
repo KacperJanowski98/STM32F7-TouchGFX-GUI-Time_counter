@@ -233,6 +233,18 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "CalibrationProgressBar"
             }
+          },
+          {
+            "InteractionName": "ResetParameters",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCalibration"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ResetParameters"
+            }
           }
         ],
         "Name": "Menu",

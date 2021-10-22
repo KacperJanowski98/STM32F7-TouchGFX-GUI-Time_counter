@@ -60,6 +60,8 @@ public:
     void updateScreenContinuousTimeMode();
 
     void updateScreenContinuousFreqMode();
+
+    void getCalibration();
 protected:
     ModelListener* modelListener;
 };

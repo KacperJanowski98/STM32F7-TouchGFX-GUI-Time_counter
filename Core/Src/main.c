@@ -1989,6 +1989,20 @@ void StartTaskCalibration(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemCalibrationHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemCalibrationHandle, (uint32_t) 10) == osOK)
+		  {
+			  TimeModeInit(&TimeBackend);
+			  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
+			  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
+			  ResultTimeInit(&ResultTimeBackend);
+			  conditionT = 0;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+
+			  //:TODO dopisac inicjalizacje funkcji z frequency mode.
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskCalibration */

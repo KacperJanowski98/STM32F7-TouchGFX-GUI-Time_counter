@@ -17,6 +17,14 @@ public:
     virtual ~MenuViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void ResetParameters()
+    {
+        // Override and implement this function in Menu
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

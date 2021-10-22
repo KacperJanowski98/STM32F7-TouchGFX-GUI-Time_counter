@@ -11,6 +11,8 @@ public:
     virtual ~MenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void ResetParameters();
 protected:
 };
 

@@ -16,3 +16,8 @@ void MenuPresenter::deactivate()
 {
 
 }
+
+void MenuPresenter::askForCalibration()
+{
+	model->getCalibration();
+}

@@ -14,3 +14,8 @@ void MenuView::tearDownScreen()
 {
     MenuViewBase::tearDownScreen();
 }
+
+void MenuView::ResetParameters()
+{
+	presenter->askForCalibration();
+}
