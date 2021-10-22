@@ -61,6 +61,7 @@ typedef struct
 	CalcParam_t parameters5;
 	CalcParam_t parameters6;
 	CalcParam_t parameters7;
+	uint16_t iteration;
 } ResultCalc_t;
 
 typedef struct

@@ -1886,6 +1886,7 @@ void StartTaskResetParamT(void *argument)
 		  if (osSemaphoreAcquire(myBinarySemResetParamTHandle, (uint32_t) 10) == osOK)
 		  {
 			  TimeModeInit(&TimeBackend);
+			  ResultTimeParameterInit(&ResultCalcTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
 		  }
