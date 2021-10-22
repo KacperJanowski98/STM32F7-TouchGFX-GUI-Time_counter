@@ -271,6 +271,7 @@ uint8_t conditionT = 1;
 uint8_t conditionF = 1;
 
 TimeMode_t TimeBackend;
+ResultCalc_t ResultCalcTime;
 ResultTime_t ResultTimeBackend;
 FrequencyMode_t FreqBackend;
 ResultFreq_t ResultFreqBackend;
@@ -376,6 +377,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   TimeModeInit(&TimeBackend);
+  ResultTimeParameterInit(&ResultCalcTime);
   ResultTimeInit(&ResultTimeBackend);
 
   FrequencyModeInit(&FreqBackend);
@@ -1801,7 +1803,7 @@ void StartTaskTimeConst(void *argument)
 			  while(conditionT)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);
-				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend);
+				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcTime);
 				  osDelay(500);
 			  }
 			  counterConstT = 2;

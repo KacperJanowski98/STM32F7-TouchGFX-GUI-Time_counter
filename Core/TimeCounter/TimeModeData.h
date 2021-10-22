@@ -54,6 +54,17 @@ typedef struct
 
 typedef struct
 {
+	CalcParam_t parameters1;
+	CalcParam_t parameters2;
+	CalcParam_t parameters3;
+	CalcParam_t parameters4;
+	CalcParam_t parameters5;
+	CalcParam_t parameters6;
+	CalcParam_t parameters7;
+} ResultCalc_t;
+
+typedef struct
+{
     MeasTime_t measure1;
     MeasTime_t measure2;
     MeasTime_t measure3;
@@ -65,11 +76,13 @@ typedef struct
 
 void TimeModeInit(TimeMode_t *pTimeMode);
 
+void ResultTimeParameterInit(ResultCalc_t *pResultCalc);
+
 void ResultTimeInit(ResultTime_t *pResultTime);
 
 void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
 
-void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
+void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultCalc_t *pResultCalc);
 
 void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
 
@@ -82,6 +95,8 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
 void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
+
+void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcParam_t *pCalcParam);
 
 void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
 

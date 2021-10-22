@@ -2,7 +2,7 @@
  * Session.h
  *
  *  Created on: 12 paź 2021
- *      Author: kacpe
+ *      Author: Kacper
  */
 
 #ifndef TIMECOUNTER_SESSION_H_
@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 #include "cmsis_os.h"
 #include "cmsis_os2.h"
 
@@ -52,6 +53,18 @@ typedef struct
     uint16_t repeat;
 } SessionSetup_t;
 
+typedef struct
+{
+    uint16_t sizeBuffer;
+    float measureBuffer[2000];
+    float calculateMean;
+    float calculateStdDev;
+} CalcParam_t;
+
 void SessionInit(SessionSetup_t *pSessionSetup);
+
+void CalcParamInit(CalcParam_t *pCalcParam);
+
+void calculateMeanStdDev(CalcParam_t *pCalcParam);
 
 #endif /* TIMECOUNTER_SESSION_H_ */

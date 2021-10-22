@@ -78,6 +78,44 @@ void TimeModeInit(TimeMode_t *pTimeMode)
     pTimeMode->TimeSession.tiRange = 0;
 }
 
+void ResultTimeParameterInit(ResultCalc_t *pResultCalc)
+{
+	pResultCalc->parameters1.calculateMean = 0.0f;
+	pResultCalc->parameters1.calculateStdDev = 0.0f;
+	pResultCalc->parameters1.sizeBuffer = 0;
+	memset(pResultCalc->parameters1.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters1.measureBuffer[0]));
+
+	pResultCalc->parameters2.calculateMean = 0.0f;
+	pResultCalc->parameters2.calculateStdDev = 0.0f;
+	pResultCalc->parameters2.sizeBuffer = 0;
+	memset(pResultCalc->parameters2.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters2.measureBuffer[0]));
+
+	pResultCalc->parameters3.calculateMean = 0.0f;
+	pResultCalc->parameters3.calculateStdDev = 0.0f;
+	pResultCalc->parameters3.sizeBuffer = 0;
+	memset(pResultCalc->parameters3.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters3.measureBuffer[0]));
+
+	pResultCalc->parameters4.calculateMean = 0.0f;
+	pResultCalc->parameters4.calculateStdDev = 0.0f;
+	pResultCalc->parameters4.sizeBuffer = 0;
+	memset(pResultCalc->parameters4.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters4.measureBuffer[0]));
+
+	pResultCalc->parameters5.calculateMean = 0.0f;
+	pResultCalc->parameters5.calculateStdDev = 0.0f;
+	pResultCalc->parameters5.sizeBuffer = 0;
+	memset(pResultCalc->parameters5.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters5.measureBuffer[0]));
+
+	pResultCalc->parameters6.calculateMean = 0.0f;
+	pResultCalc->parameters6.calculateStdDev = 0.0f;
+	pResultCalc->parameters6.sizeBuffer = 0;
+	memset(pResultCalc->parameters6.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters6.measureBuffer[0]));
+
+	pResultCalc->parameters7.calculateMean = 0.0f;
+	pResultCalc->parameters7.calculateStdDev = 0.0f;
+	pResultCalc->parameters7.sizeBuffer = 0;
+	memset(pResultCalc->parameters7.measureBuffer, 0, 2000 * sizeof(pResultCalc->parameters7.measureBuffer[0]));
+}
+
 void ResultTimeInit(ResultTime_t *pResultTime)
 {
     pResultTime->measure1.mean = 0.0f;
@@ -184,11 +222,12 @@ void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 }
 
 //:TODO dorobic obliczanie odchylenia standardowego.
-void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
+void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultCalc_t *pResultCalc)
 {
     if (pTimeMode->TiSetup1.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup1, &pResultTime->measure1, &pResultCalc->parameters1);
     }
     else
     {
@@ -197,7 +236,8 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup2.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup2, &pResultTime->measure2, &pResultCalc->parameters2);
     }
     else
     {
@@ -206,7 +246,8 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup3.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup3, &pResultTime->measure3, &pResultCalc->parameters3);
     }
     else
     {
@@ -215,7 +256,8 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup4.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup4, &pResultTime->measure4, &pResultCalc->parameters4);
     }
     else
     {
@@ -224,7 +266,8 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup5.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup5, &pResultTime->measure5, &pResultCalc->parameters5);
     }
     else
     {
@@ -233,7 +276,8 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup6.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup6, &pResultTime->measure6, &pResultCalc->parameters6);
     }
     else
     {
@@ -242,14 +286,15 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
 
     if (pTimeMode->TiSetup7.tiState == true)
     {
-        setCalculatedParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
+//        setCalculatedParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
+    	setCalculatedParamConstTime(&pTimeMode->TiSetup7, &pResultTime->measure7, &pResultCalc->parameters7);
     }
     else
     {
     	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
     //:TODO Wpisywanie numeru iteracji
-    pTimeMode->TimeSession.stampsNumber = 1;
+    pTimeMode->TimeSession.stampsNumber = pResultCalc->parameters1.sizeBuffer;
 
     osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
 }
@@ -424,6 +469,20 @@ void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
     calculateMinMax(start, stop, &min, &max);
     meas->mean = calculateSingleMeas(min, max);
     meas->meanUnit = setUnitMeanTime(start, stop);
+}
+
+void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcParam_t *pCalcParam)
+{
+    uint8_t start = Ti->startIn;
+    uint8_t stop = Ti->stopIn;
+    int min = 0, max = 0;
+    calculateMinMax(start, stop, &min, &max);
+    pCalcParam->measureBuffer[pCalcParam->sizeBuffer] = calculateSingleMeas(min, max);
+    calculateMeanStdDev(pCalcParam);
+    meas->mean = pCalcParam->calculateMean;
+    meas->stdDev = pCalcParam->calculateStdDev;
+    meas->meanUnit = setUnitMeanTime(start, stop);
+    meas->stdDevUnit = PICO;
 }
 
 void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
