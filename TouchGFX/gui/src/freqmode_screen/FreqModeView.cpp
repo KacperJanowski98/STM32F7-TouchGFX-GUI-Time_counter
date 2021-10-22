@@ -348,6 +348,9 @@ void FreqModeView::setupScreen()
     case MILLI:
     	Unicode::strncpy(textUnitSD1Buffer, (char*)mHz, TEXTUNITSD1_SIZE - 1);
     	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD1Buffer, (char*)Hz, TEXTUNITSD1_SIZE - 1);
+    	break;
     default:
     	Unicode::strncpy(textUnitSD1Buffer, (char*)pHz, TEXTUNITSD1_SIZE - 1);
     	break;
@@ -370,6 +373,9 @@ void FreqModeView::setupScreen()
     	break;
     case MILLI:
     	Unicode::strncpy(textUnitSD2Buffer, (char*)mHz, TEXTUNITSD2_SIZE - 1);
+    	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD2Buffer, (char*)Hz, TEXTUNITSD2_SIZE - 1);
     	break;
     default:
     	Unicode::strncpy(textUnitSD2Buffer, (char*)pHz, TEXTUNITSD2_SIZE - 1);
@@ -394,6 +400,9 @@ void FreqModeView::setupScreen()
     case MILLI:
     	Unicode::strncpy(textUnitSD3Buffer, (char*)mHz, TEXTUNITSD3_SIZE - 1);
     	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD3Buffer, (char*)Hz, TEXTUNITSD3_SIZE - 1);
+    	break;
     default:
     	Unicode::strncpy(textUnitSD3Buffer, (char*)pHz, TEXTUNITSD3_SIZE - 1);
     	break;
@@ -416,6 +425,9 @@ void FreqModeView::setupScreen()
     	break;
     case MILLI:
     	Unicode::strncpy(textUnitSD4Buffer, (char*)mHz, TEXTUNITSD4_SIZE - 1);
+    	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD4Buffer, (char*)Hz, TEXTUNITSD4_SIZE - 1);
     	break;
     default:
     	Unicode::strncpy(textUnitSD4Buffer, (char*)pHz, TEXTUNITSD4_SIZE - 1);
@@ -440,6 +452,9 @@ void FreqModeView::setupScreen()
     case MILLI:
     	Unicode::strncpy(textUnitSD5Buffer, (char*)mHz, TEXTUNITSD5_SIZE - 1);
     	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD5Buffer, (char*)Hz, TEXTUNITSD5_SIZE - 1);
+    	break;
     default:
     	Unicode::strncpy(textUnitSD5Buffer, (char*)pHz, TEXTUNITSD5_SIZE - 1);
     	break;
@@ -462,6 +477,9 @@ void FreqModeView::setupScreen()
     	break;
     case MILLI:
     	Unicode::strncpy(textUnitSD6Buffer, (char*)mHz, TEXTUNITSD6_SIZE - 1);
+    	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD6Buffer, (char*)Hz, TEXTUNITSD6_SIZE - 1);
     	break;
     default:
     	Unicode::strncpy(textUnitSD6Buffer, (char*)pHz, TEXTUNITSD6_SIZE - 1);
@@ -486,6 +504,9 @@ void FreqModeView::setupScreen()
     case MILLI:
     	Unicode::strncpy(textUnitSD7Buffer, (char*)mHz, TEXTUNITSD7_SIZE - 1);
     	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD7Buffer, (char*)Hz, TEXTUNITSD7_SIZE - 1);
+    	break;
     default:
     	Unicode::strncpy(textUnitSD7Buffer, (char*)pHz, TEXTUNITSD7_SIZE - 1);
     	break;
@@ -508,6 +529,9 @@ void FreqModeView::setupScreen()
     	break;
     case MILLI:
     	Unicode::strncpy(textUnitSD8Buffer, (char*)mHz, TEXTUNITSD8_SIZE - 1);
+    	break;
+    case HZ:
+    	Unicode::strncpy(textUnitSD8Buffer, (char*)Hz, TEXTUNITSD8_SIZE - 1);
     	break;
     default:
     	Unicode::strncpy(textUnitSD8Buffer, (char*)pHz, TEXTUNITSD8_SIZE - 1);
