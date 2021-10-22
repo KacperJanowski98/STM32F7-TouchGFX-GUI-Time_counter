@@ -87,29 +87,93 @@ void FreqModeView::setupScreen()
 
     // Sample
 
-    Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample1.invalidate();
+    if (FreqBackend.Channel1.channelState == false)
+    {
+    	textSample1.setVisible(false);
+    }
+    else
+    {
+    	textSample1.setVisible(true);
+        Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample1.invalidate();
+    }
 
-    Unicode::snprintf(textSample2Buffer, TEXTSAMPLE2_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample2.invalidate();
+    if (FreqBackend.Channel2.channelState == false)
+    {
+    	textSample2.setVisible(false);
+    }
+    else
+    {
+    	textSample2.setVisible(true);
+        Unicode::snprintf(textSample2Buffer, TEXTSAMPLE2_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample2.invalidate();
+    }
 
-    Unicode::snprintf(textSample3Buffer, TEXTSAMPLE3_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample3.invalidate();
+    if (FreqBackend.Channel3.channelState == false)
+    {
+    	textSample3.setVisible(false);
+    }
+    else
+    {
+    	textSample3.setVisible(true);
+        Unicode::snprintf(textSample3Buffer, TEXTSAMPLE3_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample3.invalidate();
+    }
 
-    Unicode::snprintf(textSample4Buffer, TEXTSAMPLE4_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample4.invalidate();
+    if (FreqBackend.Channel4.channelState == false)
+    {
+    	textSample4.setVisible(false);
+    }
+    else
+    {
+    	textSample4.setVisible(true);
+        Unicode::snprintf(textSample4Buffer, TEXTSAMPLE4_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample4.invalidate();
+    }
 
-    Unicode::snprintf(textSample5Buffer, TEXTSAMPLE5_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample5.invalidate();
+    if (FreqBackend.Channel5.channelState == false)
+    {
+    	textSample5.setVisible(false);
+    }
+    else
+    {
+    	textSample5.setVisible(true);
+        Unicode::snprintf(textSample5Buffer, TEXTSAMPLE5_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample5.invalidate();
+    }
 
-    Unicode::snprintf(textSample6Buffer, TEXTSAMPLE6_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample6.invalidate();
+    if (FreqBackend.Channel6.channelState == false)
+    {
+    	textSample6.setVisible(false);
+    }
+    else
+    {
+    	textSample6.setVisible(true);
+        Unicode::snprintf(textSample6Buffer, TEXTSAMPLE6_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample6.invalidate();
+    }
 
-    Unicode::snprintf(textSample7Buffer, TEXTSAMPLE7_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample7.invalidate();
+    if (FreqBackend.Channel7.channelState == false)
+    {
+    	textSample7.setVisible(false);
+    }
+    else
+    {
+    	textSample7.setVisible(true);
+        Unicode::snprintf(textSample7Buffer, TEXTSAMPLE7_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample7.invalidate();
+    }
 
-    Unicode::snprintf(textSample8Buffer, TEXTSAMPLE8_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-    textSample8.invalidate();
+    if (FreqBackend.Channel8.channelState == false)
+    {
+    	textSample8.setVisible(false);
+    }
+    else
+    {
+    	textSample8.setVisible(true);
+        Unicode::snprintf(textSample8Buffer, TEXTSAMPLE8_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
+        textSample8.invalidate();
+    }
 
     // Mean
 
