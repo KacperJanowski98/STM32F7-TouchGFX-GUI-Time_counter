@@ -257,18 +257,10 @@ const osSemaphoreAttr_t myBinarySemGetFreqRepeat_attributes = {
 };
 /* USER CODE BEGIN PV */
 
-// -- remove
-uint8_t counterSingleT = 0;
-uint8_t counterConstT = 0;
-uint8_t counterStampsT = 0;
-uint8_t counterSingleF = 0;
-uint8_t counterConstF = 0;
-uint8_t counterStampsF = 0;
-//uint8_t countReset = 0;
-//uint8_t countDetectT = 0;
-//uint8_t countDetectF = 0;
 uint8_t conditionT = 1;
+uint16_t conditionRepeatT = 1;
 uint8_t conditionF = 1;
+uint16_t conditionRepeatF = 1;
 
 TimeMode_t TimeBackend;
 ResultConstCalc_t ResultCalcConstTime;
@@ -304,7 +296,7 @@ void StartTaskDetectThreT(void *argument);
 void StartTaskDetectThreF(void *argument);
 void StartTaskResetParamF(void *argument);
 void StartTaskCalibration(void *argument);
-void StartTaskTaskTimeRepeat(void *argument);
+void StartTaskTimeRepeat(void *argument);
 void StartTaskFreqRepeat(void *argument);
 
 /* USER CODE BEGIN PFP */
@@ -492,7 +484,7 @@ int main(void)
   TaskCalibrationHandle = osThreadNew(StartTaskCalibration, NULL, &TaskCalibration_attributes);
 
   /* creation of TaskTimeRepeat */
-  TaskTimeRepeatHandle = osThreadNew(StartTaskTaskTimeRepeat, NULL, &TaskTimeRepeat_attributes);
+  TaskTimeRepeatHandle = osThreadNew(StartTaskTimeRepeat, NULL, &TaskTimeRepeat_attributes);
 
   /* creation of TaskFreqRepeat */
   TaskFreqRepeatHandle = osThreadNew(StartTaskFreqRepeat, NULL, &TaskFreqRepeat_attributes);
@@ -1751,13 +1743,12 @@ void StartTaskTimeSingle(void *argument)
   {
 	  if (myBinarySemGetTimeSingleHandle != NULL)
 	  {
-//		  counterSingleT++;
-		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK) // && counterSingleT > 1)
+		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK)
 		  {
 			  conditionT = 0;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 			  ResultTimeInit(&ResultTimeBackend);
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
-//			  counterSingleT = 2;
 		  }
 	  }
     osDelay(1);
@@ -1798,17 +1789,16 @@ void StartTaskTimeConst(void *argument)
   {
 	  if (myBinarySemGetTimeConstHandle != NULL)
 	  {
-//		  counterConstT++;
-		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK) //&& counterConstT > 1)
+		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK)
 		  {
 			  conditionT = 1;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 			  while(conditionT)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);
 				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
 				  osDelay(500);
 			  }
-//			  counterConstT = 2;
 		  }
 	  }
     osDelay(1);
@@ -1852,6 +1842,7 @@ void StartTaskTimeStamps(void *argument)
 		  if (osSemaphoreAcquire(myBinarySemGetTimeStampsHandle, (uint32_t) 10) == osOK) // && counterSingleT > 1)
 		  {
 			  conditionT = 0;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 			  ResultTimeInit(&ResultTimeBackend);
 			  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
 		  }
@@ -1901,6 +1892,7 @@ void StartTaskResetParamT(void *argument)
 			  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
 		  }
 	  }
     osDelay(1);
@@ -2002,22 +1994,37 @@ void StartTaskCalibration(void *argument)
   /* USER CODE END StartTaskCalibration */
 }
 
-/* USER CODE BEGIN Header_StartTaskTaskTimeRepeat */
+/* USER CODE BEGIN Header_StartTaskTimeRepeat */
 /**
 * @brief Function implementing the TaskTimeRepeat thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTaskTaskTimeRepeat */
-void StartTaskTaskTimeRepeat(void *argument)
+/* USER CODE END Header_StartTaskTimeRepeat */
+void StartTaskTimeRepeat(void *argument)
 {
-  /* USER CODE BEGIN StartTaskTaskTimeRepeat */
+  /* USER CODE BEGIN StartTaskTimeRepeat */
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetTimeRepeatHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetTimeRepeatHandle, (uint32_t) 10) == osOK)
+		  {
+			  conditionT = 0;
+			  conditionRepeatT = 1;
+			  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
+			  {
+				  ResultTimeInit(&ResultTimeBackend);
+				  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
+				  conditionRepeatT++;
+				  osDelay(1000);
+			  }
+		  }
+	  }
     osDelay(1);
   }
-  /* USER CODE END StartTaskTaskTimeRepeat */
+  /* USER CODE END StartTaskTimeRepeat */
 }
 
 /* USER CODE BEGIN Header_StartTaskFreqRepeat */

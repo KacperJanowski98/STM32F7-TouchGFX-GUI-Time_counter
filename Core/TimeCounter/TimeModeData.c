@@ -396,72 +396,8 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStam
     {
     	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
-}
 
-void RepeatTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime)
-{
-    if (pTimeMode->TiSetup1.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup1, &pResultTime->measure1);
-    }
-
-    if (pTimeMode->TiSetup2.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup2, &pResultTime->measure2);
-    }
-
-    if (pTimeMode->TiSetup3.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup3, &pResultTime->measure3);
-    }
-
-    if (pTimeMode->TiSetup4.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup4, &pResultTime->measure4);
-    }
-
-    if (pTimeMode->TiSetup5.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup5, &pResultTime->measure5);
-    }
-
-    if (pTimeMode->TiSetup6.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup6, &pResultTime->measure6);
-    }
-
-    if (pTimeMode->TiSetup7.tiState == true)
-    {
-
-    }
-    else
-    {
-    	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
-    }
+    osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
 }
 
 float calculateSingleMeas(int min, int max)

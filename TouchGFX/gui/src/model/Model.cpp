@@ -76,7 +76,7 @@ void Model::getDataTimeStamps()
 
 void Model::getDataTimeRepeat()
 {
-
+	osSemaphoreRelease(myBinarySemGetTimeRepeatHandle);
 }
 
 void Model::getDataFreqSingle()

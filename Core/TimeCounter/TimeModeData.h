@@ -100,8 +100,6 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, Result
 
 void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStampsCalc_t *pResultCalc);
 
-void RepeatTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
-
 float calculateSingleMeas(int min, int max);
 
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
