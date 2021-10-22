@@ -40,7 +40,7 @@ typedef enum
 	KILO = 5,
 	MEGA = 6,
 	GIGA = 7,
-	S = 8,
+	SEC = 8,
 	HZ = 9
 } Unit_t;
 

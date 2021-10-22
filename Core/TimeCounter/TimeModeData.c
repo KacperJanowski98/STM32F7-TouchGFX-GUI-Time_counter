@@ -288,7 +288,6 @@ void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, Result
     {
     	resetParamSingleTime(&pTimeMode->TiSetup7, &pResultTime->measure7);
     }
-    //:TODO Wpisywanie numeru iteracji
     pResultCalc->iteration++;
     pTimeMode->TimeSession.stampsNumber = pResultCalc->iteration;
 

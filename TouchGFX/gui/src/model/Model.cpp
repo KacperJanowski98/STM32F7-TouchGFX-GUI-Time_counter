@@ -102,11 +102,13 @@ void Model::getDataFreqRepeat()
 void Model::getResetTime()
 {
 	osSemaphoreRelease(myBinarySemResetParamTHandle);
+	modelListener->updateUIContinuousTime();
 }
 
 void Model::getResetFreq()
 {
 	osSemaphoreRelease(myBinarySemResetParamFHandle);
+	modelListener->updateUIContinuousFreq();
 }
 
 void Model::getDetectedTimeThreshold()

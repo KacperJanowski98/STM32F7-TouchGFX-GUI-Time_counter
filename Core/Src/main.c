@@ -1749,13 +1749,13 @@ void StartTaskTimeSingle(void *argument)
   {
 	  if (myBinarySemGetTimeSingleHandle != NULL)
 	  {
-		  counterSingleT++;
-		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK && counterSingleT > 1)
+//		  counterSingleT++;
+		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK) // && counterSingleT > 1)
 		  {
 			  conditionT = 0;
 			  ResultTimeInit(&ResultTimeBackend);
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
-			  counterSingleT = 2;
+//			  counterSingleT = 2;
 		  }
 	  }
     osDelay(1);
@@ -1796,8 +1796,8 @@ void StartTaskTimeConst(void *argument)
   {
 	  if (myBinarySemGetTimeConstHandle != NULL)
 	  {
-		  counterConstT++;
-		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK && counterConstT > 1)
+//		  counterConstT++;
+		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK) //&& counterConstT > 1)
 		  {
 			  conditionT = 1;
 			  while(conditionT)
@@ -1806,7 +1806,7 @@ void StartTaskTimeConst(void *argument)
 				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcTime);
 				  osDelay(500);
 			  }
-			  counterConstT = 2;
+//			  counterConstT = 2;
 		  }
 	  }
     osDelay(1);
