@@ -400,18 +400,6 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStam
     osSemaphoreRelease(myBinarySemUpdateTimeDispHandle);
 }
 
-float calculateSingleMeas(int min, int max)
-{
-    if (min == 0 && max == 0)
-    {
-    	return 0.0f;
-    }
-    else
-    {
-    	return ((float)rand()/(float)RAND_MAX) * ((float)(max - min) + (float)min);
-    }
-}
-
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
 {
     int8_t distance = stop - start;

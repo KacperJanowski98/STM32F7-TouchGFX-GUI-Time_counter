@@ -79,4 +79,6 @@ void calculateMeanStdDevConst(CalcConstParam_t *pCalcParam);
 
 void calculateMeanStdDevStamps(CalcStampParam_t *pCalcParam);
 
+float calculateSingleMeas(int min, int max);
+
 #endif /* TIMECOUNTER_SESSION_H_ */

@@ -104,7 +104,14 @@ void ResultFrequencyInit(ResultFreq_t *pResultFreq)
 
 void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
 {
-
+	if (pFrequencyMode->Channel1.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
+	}
 }
 
 void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
@@ -118,6 +125,95 @@ void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
 }
 
 // pozostale funkcje
+
+void calculateRange(uint8_t numberCh, int *min, int *max)
+{
+	switch (numberCh)
+	{
+	case 1:
+        *min = (rand() % (3 + 1 - 1)) + 1;
+        *max = (rand() % (7 + 1 - 4)) + 4;
+		break;
+	case 2:
+        *min = (rand() % (10 + 1 - 4)) + 4;
+        *max = (rand() % (14 + 1 - 11)) + 11;
+		break;
+	case 3:
+        *min = (rand() % (45 + 1 - 43)) + 43;
+        *max = (rand() % (53 + 1 - 50)) + 50;
+		break;
+	case 4:
+        *min = (rand() % (25 + 1 - 23)) + 23;
+        *max = (rand() % (33 + 1 - 30)) + 30;
+		break;
+	case 5:
+        *min = (rand() % (47 + 1 - 43)) + 43;
+        *max = (rand() % (51 + 1 - 49)) + 49;
+		break;
+	case 6:
+        *min = (rand() % (21 + 1 - 17)) + 17;
+        *max = (rand() % (28 + 1 - 24)) + 24;
+		break;
+	case 7:
+        *min = (rand() % (40 + 1 - 30)) + 30;
+        *max = (rand() % (51 + 1 - 35)) + 45;
+		break;
+	case 8:
+        *min = (rand() % (3 + 1 - 1)) + 1;
+        *max = (rand() % (9 + 1 - 5)) + 5;
+		break;
+	default:
+        *min = 0;
+        *max = 0;
+		break;
+	}
+}
+
+
+Unit_t setUnitMeanFreq(uint8_t numberCh)
+{
+	Unit_t result;
+
+	switch (numberCh)
+	{
+	case 1:
+		result = MEGA;
+		break;
+	case 2:
+		result = MEGA;
+		break;
+	case 3:
+		result = KILO;
+		break;
+	case 4:
+		result = KILO;
+		break;
+	case 5:
+		result = MEGA;
+		break;
+	case 6:
+		result = KILO;
+		break;
+	case 7:
+		result = KILO;
+		break;
+	case 8:
+		result = MEGA;
+		break;
+	default:
+		result = KILO;
+		break;
+	}
+	return result;
+}
+
+void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
+{
+	int min = 0, max = 0;
+	calculateRange(pFreqChannel->numberChanel, &min, &max);
+	pMeasFreq->mean = calculateSingleMeas(min, max);
+	pMeasFreq->meanUnit = setUnitMeanFreq(pFreqChannel->numberChanel);
+}
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
 {

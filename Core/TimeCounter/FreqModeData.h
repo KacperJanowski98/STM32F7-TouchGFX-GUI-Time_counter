@@ -68,12 +68,10 @@ void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFr
 
 void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
 
-float calculateSingleMeas(int min, int max);
-
-void calculateRange(uint8_t number, int *min, int *max);
+void calculateRange(uint8_t numberCh, int *min, int *max);
 
 //:TODO zrobic jakis mechanizm aby ustawal jednostki
-Unit_t setUnitMeanFreq();
+Unit_t setUnitMeanFreq(uint8_t numberCh);
 
 void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);
 

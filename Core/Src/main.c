@@ -1769,6 +1769,16 @@ void StartTaskFreqSingle(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetFreqSingleHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetFreqSingleHandle, (uint32_t) 10) == osOK)
+		  {
+			  conditionF = 0;
+			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+			  ResultFrequencyInit(&ResultFreqBackend);
+			  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskFreqSingle */

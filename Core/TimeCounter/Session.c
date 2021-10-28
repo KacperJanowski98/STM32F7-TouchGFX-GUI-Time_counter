@@ -70,3 +70,15 @@ void calculateMeanStdDevStamps(CalcStampParam_t *pCalcParam)
     }
     pCalcParam->calculateStdDev = sqrt(StdDev / pCalcParam->sizeBuffer);
 }
+
+float calculateSingleMeas(int min, int max)
+{
+    if (min == 0 && max == 0)
+    {
+    	return 0.0f;
+    }
+    else
+    {
+    	return ((float)rand()/(float)RAND_MAX) * ((float)(max - min) + (float)min);
+    }
+}
