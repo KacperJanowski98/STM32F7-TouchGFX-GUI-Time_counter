@@ -112,6 +112,63 @@ void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
 	{
 		resetParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
 	}
+	if (pFrequencyMode->Channel2.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2);
+	}
+	if (pFrequencyMode->Channel3.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3);
+	}
+	if (pFrequencyMode->Channel4.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4);
+	}
+	if (pFrequencyMode->Channel5.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5);
+	}
+	if (pFrequencyMode->Channel6.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6);
+	}
+	if (pFrequencyMode->Channel7.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7);
+	}
+	if (pFrequencyMode->Channel8.channelState == true)
+	{
+		setCalculatedParamSingleFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8);
+	}
+
 	pFrequencyMode->FreqSession.stampsNumber = 1;
 }
 
