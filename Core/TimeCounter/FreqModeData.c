@@ -112,6 +112,7 @@ void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
 	{
 		resetParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
 	}
+	pFrequencyMode->FreqSession.stampsNumber = 1;
 }
 
 void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
