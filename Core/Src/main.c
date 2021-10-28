@@ -1831,6 +1831,20 @@ void StartTaskFreqConst(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetFreqConstHandle)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetFreqConstHandle, (uint32_t) 10) == osOK)
+		  {
+			  conditionF = 1;
+			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  while(conditionF)
+			  {
+				  ResultFrequencyInit(&ResultFreqBackend);
+				  ContinuousFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcConstFreq);
+				  osDelay(500);
+			  }
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskFreqConst */
@@ -1979,8 +1993,11 @@ void StartTaskResetParamF(void *argument)
 		  if (osSemaphoreAcquire(myBinarySemResetParamFHandle, (uint32_t) 10) == osOK)
 		  {
 			  FrequencyModeInit(&FreqBackend);
+			  ResultFreqParameterConstInit(&ResultCalcConstFreq);
+			  ResultFreqStampsInit(&ResultCalcStampsFreq);
 			  ResultFrequencyInit(&ResultFreqBackend);
 			  conditionF = 0;
+			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
 		  }
 	  }
     osDelay(1);

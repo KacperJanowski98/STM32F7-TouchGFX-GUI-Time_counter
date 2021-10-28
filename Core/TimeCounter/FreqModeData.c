@@ -7,6 +7,8 @@
 
 #include "FreqModeData.h"
 
+extern osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
+
 void FrequencyModeInit(FrequencyMode_t *pFrequencyMode)
 {
 	pFrequencyMode->Channel1.numberChanel = 0;
@@ -260,9 +262,76 @@ void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
 	pFrequencyMode->FreqSession.stampsNumber = 1;
 }
 
-void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
+void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, ResultConstCalcFreq_t *pResultCalc)
 {
+	if (pFrequencyMode->Channel1.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1, &pResultCalc->parameters1);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
+	}
+	if (pFrequencyMode->Channel2.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2, &pResultCalc->parameters2);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2);
+	}
+	if (pFrequencyMode->Channel3.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3, &pResultCalc->parameters3);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3);
+	}
+	if (pFrequencyMode->Channel4.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4, &pResultCalc->parameters4);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4);
+	}
+	if (pFrequencyMode->Channel5.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5, &pResultCalc->parameters5);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5);
+	}
+	if (pFrequencyMode->Channel6.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6, &pResultCalc->parameters6);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6);
+	}
+	if (pFrequencyMode->Channel7.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7, &pResultCalc->parameters7);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7);
+	}
+	if (pFrequencyMode->Channel8.channelState == true)
+	{
+		setCalculatedParamConstFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8, &pResultCalc->parameters8);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8);
+	}
+	pResultCalc->iteration++;
+	pFrequencyMode->FreqSession.stampsNumber = pResultCalc->iteration;
 
+	osSemaphoreRelease(myBinarySemUpdateFreqDispHandle);
 }
 
 void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
@@ -363,7 +432,22 @@ void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeas
 
 void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, CalcConstParam_t *pCalcParam)
 {
-
+	int min = 0, max = 0;
+	calculateRange(pFreqChannel->numberChanel, &min, &max);
+	if (min != 0 && max != 0)
+	{
+		pCalcParam->measureBuffer[pCalcParam->sizeBuffer] = calculateSingleMeas(min, max);
+		calculateMeanStdDevConst(pCalcParam);
+		pMeasFreq->mean = pCalcParam->calculateMean;
+		pMeasFreq->stdDev = pCalcParam->calculateStdDev;
+	}
+	else
+	{
+		pMeasFreq->mean = 0.0f;
+		pMeasFreq->stdDev = 0.0f;
+	}
+	pMeasFreq->meanUnit = setUnitMeanFreq(pFreqChannel->numberChanel);
+	pMeasFreq->stdDevUnit = MILLI;
 }
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)

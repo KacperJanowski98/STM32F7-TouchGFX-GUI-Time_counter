@@ -93,7 +93,7 @@ void ResultFrequencyInit(ResultFreq_t *pResultFreq);
 
 void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
 
-void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
+void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, ResultConstCalcFreq_t *pResultCalc);
 
 void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
 
