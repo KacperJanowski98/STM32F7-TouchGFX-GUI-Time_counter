@@ -48,6 +48,31 @@ typedef struct
 
 typedef struct
 {
+	CalcConstParam_t parameters1;
+	CalcConstParam_t parameters2;
+	CalcConstParam_t parameters3;
+	CalcConstParam_t parameters4;
+	CalcConstParam_t parameters5;
+	CalcConstParam_t parameters6;
+	CalcConstParam_t parameters7;
+	CalcConstParam_t parameters8;
+	uint16_t iteration;
+} ResultConstCalcFreq_t;
+
+typedef struct
+{
+	CalcStampParam_t parameters1;
+	CalcStampParam_t parameters2;
+	CalcStampParam_t parameters3;
+	CalcStampParam_t parameters4;
+	CalcStampParam_t parameters5;
+	CalcStampParam_t parameters6;
+	CalcStampParam_t parameters7;
+	CalcStampParam_t parameters8;
+} ResultStampsCalcFreq_t;
+
+typedef struct
+{
 	MeasFreq_t measure1;
 	MeasFreq_t measure2;
 	MeasFreq_t measure3;
@@ -59,6 +84,10 @@ typedef struct
 } ResultFreq_t;
 
 void FrequencyModeInit(FrequencyMode_t *pFrequencyMode);
+
+void ResultFreqParameterConstInit(ResultConstCalcFreq_t *pResultConstCalcFreq);
+
+void ResultFreqStampsInit(ResultStampsCalcFreq_t *pResultStampsCalcFreq);
 
 void ResultFrequencyInit(ResultFreq_t *pResultFreq);
 
@@ -74,6 +103,8 @@ void calculateRange(uint8_t numberCh, int *min, int *max);
 Unit_t setUnitMeanFreq(uint8_t numberCh);
 
 void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);
+
+void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, CalcConstParam_t *pCalcParam);
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);
 

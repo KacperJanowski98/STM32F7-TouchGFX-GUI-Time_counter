@@ -59,6 +59,94 @@ void FrequencyModeInit(FrequencyMode_t *pFrequencyMode)
     pFrequencyMode->FreqSession.tiRange = 0;
 }
 
+void ResultFreqParameterConstInit(ResultConstCalcFreq_t *pResultConstCalcFreq)
+{
+	pResultConstCalcFreq->parameters1.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters1.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters1.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters1.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters1.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters2.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters2.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters2.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters2.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters2.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters3.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters3.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters3.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters3.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters3.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters4.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters4.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters4.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters4.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters4.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters5.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters5.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters5.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters5.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters5.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters6.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters6.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters6.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters6.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters6.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters7.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters7.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters7.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters7.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters7.measureBuffer[0]));
+
+	pResultConstCalcFreq->parameters8.calculateMean = 0.0f;
+	pResultConstCalcFreq->parameters8.calculateStdDev = 0.0f;
+	pResultConstCalcFreq->parameters8.sizeBuffer = 0;
+	memset(pResultConstCalcFreq->parameters8.measureBuffer, 0, 2000 * sizeof(pResultConstCalcFreq->parameters8.measureBuffer[0]));
+
+	pResultConstCalcFreq->iteration = 0;
+}
+
+void ResultFreqStampsInit(ResultStampsCalcFreq_t *pResultStampsCalcFreq)
+{
+	pResultStampsCalcFreq->parameters1.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters1.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters1.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters1.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters1.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters2.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters2.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters2.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters2.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters2.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters3.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters3.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters3.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters3.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters3.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters4.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters4.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters4.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters4.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters4.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters5.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters5.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters5.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters5.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters5.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters6.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters6.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters6.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters6.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters6.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters7.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters7.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters7.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters7.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters7.measureBuffer[0]));
+
+	pResultStampsCalcFreq->parameters8.calculateMean = 0.0f;
+	pResultStampsCalcFreq->parameters8.calculateStdDev = 0.0f;
+	pResultStampsCalcFreq->parameters8.sizeBuffer = 0;
+	memset(pResultStampsCalcFreq->parameters8.measureBuffer, 0, 1000 * sizeof(pResultStampsCalcFreq->parameters8.measureBuffer[0]));
+}
+
 void ResultFrequencyInit(ResultFreq_t *pResultFreq)
 {
 	pResultFreq->measure1.mean = 0.0f;
@@ -271,6 +359,11 @@ void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeas
 	calculateRange(pFreqChannel->numberChanel, &min, &max);
 	pMeasFreq->mean = calculateSingleMeas(min, max);
 	pMeasFreq->meanUnit = setUnitMeanFreq(pFreqChannel->numberChanel);
+}
+
+void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, CalcConstParam_t *pCalcParam)
+{
+
 }
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)

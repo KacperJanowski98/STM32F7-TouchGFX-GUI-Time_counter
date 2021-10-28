@@ -267,6 +267,8 @@ ResultConstCalc_t ResultCalcConstTime;
 ResultStampsCalc_t ResultCalcStampsTime;
 ResultTime_t ResultTimeBackend;
 FrequencyMode_t FreqBackend;
+ResultConstCalcFreq_t ResultCalcConstFreq;
+ResultStampsCalcFreq_t ResultCalcStampsFreq;
 ResultFreq_t ResultFreqBackend;
 
 uint32_t detectedThresholdTime = 0;
