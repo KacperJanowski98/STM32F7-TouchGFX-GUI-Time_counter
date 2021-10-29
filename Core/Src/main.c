@@ -262,6 +262,12 @@ uint16_t conditionRepeatT = 1;
 uint8_t conditionF = 1;
 uint16_t conditionRepeatF = 1;
 
+CalcStampParam_t tempParam;
+uint16_t tempStampsNumber = 0;
+float tempMaxRange = 0.0f;
+uint8_t numberTiGraph = 0;
+uint8_t stampsModeTimeFlag = 0;
+
 TimeMode_t TimeBackend;
 ResultConstCalc_t ResultCalcConstTime;
 ResultStampsCalc_t ResultCalcStampsTime;
@@ -1749,6 +1755,7 @@ void StartTaskTimeSingle(void *argument)
 		  {
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+			  stampsModeTimeFlag = 0;
 			  ResultTimeInit(&ResultTimeBackend);
 			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
 		  }
@@ -1805,6 +1812,7 @@ void StartTaskTimeConst(void *argument)
 		  {
 			  conditionT = 1;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+			  stampsModeTimeFlag = 0;
 			  while(conditionT)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);
@@ -1869,6 +1877,7 @@ void StartTaskTimeStamps(void *argument)
 		  {
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+			  stampsModeTimeFlag = 1;
 			  ResultTimeInit(&ResultTimeBackend);
 			  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
 		  }
@@ -1929,6 +1938,7 @@ void StartTaskResetParamT(void *argument)
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+			  stampsModeTimeFlag = 0;
 		  }
 	  }
     osDelay(1);
@@ -2038,6 +2048,7 @@ void StartTaskCalibration(void *argument)
 			  ResultTimeInit(&ResultTimeBackend);
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+			  stampsModeTimeFlag = 0;
 
 			  FrequencyModeInit(&FreqBackend);
 			  ResultFreqParameterConstInit(&ResultCalcConstFreq);
@@ -2071,6 +2082,7 @@ void StartTaskTimeRepeat(void *argument)
 		  {
 			  conditionT = 0;
 			  conditionRepeatT = 1;
+			  stampsModeTimeFlag = 0;
 			  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
 			  {
 				  ResultTimeInit(&ResultTimeBackend);

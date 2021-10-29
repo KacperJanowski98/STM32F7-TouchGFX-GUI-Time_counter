@@ -250,6 +250,30 @@
     <Filter Include="Header Files\gui\lib">
       <UniqueIdentifier>7150B4B7-2A6D-78CC-62E9-D95D94EF58C6</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\timehistogram_screen">
+      <UniqueIdentifier>DD1BB350-7003-19A4-C4C4-790EE85D8D24</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\timehistogram_screen">
+      <UniqueIdentifier>3EA43124-406C-7B4E-5FF0-244856FE7D56</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\timehistogram_screen">
+      <UniqueIdentifier>B2C1A7FA-553C-23D9-7B07-744F76D2CFE3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\timehistogram_screen">
+      <UniqueIdentifier>E332D233-980C-8F18-61E4-6D6418459FEB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\timegraphti1_screen">
+      <UniqueIdentifier>760791F2-D402-AAFF-1751-C46D1513A27F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\timegraphti1_screen">
+      <UniqueIdentifier>C809A4BC-429C-20C2-7D0E-DD77AD091016</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\timegraphti1_screen">
+      <UniqueIdentifier>5D6A5282-1004-DB29-4C21-2D738CED9290</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\timegraphti1_screen">
+      <UniqueIdentifier>5CE92E72-D7B7-E46C-A9E3-9C5434128EF6</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -353,6 +377,24 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\lib\FreqModeParameter.cpp">
       <Filter>Source Files\gui\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timehistogram_screen\TimeHistogramPresenter.cpp">
+      <Filter>Source Files\gui\timehistogram_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timehistogram_screen\TimeHistogramView.cpp">
+      <Filter>Source Files\gui\timehistogram_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\timehistogram_screen\TimeHistogramViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\timehistogram_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1Presenter.cpp">
+      <Filter>Source Files\gui\timegraphti1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1View.cpp">
+      <Filter>Source Files\gui\timegraphti1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\timegraphti1_screen\TimeGraphTi1ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\timegraphti1_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -861,6 +903,24 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\lib\FreqModeParameter.hpp">
       <Filter>Header Files\gui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timehistogram_screen\TimeHistogramPresenter.hpp">
+      <Filter>Header Files\gui\timehistogram_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timehistogram_screen\TimeHistogramView.hpp">
+      <Filter>Header Files\gui\timehistogram_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timehistogram_screen\TimeHistogramViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\timehistogram_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1Presenter.hpp">
+      <Filter>Header Files\gui\timegraphti1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1View.hpp">
+      <Filter>Header Files\gui\timegraphti1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timegraphti1_screen\TimeGraphTi1ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\timegraphti1_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

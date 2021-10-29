@@ -128,6 +128,7 @@ protected:
     touchgfx::TextArea textLabelTi5;
     touchgfx::TextArea textLabelTi6;
     touchgfx::TextArea textLabelTi7;
+    touchgfx::Button buttonHistogram;
 
     /*
      * Wildcard Buffers

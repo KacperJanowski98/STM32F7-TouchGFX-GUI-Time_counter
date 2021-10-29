@@ -622,6 +622,10 @@ TimeModeViewBase::TimeModeViewBase() :
     textLabelTi7.setLinespacing(0);
     textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
 
+    buttonHistogram.setXY(133, 0);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonHistogram.setAction(buttonCallback);
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
@@ -715,6 +719,7 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textLabelTi5);
     add(textLabelTi6);
     add(textLabelTi7);
+    add(buttonHistogram);
 }
 
 void TimeModeViewBase::setupScreen()
@@ -744,5 +749,12 @@ void TimeModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When buttonReset clicked call virtual function
         //Call ResetParameter
         ResetParameter();
+    }
+    else if (&src == &buttonHistogram)
+    {
+        //GoToHistogram
+        //When buttonHistogram clicked change screen to TimeHistogram
+        //Go to TimeHistogram with screen transition towards West
+        application().gotoTimeHistogramScreenWipeTransitionWest();
     }
 }

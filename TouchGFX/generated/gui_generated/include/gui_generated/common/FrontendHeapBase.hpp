@@ -11,6 +11,7 @@
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/SlideTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+#include <touchgfx/transitions/WipeTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -27,6 +28,10 @@
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
 #include <gui/freqmodeconfig_screen/FreqModeConfigView.hpp>
 #include <gui/freqmodeconfig_screen/FreqModeConfigPresenter.hpp>
+#include <gui/timehistogram_screen/TimeHistogramView.hpp>
+#include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
+#include <gui/timegraphti1_screen/TimeGraphTi1View.hpp>
+#include <gui/timegraphti1_screen/TimeGraphTi1Presenter.hpp>
 
 
 /**
@@ -55,7 +60,9 @@ public:
             touchgfx::meta::TypeList< TimeModeConfigView,
             touchgfx::meta::TypeList< FreqModeView,
             touchgfx::meta::TypeList< FreqModeConfigView,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< TimeHistogramView,
+            touchgfx::meta::TypeList< TimeGraphTi1View,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -73,7 +80,9 @@ public:
             touchgfx::meta::TypeList< TimeModeConfigPresenter,
             touchgfx::meta::TypeList< FreqModePresenter,
             touchgfx::meta::TypeList< FreqModeConfigPresenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< TimeHistogramPresenter,
+            touchgfx::meta::TypeList< TimeGraphTi1Presenter,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -88,8 +97,10 @@ public:
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
             touchgfx::meta::TypeList< CoverTransition<EAST>,
+            touchgfx::meta::TypeList< WipeTransition<WEST>,
             touchgfx::meta::TypeList< CoverTransition<WEST>,
-            touchgfx::meta::Nil > > >
+            touchgfx::meta::TypeList< WipeTransition<EAST>,
+            touchgfx::meta::Nil > > > > >
             > GeneratedTransitionTypes;
 
     /**

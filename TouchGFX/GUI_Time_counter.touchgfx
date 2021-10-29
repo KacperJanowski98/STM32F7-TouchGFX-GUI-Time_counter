@@ -2793,6 +2793,24 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "Alpha": 255,
+            "Style": "Style4",
+            "Name": "buttonHistogram",
+            "X": 133,
+            "Y": 0,
+            "Width": 170,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -2833,6 +2851,20 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "ResetParameter"
+            }
+          },
+          {
+            "InteractionName": "GoToHistogram",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHistogram"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TimeHistogram"
             }
           }
         ],
@@ -7822,6 +7854,529 @@
         "Name": "FreqModeConfig",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 33,
+              "Green": 77,
+              "Blue": 148
+            },
+            "Alpha": 255,
+            "Name": "box1",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Alpha": 255,
+            "Name": "buttonBack",
+            "X": 740,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId286",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 75,
+            "Y": 17,
+            "Width": 620,
+            "Height": 27,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId287",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi1",
+            "X": 25,
+            "Y": 95,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId288",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi2",
+            "X": 25,
+            "Y": 186,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId289",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi3",
+            "X": 25,
+            "Y": 277,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId290",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi4",
+            "X": 25,
+            "Y": 363,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId291",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi5",
+            "X": 417,
+            "Y": 95,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId292",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi6",
+            "X": 417,
+            "Y": 186,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId293",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonWithLabelTi7",
+            "X": 417,
+            "Y": 277,
+            "Width": 360,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BackToTimeMode",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBack"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TimeMode"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph2Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph2"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TimeGraphTi1"
+            }
+          }
+        ],
+        "Name": "TimeHistogram",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "Type": "Box",
+            "Color": {
+              "Red": 34,
+              "Green": 79,
+              "Blue": 168
+            },
+            "Alpha": 255,
+            "Name": "box1",
+            "X": 0,
+            "Y": 0,
+            "Width": 800,
+            "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 3,
+            "Alpha": 255,
+            "Name": "boxWithBorder1",
+            "X": 9,
+            "Y": 60,
+            "Width": 782,
+            "Height": 412,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId294",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textLabel",
+            "X": 262,
+            "Y": 17,
+            "Width": 273,
+            "Height": 27,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "DynamicGraph",
+            "DataSeed": -2016825952,
+            "NumberOfValues": 25,
+            "MaxY": 40.0,
+            "MinY": 0.0,
+            "Precision": "1",
+            "UseCustomVisibleDataPointRange": false,
+            "FirstIndex": 0,
+            "LastIndex": 24,
+            "MapDataPointIndexToCustomValue": false,
+            "XAxisOffset": 0.0,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "Alpha": 255,
+            "LabelSizeTop": 15,
+            "LabelSizeBottom": 30,
+            "LabelSizeLeft": 35,
+            "LabelSizeRight": 25,
+            "PaddingTop": 0,
+            "PaddingBottom": 0,
+            "PaddingLeft": 20,
+            "PaddingRight": 0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "HistogramDrawer",
+                "BarWidth": 10,
+                "BarOffset": 6,
+                "Color": {
+                  "Red": 62,
+                  "Green": 196,
+                  "Blue": 22
+                },
+                "Alpha": 255
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 38,
+                "Green": 40,
+                "Blue": 41
+              },
+              "Interval": 2.0,
+              "LineWidth": 1,
+              "Alpha": 255
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 2.0,
+              "NumberOfDecimals": 0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 38,
+                "Green": 40,
+                "Blue": 41
+              },
+              "TextId": "SingleUseId295",
+              "Alpha": 255,
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 4.0,
+              "NumberOfDecimals": 0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 38,
+                "Green": 40,
+                "Blue": 41
+              },
+              "TextId": "SingleUseId296",
+              "Alpha": 255,
+              "TextRotation": "0",
+              "Position": "Left"
+            },
+            "Name": "dynamicGraph1",
+            "X": 9,
+            "Y": 60,
+            "Width": 782,
+            "Height": 412,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Button",
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Alpha": 255,
+            "Name": "buttonBack",
+            "X": 740,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Back",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBack"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TimeHistogram"
+            }
+          }
+        ],
+        "Name": "TimeGraphTi1",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
       }
     ],
     "CustomContainerDefinitions": [
@@ -8791,6 +9346,50 @@
       },
       {
         "TextEntryId": "SingleUseId276",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId286",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId287",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId288",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId289",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId290",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId291",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId292",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId293",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId294",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId295",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId296",
         "IsResource": false
       }
     ],

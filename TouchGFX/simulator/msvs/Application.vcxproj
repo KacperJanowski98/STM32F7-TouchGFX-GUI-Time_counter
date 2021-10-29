@@ -45,6 +45,12 @@
     <ClCompile Include="..\..\gui\src\lib\TimeModeParameter.cpp"/>
     <ClCompile Include="..\..\gui\src\lib\SessionSetup.cpp"/>
     <ClCompile Include="..\..\gui\src\lib\FreqModeParameter.cpp"/>
+    <ClCompile Include="..\..\gui\src\timehistogram_screen\TimeHistogramPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\timehistogram_screen\TimeHistogramView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\timehistogram_screen\TimeHistogramViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1Presenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1View.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\timegraphti1_screen\TimeGraphTi1ViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -217,6 +223,12 @@
     <ClInclude Include="..\..\gui\include\gui\lib\TimeModeParameter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\lib\SessionSetup.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\lib\FreqModeParameter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timehistogram_screen\TimeHistogramPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timehistogram_screen\TimeHistogramView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timehistogram_screen\TimeHistogramViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1Presenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1View.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timegraphti1_screen\TimeGraphTi1ViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
