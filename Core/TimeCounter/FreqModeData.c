@@ -540,7 +540,7 @@ void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeas
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
 {
-	pFreqChannel->numberChanel = 0;
+//	pFreqChannel->numberChanel = 0;
 	pMeasFreq->mean = 0.0f;
 	pMeasFreq->stdDev = 0.0f;
 	pMeasFreq->meanUnit = KILO;
