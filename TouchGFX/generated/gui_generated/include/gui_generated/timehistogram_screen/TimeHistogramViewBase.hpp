@@ -27,6 +27,36 @@ public:
         // Override and implement this function in TimeHistogram
     }
 
+    virtual void DisplayGraph1()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
+    virtual void DisplayGraph3()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
+    virtual void DisplayGraph4()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
+    virtual void DisplayGraph5()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
+    virtual void DisplayGraph6()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
+    virtual void DisplayGraph7()
+    {
+        // Override and implement this function in TimeHistogram
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

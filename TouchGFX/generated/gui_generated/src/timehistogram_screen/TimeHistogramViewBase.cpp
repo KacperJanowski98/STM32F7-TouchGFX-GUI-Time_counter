@@ -30,6 +30,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonWithLabelTi1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID287));
     buttonWithLabelTi1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi1.setAction(buttonCallback);
 
     buttonWithLabelTi2.setXY(25, 186);
     buttonWithLabelTi2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
@@ -43,30 +44,35 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonWithLabelTi3.setLabelText(touchgfx::TypedText(T_SINGLEUSEID289));
     buttonWithLabelTi3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi3.setAction(buttonCallback);
 
     buttonWithLabelTi4.setXY(25, 363);
     buttonWithLabelTi4.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelTi4.setLabelText(touchgfx::TypedText(T_SINGLEUSEID290));
     buttonWithLabelTi4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi4.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi4.setAction(buttonCallback);
 
     buttonWithLabelTi5.setXY(417, 95);
     buttonWithLabelTi5.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelTi5.setLabelText(touchgfx::TypedText(T_SINGLEUSEID291));
     buttonWithLabelTi5.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi5.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi5.setAction(buttonCallback);
 
     buttonWithLabelTi6.setXY(417, 186);
     buttonWithLabelTi6.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelTi6.setLabelText(touchgfx::TypedText(T_SINGLEUSEID292));
     buttonWithLabelTi6.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi6.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi6.setAction(buttonCallback);
 
     buttonWithLabelTi7.setXY(417, 277);
     buttonWithLabelTi7.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelTi7.setLabelText(touchgfx::TypedText(T_SINGLEUSEID293));
     buttonWithLabelTi7.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi7.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelTi7.setAction(buttonCallback);
 
     add(__background);
     add(box1);
@@ -100,11 +106,53 @@ void TimeHistogramViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         //Go to TimeMode with screen transition towards East
         application().gotoTimeModeScreenWipeTransitionEast();
     }
+    else if (&src == &buttonWithLabelTi1)
+    {
+        //DisplayGraph1Code
+        //When buttonWithLabelTi1 clicked call virtual function
+        //Call DisplayGraph1
+        DisplayGraph1();
+    }
     else if (&src == &buttonWithLabelTi2)
     {
         //DisplayGraph2Code
         //When buttonWithLabelTi2 clicked call virtual function
         //Call DisplayGraph2
         DisplayGraph2();
+    }
+    else if (&src == &buttonWithLabelTi3)
+    {
+        //DisplayGraph3Code
+        //When buttonWithLabelTi3 clicked call virtual function
+        //Call DisplayGraph3
+        DisplayGraph3();
+    }
+    else if (&src == &buttonWithLabelTi4)
+    {
+        //DisplayGraph4Code
+        //When buttonWithLabelTi4 clicked call virtual function
+        //Call DisplayGraph4
+        DisplayGraph4();
+    }
+    else if (&src == &buttonWithLabelTi5)
+    {
+        //DisplayGraph5Code
+        //When buttonWithLabelTi5 clicked call virtual function
+        //Call DisplayGraph5
+        DisplayGraph5();
+    }
+    else if (&src == &buttonWithLabelTi6)
+    {
+        //DisplayGraph6Code
+        //When buttonWithLabelTi6 clicked call virtual function
+        //Call DisplayGraph6
+        DisplayGraph6();
+    }
+    else if (&src == &buttonWithLabelTi7)
+    {
+        //DisplayGraph7Code
+        //When buttonWithLabelTi7 clicked call virtual function
+        //Call DisplayGraph7
+        DisplayGraph7();
     }
 }

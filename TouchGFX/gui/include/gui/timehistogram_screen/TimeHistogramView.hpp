@@ -20,7 +20,13 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void DisplayGraph1();
     virtual void DisplayGraph2();
+    virtual void DisplayGraph3();
+    virtual void DisplayGraph4();
+    virtual void DisplayGraph5();
+    virtual void DisplayGraph6();
+    virtual void DisplayGraph7();
 protected:
     void calculateMaxVal(TimeTi_t ti, float *pMaxRange);
 };

@@ -8168,6 +8168,78 @@
               "ScreenTransitionDirection": "West",
               "ActionComponent": "TimeGraphTi1"
             }
+          },
+          {
+            "InteractionName": "DisplayGraph1Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph1"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph3Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph3"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph4Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph4"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph5Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi5"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph5"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph6Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi6"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph6"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph7Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelTi7"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph7"
+            }
           }
         ],
         "Name": "TimeHistogram",
