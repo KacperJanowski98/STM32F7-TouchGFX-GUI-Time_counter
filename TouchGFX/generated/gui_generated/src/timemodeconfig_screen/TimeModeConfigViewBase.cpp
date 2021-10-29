@@ -390,9 +390,9 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textRepeatVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID48));
     swipeContainerTimeSESSION.add(textRepeatVal);
 
-    sliderStampsNumber.setXY(111, 275);
-    sliderStampsNumber.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
-    sliderStampsNumber.setupHorizontalSlider(3, 7, 0, 0, 125);
+    sliderStampsNumber.setXY(36, 277);
+    sliderStampsNumber.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
+    sliderStampsNumber.setupHorizontalSlider(2, 6, 0, 0, 284);
     sliderStampsNumber.setValueRange(0, 1000);
     sliderStampsNumber.setValue(0);
     swipeContainerTimeSESSION.add(sliderStampsNumber);
