@@ -91,7 +91,7 @@ void Model::getDataFreqContinuous()
 
 void Model::getDataFreqStamps()
 {
-
+	osSemaphoreRelease(myBinarySemGetFreqStampsHandle);
 }
 
 void Model::getDataFreqRepeat()

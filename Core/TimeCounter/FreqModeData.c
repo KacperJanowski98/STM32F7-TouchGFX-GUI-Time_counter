@@ -334,9 +334,74 @@ void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFr
 	osSemaphoreRelease(myBinarySemUpdateFreqDispHandle);
 }
 
-void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq)
+void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, ResultStampsCalcFreq_t *pResultCalc)
 {
+	if (pFrequencyMode->Channel1.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1, &pFrequencyMode->FreqSession, &pResultCalc->parameters1);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel1, &pResultFreq->measure1);
+	}
+	if (pFrequencyMode->Channel2.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2, &pFrequencyMode->FreqSession, &pResultCalc->parameters2);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel2, &pResultFreq->measure2);
+	}
+	if (pFrequencyMode->Channel3.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3, &pFrequencyMode->FreqSession, &pResultCalc->parameters3);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel3, &pResultFreq->measure3);
+	}
+	if (pFrequencyMode->Channel4.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4, &pFrequencyMode->FreqSession, &pResultCalc->parameters4);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel4, &pResultFreq->measure4);
+	}
+	if (pFrequencyMode->Channel5.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5, &pFrequencyMode->FreqSession, &pResultCalc->parameters5);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel5, &pResultFreq->measure5);
+	}
+	if (pFrequencyMode->Channel6.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6, &pFrequencyMode->FreqSession, &pResultCalc->parameters6);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel6, &pResultFreq->measure6);
+	}
+	if (pFrequencyMode->Channel7.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7, &pFrequencyMode->FreqSession, &pResultCalc->parameters7);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel7, &pResultFreq->measure7);
+	}
+	if (pFrequencyMode->Channel8.channelState == true && pFrequencyMode->FreqSession.stampsNumber != 0)
+	{
+		setCalculatedParamStampsFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8, &pFrequencyMode->FreqSession, &pResultCalc->parameters8);
+	}
+	else
+	{
+		resetParamSingleFreq(&pFrequencyMode->Channel8, &pResultFreq->measure8);
+	}
 
+	osSemaphoreRelease(myBinarySemUpdateFreqDispHandle);
 }
 
 // pozostale funkcje
@@ -383,7 +448,6 @@ void calculateRange(uint8_t numberCh, int *min, int *max)
 		break;
 	}
 }
-
 
 Unit_t setUnitMeanFreq(uint8_t numberCh)
 {
@@ -438,6 +502,30 @@ void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasF
 	{
 		pCalcParam->measureBuffer[pCalcParam->sizeBuffer] = calculateSingleMeas(min, max);
 		calculateMeanStdDevConst(pCalcParam);
+		pMeasFreq->mean = pCalcParam->calculateMean;
+		pMeasFreq->stdDev = pCalcParam->calculateStdDev;
+	}
+	else
+	{
+		pMeasFreq->mean = 0.0f;
+		pMeasFreq->stdDev = 0.0f;
+	}
+	pMeasFreq->meanUnit = setUnitMeanFreq(pFreqChannel->numberChanel);
+	pMeasFreq->stdDevUnit = MILLI;
+}
+
+void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam)
+{
+	int min = 0, max = 0;
+	calculateRange(pFreqChannel->numberChanel, &min, &max);
+	if (min != 0 && max != 0)
+	{
+		for (int i = 0; i < pSessionSetup->stampsNumber; i++)
+		{
+			pCalcParam->measureBuffer[i] = calculateSingleMeas(min, max);
+		}
+		pCalcParam->sizeBuffer = pSessionSetup->stampsNumber;
+		calculateMeanStdDevStamps(pCalcParam);
 		pMeasFreq->mean = pCalcParam->calculateMean;
 		pMeasFreq->stdDev = pCalcParam->calculateStdDev;
 	}

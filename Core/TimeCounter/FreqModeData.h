@@ -95,7 +95,7 @@ void SingleFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
 
 void ContinuousFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, ResultConstCalcFreq_t *pResultCalc);
 
-void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq);
+void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, ResultStampsCalcFreq_t *pResultCalc);
 
 void calculateRange(uint8_t numberCh, int *min, int *max);
 
@@ -105,6 +105,8 @@ Unit_t setUnitMeanFreq(uint8_t numberCh);
 void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);
 
 void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, CalcConstParam_t *pCalcParam);
+
+void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam);
 
 void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);
 

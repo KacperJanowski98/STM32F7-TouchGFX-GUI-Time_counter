@@ -1865,7 +1865,7 @@ void StartTaskTimeStamps(void *argument)
   {
 	  if (myBinarySemGetTimeStampsHandle != NULL)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeStampsHandle, (uint32_t) 10) == osOK) // && counterSingleT > 1)
+		  if (osSemaphoreAcquire(myBinarySemGetTimeStampsHandle, (uint32_t) 10) == osOK)
 		  {
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
@@ -1891,6 +1891,16 @@ void StartTaskFreqStamps(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetFreqStampsHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetFreqStampsHandle, (uint32_t) 10) == osOK)
+		  {
+			  conditionF = 0;
+			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  ResultFrequencyInit(&ResultFreqBackend);
+			  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskFreqStamps */
