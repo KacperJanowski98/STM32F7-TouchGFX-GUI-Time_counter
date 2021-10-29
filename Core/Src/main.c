@@ -2039,7 +2039,12 @@ void StartTaskCalibration(void *argument)
 			  conditionT = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
 
-			  //:TODO dopisac inicjalizacje funkcji z frequency mode.
+			  FrequencyModeInit(&FreqBackend);
+			  ResultFreqParameterConstInit(&ResultCalcConstFreq);
+			  ResultFreqStampsInit(&ResultCalcStampsFreq);
+			  ResultFrequencyInit(&ResultFreqBackend);
+			  conditionF = 0;
+			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
 		  }
 	  }
     osDelay(1);
@@ -2093,6 +2098,21 @@ void StartTaskFreqRepeat(void *argument)
   /* Infinite loop */
   for(;;)
   {
+	  if (myBinarySemGetFreqRepeatHandle != NULL)
+	  {
+		  if (osSemaphoreAcquire(myBinarySemGetFreqRepeatHandle, (uint32_t) 10) == osOK)
+		  {
+			  conditionF = 0;
+			  conditionRepeatF = 1;
+			  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
+			  {
+				  ResultFrequencyInit(&ResultFreqBackend);
+				  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
+				  conditionRepeatF++;
+				  osDelay(1000);
+			  }
+		  }
+	  }
     osDelay(1);
   }
   /* USER CODE END StartTaskFreqRepeat */

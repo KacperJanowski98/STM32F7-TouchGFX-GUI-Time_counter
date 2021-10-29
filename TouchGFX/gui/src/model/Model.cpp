@@ -96,7 +96,7 @@ void Model::getDataFreqStamps()
 
 void Model::getDataFreqRepeat()
 {
-
+	osSemaphoreRelease(myBinarySemGetFreqRepeatHandle);
 }
 
 void Model::getResetTime()
