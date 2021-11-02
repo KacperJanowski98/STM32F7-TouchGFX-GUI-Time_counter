@@ -22,42 +22,42 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void DisplayGraph1()
+    virtual void DisplayGraphF1()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph2()
+    virtual void DisplayGraphF2()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph3()
+    virtual void DisplayGraphF3()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph4()
+    virtual void DisplayGraphF4()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph5()
+    virtual void DisplayGraphF5()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph6()
+    virtual void DisplayGraphF6()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph7()
+    virtual void DisplayGraphF7()
     {
         // Override and implement this function in FreqHistogram
     }
 
-    virtual void DisplayGraph8()
+    virtual void DisplayGraphF8()
     {
         // Override and implement this function in FreqHistogram
     }

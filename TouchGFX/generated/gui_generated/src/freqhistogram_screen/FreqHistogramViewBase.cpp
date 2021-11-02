@@ -118,56 +118,56 @@ void FreqHistogramViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
     {
         //DisplayGraph1Code
         //When buttonWithLabelM1 clicked call virtual function
-        //Call DisplayGraph1
-        DisplayGraph1();
+        //Call DisplayGraphF1
+        DisplayGraphF1();
     }
     else if (&src == &buttonWithLabelM2)
     {
         //DisplayGraph2Code
         //When buttonWithLabelM2 clicked call virtual function
-        //Call DisplayGraph2
-        DisplayGraph2();
+        //Call DisplayGraphF2
+        DisplayGraphF2();
     }
     else if (&src == &buttonWithLabelM3)
     {
         //DisplayGraph3Code
         //When buttonWithLabelM3 clicked call virtual function
-        //Call DisplayGraph3
-        DisplayGraph3();
+        //Call DisplayGraphF3
+        DisplayGraphF3();
     }
     else if (&src == &buttonWithLabelM4)
     {
         //DisplayGraph4Code
         //When buttonWithLabelM4 clicked call virtual function
-        //Call DisplayGraph4
-        DisplayGraph4();
+        //Call DisplayGraphF4
+        DisplayGraphF4();
     }
     else if (&src == &buttonWithLabelM5)
     {
         //DisplayGraph5Code
         //When buttonWithLabelM5 clicked call virtual function
-        //Call DisplayGraph5
-        DisplayGraph5();
+        //Call DisplayGraphF5
+        DisplayGraphF5();
     }
     else if (&src == &buttonWithLabelM6)
     {
         //DisplayGraph6Code
         //When buttonWithLabelM6 clicked call virtual function
-        //Call DisplayGraph6
-        DisplayGraph6();
+        //Call DisplayGraphF6
+        DisplayGraphF6();
     }
     else if (&src == &buttonWithLabelM7)
     {
         //DisplayGraph7Code
         //When buttonWithLabelM7 clicked call virtual function
-        //Call DisplayGraph7
-        DisplayGraph7();
+        //Call DisplayGraphF7
+        DisplayGraphF7();
     }
     else if (&src == &buttonWithLabelM8)
     {
         //DisplayGraph8Code
         //When buttonWithLabelM8 clicked call virtual function
-        //Call DisplayGraph8
-        DisplayGraph8();
+        //Call DisplayGraphF8
+        DisplayGraphF8();
     }
 }

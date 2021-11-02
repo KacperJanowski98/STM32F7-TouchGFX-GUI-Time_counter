@@ -267,6 +267,12 @@ uint16_t tempStampsNumber = 0;
 float tempMaxRange = 0.0f;
 uint8_t numberTiGraph = 0;
 uint8_t stampsModeTimeFlag = 0;
+
+
+CalcStampParam_t tempParamF;
+uint16_t tempStampsNumberF = 0;
+float tempMaxRangeF = 0.0f;
+uint8_t numberFreqGraph = 0;
 uint8_t stampsModeFreqFlag = 0;
 
 TimeMode_t TimeBackend;

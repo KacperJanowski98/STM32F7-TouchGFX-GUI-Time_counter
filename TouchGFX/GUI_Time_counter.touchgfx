@@ -8823,7 +8823,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph1"
+              "FunctionName": "DisplayGraphF1"
             }
           },
           {
@@ -8835,7 +8835,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph2"
+              "FunctionName": "DisplayGraphF2"
             }
           },
           {
@@ -8847,7 +8847,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph3"
+              "FunctionName": "DisplayGraphF3"
             }
           },
           {
@@ -8859,7 +8859,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph4"
+              "FunctionName": "DisplayGraphF4"
             }
           },
           {
@@ -8871,7 +8871,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph5"
+              "FunctionName": "DisplayGraphF5"
             }
           },
           {
@@ -8883,7 +8883,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph6"
+              "FunctionName": "DisplayGraphF6"
             }
           },
           {
@@ -8895,7 +8895,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph7"
+              "FunctionName": "DisplayGraphF7"
             }
           },
           {
@@ -8907,7 +8907,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DisplayGraph8"
+              "FunctionName": "DisplayGraphF8"
             }
           }
         ],
@@ -9069,7 +9069,7 @@
               "TextRotation": "0",
               "Position": "Left"
             },
-            "Name": "dynamicGraph1",
+            "Name": "dynamicGraphFreq",
             "X": 9,
             "Y": 60,
             "Width": 782,

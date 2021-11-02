@@ -34,11 +34,11 @@ protected:
     touchgfx::Box box1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextAreaWithOneWildcard textLabel;
-    touchgfx::GraphScroll<25> dynamicGraph1;
-    touchgfx::GraphElementHistogram dynamicGraph1Histogram1;
-    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
-    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
+    touchgfx::GraphScroll<25> dynamicGraphFreq;
+    touchgfx::GraphElementHistogram dynamicGraphFreqHistogram1;
+    touchgfx::GraphElementGridY dynamicGraphFreqMajorYAxisGrid;
+    touchgfx::GraphLabelsX dynamicGraphFreqMajorXAxisLabel;
+    touchgfx::GraphLabelsY dynamicGraphFreqMajorYAxisLabel;
     touchgfx::Button buttonBack;
 
     /*
