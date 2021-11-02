@@ -30,48 +30,56 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     buttonWithLabelM1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID298));
     buttonWithLabelM1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM1.setAction(buttonCallback);
 
     buttonWithLabelM2.setXY(25, 186);
     buttonWithLabelM2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM2.setLabelText(touchgfx::TypedText(T_SINGLEUSEID299));
     buttonWithLabelM2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM2.setAction(buttonCallback);
 
     buttonWithLabelM3.setXY(25, 277);
     buttonWithLabelM3.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM3.setLabelText(touchgfx::TypedText(T_SINGLEUSEID300));
     buttonWithLabelM3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM3.setAction(buttonCallback);
 
     buttonWithLabelM4.setXY(25, 363);
     buttonWithLabelM4.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM4.setLabelText(touchgfx::TypedText(T_SINGLEUSEID301));
     buttonWithLabelM4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM4.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM4.setAction(buttonCallback);
 
     buttonWithLabelM5.setXY(417, 95);
     buttonWithLabelM5.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM5.setLabelText(touchgfx::TypedText(T_SINGLEUSEID302));
     buttonWithLabelM5.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM5.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM5.setAction(buttonCallback);
 
     buttonWithLabelM6.setXY(417, 186);
     buttonWithLabelM6.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM6.setLabelText(touchgfx::TypedText(T_SINGLEUSEID303));
     buttonWithLabelM6.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM6.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM6.setAction(buttonCallback);
 
     buttonWithLabelM7.setXY(417, 277);
     buttonWithLabelM7.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM7.setLabelText(touchgfx::TypedText(T_SINGLEUSEID304));
     buttonWithLabelM7.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM7.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM7.setAction(buttonCallback);
 
     buttonWithLabelM8.setXY(417, 363);
     buttonWithLabelM8.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonWithLabelM8.setLabelText(touchgfx::TypedText(T_SINGLEUSEID305));
     buttonWithLabelM8.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM8.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabelM8.setAction(buttonCallback);
 
     add(__background);
     add(box1);
@@ -105,5 +113,61 @@ void FreqHistogramViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         //When buttonBack clicked change screen to FreqMode
         //Go to FreqMode with screen transition towards East
         application().gotoFreqModeScreenWipeTransitionEast();
+    }
+    else if (&src == &buttonWithLabelM1)
+    {
+        //DisplayGraph1Code
+        //When buttonWithLabelM1 clicked call virtual function
+        //Call DisplayGraph1
+        DisplayGraph1();
+    }
+    else if (&src == &buttonWithLabelM2)
+    {
+        //DisplayGraph2Code
+        //When buttonWithLabelM2 clicked call virtual function
+        //Call DisplayGraph2
+        DisplayGraph2();
+    }
+    else if (&src == &buttonWithLabelM3)
+    {
+        //DisplayGraph3Code
+        //When buttonWithLabelM3 clicked call virtual function
+        //Call DisplayGraph3
+        DisplayGraph3();
+    }
+    else if (&src == &buttonWithLabelM4)
+    {
+        //DisplayGraph4Code
+        //When buttonWithLabelM4 clicked call virtual function
+        //Call DisplayGraph4
+        DisplayGraph4();
+    }
+    else if (&src == &buttonWithLabelM5)
+    {
+        //DisplayGraph5Code
+        //When buttonWithLabelM5 clicked call virtual function
+        //Call DisplayGraph5
+        DisplayGraph5();
+    }
+    else if (&src == &buttonWithLabelM6)
+    {
+        //DisplayGraph6Code
+        //When buttonWithLabelM6 clicked call virtual function
+        //Call DisplayGraph6
+        DisplayGraph6();
+    }
+    else if (&src == &buttonWithLabelM7)
+    {
+        //DisplayGraph7Code
+        //When buttonWithLabelM7 clicked call virtual function
+        //Call DisplayGraph7
+        DisplayGraph7();
+    }
+    else if (&src == &buttonWithLabelM8)
+    {
+        //DisplayGraph8Code
+        //When buttonWithLabelM8 clicked call virtual function
+        //Call DisplayGraph8
+        DisplayGraph8();
     }
 }

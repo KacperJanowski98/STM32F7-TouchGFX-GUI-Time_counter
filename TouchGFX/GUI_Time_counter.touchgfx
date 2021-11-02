@@ -8813,6 +8813,102 @@
               "ScreenTransitionDirection": "West",
               "ActionComponent": "FreqGraph"
             }
+          },
+          {
+            "InteractionName": "DisplayGraph1Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph1"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph2Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph2"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph3Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph3"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph4Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph4"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph5Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM5"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph5"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph6Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM6"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph6"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph7Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM7"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph7"
+            }
+          },
+          {
+            "InteractionName": "DisplayGraph8Code",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabelM8"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "DisplayGraph8"
+            }
           }
         ],
         "Name": "FreqHistogram",

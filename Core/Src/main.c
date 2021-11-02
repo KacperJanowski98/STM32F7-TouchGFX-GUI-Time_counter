@@ -267,6 +267,7 @@ uint16_t tempStampsNumber = 0;
 float tempMaxRange = 0.0f;
 uint8_t numberTiGraph = 0;
 uint8_t stampsModeTimeFlag = 0;
+uint8_t stampsModeFreqFlag = 0;
 
 TimeMode_t TimeBackend;
 ResultConstCalc_t ResultCalcConstTime;
@@ -1784,6 +1785,7 @@ void StartTaskFreqSingle(void *argument)
 		  {
 			  conditionF = 0;
 			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+			  stampsModeFreqFlag = 0;
 			  ResultFrequencyInit(&ResultFreqBackend);
 			  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
 		  }
@@ -1845,6 +1847,7 @@ void StartTaskFreqConst(void *argument)
 		  {
 			  conditionF = 1;
 			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  stampsModeFreqFlag = 0;
 			  while(conditionF)
 			  {
 				  ResultFrequencyInit(&ResultFreqBackend);
@@ -1906,6 +1909,7 @@ void StartTaskFreqStamps(void *argument)
 		  {
 			  conditionF = 0;
 			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  stampsModeFreqFlag = 1;
 			  ResultFrequencyInit(&ResultFreqBackend);
 			  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
 		  }
@@ -2018,6 +2022,7 @@ void StartTaskResetParamF(void *argument)
 			  ResultFrequencyInit(&ResultFreqBackend);
 			  conditionF = 0;
 			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  stampsModeFreqFlag = 0;
 		  }
 	  }
     osDelay(1);
@@ -2056,6 +2061,7 @@ void StartTaskCalibration(void *argument)
 			  ResultFrequencyInit(&ResultFreqBackend);
 			  conditionF = 0;
 			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+			  stampsModeFreqFlag = 0;
 		  }
 	  }
     osDelay(1);
@@ -2116,6 +2122,7 @@ void StartTaskFreqRepeat(void *argument)
 		  {
 			  conditionF = 0;
 			  conditionRepeatF = 1;
+			  stampsModeFreqFlag = 0;
 			  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
 			  {
 				  ResultFrequencyInit(&ResultFreqBackend);

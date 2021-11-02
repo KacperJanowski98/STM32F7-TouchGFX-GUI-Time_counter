@@ -19,6 +19,49 @@ public:
     virtual ~FreqHistogramViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void DisplayGraph1()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph2()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph3()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph4()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph5()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph6()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph7()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
+    virtual void DisplayGraph8()
+    {
+        // Override and implement this function in FreqHistogram
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
