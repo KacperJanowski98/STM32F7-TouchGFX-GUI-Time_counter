@@ -51,6 +51,12 @@
     <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1Presenter.cpp"/>
     <ClCompile Include="..\..\gui\src\timegraphti1_screen\TimeGraphTi1View.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\timegraphti1_screen\TimeGraphTi1ViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqgraph_screen\FreqGraphPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqgraph_screen\FreqGraphView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqgraph_screen\FreqGraphViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqhistogram_screen\FreqHistogramPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\freqhistogram_screen\FreqHistogramView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqhistogram_screen\FreqHistogramViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -229,6 +235,12 @@
     <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1Presenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\timegraphti1_screen\TimeGraphTi1View.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timegraphti1_screen\TimeGraphTi1ViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqgraph_screen\FreqGraphPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqgraph_screen\FreqGraphView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqgraph_screen\FreqGraphViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqhistogram_screen\FreqHistogramPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\freqhistogram_screen\FreqHistogramView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqhistogram_screen\FreqHistogramViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

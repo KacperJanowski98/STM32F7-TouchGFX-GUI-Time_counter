@@ -274,6 +274,30 @@
     <Filter Include="Source Files\generated\gui_generated\timegraphti1_screen">
       <UniqueIdentifier>5CE92E72-D7B7-E46C-A9E3-9C5434128EF6</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\freqgraph_screen">
+      <UniqueIdentifier>64A7AFE9-6076-E946-26E9-2AEC93FB252B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\freqgraph_screen">
+      <UniqueIdentifier>C4D585E6-9269-458C-0E0A-B7E8DA3A696F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\freqhistogram_screen">
+      <UniqueIdentifier>8F1F441D-5397-E73E-1C40-A1FDE371F22C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\freqhistogram_screen">
+      <UniqueIdentifier>8FAF6AA9-315B-C318-2F7C-1BD7E0223720</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\freqhistogram_screen">
+      <UniqueIdentifier>20878855-F9F0-B186-D089-4BCA03507A05</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\freqgraph_screen">
+      <UniqueIdentifier>F2442BE8-4BAE-ABB0-C907-6FA8D0DA1C85</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\freqgraph_screen">
+      <UniqueIdentifier>56BA4C2A-FB7F-4338-ED2D-55BC603651AD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\freqhistogram_screen">
+      <UniqueIdentifier>4CE3EA89-1B72-CBCB-0947-665C9F436852</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -395,6 +419,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\timegraphti1_screen\TimeGraphTi1ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\timegraphti1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqgraph_screen\FreqGraphPresenter.cpp">
+      <Filter>Source Files\gui\freqgraph_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqgraph_screen\FreqGraphView.cpp">
+      <Filter>Source Files\gui\freqgraph_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqgraph_screen\FreqGraphViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\freqgraph_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqhistogram_screen\FreqHistogramPresenter.cpp">
+      <Filter>Source Files\gui\freqhistogram_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\freqhistogram_screen\FreqHistogramView.cpp">
+      <Filter>Source Files\gui\freqhistogram_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\freqhistogram_screen\FreqHistogramViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\freqhistogram_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -921,6 +963,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\timegraphti1_screen\TimeGraphTi1ViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\timegraphti1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqgraph_screen\FreqGraphPresenter.hpp">
+      <Filter>Header Files\gui\freqgraph_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqgraph_screen\FreqGraphView.hpp">
+      <Filter>Header Files\gui\freqgraph_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqgraph_screen\FreqGraphViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\freqgraph_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqhistogram_screen\FreqHistogramPresenter.hpp">
+      <Filter>Header Files\gui\freqhistogram_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\freqhistogram_screen\FreqHistogramView.hpp">
+      <Filter>Header Files\gui\freqhistogram_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\freqhistogram_screen\FreqHistogramViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\freqhistogram_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

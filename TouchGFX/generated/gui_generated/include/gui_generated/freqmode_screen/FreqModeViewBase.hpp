@@ -99,6 +99,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textUnitMean6;
     touchgfx::TextAreaWithOneWildcard textUnitMean7;
     touchgfx::TextAreaWithOneWildcard textUnitMean8;
+    touchgfx::Button buttonHistogram;
 
     /*
      * Wildcard Buffers

@@ -419,6 +419,10 @@ FreqModeViewBase::FreqModeViewBase() :
     textUnitMean8.setWildcard(textUnitMean8Buffer);
     textUnitMean8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
 
+    buttonHistogram.setXY(175, 0);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonHistogram.setAction(buttonCallback);
+
     add(__background);
     add(boxBackgroungFreq);
     add(buttonToMenuF);
@@ -483,6 +487,7 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textUnitMean6);
     add(textUnitMean7);
     add(textUnitMean8);
+    add(buttonHistogram);
 }
 
 void FreqModeViewBase::setupScreen()
@@ -512,5 +517,12 @@ void FreqModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When buttonReset clicked call virtual function
         //Call ResetParameter
         ResetParameter();
+    }
+    else if (&src == &buttonHistogram)
+    {
+        //GoToHistogram
+        //When buttonHistogram clicked change screen to FreqHistogram
+        //Go to FreqHistogram with screen transition towards West
+        application().gotoFreqHistogramScreenWipeTransitionWest();
     }
 }

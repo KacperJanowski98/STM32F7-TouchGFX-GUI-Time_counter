@@ -32,6 +32,10 @@
 #include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
 #include <gui/timegraphti1_screen/TimeGraphTi1View.hpp>
 #include <gui/timegraphti1_screen/TimeGraphTi1Presenter.hpp>
+#include <gui/freqhistogram_screen/FreqHistogramView.hpp>
+#include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
+#include <gui/freqgraph_screen/FreqGraphView.hpp>
+#include <gui/freqgraph_screen/FreqGraphPresenter.hpp>
 
 
 /**
@@ -62,7 +66,9 @@ public:
             touchgfx::meta::TypeList< FreqModeConfigView,
             touchgfx::meta::TypeList< TimeHistogramView,
             touchgfx::meta::TypeList< TimeGraphTi1View,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::TypeList< FreqHistogramView,
+            touchgfx::meta::TypeList< FreqGraphView,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -82,7 +88,9 @@ public:
             touchgfx::meta::TypeList< FreqModeConfigPresenter,
             touchgfx::meta::TypeList< TimeHistogramPresenter,
             touchgfx::meta::TypeList< TimeGraphTi1Presenter,
-            touchgfx::meta::Nil > > > > > > >
+            touchgfx::meta::TypeList< FreqHistogramPresenter,
+            touchgfx::meta::TypeList< FreqGraphPresenter,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

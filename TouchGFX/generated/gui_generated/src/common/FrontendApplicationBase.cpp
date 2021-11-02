@@ -25,6 +25,10 @@
 #include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
 #include <gui/timegraphti1_screen/TimeGraphTi1View.hpp>
 #include <gui/timegraphti1_screen/TimeGraphTi1Presenter.hpp>
+#include <gui/freqhistogram_screen/FreqHistogramView.hpp>
+#include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
+#include <gui/freqgraph_screen/FreqGraphView.hpp>
+#include <gui/freqgraph_screen/FreqGraphPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -152,6 +156,17 @@ void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionWestImpl()
     touchgfx::makeTransition<FreqModeView, FreqModePresenter, touchgfx::CoverTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+void FrontendApplicationBase::gotoFreqModeScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoFreqModeScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<FreqModeView, FreqModePresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // FreqModeConfig
 
 void FrontendApplicationBase::gotoFreqModeConfigScreenNoTransition()
@@ -200,4 +215,41 @@ void FrontendApplicationBase::gotoTimeGraphTi1ScreenWipeTransitionWest()
 void FrontendApplicationBase::gotoTimeGraphTi1ScreenWipeTransitionWestImpl()
 {
     touchgfx::makeTransition<TimeGraphTi1View, TimeGraphTi1Presenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// FreqHistogram
+
+void FrontendApplicationBase::gotoFreqHistogramScreenWipeTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqHistogramScreenWipeTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoFreqHistogramScreenWipeTransitionWestImpl()
+{
+    touchgfx::makeTransition<FreqHistogramView, FreqHistogramPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoFreqHistogramScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqHistogramScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoFreqHistogramScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<FreqHistogramView, FreqHistogramPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// FreqGraph
+
+void FrontendApplicationBase::gotoFreqGraphScreenWipeTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqGraphScreenWipeTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoFreqGraphScreenWipeTransitionWestImpl()
+{
+    touchgfx::makeTransition<FreqGraphView, FreqGraphPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

@@ -38,6 +38,8 @@ public:
 
     void gotoFreqModeScreenCoverTransitionWest();
 
+    void gotoFreqModeScreenWipeTransitionEast();
+
     // FreqModeConfig
     void gotoFreqModeConfigScreenNoTransition();
 
@@ -48,6 +50,14 @@ public:
 
     // TimeGraphTi1
     void gotoTimeGraphTi1ScreenWipeTransitionWest();
+
+    // FreqHistogram
+    void gotoFreqHistogramScreenWipeTransitionWest();
+
+    void gotoFreqHistogramScreenWipeTransitionEast();
+
+    // FreqGraph
+    void gotoFreqGraphScreenWipeTransitionWest();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -77,6 +87,8 @@ protected:
 
     void gotoFreqModeScreenCoverTransitionWestImpl();
 
+    void gotoFreqModeScreenWipeTransitionEastImpl();
+
     // FreqModeConfig
     void gotoFreqModeConfigScreenNoTransitionImpl();
 
@@ -87,6 +99,14 @@ protected:
 
     // TimeGraphTi1
     void gotoTimeGraphTi1ScreenWipeTransitionWestImpl();
+
+    // FreqHistogram
+    void gotoFreqHistogramScreenWipeTransitionWestImpl();
+
+    void gotoFreqHistogramScreenWipeTransitionEastImpl();
+
+    // FreqGraph
+    void gotoFreqGraphScreenWipeTransitionWestImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP
