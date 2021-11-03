@@ -17,15 +17,16 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     backgroundCalibration.setPosition(0, 0, 800, 480);
     backgroundCalibration.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
-    calibrationProgress.setXY(325, 226);
-    calibrationProgress.setProgressIndicatorPosition(0, 0, 150, 150);
+    calibrationProgress.setXY(308, 229);
+    calibrationProgress.setProgressIndicatorPosition(0, 0, 184, 184);
     calibrationProgress.setRange(0, 100);
-    calibrationProgress.setCenter(52, 52);
-    calibrationProgress.setRadius(50);
-    calibrationProgress.setLineWidth(0);
+    calibrationProgress.setCenter(92, 92);
+    calibrationProgress.setRadius(82);
+    calibrationProgress.setLineWidth(16);
     calibrationProgress.setStartEndAngle(0, 360);
-    calibrationProgress.setBackground(touchgfx::Bitmap(BITMAP_CALIBRATION_ID));
-    calibrationProgressPainter.setBitmap(touchgfx::Bitmap(BITMAP_CALIBRATION_COLOR_ID));
+    calibrationProgress.setCapPrecision(180);
+    calibrationProgress.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_LARGE_CIRCLE_INDICATOR_BG_LINE_FULL_ID));
+    calibrationProgressPainter.setBitmap(touchgfx::Bitmap(BITMAP_MY_BLUE_PROGRESSINDICATORS_FILL_LARGE_CIRCLE_INDICATOR_FILL_LINE_FULL_ID));
     calibrationProgress.setPainter(calibrationProgressPainter);
     calibrationProgress.setValue(0);
 

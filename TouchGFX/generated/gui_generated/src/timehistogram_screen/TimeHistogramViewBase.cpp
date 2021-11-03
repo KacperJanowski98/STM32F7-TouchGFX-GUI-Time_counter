@@ -17,7 +17,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     box1.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     buttonBack.setXY(732, 11);
-    buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID));
+    buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
     textArea1.setXY(75, 28);
