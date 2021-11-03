@@ -28,7 +28,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonBackTime.setAction(buttonCallback);
 
     labelTimeConfig.setXY(15, 18);
-    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
@@ -53,7 +53,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeINPUT.add(imageArrowR);
 
     labelINPUT.setXY(15, 16);
-    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
     swipeContainerTimeINPUT.add(labelINPUT);
@@ -161,7 +161,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(imageArrowCR);
 
     labelCLOCK.setXY(15, 16);
-    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
     swipeContainerTimeCLOCK.add(labelCLOCK);
@@ -219,7 +219,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeTISETUP.add(imageArrowTR);
 
     labelTISETUP.setXY(15, 16);
-    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelTISETUP.setLinespacing(0);
     labelTISETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
     swipeContainerTimeTISETUP.add(labelTISETUP);
@@ -387,7 +387,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeSESSION.add(imageArrowSL);
 
     labelSESSIONSETUP.setXY(15, 16);
-    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelSESSIONSETUP.setLinespacing(0);
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);

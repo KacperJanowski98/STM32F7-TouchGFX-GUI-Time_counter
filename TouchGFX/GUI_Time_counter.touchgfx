@@ -25,7 +25,7 @@
           },
           {
             "Type": "CircleProgress",
-            "FileNameProgress": "My_Blue_ProgressIndicators_fill_medium_circle_indicator_fill_line_full.png",
+            "FileNameProgress": "calibration_color.png",
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -39,7 +39,7 @@
             "EndAngle": 360,
             "CapPrecision": "Butt",
             "Alpha": 255,
-            "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_medium_circle_indicator_bg_line_full.png",
+            "FileNameBackground": "calibration.png",
             "IndicatorPositionX": 0,
             "IndicatorPositionY": 0,
             "IndicatorPositionWidth": 0,
@@ -50,10 +50,10 @@
             "ProgressRangeStepsMin": 0,
             "ProgressInitialValue": 0,
             "Name": "calibrationProgress",
-            "X": 348,
-            "Y": 221,
-            "Width": 104,
-            "Height": 104,
+            "X": 325,
+            "Y": 226,
+            "Width": 150,
+            "Height": 150,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -66,8 +66,8 @@
             "TextId": "SingleUseId275",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
+              "Red": 189,
+              "Green": 236,
               "Blue": 255
             },
             "Alpha": 255,
@@ -90,9 +90,9 @@
             "TextId": "SingleUseId276",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
+              "Red": 171,
               "Green": 255,
-              "Blue": 255
+              "Blue": 199
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -911,7 +911,7 @@
             "Name": "textMeanLabel",
             "X": 561,
             "Y": 86,
-            "Width": 59,
+            "Width": 58,
             "Height": 27,
             "Visible": true,
             "LockPosition": false,
@@ -935,7 +935,7 @@
             "Name": "textStdDevLabel",
             "X": 695,
             "Y": 86,
-            "Width": 80,
+            "Width": 81,
             "Height": 27,
             "Visible": true,
             "LockPosition": false,
@@ -2979,9 +2979,9 @@
             "TextId": "SingleUseId3",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -3063,9 +3063,9 @@
                     "TextId": "SingleUseId4",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3452,9 +3452,9 @@
                     "TextId": "SingleUseId5",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3462,7 +3462,7 @@
                     "Name": "labelCLOCK",
                     "X": 15,
                     "Y": 16,
-                    "Width": 68,
+                    "Width": 69,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -3532,7 +3532,7 @@
                     "Name": "textClockRubid",
                     "X": 361,
                     "Y": 194,
-                    "Width": 80,
+                    "Width": 79,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -3578,7 +3578,7 @@
                     "Name": "textClockQuartz",
                     "X": 119,
                     "Y": 194,
-                    "Width": 80,
+                    "Width": 79,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -3683,9 +3683,9 @@
                     "TextId": "SingleUseId6",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -4230,9 +4230,9 @@
                     "TextId": "SingleUseId7",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -5425,7 +5425,7 @@
             "Name": "textMeanLabel",
             "X": 552,
             "Y": 71,
-            "Width": 59,
+            "Width": 58,
             "Height": 27,
             "Visible": true,
             "LockPosition": false,
@@ -5449,7 +5449,7 @@
             "Name": "textStdDevLabel",
             "X": 675,
             "Y": 71,
-            "Width": 80,
+            "Width": 81,
             "Height": 27,
             "Visible": true,
             "LockPosition": false,
@@ -6765,9 +6765,9 @@
             "TextId": "SingleUseId8",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -6849,9 +6849,9 @@
                     "TextId": "SingleUseId9",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7280,9 +7280,9 @@
                     "TextId": "SingleUseId10",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7290,7 +7290,7 @@
                     "Name": "labelCLOCK",
                     "X": 15,
                     "Y": 16,
-                    "Width": 68,
+                    "Width": 69,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -7360,7 +7360,7 @@
                     "Name": "textClockRubid",
                     "X": 361,
                     "Y": 194,
-                    "Width": 80,
+                    "Width": 79,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -7406,7 +7406,7 @@
                     "Name": "textClockQuartz",
                     "X": 119,
                     "Y": 194,
-                    "Width": 80,
+                    "Width": 79,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -7788,9 +7788,9 @@
                     "TextId": "SingleUseId71",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7865,9 +7865,9 @@
                     "TextId": "SingleUseId12",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 250,
-                      "Green": 250,
-                      "Blue": 250
+                      "Red": 144,
+                      "Green": 196,
+                      "Blue": 222
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -8411,8 +8411,8 @@
             "Released": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
             "Alpha": 255,
             "Name": "buttonBack",
-            "X": 740,
-            "Y": 0,
+            "X": 732,
+            "Y": 11,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -8436,7 +8436,7 @@
             "LineSpacing": 0,
             "Name": "textArea1",
             "X": 75,
-            "Y": 17,
+            "Y": 28,
             "Width": 620,
             "Height": 27,
             "Visible": true,
@@ -8672,7 +8672,7 @@
             "Alpha": 25,
             "Name": "boxWithBorderLabelT",
             "X": 44,
-            "Y": 9,
+            "Y": 19,
             "Width": 682,
             "Height": 45,
             "Visible": true,
@@ -9032,8 +9032,8 @@
             "Released": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
             "Alpha": 255,
             "Name": "buttonBack",
-            "X": 740,
-            "Y": 0,
+            "X": 732,
+            "Y": 11,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -9057,7 +9057,7 @@
             "LineSpacing": 0,
             "Name": "textArea1",
             "X": 75,
-            "Y": 17,
+            "Y": 28,
             "Width": 620,
             "Height": 27,
             "Visible": true,
@@ -9323,7 +9323,7 @@
             "Alpha": 25,
             "Name": "boxWithBorderLabelF",
             "X": 44,
-            "Y": 9,
+            "Y": 19,
             "Width": 682,
             "Height": 45,
             "Visible": true,

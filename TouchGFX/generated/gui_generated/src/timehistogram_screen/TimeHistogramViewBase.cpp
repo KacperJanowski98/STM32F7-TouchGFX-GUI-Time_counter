@@ -16,11 +16,11 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
-    buttonBack.setXY(740, 0);
+    buttonBack.setXY(732, 11);
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID));
     buttonBack.setAction(buttonCallback);
 
-    textArea1.setXY(75, 17);
+    textArea1.setXY(75, 28);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID286));
@@ -74,7 +74,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonWithLabelTi7.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi7.setAction(buttonCallback);
 
-    boxWithBorderLabelT.setPosition(44, 9, 682, 45);
+    boxWithBorderLabelT.setPosition(44, 19, 682, 45);
     boxWithBorderLabelT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderLabelT.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderLabelT.setBorderSize(4);
