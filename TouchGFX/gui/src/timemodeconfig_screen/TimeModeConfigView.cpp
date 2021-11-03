@@ -157,9 +157,7 @@ void TimeModeConfigView::scrollWheelStopUpdateCenterItem(ChannelContainerCenter&
 // Wywołanie zwrotne aktualizuje selectedVal poprzez parametr itemSelected.
 void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
-	textChannelINPUT.invalidate();	//-- remove
 	m_channelInput = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_channelInput);	//-- remove
 	switch(m_channelInput)
 	{
 	case 1:

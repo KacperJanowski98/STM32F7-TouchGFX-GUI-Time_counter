@@ -103,9 +103,7 @@ void FreqModeConfigView::scrollWheelINPUTUpdateCenterItem(ChannelContainerCenter
 
 void FreqModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 {
-	textChannelINPUT.invalidate();
 	m_channelInput = itemSelected + 1;
-	Unicode::snprintf(textChannelINPUTBuffer, TEXTCHANNELINPUT_SIZE, "%d", m_channelInput);
 	switch(m_channelInput)
 	{
 	case 1:

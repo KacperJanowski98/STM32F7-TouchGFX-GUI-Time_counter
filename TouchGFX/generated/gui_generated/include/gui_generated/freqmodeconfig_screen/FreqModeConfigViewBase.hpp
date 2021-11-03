@@ -106,7 +106,6 @@ protected:
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
     touchgfx::Slider sliderThreshold;
-    touchgfx::TextAreaWithOneWildcard textChannelINPUT;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::Image image1;
     touchgfx::BoxWithBorder boxWithBorderScroll;
@@ -166,8 +165,6 @@ protected:
      */
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
-    static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTGATEVAL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textGateValBuffer[TEXTGATEVAL_SIZE];
     static const uint16_t TEXTSTAMPSVAL_SIZE = 10;

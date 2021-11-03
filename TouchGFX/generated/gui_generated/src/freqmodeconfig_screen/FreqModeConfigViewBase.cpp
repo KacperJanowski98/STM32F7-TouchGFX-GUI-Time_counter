@@ -126,14 +126,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderThreshold.setValue(0);
     swipeContainerFreqINPUT.add(sliderThreshold);
 
-    textChannelINPUT.setPosition(201, 41, 71, 35);
-    textChannelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textChannelINPUT.setLinespacing(0);
-    textChannelINPUTBuffer[0] = 0;
-    textChannelINPUT.setWildcard(textChannelINPUTBuffer);
-    textChannelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID65));
-    swipeContainerFreqINPUT.add(textChannelINPUT);
-
     boxWithBorder1.setPosition(36, 85, 100, 300);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -302,7 +294,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderGate.setValue(0);
     swipeContainerFreqMESSETUP.add(sliderGate);
 
-    boxWithBorderGate.setPosition(328, 274, 143, 31);
+    boxWithBorderGate.setPosition(328, 263, 143, 47);
     boxWithBorderGate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderGate.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderGate.setBorderSize(4);

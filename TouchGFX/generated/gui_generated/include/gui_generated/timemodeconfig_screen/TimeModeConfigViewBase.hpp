@@ -13,13 +13,13 @@
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
@@ -134,7 +134,6 @@ protected:
     touchgfx::Box boxINPUT;
     touchgfx::Image imageArrowR;
     touchgfx::TextArea labelINPUT;
-    touchgfx::TextAreaWithOneWildcard textChannelINPUT;
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelINPUT;
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelINPUTSelectedListItems;
@@ -192,6 +191,8 @@ protected:
     touchgfx::Image imageFrameStarty;
     touchgfx::Image imageFrameStop;
     touchgfx::ToggleButton toggleTiSetup;
+    touchgfx::BoxWithBorder boxWithBorderNumStop;
+    touchgfx::BoxWithBorder boxWithBorderNumStart;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
@@ -220,8 +221,6 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTCHANNELINPUT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textChannelINPUTBuffer[TEXTCHANNELINPUT_SIZE];
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
     static const uint16_t TEXTONOFFCHANNEL_SIZE = 10;
