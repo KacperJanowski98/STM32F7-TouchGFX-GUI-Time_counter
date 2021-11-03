@@ -14,18 +14,18 @@ TimeModeViewBase::TimeModeViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroundTime.setPosition(0, 0, 800, 480);
-    boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
+    boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
-    buttonBackMenuT.setXY(740, 0);
-    buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackMenuT.setXY(732, 8);
+    buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackMenuT.setAction(buttonCallback);
 
-    buttonConfig.setXY(648, 0);
-    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_ID));
+    buttonConfig.setXY(635, 8);
+    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_NEW_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(560, 0);
-    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_ID));
+    buttonReset.setXY(531, 8);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_NEW_ID));
     buttonReset.setAction(buttonCallback);
 
     textTi1start.setPosition(67, 124, 58, 31);
@@ -622,9 +622,15 @@ TimeModeViewBase::TimeModeViewBase() :
     textLabelTi7.setLinespacing(0);
     textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
 
-    buttonHistogram.setXY(464, 0);
-    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_ID));
+    buttonHistogram.setXY(423, 8);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
+
+    boxWithBorder1.setPosition(9, 75, 783, 389);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(28, 8, 87));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorder1.setBorderSize(4);
+    boxWithBorder1.setAlpha(20);
 
     add(__background);
     add(boxBackgroundTime);
@@ -720,6 +726,7 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textLabelTi6);
     add(textLabelTi7);
     add(buttonHistogram);
+    add(boxWithBorder1);
 }
 
 void TimeModeViewBase::setupScreen()

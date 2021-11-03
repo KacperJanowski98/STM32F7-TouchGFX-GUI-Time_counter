@@ -15,16 +15,16 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxLeftBackG.setPosition(-1, 60, 75, 420);
-    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
+    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     boxRightBackG.setPosition(725, 60, 75, 420);
-    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
+    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     boxConfigTime.setPosition(0, 0, 800, 60);
     boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
     buttonBackTime.setXY(740, 0);
-    buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackTime.setAction(buttonCallback);
 
     labelTimeConfig.setXY(15, 18);
@@ -45,7 +45,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeINPUT.setHeight(420);
 
     boxINPUT.setPosition(0, 2, 800, 420);
-    boxINPUT.setColor(touchgfx::Color::getColorFromRGB(0, 119, 255));
+    boxINPUT.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerTimeINPUT.add(boxINPUT);
 
     imageArrowR.setXY(770, 180);
@@ -53,7 +53,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeINPUT.add(imageArrowR);
 
     labelINPUT.setXY(15, 16);
-    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
     swipeContainerTimeINPUT.add(labelINPUT);
@@ -139,7 +139,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.setHeight(420);
 
     boxCLOCK.setPosition(0, 0, 800, 420);
-    boxCLOCK.setColor(touchgfx::Color::getColorFromRGB(68, 72, 94));
+    boxCLOCK.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerTimeCLOCK.add(boxCLOCK);
 
     imageArrowCL.setXY(11, 178);
@@ -151,7 +151,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(imageArrowCR);
 
     labelCLOCK.setXY(15, 16);
-    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
     swipeContainerTimeCLOCK.add(labelCLOCK);
@@ -163,7 +163,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(textClockExternal);
 
     radioClockExternal.setXY(616, 114);
-    radioClockExternal.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockExternal.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockExternal.setSelected(false);
     radioClockExternal.setDeselectionEnabled(false);
     swipeContainerTimeCLOCK.add(radioClockExternal);
@@ -175,7 +175,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(textClockRubid);
 
     radioClockRubid.setXY(378, 114);
-    radioClockRubid.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockRubid.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockRubid.setSelected(false);
     radioClockRubid.setDeselectionEnabled(false);
     swipeContainerTimeCLOCK.add(radioClockRubid);
@@ -187,7 +187,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(textClockQuartz);
 
     radioClockQuartz.setXY(136, 114);
-    radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockQuartz.setSelected(false);
     radioClockQuartz.setDeselectionEnabled(false);
     swipeContainerTimeCLOCK.add(radioClockQuartz);
@@ -197,7 +197,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeTISETUP.setHeight(420);
 
     boxTISETUP.setPosition(0, 0, 800, 420);
-    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(54, 50, 125));
+    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerTimeTISETUP.add(boxTISETUP);
 
     imageArrowTL.setXY(11, 178);
@@ -209,7 +209,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeTISETUP.add(imageArrowTR);
 
     labelTISETUP.setXY(15, 16);
-    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelTISETUP.setLinespacing(0);
     labelTISETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
     swipeContainerTimeTISETUP.add(labelTISETUP);
@@ -322,7 +322,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeSESSION.setHeight(420);
 
     boxSESSIONSETUP.setPosition(-1, 2, 801, 420);
-    boxSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(77, 114, 148));
+    boxSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerTimeSESSION.add(boxSESSIONSETUP);
 
     imageArrowSL.setXY(11, 178);
@@ -330,7 +330,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeSESSION.add(imageArrowSL);
 
     labelSESSIONSETUP.setXY(15, 16);
-    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelSESSIONSETUP.setLinespacing(0);
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);

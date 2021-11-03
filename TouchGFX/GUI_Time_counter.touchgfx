@@ -6,9 +6,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 50,
-              "Green": 51,
-              "Blue": 66
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "backgroundCalibration",
@@ -25,7 +25,7 @@
           },
           {
             "Type": "CircleProgress",
-            "FileNameProgress": "__designer\\Blue_ProgressIndicators_fill_medium_circle_indicator_fill_line_full.png",
+            "FileNameProgress": "My_Blue_ProgressIndicators_fill_medium_circle_indicator_fill_line_full.png",
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -134,9 +134,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 63,
-              "Green": 62,
-              "Blue": 112
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxBackgroundMenu",
@@ -170,7 +170,7 @@
             "TextRotation": "0",
             "Name": "buttonFrequency",
             "X": 220,
-            "Y": 297,
+            "Y": 318,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -199,7 +199,7 @@
             "TextRotation": "0",
             "Name": "buttonTime",
             "X": 220,
-            "Y": 180,
+            "Y": 210,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -228,7 +228,7 @@
             "TextRotation": "0",
             "Name": "buttonCalibration",
             "X": 220,
-            "Y": 70,
+            "Y": 105,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -304,9 +304,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 56,
-              "Green": 69,
-              "Blue": 120
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxBackgroundTime",
@@ -323,12 +323,12 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBackMenuT",
-            "X": 740,
-            "Y": 0,
+            "X": 732,
+            "Y": 8,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -340,12 +340,12 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Setting_pressed.png",
-            "Released": "My_Blue_Buttons_Setting.png",
+            "Pressed": "My_Blue_Buttons_Setting_new.png",
+            "Released": "My_Blue_Buttons_Setting_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonConfig",
-            "X": 648,
-            "Y": 0,
+            "X": 635,
+            "Y": 8,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -357,12 +357,12 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Reset_pressed.png",
-            "Released": "My_Blue_Buttons_Reset.png",
+            "Pressed": "My_Blue_Buttons_Reset_new.png",
+            "Released": "My_Blue_Buttons_Reset_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonReset",
-            "X": 560,
-            "Y": 0,
+            "X": 531,
+            "Y": 8,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -2794,14 +2794,40 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Graph_pressed.png",
-            "Released": "My_Blue_Buttons_Graph.png",
+            "Pressed": "My_Blue_Buttons_Graph_new.png",
+            "Released": "My_Blue_Buttons_Graph_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonHistogram",
-            "X": 464,
-            "Y": 0,
+            "X": 423,
+            "Y": 8,
             "Width": 60,
             "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 28,
+              "Green": 8,
+              "Blue": 87
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 20,
+            "Name": "boxWithBorder1",
+            "X": 9,
+            "Y": 75,
+            "Width": 783,
+            "Height": 389,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -2874,9 +2900,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 56,
-              "Green": 69,
-              "Blue": 120
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxLeftBackG",
@@ -2894,9 +2920,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 56,
-              "Green": 69,
-              "Blue": 120
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxRightBackG",
@@ -2933,8 +2959,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBackTime",
             "X": 740,
@@ -2999,9 +3025,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 0,
-                      "Green": 119,
-                      "Blue": 255
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxINPUT",
@@ -3037,9 +3063,9 @@
                     "TextId": "SingleUseId4",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3332,9 +3358,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 68,
-                      "Green": 72,
-                      "Blue": 94
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxCLOCK",
@@ -3386,9 +3412,9 @@
                     "TextId": "SingleUseId5",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3396,7 +3422,7 @@
                     "Name": "labelCLOCK",
                     "X": 15,
                     "Y": 16,
-                    "Width": 69,
+                    "Width": 68,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -3434,11 +3460,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockExternal",
                     "X": 616,
@@ -3467,7 +3492,7 @@
                     "Name": "textClockRubid",
                     "X": 361,
                     "Y": 194,
-                    "Width": 79,
+                    "Width": 80,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -3481,11 +3506,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockRubid",
                     "X": 378,
@@ -3514,7 +3538,7 @@
                     "Name": "textClockQuartz",
                     "X": 119,
                     "Y": 194,
-                    "Width": 79,
+                    "Width": 80,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -3528,11 +3552,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockQuartz",
                     "X": 136,
@@ -3566,9 +3589,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 54,
-                      "Green": 50,
-                      "Blue": 125
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxTISETUP",
@@ -3620,9 +3643,9 @@
                     "TextId": "SingleUseId6",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3737,7 +3760,7 @@
                     "Name": "textTiStart",
                     "X": 399,
                     "Y": 102,
-                    "Width": 110,
+                    "Width": 111,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -3951,9 +3974,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 77,
-                      "Green": 114,
-                      "Blue": 148
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxSESSIONSETUP",
@@ -3989,9 +4012,9 @@
                     "TextId": "SingleUseId7",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -4583,9 +4606,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 13,
-              "Green": 122,
-              "Blue": 255
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxBackgroungFreq",
@@ -4602,11 +4625,11 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonToMenuF",
-            "X": 740,
+            "X": 732,
             "Y": 0,
             "Width": 60,
             "Height": 60,
@@ -4619,11 +4642,11 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Setting_pressed.png",
-            "Released": "My_Blue_Buttons_Setting.png",
+            "Pressed": "My_Blue_Buttons_Setting_new.png",
+            "Released": "My_Blue_Buttons_Setting_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonConfig",
-            "X": 645,
+            "X": 630,
             "Y": 0,
             "Width": 60,
             "Height": 60,
@@ -4636,11 +4659,11 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Reset_pressed.png",
-            "Released": "My_Blue_Buttons_Reset.png",
+            "Pressed": "My_Blue_Buttons_Reset_new.png",
+            "Released": "My_Blue_Buttons_Reset_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonReset",
-            "X": 544,
+            "X": 521,
             "Y": 0,
             "Width": 60,
             "Height": 60,
@@ -6261,11 +6284,11 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Graph_pressed.png",
-            "Released": "My_Blue_Buttons_Graph.png",
+            "Pressed": "My_Blue_Buttons_Graph_new.png",
+            "Released": "My_Blue_Buttons_Graph_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonHistogram",
-            "X": 449,
+            "X": 416,
             "Y": 0,
             "Width": 60,
             "Height": 60,
@@ -6341,9 +6364,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 13,
-              "Green": 122,
-              "Blue": 255
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxLeftBackG",
@@ -6361,9 +6384,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 13,
-              "Green": 122,
-              "Blue": 255
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "boxRightBackG",
@@ -6400,8 +6423,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBackFreq",
             "X": 740,
@@ -6466,9 +6489,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 2,
-                      "Green": 90,
-                      "Blue": 191
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxINPUT",
@@ -6504,9 +6527,9 @@
                     "TextId": "SingleUseId9",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -6799,9 +6822,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 68,
-                      "Green": 72,
-                      "Blue": 94
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxCLOCK",
@@ -6853,9 +6876,9 @@
                     "TextId": "SingleUseId10",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -6863,7 +6886,7 @@
                     "Name": "labelCLOCK",
                     "X": 15,
                     "Y": 16,
-                    "Width": 69,
+                    "Width": 68,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -6901,11 +6924,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockExternal",
                     "X": 616,
@@ -6934,7 +6956,7 @@
                     "Name": "textClockRubid",
                     "X": 361,
                     "Y": 194,
-                    "Width": 79,
+                    "Width": 80,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -6948,11 +6970,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockRubid",
                     "X": 378,
@@ -6981,7 +7002,7 @@
                     "Name": "textClockQuartz",
                     "X": 119,
                     "Y": 194,
-                    "Width": 79,
+                    "Width": 80,
                     "Height": 50,
                     "Visible": true,
                     "LockPosition": false,
@@ -6995,11 +7016,10 @@
                     "Alpha": 255,
                     "Selected": false,
                     "Deselectable": false,
-                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_mark_active.png",
-                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_mark_normal.png",
-                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_mark_inactive.png",
-                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_mark_pressed.png",
-                    "Style": "Style4",
+                    "FileNameSelected": "__designer\\Blue_Check_buttons_Check_RE_mark_active.png",
+                    "FileNameSelectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_normal.png",
+                    "FileNameUnselected": "__designer\\Blue_Check_buttons_Check_RE_mark_inactive.png",
+                    "FileNameUnselectedPressed": "__designer\\Blue_Check_buttons_Check_RE_mark_pressed.png",
                     "RadioButtonGroup": "radioButtonGroupClock",
                     "Name": "radioClockQuartz",
                     "X": 136,
@@ -7077,7 +7097,7 @@
                     "Name": "labelTISETUP",
                     "X": 15,
                     "Y": 16,
-                    "Width": 115,
+                    "Width": 116,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -7089,9 +7109,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 54,
-                      "Green": 50,
-                      "Blue": 125
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxTISETUP",
@@ -7221,7 +7241,7 @@
                     "Name": "textON",
                     "X": 266,
                     "Y": 118,
-                    "Width": 62,
+                    "Width": 61,
                     "Height": 49,
                     "Visible": true,
                     "LockPosition": false,
@@ -7245,7 +7265,7 @@
                     "Name": "textOFF",
                     "X": 560,
                     "Y": 118,
-                    "Width": 78,
+                    "Width": 77,
                     "Height": 49,
                     "Visible": true,
                     "LockPosition": false,
@@ -7338,9 +7358,9 @@
                     "TextId": "SingleUseId71",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7348,7 +7368,7 @@
                     "Name": "labelMesSetup",
                     "X": 17,
                     "Y": 16,
-                    "Width": 115,
+                    "Width": 116,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -7377,9 +7397,9 @@
                   {
                     "Type": "Box",
                     "Color": {
-                      "Red": 77,
-                      "Green": 114,
-                      "Blue": 148
+                      "Red": 40,
+                      "Green": 69,
+                      "Blue": 102
                     },
                     "Alpha": 255,
                     "Name": "boxSESSIONSETUP",
@@ -7415,9 +7435,9 @@
                     "TextId": "SingleUseId12",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
+                      "Red": 250,
+                      "Green": 250,
+                      "Blue": 250
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7886,9 +7906,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 33,
-              "Green": 77,
-              "Blue": 148
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "box1",
@@ -7905,8 +7925,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Released": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
             "Alpha": 255,
             "Name": "buttonBack",
             "X": 740,
@@ -8277,9 +8297,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 34,
-              "Green": 79,
-              "Blue": 168
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "box1",
@@ -8440,8 +8460,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBack",
             "X": 740,
@@ -8481,9 +8501,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 33,
-              "Green": 77,
-              "Blue": 148
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "box1",
@@ -8500,8 +8520,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Released": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
             "Alpha": 255,
             "Name": "buttonBack",
             "X": 740,
@@ -8914,9 +8934,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 34,
-              "Green": 79,
-              "Blue": 168
+              "Red": 49,
+              "Green": 64,
+              "Blue": 82
             },
             "Alpha": 255,
             "Name": "box1",
@@ -9077,8 +9097,8 @@
           },
           {
             "Type": "Button",
-            "Pressed": "My_Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "My_Blue_Buttons_Round_Edge_icon_button.png",
+            "Pressed": "My_Blue_Buttons_back_new.png",
+            "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBack",
             "X": 740,

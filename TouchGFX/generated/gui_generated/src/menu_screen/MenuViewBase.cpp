@@ -14,23 +14,23 @@ MenuViewBase::MenuViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroundMenu.setPosition(0, 0, 800, 480);
-    boxBackgroundMenu.setColor(touchgfx::Color::getColorFromRGB(63, 62, 112));
+    boxBackgroundMenu.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
-    buttonFrequency.setXY(220, 297);
+    buttonFrequency.setXY(220, 318);
     buttonFrequency.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonFrequency.setLabelText(touchgfx::TypedText(T_SINGLEUSEID2));
     buttonFrequency.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonFrequency.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonFrequency.setAction(buttonCallback);
 
-    buttonTime.setXY(220, 180);
+    buttonTime.setXY(220, 210);
     buttonTime.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonTime.setLabelText(touchgfx::TypedText(T_SINGLEUSEID1));
     buttonTime.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonTime.setLabelColorPressed(touchgfx::Color::getColorFromRGB(153, 153, 153));
     buttonTime.setAction(buttonCallback);
 
-    buttonCalibration.setXY(220, 70);
+    buttonCalibration.setXY(220, 105);
     buttonCalibration.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonCalibration.setLabelText(touchgfx::TypedText(T_SINGLEUSEID13));
     buttonCalibration.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

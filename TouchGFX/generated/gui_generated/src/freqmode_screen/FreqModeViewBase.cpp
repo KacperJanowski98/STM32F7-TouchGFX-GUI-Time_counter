@@ -14,18 +14,18 @@ FreqModeViewBase::FreqModeViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroungFreq.setPosition(0, 0, 800, 480);
-    boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(13, 122, 255));
+    boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
-    buttonToMenuF.setXY(740, 0);
-    buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonToMenuF.setXY(732, 0);
+    buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonToMenuF.setAction(buttonCallback);
 
-    buttonConfig.setXY(645, 0);
-    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_ID));
+    buttonConfig.setXY(630, 0);
+    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_NEW_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(544, 0);
-    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_ID));
+    buttonReset.setXY(521, 0);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_NEW_ID));
     buttonReset.setAction(buttonCallback);
 
     textFreq1start.setPosition(99, 100, 68, 31);
@@ -419,8 +419,8 @@ FreqModeViewBase::FreqModeViewBase() :
     textUnitMean8.setWildcard(textUnitMean8Buffer);
     textUnitMean8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
 
-    buttonHistogram.setXY(449, 0);
-    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_ID));
+    buttonHistogram.setXY(416, 0);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
     add(__background);

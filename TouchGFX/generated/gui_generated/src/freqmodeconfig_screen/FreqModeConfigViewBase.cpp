@@ -15,16 +15,16 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxLeftBackG.setPosition(-1, 60, 75, 420);
-    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(13, 122, 255));
+    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     boxRightBackG.setPosition(725, 60, 75, 420);
-    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(13, 122, 255));
+    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     boxConfigFreq.setPosition(0, 0, 800, 60);
     boxConfigFreq.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
     buttonBackFreq.setXY(740, 0);
-    buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackFreq.setAction(buttonCallback);
 
     labelFreqConfig.setXY(17, 18);
@@ -45,7 +45,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqINPUT.setHeight(420);
 
     boxINPUT.setPosition(0, 0, 800, 420);
-    boxINPUT.setColor(touchgfx::Color::getColorFromRGB(2, 90, 191));
+    boxINPUT.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqINPUT.add(boxINPUT);
 
     imageArrowR.setXY(770, 180);
@@ -53,7 +53,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqINPUT.add(imageArrowR);
 
     labelINPUT.setXY(15, 16);
-    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID9));
     swipeContainerFreqINPUT.add(labelINPUT);
@@ -139,7 +139,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqCLOCK.setHeight(420);
 
     boxCLOCK.setPosition(0, 0, 800, 420);
-    boxCLOCK.setColor(touchgfx::Color::getColorFromRGB(68, 72, 94));
+    boxCLOCK.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqCLOCK.add(boxCLOCK);
 
     imageArrowCL.setXY(11, 178);
@@ -151,7 +151,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqCLOCK.add(imageArrowCR);
 
     labelCLOCK.setXY(15, 16);
-    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID10));
     swipeContainerFreqCLOCK.add(labelCLOCK);
@@ -163,7 +163,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqCLOCK.add(textClockExternal);
 
     radioClockExternal.setXY(616, 114);
-    radioClockExternal.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockExternal.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockExternal.setSelected(false);
     radioClockExternal.setDeselectionEnabled(false);
     swipeContainerFreqCLOCK.add(radioClockExternal);
@@ -175,7 +175,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqCLOCK.add(textClockRubid);
 
     radioClockRubid.setXY(378, 114);
-    radioClockRubid.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockRubid.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockRubid.setSelected(false);
     radioClockRubid.setDeselectionEnabled(false);
     swipeContainerFreqCLOCK.add(radioClockRubid);
@@ -187,7 +187,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqCLOCK.add(textClockQuartz);
 
     radioClockQuartz.setXY(136, 114);
-    radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
+    radioClockQuartz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_RE_MARK_NORMAL_ID));
     radioClockQuartz.setSelected(false);
     radioClockQuartz.setDeselectionEnabled(false);
     swipeContainerFreqCLOCK.add(radioClockQuartz);
@@ -211,7 +211,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqMESSETUP.add(labelTISETUP);
 
     boxTISETUP.setPosition(0, 0, 800, 420);
-    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(54, 50, 125));
+    boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqMESSETUP.add(boxTISETUP);
 
     labelHfInput.setXY(82, 76);
@@ -274,7 +274,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqMESSETUP.add(sliderGate);
 
     labelMesSetup.setXY(17, 16);
-    labelMesSetup.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelMesSetup.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelMesSetup.setLinespacing(0);
     labelMesSetup.setTypedText(touchgfx::TypedText(T_SINGLEUSEID71));
     swipeContainerFreqMESSETUP.add(labelMesSetup);
@@ -284,7 +284,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqSESSION.setHeight(420);
 
     boxSESSIONSETUP.setPosition(-1, 0, 801, 420);
-    boxSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(77, 114, 148));
+    boxSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqSESSION.add(boxSESSIONSETUP);
 
     imageArrowSL.setXY(11, 178);
@@ -292,7 +292,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreqSESSION.add(imageArrowSL);
 
     labelSESSIONSETUP.setXY(15, 16);
-    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(250, 250, 250));
     labelSESSIONSETUP.setLinespacing(0);
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID12));
     swipeContainerFreqSESSION.add(labelSESSIONSETUP);

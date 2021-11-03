@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 
 class TimeModeViewBase : public touchgfx::View<TimeModePresenter>
 {
@@ -129,6 +130,7 @@ protected:
     touchgfx::TextArea textLabelTi6;
     touchgfx::TextArea textLabelTi7;
     touchgfx::Button buttonHistogram;
+    touchgfx::BoxWithBorder boxWithBorder1;
 
     /*
      * Wildcard Buffers
