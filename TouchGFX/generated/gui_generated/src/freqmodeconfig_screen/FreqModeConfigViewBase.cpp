@@ -24,7 +24,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxConfigFreq.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
     buttonBackFreq.setXY(740, 0);
-    buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBackFreq.setAction(buttonCallback);
 
     labelFreqConfig.setXY(17, 18);

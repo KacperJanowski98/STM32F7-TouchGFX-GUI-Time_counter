@@ -17,15 +17,15 @@ FreqModeViewBase::FreqModeViewBase() :
     boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(13, 122, 255));
 
     buttonToMenuF.setXY(740, 0);
-    buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonToMenuF.setAction(buttonCallback);
 
-    buttonConfig.setXY(559, 0);
-    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfig.setXY(645, 0);
+    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(372, 0);
-    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonReset.setXY(544, 0);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_ID));
     buttonReset.setAction(buttonCallback);
 
     textFreq1start.setPosition(99, 100, 68, 31);
@@ -419,8 +419,8 @@ FreqModeViewBase::FreqModeViewBase() :
     textUnitMean8.setWildcard(textUnitMean8Buffer);
     textUnitMean8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
 
-    buttonHistogram.setXY(175, 0);
-    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonHistogram.setXY(449, 0);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_ID));
     buttonHistogram.setAction(buttonCallback);
 
     add(__background);

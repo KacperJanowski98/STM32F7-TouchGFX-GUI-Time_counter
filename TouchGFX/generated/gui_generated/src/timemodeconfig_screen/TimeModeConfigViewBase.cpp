@@ -24,7 +24,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
     buttonBackTime.setXY(740, 0);
-    buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBackTime.setAction(buttonCallback);
 
     labelTimeConfig.setXY(15, 18);

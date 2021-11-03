@@ -17,7 +17,7 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     box1.setColor(touchgfx::Color::getColorFromRGB(33, 77, 148));
 
     buttonBack.setXY(740, 0);
-    buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBack.setAction(buttonCallback);
 
     textArea1.setXY(75, 17);
