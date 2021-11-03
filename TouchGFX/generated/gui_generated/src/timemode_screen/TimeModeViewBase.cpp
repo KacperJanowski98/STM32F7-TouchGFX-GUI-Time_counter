@@ -17,15 +17,15 @@ TimeModeViewBase::TimeModeViewBase() :
     boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(56, 69, 120));
 
     buttonBackMenuT.setXY(740, 0);
-    buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonBackMenuT.setAction(buttonCallback);
 
-    buttonConfig.setXY(542, 0);
-    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonConfig.setXY(648, 0);
+    buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(337, 0);
-    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonReset.setXY(560, 0);
+    buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_ID));
     buttonReset.setAction(buttonCallback);
 
     textTi1start.setPosition(67, 124, 58, 31);
@@ -622,8 +622,8 @@ TimeModeViewBase::TimeModeViewBase() :
     textLabelTi7.setLinespacing(0);
     textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
 
-    buttonHistogram.setXY(133, 0);
-    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonHistogram.setXY(464, 0);
+    buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_ID));
     buttonHistogram.setAction(buttonCallback);
 
     add(__background);
