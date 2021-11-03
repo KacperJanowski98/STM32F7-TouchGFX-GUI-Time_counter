@@ -14,12 +14,13 @@ FreqGraphViewBase::FreqGraphViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    box1.setColor(touchgfx::Color::getColorFromRGB(35, 50, 66));
 
     boxWithBorder1.setPosition(9, 60, 782, 412);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(3);
+    boxWithBorder1.setAlpha(25);
 
     textLabel.setPosition(202, 15, 397, 30);
     textLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -35,7 +36,7 @@ FreqGraphViewBase::FreqGraphViewBase() :
     dynamicGraphFreq.setGraphRangeY(0, 40);
 
     dynamicGraphFreqMajorYAxisGrid.setScale(1);
-    dynamicGraphFreqMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraphFreqMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(135, 145, 163));
     dynamicGraphFreqMajorYAxisGrid.setInterval(2);
     dynamicGraphFreqMajorYAxisGrid.setLineWidth(1);
     dynamicGraphFreq.addGraphElement(dynamicGraphFreqMajorYAxisGrid);
@@ -43,17 +44,17 @@ FreqGraphViewBase::FreqGraphViewBase() :
     dynamicGraphFreqMajorXAxisLabel.setScale(1);
     dynamicGraphFreqMajorXAxisLabel.setInterval(2);
     dynamicGraphFreqMajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T_SINGLEUSEID307));
-    dynamicGraphFreqMajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraphFreqMajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     dynamicGraphFreq.addBottomElement(dynamicGraphFreqMajorXAxisLabel);
 
     dynamicGraphFreqMajorYAxisLabel.setScale(1);
     dynamicGraphFreqMajorYAxisLabel.setInterval(4);
     dynamicGraphFreqMajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T_SINGLEUSEID308));
-    dynamicGraphFreqMajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraphFreqMajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     dynamicGraphFreq.addLeftElement(dynamicGraphFreqMajorYAxisLabel);
 
     dynamicGraphFreqHistogram1.setScale(1);
-    dynamicGraphFreqHistogram1.setColor(touchgfx::Color::getColorFromRGB(194, 23, 23));
+    dynamicGraphFreqHistogram1.setColor(touchgfx::Color::getColorFromRGB(235, 163, 30));
     dynamicGraphFreqHistogram1.setBarWidth(10);
     dynamicGraphFreqHistogram1.setBaseline(0);
     dynamicGraphFreq.addGraphElement(dynamicGraphFreqHistogram1);

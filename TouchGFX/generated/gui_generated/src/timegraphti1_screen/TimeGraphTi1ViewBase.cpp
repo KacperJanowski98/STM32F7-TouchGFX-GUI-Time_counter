@@ -14,12 +14,13 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    box1.setColor(touchgfx::Color::getColorFromRGB(35, 50, 66));
 
     boxWithBorder1.setPosition(9, 60, 782, 412);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(3);
+    boxWithBorder1.setAlpha(25);
 
     textLabel.setPosition(262, 17, 273, 27);
     textLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -35,7 +36,7 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     dynamicGraph1.setGraphRangeY(0, 40);
 
     dynamicGraph1MajorYAxisGrid.setScale(1);
-    dynamicGraph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(135, 145, 163));
     dynamicGraph1MajorYAxisGrid.setInterval(2);
     dynamicGraph1MajorYAxisGrid.setLineWidth(1);
     dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
@@ -43,17 +44,17 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     dynamicGraph1MajorXAxisLabel.setScale(1);
     dynamicGraph1MajorXAxisLabel.setInterval(2);
     dynamicGraph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T_SINGLEUSEID295));
-    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     dynamicGraph1.addBottomElement(dynamicGraph1MajorXAxisLabel);
 
     dynamicGraph1MajorYAxisLabel.setScale(1);
     dynamicGraph1MajorYAxisLabel.setInterval(4);
     dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T_SINGLEUSEID296));
-    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(38, 40, 41));
+    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
 
     dynamicGraph1Histogram1.setScale(1);
-    dynamicGraph1Histogram1.setColor(touchgfx::Color::getColorFromRGB(62, 196, 22));
+    dynamicGraph1Histogram1.setColor(touchgfx::Color::getColorFromRGB(68, 227, 163));
     dynamicGraph1Histogram1.setBarWidth(10);
     dynamicGraph1Histogram1.setBaseline(0);
     dynamicGraph1.addGraphElement(dynamicGraph1Histogram1);

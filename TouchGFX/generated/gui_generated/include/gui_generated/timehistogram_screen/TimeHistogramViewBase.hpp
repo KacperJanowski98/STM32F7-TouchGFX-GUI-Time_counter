@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 
 class TimeHistogramViewBase : public touchgfx::View<TimeHistogramPresenter>
 {
@@ -76,6 +77,7 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabelTi5;
     touchgfx::ButtonWithLabel buttonWithLabelTi6;
     touchgfx::ButtonWithLabel buttonWithLabelTi7;
+    touchgfx::BoxWithBorder boxWithBorderLabelT;
 
 private:
 

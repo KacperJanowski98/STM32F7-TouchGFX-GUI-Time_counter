@@ -81,6 +81,12 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     buttonWithLabelM8.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM8.setAction(buttonCallback);
 
+    boxWithBorderLabelF.setPosition(44, 9, 682, 45);
+    boxWithBorderLabelF.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderLabelF.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderLabelF.setBorderSize(4);
+    boxWithBorderLabelF.setAlpha(25);
+
     add(__background);
     add(box1);
     add(buttonBack);
@@ -93,6 +99,7 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     add(buttonWithLabelM6);
     add(buttonWithLabelM7);
     add(buttonWithLabelM8);
+    add(boxWithBorderLabelF);
 }
 
 void FreqHistogramViewBase::setupScreen()

@@ -74,6 +74,12 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonWithLabelTi7.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi7.setAction(buttonCallback);
 
+    boxWithBorderLabelT.setPosition(44, 9, 682, 45);
+    boxWithBorderLabelT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderLabelT.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderLabelT.setBorderSize(4);
+    boxWithBorderLabelT.setAlpha(25);
+
     add(__background);
     add(box1);
     add(buttonBack);
@@ -85,6 +91,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     add(buttonWithLabelTi5);
     add(buttonWithLabelTi6);
     add(buttonWithLabelTi7);
+    add(boxWithBorderLabelT);
 }
 
 void TimeHistogramViewBase::setupScreen()

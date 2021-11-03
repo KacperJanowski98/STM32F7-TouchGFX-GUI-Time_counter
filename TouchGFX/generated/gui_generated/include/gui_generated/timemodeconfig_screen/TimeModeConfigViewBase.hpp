@@ -20,6 +20,7 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 
@@ -145,6 +146,9 @@ protected:
     touchgfx::TextArea textSlope;
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
+    touchgfx::BoxWithBorder boxWithBorderSlider;
+    touchgfx::BoxWithBorder boxWithBorderThreshold;
+    touchgfx::Image imageFrame;
     touchgfx::Slider sliderThreshold;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
@@ -181,6 +185,12 @@ protected:
     touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStopListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStopSelectedListItems;
 
+    touchgfx::BoxWithBorder boxWithBorderSliderTi;
+    touchgfx::BoxWithBorder boxWithBorderSliderStop;
+    touchgfx::BoxWithBorder boxWithBorderSliderStart;
+    touchgfx::Image imageFrameTi;
+    touchgfx::Image imageFrameStarty;
+    touchgfx::Image imageFrameStop;
     touchgfx::ToggleButton toggleTiSetup;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
@@ -201,6 +211,9 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigTimeConst;
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::ButtonWithLabel buttonConfigTimeRepeat;
+    touchgfx::BoxWithBorder boxWithBorderSetupTi;
+    touchgfx::BoxWithBorder boxWithBorderSetupS;
+    touchgfx::BoxWithBorder boxWithBorderSetupR;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 

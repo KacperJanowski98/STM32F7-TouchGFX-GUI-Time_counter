@@ -21,6 +21,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class FreqModeConfigViewBase : public touchgfx::View<FreqModeConfigPresenter>
@@ -106,6 +107,11 @@ protected:
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
     touchgfx::Slider sliderThreshold;
     touchgfx::TextAreaWithOneWildcard textChannelINPUT;
+    touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::Image image1;
+    touchgfx::BoxWithBorder boxWithBorderScroll;
+    touchgfx::Image imageFrame;
+    touchgfx::BoxWithBorder boxWithBorderThreshold;
     touchgfx::Container swipeContainerFreqCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -132,6 +138,7 @@ protected:
     touchgfx::TextArea labelGate;
     touchgfx::TextAreaWithOneWildcard textGateVal;
     touchgfx::Slider sliderGate;
+    touchgfx::BoxWithBorder boxWithBorderGate;
     touchgfx::TextArea labelMesSetup;
     touchgfx::Container swipeContainerFreqSESSION;
     touchgfx::Box boxSESSIONSETUP;
@@ -148,6 +155,8 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqConst;
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;
     touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
+    touchgfx::BoxWithBorder boxWithBorderStamp;
+    touchgfx::BoxWithBorder boxWithBorderRepeat;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;
