@@ -18,6 +18,9 @@ void TimeHistogramView::tearDownScreen()
 void TimeHistogramView::DisplayGraph1()
 {
 	numberTiGraph = 1;
+	colorGraphR = 116;
+	colorGraphG = 242;
+	colorGraphB = 145;
 	calculateMaxVal(TimeBackend.TiSetup1, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters1;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -27,6 +30,9 @@ void TimeHistogramView::DisplayGraph1()
 void TimeHistogramView::DisplayGraph2()
 {
 	numberTiGraph = 2;
+	colorGraphR = 200;
+	colorGraphG = 242;
+	colorGraphB = 116;
 	calculateMaxVal(TimeBackend.TiSetup2, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters2;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -36,6 +42,9 @@ void TimeHistogramView::DisplayGraph2()
 void TimeHistogramView::DisplayGraph3()
 {
 	numberTiGraph = 3;
+	colorGraphR = 242;
+	colorGraphG = 208;
+	colorGraphB = 116;
 	calculateMaxVal(TimeBackend.TiSetup3, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters3;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -45,6 +54,9 @@ void TimeHistogramView::DisplayGraph3()
 void TimeHistogramView::DisplayGraph4()
 {
 	numberTiGraph = 4;
+	colorGraphR = 242;
+	colorGraphG = 128;
+	colorGraphB = 116;
 	calculateMaxVal(TimeBackend.TiSetup4, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters4;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -54,6 +66,9 @@ void TimeHistogramView::DisplayGraph4()
 void TimeHistogramView::DisplayGraph5()
 {
 	numberTiGraph = 5;
+	colorGraphR = 116;
+	colorGraphG = 225;
+	colorGraphB = 242;
 	calculateMaxVal(TimeBackend.TiSetup5, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters5;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -63,6 +78,9 @@ void TimeHistogramView::DisplayGraph5()
 void TimeHistogramView::DisplayGraph6()
 {
 	numberTiGraph = 6;
+	colorGraphR = 116;
+	colorGraphG = 145;
+	colorGraphB = 242;
 	calculateMaxVal(TimeBackend.TiSetup6, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters6;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -72,6 +90,9 @@ void TimeHistogramView::DisplayGraph6()
 void TimeHistogramView::DisplayGraph7()
 {
 	numberTiGraph = 7;
+	colorGraphR = 179;
+	colorGraphG = 116;
+	colorGraphB = 242;
 	calculateMaxVal(TimeBackend.TiSetup7, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters7;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;

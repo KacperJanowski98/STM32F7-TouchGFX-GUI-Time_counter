@@ -11,6 +11,7 @@ void FreqGraphView::setupScreen()
 	textLabel.invalidate();
     FreqGraphViewBase::setupScreen();
     dynamicGraphFreq.clear();
+    dynamicGraphFreqHistogram1.setColor(touchgfx::Color::getColorFrom24BitRGB(colorGraphR, colorGraphG, colorGraphB));
     dynamicGraphFreq.setGraphRangeY(0.0f, tempMaxRangeF);
     dynamicGraphFreq.invalidate();
 }

@@ -275,6 +275,10 @@ float tempMaxRangeF = 0.0f;
 uint8_t numberFreqGraph = 0;
 uint8_t stampsModeFreqFlag = 0;
 
+uint8_t colorGraphR = 0;
+uint8_t colorGraphG = 0;
+uint8_t colorGraphB = 0;
+
 TimeMode_t TimeBackend;
 ResultConstCalc_t ResultCalcConstTime;
 ResultStampsCalc_t ResultCalcStampsTime;

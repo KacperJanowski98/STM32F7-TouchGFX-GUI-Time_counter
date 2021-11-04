@@ -3,12 +3,16 @@
 
 #include <gui_generated/freqgraph_screen/FreqGraphViewBase.hpp>
 #include <gui/freqgraph_screen/FreqGraphPresenter.hpp>
+#include <touchgfx/Color.hpp>
 
 extern CalcStampParam_t tempParamF;
 extern uint16_t tempStampsNumberF;
 extern float tempMaxRangeF;
 extern uint8_t numberFreqGraph;
 extern uint8_t stampsModeFreqFlag;
+extern uint8_t colorGraphR;
+extern uint8_t colorGraphG;
+extern uint8_t colorGraphB;
 
 class FreqGraphView : public FreqGraphViewBase
 {

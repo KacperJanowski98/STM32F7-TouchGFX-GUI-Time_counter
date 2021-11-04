@@ -11,6 +11,9 @@ extern CalcStampParam_t tempParam;
 extern uint16_t tempStampsNumber;
 extern float tempMaxRange;
 extern uint8_t numberTiGraph;
+extern uint8_t colorGraphR;
+extern uint8_t colorGraphG;
+extern uint8_t colorGraphB;
 
 class TimeHistogramView : public TimeHistogramViewBase
 {

@@ -11,6 +11,9 @@ extern CalcStampParam_t tempParamF;
 extern uint16_t tempStampsNumberF;
 extern float tempMaxRangeF;
 extern uint8_t numberFreqGraph;
+extern uint8_t colorGraphR;
+extern uint8_t colorGraphG;
+extern uint8_t colorGraphB;
 
 class FreqHistogramView : public FreqHistogramViewBase
 {

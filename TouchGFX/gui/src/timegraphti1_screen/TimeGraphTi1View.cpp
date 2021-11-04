@@ -11,6 +11,7 @@ void TimeGraphTi1View::setupScreen()
 	textLabel.invalidate();
     TimeGraphTi1ViewBase::setupScreen();
     dynamicGraph1.clear();
+    dynamicGraph1Histogram1.setColor(touchgfx::Color::getColorFrom24BitRGB(colorGraphR, colorGraphG, colorGraphB));
     dynamicGraph1.setGraphRangeY(0.0f, tempMaxRange);
     dynamicGraph1.invalidate();
 }
