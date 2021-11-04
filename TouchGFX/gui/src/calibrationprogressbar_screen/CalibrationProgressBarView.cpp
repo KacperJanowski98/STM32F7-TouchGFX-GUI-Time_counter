@@ -8,6 +8,10 @@ CalibrationProgressBarView::CalibrationProgressBarView()
 void CalibrationProgressBarView::setupScreen()
 {
     CalibrationProgressBarViewBase::setupScreen();
+    randPause1 = (rand() % (23 + 1 - 18)) + 18;
+    randPause2 = (rand() % (37 + 1 - 32)) + 32;
+    randPause3 = (rand() % (73 + 1 - 68)) + 68;
+    randPause4 = (rand() % (93 + 1 - 86)) + 86;
 }
 
 void CalibrationProgressBarView::tearDownScreen()
@@ -31,7 +35,7 @@ void CalibrationProgressBarView::handleTickEvent()
 
     int nextValue = increase == true ? currentValue + 1 : currentValue - 1;
 
-    if (nextValue == 21 || nextValue == 34 || nextValue == 71 || nextValue == 93)
+    if (nextValue == randPause1 || nextValue == randPause2 || nextValue == randPause3 || nextValue == randPause4)
     {
     	osDelay(1000);
     }

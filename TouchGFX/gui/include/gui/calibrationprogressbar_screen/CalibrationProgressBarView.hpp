@@ -18,6 +18,10 @@ protected:
     int min;
     int currentValue;
     int nextValue;
+    int randPause1;
+    int randPause2;
+    int randPause3;
+    int randPause4;
 };
 
 #endif // CALIBRATIONPROGRESSBARVIEW_HPP
