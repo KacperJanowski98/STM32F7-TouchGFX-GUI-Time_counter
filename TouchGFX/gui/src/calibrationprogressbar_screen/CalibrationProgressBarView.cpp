@@ -31,10 +31,12 @@ void CalibrationProgressBarView::handleTickEvent()
 
     int nextValue = increase == true ? currentValue + 1 : currentValue - 1;
 
-    if (nextValue == 20 || nextValue == 38 || nextValue == 70 || nextValue == 92)
+    if (nextValue == 21 || nextValue == 34 || nextValue == 71 || nextValue == 93)
     {
     	osDelay(1000);
     }
 
     calibrationProgress.setValue(nextValue);
+    Unicode::snprintf(textAreaValueBuffer, TEXTAREAVALUE_SIZE, "%d", nextValue);
+    textAreaValue.invalidate();
 }

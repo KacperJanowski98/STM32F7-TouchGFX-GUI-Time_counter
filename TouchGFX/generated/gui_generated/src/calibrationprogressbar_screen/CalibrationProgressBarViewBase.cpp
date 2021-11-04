@@ -40,11 +40,19 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     textLabelDescription.setLinespacing(0);
     textLabelDescription.setTypedText(touchgfx::TypedText(T_SINGLEUSEID276));
 
+    textAreaValue.setPosition(346, 300, 108, 43);
+    textAreaValue.setColor(touchgfx::Color::getColorFromRGB(189, 236, 255));
+    textAreaValue.setLinespacing(0);
+    Unicode::snprintf(textAreaValueBuffer, TEXTAREAVALUE_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID310).getText());
+    textAreaValue.setWildcard(textAreaValueBuffer);
+    textAreaValue.setTypedText(touchgfx::TypedText(T_SINGLEUSEID309));
+
     add(__background);
     add(backgroundCalibration);
     add(calibrationProgress);
     add(textLabelName);
     add(textLabelDescription);
+    add(textAreaValue);
 }
 
 void CalibrationProgressBarViewBase::setupScreen()

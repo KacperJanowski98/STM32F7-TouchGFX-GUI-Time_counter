@@ -11,6 +11,7 @@
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class CalibrationProgressBarViewBase : public touchgfx::View<CalibrationProgressBarPresenter>
 {
@@ -33,6 +34,13 @@ protected:
     touchgfx::PainterRGB565Bitmap calibrationProgressPainter;
     touchgfx::TextArea textLabelName;
     touchgfx::TextArea textLabelDescription;
+    touchgfx::TextAreaWithOneWildcard textAreaValue;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAVALUE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaValueBuffer[TEXTAREAVALUE_SIZE];
 
 private:
 

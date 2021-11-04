@@ -108,6 +108,35 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId309",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 189,
+              "Green": 236,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId310",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textAreaValue",
+            "X": 346,
+            "Y": 300,
+            "Width": 108,
+            "Height": 43,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -10631,6 +10660,14 @@
       },
       {
         "TextEntryId": "SingleUseId308",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId309",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId310",
         "IsResource": false
       }
     ],
