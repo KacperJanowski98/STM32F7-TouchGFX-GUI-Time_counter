@@ -194,9 +194,7 @@ void TimeModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 
 void TimeModeConfigView::scrollWheelTISetupAnimateToHandler(int16_t itemSelected)
 {
-	textOnOffChannel.invalidate();
 	m_channelTiSetup = itemSelected + 1;
-	Unicode::snprintf(textOnOffChannelBuffer, TEXTONOFFCHANNEL_SIZE, "%d", m_channelTiSetup);	//-- remove
 	switch(m_channelTiSetup)
 	{
 	case 1:
@@ -411,17 +409,14 @@ void TimeModeConfigView::RadioBtnGroupClockCallbackHandler(const touchgfx::Abstr
 {
 	if(&src == &radioClockQuartz)
 	{
-//		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_QUARTZ;
 		pSession->setClockSource(ClockName::INTERNAL_QUARTZ);
 	}
 	else if (&src == &radioClockRubid)
 	{
-//		TimeModeConfigView::m_clockSource = ClockName::INTERNAL_RUBID;
 		pSession->setClockSource(ClockName::INTERNAL_RUBID);
 	}
 	else if (&src == &radioClockExternal)
 	{
-//		TimeModeConfigView::m_clockSource = ClockName::EXTERNAL;
 		pSession->setClockSource(ClockName::EXTERNAL);
 	}
 }
@@ -590,20 +585,14 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 {
 	if (stateChannel == true)
 	{
-		textOnState.setVisible(true);
-		textOffState.setVisible(false);
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);
 	}
 	else
 	{
-		textOnState.setVisible(false);
-		textOffState.setVisible(true);
 		textStartChannel.setVisible(true);
 		textStopChannel.setVisible(true);
 	}
-	textOnState.invalidate();
-	textOffState.invalidate();
 	textStartChannel.invalidate();
 	textStopChannel.invalidate();
 }

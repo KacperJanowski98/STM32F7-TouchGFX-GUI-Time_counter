@@ -240,14 +240,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelTISetup.animateToItem(0, 0);
     swipeContainerTimeTISETUP.add(scrollWheelTISetup);
 
-    textOnOffChannel.setPosition(151, 219, 50, 38);
-    textOnOffChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textOnOffChannel.setLinespacing(0);
-    textOnOffChannelBuffer[0] = 0;
-    textOnOffChannel.setWildcard(textOnOffChannelBuffer);
-    textOnOffChannel.setTypedText(touchgfx::TypedText(T_SINGLEUSEID29));
-    swipeContainerTimeTISETUP.add(textOnOffChannel);
-
     textTiStop.setXY(409, 280);
     textTiStop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiStop.setLinespacing(0);
@@ -259,20 +251,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textTiStart.setLinespacing(0);
     textTiStart.setTypedText(touchgfx::TypedText(T_SINGLEUSEID30));
     swipeContainerTimeTISETUP.add(textTiStart);
-
-    textOnState.setPosition(222, 219, 50, 38);
-    textOnState.setVisible(false);
-    textOnState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textOnState.setLinespacing(0);
-    textOnState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID32));
-    swipeContainerTimeTISETUP.add(textOnState);
-
-    textOffState.setPosition(222, 219, 50, 38);
-    textOffState.setVisible(false);
-    textOffState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textOffState.setLinespacing(0);
-    textOffState.setTypedText(touchgfx::TypedText(T_SINGLEUSEID33));
-    swipeContainerTimeTISETUP.add(textOffState);
 
     scrollWheelStart.setPosition(610, 24, 100, 180);
     scrollWheelStart.setHorizontal(false);
@@ -355,7 +333,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageFrameStop.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_WHEEL_FRAME_NEW_ID));
     swipeContainerTimeTISETUP.add(imageFrameStop);
 
-    toggleTiSetup.setXY(188, 83);
+    toggleTiSetup.setXY(178, 218);
     toggleTiSetup.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
     toggleTiSetup.setAction(buttonCallback);
     swipeContainerTimeTISETUP.add(toggleTiSetup);
@@ -392,13 +370,13 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);
 
-    textTiMaxRange.setXY(158, 80);
+    textTiMaxRange.setXY(136, 80);
     textTiMaxRange.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiMaxRange.setLinespacing(0);
     textTiMaxRange.setTypedText(touchgfx::TypedText(T_SINGLEUSEID36));
     swipeContainerTimeSESSION.add(textTiMaxRange);
 
-    textRangeVal.setPosition(530, 77, 162, 28);
+    textRangeVal.setPosition(298, 78, 130, 27);
     textRangeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textRangeVal.setLinespacing(0);
     Unicode::snprintf(textRangeValBuffer, TEXTRANGEVAL_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID43).getText());
@@ -406,9 +384,9 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textRangeVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID40));
     swipeContainerTimeSESSION.add(textRangeVal);
 
-    sliderRange.setXY(706, 2);
-    sliderRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
-    sliderRange.setupVerticalSlider(7, 3, 0, 0, 125);
+    sliderRange.setXY(434, 73);
+    sliderRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
+    sliderRange.setupHorizontalSlider(2, 6, 0, 0, 284);
     sliderRange.setValueRange(0, 1000);
     sliderRange.setValue(0);
     swipeContainerTimeSESSION.add(sliderRange);
@@ -421,13 +399,13 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textStampsVal.setTypedText(touchgfx::TypedText(T_SINGLEUSEID42));
     swipeContainerTimeSESSION.add(textStampsVal);
 
-    textSampsNumber.setXY(61, 232);
+    textSampsNumber.setXY(86, 229);
     textSampsNumber.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textSampsNumber.setLinespacing(0);
     textSampsNumber.setTypedText(touchgfx::TypedText(T_SINGLEUSEID45));
     swipeContainerTimeSESSION.add(textSampsNumber);
 
-    textX.setXY(386, 220);
+    textX.setXY(387, 218);
     textX.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textX.setLinespacing(0);
     textX.setTypedText(touchgfx::TypedText(T_SINGLEUSEID46));
@@ -439,7 +417,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID47));
     swipeContainerTimeSESSION.add(textArea1);
 
-    textRepeatVal.setPosition(620, 233, 120, 24);
+    textRepeatVal.setPosition(634, 229, 120, 24);
     textRepeatVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textRepeatVal.setLinespacing(0);
     Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID49).getText());
@@ -454,7 +432,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderStampsNumber.setValue(0);
     swipeContainerTimeSESSION.add(sliderStampsNumber);
 
-    sliderRepeat.setXY(501, 275);
+    sliderRepeat.setXY(512, 275);
     sliderRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
     sliderRepeat.setupHorizontalSlider(3, 7, 0, 0, 125);
     sliderRepeat.setValueRange(0, 100);
@@ -466,7 +444,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     toggleTiMaxRange.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(toggleTiMaxRange);
 
-    buttonConfigTimeSingle.setXY(159, 134);
+    buttonConfigTimeSingle.setXY(119, 130);
     buttonConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID84));
     buttonConfigTimeSingle.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -474,7 +452,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeSingle.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeSingle);
 
-    buttonConfigTimeConst.setXY(468, 134);
+    buttonConfigTimeConst.setXY(518, 130);
     buttonConfigTimeConst.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID85));
     buttonConfigTimeConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -482,7 +460,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeConst.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeConst);
 
-    buttonConfigTimeStamps.setXY(120, 336);
+    buttonConfigTimeStamps.setXY(116, 336);
     buttonConfigTimeStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID86));
     buttonConfigTimeStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -490,7 +468,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeStamps.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeStamps);
 
-    buttonConfigTimeRepeat.setXY(505, 336);
+    buttonConfigTimeRepeat.setXY(518, 336);
     buttonConfigTimeRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeRepeat.setLabelText(touchgfx::TypedText(T_SINGLEUSEID273));
     buttonConfigTimeRepeat.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -498,21 +476,21 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeRepeat.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeRepeat);
 
-    boxWithBorderSetupTi.setPosition(547, 69, 128, 36);
+    boxWithBorderSetupTi.setPosition(298, 72, 130, 39);
     boxWithBorderSetupTi.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderSetupTi.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderSetupTi.setBorderSize(4);
     boxWithBorderSetupTi.setAlpha(25);
     swipeContainerTimeSESSION.add(boxWithBorderSetupTi);
 
-    boxWithBorderSetupS.setPosition(49, 212, 312, 57);
+    boxWithBorderSetupS.setPosition(36, 213, 338, 57);
     boxWithBorderSetupS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderSetupS.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderSetupS.setBorderSize(4);
     boxWithBorderSetupS.setAlpha(25);
     swipeContainerTimeSESSION.add(boxWithBorderSetupS);
 
-    boxWithBorderSetupR.setPosition(434, 213, 312, 57);
+    boxWithBorderSetupR.setPosition(432, 213, 338, 57);
     boxWithBorderSetupR.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderSetupR.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderSetupR.setBorderSize(4);

@@ -169,11 +169,8 @@ protected:
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelTISetupListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelTISetupSelectedListItems;
 
-    touchgfx::TextAreaWithOneWildcard textOnOffChannel;
     touchgfx::TextArea textTiStop;
     touchgfx::TextArea textTiStart;
-    touchgfx::TextArea textOnState;
-    touchgfx::TextArea textOffState;
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelStart;
     touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStartListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStartSelectedListItems;
@@ -223,8 +220,6 @@ protected:
      */
     static const uint16_t TEXTSLIDERTHRESHOLD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar textSliderThresholdBuffer[TEXTSLIDERTHRESHOLD_SIZE];
-    static const uint16_t TEXTONOFFCHANNEL_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textOnOffChannelBuffer[TEXTONOFFCHANNEL_SIZE];
     static const uint16_t TEXTSTARTCHANNEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textStartChannelBuffer[TEXTSTARTCHANNEL_SIZE];
     static const uint16_t TEXTSTOPCHANNEL_SIZE = 10;
