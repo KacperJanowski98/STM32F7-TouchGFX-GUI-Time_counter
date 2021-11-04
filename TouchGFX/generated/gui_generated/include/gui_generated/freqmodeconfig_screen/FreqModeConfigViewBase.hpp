@@ -106,11 +106,12 @@ protected:
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
     touchgfx::Slider sliderThreshold;
-    touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::Image image1;
     touchgfx::BoxWithBorder boxWithBorderScroll;
     touchgfx::Image imageFrame;
+    touchgfx::BoxWithBorder boxWithBorderSlope;
     touchgfx::BoxWithBorder boxWithBorderThreshold;
+    touchgfx::Image imageFallingF;
+    touchgfx::Image imageRisingF;
     touchgfx::Container swipeContainerFreqCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
