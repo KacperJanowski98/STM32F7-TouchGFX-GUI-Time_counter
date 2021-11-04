@@ -4,6 +4,9 @@
 #include <gui_generated/timemode_screen/TimeModeViewBase.hpp>
 #include <gui/timemode_screen/TimeModePresenter.hpp>
 #include <string.h>
+#include <gui/lib/TimeModeParameter.hpp>
+#include <gui/lib/SessionSetup.hpp>
+#include <gui/model/Model.hpp>
 
 class TimeModeView : public TimeModeViewBase
 {
@@ -18,6 +21,12 @@ public:
 protected:
     void calculateFormatMeanTime(float mean, int *pTotal, int *pFrac1, int *pFrac2);
     void calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFrac);
+
+    void setLabelTi(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t startIn, touchgfx::TextAreaWithOneWildcard *text);
+    void setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferStart, uint16_t sizeStart, touchgfx::TextAreaWithOneWildcard *textStart,
+			touchgfx::Unicode::UnicodeChar *textBufferStop, uint16_t sizeStop, touchgfx::TextAreaWithOneWildcard *textStop,
+			touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
+			TimeTi_t *Ti, SessionSetup_t *session);
 private:
     int m_total_ti1;
     int m_frac1_ti1;

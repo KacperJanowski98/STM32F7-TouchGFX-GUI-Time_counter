@@ -53,10 +53,13 @@ void TimeModeView::setupScreen()
 
     // Label
 
-    Unicode::snprintf(textTi1startBuffer, TEXTTI1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
-    textTi1start.invalidate();
-    Unicode::snprintf(textTi1stopBuffer, TEXTTI1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
-    textTi1stop.invalidate();
+    setLabelTi(textTi1startBuffer, TEXTTI1START_SIZE, TimeBackend.TiSetup1.startIn, &textTi1start);
+    setLabelTi(textTi1stopBuffer, TEXTTI1STOP_SIZE, TimeBackend.TiSetup1.stopIn, &textTi1stop);
+
+//    Unicode::snprintf(textTi1startBuffer, TEXTTI1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
+//    textTi1start.invalidate();
+//    Unicode::snprintf(textTi1stopBuffer, TEXTTI1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
+//    textTi1stop.invalidate();
 
     Unicode::snprintf(textTi2startBuffer, TEXTTI2START_SIZE, "%d", TimeBackend.TiSetup2.startIn);
     textTi2start.invalidate();
@@ -94,24 +97,27 @@ void TimeModeView::setupScreen()
     textStamps1start.invalidate();
     Unicode::snprintf(textStamps1stopBuffer, TEXTSTAMPS1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
     textStamps1stop.invalidate();
-    if ((TimeBackend.TiSetup1.stopIn - TimeBackend.TiSetup1.startIn) == 0 || TimeBackend.TiSetup1.tiState == false)
-    {
-    	textStamps1startVal.setVisible(false);
-    	textStamps1stopVal.setVisible(false);
-    	textSample1.setVisible(false);
-    }
-    else
-    {
-    	textStamps1startVal.setVisible(true);
-    	textStamps1stopVal.setVisible(true);
-    	textSample1.setVisible(true);
-        Unicode::snprintf(textStamps1startValBuffer, TEXTSTAMPS1STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-        textStamps1startVal.invalidate();
-        Unicode::snprintf(textStamps1stopValBuffer, TEXTSTAMPS1STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-        textStamps1stopVal.invalidate();
-        Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-        textSample1.invalidate();
-    }
+
+    setStampsSampleTi(textStamps1startValBuffer, TEXTSTAMPS1STARTVAL_SIZE, &textStamps1startVal, textStamps1stopValBuffer, TEXTSTAMPS1STOPVAL_SIZE,
+    		&textStamps1stopVal, textSample1Buffer, TEXTSAMPLE1_SIZE, &textSample1, &TimeBackend.TiSetup1, &TimeBackend.TimeSession);
+//    if ((TimeBackend.TiSetup1.stopIn - TimeBackend.TiSetup1.startIn) == 0 || TimeBackend.TiSetup1.tiState == false)
+//    {
+//    	textStamps1startVal.setVisible(false);
+//    	textStamps1stopVal.setVisible(false);
+//    	textSample1.setVisible(false);
+//    }
+//    else
+//    {
+//    	textStamps1startVal.setVisible(true);
+//    	textStamps1stopVal.setVisible(true);
+//    	textSample1.setVisible(true);
+//        Unicode::snprintf(textStamps1startValBuffer, TEXTSTAMPS1STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
+//        textStamps1startVal.invalidate();
+//        Unicode::snprintf(textStamps1stopValBuffer, TEXTSTAMPS1STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
+//        textStamps1stopVal.invalidate();
+//        Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
+//        textSample1.invalidate();
+//    }
 
     Unicode::snprintf(textStamps2startBuffer, TEXTSTAMPS2START_SIZE, "%d", TimeBackend.TiSetup2.startIn);
     textStamps2start.invalidate();
@@ -666,3 +672,41 @@ void TimeModeView::calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFr
 	float tempFrac = stdDev - *pTotal;
 	*pFrac = trunc(tempFrac * 100);
 }
+
+// do podmieienia w metodzie setup
+void TimeModeView::setLabelTi(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t startIn, touchgfx::TextAreaWithOneWildcard *text)
+{
+	Unicode::snprintf(textBuffer, size, "%d", startIn);
+	text->invalidate();
+}
+
+void TimeModeView::setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferStart, uint16_t sizeStart, touchgfx::TextAreaWithOneWildcard *textStart,
+									touchgfx::Unicode::UnicodeChar *textBufferStop, uint16_t sizeStop, touchgfx::TextAreaWithOneWildcard *textStop,
+									touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
+									TimeTi_t *Ti, SessionSetup_t *session)
+{
+//    Unicode::snprintf(textStamps1startBuffer, TEXTSTAMPS1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
+//    textStamps1start.invalidate();
+//    Unicode::snprintf(textStamps1stopBuffer, TEXTSTAMPS1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
+//    textStamps1stop.invalidate();
+    if ((Ti->stopIn - Ti->startIn) == 0 || Ti->tiState == false)
+    {
+    	textStart->setVisible(false);
+    	textStop->setVisible(false);
+    	textSample->setVisible(false);
+    }
+    else
+    {
+    	textStart->setVisible(true);
+    	textStop->setVisible(true);
+    	textSample->setVisible(true);
+        Unicode::snprintf(textBufferStart, sizeStart, "%d", session->stampsNumber);
+        Unicode::snprintf(textBufferStop, sizeStop, "%d", session->stampsNumber);
+        Unicode::snprintf(textBufferSample, sizeSample, "%d", session->stampsNumber);
+    }
+    textStart->invalidate();
+    textStop->invalidate();
+    textSample->invalidate();
+}
+
+
