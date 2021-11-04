@@ -8978,7 +8978,7 @@
             },
             "Name": "textAreaLabelY",
             "X": 15,
-            "Y": 231,
+            "Y": 257,
             "Width": 33,
             "Height": 19,
             "Visible": true,
@@ -9560,8 +9560,8 @@
             "InsertRandomValues": true,
             "Alpha": 255,
             "LabelSizeTop": 15,
-            "LabelSizeBottom": 30,
-            "LabelSizeLeft": 35,
+            "LabelSizeBottom": 50,
+            "LabelSizeLeft": 65,
             "LabelSizeRight": 25,
             "PaddingTop": 0,
             "PaddingBottom": 0,
@@ -9644,6 +9644,58 @@
             "Y": 0,
             "Width": 60,
             "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId313",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaLabelX",
+            "X": 340,
+            "Y": 443,
+            "Width": 121,
+            "Height": 19,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId314",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textAreaLabelY",
+            "X": 16,
+            "Y": 257,
+            "Width": 33,
+            "Height": 19,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -10728,6 +10780,14 @@
       },
       {
         "TextEntryId": "SingleUseId312",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId313",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId314",
         "IsResource": false
       }
     ],

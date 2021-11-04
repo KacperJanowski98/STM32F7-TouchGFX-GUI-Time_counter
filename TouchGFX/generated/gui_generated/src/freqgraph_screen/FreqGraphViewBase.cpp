@@ -31,7 +31,7 @@ FreqGraphViewBase::FreqGraphViewBase() :
 
     dynamicGraphFreq.setScale(1);
     dynamicGraphFreq.setPosition(9, 60, 782, 412);
-    dynamicGraphFreq.setGraphAreaMargin(15, 35, 25, 30);
+    dynamicGraphFreq.setGraphAreaMargin(15, 65, 25, 50);
     dynamicGraphFreq.setGraphAreaPadding(0, 20, 0, 0);
     dynamicGraphFreq.setGraphRangeY(0, 40);
 
@@ -89,12 +89,26 @@ FreqGraphViewBase::FreqGraphViewBase() :
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
+    textAreaLabelX.setXY(340, 443);
+    textAreaLabelX.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaLabelX.setLinespacing(0);
+    textAreaLabelX.setTypedText(touchgfx::TypedText(T_SINGLEUSEID313));
+
+    textAreaLabelY.setPosition(16, 257, 33, 19);
+    textAreaLabelY.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaLabelY.setLinespacing(0);
+    textAreaLabelYBuffer[0] = 0;
+    textAreaLabelY.setWildcard(textAreaLabelYBuffer);
+    textAreaLabelY.setTypedText(touchgfx::TypedText(T_SINGLEUSEID314));
+
     add(__background);
     add(box1);
     add(boxWithBorder1);
     add(textLabel);
     add(dynamicGraphFreq);
     add(buttonBack);
+    add(textAreaLabelX);
+    add(textAreaLabelY);
 }
 
 void FreqGraphViewBase::setupScreen()

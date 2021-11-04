@@ -13,6 +13,7 @@ extern uint8_t stampsModeFreqFlag;
 extern uint8_t colorGraphR;
 extern uint8_t colorGraphG;
 extern uint8_t colorGraphB;
+extern Unit_t unitGraph;
 
 class FreqGraphView : public FreqGraphViewBase
 {

@@ -6,6 +6,7 @@
 
 extern FrequencyMode_t FreqBackend;
 extern ResultStampsCalcFreq_t ResultCalcStampsFreq;
+extern ResultFreq_t ResultFreqBackend;
 
 extern CalcStampParam_t tempParamF;
 extern uint16_t tempStampsNumberF;
@@ -14,6 +15,7 @@ extern uint8_t numberFreqGraph;
 extern uint8_t colorGraphR;
 extern uint8_t colorGraphG;
 extern uint8_t colorGraphB;
+extern Unit_t unitGraph;
 
 class FreqHistogramView : public FreqHistogramViewBase
 {

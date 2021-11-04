@@ -16,6 +16,7 @@ extern uint8_t colorGraphR;
 extern uint8_t colorGraphG;
 extern uint8_t colorGraphB;
 extern Unit_t unitGraph;
+extern uint8_t stateFlag;
 
 class TimeHistogramView : public TimeHistogramViewBase
 {

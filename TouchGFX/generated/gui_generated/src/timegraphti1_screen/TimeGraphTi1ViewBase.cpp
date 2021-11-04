@@ -94,7 +94,7 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     textAreaLabelX.setLinespacing(0);
     textAreaLabelX.setTypedText(touchgfx::TypedText(T_SINGLEUSEID311));
 
-    textAreaLabelY.setPosition(15, 231, 33, 19);
+    textAreaLabelY.setPosition(15, 257, 33, 19);
     textAreaLabelY.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textAreaLabelY.setLinespacing(0);
     textAreaLabelYBuffer[0] = 0;

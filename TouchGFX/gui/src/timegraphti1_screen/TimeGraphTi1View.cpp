@@ -30,7 +30,6 @@ void TimeGraphTi1View::setupScreen()
 		Unicode::strncpy(textAreaLabelYBuffer, (char*)"ns", TEXTAREALABELY_SIZE - 1);
 		break;
 	}
-
     TimeGraphTi1ViewBase::setupScreen();
     dynamicGraph1.clear();
     dynamicGraph1Histogram1.setColor(touchgfx::Color::getColorFrom24BitRGB(colorGraphR, colorGraphG, colorGraphB));
