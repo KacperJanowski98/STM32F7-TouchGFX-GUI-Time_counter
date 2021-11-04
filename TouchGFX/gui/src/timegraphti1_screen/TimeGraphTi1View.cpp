@@ -44,7 +44,7 @@ void TimeGraphTi1View::tearDownScreen()
 
 void TimeGraphTi1View::handleTickEvent()
 {
-	if (tickCounter < tempStampsNumber && stampsModeTimeFlag == 1)
+	if (tickCounter < tempStampsNumber && stampsModeTimeFlag == 1 && stateFlag == 1)
 	{
 		dynamicGraph1.addDataPoint(tempParam.measureBuffer[tickCounter]);
 	}

@@ -41,7 +41,7 @@ void FreqGraphView::tearDownScreen()
 
 void FreqGraphView::handleTickEvent()
 {
-	if (tickCounterF < tempStampsNumberF && stampsModeFreqFlag == 1)
+	if (tickCounterF < tempStampsNumberF && stampsModeFreqFlag == 1 && stateFlag == 1)
 	{
 		dynamicGraphFreq.addDataPoint(tempParamF.measureBuffer[tickCounterF]);
 	}

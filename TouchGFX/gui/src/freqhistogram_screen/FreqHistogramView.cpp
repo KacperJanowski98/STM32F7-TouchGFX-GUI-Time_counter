@@ -21,6 +21,7 @@ void FreqHistogramView::DisplayGraphF1()
 	colorGraphR = 200;
 	colorGraphG = 168;
 	colorGraphB = 206;
+	stateFlag = FreqBackend.Channel1.channelState;
 	unitGraph = ResultFreqBackend.measure1.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel1, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters1;
@@ -34,6 +35,7 @@ void FreqHistogramView::DisplayGraphF2()
 	colorGraphR = 163;
 	colorGraphG = 148;
 	colorGraphB = 206;
+	stateFlag = FreqBackend.Channel2.channelState;
 	unitGraph = ResultFreqBackend.measure2.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel2, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters2;
@@ -47,6 +49,7 @@ void FreqHistogramView::DisplayGraphF3()
 	colorGraphR = 148;
 	colorGraphG = 165;
 	colorGraphB = 206;
+	stateFlag = FreqBackend.Channel3.channelState;
 	unitGraph = ResultFreqBackend.measure3.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel3, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters3;
@@ -60,6 +63,7 @@ void FreqHistogramView::DisplayGraphF4()
 	colorGraphR = 146;
 	colorGraphG = 204;
 	colorGraphB = 210;
+	stateFlag = FreqBackend.Channel4.channelState;
 	unitGraph = ResultFreqBackend.measure4.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel4, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters4;
@@ -73,6 +77,7 @@ void FreqHistogramView::DisplayGraphF5()
 	colorGraphR = 127;
 	colorGraphG = 213;
 	colorGraphB = 179;
+	stateFlag = FreqBackend.Channel5.channelState;
 	unitGraph = ResultFreqBackend.measure5.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel5, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters5;
@@ -86,6 +91,7 @@ void FreqHistogramView::DisplayGraphF6()
 	colorGraphR = 135;
 	colorGraphG = 213;
 	colorGraphB = 127;
+	stateFlag = FreqBackend.Channel6.channelState;
 	unitGraph = ResultFreqBackend.measure6.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel6, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters6;
@@ -99,6 +105,7 @@ void FreqHistogramView::DisplayGraphF7()
 	colorGraphR = 229;
 	colorGraphG = 225;
 	colorGraphB = 106;
+	stateFlag = FreqBackend.Channel7.channelState;
 	unitGraph = ResultFreqBackend.measure7.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel7, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters7;
@@ -112,6 +119,7 @@ void FreqHistogramView::DisplayGraphF8()
 	colorGraphR = 246;
 	colorGraphG = 177;
 	colorGraphB = 108;
+	stateFlag = FreqBackend.Channel8.channelState;
 	unitGraph = ResultFreqBackend.measure8.meanUnit;
 	calculateMaxValFreq(FreqBackend.Channel8, &tempMaxRangeF);
 	tempParamF = ResultCalcStampsFreq.parameters8;

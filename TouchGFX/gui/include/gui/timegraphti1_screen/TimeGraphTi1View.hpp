@@ -15,6 +15,7 @@ extern uint8_t colorGraphR;
 extern uint8_t colorGraphG;
 extern uint8_t colorGraphB;
 extern Unit_t unitGraph;
+extern uint8_t stateFlag;
 
 class TimeGraphTi1View : public TimeGraphTi1ViewBase
 {
