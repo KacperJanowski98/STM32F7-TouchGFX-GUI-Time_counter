@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class TimeGraphTi1ViewBase : public touchgfx::View<TimeGraphTi1Presenter>
 {
@@ -40,12 +41,16 @@ protected:
     touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
     touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
     touchgfx::Button buttonBack;
+    touchgfx::TextArea textAreaLabelX;
+    touchgfx::TextAreaWithOneWildcard textAreaLabelY;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t TEXTLABEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textLabelBuffer[TEXTLABEL_SIZE];
+    static const uint16_t TEXTAREALABELY_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar textAreaLabelYBuffer[TEXTAREALABELY_SIZE];
 
 private:
 

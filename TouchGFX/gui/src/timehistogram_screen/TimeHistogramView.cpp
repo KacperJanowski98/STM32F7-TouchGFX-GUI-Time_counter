@@ -21,6 +21,7 @@ void TimeHistogramView::DisplayGraph1()
 	colorGraphR = 116;
 	colorGraphG = 242;
 	colorGraphB = 145;
+	unitGraph = ResultTimeBackend.measure1.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup1, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters1;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -33,6 +34,7 @@ void TimeHistogramView::DisplayGraph2()
 	colorGraphR = 200;
 	colorGraphG = 242;
 	colorGraphB = 116;
+	unitGraph = ResultTimeBackend.measure2.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup2, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters2;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -45,6 +47,7 @@ void TimeHistogramView::DisplayGraph3()
 	colorGraphR = 242;
 	colorGraphG = 208;
 	colorGraphB = 116;
+	unitGraph = ResultTimeBackend.measure3.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup3, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters3;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -57,6 +60,7 @@ void TimeHistogramView::DisplayGraph4()
 	colorGraphR = 242;
 	colorGraphG = 128;
 	colorGraphB = 116;
+	unitGraph = ResultTimeBackend.measure4.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup4, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters4;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -69,6 +73,7 @@ void TimeHistogramView::DisplayGraph5()
 	colorGraphR = 116;
 	colorGraphG = 225;
 	colorGraphB = 242;
+	unitGraph = ResultTimeBackend.measure5.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup5, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters5;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -81,6 +86,7 @@ void TimeHistogramView::DisplayGraph6()
 	colorGraphR = 116;
 	colorGraphG = 145;
 	colorGraphB = 242;
+	unitGraph = ResultTimeBackend.measure6.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup6, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters6;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;
@@ -93,6 +99,7 @@ void TimeHistogramView::DisplayGraph7()
 	colorGraphR = 179;
 	colorGraphG = 116;
 	colorGraphB = 242;
+	unitGraph = ResultTimeBackend.measure7.meanUnit;
 	calculateMaxVal(TimeBackend.TiSetup7, &tempMaxRange);
 	tempParam = ResultCalcStampsTime.parameters7;
 	tempStampsNumber = TimeBackend.TimeSession.stampsNumber;

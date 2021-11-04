@@ -268,7 +268,7 @@ float tempMaxRange = 0.0f;
 uint8_t numberTiGraph = 0;
 uint8_t stampsModeTimeFlag = 0;
 
-
+Unit_t unitGraph;
 CalcStampParam_t tempParamF;
 uint16_t tempStampsNumberF = 0;
 float tempMaxRangeF = 0.0f;

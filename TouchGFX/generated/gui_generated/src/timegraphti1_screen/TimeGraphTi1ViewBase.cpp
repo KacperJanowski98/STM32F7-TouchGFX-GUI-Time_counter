@@ -31,7 +31,7 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
 
     dynamicGraph1.setScale(1);
     dynamicGraph1.setPosition(9, 60, 782, 412);
-    dynamicGraph1.setGraphAreaMargin(15, 35, 25, 30);
+    dynamicGraph1.setGraphAreaMargin(15, 65, 25, 50);
     dynamicGraph1.setGraphAreaPadding(0, 20, 0, 0);
     dynamicGraph1.setGraphRangeY(0, 40);
 
@@ -89,12 +89,26 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
+    textAreaLabelX.setXY(340, 444);
+    textAreaLabelX.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaLabelX.setLinespacing(0);
+    textAreaLabelX.setTypedText(touchgfx::TypedText(T_SINGLEUSEID311));
+
+    textAreaLabelY.setPosition(15, 231, 33, 19);
+    textAreaLabelY.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaLabelY.setLinespacing(0);
+    textAreaLabelYBuffer[0] = 0;
+    textAreaLabelY.setWildcard(textAreaLabelYBuffer);
+    textAreaLabelY.setTypedText(touchgfx::TypedText(T_SINGLEUSEID312));
+
     add(__background);
     add(box1);
     add(boxWithBorder1);
     add(textLabel);
     add(dynamicGraph1);
     add(buttonBack);
+    add(textAreaLabelX);
+    add(textAreaLabelY);
 }
 
 void TimeGraphTi1ViewBase::setupScreen()

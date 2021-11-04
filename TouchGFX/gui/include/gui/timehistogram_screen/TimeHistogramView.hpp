@@ -5,6 +5,7 @@
 #include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
 
 extern ResultStampsCalc_t ResultCalcStampsTime;
+extern ResultTime_t ResultTimeBackend;
 extern TimeMode_t TimeBackend;
 
 extern CalcStampParam_t tempParam;
@@ -14,6 +15,7 @@ extern uint8_t numberTiGraph;
 extern uint8_t colorGraphR;
 extern uint8_t colorGraphG;
 extern uint8_t colorGraphB;
+extern Unit_t unitGraph;
 
 class TimeHistogramView : public TimeHistogramViewBase
 {
@@ -32,6 +34,7 @@ public:
     virtual void DisplayGraph7();
 protected:
     void calculateMaxVal(TimeTi_t ti, float *pMaxRange);
+    void setUnitTime(Unit_t unit, char *buffer);
 };
 
 #endif // TIMEHISTOGRAMVIEW_HPP
