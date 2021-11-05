@@ -17,7 +17,26 @@ public:
 protected:
     void calculateFormatMeanFreq(float mean, int *pTotal, int *pFrac1, int *pFrac2);
     void calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFrac);
+
+    void setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t numberCh, touchgfx::TextAreaWithOneWildcard *text);
+    void setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
+						uint16_t sizeSample, SessionSetup_t *session);
+    void setMeanResultFreq(MeasFreq_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
+    						uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::Unicode::UnicodeChar *textUnitMeanBuffer,
+							uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean);
+    void setStdDevResultFreq(touchgfx::Unicode::UnicodeChar *textStdDevBuffer, uint16_t sizeStdDev, touchgfx::TextAreaWithOneWildcard *textStdDev,
+    						touchgfx::Unicode::UnicodeChar *textUnitStdDevBuffer, uint16_t sizeUnitStdDev, touchgfx::TextAreaWithOneWildcard *textUnitStdDev,
+							MeasFreq_t *measure, int *total, int *fraction);
 private:
+    std::string pHz;
+    std::string nHz;
+    std::string uHz;
+    std::string mHz;
+    std::string Hz;
+    std::string kHz;
+    std::string MHz;
+    std::string GHz;
+
     int m_total_freq1;
     int m_frac1_freq1;
     int m_frac2_freq1;

@@ -9,14 +9,14 @@ void FreqModeView::setupScreen()
 {
     FreqModeViewBase::setupScreen();
 
-    char pHz[] = "pHz";
-    char nHz[] = "nHz";
-    char uHz[] = "uHz";
-    char mHz[] = "mHz";
-    char Hz[] = "Hz";
-    char kHz[] = "kHz";
-    char MHz[] = "MHz";
-    char GHz[] = "GHz";
+    pHz = "pHz";
+    nHz = "nHz";
+    uHz = "uHz";
+    mHz = "mHz";
+    Hz = "Hz";
+    kHz = "kHz";
+    MHz = "MHz";
+    GHz = "GHz";
 
     m_total_freq1 = 0;
     m_frac1_freq1 = 0;
@@ -61,548 +61,107 @@ void FreqModeView::setupScreen()
 
     // Label
 
-    Unicode::snprintf(textFreq1startBuffer, TEXTFREQ1START_SIZE, "%d", FreqBackend.Channel1.numberChanel);
-    textFreq1start.invalidate();
+    setLabelFreq(textFreq1startBuffer, TEXTFREQ1START_SIZE, FreqBackend.Channel1.numberChanel, &textFreq1start);
 
-    Unicode::snprintf(textFreq2startBuffer, TEXTFREQ2START_SIZE, "%d", FreqBackend.Channel2.numberChanel);
-    textFreq2start.invalidate();
+    setLabelFreq(textFreq2startBuffer, TEXTFREQ2START_SIZE, FreqBackend.Channel2.numberChanel, &textFreq2start);
 
-    Unicode::snprintf(textFreq3startBuffer, TEXTFREQ3START_SIZE, "%d", FreqBackend.Channel3.numberChanel);
-    textFreq3start.invalidate();
+    setLabelFreq(textFreq3startBuffer, TEXTFREQ3START_SIZE, FreqBackend.Channel3.numberChanel, &textFreq3start);
 
-    Unicode::snprintf(textFreq4startBuffer, TEXTFREQ4START_SIZE, "%d", FreqBackend.Channel4.numberChanel);
-    textFreq4start.invalidate();
+    setLabelFreq(textFreq4startBuffer, TEXTFREQ4START_SIZE, FreqBackend.Channel4.numberChanel, &textFreq4start);
 
-    Unicode::snprintf(textFreq5startBuffer, TEXTFREQ5START_SIZE, "%d", FreqBackend.Channel5.numberChanel);
-    textFreq5start.invalidate();
+    setLabelFreq(textFreq5startBuffer, TEXTFREQ5START_SIZE, FreqBackend.Channel5.numberChanel, &textFreq5start);
 
-    Unicode::snprintf(textFreq6startBuffer, TEXTFREQ6START_SIZE, "%d", FreqBackend.Channel6.numberChanel);
-    textFreq6start.invalidate();
+    setLabelFreq(textFreq6startBuffer, TEXTFREQ6START_SIZE, FreqBackend.Channel6.numberChanel, &textFreq6start);
 
-    Unicode::snprintf(textFreq7startBuffer, TEXTFREQ7START_SIZE, "%d", FreqBackend.Channel7.numberChanel);
-    textFreq7start.invalidate();
+    setLabelFreq(textFreq7startBuffer, TEXTFREQ7START_SIZE, FreqBackend.Channel7.numberChanel, &textFreq7start);
 
-    Unicode::snprintf(textFreq8startBuffer, TEXTFREQ8START_SIZE, "%d", FreqBackend.Channel8.numberChanel);
-    textFreq8start.invalidate();
+    setLabelFreq(textFreq8startBuffer, TEXTFREQ8START_SIZE, FreqBackend.Channel8.numberChanel, &textFreq8start);
 
     // Sample
 
-    if (FreqBackend.Channel1.channelState == false)
-    {
-    	textSample1.setVisible(false);
-    }
-    else
-    {
-    	textSample1.setVisible(true);
-        Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample1.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel1, &textSample1, textSample1Buffer, TEXTSAMPLE1_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel2.channelState == false)
-    {
-    	textSample2.setVisible(false);
-    }
-    else
-    {
-    	textSample2.setVisible(true);
-        Unicode::snprintf(textSample2Buffer, TEXTSAMPLE2_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample2.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel2, &textSample2, textSample2Buffer, TEXTSAMPLE2_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel3.channelState == false)
-    {
-    	textSample3.setVisible(false);
-    }
-    else
-    {
-    	textSample3.setVisible(true);
-        Unicode::snprintf(textSample3Buffer, TEXTSAMPLE3_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample3.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel3, &textSample3, textSample3Buffer, TEXTSAMPLE3_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel4.channelState == false)
-    {
-    	textSample4.setVisible(false);
-    }
-    else
-    {
-    	textSample4.setVisible(true);
-        Unicode::snprintf(textSample4Buffer, TEXTSAMPLE4_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample4.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel4, &textSample4, textSample4Buffer, TEXTSAMPLE4_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel5.channelState == false)
-    {
-    	textSample5.setVisible(false);
-    }
-    else
-    {
-    	textSample5.setVisible(true);
-        Unicode::snprintf(textSample5Buffer, TEXTSAMPLE5_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample5.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel5, &textSample5, textSample5Buffer, TEXTSAMPLE5_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel6.channelState == false)
-    {
-    	textSample6.setVisible(false);
-    }
-    else
-    {
-    	textSample6.setVisible(true);
-        Unicode::snprintf(textSample6Buffer, TEXTSAMPLE6_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample6.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel6, &textSample6, textSample6Buffer, TEXTSAMPLE6_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel7.channelState == false)
-    {
-    	textSample7.setVisible(false);
-    }
-    else
-    {
-    	textSample7.setVisible(true);
-        Unicode::snprintf(textSample7Buffer, TEXTSAMPLE7_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample7.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel7, &textSample7, textSample7Buffer, TEXTSAMPLE7_SIZE, &FreqBackend.FreqSession);
 
-    if (FreqBackend.Channel8.channelState == false)
-    {
-    	textSample8.setVisible(false);
-    }
-    else
-    {
-    	textSample8.setVisible(true);
-        Unicode::snprintf(textSample8Buffer, TEXTSAMPLE8_SIZE, "%d", FreqBackend.FreqSession.stampsNumber);
-        textSample8.invalidate();
-    }
+    setSampleFreq(&FreqBackend.Channel8, &textSample8, textSample8Buffer, TEXTSAMPLE8_SIZE, &FreqBackend.FreqSession);
 
     // Mean
 
     calculateFormatMeanFreq(ResultFreqBackend.measure1.mean, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1);
-    switch (ResultFreqBackend.measure1.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_freq1, m_frac1_freq1, m_frac2_freq1);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)Hz, TEXTUNITMEAN1_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_freq1, m_frac1_freq1, m_frac2_freq1);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)kHz, TEXTUNITMEAN1_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_freq1, m_frac1_freq1, m_frac2_freq1);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)MHz, TEXTUNITMEAN1_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_freq1, m_frac1_freq1, m_frac2_freq1);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)GHz, TEXTUNITMEAN1_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)kHz, TEXTUNITMEAN1_SIZE - 1);
-    	break;
-    }
-    textMeanVal1.invalidate();
-    textUnitMean1.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure1, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1, textMeanVal1Buffer, TEXTMEANVAL1_SIZE, &textMeanVal1,
+    					textUnitMean1Buffer, TEXTUNITMEAN1_SIZE, &textUnitMean1);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure2.mean, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2);
-    switch (ResultFreqBackend.measure2.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_freq2, m_frac1_freq2, m_frac2_freq2);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)Hz, TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_freq2, m_frac1_freq2, m_frac2_freq2);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)kHz, TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_freq2, m_frac1_freq2, m_frac2_freq2);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)MHz, TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_freq2, m_frac1_freq2, m_frac2_freq2);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)GHz, TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)kHz, TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    }
-    textMeanVal2.invalidate();
-    textUnitMean2.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure2, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2, textMeanVal2Buffer, TEXTMEANVAL2_SIZE, &textMeanVal2,
+    					textUnitMean2Buffer, TEXTUNITMEAN2_SIZE, &textUnitMean2);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure3.mean, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3);
-    switch (ResultFreqBackend.measure3.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_freq3, m_frac1_freq3, m_frac2_freq3);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)Hz, TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_freq3, m_frac1_freq3, m_frac2_freq3);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)kHz, TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_freq3, m_frac1_freq3, m_frac2_freq3);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)MHz, TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_freq3, m_frac1_freq3, m_frac2_freq3);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)GHz, TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)kHz, TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    }
-    textMeanVal3.invalidate();
-    textUnitMean3.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure3, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3, textMeanVal3Buffer, TEXTMEANVAL3_SIZE, &textMeanVal3,
+    					textUnitMean3Buffer, TEXTUNITMEAN3_SIZE, &textUnitMean3);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure4.mean, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4);
-    switch (ResultFreqBackend.measure4.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_freq4, m_frac1_freq4, m_frac2_freq4);
-    	Unicode::strncpy(textUnitMean4Buffer, (char*)Hz, TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_freq4, m_frac1_freq4, m_frac2_freq4);
-    	Unicode::strncpy(textUnitMean4Buffer, (char*)kHz, TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_freq4, m_frac1_freq4, m_frac2_freq4);
-    	Unicode::strncpy(textUnitMean4Buffer, (char*)MHz, TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_freq4, m_frac1_freq4, m_frac2_freq4);
-    	Unicode::strncpy(textUnitMean4Buffer, (char*)GHz, TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean4Buffer, (char*)kHz, TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    }
-    textMeanVal4.invalidate();
-    textUnitMean4.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure4, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4, textMeanVal4Buffer, TEXTMEANVAL4_SIZE, &textMeanVal4,
+    					textUnitMean4Buffer, TEXTUNITMEAN4_SIZE, &textUnitMean4);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure5.mean, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5);
-    switch (ResultFreqBackend.measure5.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_freq5, m_frac1_freq5, m_frac2_freq5);
-    	Unicode::strncpy(textUnitMean5Buffer, (char*)Hz, TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_freq5, m_frac1_freq5, m_frac2_freq5);
-    	Unicode::strncpy(textUnitMean5Buffer, (char*)kHz, TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_freq5, m_frac1_freq5, m_frac2_freq5);
-    	Unicode::strncpy(textUnitMean5Buffer, (char*)MHz, TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_freq5, m_frac1_freq5, m_frac2_freq5);
-    	Unicode::strncpy(textUnitMean5Buffer, (char*)GHz, TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean5Buffer, (char*)kHz, TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    }
-    textMeanVal5.invalidate();
-    textUnitMean5.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure5, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5, textMeanVal5Buffer, TEXTMEANVAL5_SIZE, &textMeanVal5,
+    					textUnitMean5Buffer, TEXTUNITMEAN5_SIZE, &textUnitMean5);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure6.mean, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6);
-    switch (ResultFreqBackend.measure6.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_freq6, m_frac1_freq6, m_frac2_freq6);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)Hz, TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_freq6, m_frac1_freq6, m_frac2_freq6);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)kHz, TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_freq6, m_frac1_freq6, m_frac2_freq6);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)MHz, TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_freq6, m_frac1_freq6, m_frac2_freq6);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)GHz, TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)kHz, TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    }
-    textMeanVal6.invalidate();
-    textUnitMean6.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure6, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6, textMeanVal6Buffer, TEXTMEANVAL6_SIZE, &textMeanVal6,
+    					textUnitMean6Buffer, TEXTUNITMEAN6_SIZE, &textUnitMean6);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure7.mean, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7);
-    switch (ResultFreqBackend.measure7.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_freq7, m_frac1_freq7, m_frac2_freq7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)Hz, TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_freq7, m_frac1_freq7, m_frac2_freq7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)kHz, TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_freq7, m_frac1_freq7, m_frac2_freq7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)MHz, TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_freq7, m_frac1_freq7, m_frac2_freq7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)GHz, TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)kHz, TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    }
-    textMeanVal7.invalidate();
-    textUnitMean7.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure7, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7, textMeanVal7Buffer, TEXTMEANVAL7_SIZE, &textMeanVal7,
+    					textUnitMean7Buffer, TEXTUNITMEAN7_SIZE, &textUnitMean7);
 
     calculateFormatMeanFreq(ResultFreqBackend.measure8.mean, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8);
-    switch (ResultFreqBackend.measure8.meanUnit)
-    {
-    case HZ:
-    	Unicode::snprintf(textMeanVal8Buffer, TEXTMEANVAL8_SIZE, "%d.%d %d", m_total_freq8, m_frac1_freq8, m_frac2_freq8);
-    	Unicode::strncpy(textUnitMean8Buffer, (char*)Hz, TEXTUNITMEAN8_SIZE - 1);
-    	break;
-    case KILO:
-    	Unicode::snprintf(textMeanVal8Buffer, TEXTMEANVAL8_SIZE, "%d.%d %d", m_total_freq8, m_frac1_freq8, m_frac2_freq8);
-    	Unicode::strncpy(textUnitMean8Buffer, (char*)kHz, TEXTUNITMEAN8_SIZE - 1);
-    	break;
-    case MEGA:
-    	Unicode::snprintf(textMeanVal8Buffer, TEXTMEANVAL8_SIZE, "%d.%d %d", m_total_freq8, m_frac1_freq8, m_frac2_freq8);
-    	Unicode::strncpy(textUnitMean8Buffer, (char*)MHz, TEXTUNITMEAN8_SIZE - 1);
-    	break;
-    case GIGA:
-    	Unicode::snprintf(textMeanVal8Buffer, TEXTMEANVAL8_SIZE, "%d.%d %d", m_total_freq8, m_frac1_freq8, m_frac2_freq8);
-    	Unicode::strncpy(textUnitMean8Buffer, (char*)GHz, TEXTUNITMEAN8_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal8Buffer, TEXTMEANVAL8_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean8Buffer, (char*)kHz, TEXTUNITMEAN8_SIZE - 1);
-    	break;
-    }
-    textMeanVal8.invalidate();
-    textUnitMean8.invalidate();
+    setMeanResultFreq(&ResultFreqBackend.measure8, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8, textMeanVal8Buffer, TEXTMEANVAL8_SIZE, &textMeanVal8,
+    					textUnitMean8Buffer, TEXTUNITMEAN8_SIZE, &textUnitMean8);
 
     // StdDev
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure1.stdDev, &m_totalStdDev1, &m_fracStdDev1);
-    Unicode::snprintf(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, "%d.%d", m_totalStdDev1, m_fracStdDev1);
-    textStdDevVal1.invalidate();
-    switch (ResultFreqBackend.measure1.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)pHz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)nHz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)uHz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)mHz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)Hz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)pHz, TEXTUNITSD1_SIZE - 1);
-    	break;
-    }
-    textUnitSD1.invalidate();
+    setStdDevResultFreq(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, &textStdDevVal1, textUnitSD1Buffer, TEXTUNITSD1_SIZE, &textUnitSD1,
+    					&ResultFreqBackend.measure1, &m_totalStdDev1, &m_fracStdDev1);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
-    Unicode::snprintf(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, "%d.%d", m_totalStdDev2, m_fracStdDev2);
-    textStdDevVal2.invalidate();
-    switch (ResultFreqBackend.measure2.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)pHz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)nHz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)uHz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)mHz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)Hz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)pHz, TEXTUNITSD2_SIZE - 1);
-    	break;
-    }
-    textUnitSD2.invalidate();
+    setStdDevResultFreq(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, &textStdDevVal2, textUnitSD2Buffer, TEXTUNITSD2_SIZE, &textUnitSD2,
+    					&ResultFreqBackend.measure2, &m_totalStdDev2, &m_fracStdDev2);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
-    Unicode::snprintf(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, "%d.%d", m_totalStdDev3, m_fracStdDev3);
-    textStdDevVal3.invalidate();
-    switch (ResultFreqBackend.measure3.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)pHz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)nHz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)uHz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)mHz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)Hz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)pHz, TEXTUNITSD3_SIZE - 1);
-    	break;
-    }
-    textUnitSD3.invalidate();
+    setStdDevResultFreq(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, &textStdDevVal3, textUnitSD3Buffer, TEXTUNITSD3_SIZE, &textUnitSD3,
+    					&ResultFreqBackend.measure3, &m_totalStdDev3, &m_fracStdDev3);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
-    Unicode::snprintf(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, "%d.%d", m_totalStdDev4, m_fracStdDev4);
-    textStdDevVal4.invalidate();
-    switch (ResultFreqBackend.measure4.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)pHz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)nHz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)uHz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)mHz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)Hz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)pHz, TEXTUNITSD4_SIZE - 1);
-    	break;
-    }
-    textUnitSD4.invalidate();
+    setStdDevResultFreq(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, &textStdDevVal4, textUnitSD4Buffer, TEXTUNITSD4_SIZE, &textUnitSD4,
+    					&ResultFreqBackend.measure4, &m_totalStdDev4, &m_fracStdDev4);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
-    Unicode::snprintf(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, "%d.%d", m_totalStdDev5, m_fracStdDev5);
-    textStdDevVal5.invalidate();
-    switch (ResultFreqBackend.measure5.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)pHz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)nHz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)uHz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)mHz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)Hz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)pHz, TEXTUNITSD5_SIZE - 1);
-    	break;
-    }
-    textUnitSD5.invalidate();
+    setStdDevResultFreq(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, &textStdDevVal5, textUnitSD5Buffer, TEXTUNITSD5_SIZE, &textUnitSD5,
+    					&ResultFreqBackend.measure5, &m_totalStdDev5, &m_fracStdDev5);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
-    Unicode::snprintf(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, "%d.%d", m_totalStdDev6, m_fracStdDev6);
-    textStdDevVal6.invalidate();
-    switch (ResultFreqBackend.measure6.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)pHz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)nHz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)uHz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)mHz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)Hz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)pHz, TEXTUNITSD6_SIZE - 1);
-    	break;
-    }
-    textUnitSD6.invalidate();
+    setStdDevResultFreq(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, &textStdDevVal6, textUnitSD6Buffer, TEXTUNITSD6_SIZE, &textUnitSD6,
+    					&ResultFreqBackend.measure6, &m_totalStdDev6, &m_fracStdDev6);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
-    Unicode::snprintf(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, "%d.%d", m_totalStdDev7, m_fracStdDev7);
-    textStdDevVal7.invalidate();
-    switch (ResultFreqBackend.measure7.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)pHz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)nHz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)uHz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)mHz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)Hz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)pHz, TEXTUNITSD7_SIZE - 1);
-    	break;
-    }
-    textUnitSD7.invalidate();
+    setStdDevResultFreq(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, &textStdDevVal7, textUnitSD7Buffer, TEXTUNITSD7_SIZE, &textUnitSD7,
+    					&ResultFreqBackend.measure7, &m_totalStdDev7, &m_fracStdDev7);
 
     calculateFormatStdDevFreq(ResultFreqBackend.measure8.stdDev, &m_totalStdDev8, &m_fracStdDev8);
-    Unicode::snprintf(textStdDevVal8Buffer, TEXTSTDDEVVAL8_SIZE, "%d.%d", m_totalStdDev8, m_fracStdDev8);
-    textStdDevVal8.invalidate();
-    switch (ResultFreqBackend.measure8.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)pHz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)nHz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)uHz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)mHz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    case HZ:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)Hz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD8Buffer, (char*)pHz, TEXTUNITSD8_SIZE - 1);
-    	break;
-    }
-    textUnitSD8.invalidate();
-
+    setStdDevResultFreq(textStdDevVal8Buffer, TEXTSTDDEVVAL8_SIZE, &textStdDevVal8, textUnitSD8Buffer, TEXTUNITSD8_SIZE, &textUnitSD8,
+    					&ResultFreqBackend.measure8, &m_totalStdDev8, &m_fracStdDev8);
 }
 
 void FreqModeView::tearDownScreen()
@@ -642,4 +201,86 @@ void FreqModeView::calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFr
 	*pTotal = stdDev;
 	float tempFrac = stdDev - *pTotal;
 	*pFrac = trunc(tempFrac * 100);
+}
+
+void FreqModeView::setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t numberCh, touchgfx::TextAreaWithOneWildcard *text)
+{
+	Unicode::snprintf(textBuffer, size, "%d", numberCh);
+	text->invalidate();
+}
+
+void FreqModeView::setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
+								uint16_t sizeSample, SessionSetup_t *session)
+{
+    if (pFreqCh->channelState == false)
+    {
+    	textSample->setVisible(false);
+    }
+    else
+    {
+    	textSample->setVisible(true);
+        Unicode::snprintf(textSampleBuffer, sizeSample, "%d", session->stampsNumber);
+        textSample->invalidate();
+    }
+}
+
+void FreqModeView::setMeanResultFreq(MeasFreq_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
+									uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::Unicode::UnicodeChar *textUnitMeanBuffer,
+									uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean)
+{
+	switch (measure->meanUnit)
+	{
+	case HZ:
+		Unicode::snprintf(textMeanBuffer, sizeMean, "%d.%d %d", *total, *fraction1, *fraction2);
+	    Unicode::strncpy(textUnitMeanBuffer, Hz.c_str(), sizeUnitMean - 1);
+	   	break;
+	case KILO:
+	    Unicode::snprintf(textMeanBuffer, sizeMean, "%d.%d %d", *total, *fraction1, *fraction2);
+	   	Unicode::strncpy(textUnitMeanBuffer, kHz.c_str(), sizeUnitMean - 1);
+	   	break;
+	case MEGA:
+	    Unicode::snprintf(textMeanBuffer, sizeMean, "%d.%d %d", *total, *fraction1, *fraction2);
+	   	Unicode::strncpy(textUnitMeanBuffer, MHz.c_str(), sizeUnitMean - 1);
+	   	break;
+	case GIGA:
+	    Unicode::snprintf(textMeanBuffer, sizeMean, "%d.%d %d", *total, *fraction1, *fraction2);
+	   	Unicode::strncpy(textUnitMeanBuffer, GHz.c_str(), sizeUnitMean - 1);
+	   	break;
+	default:
+	    Unicode::snprintf(textMeanBuffer, sizeMean, "%d.%d %d", 0, 0, 0);
+	   	Unicode::strncpy(textUnitMeanBuffer, kHz.c_str(), sizeUnitMean - 1);
+	   	break;
+	}
+	textMean->invalidate();
+	textUnitMean->invalidate();
+}
+
+void FreqModeView::setStdDevResultFreq(touchgfx::Unicode::UnicodeChar *textStdDevBuffer, uint16_t sizeStdDev, touchgfx::TextAreaWithOneWildcard *textStdDev,
+							touchgfx::Unicode::UnicodeChar *textUnitStdDevBuffer, uint16_t sizeUnitStdDev, touchgfx::TextAreaWithOneWildcard *textUnitStdDev,
+							MeasFreq_t *measure, int *total, int *fraction)
+{
+	Unicode::snprintf(textStdDevBuffer, sizeStdDev, "%d.%d", *total, *fraction);
+	textStdDev->invalidate();
+	switch (measure->stdDevUnit)
+	{
+	case PICO:
+		Unicode::strncpy(textUnitStdDevBuffer, pHz.c_str(), sizeUnitStdDev - 1);
+	    break;
+	case NANO:
+	    Unicode::strncpy(textUnitStdDevBuffer, nHz.c_str(), sizeUnitStdDev - 1);
+	   	break;
+	case MICRO:
+	    Unicode::strncpy(textUnitStdDevBuffer, uHz.c_str(), sizeUnitStdDev - 1);
+	   	break;
+	case MILLI:
+	    Unicode::strncpy(textUnitStdDevBuffer, mHz.c_str(), sizeUnitStdDev - 1);
+	   	break;
+	case HZ:
+	    Unicode::strncpy(textUnitStdDevBuffer, Hz.c_str(), sizeUnitStdDev - 1);
+	    break;
+	default:
+	    Unicode::strncpy(textUnitStdDevBuffer, pHz.c_str(), sizeUnitStdDev - 1);
+	   	break;
+	}
+	textUnitStdDev->invalidate();
 }
