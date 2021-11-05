@@ -27,7 +27,20 @@ protected:
 			touchgfx::Unicode::UnicodeChar *textBufferStop, uint16_t sizeStop, touchgfx::TextAreaWithOneWildcard *textStop,
 			touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
 			TimeTi_t *Ti, SessionSetup_t *session);
+    void setMeanResultTime(MeasTime_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
+			uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::TextAreaWithOneWildcard * textUnitMeanBuffer,
+			uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean);
 private:
+    std::string ps;
+    std::string ns;
+    std::string us;
+    std::string ms;
+    std::string sec;
+//    const char *ps[3];
+//    const char *ns[3];
+//    const char *us[3];
+//    const char *ms[3];
+//    const char *sec[3];
     int m_total_ti1;
     int m_frac1_ti1;
     int m_frac2_ti1;

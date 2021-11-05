@@ -8,13 +8,11 @@ TimeModeView::TimeModeView()
 void TimeModeView::setupScreen()
 {
     TimeModeViewBase::setupScreen();
-
-    char ps[] = "ps";
-    char ns[] = "ns";
-    char us[] = "us";
-    char ms[] = "ms";
-    char sec[] = "s";
-
+    ps = "ps";
+    ns = "ns";
+    us = "us";
+    ms = "ms";
+    sec = "s";
     m_total_ti1 = 0;
     m_frac1_ti1 = 0;
     m_frac2_ti1 = 0;
@@ -264,26 +262,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        Unicode::strncpy(textUnitMean1Buffer, (char*)ps, TEXTUNITMEAN1_SIZE - 1);
+        Unicode::strncpy(textUnitMean1Buffer, ps.c_str(), TEXTUNITMEAN1_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        Unicode::strncpy(textUnitMean1Buffer, (char*)ns, TEXTUNITMEAN1_SIZE - 1);
+        Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        Unicode::strncpy(textUnitMean1Buffer, (char*)us, TEXTUNITMEAN1_SIZE - 1);
+        Unicode::strncpy(textUnitMean1Buffer, us.c_str(), TEXTUNITMEAN1_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        Unicode::strncpy(textUnitMean1Buffer, (char*)ms, TEXTUNITMEAN1_SIZE - 1);
+        Unicode::strncpy(textUnitMean1Buffer, ms.c_str(), TEXTUNITMEAN1_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-        Unicode::strncpy(textUnitMean1Buffer, (char*)sec, TEXTUNITMEAN1_SIZE - 1);
+        Unicode::strncpy(textUnitMean1Buffer, sec.c_str(), TEXTUNITMEAN1_SIZE - 1);
         break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean1Buffer, (char*)ns, TEXTUNITMEAN1_SIZE - 1);
+    	Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
     	break;
     }
     textMeanVal1.invalidate();
@@ -294,26 +292,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, (char*)ps, TEXTUNITMEAN2_SIZE - 1);
+        Unicode::strncpy(textUnitMean2Buffer, ps.c_str(), TEXTUNITMEAN2_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, (char*)ns, TEXTUNITMEAN2_SIZE - 1);
+        Unicode::strncpy(textUnitMean2Buffer, ns.c_str(), TEXTUNITMEAN2_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, (char*)us, TEXTUNITMEAN2_SIZE - 1);
+        Unicode::strncpy(textUnitMean2Buffer, us.c_str(), TEXTUNITMEAN2_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, (char*)ms, TEXTUNITMEAN2_SIZE - 1);
+        Unicode::strncpy(textUnitMean2Buffer, ms.c_str(), TEXTUNITMEAN2_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 000 000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, (char*)sec, TEXTUNITMEAN2_SIZE - 1);
+        Unicode::strncpy(textUnitMean2Buffer, sec.c_str(), TEXTUNITMEAN2_SIZE - 1);
         break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean2Buffer, (char*)ns, TEXTUNITMEAN2_SIZE - 1);
+    	Unicode::strncpy(textUnitMean2Buffer, ns.c_str(), TEXTUNITMEAN2_SIZE - 1);
     	break;
     }
     textMeanVal2.invalidate();
@@ -324,26 +322,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, (char*)ps, TEXTUNITMEAN3_SIZE - 1);
+        Unicode::strncpy(textUnitMean3Buffer, ps.c_str(), TEXTUNITMEAN3_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, (char*)ns, TEXTUNITMEAN3_SIZE - 1);
+        Unicode::strncpy(textUnitMean3Buffer, ns.c_str(), TEXTUNITMEAN3_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, (char*)us, TEXTUNITMEAN3_SIZE - 1);
+        Unicode::strncpy(textUnitMean3Buffer, us.c_str(), TEXTUNITMEAN3_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, (char*)ms, TEXTUNITMEAN3_SIZE - 1);
+        Unicode::strncpy(textUnitMean3Buffer, ms.c_str(), TEXTUNITMEAN3_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 000 000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, (char*)sec, TEXTUNITMEAN3_SIZE - 1);
+        Unicode::strncpy(textUnitMean3Buffer, sec.c_str(), TEXTUNITMEAN3_SIZE - 1);
     	break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean3Buffer, (char*)ns, TEXTUNITMEAN3_SIZE - 1);
+    	Unicode::strncpy(textUnitMean3Buffer, ns.c_str(), TEXTUNITMEAN3_SIZE - 1);
     	break;
     }
     textMeanVal3.invalidate();
@@ -354,26 +352,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)ps, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, ps.c_str(), TEXTUNITMEAN4_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)ns, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, ns.c_str(), TEXTUNITMEAN4_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)us, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, us.c_str(), TEXTUNITMEAN4_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)ms, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, ms.c_str(), TEXTUNITMEAN4_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 000 000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)sec, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, sec.c_str(), TEXTUNITMEAN4_SIZE - 1);
     	break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", 0, 0, 0);
-        Unicode::strncpy(textUnitMean4Buffer, (char*)ns, TEXTUNITMEAN4_SIZE - 1);
+        Unicode::strncpy(textUnitMean4Buffer, ns.c_str(), TEXTUNITMEAN4_SIZE - 1);
     	break;
     }
     textMeanVal4.invalidate();
@@ -384,26 +382,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)ps, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, ps.c_str(), TEXTUNITMEAN5_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)ns, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, ns.c_str(), TEXTUNITMEAN5_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)us, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, us.c_str(), TEXTUNITMEAN5_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)ms, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, ms.c_str(), TEXTUNITMEAN5_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 000 000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)sec, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, sec.c_str(), TEXTUNITMEAN5_SIZE - 1);
     	break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", 0, 0, 0);
-        Unicode::strncpy(textUnitMean5Buffer, (char*)ns, TEXTUNITMEAN5_SIZE - 1);
+        Unicode::strncpy(textUnitMean5Buffer, ns.c_str(), TEXTUNITMEAN5_SIZE - 1);
     	break;
     }
     textMeanVal5.invalidate();
@@ -414,26 +412,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, (char*)ps, TEXTUNITMEAN6_SIZE - 1);
+        Unicode::strncpy(textUnitMean6Buffer, ps.c_str(), TEXTUNITMEAN6_SIZE - 1);
     case NANO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, (char*)ns, TEXTUNITMEAN6_SIZE - 1);
+        Unicode::strncpy(textUnitMean6Buffer, ns.c_str(), TEXTUNITMEAN6_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, (char*)us, TEXTUNITMEAN6_SIZE - 1);
+        Unicode::strncpy(textUnitMean6Buffer, us.c_str(), TEXTUNITMEAN6_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, (char*)ms, TEXTUNITMEAN6_SIZE - 1);
+        Unicode::strncpy(textUnitMean6Buffer, ms.c_str(), TEXTUNITMEAN6_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 000 000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, (char*)sec, TEXTUNITMEAN6_SIZE - 1);
+        Unicode::strncpy(textUnitMean6Buffer, sec.c_str(), TEXTUNITMEAN6_SIZE - 1);
     	break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean6Buffer, (char*)ns, TEXTUNITMEAN6_SIZE - 1);
+    	Unicode::strncpy(textUnitMean6Buffer, ns.c_str(), TEXTUNITMEAN6_SIZE - 1);
     	break;
     }
     textMeanVal6.invalidate();
@@ -445,26 +443,26 @@ void TimeModeView::setupScreen()
     {
     case PICO:
     	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)ps, TEXTUNITMEAN7_SIZE - 1);
+    	Unicode::strncpy(textUnitMean7Buffer, ps.c_str(), TEXTUNITMEAN7_SIZE - 1);
     case NANO:
     	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)ns, TEXTUNITMEAN7_SIZE - 1);
+    	Unicode::strncpy(textUnitMean7Buffer, ns.c_str(), TEXTUNITMEAN7_SIZE - 1);
         break;
     case MICRO:
         Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, (char*)us, TEXTUNITMEAN7_SIZE - 1);
+        Unicode::strncpy(textUnitMean7Buffer, us.c_str(), TEXTUNITMEAN7_SIZE - 1);
         break;
     case MILLI:
         Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, (char*)ms, TEXTUNITMEAN7_SIZE - 1);
+        Unicode::strncpy(textUnitMean7Buffer, ms.c_str(), TEXTUNITMEAN7_SIZE - 1);
         break;
     case SEC:
         Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 000 000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, (char*)sec, TEXTUNITMEAN7_SIZE - 1);
+        Unicode::strncpy(textUnitMean7Buffer, sec.c_str(), TEXTUNITMEAN7_SIZE - 1);
     	break;
     default:
     	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean7Buffer, (char*)ns, TEXTUNITMEAN7_SIZE - 1);
+    	Unicode::strncpy(textUnitMean7Buffer, ns.c_str(), TEXTUNITMEAN7_SIZE - 1);
     	break;
     }
     textMeanVal7.invalidate();
@@ -478,19 +476,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure1.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)ps, TEXTUNITSD1_SIZE - 1);
+    	Unicode::strncpy(textUnitSD1Buffer, ps.c_str(), TEXTUNITSD1_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)ns, TEXTUNITSD1_SIZE - 1);
+    	Unicode::strncpy(textUnitSD1Buffer, ns.c_str(), TEXTUNITSD1_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)us, TEXTUNITSD1_SIZE - 1);
+    	Unicode::strncpy(textUnitSD1Buffer, us.c_str(), TEXTUNITSD1_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)ms, TEXTUNITSD1_SIZE - 1);
+    	Unicode::strncpy(textUnitSD1Buffer, ms.c_str(), TEXTUNITSD1_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD1Buffer, (char*)ps, TEXTUNITSD1_SIZE - 1);
+    	Unicode::strncpy(textUnitSD1Buffer, ps.c_str(), TEXTUNITSD1_SIZE - 1);
     	break;
     }
     textUnitSD1.invalidate();
@@ -501,19 +499,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure2.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)ps, TEXTUNITSD2_SIZE - 1);
+    	Unicode::strncpy(textUnitSD2Buffer, ps.c_str(), TEXTUNITSD2_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)ns, TEXTUNITSD2_SIZE - 1);
+    	Unicode::strncpy(textUnitSD2Buffer, ns.c_str(), TEXTUNITSD2_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)us, TEXTUNITSD2_SIZE - 1);
+    	Unicode::strncpy(textUnitSD2Buffer, us.c_str(), TEXTUNITSD2_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)ms, TEXTUNITSD2_SIZE - 1);
+    	Unicode::strncpy(textUnitSD2Buffer, ms.c_str(), TEXTUNITSD2_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD2Buffer, (char*)ps, TEXTUNITSD2_SIZE - 1);
+    	Unicode::strncpy(textUnitSD2Buffer, ps.c_str(), TEXTUNITSD2_SIZE - 1);
     	break;
     }
     textUnitSD2.invalidate();
@@ -524,19 +522,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure3.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)ps, TEXTUNITSD3_SIZE - 1);
+    	Unicode::strncpy(textUnitSD3Buffer, ps.c_str(), TEXTUNITSD3_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)ns, TEXTUNITSD3_SIZE - 1);
+    	Unicode::strncpy(textUnitSD3Buffer, ns.c_str(), TEXTUNITSD3_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)us, TEXTUNITSD3_SIZE - 1);
+    	Unicode::strncpy(textUnitSD3Buffer, us.c_str(), TEXTUNITSD3_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)ms, TEXTUNITSD3_SIZE - 1);
+    	Unicode::strncpy(textUnitSD3Buffer, ms.c_str(), TEXTUNITSD3_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD3Buffer, (char*)ps, TEXTUNITSD3_SIZE - 1);
+    	Unicode::strncpy(textUnitSD3Buffer, ps.c_str(), TEXTUNITSD3_SIZE - 1);
     	break;
     }
     textUnitSD3.invalidate();
@@ -547,19 +545,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure4.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)ps, TEXTUNITSD4_SIZE - 1);
+    	Unicode::strncpy(textUnitSD4Buffer, ps.c_str(), TEXTUNITSD4_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)ns, TEXTUNITSD4_SIZE - 1);
+    	Unicode::strncpy(textUnitSD4Buffer, ns.c_str(), TEXTUNITSD4_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)us, TEXTUNITSD4_SIZE - 1);
+    	Unicode::strncpy(textUnitSD4Buffer, us.c_str(), TEXTUNITSD4_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)ms, TEXTUNITSD4_SIZE - 1);
+    	Unicode::strncpy(textUnitSD4Buffer, ms.c_str(), TEXTUNITSD4_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD4Buffer, (char*)ps, TEXTUNITSD4_SIZE - 1);
+    	Unicode::strncpy(textUnitSD4Buffer, ps.c_str(), TEXTUNITSD4_SIZE - 1);
     	break;
     }
     textUnitSD4.invalidate();
@@ -570,19 +568,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure5.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)ps, TEXTUNITSD5_SIZE - 1);
+    	Unicode::strncpy(textUnitSD5Buffer, ps.c_str(), TEXTUNITSD5_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)ns, TEXTUNITSD5_SIZE - 1);
+    	Unicode::strncpy(textUnitSD5Buffer, ns.c_str(), TEXTUNITSD5_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)us, TEXTUNITSD5_SIZE - 1);
+    	Unicode::strncpy(textUnitSD5Buffer, us.c_str(), TEXTUNITSD5_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)ms, TEXTUNITSD5_SIZE - 1);
+    	Unicode::strncpy(textUnitSD5Buffer, ms.c_str(), TEXTUNITSD5_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD5Buffer, (char*)ps, TEXTUNITSD5_SIZE - 1);
+    	Unicode::strncpy(textUnitSD5Buffer, ps.c_str(), TEXTUNITSD5_SIZE - 1);
     	break;
     }
     textUnitSD5.invalidate();
@@ -593,19 +591,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure6.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)ps, TEXTUNITSD6_SIZE - 1);
+    	Unicode::strncpy(textUnitSD6Buffer, ps.c_str(), TEXTUNITSD6_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)ns, TEXTUNITSD6_SIZE - 1);
+    	Unicode::strncpy(textUnitSD6Buffer, ns.c_str(), TEXTUNITSD6_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)us, TEXTUNITSD6_SIZE - 1);
+    	Unicode::strncpy(textUnitSD6Buffer, us.c_str(), TEXTUNITSD6_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)ms, TEXTUNITSD6_SIZE - 1);
+    	Unicode::strncpy(textUnitSD6Buffer, ms.c_str(), TEXTUNITSD6_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD6Buffer, (char*)ps, TEXTUNITSD6_SIZE - 1);
+    	Unicode::strncpy(textUnitSD6Buffer, ps.c_str(), TEXTUNITSD6_SIZE - 1);
     	break;
     }
     textUnitSD6.invalidate();
@@ -616,19 +614,19 @@ void TimeModeView::setupScreen()
     switch(ResultTimeBackend.measure2.stdDevUnit)
     {
     case PICO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)ps, TEXTUNITSD7_SIZE - 1);
+    	Unicode::strncpy(textUnitSD7Buffer, ps.c_str(), TEXTUNITSD7_SIZE - 1);
     	break;
     case NANO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)ns, TEXTUNITSD7_SIZE - 1);
+    	Unicode::strncpy(textUnitSD7Buffer, ns.c_str(), TEXTUNITSD7_SIZE - 1);
     	break;
     case MICRO:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)us, TEXTUNITSD7_SIZE - 1);
+    	Unicode::strncpy(textUnitSD7Buffer, us.c_str(), TEXTUNITSD7_SIZE - 1);
     	break;
     case MILLI:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)ms, TEXTUNITSD7_SIZE - 1);
+    	Unicode::strncpy(textUnitSD7Buffer, ms.c_str(), TEXTUNITSD7_SIZE - 1);
     	break;
     default:
-    	Unicode::strncpy(textUnitSD7Buffer, (char*)ps, TEXTUNITSD7_SIZE - 1);
+    	Unicode::strncpy(textUnitSD7Buffer, ps.c_str(), TEXTUNITSD7_SIZE - 1);
     	break;
     }
     textUnitSD7.invalidate();
@@ -707,6 +705,41 @@ void TimeModeView::setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferS
     textStart->invalidate();
     textStop->invalidate();
     textSample->invalidate();
+}
+
+void TimeModeView::setMeanResultTime(MeasTime_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
+								uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::TextAreaWithOneWildcard *textUnitMeanBuffer,
+								uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean)
+{
+
+    switch (ResultTimeBackend.measure1.meanUnit)
+    {
+    case PICO:
+        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
+        Unicode::strncpy(textUnitMean1Buffer, ps.c_str(), TEXTUNITMEAN1_SIZE - 1);
+    case NANO:
+        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
+        Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
+        break;
+    case MICRO:
+        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
+        Unicode::strncpy(textUnitMean1Buffer, us.c_str(), TEXTUNITMEAN1_SIZE - 1);
+        break;
+    case MILLI:
+        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
+        Unicode::strncpy(textUnitMean1Buffer, ms.c_str(), TEXTUNITMEAN1_SIZE - 1);
+        break;
+    case SEC:
+        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
+        Unicode::strncpy(textUnitMean1Buffer, sec.c_str(), TEXTUNITMEAN1_SIZE - 1);
+        break;
+    default:
+    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", 0, 0, 0);
+    	Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
+    	break;
+    }
+    textMeanVal1.invalidate();
+    textUnitMean1.invalidate();
 }
 
 
