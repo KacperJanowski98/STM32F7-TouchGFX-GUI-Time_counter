@@ -8,11 +8,13 @@ TimeModeView::TimeModeView()
 void TimeModeView::setupScreen()
 {
     TimeModeViewBase::setupScreen();
+
     ps = "ps";
     ns = "ns";
     us = "us";
     ms = "ms";
     sec = "s";
+
     m_total_ti1 = 0;
     m_frac1_ti1 = 0;
     m_frac2_ti1 = 0;
@@ -54,590 +56,120 @@ void TimeModeView::setupScreen()
     setLabelTi(textTi1startBuffer, TEXTTI1START_SIZE, TimeBackend.TiSetup1.startIn, &textTi1start);
     setLabelTi(textTi1stopBuffer, TEXTTI1STOP_SIZE, TimeBackend.TiSetup1.stopIn, &textTi1stop);
 
-//    Unicode::snprintf(textTi1startBuffer, TEXTTI1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
-//    textTi1start.invalidate();
-//    Unicode::snprintf(textTi1stopBuffer, TEXTTI1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
-//    textTi1stop.invalidate();
+    setLabelTi(textTi2startBuffer, TEXTTI2START_SIZE, TimeBackend.TiSetup2.startIn, &textTi2start);
+    setLabelTi(textTi2stopBuffer, TEXTTI2STOP_SIZE, TimeBackend.TiSetup2.stopIn, &textTi2stop);
 
-    Unicode::snprintf(textTi2startBuffer, TEXTTI2START_SIZE, "%d", TimeBackend.TiSetup2.startIn);
-    textTi2start.invalidate();
-    Unicode::snprintf(textTi2stopBuffer, TEXTTI2STOP_SIZE, "%d", TimeBackend.TiSetup2.stopIn);
-    textTi2stop.invalidate();
+    setLabelTi(textTi3startBuffer, TEXTTI3START_SIZE, TimeBackend.TiSetup3.startIn, &textTi3start);
+    setLabelTi(textTi3stopBuffer, TEXTTI3STOP_SIZE, TimeBackend.TiSetup3.stopIn, &textTi3stop);
 
-    Unicode::snprintf(textTi3startBuffer, TEXTTI3START_SIZE, "%d", TimeBackend.TiSetup3.startIn);
-    textTi3start.invalidate();
-    Unicode::snprintf(textTi3stopBuffer, TEXTTI3STOP_SIZE, "%d", TimeBackend.TiSetup3.stopIn);
-    textTi3stop.invalidate();
+    setLabelTi(textTi4startBuffer, TEXTTI4START_SIZE, TimeBackend.TiSetup4.startIn, &textTi4start);
+    setLabelTi(textTi4stopBuffer, TEXTTI4STOP_SIZE, TimeBackend.TiSetup4.stopIn, &textTi4stop);
 
-    Unicode::snprintf(textTi4startBuffer, TEXTTI4START_SIZE, "%d", TimeBackend.TiSetup4.startIn);
-    textTi4start.invalidate();
-    Unicode::snprintf(textTi4stopBuffer, TEXTTI4STOP_SIZE, "%d", TimeBackend.TiSetup4.stopIn);
-    textTi4stop.invalidate();
+    setLabelTi(textTi5startBuffer, TEXTTI5START_SIZE, TimeBackend.TiSetup5.startIn, &textTi5start);
+    setLabelTi(textTi5stopBuffer, TEXTTI5STOP_SIZE, TimeBackend.TiSetup5.stopIn, &textTi5stop);
 
-    Unicode::snprintf(textTi5startBuffer, TEXTTI5START_SIZE, "%d", TimeBackend.TiSetup5.startIn);
-    textTi5start.invalidate();
-    Unicode::snprintf(textTi5stopBuffer, TEXTTI5STOP_SIZE, "%d", TimeBackend.TiSetup5.stopIn);
-    textTi5stop.invalidate();
+    setLabelTi(textTi6startBuffer, TEXTTI6START_SIZE, TimeBackend.TiSetup6.startIn, &textTi6start);
+    setLabelTi(textTi6stopBuffer, TEXTTI6STOP_SIZE, TimeBackend.TiSetup6.stopIn, &textTi6stop);
 
-    Unicode::snprintf(textTi6startBuffer, TEXTTI6START_SIZE, "%d", TimeBackend.TiSetup6.startIn);
-    textTi6start.invalidate();
-    Unicode::snprintf(textTi6stopBuffer, TEXTTI6STOP_SIZE, "%d", TimeBackend.TiSetup6.stopIn);
-    textTi6stop.invalidate();
-
-    Unicode::snprintf(textTi7startBuffer, TEXTTI7START_SIZE, "%d", TimeBackend.TiSetup7.startIn);
-    textTi7start.invalidate();
-    Unicode::snprintf(textTi7stopBuffer, TEXTTI7STOP_SIZE, "%d", TimeBackend.TiSetup7.stopIn);
-    textTi7stop.invalidate();
+    setLabelTi(textTi7startBuffer, TEXTTI7START_SIZE, TimeBackend.TiSetup7.startIn, &textTi7start);
+    setLabelTi(textTi7stopBuffer, TEXTTI7STOP_SIZE, TimeBackend.TiSetup7.stopIn, &textTi7stop);
 
     // Stamps and sample
 
-    Unicode::snprintf(textStamps1startBuffer, TEXTSTAMPS1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
-    textStamps1start.invalidate();
-    Unicode::snprintf(textStamps1stopBuffer, TEXTSTAMPS1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
-    textStamps1stop.invalidate();
-
+    setLabelTi(textStamps1startBuffer, TEXTSTAMPS1START_SIZE, TimeBackend.TiSetup1.startIn, &textStamps1start);
+    setLabelTi(textStamps1stopBuffer, TEXTSTAMPS1STOP_SIZE, TimeBackend.TiSetup1.stopIn, &textStamps1stop);
     setStampsSampleTi(textStamps1startValBuffer, TEXTSTAMPS1STARTVAL_SIZE, &textStamps1startVal, textStamps1stopValBuffer, TEXTSTAMPS1STOPVAL_SIZE,
     		&textStamps1stopVal, textSample1Buffer, TEXTSAMPLE1_SIZE, &textSample1, &TimeBackend.TiSetup1, &TimeBackend.TimeSession);
-//    if ((TimeBackend.TiSetup1.stopIn - TimeBackend.TiSetup1.startIn) == 0 || TimeBackend.TiSetup1.tiState == false)
-//    {
-//    	textStamps1startVal.setVisible(false);
-//    	textStamps1stopVal.setVisible(false);
-//    	textSample1.setVisible(false);
-//    }
-//    else
-//    {
-//    	textStamps1startVal.setVisible(true);
-//    	textStamps1stopVal.setVisible(true);
-//    	textSample1.setVisible(true);
-//        Unicode::snprintf(textStamps1startValBuffer, TEXTSTAMPS1STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-//        textStamps1startVal.invalidate();
-//        Unicode::snprintf(textStamps1stopValBuffer, TEXTSTAMPS1STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-//        textStamps1stopVal.invalidate();
-//        Unicode::snprintf(textSample1Buffer, TEXTSAMPLE1_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);//
-//        textSample1.invalidate();
-//    }
 
-    Unicode::snprintf(textStamps2startBuffer, TEXTSTAMPS2START_SIZE, "%d", TimeBackend.TiSetup2.startIn);
-    textStamps2start.invalidate();
-    Unicode::snprintf(textStamps2stopBuffer, TEXTSTAMPS2STOP_SIZE, "%d", TimeBackend.TiSetup2.stopIn);
-    textStamps2stop.invalidate();
-    if ((TimeBackend.TiSetup2.stopIn - TimeBackend.TiSetup2.startIn) == 0 || TimeBackend.TiSetup2.tiState == false)
-    {
-    	textStamps2startVal.setVisible(false);
-    	textStamps2stopVal.setVisible(false);
-    	textSample2.setVisible(false);
-    }
-    else
-    {
-    	textStamps2startVal.setVisible(true);
-    	textStamps2stopVal.setVisible(true);
-    	textSample2.setVisible(true);
-        Unicode::snprintf(textStamps2startValBuffer, TEXTSTAMPS2STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps2startVal.invalidate();
-        Unicode::snprintf(textStamps2stopValBuffer, TEXTSTAMPS2STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps2stopVal.invalidate();
-        Unicode::snprintf(textSample2Buffer, TEXTSAMPLE2_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample2.invalidate();
-    }
+    setLabelTi(textStamps2startBuffer, TEXTSTAMPS2START_SIZE, TimeBackend.TiSetup2.startIn, &textStamps2start);
+    setLabelTi(textStamps2stopBuffer, TEXTSTAMPS2STOP_SIZE, TimeBackend.TiSetup2.stopIn, &textStamps2stop);
+    setStampsSampleTi(textStamps2startValBuffer, TEXTSTAMPS2STARTVAL_SIZE, &textStamps2startVal, textStamps2stopValBuffer, TEXTSTAMPS2STOPVAL_SIZE,
+    		&textStamps2stopVal, textSample2Buffer, TEXTSAMPLE2_SIZE, &textSample2, &TimeBackend.TiSetup2, &TimeBackend.TimeSession);
 
-    Unicode::snprintf(textStamps3startBuffer, TEXTSTAMPS3START_SIZE, "%d", TimeBackend.TiSetup3.startIn);
-    textStamps3start.invalidate();
-    Unicode::snprintf(textStamps3stopBuffer, TEXTSTAMPS3STOP_SIZE, "%d", TimeBackend.TiSetup3.stopIn);
-    textStamps3stop.invalidate();
-    if ((TimeBackend.TiSetup3.stopIn - TimeBackend.TiSetup3.startIn) == 0 || TimeBackend.TiSetup3.tiState == false)
-    {
-    	textStamps3startVal.setVisible(false);
-    	textStamps3stopVal.setVisible(false);
-    	textSample3.setVisible(false);
-    }
-    else
-    {
-    	textStamps3startVal.setVisible(true);
-    	textStamps3stopVal.setVisible(true);
-    	textSample3.setVisible(true);
-        Unicode::snprintf(textStamps3startValBuffer, TEXTSTAMPS3STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps3startVal.invalidate();
-        Unicode::snprintf(textStamps3stopValBuffer, TEXTSTAMPS3STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps3stopVal.invalidate();
-        Unicode::snprintf(textSample3Buffer, TEXTSAMPLE3_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample3.invalidate();
-    }
+    setLabelTi(textStamps3startBuffer, TEXTSTAMPS3START_SIZE, TimeBackend.TiSetup3.startIn, &textStamps3start);
+    setLabelTi(textStamps3stopBuffer, TEXTSTAMPS3STOP_SIZE, TimeBackend.TiSetup3.stopIn, &textStamps3stop);
+    setStampsSampleTi(textStamps3startValBuffer, TEXTSTAMPS3STARTVAL_SIZE, &textStamps3startVal, textStamps3stopValBuffer, TEXTSTAMPS3STOPVAL_SIZE,
+    		&textStamps3stopVal, textSample3Buffer, TEXTSAMPLE3_SIZE, &textSample3, &TimeBackend.TiSetup3, &TimeBackend.TimeSession);
 
-    Unicode::snprintf(textStamps4startBuffer, TEXTSTAMPS4START_SIZE, "%d", TimeBackend.TiSetup4.startIn);
-    textStamps4start.invalidate();
-    Unicode::snprintf(textStamps4stopBuffer, TEXTSTAMPS4STOP_SIZE, "%d", TimeBackend.TiSetup4.stopIn);
-    textStamps4stop.invalidate();
-    if ((TimeBackend.TiSetup4.stopIn - TimeBackend.TiSetup4.startIn) == 0 || TimeBackend.TiSetup4.tiState == false)
-    {
-    	textStamps4startVal.setVisible(false);
-    	textStamps4stopVal.setVisible(false);
-    	textSample4.setVisible(false);
-    }
-    else
-    {
-    	textStamps4startVal.setVisible(true);
-    	textStamps4stopVal.setVisible(true);
-    	textSample4.setVisible(true);
-        Unicode::snprintf(textStamps4startValBuffer, TEXTSTAMPS4STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps4startVal.invalidate();
-        Unicode::snprintf(textStamps4stopValBuffer, TEXTSTAMPS4STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps4stopVal.invalidate();
-        Unicode::snprintf(textSample4Buffer, TEXTSAMPLE4_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample4.invalidate();
-    }
+    setLabelTi(textStamps4startBuffer, TEXTSTAMPS4START_SIZE, TimeBackend.TiSetup4.startIn, &textStamps4start);
+    setLabelTi(textStamps4stopBuffer, TEXTSTAMPS4STOP_SIZE, TimeBackend.TiSetup4.stopIn, &textStamps4stop);
+    setStampsSampleTi(textStamps4startValBuffer, TEXTSTAMPS4STARTVAL_SIZE, &textStamps4startVal, textStamps4stopValBuffer, TEXTSTAMPS4STOPVAL_SIZE,
+    		&textStamps4stopVal, textSample4Buffer, TEXTSAMPLE4_SIZE, &textSample4, &TimeBackend.TiSetup4, &TimeBackend.TimeSession);
 
-    Unicode::snprintf(textStamps5startBuffer, TEXTSTAMPS5START_SIZE, "%d", TimeBackend.TiSetup5.startIn);
-    textStamps5start.invalidate();
-    Unicode::snprintf(textStamps5stopBuffer, TEXTSTAMPS5STOP_SIZE, "%d", TimeBackend.TiSetup5.stopIn);
-    textStamps5stop.invalidate();
-    if ((TimeBackend.TiSetup5.stopIn - TimeBackend.TiSetup5.startIn) == 0 || TimeBackend.TiSetup5.tiState == false)
-    {
-    	textStamps5startVal.setVisible(false);
-    	textStamps5stopVal.setVisible(false);
-    	textSample5.setVisible(false);
-    }
-    else
-    {
-    	textStamps5startVal.setVisible(true);
-    	textStamps5stopVal.setVisible(true);
-    	textSample5.setVisible(true);
-        Unicode::snprintf(textStamps5startValBuffer, TEXTSTAMPS5STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps5startVal.invalidate();
-        Unicode::snprintf(textStamps5stopValBuffer, TEXTSTAMPS5STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps5stopVal.invalidate();
-        Unicode::snprintf(textSample5Buffer, TEXTSAMPLE5_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample5.invalidate();
-    }
+    setLabelTi(textStamps5startBuffer, TEXTSTAMPS5START_SIZE, TimeBackend.TiSetup5.startIn, &textStamps5start);
+    setLabelTi(textStamps5stopBuffer, TEXTSTAMPS5STOP_SIZE, TimeBackend.TiSetup5.stopIn, &textStamps5stop);
+    setStampsSampleTi(textStamps5startValBuffer, TEXTSTAMPS5STARTVAL_SIZE, &textStamps5startVal, textStamps5stopValBuffer, TEXTSTAMPS5STOPVAL_SIZE,
+    		&textStamps5stopVal, textSample5Buffer, TEXTSAMPLE5_SIZE, &textSample5, &TimeBackend.TiSetup5, &TimeBackend.TimeSession);
 
-    Unicode::snprintf(textStamps6startBuffer, TEXTSTAMPS6START_SIZE, "%d", TimeBackend.TiSetup6.startIn);
-    textStamps6start.invalidate();
-    Unicode::snprintf(textStamps6stopBuffer, TEXTSTAMPS6STOP_SIZE, "%d", TimeBackend.TiSetup6.stopIn);
-    textStamps6stop.invalidate();
-    if ((TimeBackend.TiSetup6.stopIn - TimeBackend.TiSetup6.startIn) == 0 || TimeBackend.TiSetup6.tiState == false)
-    {
-    	textStamps6startVal.setVisible(false);
-    	textStamps6stopVal.setVisible(false);
-    	textSample6.setVisible(false);
-    }
-    else
-    {
-    	textStamps6startVal.setVisible(true);
-    	textStamps6stopVal.setVisible(true);
-    	textSample6.setVisible(true);
-        Unicode::snprintf(textStamps6startValBuffer, TEXTSTAMPS6STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps6startVal.invalidate();
-        Unicode::snprintf(textStamps6stopValBuffer, TEXTSTAMPS6STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps6stopVal.invalidate();
-        Unicode::snprintf(textSample6Buffer, TEXTSAMPLE6_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample6.invalidate();
-    }
+    setLabelTi(textStamps6startBuffer, TEXTSTAMPS6START_SIZE, TimeBackend.TiSetup6.startIn, &textStamps6start);
+    setLabelTi(textStamps6stopBuffer, TEXTSTAMPS6STOP_SIZE, TimeBackend.TiSetup6.stopIn, &textStamps6stop);
+    setStampsSampleTi(textStamps6startValBuffer, TEXTSTAMPS6STARTVAL_SIZE, &textStamps6startVal, textStamps6stopValBuffer, TEXTSTAMPS6STOPVAL_SIZE,
+    		&textStamps6stopVal, textSample6Buffer, TEXTSAMPLE6_SIZE, &textSample6, &TimeBackend.TiSetup6, &TimeBackend.TimeSession);
 
-    Unicode::snprintf(textStamps7startBuffer, TEXTSTAMPS7START_SIZE, "%d", TimeBackend.TiSetup7.startIn);
-    textStamps7start.invalidate();
-    Unicode::snprintf(textStamps7stopBuffer, TEXTSTAMPS7STOP_SIZE, "%d", TimeBackend.TiSetup7.stopIn);
-    textStamps7stop.invalidate();
-    if ((TimeBackend.TiSetup7.stopIn - TimeBackend.TiSetup7.startIn) == 0 || TimeBackend.TiSetup7.tiState == false)
-    {
-    	textStamps7startVal.setVisible(false);
-    	textStamps7stopVal.setVisible(false);
-    	textSample7.setVisible(false);
-    }
-    else
-    {
-    	textStamps7startVal.setVisible(true);
-    	textStamps7stopVal.setVisible(true);
-    	textSample7.setVisible(true);
-        Unicode::snprintf(textStamps7startValBuffer, TEXTSTAMPS7STARTVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps7startVal.invalidate();
-        Unicode::snprintf(textStamps7stopValBuffer, TEXTSTAMPS7STOPVAL_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textStamps7stopVal.invalidate();
-        Unicode::snprintf(textSample7Buffer, TEXTSAMPLE7_SIZE, "%d", TimeBackend.TimeSession.stampsNumber);
-        textSample7.invalidate();
-    }
+    setLabelTi(textStamps7startBuffer, TEXTSTAMPS7START_SIZE, TimeBackend.TiSetup7.startIn, &textStamps7start);
+    setLabelTi(textStamps7stopBuffer, TEXTSTAMPS7STOP_SIZE, TimeBackend.TiSetup7.stopIn, &textStamps7stop);
+    setStampsSampleTi(textStamps7startValBuffer, TEXTSTAMPS7STARTVAL_SIZE, &textStamps7startVal, textStamps7stopValBuffer, TEXTSTAMPS7STOPVAL_SIZE,
+    		&textStamps7stopVal, textSample7Buffer, TEXTSAMPLE7_SIZE, &textSample7, &TimeBackend.TiSetup7, &TimeBackend.TimeSession);
 
     // Mean
 
     calculateFormatMeanTime(ResultTimeBackend.measure1.mean, &m_total_ti1, &m_frac1_ti1, &m_frac2_ti1);
-
     setMeanResultTime(&ResultTimeBackend.measure1, &m_total_ti1, &m_frac1_ti1, &m_frac2_ti1, textMeanVal1Buffer, TEXTMEANVAL1_SIZE, &textMeanVal1,
     		textUnitMean1Buffer, TEXTUNITMEAN1_SIZE, &textUnitMean1);
 
-//    switch (ResultTimeBackend.measure1.meanUnit)
-//    {
-//    case PICO:
-//        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-//        Unicode::strncpy(textUnitMean1Buffer, ps.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//    case NANO:
-//        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-//        Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//        break;
-//    case MICRO:
-//        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-//        Unicode::strncpy(textUnitMean1Buffer, us.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//        break;
-//    case MILLI:
-//        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-//        Unicode::strncpy(textUnitMean1Buffer, ms.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//        break;
-//    case SEC:
-//        Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.000 000 000 %d %d", m_total_ti1, m_frac1_ti1, m_frac2_ti1);
-//        Unicode::strncpy(textUnitMean1Buffer, sec.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//        break;
-//    default:
-//    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL1_SIZE, "%d.%d %d", 0, 0, 0);
-//    	Unicode::strncpy(textUnitMean1Buffer, ns.c_str(), TEXTUNITMEAN1_SIZE - 1);
-//    	break;
-//    }
-//    textMeanVal1.invalidate();
-//    textUnitMean1.invalidate();
-
     calculateFormatMeanTime(ResultTimeBackend.measure2.mean, &m_total_ti2, &m_frac1_ti2, &m_frac2_ti2);
-    switch (ResultTimeBackend.measure2.meanUnit)
-    {
-    case PICO:
-        Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, ps.c_str(), TEXTUNITMEAN2_SIZE - 1);
-    case NANO:
-        Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, ns.c_str(), TEXTUNITMEAN2_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, us.c_str(), TEXTUNITMEAN2_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, ms.c_str(), TEXTUNITMEAN2_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal2Buffer, TEXTMEANVAL2_SIZE, "%d.000 000 000 %d %d", m_total_ti2, m_frac1_ti2, m_frac2_ti2);
-        Unicode::strncpy(textUnitMean2Buffer, sec.c_str(), TEXTUNITMEAN2_SIZE - 1);
-        break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL2_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean2Buffer, ns.c_str(), TEXTUNITMEAN2_SIZE - 1);
-    	break;
-    }
-    textMeanVal2.invalidate();
-    textUnitMean2.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure2, &m_total_ti2, &m_frac1_ti2, &m_frac2_ti2, textMeanVal2Buffer, TEXTMEANVAL2_SIZE, &textMeanVal2,
+    		textUnitMean2Buffer, TEXTUNITMEAN2_SIZE, &textUnitMean2);
 
     calculateFormatMeanTime(ResultTimeBackend.measure3.mean, &m_total_ti3, &m_frac1_ti3, &m_frac2_ti3);
-    switch (ResultTimeBackend.measure3.meanUnit)
-    {
-    case PICO:
-        Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, ps.c_str(), TEXTUNITMEAN3_SIZE - 1);
-    case NANO:
-        Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, ns.c_str(), TEXTUNITMEAN3_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, us.c_str(), TEXTUNITMEAN3_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, ms.c_str(), TEXTUNITMEAN3_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal3Buffer, TEXTMEANVAL3_SIZE, "%d.000 000 000 %d %d", m_total_ti3, m_frac1_ti3, m_frac2_ti3);
-        Unicode::strncpy(textUnitMean3Buffer, sec.c_str(), TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL3_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean3Buffer, ns.c_str(), TEXTUNITMEAN3_SIZE - 1);
-    	break;
-    }
-    textMeanVal3.invalidate();
-    textUnitMean3.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure3, &m_total_ti3, &m_frac1_ti3, &m_frac2_ti3, textMeanVal3Buffer, TEXTMEANVAL3_SIZE, &textMeanVal3,
+    		textUnitMean3Buffer, TEXTUNITMEAN3_SIZE, &textUnitMean3);
 
     calculateFormatMeanTime(ResultTimeBackend.measure4.mean, &m_total_ti4, &m_frac1_ti4, &m_frac2_ti4);
-    switch (ResultTimeBackend.measure4.meanUnit)
-    {
-    case PICO:
-        Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, ps.c_str(), TEXTUNITMEAN4_SIZE - 1);
-    case NANO:
-        Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, ns.c_str(), TEXTUNITMEAN4_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, us.c_str(), TEXTUNITMEAN4_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, ms.c_str(), TEXTUNITMEAN4_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal4Buffer, TEXTMEANVAL4_SIZE, "%d.000 000 000 %d %d", m_total_ti4, m_frac1_ti4, m_frac2_ti4);
-        Unicode::strncpy(textUnitMean4Buffer, sec.c_str(), TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL4_SIZE, "%d.%d %d", 0, 0, 0);
-        Unicode::strncpy(textUnitMean4Buffer, ns.c_str(), TEXTUNITMEAN4_SIZE - 1);
-    	break;
-    }
-    textMeanVal4.invalidate();
-    textUnitMean4.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure4, &m_total_ti4, &m_frac1_ti4, &m_frac2_ti4, textMeanVal4Buffer, TEXTMEANVAL4_SIZE, &textMeanVal4,
+    		textUnitMean4Buffer, TEXTUNITMEAN4_SIZE, &textUnitMean4);
 
     calculateFormatMeanTime(ResultTimeBackend.measure5.mean, &m_total_ti5, &m_frac1_ti5, &m_frac2_ti5);
-    switch (ResultTimeBackend.measure5.meanUnit)
-    {
-    case PICO:
-        Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, ps.c_str(), TEXTUNITMEAN5_SIZE - 1);
-    case NANO:
-        Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, ns.c_str(), TEXTUNITMEAN5_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, us.c_str(), TEXTUNITMEAN5_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, ms.c_str(), TEXTUNITMEAN5_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal5Buffer, TEXTMEANVAL5_SIZE, "%d.000 000 000 %d %d", m_total_ti5, m_frac1_ti5, m_frac2_ti5);
-        Unicode::strncpy(textUnitMean5Buffer, sec.c_str(), TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL5_SIZE, "%d.%d %d", 0, 0, 0);
-        Unicode::strncpy(textUnitMean5Buffer, ns.c_str(), TEXTUNITMEAN5_SIZE - 1);
-    	break;
-    }
-    textMeanVal5.invalidate();
-    textUnitMean5.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure5, &m_total_ti5, &m_frac1_ti5, &m_frac2_ti5, textMeanVal5Buffer, TEXTMEANVAL5_SIZE, &textMeanVal5,
+    		textUnitMean5Buffer, TEXTUNITMEAN5_SIZE, &textUnitMean5);
 
     calculateFormatMeanTime(ResultTimeBackend.measure6.mean, &m_total_ti6, &m_frac1_ti6, &m_frac2_ti6);
-    switch (ResultTimeBackend.measure6.meanUnit)
-    {
-    case PICO:
-        Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, ps.c_str(), TEXTUNITMEAN6_SIZE - 1);
-    case NANO:
-        Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, ns.c_str(), TEXTUNITMEAN6_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, us.c_str(), TEXTUNITMEAN6_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, ms.c_str(), TEXTUNITMEAN6_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal6Buffer, TEXTMEANVAL6_SIZE, "%d.000 000 000 %d %d", m_total_ti6, m_frac1_ti6, m_frac2_ti6);
-        Unicode::strncpy(textUnitMean6Buffer, sec.c_str(), TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL6_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean6Buffer, ns.c_str(), TEXTUNITMEAN6_SIZE - 1);
-    	break;
-    }
-    textMeanVal6.invalidate();
-    textUnitMean6.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure6, &m_total_ti6, &m_frac1_ti6, &m_frac2_ti6, textMeanVal6Buffer, TEXTMEANVAL6_SIZE, &textMeanVal6,
+    		textUnitMean6Buffer, TEXTUNITMEAN6_SIZE, &textUnitMean6);
 
     calculateFormatMeanTime(ResultTimeBackend.measure7.mean, &m_total_ti7, &m_frac1_ti7, &m_frac2_ti7);
-    Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-    switch (ResultTimeBackend.measure7.meanUnit)
-    {
-    case PICO:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-    	Unicode::strncpy(textUnitMean7Buffer, ps.c_str(), TEXTUNITMEAN7_SIZE - 1);
-    case NANO:
-    	Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-    	Unicode::strncpy(textUnitMean7Buffer, ns.c_str(), TEXTUNITMEAN7_SIZE - 1);
-        break;
-    case MICRO:
-        Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, us.c_str(), TEXTUNITMEAN7_SIZE - 1);
-        break;
-    case MILLI:
-        Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, ms.c_str(), TEXTUNITMEAN7_SIZE - 1);
-        break;
-    case SEC:
-        Unicode::snprintf(textMeanVal7Buffer, TEXTMEANVAL7_SIZE, "%d.000 000 000 %d %d", m_total_ti7, m_frac1_ti7, m_frac2_ti7);
-        Unicode::strncpy(textUnitMean7Buffer, sec.c_str(), TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    default:
-    	Unicode::snprintf(textMeanVal1Buffer, TEXTMEANVAL7_SIZE, "%d.%d %d", 0, 0, 0);
-    	Unicode::strncpy(textUnitMean7Buffer, ns.c_str(), TEXTUNITMEAN7_SIZE - 1);
-    	break;
-    }
-    textMeanVal7.invalidate();
-    textUnitMean7.invalidate();
+    setMeanResultTime(&ResultTimeBackend.measure7, &m_total_ti7, &m_frac1_ti7, &m_frac2_ti7, textMeanVal7Buffer, TEXTMEANVAL7_SIZE, &textMeanVal7,
+    		textUnitMean7Buffer, TEXTUNITMEAN7_SIZE, &textUnitMean7);
 
     // StdDev
 
     calculateFormatStdDevTime(ResultTimeBackend.measure1.stdDev, &m_totalStdDev1, &m_fracStdDev1);
-
     setStdDevResultTime(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, &textStdDevVal1, textUnitSD1Buffer, TEXTUNITSD1_SIZE, &textUnitSD1,
     					&ResultTimeBackend.measure1, &m_totalStdDev1, &m_fracStdDev1);
 
-//    Unicode::snprintf(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, "%d.%d", m_totalStdDev1, m_fracStdDev1);
-//    textStdDevVal1.invalidate();
-//    switch(ResultTimeBackend.measure1.stdDevUnit)
-//    {
-//    case PICO:
-//    	Unicode::strncpy(textUnitSD1Buffer, ps.c_str(), TEXTUNITSD1_SIZE - 1);
-//    	break;
-//    case NANO:
-//    	Unicode::strncpy(textUnitSD1Buffer, ns.c_str(), TEXTUNITSD1_SIZE - 1);
-//    	break;
-//    case MICRO:
-//    	Unicode::strncpy(textUnitSD1Buffer, us.c_str(), TEXTUNITSD1_SIZE - 1);
-//    	break;
-//    case MILLI:
-//    	Unicode::strncpy(textUnitSD1Buffer, ms.c_str(), TEXTUNITSD1_SIZE - 1);
-//    	break;
-//    default:
-//    	Unicode::strncpy(textUnitSD1Buffer, ps.c_str(), TEXTUNITSD1_SIZE - 1);
-//    	break;
-//    }
-//    textUnitSD1.invalidate();
-
     calculateFormatStdDevTime(ResultTimeBackend.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
-    Unicode::snprintf(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, "%d.%d", m_totalStdDev2, m_fracStdDev2);
-    textStdDevVal2.invalidate();
-    switch(ResultTimeBackend.measure2.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD2Buffer, ps.c_str(), TEXTUNITSD2_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD2Buffer, ns.c_str(), TEXTUNITSD2_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD2Buffer, us.c_str(), TEXTUNITSD2_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD2Buffer, ms.c_str(), TEXTUNITSD2_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD2Buffer, ps.c_str(), TEXTUNITSD2_SIZE - 1);
-    	break;
-    }
-    textUnitSD2.invalidate();
+    setStdDevResultTime(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, &textStdDevVal2, textUnitSD2Buffer, TEXTUNITSD2_SIZE, &textUnitSD2,
+    					&ResultTimeBackend.measure2, &m_totalStdDev2, &m_fracStdDev2);
 
     calculateFormatStdDevTime(ResultTimeBackend.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
-    Unicode::snprintf(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, "%d.%d", m_totalStdDev3, m_fracStdDev3);
-    textStdDevVal3.invalidate();
-    switch(ResultTimeBackend.measure3.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD3Buffer, ps.c_str(), TEXTUNITSD3_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD3Buffer, ns.c_str(), TEXTUNITSD3_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD3Buffer, us.c_str(), TEXTUNITSD3_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD3Buffer, ms.c_str(), TEXTUNITSD3_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD3Buffer, ps.c_str(), TEXTUNITSD3_SIZE - 1);
-    	break;
-    }
-    textUnitSD3.invalidate();
+    setStdDevResultTime(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, &textStdDevVal3, textUnitSD3Buffer, TEXTUNITSD3_SIZE, &textUnitSD3,
+    					&ResultTimeBackend.measure3, &m_totalStdDev3, &m_fracStdDev3);
 
     calculateFormatStdDevTime(ResultTimeBackend.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
-    Unicode::snprintf(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, "%d.%d", m_totalStdDev4, m_fracStdDev4);
-    textStdDevVal4.invalidate();
-    switch(ResultTimeBackend.measure4.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD4Buffer, ps.c_str(), TEXTUNITSD4_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD4Buffer, ns.c_str(), TEXTUNITSD4_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD4Buffer, us.c_str(), TEXTUNITSD4_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD4Buffer, ms.c_str(), TEXTUNITSD4_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD4Buffer, ps.c_str(), TEXTUNITSD4_SIZE - 1);
-    	break;
-    }
-    textUnitSD4.invalidate();
+    setStdDevResultTime(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, &textStdDevVal4, textUnitSD4Buffer, TEXTUNITSD4_SIZE, &textUnitSD4,
+    					&ResultTimeBackend.measure4, &m_totalStdDev4, &m_fracStdDev4);
 
     calculateFormatStdDevTime(ResultTimeBackend.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
-    Unicode::snprintf(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, "%d.%d", m_totalStdDev5, m_fracStdDev5);
-    textStdDevVal5.invalidate();
-    switch(ResultTimeBackend.measure5.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD5Buffer, ps.c_str(), TEXTUNITSD5_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD5Buffer, ns.c_str(), TEXTUNITSD5_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD5Buffer, us.c_str(), TEXTUNITSD5_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD5Buffer, ms.c_str(), TEXTUNITSD5_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD5Buffer, ps.c_str(), TEXTUNITSD5_SIZE - 1);
-    	break;
-    }
-    textUnitSD5.invalidate();
+    setStdDevResultTime(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, &textStdDevVal5, textUnitSD5Buffer, TEXTUNITSD5_SIZE, &textUnitSD5,
+    					&ResultTimeBackend.measure5, &m_totalStdDev5, &m_fracStdDev5);
 
     calculateFormatStdDevTime(ResultTimeBackend.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
-    Unicode::snprintf(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, "%d.%d", m_totalStdDev6, m_fracStdDev6);
-    textStdDevVal6.invalidate();
-    switch(ResultTimeBackend.measure6.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD6Buffer, ps.c_str(), TEXTUNITSD6_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD6Buffer, ns.c_str(), TEXTUNITSD6_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD6Buffer, us.c_str(), TEXTUNITSD6_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD6Buffer, ms.c_str(), TEXTUNITSD6_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD6Buffer, ps.c_str(), TEXTUNITSD6_SIZE - 1);
-    	break;
-    }
-    textUnitSD6.invalidate();
+    setStdDevResultTime(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, &textStdDevVal6, textUnitSD6Buffer, TEXTUNITSD6_SIZE, &textUnitSD6,
+    					&ResultTimeBackend.measure6, &m_totalStdDev6, &m_fracStdDev6);
 
     calculateFormatStdDevTime(ResultTimeBackend.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
-    Unicode::snprintf(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, "%d.%d", m_totalStdDev7, m_fracStdDev7);
-    textStdDevVal7.invalidate();
-    switch(ResultTimeBackend.measure2.stdDevUnit)
-    {
-    case PICO:
-    	Unicode::strncpy(textUnitSD7Buffer, ps.c_str(), TEXTUNITSD7_SIZE - 1);
-    	break;
-    case NANO:
-    	Unicode::strncpy(textUnitSD7Buffer, ns.c_str(), TEXTUNITSD7_SIZE - 1);
-    	break;
-    case MICRO:
-    	Unicode::strncpy(textUnitSD7Buffer, us.c_str(), TEXTUNITSD7_SIZE - 1);
-    	break;
-    case MILLI:
-    	Unicode::strncpy(textUnitSD7Buffer, ms.c_str(), TEXTUNITSD7_SIZE - 1);
-    	break;
-    default:
-    	Unicode::strncpy(textUnitSD7Buffer, ps.c_str(), TEXTUNITSD7_SIZE - 1);
-    	break;
-    }
-    textUnitSD7.invalidate();
+    setStdDevResultTime(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, &textStdDevVal7, textUnitSD7Buffer, TEXTUNITSD7_SIZE, &textUnitSD7,
+    					&ResultTimeBackend.measure7, &m_totalStdDev7, &m_fracStdDev7);
 }
 
 void TimeModeView::tearDownScreen()
@@ -691,10 +223,6 @@ void TimeModeView::setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferS
 									touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
 									TimeTi_t *Ti, SessionSetup_t *session)
 {
-//    Unicode::snprintf(textStamps1startBuffer, TEXTSTAMPS1START_SIZE, "%d", TimeBackend.TiSetup1.startIn);
-//    textStamps1start.invalidate();
-//    Unicode::snprintf(textStamps1stopBuffer, TEXTSTAMPS1STOP_SIZE, "%d", TimeBackend.TiSetup1.stopIn);
-//    textStamps1stop.invalidate();
     if ((Ti->stopIn - Ti->startIn) == 0 || Ti->tiState == false)
     {
     	textStart->setVisible(false);
