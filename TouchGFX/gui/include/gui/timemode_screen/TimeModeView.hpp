@@ -28,8 +28,11 @@ protected:
 			touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
 			TimeTi_t *Ti, SessionSetup_t *session);
     void setMeanResultTime(MeasTime_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
-			uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::TextAreaWithOneWildcard * textUnitMeanBuffer,
+			uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::Unicode::UnicodeChar *textUnitMeanBuffer,
 			uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean);
+    void setStdDevResultTime(touchgfx::Unicode::UnicodeChar *textStdDevBuffer, uint16_t sizeStdDev, touchgfx::TextAreaWithOneWildcard *textStdDev,
+			touchgfx::Unicode::UnicodeChar *textUnitStdDevBuffer, uint16_t sizeUnitStdDev, touchgfx::TextAreaWithOneWildcard *textUnitStdDev,
+			MeasTime_t *measure, int *total, int *fraction);
 private:
     std::string ps;
     std::string ns;
