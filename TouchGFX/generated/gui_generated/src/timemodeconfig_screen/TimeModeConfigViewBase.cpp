@@ -74,8 +74,8 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     scrollWheelINPUT.animateToItem(0, 0);
     swipeContainerTimeINPUT.add(scrollWheelINPUT);
 
-    toggleChannel.setXY(158, 207);
-    toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
+    toggleChannel.setXY(162, 208);
+    toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
     toggleChannel.setAction(buttonCallback);
     swipeContainerTimeINPUT.add(toggleChannel);
 
@@ -348,8 +348,8 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageFrameStop.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_WHEEL_FRAME_NEW_ID));
     swipeContainerTimeTISETUP.add(imageFrameStop);
 
-    toggleTiSetup.setXY(178, 218);
-    toggleTiSetup.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    toggleTiSetup.setXY(164, 223);
+    toggleTiSetup.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
     toggleTiSetup.setAction(buttonCallback);
     swipeContainerTimeTISETUP.add(toggleTiSetup);
 
@@ -385,7 +385,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);
 
-    textTiMaxRange.setXY(136, 80);
+    textTiMaxRange.setXY(139, 79);
     textTiMaxRange.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTiMaxRange.setLinespacing(0);
     textTiMaxRange.setTypedText(touchgfx::TypedText(T_SINGLEUSEID36));
@@ -454,8 +454,8 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderRepeat.setValue(0);
     swipeContainerTimeSESSION.add(sliderRepeat);
 
-    toggleTiMaxRange.setXY(26, 73);
-    toggleTiMaxRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    toggleTiMaxRange.setXY(11, 75);
+    toggleTiMaxRange.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
     toggleTiMaxRange.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(toggleTiMaxRange);
 
@@ -491,7 +491,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeRepeat.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeRepeat);
 
-    boxWithBorderSetupTi.setPosition(298, 72, 130, 39);
+    boxWithBorderSetupTi.setPosition(300, 72, 128, 35);
     boxWithBorderSetupTi.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderSetupTi.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderSetupTi.setBorderSize(4);
@@ -579,8 +579,8 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
     {
         //BackToTimeMode
         //When buttonBackTime clicked change screen to TimeMode
-        //Go to TimeMode with screen transition towards West
-        application().gotoTimeModeScreenCoverTransitionWest();
+        //Go to TimeMode with screen transition towards East
+        application().gotoTimeModeScreenWipeTransitionEast();
     }
     else if (&src == &toggleChannel)
     {

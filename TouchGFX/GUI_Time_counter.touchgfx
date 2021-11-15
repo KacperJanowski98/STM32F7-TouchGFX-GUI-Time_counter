@@ -66,9 +66,9 @@
             "TextId": "SingleUseId275",
             "TextRotation": "0",
             "Color": {
-              "Red": 189,
-              "Green": 236,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -90,9 +90,9 @@
             "TextId": "SingleUseId276",
             "TextRotation": "0",
             "Color": {
-              "Red": 171,
-              "Green": 255,
-              "Blue": 199
+              "Red": 126,
+              "Green": 224,
+              "Blue": 159
             },
             "Alpha": 255,
             "AutoSize": true,
@@ -114,9 +114,9 @@
             "TextId": "SingleUseId309",
             "TextRotation": "0",
             "Color": {
-              "Red": 189,
-              "Green": 236,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "Alpha": 255,
             "AutoSize": false,
@@ -131,6 +131,32 @@
             "Y": 300,
             "Width": 108,
             "Height": 43,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 10,
+            "Name": "boxWithBorderFrame",
+            "X": 18,
+            "Y": 18,
+            "Width": 766,
+            "Height": 444,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -260,6 +286,32 @@
             "Y": 105,
             "Width": 360,
             "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 10,
+            "Name": "boxWithBorderFrame",
+            "X": 18,
+            "Y": 18,
+            "Width": 766,
+            "Height": 444,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -2869,8 +2921,8 @@
             "TextId": "SingleUseId315",
             "TextRotation": "0",
             "Color": {
-              "Red": 189,
-              "Green": 236,
+              "Red": 255,
+              "Green": 255,
               "Blue": 255
             },
             "Alpha": 255,
@@ -2908,8 +2960,8 @@
             "Type": "BoxWithBorder",
             "Color": {
               "Red": 0,
-              "Green": 161,
-              "Blue": 72
+              "Green": 145,
+              "Blue": 161
             },
             "BorderColor": {
               "Red": 0,
@@ -2941,8 +2993,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "Menu"
             }
           },
@@ -2955,7 +3007,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "TimeModeConfig"
             }
           },
@@ -3211,15 +3264,14 @@
                   {
                     "Type": "ToggleButton",
                     "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_large_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_large_button_OFF.png",
+                    "Pressed": "My_Blue_Togglebars_Toggle_RE_large_button_ON.png",
+                    "Released": "My_Blue_Togglebars_Toggle_RE_large_button_OFF.png",
                     "Alpha": 255,
-                    "Style": "Style2",
                     "Name": "toggleChannel",
-                    "X": 158,
-                    "Y": 207,
-                    "Width": 128,
-                    "Height": 38,
+                    "X": 162,
+                    "Y": 208,
+                    "Width": 124,
+                    "Height": 34,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4181,15 +4233,14 @@
                   {
                     "Type": "ToggleButton",
                     "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
+                    "Pressed": "My_Blue_Togglebars_Toggle_RE_large_button_ON.png",
+                    "Released": "My_Blue_Togglebars_Toggle_RE_large_button_OFF.png",
                     "Alpha": 255,
-                    "Style": "Style3",
                     "Name": "toggleTiSetup",
-                    "X": 178,
-                    "Y": 218,
-                    "Width": 96,
-                    "Height": 38,
+                    "X": 164,
+                    "Y": 223,
+                    "Width": 122,
+                    "Height": 32,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4339,8 +4390,8 @@
                     "AutoSize": true,
                     "LineSpacing": 0,
                     "Name": "textTiMaxRange",
-                    "X": 136,
-                    "Y": 80,
+                    "X": 139,
+                    "Y": 79,
                     "Width": 150,
                     "Height": 25,
                     "Visible": true,
@@ -4593,15 +4644,14 @@
                   {
                     "Type": "ToggleButton",
                     "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_small_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_small_button_OFF.png",
+                    "Pressed": "My_Blue_Togglebars_Toggle_RE_large_button_ON.png",
+                    "Released": "My_Blue_Togglebars_Toggle_RE_large_button_OFF.png",
                     "Alpha": 255,
-                    "Style": "Style3",
                     "Name": "toggleTiMaxRange",
-                    "X": 26,
-                    "Y": 73,
-                    "Width": 96,
-                    "Height": 38,
+                    "X": 11,
+                    "Y": 75,
+                    "Width": 122,
+                    "Height": 32,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4744,10 +4794,10 @@
                     "BorderSize": 4,
                     "Alpha": 25,
                     "Name": "boxWithBorderSetupTi",
-                    "X": 298,
+                    "X": 300,
                     "Y": 72,
-                    "Width": 130,
-                    "Height": 39,
+                    "Width": 128,
+                    "Height": 35,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4873,8 +4923,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "West",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "TimeMode"
             }
           },
@@ -6758,8 +6808,8 @@
             "Type": "BoxWithBorder",
             "Color": {
               "Red": 0,
-              "Green": 161,
-              "Blue": 72
+              "Green": 145,
+              "Blue": 161
             },
             "BorderColor": {
               "Red": 0,
@@ -6791,8 +6841,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "Menu"
             }
           },
@@ -6805,7 +6855,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "West",
               "ActionComponent": "FreqModeConfig"
             }
           },
@@ -7030,15 +7081,14 @@
                   {
                     "Type": "ToggleButton",
                     "InitialStatePressed": false,
-                    "Pressed": "__designer\\Blue_Togglebars_Toggle_RE_large_button_ON.png",
-                    "Released": "__designer\\Blue_Togglebars_Toggle_RE_large_button_OFF.png",
+                    "Pressed": "My_Blue_Togglebars_Toggle_RE_large_button_ON.png",
+                    "Released": "My_Blue_Togglebars_Toggle_RE_large_button_OFF.png",
                     "Alpha": 255,
-                    "Style": "Style2",
                     "Name": "toggleChannel",
-                    "X": 158,
-                    "Y": 206,
-                    "Width": 128,
-                    "Height": 38,
+                    "X": 159,
+                    "Y": 209,
+                    "Width": 122,
+                    "Height": 32,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -8481,8 +8531,8 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "West",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "FreqMode"
             }
           },
@@ -9072,7 +9122,7 @@
               "BufferSize": 10
             },
             "Name": "textLabel",
-            "X": 262,
+            "X": 283,
             "Y": 17,
             "Width": 273,
             "Height": 27,
@@ -9235,6 +9285,22 @@
             "Y": 257,
             "Width": 33,
             "Height": 19,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_graph_disp.png",
+            "Alpha": 255,
+            "Name": "imageGraphDisp",
+            "X": 220,
+            "Y": 6,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -9803,7 +9869,7 @@
               "BufferSize": 10
             },
             "Name": "textLabel",
-            "X": 202,
+            "X": 248,
             "Y": 15,
             "Width": 397,
             "Height": 30,
@@ -9966,6 +10032,22 @@
             "Y": 257,
             "Width": 33,
             "Height": 19,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_graph_disp.png",
+            "Alpha": 255,
+            "Name": "imageGraphDisp",
+            "X": 186,
+            "Y": 6,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,

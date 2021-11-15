@@ -438,7 +438,7 @@ FreqModeViewBase::FreqModeViewBase() :
     imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
 
     boxWithBorderHome.setPosition(9, 11, 783, 60);
-    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 161, 72));
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
     boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
     boxWithBorderHome.setBorderSize(4);
     boxWithBorderHome.setAlpha(30);
@@ -525,15 +525,15 @@ void FreqModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
     {
         //BackToMenu
         //When buttonToMenuF clicked change screen to Menu
-        //Go to Menu with screen transition towards East
-        application().gotoMenuScreenSlideTransitionEast();
+        //Go to Menu with screen transition towards West
+        application().gotoMenuScreenCoverTransitionWest();
     }
     else if (&src == &buttonConfig)
     {
         //GoToConfigFreq
         //When buttonConfig clicked change screen to FreqModeConfig
-        //Go to FreqModeConfig with no screen transition
-        application().gotoFreqModeConfigScreenNoTransition();
+        //Go to FreqModeConfig with screen transition towards West
+        application().gotoFreqModeConfigScreenWipeTransitionWest();
     }
     else if (&src == &buttonReset)
     {

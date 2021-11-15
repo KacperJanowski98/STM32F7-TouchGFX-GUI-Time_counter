@@ -58,8 +58,8 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID9));
     swipeContainerFreqINPUT.add(labelINPUT);
 
-    toggleChannel.setXY(158, 206);
-    toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
+    toggleChannel.setXY(159, 209);
+    toggleChannel.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
     toggleChannel.setAction(buttonCallback);
     swipeContainerFreqINPUT.add(toggleChannel);
 
@@ -465,8 +465,8 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
     {
         //BackToFreqMode
         //When buttonBackFreq clicked change screen to FreqMode
-        //Go to FreqMode with screen transition towards West
-        application().gotoFreqModeScreenCoverTransitionWest();
+        //Go to FreqMode with screen transition towards East
+        application().gotoFreqModeScreenWipeTransitionEast();
     }
     else if (&src == &toggleChannel)
     {

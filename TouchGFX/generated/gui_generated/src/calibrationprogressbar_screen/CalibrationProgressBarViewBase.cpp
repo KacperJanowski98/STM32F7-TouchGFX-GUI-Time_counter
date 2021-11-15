@@ -31,21 +31,27 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     calibrationProgress.setValue(0);
 
     textLabelName.setXY(312, 62);
-    textLabelName.setColor(touchgfx::Color::getColorFromRGB(189, 236, 255));
+    textLabelName.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
     textLabelName.setLinespacing(0);
     textLabelName.setTypedText(touchgfx::TypedText(T_SINGLEUSEID275));
 
     textLabelDescription.setXY(209, 153);
-    textLabelDescription.setColor(touchgfx::Color::getColorFromRGB(171, 255, 199));
+    textLabelDescription.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     textLabelDescription.setLinespacing(0);
     textLabelDescription.setTypedText(touchgfx::TypedText(T_SINGLEUSEID276));
 
     textAreaValue.setPosition(346, 300, 108, 43);
-    textAreaValue.setColor(touchgfx::Color::getColorFromRGB(189, 236, 255));
+    textAreaValue.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
     textAreaValue.setLinespacing(0);
     Unicode::snprintf(textAreaValueBuffer, TEXTAREAVALUE_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID310).getText());
     textAreaValue.setWildcard(textAreaValueBuffer);
     textAreaValue.setTypedText(touchgfx::TypedText(T_SINGLEUSEID309));
+
+    boxWithBorderFrame.setPosition(18, 18, 766, 444);
+    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderFrame.setBorderSize(5);
+    boxWithBorderFrame.setAlpha(10);
 
     add(__background);
     add(backgroundCalibration);
@@ -53,6 +59,7 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     add(textLabelName);
     add(textLabelDescription);
     add(textAreaValue);
+    add(boxWithBorderFrame);
 }
 
 void CalibrationProgressBarViewBase::setupScreen()

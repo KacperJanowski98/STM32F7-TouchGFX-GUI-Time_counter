@@ -37,11 +37,18 @@ MenuViewBase::MenuViewBase() :
     buttonCalibration.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonCalibration.setAction(buttonCallback);
 
+    boxWithBorderFrame.setPosition(18, 18, 766, 444);
+    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderFrame.setBorderSize(5);
+    boxWithBorderFrame.setAlpha(10);
+
     add(__background);
     add(boxBackgroundMenu);
     add(buttonFrequency);
     add(buttonTime);
     add(buttonCalibration);
+    add(boxWithBorderFrame);
 }
 
 void MenuViewBase::setupScreen()

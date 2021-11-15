@@ -22,7 +22,7 @@ FreqGraphViewBase::FreqGraphViewBase() :
     boxWithBorder1.setBorderSize(3);
     boxWithBorder1.setAlpha(25);
 
-    textLabel.setPosition(202, 15, 397, 30);
+    textLabel.setPosition(248, 15, 397, 30);
     textLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabel.setLinespacing(0);
     textLabelBuffer[0] = 0;
@@ -101,6 +101,9 @@ FreqGraphViewBase::FreqGraphViewBase() :
     textAreaLabelY.setWildcard(textAreaLabelYBuffer);
     textAreaLabelY.setTypedText(touchgfx::TypedText(T_SINGLEUSEID314));
 
+    imageGraphDisp.setXY(186, 6);
+    imageGraphDisp.setBitmap(touchgfx::Bitmap(BITMAP_MY_GRAPH_DISP_ID));
+
     add(__background);
     add(box1);
     add(boxWithBorder1);
@@ -109,6 +112,7 @@ FreqGraphViewBase::FreqGraphViewBase() :
     add(buttonBack);
     add(textAreaLabelX);
     add(textAreaLabelY);
+    add(imageGraphDisp);
 }
 
 void FreqGraphViewBase::setupScreen()

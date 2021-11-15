@@ -633,7 +633,7 @@ TimeModeViewBase::TimeModeViewBase() :
     boxWithBorder1.setAlpha(30);
 
     labelTimeConfig.setXY(74, 32);
-    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(189, 236, 255));
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID315));
 
@@ -641,7 +641,7 @@ TimeModeViewBase::TimeModeViewBase() :
     imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
 
     boxWithBorderHome.setPosition(9, 14, 783, 60);
-    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 161, 72));
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
     boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
     boxWithBorderHome.setBorderSize(4);
     boxWithBorderHome.setAlpha(30);
@@ -757,15 +757,15 @@ void TimeModeViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
     {
         //BackToMenu
         //When buttonBackMenuT clicked change screen to Menu
-        //Go to Menu with screen transition towards East
-        application().gotoMenuScreenSlideTransitionEast();
+        //Go to Menu with screen transition towards West
+        application().gotoMenuScreenCoverTransitionWest();
     }
     else if (&src == &buttonConfig)
     {
         //GoToConfigTime
         //When buttonConfig clicked change screen to TimeModeConfig
-        //Go to TimeModeConfig with no screen transition
-        application().gotoTimeModeConfigScreenNoTransition();
+        //Go to TimeModeConfig with screen transition towards West
+        application().gotoTimeModeConfigScreenWipeTransitionWest();
     }
     else if (&src == &buttonReset)
     {

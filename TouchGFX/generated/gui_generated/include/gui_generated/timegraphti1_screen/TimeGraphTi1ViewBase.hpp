@@ -15,6 +15,7 @@
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class TimeGraphTi1ViewBase : public touchgfx::View<TimeGraphTi1Presenter>
 {
@@ -43,6 +44,7 @@ protected:
     touchgfx::Button buttonBack;
     touchgfx::TextArea textAreaLabelX;
     touchgfx::TextAreaWithOneWildcard textAreaLabelY;
+    touchgfx::Image imageGraphDisp;
 
     /*
      * Wildcard Buffers

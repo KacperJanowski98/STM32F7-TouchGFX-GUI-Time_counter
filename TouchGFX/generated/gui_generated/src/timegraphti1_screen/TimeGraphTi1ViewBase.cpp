@@ -22,7 +22,7 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     boxWithBorder1.setBorderSize(3);
     boxWithBorder1.setAlpha(25);
 
-    textLabel.setPosition(262, 17, 273, 27);
+    textLabel.setPosition(283, 17, 273, 27);
     textLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabel.setLinespacing(0);
     textLabelBuffer[0] = 0;
@@ -101,6 +101,9 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     textAreaLabelY.setWildcard(textAreaLabelYBuffer);
     textAreaLabelY.setTypedText(touchgfx::TypedText(T_SINGLEUSEID312));
 
+    imageGraphDisp.setXY(220, 6);
+    imageGraphDisp.setBitmap(touchgfx::Bitmap(BITMAP_MY_GRAPH_DISP_ID));
+
     add(__background);
     add(box1);
     add(boxWithBorder1);
@@ -109,6 +112,7 @@ TimeGraphTi1ViewBase::TimeGraphTi1ViewBase() :
     add(buttonBack);
     add(textAreaLabelX);
     add(textAreaLabelY);
+    add(imageGraphDisp);
 }
 
 void TimeGraphTi1ViewBase::setupScreen()

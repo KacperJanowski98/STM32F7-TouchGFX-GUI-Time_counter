@@ -448,7 +448,7 @@ void FreqModeConfigView::FinishSetupFreqModeSingle()
 	updateFreqParameterBackend();
 
 	presenter->askForDataFreqSingle();
-	application().gotoFreqModeScreenCoverTransitionWest();
+	application().gotoFreqModeScreenWipeTransitionEast();
 }
 
 void FreqModeConfigView::FinishSetupFreqModeConst()
@@ -456,7 +456,7 @@ void FreqModeConfigView::FinishSetupFreqModeConst()
 	updateFreqParameterBackend();
 
 	presenter->askForDataFreqConst();
-	application().gotoFreqModeScreenCoverTransitionWest();
+	application().gotoFreqModeScreenWipeTransitionEast();
 }
 
 void FreqModeConfigView::FinishSetupFreqModeStamps()
@@ -464,7 +464,7 @@ void FreqModeConfigView::FinishSetupFreqModeStamps()
 	updateFreqParameterBackend();
 
 	presenter->askForDataFreqStamps();
-	application().gotoFreqModeScreenCoverTransitionWest();
+	application().gotoFreqModeScreenWipeTransitionEast();
 }
 
 void FreqModeConfigView::FinishSetupFreqModeRepeat()
@@ -472,7 +472,7 @@ void FreqModeConfigView::FinishSetupFreqModeRepeat()
 	updateFreqParameterBackend();
 
 	presenter->askForDataFreqRepeat();
-	application().gotoFreqModeScreenCoverTransitionWest();
+	application().gotoFreqModeScreenWipeTransitionEast();
 }
 
 void FreqModeConfigView::updateFreqParameterBackend()

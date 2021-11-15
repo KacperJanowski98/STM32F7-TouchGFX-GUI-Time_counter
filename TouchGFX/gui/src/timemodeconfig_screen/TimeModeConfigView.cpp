@@ -743,7 +743,7 @@ void TimeModeConfigView::FinishSetupTimeModeSingle()
 	updateTimeParameterBackend();
 
 	presenter->askForDataTimeSingle();
-	application().gotoTimeModeScreenCoverTransitionWest();
+	application().gotoTimeModeScreenWipeTransitionEast();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeConst()
@@ -751,7 +751,7 @@ void TimeModeConfigView::FinishSetupTimeModeConst()
 	updateTimeParameterBackend();
 
 	presenter->askForDataTimeConst();
-	application().gotoTimeModeScreenCoverTransitionWest();
+	application().gotoTimeModeScreenWipeTransitionEast();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeStamps()
@@ -759,7 +759,7 @@ void TimeModeConfigView::FinishSetupTimeModeStamps()
 	updateTimeParameterBackend();
 
 	presenter->askForDataTimeStamps();
-	application().gotoTimeModeScreenCoverTransitionWest();
+	application().gotoTimeModeScreenWipeTransitionEast();
 }
 
 void TimeModeConfigView::FinishSetupTimeModeRepeat()
@@ -767,7 +767,7 @@ void TimeModeConfigView::FinishSetupTimeModeRepeat()
 	updateTimeParameterBackend();
 
 	presenter->askForDataTimeRepeat();
-	application().gotoTimeModeScreenCoverTransitionWest();
+	application().gotoTimeModeScreenWipeTransitionEast();
 }
 
 void TimeModeConfigView::updateTimeParameterBackend()

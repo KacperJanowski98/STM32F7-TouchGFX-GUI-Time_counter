@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 
 class CalibrationProgressBarViewBase : public touchgfx::View<CalibrationProgressBarPresenter>
 {
@@ -35,6 +36,7 @@ protected:
     touchgfx::TextArea textLabelName;
     touchgfx::TextArea textLabelDescription;
     touchgfx::TextAreaWithOneWildcard textAreaValue;
+    touchgfx::BoxWithBorder boxWithBorderFrame;
 
     /*
      * Wildcard Buffers

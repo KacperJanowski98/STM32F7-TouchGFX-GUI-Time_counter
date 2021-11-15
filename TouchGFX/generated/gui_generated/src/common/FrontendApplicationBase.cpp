@@ -84,6 +84,17 @@ void FrontendApplicationBase::gotoMenuScreenSlideTransitionEastImpl()
     touchgfx::makeTransition<MenuView, MenuPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+void FrontendApplicationBase::gotoMenuScreenCoverTransitionWest()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMenuScreenCoverTransitionWestImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMenuScreenCoverTransitionWestImpl()
+{
+    touchgfx::makeTransition<MenuView, MenuPresenter, touchgfx::CoverTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // TimeMode
 
 void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEast()
@@ -95,17 +106,6 @@ void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEast()
 void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionEastImpl()
 {
     touchgfx::makeTransition<TimeModeView, TimeModePresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeScreenCoverTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoTimeModeScreenCoverTransitionWestImpl()
-{
-    touchgfx::makeTransition<TimeModeView, TimeModePresenter, touchgfx::CoverTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 void FrontendApplicationBase::gotoTimeModeScreenWipeTransitionEast()
@@ -121,15 +121,15 @@ void FrontendApplicationBase::gotoTimeModeScreenWipeTransitionEastImpl()
 
 // TimeModeConfig
 
-void FrontendApplicationBase::gotoTimeModeConfigScreenNoTransition()
+void FrontendApplicationBase::gotoTimeModeConfigScreenWipeTransitionWest()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeConfigScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoTimeModeConfigScreenWipeTransitionWestImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoTimeModeConfigScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoTimeModeConfigScreenWipeTransitionWestImpl()
 {
-    touchgfx::makeTransition<TimeModeConfigView, TimeModeConfigPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<TimeModeConfigView, TimeModeConfigPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // FreqMode
@@ -145,17 +145,6 @@ void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionEastImpl()
     touchgfx::makeTransition<FreqModeView, FreqModePresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeScreenCoverTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoFreqModeScreenCoverTransitionWestImpl()
-{
-    touchgfx::makeTransition<FreqModeView, FreqModePresenter, touchgfx::CoverTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
 void FrontendApplicationBase::gotoFreqModeScreenWipeTransitionEast()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeScreenWipeTransitionEastImpl);
@@ -169,15 +158,15 @@ void FrontendApplicationBase::gotoFreqModeScreenWipeTransitionEastImpl()
 
 // FreqModeConfig
 
-void FrontendApplicationBase::gotoFreqModeConfigScreenNoTransition()
+void FrontendApplicationBase::gotoFreqModeConfigScreenWipeTransitionWest()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeConfigScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoFreqModeConfigScreenWipeTransitionWestImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoFreqModeConfigScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoFreqModeConfigScreenWipeTransitionWestImpl()
 {
-    touchgfx::makeTransition<FreqModeConfigView, FreqModeConfigPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<FreqModeConfigView, FreqModeConfigPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // TimeHistogram

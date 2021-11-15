@@ -23,25 +23,23 @@ public:
     // Menu
     void gotoMenuScreenSlideTransitionEast();
 
+    void gotoMenuScreenCoverTransitionWest();
+
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEast();
-
-    void gotoTimeModeScreenCoverTransitionWest();
 
     void gotoTimeModeScreenWipeTransitionEast();
 
     // TimeModeConfig
-    void gotoTimeModeConfigScreenNoTransition();
+    void gotoTimeModeConfigScreenWipeTransitionWest();
 
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEast();
 
-    void gotoFreqModeScreenCoverTransitionWest();
-
     void gotoFreqModeScreenWipeTransitionEast();
 
     // FreqModeConfig
-    void gotoFreqModeConfigScreenNoTransition();
+    void gotoFreqModeConfigScreenWipeTransitionWest();
 
     // TimeHistogram
     void gotoTimeHistogramScreenWipeTransitionWest();
@@ -72,25 +70,23 @@ protected:
     // Menu
     void gotoMenuScreenSlideTransitionEastImpl();
 
+    void gotoMenuScreenCoverTransitionWestImpl();
+
     // TimeMode
     void gotoTimeModeScreenCoverTransitionEastImpl();
-
-    void gotoTimeModeScreenCoverTransitionWestImpl();
 
     void gotoTimeModeScreenWipeTransitionEastImpl();
 
     // TimeModeConfig
-    void gotoTimeModeConfigScreenNoTransitionImpl();
+    void gotoTimeModeConfigScreenWipeTransitionWestImpl();
 
     // FreqMode
     void gotoFreqModeScreenCoverTransitionEastImpl();
 
-    void gotoFreqModeScreenCoverTransitionWestImpl();
-
     void gotoFreqModeScreenWipeTransitionEastImpl();
 
     // FreqModeConfig
-    void gotoFreqModeConfigScreenNoTransitionImpl();
+    void gotoFreqModeConfigScreenWipeTransitionWestImpl();
 
     // TimeHistogram
     void gotoTimeHistogramScreenWipeTransitionWestImpl();

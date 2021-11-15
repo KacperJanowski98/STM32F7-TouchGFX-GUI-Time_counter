@@ -9,6 +9,7 @@
 #include <gui/menu_screen/MenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 
 class MenuViewBase : public touchgfx::View<MenuPresenter>
 {
@@ -38,6 +39,7 @@ protected:
     touchgfx::ButtonWithLabel buttonFrequency;
     touchgfx::ButtonWithLabel buttonTime;
     touchgfx::ButtonWithLabel buttonCalibration;
+    touchgfx::BoxWithBorder boxWithBorderFrame;
 
 private:
 

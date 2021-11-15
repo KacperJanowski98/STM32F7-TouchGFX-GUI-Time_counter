@@ -105,8 +105,8 @@ public:
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
             touchgfx::meta::TypeList< CoverTransition<EAST>,
-            touchgfx::meta::TypeList< WipeTransition<WEST>,
             touchgfx::meta::TypeList< CoverTransition<WEST>,
+            touchgfx::meta::TypeList< WipeTransition<WEST>,
             touchgfx::meta::TypeList< WipeTransition<EAST>,
             touchgfx::meta::Nil > > > > >
             > GeneratedTransitionTypes;
