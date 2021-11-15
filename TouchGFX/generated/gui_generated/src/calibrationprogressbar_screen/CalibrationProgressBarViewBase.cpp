@@ -15,7 +15,7 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     backgroundCalibration.setPosition(0, 0, 800, 480);
-    backgroundCalibration.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    backgroundCalibration.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     calibrationProgress.setXY(308, 229);
     calibrationProgress.setProgressIndicatorPosition(0, 0, 184, 184);

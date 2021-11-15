@@ -14,9 +14,9 @@ FreqModeViewBase::FreqModeViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroungFreq.setPosition(0, 0, 800, 480);
-    boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
-    buttonToMenuF.setXY(732, 11);
+    buttonToMenuF.setXY(726, 11);
     buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonToMenuF.setAction(buttonCallback);
 
@@ -24,7 +24,7 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_NEW_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(521, 11);
+    buttonReset.setXY(532, 11);
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_NEW_ID));
     buttonReset.setAction(buttonCallback);
 
@@ -419,20 +419,29 @@ FreqModeViewBase::FreqModeViewBase() :
     textUnitMean8.setWildcard(textUnitMean8Buffer);
     textUnitMean8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID272));
 
-    buttonHistogram.setXY(415, 11);
+    buttonHistogram.setXY(431, 11);
     buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
-    boxWithBorder1.setPosition(9, 71, 783, 393);
-    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(28, 8, 87));
+    boxWithBorder1.setPosition(9, 75, 783, 389);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(17, 3, 59));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
     boxWithBorder1.setBorderSize(4);
-    boxWithBorder1.setAlpha(20);
+    boxWithBorder1.setAlpha(30);
 
     labelFreqConfig.setXY(71, 29);
     labelFreqConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelFreqConfig.setLinespacing(0);
     labelFreqConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID316));
+
+    imageHome.setXY(17, 17);
+    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
+
+    boxWithBorderHome.setPosition(9, 11, 783, 60);
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 161, 72));
+    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderHome.setBorderSize(4);
+    boxWithBorderHome.setAlpha(30);
 
     add(__background);
     add(boxBackgroungFreq);
@@ -501,6 +510,8 @@ FreqModeViewBase::FreqModeViewBase() :
     add(buttonHistogram);
     add(boxWithBorder1);
     add(labelFreqConfig);
+    add(imageHome);
+    add(boxWithBorderHome);
 }
 
 void FreqModeViewBase::setupScreen()

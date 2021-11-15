@@ -7,8 +7,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "backgroundCalibration",
@@ -164,8 +164,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "boxBackgroundMenu",
@@ -333,9 +333,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Red": 67,
+              "Green": 88,
+              "Blue": 112
             },
             "Alpha": 255,
             "Name": "boxBackgroundTime",
@@ -356,8 +356,8 @@
             "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonBackMenuT",
-            "X": 732,
-            "Y": 8,
+            "X": 723,
+            "Y": 14,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -373,8 +373,8 @@
             "Released": "My_Blue_Buttons_Setting_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonConfig",
-            "X": 635,
-            "Y": 8,
+            "X": 629,
+            "Y": 14,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -391,7 +391,7 @@
             "Alpha": 255,
             "Name": "buttonReset",
             "X": 531,
-            "Y": 8,
+            "Y": 14,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -2827,8 +2827,8 @@
             "Released": "My_Blue_Buttons_Graph_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonHistogram",
-            "X": 423,
-            "Y": 8,
+            "X": 428,
+            "Y": 14,
             "Width": 60,
             "Height": 60,
             "Visible": true,
@@ -2841,9 +2841,9 @@
           {
             "Type": "BoxWithBorder",
             "Color": {
-              "Red": 28,
-              "Green": 8,
-              "Blue": 87
+              "Red": 20,
+              "Green": 6,
+              "Blue": 69
             },
             "BorderColor": {
               "Red": 0,
@@ -2851,12 +2851,12 @@
               "Blue": 5
             },
             "BorderSize": 4,
-            "Alpha": 20,
+            "Alpha": 30,
             "Name": "boxWithBorder1",
             "X": 9,
-            "Y": 75,
+            "Y": 80,
             "Width": 783,
-            "Height": 389,
+            "Height": 384,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -2869,18 +2869,60 @@
             "TextId": "SingleUseId315",
             "TextRotation": "0",
             "Color": {
-              "Red": 252,
-              "Green": 252,
-              "Blue": 252
+              "Red": 189,
+              "Green": 236,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "labelTimeConfig",
             "X": 74,
-            "Y": 26,
+            "Y": 32,
             "Width": 227,
             "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_home_icon.png",
+            "Alpha": 255,
+            "Name": "imageHome",
+            "X": 18,
+            "Y": 20,
+            "Width": 48,
+            "Height": 48,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 161,
+              "Blue": 72
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderHome",
+            "X": 9,
+            "Y": 14,
+            "Width": 783,
+            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -2954,8 +2996,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "boxLeftBackG",
@@ -2974,8 +3016,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "boxRightBackG",
@@ -4953,9 +4995,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Red": 67,
+              "Green": 88,
+              "Blue": 112
             },
             "Alpha": 255,
             "Name": "boxBackgroungFreq",
@@ -4976,7 +5018,7 @@
             "Released": "My_Blue_Buttons_Back_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonToMenuF",
-            "X": 732,
+            "X": 726,
             "Y": 11,
             "Width": 60,
             "Height": 60,
@@ -5010,7 +5052,7 @@
             "Released": "My_Blue_Buttons_Reset_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonReset",
-            "X": 521,
+            "X": 532,
             "Y": 11,
             "Width": 60,
             "Height": 60,
@@ -6635,7 +6677,7 @@
             "Released": "My_Blue_Buttons_Graph_pressed_new.png",
             "Alpha": 255,
             "Name": "buttonHistogram",
-            "X": 415,
+            "X": 431,
             "Y": 11,
             "Width": 60,
             "Height": 60,
@@ -6649,9 +6691,9 @@
           {
             "Type": "BoxWithBorder",
             "Color": {
-              "Red": 28,
-              "Green": 8,
-              "Blue": 87
+              "Red": 17,
+              "Green": 3,
+              "Blue": 59
             },
             "BorderColor": {
               "Red": 0,
@@ -6659,12 +6701,12 @@
               "Blue": 5
             },
             "BorderSize": 4,
-            "Alpha": 20,
+            "Alpha": 30,
             "Name": "boxWithBorder1",
             "X": 9,
-            "Y": 71,
+            "Y": 75,
             "Width": 783,
-            "Height": 393,
+            "Height": 389,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -6689,6 +6731,48 @@
             "Y": 29,
             "Width": 284,
             "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_home_icon.png",
+            "Alpha": 255,
+            "Name": "imageHome",
+            "X": 17,
+            "Y": 17,
+            "Width": 48,
+            "Height": 48,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 161,
+              "Blue": 72
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderHome",
+            "X": 9,
+            "Y": 11,
+            "Width": 783,
+            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -6762,8 +6846,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "boxLeftBackG",
@@ -6782,8 +6866,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "boxRightBackG",
@@ -8496,8 +8580,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "box1",
@@ -8776,12 +8860,28 @@
               "Blue": 0
             },
             "BorderSize": 4,
-            "Alpha": 25,
+            "Alpha": 30,
             "Name": "boxWithBorderLabelT",
-            "X": 44,
-            "Y": 19,
-            "Width": 682,
-            "Height": 45,
+            "X": 15,
+            "Y": 11,
+            "Width": 711,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_graph_icon.png",
+            "Alpha": 255,
+            "Name": "imageGraph",
+            "X": 25,
+            "Y": 17,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -9169,8 +9269,8 @@
             "Type": "Box",
             "Color": {
               "Red": 49,
-              "Green": 64,
-              "Blue": 82
+              "Green": 67,
+              "Blue": 87
             },
             "Alpha": 255,
             "Name": "box1",
@@ -9479,12 +9579,28 @@
               "Blue": 0
             },
             "BorderSize": 4,
-            "Alpha": 25,
+            "Alpha": 30,
             "Name": "boxWithBorderLabelF",
-            "X": 44,
-            "Y": 19,
-            "Width": 682,
-            "Height": 45,
+            "X": 12,
+            "Y": 11,
+            "Width": 714,
+            "Height": 60,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_graph_icon.png",
+            "Alpha": 255,
+            "Name": "imageGraph",
+            "X": 25,
+            "Y": 17,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,

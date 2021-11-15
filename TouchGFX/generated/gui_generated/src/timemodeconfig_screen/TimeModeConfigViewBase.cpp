@@ -15,10 +15,10 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxLeftBackG.setPosition(-1, 60, 75, 420);
-    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     boxRightBackG.setPosition(725, 60, 75, 420);
-    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     boxConfigTime.setPosition(0, 0, 800, 60);
     boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

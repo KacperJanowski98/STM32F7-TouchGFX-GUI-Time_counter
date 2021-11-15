@@ -14,7 +14,7 @@ MenuViewBase::MenuViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroundMenu.setPosition(0, 0, 800, 480);
-    boxBackgroundMenu.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    boxBackgroundMenu.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     buttonFrequency.setXY(220, 318);
     buttonFrequency.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));

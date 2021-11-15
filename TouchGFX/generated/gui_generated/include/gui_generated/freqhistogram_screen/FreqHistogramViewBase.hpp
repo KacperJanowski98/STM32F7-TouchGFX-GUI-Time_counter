@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class FreqHistogramViewBase : public touchgfx::View<FreqHistogramPresenter>
 {
@@ -84,6 +85,7 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabelM7;
     touchgfx::ButtonWithLabel buttonWithLabelM8;
     touchgfx::BoxWithBorder boxWithBorderLabelF;
+    touchgfx::Image imageGraph;
 
 private:
 

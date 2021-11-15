@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class FreqModeViewBase : public touchgfx::View<FreqModePresenter>
 {
@@ -103,6 +104,8 @@ protected:
     touchgfx::Button buttonHistogram;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea labelFreqConfig;
+    touchgfx::Image imageHome;
+    touchgfx::BoxWithBorder boxWithBorderHome;
 
     /*
      * Wildcard Buffers

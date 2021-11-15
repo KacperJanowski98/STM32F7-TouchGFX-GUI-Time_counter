@@ -14,7 +14,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    box1.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     buttonBack.setXY(732, 11);
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
@@ -74,11 +74,14 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonWithLabelTi7.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelTi7.setAction(buttonCallback);
 
-    boxWithBorderLabelT.setPosition(44, 19, 682, 45);
+    boxWithBorderLabelT.setPosition(15, 11, 711, 60);
     boxWithBorderLabelT.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderLabelT.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderLabelT.setBorderSize(4);
-    boxWithBorderLabelT.setAlpha(25);
+    boxWithBorderLabelT.setAlpha(30);
+
+    imageGraph.setXY(25, 17);
+    imageGraph.setBitmap(touchgfx::Bitmap(BITMAP_MY_GRAPH_ICON_ID));
 
     add(__background);
     add(box1);
@@ -92,6 +95,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     add(buttonWithLabelTi6);
     add(buttonWithLabelTi7);
     add(boxWithBorderLabelT);
+    add(imageGraph);
 }
 
 void TimeHistogramViewBase::setupScreen()

@@ -14,17 +14,17 @@ TimeModeViewBase::TimeModeViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxBackgroundTime.setPosition(0, 0, 800, 480);
-    boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
-    buttonBackMenuT.setXY(732, 8);
+    buttonBackMenuT.setXY(723, 14);
     buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackMenuT.setAction(buttonCallback);
 
-    buttonConfig.setXY(635, 8);
+    buttonConfig.setXY(629, 14);
     buttonConfig.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_SETTING_NEW_ID));
     buttonConfig.setAction(buttonCallback);
 
-    buttonReset.setXY(531, 8);
+    buttonReset.setXY(531, 14);
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_NEW_ID));
     buttonReset.setAction(buttonCallback);
 
@@ -622,20 +622,29 @@ TimeModeViewBase::TimeModeViewBase() :
     textLabelTi7.setLinespacing(0);
     textLabelTi7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID198));
 
-    buttonHistogram.setXY(423, 8);
+    buttonHistogram.setXY(428, 14);
     buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
-    boxWithBorder1.setPosition(9, 75, 783, 389);
-    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(28, 8, 87));
+    boxWithBorder1.setPosition(9, 80, 783, 384);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(20, 6, 69));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
     boxWithBorder1.setBorderSize(4);
-    boxWithBorder1.setAlpha(20);
+    boxWithBorder1.setAlpha(30);
 
-    labelTimeConfig.setXY(74, 26);
-    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
+    labelTimeConfig.setXY(74, 32);
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(189, 236, 255));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID315));
+
+    imageHome.setXY(18, 20);
+    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
+
+    boxWithBorderHome.setPosition(9, 14, 783, 60);
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 161, 72));
+    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderHome.setBorderSize(4);
+    boxWithBorderHome.setAlpha(30);
 
     add(__background);
     add(boxBackgroundTime);
@@ -733,6 +742,8 @@ TimeModeViewBase::TimeModeViewBase() :
     add(buttonHistogram);
     add(boxWithBorder1);
     add(labelTimeConfig);
+    add(imageHome);
+    add(boxWithBorderHome);
 }
 
 void TimeModeViewBase::setupScreen()
