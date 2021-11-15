@@ -2863,6 +2863,30 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId315",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 252,
+              "Green": 252,
+              "Blue": 252
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "labelTimeConfig",
+            "X": 74,
+            "Y": 26,
+            "Width": 227,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -3016,7 +3040,7 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "labelTimeConfig",
-            "X": 15,
+            "X": 74,
             "Y": 18,
             "Width": 390,
             "Height": 25,
@@ -4773,6 +4797,22 @@
             "Y": 60,
             "Width": 800,
             "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_setting_icon.png",
+            "Alpha": 255,
+            "Name": "imageSetting",
+            "X": 11,
+            "Y": 6,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -6631,6 +6671,30 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId316",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "labelFreqConfig",
+            "X": 71,
+            "Y": 29,
+            "Width": 284,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -6784,7 +6848,7 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "labelFreqConfig",
-            "X": 17,
+            "X": 80,
             "Y": 18,
             "Width": 284,
             "Height": 25,
@@ -8299,6 +8363,22 @@
             "Y": 60,
             "Width": 800,
             "Height": 420,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_setting_icon.png",
+            "Alpha": 255,
+            "Name": "imageSetting",
+            "X": 8,
+            "Y": 6,
+            "Width": 48,
+            "Height": 48,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -10862,6 +10942,14 @@
       },
       {
         "TextEntryId": "SingleUseId314",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId315",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId316",
         "IsResource": false
       }
     ],

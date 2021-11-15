@@ -632,6 +632,11 @@ TimeModeViewBase::TimeModeViewBase() :
     boxWithBorder1.setBorderSize(4);
     boxWithBorder1.setAlpha(20);
 
+    labelTimeConfig.setXY(74, 26);
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
+    labelTimeConfig.setLinespacing(0);
+    labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID315));
+
     add(__background);
     add(boxBackgroundTime);
     add(buttonBackMenuT);
@@ -727,6 +732,7 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textLabelTi7);
     add(buttonHistogram);
     add(boxWithBorder1);
+    add(labelTimeConfig);
 }
 
 void TimeModeViewBase::setupScreen()

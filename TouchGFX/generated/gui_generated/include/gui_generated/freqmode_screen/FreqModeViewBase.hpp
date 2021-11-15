@@ -102,6 +102,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textUnitMean8;
     touchgfx::Button buttonHistogram;
     touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::TextArea labelFreqConfig;
 
     /*
      * Wildcard Buffers

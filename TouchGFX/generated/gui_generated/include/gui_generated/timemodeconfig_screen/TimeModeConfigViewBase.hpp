@@ -215,6 +215,7 @@ protected:
     touchgfx::BoxWithBorder boxWithBorderSetupTi;
     touchgfx::BoxWithBorder boxWithBorderSetupS;
     touchgfx::BoxWithBorder boxWithBorderSetupR;
+    touchgfx::Image imageSetting;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 

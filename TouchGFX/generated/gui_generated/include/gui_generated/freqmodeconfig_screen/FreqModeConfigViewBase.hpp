@@ -157,6 +157,7 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
     touchgfx::BoxWithBorder boxWithBorderStamp;
     touchgfx::BoxWithBorder boxWithBorderRepeat;
+    touchgfx::Image imageSetting;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;

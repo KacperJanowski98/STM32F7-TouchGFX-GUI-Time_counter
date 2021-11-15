@@ -429,6 +429,11 @@ FreqModeViewBase::FreqModeViewBase() :
     boxWithBorder1.setBorderSize(4);
     boxWithBorder1.setAlpha(20);
 
+    labelFreqConfig.setXY(71, 29);
+    labelFreqConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    labelFreqConfig.setLinespacing(0);
+    labelFreqConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID316));
+
     add(__background);
     add(boxBackgroungFreq);
     add(buttonToMenuF);
@@ -495,6 +500,7 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textUnitMean8);
     add(buttonHistogram);
     add(boxWithBorder1);
+    add(labelFreqConfig);
 }
 
 void FreqModeViewBase::setupScreen()

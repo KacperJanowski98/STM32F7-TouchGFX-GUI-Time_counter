@@ -131,6 +131,7 @@ protected:
     touchgfx::TextArea textLabelTi7;
     touchgfx::Button buttonHistogram;
     touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::TextArea labelTimeConfig;
 
     /*
      * Wildcard Buffers

@@ -27,7 +27,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackFreq.setAction(buttonCallback);
 
-    labelFreqConfig.setXY(17, 18);
+    labelFreqConfig.setXY(80, 18);
     labelFreqConfig.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
     labelFreqConfig.setLinespacing(0);
     labelFreqConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID8));
@@ -425,6 +425,9 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreq.add(swipeContainerFreqSESSION);
     swipeContainerFreq.setSelectedPage(0);
 
+    imageSetting.setXY(8, 6);
+    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_ID));
+
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
@@ -433,6 +436,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     add(labelFreqConfig);
     add(boxBackgroundFC);
     add(swipeContainerFreq);
+    add(imageSetting);
     radioButtonGroupSlopeFreq.add(radioSlopeDown);
     radioButtonGroupSlopeFreq.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);

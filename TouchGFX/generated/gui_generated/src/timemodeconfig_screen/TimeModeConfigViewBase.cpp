@@ -27,7 +27,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackTime.setAction(buttonCallback);
 
-    labelTimeConfig.setXY(15, 18);
+    labelTimeConfig.setXY(74, 18);
     labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
@@ -514,6 +514,9 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(0);
 
+    imageSetting.setXY(11, 6);
+    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_ID));
+
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
@@ -522,6 +525,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(labelTimeConfig);
     add(boxBacgroundTC);
     add(swipeContainerTime);
+    add(imageSetting);
     radioButtonGroupSlope.add(radioSlopeDown);
     radioButtonGroupSlope.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);
