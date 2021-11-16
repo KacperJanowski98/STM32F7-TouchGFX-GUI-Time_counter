@@ -403,7 +403,7 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStam
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
 {
     int8_t distance = stop - start;
-    switch (distance)
+    switch (abs(distance))
     {
     case 1:
         *min = (rand() % (45 + 1 - 43)) + 43;
