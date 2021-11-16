@@ -17,15 +17,6 @@ FreqModeConfigView::FreqModeConfigView()
 	, Channel7(FreqBackend.Channel7.numberChanel, FreqBackend.Channel7.channelState, static_cast<SlopeName>(FreqBackend.Channel7.slope), FreqBackend.Channel7.threshold)
 	, Channel8(FreqBackend.Channel8.numberChanel, FreqBackend.Channel8.channelState, static_cast<SlopeName>(FreqBackend.Channel8.slope), FreqBackend.Channel8.threshold)
     , Session(false, static_cast<ClockName>(FreqBackend.FreqSession.clock), 0, FreqBackend.FreqSession.stampsNumber, FreqBackend.FreqSession.repeat)
-//	, Channel1(1, false, SlopeName::UP, 0)
-//	, Channel2(2, false, SlopeName::UP, 0)
-//	, Channel3(3, false, SlopeName::UP, 0)
-//	, Channel4(4, false, SlopeName::UP, 0)
-//	, Channel5(5, false, SlopeName::UP, 0)
-//	, Channel6(6, false, SlopeName::UP, 0)
-//	, Channel7(7, false, SlopeName::UP, 0)
-//	, Channel8(8, false, SlopeName::UP, 0)
-//	, Session(false, ClockName::INTERNAL_QUARTZ, 0, 0, 0)
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
@@ -51,7 +42,7 @@ void FreqModeConfigView::setupScreen()
 	{
 		scrollWheelINPUT.itemChanged(i);
 	}
-	scrollWheelINPUT.animateToItem(3);
+	scrollWheelINPUT.animateToItem(0);
 
 	// obsluga toggle button
 	FreqModeConfigView::setGuiTouchable(toggleChannel.getState());

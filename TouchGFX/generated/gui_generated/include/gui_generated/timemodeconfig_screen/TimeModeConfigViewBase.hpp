@@ -175,6 +175,7 @@ protected:
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelTISetupSelectedListItems;
 
     touchgfx::TextArea textTiStop;
+    touchgfx::BoxWithBorder boxWithBorderSliderTi;
     touchgfx::TextArea textTiStart;
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelStart;
     touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStartListItems;
@@ -186,13 +187,13 @@ protected:
     touchgfx::DrawableListItems<ChannelContainer, 4> scrollWheelStopListItems;
     touchgfx::DrawableListItems<ChannelContainerCenter, 2> scrollWheelStopSelectedListItems;
 
-    touchgfx::BoxWithBorder boxWithBorderSliderTi;
     touchgfx::BoxWithBorder boxWithBorderSliderStop;
     touchgfx::BoxWithBorder boxWithBorderSliderStart;
     touchgfx::Image imageFrameTi;
     touchgfx::Image imageFrameStarty;
     touchgfx::Image imageFrameStop;
     touchgfx::ToggleButton toggleTiSetup;
+    touchgfx::Image imageLock;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;

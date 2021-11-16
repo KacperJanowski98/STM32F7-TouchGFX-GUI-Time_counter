@@ -27,15 +27,6 @@ TimeModeConfigView::TimeModeConfigView()
 			TimeBackend.Channel8.threshold, 0, 0)
 	, Session(TimeBackend.TimeSession.maxRange, static_cast<ClockName>(TimeBackend.TimeSession.clock),
 			TimeBackend.TimeSession.tiRange, TimeBackend.TimeSession.stampsNumber, TimeBackend.TimeSession.repeat)
-//	, Channel1(1, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel2(2, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel3(3, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel4(4, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel5(5, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel6(6, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel7(7, false, false, SlopeName::UP, 0, 0, 0)
-//	, Channel8(8, false, false, SlopeName::UP, 0, 0, 0)
-//	, Session(false, 0, 0, 0)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
@@ -62,7 +53,7 @@ void TimeModeConfigView::setupScreen()
 	{
 		scrollWheelINPUT.itemChanged(i);
 	}
-	scrollWheelINPUT.animateToItem(3);
+	scrollWheelINPUT.animateToItem(0);
 
 //    TimeModeConfigViewBase::setupScreen();
 
@@ -461,7 +452,16 @@ void TimeModeConfigView::ChangeStateTI()
 	{
 		pChannelTI->setStartChannel(0);
 		pChannelTI->setStopChannel(0);
+		imageLock.setVisible(true);
+		scrollWheelStart.setTouchable(false);
+		scrollWheelStop.setTouchable(false);
+	} else
+	{
+		imageLock.setVisible(false);
+		scrollWheelStart.setTouchable(true);
+		scrollWheelStop.setTouchable(true);
 	}
+	imageLock.invalidate();
 }
 
 void TimeModeConfigView::detectThreshold()
@@ -587,14 +587,21 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 	{
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);
+		imageLock.setVisible(true);
+		scrollWheelStart.setTouchable(false);
+		scrollWheelStop.setTouchable(false);
 	}
 	else
 	{
 		textStartChannel.setVisible(true);
 		textStopChannel.setVisible(true);
+		imageLock.setVisible(false);
+		scrollWheelStart.setTouchable(true);
+		scrollWheelStop.setTouchable(true);
 	}
 	textStartChannel.invalidate();
 	textStopChannel.invalidate();
+	imageLock.invalidate();
 }
 
 void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState)
@@ -656,6 +663,9 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 	{
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);
+		imageLock.setVisible(true);
+		scrollWheelStart.setTouchable(false);
+		scrollWheelStop.setTouchable(false);
 	}
 	else
 	{
@@ -680,6 +690,10 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 		Unicode::snprintf(textStopChannelBuffer, TEXTSTOPCHANNEL_SIZE, "%d", channel->getStopChannel());
 		textStartChannel.invalidate();
 		textStopChannel.invalidate();
+		scrollWheelStart.setTouchable(true);
+		scrollWheelStop.setTouchable(true);
+		imageLock.setVisible(false);
+		imageLock.invalidate();
 	}
 }
 
