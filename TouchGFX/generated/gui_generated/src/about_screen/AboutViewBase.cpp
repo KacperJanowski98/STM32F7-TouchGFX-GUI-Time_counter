@@ -4,6 +4,7 @@
 #include <gui_generated/about_screen/AboutViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
+#include <texts/TextKeysAndLanguages.hpp>
 
 AboutViewBase::AboutViewBase() :
     buttonCallback(this, &AboutViewBase::buttonCallbackHandler)
@@ -25,10 +26,26 @@ AboutViewBase::AboutViewBase() :
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
+    imageInfo.setXY(39, 38);
+    imageInfo.setBitmap(touchgfx::Bitmap(BITMAP_MY_INFO_ID));
+
+    textArea1.setXY(144, 102);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID321));
+
+    textArea2.setXY(144, 151);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID322));
+
     add(__background);
     add(boxBackground);
     add(boxWithBorderFrame);
     add(buttonBack);
+    add(imageInfo);
+    add(textArea1);
+    add(textArea2);
 }
 
 void AboutViewBase::setupScreen()

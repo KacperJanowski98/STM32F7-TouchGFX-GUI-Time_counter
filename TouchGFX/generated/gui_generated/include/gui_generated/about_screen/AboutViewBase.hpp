@@ -10,6 +10,8 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class AboutViewBase : public touchgfx::View<AboutPresenter>
 {
@@ -30,6 +32,9 @@ protected:
     touchgfx::Box boxBackground;
     touchgfx::BoxWithBorder boxWithBorderFrame;
     touchgfx::Button buttonBack;
+    touchgfx::Image imageInfo;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea2;
 
 private:
 

@@ -10288,6 +10288,70 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_info.png",
+            "Alpha": 255,
+            "Name": "imageInfo",
+            "X": 39,
+            "Y": 38,
+            "Width": 64,
+            "Height": 64,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId321",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 144,
+            "Y": 102,
+            "Width": 84,
+            "Height": 27,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId322",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea2",
+            "X": 144,
+            "Y": 151,
+            "Width": 190,
+            "Height": 75,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -11398,6 +11462,14 @@
       },
       {
         "TextEntryId": "SingleUseId320",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId321",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId322",
         "IsResource": false
       }
     ],
