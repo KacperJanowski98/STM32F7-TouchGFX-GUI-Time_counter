@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class MenuViewBase : public touchgfx::View<MenuPresenter>
 {
@@ -43,6 +44,9 @@ protected:
     touchgfx::ButtonWithLabel buttonCalibration;
     touchgfx::TextArea textAreaVersion;
     touchgfx::TextArea textAreaVersionNumber;
+    touchgfx::Image imageMenu;
+    touchgfx::TextArea textAreaMenu;
+    touchgfx::ButtonWithLabel buttonAbout;
 
 private:
 

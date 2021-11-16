@@ -37,7 +37,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
     swipeContainerTime.setXY(0, 60);
     swipeContainerTime.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
-    swipeContainerTime.setPageIndicatorXY(0, 0);
+    swipeContainerTime.setPageIndicatorXY(1, 2);
     swipeContainerTime.setSwipeCutoff(50);
     swipeContainerTime.setEndSwipeElasticWidth(50);
 
@@ -128,7 +128,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonDetect.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID21));
     buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonDetect.setAction(buttonCallback);
     swipeContainerTimeINPUT.add(buttonDetect);
 
@@ -484,7 +484,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID84));
     buttonConfigTimeSingle.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigTimeSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigTimeSingle.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeSingle);
 
@@ -492,7 +492,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeConst.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID85));
     buttonConfigTimeConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigTimeConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigTimeConst.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeConst);
 
@@ -500,7 +500,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID86));
     buttonConfigTimeStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigTimeStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigTimeStamps.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeStamps);
 
@@ -508,7 +508,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeRepeat.setLabelText(touchgfx::TypedText(T_SINGLEUSEID273));
     buttonConfigTimeRepeat.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigTimeRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigTimeRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigTimeRepeat.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeRepeat);
     swipeContainerTime.add(swipeContainerTimeSESSION);

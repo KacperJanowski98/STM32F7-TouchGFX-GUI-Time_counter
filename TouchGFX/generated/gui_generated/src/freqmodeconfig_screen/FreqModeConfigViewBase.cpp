@@ -128,7 +128,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonDetect.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID57));
     buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDetect.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonDetect.setAction(buttonCallback);
     swipeContainerFreqINPUT.add(buttonDetect);
 
@@ -395,7 +395,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID89));
     buttonConfigFreqStamps.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigFreqStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqStamps.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigFreqStamps.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqStamps);
 
@@ -403,7 +403,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqConst.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqConst.setLabelText(touchgfx::TypedText(T_SINGLEUSEID88));
     buttonConfigFreqConst.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigFreqConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqConst.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigFreqConst.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqConst);
 
@@ -411,7 +411,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID87));
     buttonConfigFreqSingle.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigFreqSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqSingle.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigFreqSingle.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqSingle);
 
@@ -419,7 +419,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqRepeat.setLabelText(touchgfx::TypedText(T_SINGLEUSEID274));
     buttonConfigFreqRepeat.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonConfigFreqRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonConfigFreqRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
     buttonConfigFreqRepeat.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqRepeat);
     swipeContainerFreq.add(swipeContainerFreqSESSION);

@@ -244,14 +244,14 @@
               "Blue": 255
             },
             "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "TextRotation": "0",
             "Name": "buttonFrequency",
-            "X": 220,
-            "Y": 318,
+            "X": 221,
+            "Y": 267,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -273,14 +273,14 @@
               "Blue": 255
             },
             "PressedColor": {
-              "Red": 153,
-              "Green": 153,
-              "Blue": 153
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "TextRotation": "0",
             "Name": "buttonTime",
-            "X": 220,
-            "Y": 210,
+            "X": 221,
+            "Y": 171,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -302,14 +302,14 @@
               "Blue": 255
             },
             "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "TextRotation": "0",
             "Name": "buttonCalibration",
-            "X": 220,
-            "Y": 105,
+            "X": 221,
+            "Y": 77,
             "Width": 360,
             "Height": 60,
             "Visible": true,
@@ -360,6 +360,76 @@
             "Y": 423,
             "Width": 39,
             "Height": 19,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "Image",
+            "RelativeFilename": "My_menu.png",
+            "Alpha": 255,
+            "Name": "imageMenu",
+            "X": 30,
+            "Y": 29,
+            "Width": 48,
+            "Height": 48,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId319",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaMenu",
+            "X": 93,
+            "Y": 40,
+            "Width": 65,
+            "Height": 27,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Pressed": "__designer\\Blue_Buttons_Round_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_large.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId320",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
+            },
+            "TextRotation": "0",
+            "Style": "Style6",
+            "Name": "buttonAbout",
+            "X": 221,
+            "Y": 363,
+            "Width": 360,
+            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -3509,9 +3579,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -4797,9 +4867,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -4827,9 +4897,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -4857,9 +4927,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -4887,9 +4957,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -4924,8 +4994,8 @@
             "Type": "SwipeContainer",
             "SwipeCutoff": 50,
             "ShowPageIndicator": true,
-            "PageIndicatorX": 0,
-            "PageIndicatorY": 0,
+            "PageIndicatorX": 1,
+            "PageIndicatorY": 2,
             "CenteredX": false,
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
@@ -7357,9 +7427,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -8405,9 +8475,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -8435,9 +8505,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -8465,9 +8535,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -8495,9 +8565,9 @@
                       "Blue": 255
                     },
                     "PressedColor": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                      "Red": 182,
+                      "Green": 223,
+                      "Blue": 240
                     },
                     "TextRotation": "0",
                     "Style": "Style4",
@@ -11204,6 +11274,14 @@
       },
       {
         "TextEntryId": "SingleUseId318",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId319",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId320",
         "IsResource": false
       }
     ],
