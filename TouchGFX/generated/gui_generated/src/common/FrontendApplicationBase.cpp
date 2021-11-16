@@ -29,6 +29,8 @@
 #include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
 #include <gui/freqgraph_screen/FreqGraphView.hpp>
 #include <gui/freqgraph_screen/FreqGraphPresenter.hpp>
+#include <gui/about_screen/AboutView.hpp>
+#include <gui/about_screen/AboutPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -241,4 +243,17 @@ void FrontendApplicationBase::gotoFreqGraphScreenWipeTransitionWest()
 void FrontendApplicationBase::gotoFreqGraphScreenWipeTransitionWestImpl()
 {
     touchgfx::makeTransition<FreqGraphView, FreqGraphPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// About
+
+void FrontendApplicationBase::gotoAboutScreenCoverTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoAboutScreenCoverTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoAboutScreenCoverTransitionEastImpl()
+{
+    touchgfx::makeTransition<AboutView, AboutPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

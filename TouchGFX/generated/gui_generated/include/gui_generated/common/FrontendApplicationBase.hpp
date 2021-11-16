@@ -57,6 +57,9 @@ public:
     // FreqGraph
     void gotoFreqGraphScreenWipeTransitionWest();
 
+    // About
+    void gotoAboutScreenCoverTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -103,6 +106,9 @@ protected:
 
     // FreqGraph
     void gotoFreqGraphScreenWipeTransitionWestImpl();
+
+    // About
+    void gotoAboutScreenCoverTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -66,6 +66,7 @@ MenuViewBase::MenuViewBase() :
     buttonAbout.setLabelText(touchgfx::TypedText(T_SINGLEUSEID320));
     buttonAbout.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonAbout.setLabelColorPressed(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    buttonAbout.setAction(buttonCallback);
 
     add(__background);
     add(boxBackgroundMenu);
@@ -112,5 +113,12 @@ void MenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonCalibration clicked call virtual function
         //Call ResetParameters
         ResetParameters();
+    }
+    else if (&src == &buttonAbout)
+    {
+        //OpenAbout
+        //When buttonAbout clicked change screen to About
+        //Go to About with screen transition towards East
+        application().gotoAboutScreenCoverTransitionEast();
     }
 }

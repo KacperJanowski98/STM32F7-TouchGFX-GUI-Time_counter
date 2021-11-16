@@ -36,6 +36,8 @@
 #include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
 #include <gui/freqgraph_screen/FreqGraphView.hpp>
 #include <gui/freqgraph_screen/FreqGraphPresenter.hpp>
+#include <gui/about_screen/AboutView.hpp>
+#include <gui/about_screen/AboutPresenter.hpp>
 
 
 /**
@@ -68,7 +70,8 @@ public:
             touchgfx::meta::TypeList< TimeGraphTi1View,
             touchgfx::meta::TypeList< FreqHistogramView,
             touchgfx::meta::TypeList< FreqGraphView,
-            touchgfx::meta::Nil > > > > > > > > >
+            touchgfx::meta::TypeList< AboutView,
+            touchgfx::meta::Nil > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -90,7 +93,8 @@ public:
             touchgfx::meta::TypeList< TimeGraphTi1Presenter,
             touchgfx::meta::TypeList< FreqHistogramPresenter,
             touchgfx::meta::TypeList< FreqGraphPresenter,
-            touchgfx::meta::Nil > > > > > > > > >
+            touchgfx::meta::TypeList< AboutPresenter,
+            touchgfx::meta::Nil > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
