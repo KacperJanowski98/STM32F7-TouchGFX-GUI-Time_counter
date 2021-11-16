@@ -116,7 +116,7 @@ void TimeHistogramView::DisplayGraph7()
 void TimeHistogramView::calculateMaxVal(TimeTi_t ti, float *pMaxRange)
 {
 	int distance = ti.stopIn - ti.startIn;
-	switch (distance)
+	switch (abs(distance))
 	{
 	case 1:
 		*pMaxRange = 54.0f;
