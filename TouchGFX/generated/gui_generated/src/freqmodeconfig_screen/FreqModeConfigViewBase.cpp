@@ -48,6 +48,27 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxINPUT.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqINPUT.add(boxINPUT);
 
+    boxWithBorderScroll.setPosition(32, 73, 100, 300);
+    boxWithBorderScroll.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderScroll.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderScroll.setBorderSize(4);
+    boxWithBorderScroll.setAlpha(25);
+    swipeContainerFreqINPUT.add(boxWithBorderScroll);
+
+    boxWithBorderThreshold.setPosition(548, 199, 135, 41);
+    boxWithBorderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderThreshold.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderThreshold.setBorderSize(4);
+    boxWithBorderThreshold.setAlpha(25);
+    swipeContainerFreqINPUT.add(boxWithBorderThreshold);
+
+    boxWithBorderSlope.setPosition(308, 73, 202, 298);
+    boxWithBorderSlope.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSlope.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSlope.setBorderSize(4);
+    boxWithBorderSlope.setAlpha(25);
+    swipeContainerFreqINPUT.add(boxWithBorderSlope);
+
     imageArrowR.setXY(770, 180);
     imageArrowR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerFreqINPUT.add(imageArrowR);
@@ -126,30 +147,9 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderThreshold.setValue(0);
     swipeContainerFreqINPUT.add(sliderThreshold);
 
-    boxWithBorderScroll.setPosition(32, 73, 100, 300);
-    boxWithBorderScroll.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderScroll.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderScroll.setBorderSize(4);
-    boxWithBorderScroll.setAlpha(25);
-    swipeContainerFreqINPUT.add(boxWithBorderScroll);
-
     imageFrame.setXY(43, 177);
     imageFrame.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_WHEEL_FRAME_NEW_ID));
     swipeContainerFreqINPUT.add(imageFrame);
-
-    boxWithBorderSlope.setPosition(308, 73, 202, 298);
-    boxWithBorderSlope.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSlope.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSlope.setBorderSize(4);
-    boxWithBorderSlope.setAlpha(25);
-    swipeContainerFreqINPUT.add(boxWithBorderSlope);
-
-    boxWithBorderThreshold.setPosition(548, 199, 135, 41);
-    boxWithBorderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderThreshold.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderThreshold.setBorderSize(4);
-    boxWithBorderThreshold.setAlpha(25);
-    swipeContainerFreqINPUT.add(boxWithBorderThreshold);
 
     imageFallingF.setXY(397, 244);
     imageFallingF.setBitmap(touchgfx::Bitmap(BITMAP_FALLING_EDGE_96_ID));
@@ -239,6 +239,13 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqMESSETUP.add(boxTISETUP);
 
+    boxWithBorderGate.setPosition(328, 263, 143, 47);
+    boxWithBorderGate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderGate.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderGate.setBorderSize(4);
+    boxWithBorderGate.setAlpha(25);
+    swipeContainerFreqMESSETUP.add(boxWithBorderGate);
+
     labelHfInput.setXY(82, 76);
     labelHfInput.setColor(touchgfx::Color::getColorFromRGB(252, 252, 252));
     labelHfInput.setLinespacing(0);
@@ -298,13 +305,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderGate.setValue(0);
     swipeContainerFreqMESSETUP.add(sliderGate);
 
-    boxWithBorderGate.setPosition(328, 263, 143, 47);
-    boxWithBorderGate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderGate.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderGate.setBorderSize(4);
-    boxWithBorderGate.setAlpha(25);
-    swipeContainerFreqMESSETUP.add(boxWithBorderGate);
-
     labelMesSetup.setXY(17, 16);
     labelMesSetup.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelMesSetup.setLinespacing(0);
@@ -318,6 +318,20 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxSESSIONSETUP.setPosition(-1, 0, 801, 420);
     boxSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqSESSION.add(boxSESSIONSETUP);
+
+    boxWithBorderStamp.setPosition(36, 180, 325, 56);
+    boxWithBorderStamp.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderStamp.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderStamp.setBorderSize(4);
+    boxWithBorderStamp.setAlpha(25);
+    swipeContainerFreqSESSION.add(boxWithBorderStamp);
+
+    boxWithBorderRepeat.setPosition(430, 180, 332, 56);
+    boxWithBorderRepeat.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderRepeat.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderRepeat.setBorderSize(4);
+    boxWithBorderRepeat.setAlpha(25);
+    swipeContainerFreqSESSION.add(boxWithBorderRepeat);
 
     imageArrowSL.setXY(11, 178);
     imageArrowSL.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_32_ID));
@@ -408,20 +422,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonConfigFreqRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigFreqRepeat.setAction(buttonCallback);
     swipeContainerFreqSESSION.add(buttonConfigFreqRepeat);
-
-    boxWithBorderStamp.setPosition(36, 180, 325, 56);
-    boxWithBorderStamp.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderStamp.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderStamp.setBorderSize(4);
-    boxWithBorderStamp.setAlpha(25);
-    swipeContainerFreqSESSION.add(boxWithBorderStamp);
-
-    boxWithBorderRepeat.setPosition(430, 180, 332, 56);
-    boxWithBorderRepeat.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderRepeat.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderRepeat.setBorderSize(4);
-    boxWithBorderRepeat.setAlpha(25);
-    swipeContainerFreqSESSION.add(boxWithBorderRepeat);
     swipeContainerFreq.add(swipeContainerFreqSESSION);
     swipeContainerFreq.setSelectedPage(0);
 

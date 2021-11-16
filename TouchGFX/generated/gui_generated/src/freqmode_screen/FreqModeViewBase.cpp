@@ -16,6 +16,18 @@ FreqModeViewBase::FreqModeViewBase() :
     boxBackgroungFreq.setPosition(0, 0, 800, 480);
     boxBackgroungFreq.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
+    boxWithBorderMain.setPosition(9, 75, 783, 389);
+    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(17, 3, 59));
+    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderMain.setBorderSize(4);
+    boxWithBorderMain.setAlpha(30);
+
+    boxWithBorderHome.setPosition(9, 11, 783, 60);
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
+    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderHome.setBorderSize(4);
+    boxWithBorderHome.setAlpha(30);
+
     buttonToMenuF.setXY(726, 11);
     buttonToMenuF.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonToMenuF.setAction(buttonCallback);
@@ -423,12 +435,6 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
-    boxWithBorder1.setPosition(9, 75, 783, 389);
-    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(17, 3, 59));
-    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
-    boxWithBorder1.setBorderSize(4);
-    boxWithBorder1.setAlpha(30);
-
     labelFreqConfig.setXY(71, 29);
     labelFreqConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelFreqConfig.setLinespacing(0);
@@ -437,14 +443,10 @@ FreqModeViewBase::FreqModeViewBase() :
     imageHome.setXY(17, 17);
     imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
 
-    boxWithBorderHome.setPosition(9, 11, 783, 60);
-    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
-    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
-    boxWithBorderHome.setBorderSize(4);
-    boxWithBorderHome.setAlpha(30);
-
     add(__background);
     add(boxBackgroungFreq);
+    add(boxWithBorderMain);
+    add(boxWithBorderHome);
     add(buttonToMenuF);
     add(buttonConfig);
     add(buttonReset);
@@ -508,10 +510,8 @@ FreqModeViewBase::FreqModeViewBase() :
     add(textUnitMean7);
     add(textUnitMean8);
     add(buttonHistogram);
-    add(boxWithBorder1);
     add(labelFreqConfig);
     add(imageHome);
-    add(boxWithBorderHome);
 }
 
 void FreqModeViewBase::setupScreen()

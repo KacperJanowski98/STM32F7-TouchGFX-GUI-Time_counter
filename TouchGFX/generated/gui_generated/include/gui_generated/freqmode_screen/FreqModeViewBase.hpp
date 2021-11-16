@@ -8,10 +8,10 @@
 #include <mvp/View.hpp>
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
 class FreqModeViewBase : public touchgfx::View<FreqModePresenter>
@@ -39,6 +39,8 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box boxBackgroungFreq;
+    touchgfx::BoxWithBorder boxWithBorderMain;
+    touchgfx::BoxWithBorder boxWithBorderHome;
     touchgfx::Button buttonToMenuF;
     touchgfx::Button buttonConfig;
     touchgfx::Button buttonReset;
@@ -102,10 +104,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textUnitMean7;
     touchgfx::TextAreaWithOneWildcard textUnitMean8;
     touchgfx::Button buttonHistogram;
-    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea labelFreqConfig;
     touchgfx::Image imageHome;
-    touchgfx::BoxWithBorder boxWithBorderHome;
 
     /*
      * Wildcard Buffers

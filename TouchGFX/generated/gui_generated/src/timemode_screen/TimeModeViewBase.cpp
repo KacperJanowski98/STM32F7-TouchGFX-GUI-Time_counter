@@ -16,6 +16,18 @@ TimeModeViewBase::TimeModeViewBase() :
     boxBackgroundTime.setPosition(0, 0, 800, 480);
     boxBackgroundTime.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
+    boxWithBorderMain.setPosition(9, 80, 783, 384);
+    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(20, 6, 69));
+    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderMain.setBorderSize(4);
+    boxWithBorderMain.setAlpha(30);
+
+    boxWithBorderHome.setPosition(9, 14, 783, 60);
+    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
+    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
+    boxWithBorderHome.setBorderSize(4);
+    boxWithBorderHome.setAlpha(30);
+
     buttonBackMenuT.setXY(723, 14);
     buttonBackMenuT.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackMenuT.setAction(buttonCallback);
@@ -626,12 +638,6 @@ TimeModeViewBase::TimeModeViewBase() :
     buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
-    boxWithBorder1.setPosition(9, 80, 783, 384);
-    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(20, 6, 69));
-    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
-    boxWithBorder1.setBorderSize(4);
-    boxWithBorder1.setAlpha(30);
-
     labelTimeConfig.setXY(74, 32);
     labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelTimeConfig.setLinespacing(0);
@@ -640,14 +646,10 @@ TimeModeViewBase::TimeModeViewBase() :
     imageHome.setXY(18, 20);
     imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
 
-    boxWithBorderHome.setPosition(9, 14, 783, 60);
-    boxWithBorderHome.setColor(touchgfx::Color::getColorFromRGB(0, 145, 161));
-    boxWithBorderHome.setBorderColor(touchgfx::Color::getColorFromRGB(0, 2, 5));
-    boxWithBorderHome.setBorderSize(4);
-    boxWithBorderHome.setAlpha(30);
-
     add(__background);
     add(boxBackgroundTime);
+    add(boxWithBorderMain);
+    add(boxWithBorderHome);
     add(buttonBackMenuT);
     add(buttonConfig);
     add(buttonReset);
@@ -740,10 +742,8 @@ TimeModeViewBase::TimeModeViewBase() :
     add(textLabelTi6);
     add(textLabelTi7);
     add(buttonHistogram);
-    add(boxWithBorder1);
     add(labelTimeConfig);
     add(imageHome);
-    add(boxWithBorderHome);
 }
 
 void TimeModeViewBase::setupScreen()

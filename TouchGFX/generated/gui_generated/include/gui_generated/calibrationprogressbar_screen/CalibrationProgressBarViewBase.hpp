@@ -8,11 +8,11 @@
 #include <mvp/View.hpp>
 #include <gui/calibrationprogressbar_screen/CalibrationProgressBarPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 
 class CalibrationProgressBarViewBase : public touchgfx::View<CalibrationProgressBarPresenter>
 {
@@ -31,12 +31,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box backgroundCalibration;
+    touchgfx::BoxWithBorder boxWithBorderFrame;
     touchgfx::CircleProgress calibrationProgress;
     touchgfx::PainterRGB565Bitmap calibrationProgressPainter;
     touchgfx::TextArea textLabelName;
     touchgfx::TextArea textLabelDescription;
     touchgfx::TextAreaWithOneWildcard textAreaValue;
-    touchgfx::BoxWithBorder boxWithBorderFrame;
 
     /*
      * Wildcard Buffers

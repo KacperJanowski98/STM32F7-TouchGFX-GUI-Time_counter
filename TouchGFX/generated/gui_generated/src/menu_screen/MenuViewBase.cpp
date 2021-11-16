@@ -16,6 +16,12 @@ MenuViewBase::MenuViewBase() :
     boxBackgroundMenu.setPosition(0, 0, 800, 480);
     boxBackgroundMenu.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
+    boxWithBorderFrame.setPosition(18, 18, 766, 444);
+    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderFrame.setBorderSize(5);
+    boxWithBorderFrame.setAlpha(10);
+
     buttonFrequency.setXY(220, 318);
     buttonFrequency.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
     buttonFrequency.setLabelText(touchgfx::TypedText(T_SINGLEUSEID2));
@@ -37,18 +43,24 @@ MenuViewBase::MenuViewBase() :
     buttonCalibration.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonCalibration.setAction(buttonCallback);
 
-    boxWithBorderFrame.setPosition(18, 18, 766, 444);
-    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderFrame.setBorderSize(5);
-    boxWithBorderFrame.setAlpha(10);
+    textAreaVersion.setXY(676, 386);
+    textAreaVersion.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    textAreaVersion.setLinespacing(0);
+    textAreaVersion.setTypedText(touchgfx::TypedText(T_SINGLEUSEID317));
+
+    textAreaVersionNumber.setXY(698, 423);
+    textAreaVersionNumber.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
+    textAreaVersionNumber.setLinespacing(0);
+    textAreaVersionNumber.setTypedText(touchgfx::TypedText(T_SINGLEUSEID318));
 
     add(__background);
     add(boxBackgroundMenu);
+    add(boxWithBorderFrame);
     add(buttonFrequency);
     add(buttonTime);
     add(buttonCalibration);
-    add(boxWithBorderFrame);
+    add(textAreaVersion);
+    add(textAreaVersionNumber);
 }
 
 void MenuViewBase::setupScreen()

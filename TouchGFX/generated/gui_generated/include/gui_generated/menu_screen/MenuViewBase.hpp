@@ -8,8 +8,9 @@
 #include <mvp/View.hpp>
 #include <gui/menu_screen/MenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class MenuViewBase : public touchgfx::View<MenuPresenter>
 {
@@ -36,10 +37,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box boxBackgroundMenu;
+    touchgfx::BoxWithBorder boxWithBorderFrame;
     touchgfx::ButtonWithLabel buttonFrequency;
     touchgfx::ButtonWithLabel buttonTime;
     touchgfx::ButtonWithLabel buttonCalibration;
-    touchgfx::BoxWithBorder boxWithBorderFrame;
+    touchgfx::TextArea textAreaVersion;
+    touchgfx::TextArea textAreaVersionNumber;
 
 private:
 

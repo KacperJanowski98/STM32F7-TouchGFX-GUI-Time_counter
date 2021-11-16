@@ -17,6 +17,12 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     backgroundCalibration.setPosition(0, 0, 800, 480);
     backgroundCalibration.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
+    boxWithBorderFrame.setPosition(18, 18, 766, 444);
+    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderFrame.setBorderSize(5);
+    boxWithBorderFrame.setAlpha(10);
+
     calibrationProgress.setXY(308, 229);
     calibrationProgress.setProgressIndicatorPosition(0, 0, 184, 184);
     calibrationProgress.setRange(0, 100);
@@ -47,19 +53,13 @@ CalibrationProgressBarViewBase::CalibrationProgressBarViewBase()
     textAreaValue.setWildcard(textAreaValueBuffer);
     textAreaValue.setTypedText(touchgfx::TypedText(T_SINGLEUSEID309));
 
-    boxWithBorderFrame.setPosition(18, 18, 766, 444);
-    boxWithBorderFrame.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderFrame.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderFrame.setBorderSize(5);
-    boxWithBorderFrame.setAlpha(10);
-
     add(__background);
     add(backgroundCalibration);
+    add(boxWithBorderFrame);
     add(calibrationProgress);
     add(textLabelName);
     add(textLabelDescription);
     add(textAreaValue);
-    add(boxWithBorderFrame);
 }
 
 void CalibrationProgressBarViewBase::setupScreen()

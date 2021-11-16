@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
@@ -21,7 +22,6 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/Slider.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class FreqModeConfigViewBase : public touchgfx::View<FreqModeConfigPresenter>
@@ -92,6 +92,9 @@ protected:
     touchgfx::SwipeContainer swipeContainerFreq;
     touchgfx::Container swipeContainerFreqINPUT;
     touchgfx::Box boxINPUT;
+    touchgfx::BoxWithBorder boxWithBorderScroll;
+    touchgfx::BoxWithBorder boxWithBorderThreshold;
+    touchgfx::BoxWithBorder boxWithBorderSlope;
     touchgfx::Image imageArrowR;
     touchgfx::TextArea labelINPUT;
     touchgfx::ToggleButton toggleChannel;
@@ -106,10 +109,7 @@ protected:
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
     touchgfx::Slider sliderThreshold;
-    touchgfx::BoxWithBorder boxWithBorderScroll;
     touchgfx::Image imageFrame;
-    touchgfx::BoxWithBorder boxWithBorderSlope;
-    touchgfx::BoxWithBorder boxWithBorderThreshold;
     touchgfx::Image imageFallingF;
     touchgfx::Image imageRisingF;
     touchgfx::Container swipeContainerFreqCLOCK;
@@ -128,6 +128,7 @@ protected:
     touchgfx::Image imageArrowTR;
     touchgfx::TextArea labelTISETUP;
     touchgfx::Box boxTISETUP;
+    touchgfx::BoxWithBorder boxWithBorderGate;
     touchgfx::TextArea labelHfInput;
     touchgfx::Image imageArrowML;
     touchgfx::Image imageArrowMR;
@@ -138,10 +139,11 @@ protected:
     touchgfx::TextArea labelGate;
     touchgfx::TextAreaWithOneWildcard textGateVal;
     touchgfx::Slider sliderGate;
-    touchgfx::BoxWithBorder boxWithBorderGate;
     touchgfx::TextArea labelMesSetup;
     touchgfx::Container swipeContainerFreqSESSION;
     touchgfx::Box boxSESSIONSETUP;
+    touchgfx::BoxWithBorder boxWithBorderStamp;
+    touchgfx::BoxWithBorder boxWithBorderRepeat;
     touchgfx::Image imageArrowSL;
     touchgfx::TextArea labelSESSIONSETUP;
     touchgfx::TextAreaWithOneWildcard textStampsVal;
@@ -155,8 +157,6 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqConst;
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;
     touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
-    touchgfx::BoxWithBorder boxWithBorderStamp;
-    touchgfx::BoxWithBorder boxWithBorderRepeat;
     touchgfx::Image imageSetting;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;

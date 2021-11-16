@@ -24,6 +24,32 @@
             "Moveable": false
           },
           {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 10,
+            "Name": "boxWithBorderFrame",
+            "X": 18,
+            "Y": 18,
+            "Width": 766,
+            "Height": 444,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
             "Type": "CircleProgress",
             "FileNameProgress": "My_Blue_ProgressIndicators_fill_large_circle_indicator_fill_line_full.png",
             "Color": {
@@ -137,32 +163,6 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
-            },
-            "BorderSize": 5,
-            "Alpha": 10,
-            "Name": "boxWithBorderFrame",
-            "X": 18,
-            "Y": 18,
-            "Width": 766,
-            "Height": 444,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
           }
         ],
         "Interactions": [
@@ -199,6 +199,32 @@
             "Y": 0,
             "Width": 800,
             "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "BorderSize": 5,
+            "Alpha": 10,
+            "Name": "boxWithBorderFrame",
+            "X": 18,
+            "Y": 18,
+            "Width": 766,
+            "Height": 444,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -294,24 +320,46 @@
             "Moveable": false
           },
           {
-            "Type": "BoxWithBorder",
+            "Type": "TextArea",
+            "TextId": "SingleUseId317",
+            "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaVersion",
+            "X": 676,
+            "Y": 386,
+            "Width": 83,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId318",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 126,
+              "Green": 224,
+              "Blue": 159
             },
-            "BorderSize": 5,
-            "Alpha": 10,
-            "Name": "boxWithBorderFrame",
-            "X": 18,
-            "Y": 18,
-            "Width": 766,
-            "Height": 444,
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaVersionNumber",
+            "X": 698,
+            "Y": 423,
+            "Width": 39,
+            "Height": 19,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -395,6 +443,58 @@
             "Y": 0,
             "Width": 800,
             "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 20,
+              "Green": 6,
+              "Blue": 69
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderMain",
+            "X": 9,
+            "Y": 80,
+            "Width": 783,
+            "Height": 384,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 145,
+              "Blue": 161
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderHome",
+            "X": 9,
+            "Y": 14,
+            "Width": 783,
+            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -2891,32 +2991,6 @@
             "Moveable": false
           },
           {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 20,
-              "Green": 6,
-              "Blue": 69
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 2,
-              "Blue": 5
-            },
-            "BorderSize": 4,
-            "Alpha": 30,
-            "Name": "boxWithBorder1",
-            "X": 9,
-            "Y": 80,
-            "Width": 783,
-            "Height": 384,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Type": "TextArea",
             "TextId": "SingleUseId315",
             "TextRotation": "0",
@@ -2949,32 +3023,6 @@
             "Y": 20,
             "Width": 48,
             "Height": 48,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 0,
-              "Green": 145,
-              "Blue": 161
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 2,
-              "Blue": 5
-            },
-            "BorderSize": 4,
-            "Alpha": 30,
-            "Name": "boxWithBorderHome",
-            "X": 9,
-            "Y": 14,
-            "Width": 783,
-            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -3207,6 +3255,84 @@
                     "Moveable": false
                   },
                   {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSlider",
+                    "X": 36,
+                    "Y": 69,
+                    "Width": 100,
+                    "Height": 300,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSlope",
+                    "X": 308,
+                    "Y": 73,
+                    "Width": 202,
+                    "Height": 298,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderThreshold",
+                    "X": 534,
+                    "Y": 196,
+                    "Width": 154,
+                    "Height": 42,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
                     "Type": "TextArea",
                     "TextId": "SingleUseId4",
                     "TextRotation": "0",
@@ -3431,58 +3557,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSlider",
-                    "X": 36,
-                    "Y": 69,
-                    "Width": 100,
-                    "Height": 300,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderThreshold",
-                    "X": 534,
-                    "Y": 196,
-                    "Width": 154,
-                    "Height": 42,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "Image",
                     "RelativeFilename": "scroll_wheel_frame_new.png",
                     "Alpha": 255,
@@ -3550,32 +3624,6 @@
                     "Y": 134,
                     "Width": 96,
                     "Height": 96,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSlope",
-                    "X": 308,
-                    "Y": 73,
-                    "Width": 202,
-                    "Height": 298,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -3844,6 +3892,58 @@
                     "Y": 0,
                     "Width": 800,
                     "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderNumStart",
+                    "X": 540,
+                    "Y": 95,
+                    "Width": 71,
+                    "Height": 39,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderNumStop",
+                    "X": 539,
+                    "Y": 272,
+                    "Width": 71,
+                    "Height": 39,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4247,58 +4347,6 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderNumStop",
-                    "X": 539,
-                    "Y": 272,
-                    "Width": 71,
-                    "Height": 39,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderNumStart",
-                    "X": 540,
-                    "Y": 95,
-                    "Width": 71,
-                    "Height": 39,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -4346,6 +4394,84 @@
                     "Y": 178,
                     "Width": 19,
                     "Height": 32,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSetupTi",
+                    "X": 300,
+                    "Y": 72,
+                    "Width": 128,
+                    "Height": 35,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSetupR",
+                    "X": 432,
+                    "Y": 213,
+                    "Width": 338,
+                    "Height": 57,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSetupS",
+                    "X": 36,
+                    "Y": 213,
+                    "Width": 338,
+                    "Height": 57,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -4778,84 +4904,6 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSetupTi",
-                    "X": 300,
-                    "Y": 72,
-                    "Width": 128,
-                    "Height": 35,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSetupS",
-                    "X": 36,
-                    "Y": 213,
-                    "Width": 338,
-                    "Height": 57,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSetupR",
-                    "X": 432,
-                    "Y": 213,
-                    "Width": 338,
-                    "Height": 57,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -5055,6 +5103,58 @@
             "Y": 0,
             "Width": 800,
             "Height": 480,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 17,
+              "Green": 3,
+              "Blue": 59
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderMain",
+            "X": 9,
+            "Y": 75,
+            "Width": 783,
+            "Height": 389,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Color": {
+              "Red": 0,
+              "Green": 145,
+              "Blue": 161
+            },
+            "BorderColor": {
+              "Red": 0,
+              "Green": 2,
+              "Blue": 5
+            },
+            "BorderSize": 4,
+            "Alpha": 30,
+            "Name": "boxWithBorderHome",
+            "X": 9,
+            "Y": 11,
+            "Width": 783,
+            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -6739,32 +6839,6 @@
             "Moveable": false
           },
           {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 17,
-              "Green": 3,
-              "Blue": 59
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 2,
-              "Blue": 5
-            },
-            "BorderSize": 4,
-            "Alpha": 30,
-            "Name": "boxWithBorder1",
-            "X": 9,
-            "Y": 75,
-            "Width": 783,
-            "Height": 389,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Type": "TextArea",
             "TextId": "SingleUseId316",
             "TextRotation": "0",
@@ -6797,32 +6871,6 @@
             "Y": 17,
             "Width": 48,
             "Height": 48,
-            "Visible": true,
-            "LockPosition": false,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Color": {
-              "Red": 0,
-              "Green": 145,
-              "Blue": 161
-            },
-            "BorderColor": {
-              "Red": 0,
-              "Green": 2,
-              "Blue": 5
-            },
-            "BorderSize": 4,
-            "Alpha": 30,
-            "Name": "boxWithBorderHome",
-            "X": 9,
-            "Y": 11,
-            "Width": 783,
-            "Height": 60,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -7031,6 +7079,84 @@
                     "Y": -1,
                     "Width": 800,
                     "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderScroll",
+                    "X": 32,
+                    "Y": 73,
+                    "Width": 100,
+                    "Height": 300,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderThreshold",
+                    "X": 548,
+                    "Y": 199,
+                    "Width": 135,
+                    "Height": 41,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderSlope",
+                    "X": 308,
+                    "Y": 73,
+                    "Width": 202,
+                    "Height": 298,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -7306,32 +7432,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderScroll",
-                    "X": 32,
-                    "Y": 73,
-                    "Width": 100,
-                    "Height": 300,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "Image",
                     "RelativeFilename": "scroll_wheel_frame_new.png",
                     "Alpha": 255,
@@ -7340,58 +7440,6 @@
                     "Y": 177,
                     "Width": 79,
                     "Height": 96,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderSlope",
-                    "X": 308,
-                    "Y": 73,
-                    "Width": 202,
-                    "Height": 298,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderThreshold",
-                    "X": 548,
-                    "Y": 199,
-                    "Width": 135,
-                    "Height": 41,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -7756,6 +7804,32 @@
                     "Moveable": false
                   },
                   {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderGate",
+                    "X": 328,
+                    "Y": 263,
+                    "Width": 143,
+                    "Height": 47,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
                     "Type": "TextArea",
                     "TextId": "SingleUseId66",
                     "TextRotation": "0",
@@ -7983,32 +8057,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderGate",
-                    "X": 328,
-                    "Y": 263,
-                    "Width": 143,
-                    "Height": 47,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "TextArea",
                     "TextId": "SingleUseId71",
                     "TextRotation": "0",
@@ -8062,6 +8110,58 @@
                     "Y": 0,
                     "Width": 801,
                     "Height": 420,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderStamp",
+                    "X": 36,
+                    "Y": 180,
+                    "Width": 325,
+                    "Height": 56,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 4,
+                    "Alpha": 25,
+                    "Name": "boxWithBorderRepeat",
+                    "X": 430,
+                    "Y": 180,
+                    "Width": 332,
+                    "Height": 56,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -8406,58 +8506,6 @@
                     "Y": 321,
                     "Width": 170,
                     "Height": 60,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderStamp",
-                    "X": 36,
-                    "Y": 180,
-                    "Width": 325,
-                    "Height": 56,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
-                    "Type": "BoxWithBorder",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "BorderColor": {
-                      "Red": 0,
-                      "Green": 0,
-                      "Blue": 0
-                    },
-                    "BorderSize": 4,
-                    "Alpha": 25,
-                    "Name": "boxWithBorderRepeat",
-                    "X": 430,
-                    "Y": 180,
-                    "Width": 332,
-                    "Height": 56,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -11148,6 +11196,14 @@
       },
       {
         "TextEntryId": "SingleUseId316",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId317",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId318",
         "IsResource": false
       }
     ],

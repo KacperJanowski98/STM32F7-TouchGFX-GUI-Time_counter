@@ -13,6 +13,7 @@
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
@@ -20,7 +21,6 @@
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 
@@ -133,6 +133,9 @@ protected:
     touchgfx::Container swipeContainerTimeINPUT;
     touchgfx::Box boxINPUT;
     touchgfx::Image imageArrowR;
+    touchgfx::BoxWithBorder boxWithBorderSlider;
+    touchgfx::BoxWithBorder boxWithBorderSlope;
+    touchgfx::BoxWithBorder boxWithBorderThreshold;
     touchgfx::TextArea labelINPUT;
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelINPUT;
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;
@@ -145,13 +148,10 @@ protected:
     touchgfx::TextArea textSlope;
     touchgfx::ButtonWithLabel buttonDetect;
     touchgfx::TextAreaWithOneWildcard textSliderThreshold;
-    touchgfx::BoxWithBorder boxWithBorderSlider;
-    touchgfx::BoxWithBorder boxWithBorderThreshold;
     touchgfx::Image imageFrame;
     touchgfx::Slider sliderThreshold;
     touchgfx::Image imageFallingT;
     touchgfx::Image imageRisingT;
-    touchgfx::BoxWithBorder boxWithBorderSlope;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;
@@ -165,6 +165,8 @@ protected:
     touchgfx::RadioButton radioClockQuartz;
     touchgfx::Container swipeContainerTimeTISETUP;
     touchgfx::Box boxTISETUP;
+    touchgfx::BoxWithBorder boxWithBorderNumStart;
+    touchgfx::BoxWithBorder boxWithBorderNumStop;
     touchgfx::Image imageArrowTL;
     touchgfx::Image imageArrowTR;
     touchgfx::TextArea labelTISETUP;
@@ -191,11 +193,12 @@ protected:
     touchgfx::Image imageFrameStarty;
     touchgfx::Image imageFrameStop;
     touchgfx::ToggleButton toggleTiSetup;
-    touchgfx::BoxWithBorder boxWithBorderNumStop;
-    touchgfx::BoxWithBorder boxWithBorderNumStart;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;
+    touchgfx::BoxWithBorder boxWithBorderSetupTi;
+    touchgfx::BoxWithBorder boxWithBorderSetupR;
+    touchgfx::BoxWithBorder boxWithBorderSetupS;
     touchgfx::TextArea labelSESSIONSETUP;
     touchgfx::TextArea textTiMaxRange;
     touchgfx::TextAreaWithOneWildcard textRangeVal;
@@ -212,9 +215,6 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigTimeConst;
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::ButtonWithLabel buttonConfigTimeRepeat;
-    touchgfx::BoxWithBorder boxWithBorderSetupTi;
-    touchgfx::BoxWithBorder boxWithBorderSetupS;
-    touchgfx::BoxWithBorder boxWithBorderSetupR;
     touchgfx::Image imageSetting;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;

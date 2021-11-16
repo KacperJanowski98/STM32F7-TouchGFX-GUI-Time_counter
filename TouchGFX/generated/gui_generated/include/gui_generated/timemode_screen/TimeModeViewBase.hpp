@@ -8,10 +8,10 @@
 #include <mvp/View.hpp>
 #include <gui/timemode_screen/TimeModePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
 class TimeModeViewBase : public touchgfx::View<TimeModePresenter>
@@ -39,6 +39,8 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box boxBackgroundTime;
+    touchgfx::BoxWithBorder boxWithBorderMain;
+    touchgfx::BoxWithBorder boxWithBorderHome;
     touchgfx::Button buttonBackMenuT;
     touchgfx::Button buttonConfig;
     touchgfx::Button buttonReset;
@@ -131,10 +133,8 @@ protected:
     touchgfx::TextArea textLabelTi6;
     touchgfx::TextArea textLabelTi7;
     touchgfx::Button buttonHistogram;
-    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea labelTimeConfig;
     touchgfx::Image imageHome;
-    touchgfx::BoxWithBorder boxWithBorderHome;
 
     /*
      * Wildcard Buffers

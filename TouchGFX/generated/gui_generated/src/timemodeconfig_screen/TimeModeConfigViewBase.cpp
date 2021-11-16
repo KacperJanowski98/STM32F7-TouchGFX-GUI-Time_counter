@@ -52,6 +52,27 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageArrowR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerTimeINPUT.add(imageArrowR);
 
+    boxWithBorderSlider.setPosition(36, 69, 100, 300);
+    boxWithBorderSlider.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSlider.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSlider.setBorderSize(4);
+    boxWithBorderSlider.setAlpha(25);
+    swipeContainerTimeINPUT.add(boxWithBorderSlider);
+
+    boxWithBorderSlope.setPosition(308, 73, 202, 298);
+    boxWithBorderSlope.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSlope.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSlope.setBorderSize(4);
+    boxWithBorderSlope.setAlpha(25);
+    swipeContainerTimeINPUT.add(boxWithBorderSlope);
+
+    boxWithBorderThreshold.setPosition(534, 196, 154, 42);
+    boxWithBorderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderThreshold.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderThreshold.setBorderSize(4);
+    boxWithBorderThreshold.setAlpha(25);
+    swipeContainerTimeINPUT.add(boxWithBorderThreshold);
+
     labelINPUT.setXY(15, 16);
     labelINPUT.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelINPUT.setLinespacing(0);
@@ -119,20 +140,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     textSliderThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID22));
     swipeContainerTimeINPUT.add(textSliderThreshold);
 
-    boxWithBorderSlider.setPosition(36, 69, 100, 300);
-    boxWithBorderSlider.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSlider.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSlider.setBorderSize(4);
-    boxWithBorderSlider.setAlpha(25);
-    swipeContainerTimeINPUT.add(boxWithBorderSlider);
-
-    boxWithBorderThreshold.setPosition(534, 196, 154, 42);
-    boxWithBorderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderThreshold.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderThreshold.setBorderSize(4);
-    boxWithBorderThreshold.setAlpha(25);
-    swipeContainerTimeINPUT.add(boxWithBorderThreshold);
-
     imageFrame.setXY(47, 178);
     imageFrame.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_WHEEL_FRAME_NEW_ID));
     swipeContainerTimeINPUT.add(imageFrame);
@@ -151,13 +158,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageRisingT.setXY(399, 134);
     imageRisingT.setBitmap(touchgfx::Bitmap(BITMAP_RISING_EDGE_96_ID));
     swipeContainerTimeINPUT.add(imageRisingT);
-
-    boxWithBorderSlope.setPosition(308, 73, 202, 298);
-    boxWithBorderSlope.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSlope.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSlope.setBorderSize(4);
-    boxWithBorderSlope.setAlpha(25);
-    swipeContainerTimeINPUT.add(boxWithBorderSlope);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -224,6 +224,20 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxTISETUP.setPosition(0, 0, 800, 420);
     boxTISETUP.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerTimeTISETUP.add(boxTISETUP);
+
+    boxWithBorderNumStart.setPosition(540, 95, 71, 39);
+    boxWithBorderNumStart.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderNumStart.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderNumStart.setBorderSize(4);
+    boxWithBorderNumStart.setAlpha(25);
+    swipeContainerTimeTISETUP.add(boxWithBorderNumStart);
+
+    boxWithBorderNumStop.setPosition(539, 272, 71, 39);
+    boxWithBorderNumStop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderNumStop.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderNumStop.setBorderSize(4);
+    boxWithBorderNumStop.setAlpha(25);
+    swipeContainerTimeTISETUP.add(boxWithBorderNumStop);
 
     imageArrowTL.setXY(11, 178);
     imageArrowTL.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_32_ID));
@@ -352,20 +366,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     toggleTiSetup.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID));
     toggleTiSetup.setAction(buttonCallback);
     swipeContainerTimeTISETUP.add(toggleTiSetup);
-
-    boxWithBorderNumStop.setPosition(539, 272, 71, 39);
-    boxWithBorderNumStop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderNumStop.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderNumStop.setBorderSize(4);
-    boxWithBorderNumStop.setAlpha(25);
-    swipeContainerTimeTISETUP.add(boxWithBorderNumStop);
-
-    boxWithBorderNumStart.setPosition(540, 95, 71, 39);
-    boxWithBorderNumStart.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderNumStart.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderNumStart.setBorderSize(4);
-    boxWithBorderNumStart.setAlpha(25);
-    swipeContainerTimeTISETUP.add(boxWithBorderNumStart);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 
     swipeContainerTimeSESSION.setWidth(800);
@@ -378,6 +378,27 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageArrowSL.setXY(11, 178);
     imageArrowSL.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_32_ID));
     swipeContainerTimeSESSION.add(imageArrowSL);
+
+    boxWithBorderSetupTi.setPosition(300, 72, 128, 35);
+    boxWithBorderSetupTi.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSetupTi.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSetupTi.setBorderSize(4);
+    boxWithBorderSetupTi.setAlpha(25);
+    swipeContainerTimeSESSION.add(boxWithBorderSetupTi);
+
+    boxWithBorderSetupR.setPosition(432, 213, 338, 57);
+    boxWithBorderSetupR.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSetupR.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSetupR.setBorderSize(4);
+    boxWithBorderSetupR.setAlpha(25);
+    swipeContainerTimeSESSION.add(boxWithBorderSetupR);
+
+    boxWithBorderSetupS.setPosition(36, 213, 338, 57);
+    boxWithBorderSetupS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderSetupS.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderSetupS.setBorderSize(4);
+    boxWithBorderSetupS.setAlpha(25);
+    swipeContainerTimeSESSION.add(boxWithBorderSetupS);
 
     labelSESSIONSETUP.setXY(15, 16);
     labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
@@ -490,27 +511,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     buttonConfigTimeRepeat.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonConfigTimeRepeat.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(buttonConfigTimeRepeat);
-
-    boxWithBorderSetupTi.setPosition(300, 72, 128, 35);
-    boxWithBorderSetupTi.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSetupTi.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSetupTi.setBorderSize(4);
-    boxWithBorderSetupTi.setAlpha(25);
-    swipeContainerTimeSESSION.add(boxWithBorderSetupTi);
-
-    boxWithBorderSetupS.setPosition(36, 213, 338, 57);
-    boxWithBorderSetupS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSetupS.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSetupS.setBorderSize(4);
-    boxWithBorderSetupS.setAlpha(25);
-    swipeContainerTimeSESSION.add(boxWithBorderSetupS);
-
-    boxWithBorderSetupR.setPosition(432, 213, 338, 57);
-    boxWithBorderSetupR.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderSetupR.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderSetupR.setBorderSize(4);
-    boxWithBorderSetupR.setAlpha(25);
-    swipeContainerTimeSESSION.add(boxWithBorderSetupR);
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(0);
 
