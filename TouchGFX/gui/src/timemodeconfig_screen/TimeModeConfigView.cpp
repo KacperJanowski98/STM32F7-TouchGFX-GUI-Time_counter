@@ -845,3 +845,18 @@ void TimeModeConfigView::updateTimeParameterBackend()
 	TimeBackend.TimeSession.stampsNumber = pSession->getStampsNumber();
 	TimeBackend.TimeSession.tiRange = pSession->getRange();
 }
+
+void TimeModeConfigView::updateChannelBackendStruct(TimeChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel)
+{
+
+}
+
+void TimeModeConfigView::updateTiBackendStruct(TimeTi_t *pTiBack, std::shared_ptr<TimeModeParameter> pTi)
+{
+
+}
+
+void TimeModeConfigView::updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession)
+{
+
+}

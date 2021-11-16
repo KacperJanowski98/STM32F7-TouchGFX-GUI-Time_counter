@@ -516,4 +516,12 @@ void FreqModeConfigView::updateFreqParameterBackend()
 	FreqBackend.FreqSession.stampsNumber = pSession->getStampsNumber();
 }
 
+void FreqModeConfigView::updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel)
+{
 
+}
+
+void FreqModeConfigView::updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession)
+{
+
+}

@@ -247,6 +247,13 @@ public:
 
     void setValueSliderRepeatUI(int value);
 
+    //:TODO
+    void updateChannelBackendStruct(TimeChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel);
+    //:TODO
+    void updateTiBackendStruct(TimeTi_t *pTiBack, std::shared_ptr<TimeModeParameter> pTi);
+    //:TODO
+    void updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession);
+
 protected:
     /**
      * @brief Wywołanie zwrotne, które jest wykonywane, gdy element w scroll wheel jest zmieniony
