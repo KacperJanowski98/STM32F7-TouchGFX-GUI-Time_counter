@@ -112,6 +112,8 @@ protected:
     touchgfx::Image imageFrame;
     touchgfx::Image imageFallingF;
     touchgfx::Image imageRisingF;
+    touchgfx::BoxWithBorder boxLockInput;
+    touchgfx::Image imageLockInput;
     touchgfx::Container swipeContainerFreqCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;

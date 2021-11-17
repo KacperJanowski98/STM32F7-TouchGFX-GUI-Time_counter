@@ -439,6 +439,18 @@ void TimeModeConfigView::ChangeChannelState()
 	setActiveListChannels(m_channelInput, CurrentState);
 	updateScrollTiSetup();
 	scrollWheelTISetup.animateToItem(0);
+
+	if (CurrentState == false)
+	{
+		imageLockInput.setVisible(true);
+		boxLockInput.setVisible(true);
+	} else
+	{
+		imageLockInput.setVisible(false);
+		boxLockInput.setVisible(false);
+	}
+	imageLockInput.invalidate();
+	boxLockInput.invalidate();
 }
 
 void TimeModeConfigView::ChangeStateTI()
@@ -489,6 +501,8 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     	radioSlopeDown.setTouchable(false);
     	sliderThreshold.setTouchable(false);
     	buttonDetect.setTouchable(false);
+    	imageLockInput.setVisible(true);
+    	boxLockInput.setVisible(true);
     }
     else
     {
@@ -496,7 +510,11 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     	radioSlopeDown.setTouchable(true);
     	sliderThreshold.setTouchable(true);
     	buttonDetect.setTouchable(true);
+    	imageLockInput.setVisible(false);
+    	boxLockInput.setVisible(false);
     }
+    imageLockInput.invalidate();
+    boxLockInput.invalidate();
 }
 
 uint16_t TimeModeConfigView::getCurrentChannel()

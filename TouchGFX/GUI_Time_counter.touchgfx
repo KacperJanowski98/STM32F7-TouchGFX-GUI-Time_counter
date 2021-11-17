@@ -3714,6 +3714,48 @@
                     "Clickable": false,
                     "Fadeable": false,
                     "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 5,
+                    "Alpha": 85,
+                    "Name": "boxLockInput",
+                    "X": 298,
+                    "Y": 41,
+                    "Width": 456,
+                    "Height": 364,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "My_Lock.png",
+                    "Alpha": 125,
+                    "Name": "imageLockInput",
+                    "X": 464,
+                    "Y": 149,
+                    "Width": 128,
+                    "Height": 128,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
                   }
                 ],
                 "Type": "Container",
@@ -4461,7 +4503,7 @@
                       "Blue": 0
                     },
                     "BorderSize": 5,
-                    "Alpha": 81,
+                    "Alpha": 85,
                     "Name": "boxLock",
                     "X": 374,
                     "Y": 10,
@@ -7598,6 +7640,48 @@
                     "Y": 126,
                     "Width": 96,
                     "Height": 96,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 5,
+                    "Alpha": 85,
+                    "Name": "boxLockInput",
+                    "X": 298,
+                    "Y": 41,
+                    "Width": 456,
+                    "Height": 364,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "My_Lock.png",
+                    "Alpha": 125,
+                    "Name": "imageLockInput",
+                    "X": 464,
+                    "Y": 149,
+                    "Width": 128,
+                    "Height": 128,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,

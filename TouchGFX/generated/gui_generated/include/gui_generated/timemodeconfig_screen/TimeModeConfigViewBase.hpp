@@ -152,6 +152,8 @@ protected:
     touchgfx::Slider sliderThreshold;
     touchgfx::Image imageFallingT;
     touchgfx::Image imageRisingT;
+    touchgfx::BoxWithBorder boxLockInput;
+    touchgfx::Image imageLockInput;
     touchgfx::Container swipeContainerTimeCLOCK;
     touchgfx::Box boxCLOCK;
     touchgfx::Image imageArrowCL;

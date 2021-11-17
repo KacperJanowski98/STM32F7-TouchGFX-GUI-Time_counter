@@ -158,6 +158,18 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageRisingT.setXY(399, 134);
     imageRisingT.setBitmap(touchgfx::Bitmap(BITMAP_RISING_EDGE_96_ID));
     swipeContainerTimeINPUT.add(imageRisingT);
+
+    boxLockInput.setPosition(298, 41, 456, 364);
+    boxLockInput.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxLockInput.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxLockInput.setBorderSize(5);
+    boxLockInput.setAlpha(85);
+    swipeContainerTimeINPUT.add(boxLockInput);
+
+    imageLockInput.setXY(464, 149);
+    imageLockInput.setBitmap(touchgfx::Bitmap(BITMAP_MY_LOCK_ID));
+    imageLockInput.setAlpha(125);
+    swipeContainerTimeINPUT.add(imageLockInput);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
     swipeContainerTimeCLOCK.setWidth(800);
@@ -376,7 +388,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxLock.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxLock.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxLock.setBorderSize(5);
-    boxLock.setAlpha(81);
+    boxLock.setAlpha(85);
     swipeContainerTimeTISETUP.add(boxLock);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 

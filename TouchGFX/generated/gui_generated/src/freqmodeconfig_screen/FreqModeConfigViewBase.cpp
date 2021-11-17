@@ -158,6 +158,18 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     imageRisingF.setXY(397, 126);
     imageRisingF.setBitmap(touchgfx::Bitmap(BITMAP_RISING_EDGE_96_ID));
     swipeContainerFreqINPUT.add(imageRisingF);
+
+    boxLockInput.setPosition(298, 41, 456, 364);
+    boxLockInput.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxLockInput.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxLockInput.setBorderSize(5);
+    boxLockInput.setAlpha(85);
+    swipeContainerFreqINPUT.add(boxLockInput);
+
+    imageLockInput.setXY(464, 149);
+    imageLockInput.setBitmap(touchgfx::Bitmap(BITMAP_MY_LOCK_ID));
+    imageLockInput.setAlpha(125);
+    swipeContainerFreqINPUT.add(imageLockInput);
     swipeContainerFreq.add(swipeContainerFreqINPUT);
 
     swipeContainerFreqCLOCK.setWidth(800);
