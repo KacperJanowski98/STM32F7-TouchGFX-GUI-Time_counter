@@ -786,77 +786,51 @@ void TimeModeConfigView::FinishSetupTimeModeRepeat()
 
 void TimeModeConfigView::updateTimeParameterBackend()
 {
-	TimeBackend.Channel1.channelState = pChannel1->getStateChannel();
-	TimeBackend.Channel1.slope = static_cast<Slope_t>(pChannel1->getSlope());
-	TimeBackend.Channel1.threshold = pChannel1->getThreshold();
-	TimeBackend.TiSetup1.tiState = pChannel1->getTiState();
-	TimeBackend.TiSetup1.startIn = pChannel1->getStartChannel();
-	TimeBackend.TiSetup1.stopIn = pChannel1->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel1, pChannel1);
+	updateTiBackendStruct(&TimeBackend.TiSetup1, pChannel1);
 
-	TimeBackend.Channel2.channelState = pChannel2->getStateChannel();
-	TimeBackend.Channel2.slope = static_cast<Slope_t>(pChannel2->getSlope());
-	TimeBackend.Channel2.threshold = pChannel2->getThreshold();
-	TimeBackend.TiSetup2.tiState = pChannel2->getTiState();
-	TimeBackend.TiSetup2.startIn = pChannel2->getStartChannel();
-	TimeBackend.TiSetup2.stopIn = pChannel2->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel2, pChannel2);
+	updateTiBackendStruct(&TimeBackend.TiSetup2, pChannel2);
 
-	TimeBackend.Channel3.channelState = pChannel3->getStateChannel();
-	TimeBackend.Channel3.slope = static_cast<Slope_t>(pChannel3->getSlope());
-	TimeBackend.Channel3.threshold = pChannel3->getThreshold();
-	TimeBackend.TiSetup3.tiState = pChannel3->getTiState();
-	TimeBackend.TiSetup3.startIn = pChannel3->getStartChannel();
-	TimeBackend.TiSetup3.stopIn = pChannel3->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel3, pChannel3);
+	updateTiBackendStruct(&TimeBackend.TiSetup3, pChannel3);
 
-	TimeBackend.Channel4.channelState = pChannel4->getStateChannel();
-	TimeBackend.Channel4.slope = static_cast<Slope_t>(pChannel4->getSlope());
-	TimeBackend.Channel4.threshold = pChannel4->getThreshold();
-	TimeBackend.TiSetup4.tiState = pChannel4->getTiState();
-	TimeBackend.TiSetup4.startIn = pChannel4->getStartChannel();
-	TimeBackend.TiSetup4.stopIn = pChannel4->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel4, pChannel4);
+	updateTiBackendStruct(&TimeBackend.TiSetup4, pChannel4);
 
-	TimeBackend.Channel5.channelState = pChannel5->getStateChannel();
-	TimeBackend.Channel5.slope = static_cast<Slope_t>(pChannel5->getSlope());
-	TimeBackend.Channel5.threshold = pChannel5->getThreshold();
-	TimeBackend.TiSetup5.tiState = pChannel5->getTiState();
-	TimeBackend.TiSetup5.startIn = pChannel5->getStartChannel();
-	TimeBackend.TiSetup5.stopIn = pChannel5->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel5, pChannel5);
+	updateTiBackendStruct(&TimeBackend.TiSetup5, pChannel5);
 
-	TimeBackend.Channel6.channelState = pChannel6->getStateChannel();
-	TimeBackend.Channel6.slope = static_cast<Slope_t>(pChannel6->getSlope());
-	TimeBackend.Channel6.threshold = pChannel6->getThreshold();
-	TimeBackend.TiSetup6.tiState = pChannel6->getTiState();
-	TimeBackend.TiSetup6.startIn = pChannel6->getStartChannel();
-	TimeBackend.TiSetup6.stopIn = pChannel6->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel6, pChannel6);
+	updateTiBackendStruct(&TimeBackend.TiSetup6, pChannel6);
 
-	TimeBackend.Channel7.channelState = pChannel7->getStateChannel();
-	TimeBackend.Channel7.slope = static_cast<Slope_t>(pChannel7->getSlope());
-	TimeBackend.Channel7.threshold = pChannel7->getThreshold();
-	TimeBackend.TiSetup7.tiState = pChannel7->getTiState();
-	TimeBackend.TiSetup7.startIn = pChannel7->getStartChannel();
-	TimeBackend.TiSetup7.stopIn = pChannel7->getStopChannel();
+	updateChannelBackendStruct(&TimeBackend.Channel7, pChannel7);
+	updateTiBackendStruct(&TimeBackend.TiSetup7, pChannel7);
 
-	TimeBackend.Channel8.channelState = pChannel8->getStateChannel();
-	TimeBackend.Channel8.slope = static_cast<Slope_t>(pChannel8->getSlope());
-	TimeBackend.Channel8.threshold = pChannel8->getThreshold();
+	updateChannelBackendStruct(&TimeBackend.Channel8, pChannel8);
 
-	TimeBackend.TimeSession.clock = static_cast<Clock_t>(pSession->getSourceClock());
-	TimeBackend.TimeSession.maxRange = pSession->getMaxRange();
-	TimeBackend.TimeSession.repeat = pSession->getRepeat();
-	TimeBackend.TimeSession.stampsNumber = pSession->getStampsNumber();
-	TimeBackend.TimeSession.tiRange = pSession->getRange();
+	updateSessionBackendStruct(&TimeBackend.TimeSession, pSession);
 }
 
 void TimeModeConfigView::updateChannelBackendStruct(TimeChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel)
 {
-
+	pChannelBack->channelState = pChannel->getStateChannel();
+	pChannelBack->slope = static_cast<Slope_t>(pChannel->getSlope());
+	pChannelBack->threshold = pChannel->getThreshold();
 }
 
 void TimeModeConfigView::updateTiBackendStruct(TimeTi_t *pTiBack, std::shared_ptr<TimeModeParameter> pTi)
 {
-
+	pTiBack->tiState = pTi->getTiState();
+	pTiBack->startIn = pTi->getStartChannel();
+	pTiBack->stopIn = pTi->getStopChannel();
 }
 
 void TimeModeConfigView::updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession)
 {
-
+	pSessionBack->clock = static_cast<Clock_t>(pSession->getSourceClock());
+	pSessionBack->maxRange = pSession->getMaxRange();
+	pSessionBack->repeat = pSession->getRepeat();
+	pSessionBack->stampsNumber = pSession->getStampsNumber();
+	pSessionBack->tiRange = pSession->getRange();
 }
