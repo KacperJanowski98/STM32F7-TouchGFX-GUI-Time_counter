@@ -56,7 +56,7 @@ public:
 
     void updateFreqParameterBackend();
 
-    void updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel);
+    void updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<FreqModeParameter> pChannel);
     void updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession);
 
 protected:

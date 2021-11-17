@@ -468,60 +468,39 @@ void FreqModeConfigView::FinishSetupFreqModeRepeat()
 
 void FreqModeConfigView::updateFreqParameterBackend()
 {
-	FreqBackend.Channel1.channelState = pChannel1->getStateChannel();
-	FreqBackend.Channel1.numberChanel = pChannel1->getNumberChannel();
-	FreqBackend.Channel1.slope = static_cast<Slope_t>(pChannel1->getSlope());
-	FreqBackend.Channel1.threshold = pChannel1->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel1, pChannel1);
 
-	FreqBackend.Channel2.channelState = pChannel2->getStateChannel();
-	FreqBackend.Channel2.numberChanel = pChannel2->getNumberChannel();
-	FreqBackend.Channel2.slope = static_cast<Slope_t>(pChannel2->getSlope());
-	FreqBackend.Channel2.threshold = pChannel2->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel2, pChannel2);
 
-	FreqBackend.Channel3.channelState = pChannel3->getStateChannel();
-	FreqBackend.Channel3.numberChanel = pChannel3->getNumberChannel();
-	FreqBackend.Channel3.slope = static_cast<Slope_t>(pChannel3->getSlope());
-	FreqBackend.Channel3.threshold = pChannel3->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel3, pChannel3);
 
-	FreqBackend.Channel4.channelState = pChannel4->getStateChannel();
-	FreqBackend.Channel4.numberChanel = pChannel4->getNumberChannel();
-	FreqBackend.Channel4.slope = static_cast<Slope_t>(pChannel4->getSlope());
-	FreqBackend.Channel4.threshold = pChannel4->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel4, pChannel4);
 
-	FreqBackend.Channel5.channelState = pChannel5->getStateChannel();
-	FreqBackend.Channel5.numberChanel = pChannel5->getNumberChannel();
-	FreqBackend.Channel5.slope = static_cast<Slope_t>(pChannel5->getSlope());
-	FreqBackend.Channel5.threshold = pChannel5->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel5, pChannel5);
 
-	FreqBackend.Channel6.channelState = pChannel6->getStateChannel();
-	FreqBackend.Channel6.numberChanel = pChannel6->getNumberChannel();
-	FreqBackend.Channel6.slope = static_cast<Slope_t>(pChannel6->getSlope());
-	FreqBackend.Channel6.threshold = pChannel6->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel6, pChannel6);
 
-	FreqBackend.Channel7.channelState = pChannel7->getStateChannel();
-	FreqBackend.Channel7.numberChanel = pChannel7->getNumberChannel();
-	FreqBackend.Channel7.slope = static_cast<Slope_t>(pChannel7->getSlope());
-	FreqBackend.Channel7.threshold = pChannel7->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel7, pChannel7);
 
-	FreqBackend.Channel8.channelState = pChannel8->getStateChannel();
-	FreqBackend.Channel8.numberChanel = pChannel8->getNumberChannel();
-	FreqBackend.Channel8.slope = static_cast<Slope_t>(pChannel8->getSlope());
-	FreqBackend.Channel8.threshold = pChannel8->getThreshold();
+	updateChannelBackendStruct(&FreqBackend.Channel8, pChannel8);
 
 	FreqBackend.MessSetup.hfInputState = m_hfInput;
 	FreqBackend.MessSetup.gate = m_gate;
 
-	FreqBackend.FreqSession.clock = static_cast<Clock_t>(pSession->getSourceClock());
-	FreqBackend.FreqSession.repeat = pSession->getRepeat();
-	FreqBackend.FreqSession.stampsNumber = pSession->getStampsNumber();
+	updateSessionBackendStruct(&FreqBackend.FreqSession, pSession);
 }
 
-void FreqModeConfigView::updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel)
+void FreqModeConfigView::updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<FreqModeParameter> pChannel)
 {
-
+	pChannelBack->channelState = pChannel->getStateChannel();
+	pChannelBack->numberChanel = pChannel->getNumberChannel();
+	pChannelBack->slope = static_cast<Slope_t>(pChannel->getSlope());
+	pChannelBack->threshold = pChannel->getThreshold();
 }
 
 void FreqModeConfigView::updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession)
 {
-
+	pSessionBack->clock = static_cast<Clock_t>(pSession->getSourceClock());
+	pSessionBack->repeat = pSession->getRepeat();
+	pSessionBack->stampsNumber = pSession->getStampsNumber();
 }
