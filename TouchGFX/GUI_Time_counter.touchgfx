@@ -4187,7 +4187,7 @@
                     "Name": "textTiStart",
                     "X": 399,
                     "Y": 102,
-                    "Width": 110,
+                    "Width": 111,
                     "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
@@ -4441,6 +4441,32 @@
                     "Y": 136,
                     "Width": 128,
                     "Height": 128,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "BoxWithBorder",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "BorderColor": {
+                      "Red": 0,
+                      "Green": 0,
+                      "Blue": 0
+                    },
+                    "BorderSize": 5,
+                    "Alpha": 81,
+                    "Name": "boxLock",
+                    "X": 374,
+                    "Y": 10,
+                    "Width": 359,
+                    "Height": 395,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,

@@ -453,15 +453,18 @@ void TimeModeConfigView::ChangeStateTI()
 		pChannelTI->setStartChannel(0);
 		pChannelTI->setStopChannel(0);
 		imageLock.setVisible(true);
+		boxLock.setVisible(true);
 		scrollWheelStart.setTouchable(false);
 		scrollWheelStop.setTouchable(false);
 	} else
 	{
 		imageLock.setVisible(false);
+		boxLock.setVisible(false);
 		scrollWheelStart.setTouchable(true);
 		scrollWheelStop.setTouchable(true);
 	}
 	imageLock.invalidate();
+	boxLock.invalidate();
 }
 
 void TimeModeConfigView::detectThreshold()
@@ -588,6 +591,7 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);
 		imageLock.setVisible(true);
+		boxLock.setVisible(true);
 		scrollWheelStart.setTouchable(false);
 		scrollWheelStop.setTouchable(false);
 	}
@@ -596,12 +600,14 @@ void TimeModeConfigView::readStateChannel(bool stateChannel)
 		textStartChannel.setVisible(true);
 		textStopChannel.setVisible(true);
 		imageLock.setVisible(false);
+		boxLock.setVisible(false);
 		scrollWheelStart.setTouchable(true);
 		scrollWheelStop.setTouchable(true);
 	}
 	textStartChannel.invalidate();
 	textStopChannel.invalidate();
 	imageLock.invalidate();
+	boxLock.invalidate();
 }
 
 void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState)
@@ -664,6 +670,7 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 		textStartChannel.setVisible(false);
 		textStopChannel.setVisible(false);
 		imageLock.setVisible(true);
+		boxLock.setVisible(true);
 		scrollWheelStart.setTouchable(false);
 		scrollWheelStop.setTouchable(false);
 	}
@@ -693,8 +700,10 @@ void TimeModeConfigView::updateStartStopIn(std::shared_ptr<TimeModeParameter>& c
 		scrollWheelStart.setTouchable(true);
 		scrollWheelStop.setTouchable(true);
 		imageLock.setVisible(false);
-		imageLock.invalidate();
+		boxLock.setVisible(false);
 	}
+	imageLock.invalidate();
+	boxLock.invalidate();
 }
 
 void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParameter>& channel)
