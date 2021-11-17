@@ -268,11 +268,17 @@ void FreqModeConfigView::toggleChannelState()
 	if (CurrentState == true)
 	{
 		pChannelInput->setNumberChannel(m_channelInput);
+		imageLockInput.setVisible(false);
+		boxLockInput.setVisible(false);
 	}
 	else
 	{
 		pChannelInput->setNumberChannel(0);
+		imageLockInput.setVisible(true);
+		boxLockInput.setVisible(true);
 	}
+	imageLockInput.invalidate();
+	boxLockInput.invalidate();
 }
 
 // funkcja ustawiaja thresold z backendu
@@ -300,6 +306,8 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(false);
 		sliderThreshold.setTouchable(false);
 		buttonDetect.setTouchable(false);
+		imageLockInput.setVisible(true);
+		boxLockInput.setVisible(true);
 	}
 	else
 	{
@@ -307,7 +315,11 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(true);
 		sliderThreshold.setTouchable(true);
 		buttonDetect.setTouchable(true);
+		imageLockInput.setVisible(false);
+		boxLockInput.setVisible(false);
 	}
+	imageLockInput.invalidate();
+	boxLockInput.invalidate();
 }
 
 // funkcja ustwiajaca stan kanalu w jego obiekcie
