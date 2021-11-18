@@ -196,8 +196,8 @@ protected:
     touchgfx::Image imageFrameStarty;
     touchgfx::Image imageFrameStop;
     touchgfx::ToggleButton toggleTiSetup;
-    touchgfx::Image imageLock;
     touchgfx::BoxWithBorder boxLock;
+    touchgfx::Image imageLock;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
     touchgfx::Image imageArrowSL;

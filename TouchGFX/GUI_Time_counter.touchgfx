@@ -4501,22 +4501,6 @@
                     "Moveable": false
                   },
                   {
-                    "Type": "Image",
-                    "RelativeFilename": "My_Lock.png",
-                    "Alpha": 100,
-                    "Name": "imageLock",
-                    "X": 473,
-                    "Y": 136,
-                    "Width": 128,
-                    "Height": 128,
-                    "Visible": true,
-                    "LockPosition": false,
-                    "Draggable": false,
-                    "Clickable": false,
-                    "Fadeable": false,
-                    "Moveable": false
-                  },
-                  {
                     "Type": "BoxWithBorder",
                     "Color": {
                       "Red": 255,
@@ -4535,6 +4519,22 @@
                     "Y": 10,
                     "Width": 359,
                     "Height": 395,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "My_Lock.png",
+                    "Alpha": 160,
+                    "Name": "imageLock",
+                    "X": 473,
+                    "Y": 136,
+                    "Width": 128,
+                    "Height": 128,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,

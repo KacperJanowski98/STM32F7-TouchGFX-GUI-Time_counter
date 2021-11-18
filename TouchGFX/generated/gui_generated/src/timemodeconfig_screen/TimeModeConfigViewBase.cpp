@@ -385,17 +385,17 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     toggleTiSetup.setAction(buttonCallback);
     swipeContainerTimeTISETUP.add(toggleTiSetup);
 
-    imageLock.setXY(473, 136);
-    imageLock.setBitmap(touchgfx::Bitmap(BITMAP_MY_LOCK_ID));
-    imageLock.setAlpha(100);
-    swipeContainerTimeTISETUP.add(imageLock);
-
     boxLock.setPosition(374, 10, 359, 395);
     boxLock.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxLock.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxLock.setBorderSize(5);
     boxLock.setAlpha(85);
     swipeContainerTimeTISETUP.add(boxLock);
+
+    imageLock.setXY(473, 136);
+    imageLock.setBitmap(touchgfx::Bitmap(BITMAP_MY_LOCK_ID));
+    imageLock.setAlpha(160);
+    swipeContainerTimeTISETUP.add(imageLock);
     swipeContainerTime.add(swipeContainerTimeTISETUP);
 
     swipeContainerTimeSESSION.setWidth(800);
