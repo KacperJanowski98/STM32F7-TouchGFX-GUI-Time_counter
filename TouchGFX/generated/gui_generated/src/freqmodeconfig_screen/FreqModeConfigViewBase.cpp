@@ -21,7 +21,13 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     boxConfigFreq.setPosition(0, 0, 800, 60);
-    boxConfigFreq.setColor(touchgfx::Color::getColorFromRGB(95, 122, 150));
+    boxConfigFreq.setColor(touchgfx::Color::getColorFromRGB(88, 114, 140));
+
+    boxWithBorderMain.setPosition(11, 6, 722, 48);
+    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderMain.setBorderSize(5);
+    boxWithBorderMain.setAlpha(30);
 
     buttonBackFreq.setXY(740, 0);
     buttonBackFreq.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
@@ -36,7 +42,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxBackgroundFC.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     swipeContainerFreq.setXY(0, 60);
-    swipeContainerFreq.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
+    swipeContainerFreq.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_MY_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
     swipeContainerFreq.setPageIndicatorXY(12, 5);
     swipeContainerFreq.setSwipeCutoff(50);
     swipeContainerFreq.setEndSwipeElasticWidth(50);
@@ -440,22 +446,16 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     imageSetting.setXY(15, 6);
     imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
 
-    boxWithBorderMain.setPosition(11, 6, 722, 48);
-    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderMain.setBorderSize(5);
-    boxWithBorderMain.setAlpha(30);
-
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
     add(boxConfigFreq);
+    add(boxWithBorderMain);
     add(buttonBackFreq);
     add(labelFreqConfig);
     add(boxBackgroundFC);
     add(swipeContainerFreq);
     add(imageSetting);
-    add(boxWithBorderMain);
     radioButtonGroupSlopeFreq.add(radioSlopeDown);
     radioButtonGroupSlopeFreq.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);

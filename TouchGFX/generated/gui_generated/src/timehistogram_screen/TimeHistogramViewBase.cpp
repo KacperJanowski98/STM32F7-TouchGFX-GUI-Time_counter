@@ -20,10 +20,10 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
-    textArea1.setXY(75, 28);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID286));
+    textAreaMain.setXY(75, 28);
+    textAreaMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaMain.setLinespacing(0);
+    textAreaMain.setTypedText(touchgfx::TypedText(T_SINGLEUSEID286));
 
     buttonWithLabelTi1.setXY(25, 95);
     buttonWithLabelTi1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
@@ -86,7 +86,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     add(__background);
     add(box1);
     add(buttonBack);
-    add(textArea1);
+    add(textAreaMain);
     add(buttonWithLabelTi1);
     add(buttonWithLabelTi2);
     add(buttonWithLabelTi3);

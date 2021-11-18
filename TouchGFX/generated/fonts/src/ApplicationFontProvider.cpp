@@ -36,6 +36,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::DISPLAYMEASVALUE:
         // verdanab_18_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
+    case Typography::TITLE:
+        // verdanab_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);
     default:
         return 0;
     }

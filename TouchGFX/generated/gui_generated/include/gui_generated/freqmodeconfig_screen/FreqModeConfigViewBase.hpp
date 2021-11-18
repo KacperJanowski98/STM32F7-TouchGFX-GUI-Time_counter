@@ -8,11 +8,11 @@
 #include <mvp/View.hpp>
 #include <gui/freqmodeconfig_screen/FreqModeConfigPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
@@ -86,6 +86,7 @@ protected:
     touchgfx::Box boxLeftBackG;
     touchgfx::Box boxRightBackG;
     touchgfx::Box boxConfigFreq;
+    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::Button buttonBackFreq;
     touchgfx::TextArea labelFreqConfig;
     touchgfx::Box boxBackgroundFC;
@@ -160,7 +161,6 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;
     touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
     touchgfx::Image imageSetting;
-    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;

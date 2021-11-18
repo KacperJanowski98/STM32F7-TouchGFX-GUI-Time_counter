@@ -70,7 +70,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Button buttonBack;
-    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textAreaMain;
     touchgfx::ButtonWithLabel buttonWithLabelTi1;
     touchgfx::ButtonWithLabel buttonWithLabelTi2;
     touchgfx::ButtonWithLabel buttonWithLabelTi3;

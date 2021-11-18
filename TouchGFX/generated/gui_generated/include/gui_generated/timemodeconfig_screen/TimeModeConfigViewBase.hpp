@@ -8,12 +8,12 @@
 #include <mvp/View.hpp>
 #include <gui/timemodeconfig_screen/TimeModeConfigPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
@@ -126,6 +126,7 @@ protected:
     touchgfx::Box boxLeftBackG;
     touchgfx::Box boxRightBackG;
     touchgfx::Box boxConfigTime;
+    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::Button buttonBackTime;
     touchgfx::TextArea labelTimeConfig;
     touchgfx::Box boxBacgroundTC;
@@ -220,7 +221,6 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::ButtonWithLabel buttonConfigTimeRepeat;
     touchgfx::Image imageSetting;
-    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 

@@ -21,7 +21,13 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     boxConfigTime.setPosition(0, 0, 800, 60);
-    boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(95, 122, 150));
+    boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(88, 114, 140));
+
+    boxWithBorderMain.setPosition(11, 6, 722, 48);
+    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderMain.setBorderSize(5);
+    boxWithBorderMain.setAlpha(30);
 
     buttonBackTime.setXY(740, 0);
     buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
@@ -36,7 +42,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxBacgroundTC.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
     swipeContainerTime.setXY(0, 60);
-    swipeContainerTime.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
+    swipeContainerTime.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_MY_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
     swipeContainerTime.setPageIndicatorXY(12, 5);
     swipeContainerTime.setSwipeCutoff(50);
     swipeContainerTime.setEndSwipeElasticWidth(50);
@@ -541,22 +547,16 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageSetting.setXY(15, 6);
     imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
 
-    boxWithBorderMain.setPosition(11, 6, 722, 48);
-    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderMain.setBorderSize(5);
-    boxWithBorderMain.setAlpha(30);
-
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
     add(boxConfigTime);
+    add(boxWithBorderMain);
     add(buttonBackTime);
     add(labelTimeConfig);
     add(boxBacgroundTC);
     add(swipeContainerTime);
     add(imageSetting);
-    add(boxWithBorderMain);
     radioButtonGroupSlope.add(radioSlopeDown);
     radioButtonGroupSlope.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);
