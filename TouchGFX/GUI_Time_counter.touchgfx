@@ -3447,9 +3447,9 @@
                     "TextId": "SingleUseId4",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -3857,9 +3857,9 @@
                     "TextId": "SingleUseId5",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -4140,9 +4140,9 @@
                     "TextId": "SingleUseId6",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -4678,9 +4678,9 @@
                     "TextId": "SingleUseId7",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7404,9 +7404,9 @@
                     "TextId": "SingleUseId9",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -7814,9 +7814,9 @@
                     "TextId": "SingleUseId10",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -8322,9 +8322,9 @@
                     "TextId": "SingleUseId71",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,
@@ -8451,9 +8451,9 @@
                     "TextId": "SingleUseId12",
                     "TextRotation": "0",
                     "Color": {
-                      "Red": 144,
-                      "Green": 196,
-                      "Blue": 222
+                      "Red": 126,
+                      "Green": 224,
+                      "Blue": 159
                     },
                     "Alpha": 255,
                     "AutoSize": true,

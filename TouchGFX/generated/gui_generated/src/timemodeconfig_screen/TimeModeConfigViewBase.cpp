@@ -80,7 +80,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeINPUT.add(boxWithBorderThreshold);
 
     labelINPUT.setXY(12, 24);
-    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
+    labelINPUT.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
     swipeContainerTimeINPUT.add(labelINPUT);
@@ -194,7 +194,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeCLOCK.add(imageArrowCR);
 
     labelCLOCK.setXY(12, 24);
-    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
+    labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
     swipeContainerTimeCLOCK.add(labelCLOCK);
@@ -266,7 +266,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeTISETUP.add(imageArrowTR);
 
     labelTISETUP.setXY(12, 24);
-    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
+    labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     labelTISETUP.setLinespacing(0);
     labelTISETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
     swipeContainerTimeTISETUP.add(labelTISETUP);
@@ -431,7 +431,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTimeSESSION.add(boxWithBorderSetupS);
 
     labelSESSIONSETUP.setXY(12, 24);
-    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
+    labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     labelSESSIONSETUP.setLinespacing(0);
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
     swipeContainerTimeSESSION.add(labelSESSIONSETUP);
