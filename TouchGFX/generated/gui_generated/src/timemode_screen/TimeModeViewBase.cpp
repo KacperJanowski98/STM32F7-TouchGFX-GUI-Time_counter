@@ -644,7 +644,7 @@ TimeModeViewBase::TimeModeViewBase() :
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID315));
 
     imageHome.setXY(18, 20);
-    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
+    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_NEW_ID));
 
     add(__background);
     add(boxBackgroundTime);

@@ -441,7 +441,7 @@ FreqModeViewBase::FreqModeViewBase() :
     labelFreqConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID316));
 
     imageHome.setXY(17, 17);
-    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_ICON_ID));
+    imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_NEW_ID));
 
     add(__background);
     add(boxBackgroungFreq);

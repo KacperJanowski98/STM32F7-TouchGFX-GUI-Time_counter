@@ -21,14 +21,14 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
 
     boxConfigTime.setPosition(0, 0, 800, 60);
-    boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxConfigTime.setColor(touchgfx::Color::getColorFromRGB(95, 122, 150));
 
     buttonBackTime.setXY(740, 0);
     buttonBackTime.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBackTime.setAction(buttonCallback);
 
     labelTimeConfig.setXY(74, 18);
-    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
+    labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
@@ -37,7 +37,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
     swipeContainerTime.setXY(0, 60);
     swipeContainerTime.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
-    swipeContainerTime.setPageIndicatorXY(1, 2);
+    swipeContainerTime.setPageIndicatorXY(12, 5);
     swipeContainerTime.setSwipeCutoff(50);
     swipeContainerTime.setEndSwipeElasticWidth(50);
 
@@ -73,7 +73,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxWithBorderThreshold.setAlpha(25);
     swipeContainerTimeINPUT.add(boxWithBorderThreshold);
 
-    labelINPUT.setXY(15, 16);
+    labelINPUT.setXY(12, 24);
     labelINPUT.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelINPUT.setLinespacing(0);
     labelINPUT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
@@ -168,7 +168,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
 
     imageLockInput.setXY(464, 149);
     imageLockInput.setBitmap(touchgfx::Bitmap(BITMAP_MY_LOCK_ID));
-    imageLockInput.setAlpha(125);
+    imageLockInput.setAlpha(160);
     swipeContainerTimeINPUT.add(imageLockInput);
     swipeContainerTime.add(swipeContainerTimeINPUT);
 
@@ -187,7 +187,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageArrowCR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerTimeCLOCK.add(imageArrowCR);
 
-    labelCLOCK.setXY(15, 16);
+    labelCLOCK.setXY(12, 24);
     labelCLOCK.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelCLOCK.setLinespacing(0);
     labelCLOCK.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
@@ -259,7 +259,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     imageArrowTR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerTimeTISETUP.add(imageArrowTR);
 
-    labelTISETUP.setXY(15, 16);
+    labelTISETUP.setXY(12, 24);
     labelTISETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelTISETUP.setLinespacing(0);
     labelTISETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
@@ -424,7 +424,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxWithBorderSetupS.setAlpha(25);
     swipeContainerTimeSESSION.add(boxWithBorderSetupS);
 
-    labelSESSIONSETUP.setXY(15, 16);
+    labelSESSIONSETUP.setXY(12, 24);
     labelSESSIONSETUP.setColor(touchgfx::Color::getColorFromRGB(144, 196, 222));
     labelSESSIONSETUP.setLinespacing(0);
     labelSESSIONSETUP.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
@@ -538,8 +538,14 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(0);
 
-    imageSetting.setXY(11, 6);
-    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_ID));
+    imageSetting.setXY(15, 6);
+    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
+
+    boxWithBorderMain.setPosition(11, 6, 722, 48);
+    boxWithBorderMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderMain.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderMain.setBorderSize(5);
+    boxWithBorderMain.setAlpha(30);
 
     add(__background);
     add(boxLeftBackG);
@@ -550,6 +556,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(boxBacgroundTC);
     add(swipeContainerTime);
     add(imageSetting);
+    add(boxWithBorderMain);
     radioButtonGroupSlope.add(radioSlopeDown);
     radioButtonGroupSlope.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);

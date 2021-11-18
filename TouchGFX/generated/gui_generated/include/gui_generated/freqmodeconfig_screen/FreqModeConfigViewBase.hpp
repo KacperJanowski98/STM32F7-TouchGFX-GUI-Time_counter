@@ -160,6 +160,7 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;
     touchgfx::ButtonWithLabel buttonConfigFreqRepeat;
     touchgfx::Image imageSetting;
+    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlopeFreq;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
     touchgfx::RadioButtonGroup<2> radioButtonGroupHfInput;

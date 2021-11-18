@@ -220,6 +220,7 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::ButtonWithLabel buttonConfigTimeRepeat;
     touchgfx::Image imageSetting;
+    touchgfx::BoxWithBorder boxWithBorderMain;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 

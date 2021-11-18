@@ -53,13 +53,15 @@ const uint16_t BITMAP_MY_BLUE_TOGGLEBARS_TOGGLE_RE_LARGE_BUTTON_ON_ID = 43;
 const uint16_t BITMAP_MY_GRAPH_DISP_ID = 44;
 const uint16_t BITMAP_MY_GRAPH_ICON_ID = 45;
 const uint16_t BITMAP_MY_HOME_ICON_ID = 46;
-const uint16_t BITMAP_MY_INFO_ID = 47;
-const uint16_t BITMAP_MY_LOCK_ID = 48;
-const uint16_t BITMAP_MY_MENU_ID = 49;
-const uint16_t BITMAP_MY_SETTING_ICON_ID = 50;
-const uint16_t BITMAP_RISING_EDGE_48_ID = 51;
-const uint16_t BITMAP_RISING_EDGE_96_ID = 52;
-const uint16_t BITMAP_SCROLL_WHEEL_FRAME_NEW_ID = 53;
+const uint16_t BITMAP_MY_HOME_NEW_ID = 47;
+const uint16_t BITMAP_MY_INFO_ID = 48;
+const uint16_t BITMAP_MY_LOCK_ID = 49;
+const uint16_t BITMAP_MY_MENU_ID = 50;
+const uint16_t BITMAP_MY_SETTING_ICON_ID = 51;
+const uint16_t BITMAP_MY_SETTING_ICON_NEW_ID = 52;
+const uint16_t BITMAP_RISING_EDGE_48_ID = 53;
+const uint16_t BITMAP_RISING_EDGE_96_ID = 54;
+const uint16_t BITMAP_SCROLL_WHEEL_FRAME_NEW_ID = 55;
 
 namespace BitmapDatabase
 {
