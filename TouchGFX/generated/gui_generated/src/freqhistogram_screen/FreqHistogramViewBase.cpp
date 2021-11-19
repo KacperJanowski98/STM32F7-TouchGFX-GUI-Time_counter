@@ -20,10 +20,16 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
     buttonBack.setAction(buttonCallback);
 
-    textArea1.setXY(75, 28);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID297));
+    boxWithBorderLabelF.setPosition(12, 11, 714, 60);
+    boxWithBorderLabelF.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorderLabelF.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorderLabelF.setBorderSize(4);
+    boxWithBorderLabelF.setAlpha(30);
+
+    textAreaMain.setXY(75, 28);
+    textAreaMain.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textAreaMain.setLinespacing(0);
+    textAreaMain.setTypedText(touchgfx::TypedText(T_SINGLEUSEID297));
 
     buttonWithLabelM1.setXY(25, 95);
     buttonWithLabelM1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_LARGE_PRESSED_ID));
@@ -81,19 +87,14 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     buttonWithLabelM8.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabelM8.setAction(buttonCallback);
 
-    boxWithBorderLabelF.setPosition(12, 11, 714, 60);
-    boxWithBorderLabelF.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    boxWithBorderLabelF.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxWithBorderLabelF.setBorderSize(4);
-    boxWithBorderLabelF.setAlpha(30);
-
     imageGraph.setXY(25, 17);
     imageGraph.setBitmap(touchgfx::Bitmap(BITMAP_MY_GRAPH_ICON_ID));
 
     add(__background);
     add(box1);
     add(buttonBack);
-    add(textArea1);
+    add(boxWithBorderLabelF);
+    add(textAreaMain);
     add(buttonWithLabelM1);
     add(buttonWithLabelM2);
     add(buttonWithLabelM3);
@@ -102,7 +103,6 @@ FreqHistogramViewBase::FreqHistogramViewBase() :
     add(buttonWithLabelM6);
     add(buttonWithLabelM7);
     add(buttonWithLabelM8);
-    add(boxWithBorderLabelF);
     add(imageGraph);
 }
 

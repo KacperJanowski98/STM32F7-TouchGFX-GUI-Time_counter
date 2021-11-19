@@ -9,9 +9,9 @@
 #include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
 class FreqHistogramViewBase : public touchgfx::View<FreqHistogramPresenter>
@@ -75,7 +75,8 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Button buttonBack;
-    touchgfx::TextArea textArea1;
+    touchgfx::BoxWithBorder boxWithBorderLabelF;
+    touchgfx::TextArea textAreaMain;
     touchgfx::ButtonWithLabel buttonWithLabelM1;
     touchgfx::ButtonWithLabel buttonWithLabelM2;
     touchgfx::ButtonWithLabel buttonWithLabelM3;
@@ -84,7 +85,6 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabelM6;
     touchgfx::ButtonWithLabel buttonWithLabelM7;
     touchgfx::ButtonWithLabel buttonWithLabelM8;
-    touchgfx::BoxWithBorder boxWithBorderLabelF;
     touchgfx::Image imageGraph;
 
 private:

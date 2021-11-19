@@ -11,9 +11,9 @@
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
@@ -130,6 +130,7 @@ protected:
     touchgfx::Button buttonBackTime;
     touchgfx::TextArea labelTimeConfig;
     touchgfx::Box boxBacgroundTC;
+    touchgfx::Image imageSetting;
     touchgfx::SwipeContainer swipeContainerTime;
     touchgfx::Container swipeContainerTimeINPUT;
     touchgfx::Box boxINPUT;
@@ -220,7 +221,6 @@ protected:
     touchgfx::ButtonWithLabel buttonConfigTimeConst;
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
     touchgfx::ButtonWithLabel buttonConfigTimeRepeat;
-    touchgfx::Image imageSetting;
     touchgfx::RadioButtonGroup<2> radioButtonGroupSlope;
     touchgfx::RadioButtonGroup<3> radioButtonGroupClock;
 

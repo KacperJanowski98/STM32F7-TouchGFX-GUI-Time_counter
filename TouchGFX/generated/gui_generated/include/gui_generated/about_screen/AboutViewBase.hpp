@@ -33,8 +33,10 @@ protected:
     touchgfx::BoxWithBorder boxWithBorderFrame;
     touchgfx::Button buttonBack;
     touchgfx::Image imageInfo;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
+    touchgfx::TextArea labelAuthor;
+    touchgfx::TextArea textAreaAuthor;
+    touchgfx::Image LogoWat;
+    touchgfx::TextArea LabelWAT;
 
 private:
 

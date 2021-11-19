@@ -41,6 +41,9 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxBackgroundFC.setPosition(0, 60, 800, 420);
     boxBackgroundFC.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
+    imageSetting.setXY(15, 6);
+    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
+
     swipeContainerFreq.setXY(0, 60);
     swipeContainerFreq.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_MY_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
     swipeContainerFreq.setPageIndicatorXY(12, 5);
@@ -443,9 +446,6 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     swipeContainerFreq.add(swipeContainerFreqSESSION);
     swipeContainerFreq.setSelectedPage(0);
 
-    imageSetting.setXY(15, 6);
-    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
-
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
@@ -454,8 +454,8 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     add(buttonBackFreq);
     add(labelFreqConfig);
     add(boxBackgroundFC);
-    add(swipeContainerFreq);
     add(imageSetting);
+    add(swipeContainerFreq);
     radioButtonGroupSlopeFreq.add(radioSlopeDown);
     radioButtonGroupSlopeFreq.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);

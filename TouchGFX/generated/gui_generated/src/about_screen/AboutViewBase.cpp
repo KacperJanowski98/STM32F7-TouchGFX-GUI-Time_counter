@@ -29,23 +29,33 @@ AboutViewBase::AboutViewBase() :
     imageInfo.setXY(39, 38);
     imageInfo.setBitmap(touchgfx::Bitmap(BITMAP_MY_INFO_ID));
 
-    textArea1.setXY(144, 102);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID321));
+    labelAuthor.setXY(124, 220);
+    labelAuthor.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    labelAuthor.setLinespacing(0);
+    labelAuthor.setTypedText(touchgfx::TypedText(T_SINGLEUSEID321));
 
-    textArea2.setXY(144, 151);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID322));
+    textAreaAuthor.setXY(124, 263);
+    textAreaAuthor.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    textAreaAuthor.setLinespacing(0);
+    textAreaAuthor.setTypedText(touchgfx::TypedText(T_SINGLEUSEID322));
+
+    LogoWat.setXY(525, 102);
+    LogoWat.setBitmap(touchgfx::Bitmap(BITMAP_GODLOWAT_ID));
+
+    LabelWAT.setXY(124, 102);
+    LabelWAT.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    LabelWAT.setLinespacing(0);
+    LabelWAT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID323));
 
     add(__background);
     add(boxBackground);
     add(boxWithBorderFrame);
     add(buttonBack);
     add(imageInfo);
-    add(textArea1);
-    add(textArea2);
+    add(labelAuthor);
+    add(textAreaAuthor);
+    add(LogoWat);
+    add(LabelWAT);
 }
 
 void AboutViewBase::setupScreen()

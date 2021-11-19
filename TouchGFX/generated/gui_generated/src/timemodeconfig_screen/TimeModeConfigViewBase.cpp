@@ -41,6 +41,9 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxBacgroundTC.setPosition(0, 60, 800, 420);
     boxBacgroundTC.setColor(touchgfx::Color::getColorFromRGB(49, 64, 82));
 
+    imageSetting.setXY(15, 6);
+    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
+
     swipeContainerTime.setXY(0, 60);
     swipeContainerTime.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_MY_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
     swipeContainerTime.setPageIndicatorXY(12, 5);
@@ -544,9 +547,6 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     swipeContainerTime.add(swipeContainerTimeSESSION);
     swipeContainerTime.setSelectedPage(0);
 
-    imageSetting.setXY(15, 6);
-    imageSetting.setBitmap(touchgfx::Bitmap(BITMAP_MY_SETTING_ICON_NEW_ID));
-
     add(__background);
     add(boxLeftBackG);
     add(boxRightBackG);
@@ -555,8 +555,8 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     add(buttonBackTime);
     add(labelTimeConfig);
     add(boxBacgroundTC);
-    add(swipeContainerTime);
     add(imageSetting);
+    add(swipeContainerTime);
     radioButtonGroupSlope.add(radioSlopeDown);
     radioButtonGroupSlope.add(radioSlopeUp);
     radioButtonGroupClock.add(radioClockExternal);
