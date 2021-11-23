@@ -37,6 +37,8 @@ protected:
     touchgfx::TextArea textAreaAuthor;
     touchgfx::Image LogoWat;
     touchgfx::TextArea LabelWAT;
+    touchgfx::TextArea textAreaVersion;
+    touchgfx::TextArea textAreaVersionNumber;
 
 private:
 

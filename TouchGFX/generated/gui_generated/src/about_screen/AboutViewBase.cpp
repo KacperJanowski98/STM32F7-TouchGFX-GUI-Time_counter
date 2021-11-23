@@ -47,6 +47,16 @@ AboutViewBase::AboutViewBase() :
     LabelWAT.setLinespacing(0);
     LabelWAT.setTypedText(touchgfx::TypedText(T_SINGLEUSEID323));
 
+    textAreaVersion.setXY(676, 386);
+    textAreaVersion.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
+    textAreaVersion.setLinespacing(0);
+    textAreaVersion.setTypedText(touchgfx::TypedText(T_SINGLEUSEID324));
+
+    textAreaVersionNumber.setXY(698, 423);
+    textAreaVersionNumber.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
+    textAreaVersionNumber.setLinespacing(0);
+    textAreaVersionNumber.setTypedText(touchgfx::TypedText(T_SINGLEUSEID325));
+
     add(__background);
     add(boxBackground);
     add(boxWithBorderFrame);
@@ -56,6 +66,8 @@ AboutViewBase::AboutViewBase() :
     add(textAreaAuthor);
     add(LogoWat);
     add(LabelWAT);
+    add(textAreaVersion);
+    add(textAreaVersionNumber);
 }
 
 void AboutViewBase::setupScreen()

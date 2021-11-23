@@ -358,7 +358,7 @@
             "Name": "textAreaVersionNumber",
             "X": 698,
             "Y": 423,
-            "Width": 40,
+            "Width": 39,
             "Height": 19,
             "Visible": true,
             "LockPosition": false,
@@ -10552,6 +10552,54 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId324",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaVersion",
+            "X": 676,
+            "Y": 386,
+            "Width": 83,
+            "Height": 25,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Type": "TextArea",
+            "TextId": "SingleUseId325",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 126,
+              "Green": 224,
+              "Blue": 159
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textAreaVersionNumber",
+            "X": 698,
+            "Y": 423,
+            "Width": 39,
+            "Height": 19,
+            "Visible": true,
+            "LockPosition": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -11674,6 +11722,14 @@
       },
       {
         "TextEntryId": "SingleUseId323",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId324",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId325",
         "IsResource": false
       }
     ],
