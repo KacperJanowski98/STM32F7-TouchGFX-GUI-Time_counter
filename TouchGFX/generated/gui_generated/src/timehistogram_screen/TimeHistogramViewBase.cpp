@@ -14,7 +14,7 @@ TimeHistogramViewBase::TimeHistogramViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     box1.setPosition(0, 0, 800, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
+    box1.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
 
     buttonBack.setXY(732, 11);
     buttonBack.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_BACK_NEW_ID));
