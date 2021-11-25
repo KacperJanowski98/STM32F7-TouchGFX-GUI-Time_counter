@@ -99,7 +99,6 @@ void StampsFreqMeas(FrequencyMode_t *pFrequencyMode, ResultFreq_t *pResultFreq, 
 
 void calculateRange(uint8_t numberCh, int *min, int *max);
 
-//:TODO zrobic jakis mechanizm aby ustawal jednostki
 Unit_t setUnitMeanFreq(uint8_t numberCh);
 
 void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq);

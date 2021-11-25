@@ -638,7 +638,7 @@ TimeModeViewBase::TimeModeViewBase() :
     buttonHistogram.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_GRAPH_NEW_ID));
     buttonHistogram.setAction(buttonCallback);
 
-    labelTimeConfig.setXY(74, 32);
+    labelTimeConfig.setPosition(79, 20, 332, 48);
     labelTimeConfig.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelTimeConfig.setLinespacing(0);
     labelTimeConfig.setTypedText(touchgfx::TypedText(T_SINGLEUSEID315));
