@@ -64,7 +64,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxWithBorderScroll.setAlpha(25);
     swipeContainerFreqINPUT.add(boxWithBorderScroll);
 
-    boxWithBorderThreshold.setPosition(548, 199, 135, 41);
+    boxWithBorderThreshold.setPosition(538, 186, 163, 39);
     boxWithBorderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderThreshold.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderThreshold.setBorderSize(4);
@@ -81,6 +81,18 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     imageArrowR.setXY(770, 180);
     imageArrowR.setBitmap(touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     swipeContainerFreqINPUT.add(imageArrowR);
+
+    btnAddThreshold.setXY(644, 51);
+    btnAddThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddThreshold.setIconXY(6, 6);
+    btnAddThreshold.setAction(buttonCallback);
+    swipeContainerFreqINPUT.add(btnAddThreshold);
+
+    btnOddThreshold.setXY(644, 331);
+    btnOddThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddThreshold.setIconXY(6, 6);
+    btnOddThreshold.setAction(buttonCallback);
+    swipeContainerFreqINPUT.add(btnOddThreshold);
 
     labelINPUT.setXY(12, 24);
     labelINPUT.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
@@ -105,7 +117,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     radioSlopeUp.setDeselectionEnabled(false);
     swipeContainerFreqINPUT.add(radioSlopeUp);
 
-    textThreshold.setXY(550, 162);
+    textThreshold.setXY(554, 142);
     textThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textThreshold.setLinespacing(0);
     textThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID55));
@@ -133,7 +145,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     textSlope.setTypedText(touchgfx::TypedText(T_SINGLEUSEID56));
     swipeContainerFreqINPUT.add(textSlope);
 
-    buttonDetect.setXY(531, 254);
+    buttonDetect.setXY(531, 250);
     buttonDetect.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonDetect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID57));
     buttonDetect.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -141,7 +153,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     buttonDetect.setAction(buttonCallback);
     swipeContainerFreqINPUT.add(buttonDetect);
 
-    textSliderThreshold.setPosition(545, 206, 135, 29);
+    textSliderThreshold.setPosition(545, 194, 156, 30);
     textSliderThreshold.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textSliderThreshold.setLinespacing(0);
     Unicode::snprintf(textSliderThresholdBuffer, TEXTSLIDERTHRESHOLD_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID59).getText());
@@ -486,6 +498,20 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonBackFreq clicked change screen to FreqMode
         //Go to FreqMode with screen transition towards East
         application().gotoFreqModeScreenWipeTransitionEast();
+    }
+    else if (&src == &btnAddThreshold)
+    {
+        //AddThreshold
+        //When btnAddThreshold clicked call virtual function
+        //Call AddThreshold
+        AddThreshold();
+    }
+    else if (&src == &btnOddThreshold)
+    {
+        //OddThreshold
+        //When btnOddThreshold clicked call virtual function
+        //Call OddThreshold
+        OddThreshold();
     }
     else if (&src == &toggleChannel)
     {

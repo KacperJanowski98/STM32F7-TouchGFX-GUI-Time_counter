@@ -31,6 +31,10 @@ public:
 
     virtual void detectThreshold();
 
+    virtual void AddThreshold();
+
+    virtual void OddThreshold();
+
     void initUIChannel(std::shared_ptr<FreqModeParameter>& channel);
     void setGuiTouchable(bool state);
     void setChannelStateUI(std::shared_ptr<FreqModeParameter>& channel, bool state);
@@ -98,6 +102,7 @@ private:
     int16_t m_channelInput;
     std::shared_ptr<FreqModeParameter> pChannelInput;
 
+    uint32_t m_newThreshold;
 	bool m_hfInput;
 	uint16_t m_gate;
 };

@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
@@ -74,6 +75,16 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void AddThreshold()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void OddThreshold()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -98,6 +109,8 @@ protected:
     touchgfx::BoxWithBorder boxWithBorderThreshold;
     touchgfx::BoxWithBorder boxWithBorderSlope;
     touchgfx::Image imageArrowR;
+    touchgfx::ButtonWithIcon btnAddThreshold;
+    touchgfx::ButtonWithIcon btnOddThreshold;
     touchgfx::TextArea labelINPUT;
     touchgfx::ToggleButton toggleChannel;
     touchgfx::RadioButton radioSlopeDown;

@@ -306,6 +306,8 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(false);
 		sliderThreshold.setTouchable(false);
 		buttonDetect.setTouchable(false);
+		btnAddThreshold.setTouchable(false);
+		btnOddThreshold.setTouchable(false);
 		imageLockInput.setVisible(true);
 		boxLockInput.setVisible(true);
 	}
@@ -315,6 +317,8 @@ void FreqModeConfigView::setGuiTouchable(bool state)
 		radioSlopeDown.setTouchable(true);
 		sliderThreshold.setTouchable(true);
 		buttonDetect.setTouchable(true);
+		btnAddThreshold.setTouchable(true);
+		btnOddThreshold.setTouchable(true);
 		imageLockInput.setVisible(false);
 		boxLockInput.setVisible(false);
 	}
@@ -444,6 +448,28 @@ void FreqModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", session->getRepeat());
 	textRepeatVal.invalidate();
 	sliderRepeat.setValue(session->getRepeat());
+}
+
+void FreqModeConfigView::AddThreshold()
+{
+	m_newThreshold = pChannelInput->getThreshold() + 1;
+	if (m_newThreshold <= 285)
+	{
+		setThresholdUI(pChannelInput, m_newThreshold);
+		setValueSliderThresholdUI(m_newThreshold);
+		sliderThreshold.setValue(m_newThreshold);
+	}
+}
+
+void FreqModeConfigView::OddThreshold()
+{
+	m_newThreshold = pChannelInput->getThreshold() - 1;
+	if (m_newThreshold >= 0)
+	{
+		setThresholdUI(pChannelInput, m_newThreshold);
+		setValueSliderThresholdUI(m_newThreshold);
+		sliderThreshold.setValue(m_newThreshold);
+	}
 }
 
 void FreqModeConfigView::FinishSetupFreqModeSingle()
