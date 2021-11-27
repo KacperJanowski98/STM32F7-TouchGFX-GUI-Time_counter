@@ -152,7 +152,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderThreshold.setXY(708, 52);
     sliderThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     sliderThreshold.setupVerticalSlider(7, 3, 0, 0, 285);
-    sliderThreshold.setValueRange(0, 1000);
+    sliderThreshold.setValueRange(0, 285);
     sliderThreshold.setValue(0);
     swipeContainerFreqINPUT.add(sliderThreshold);
 
@@ -401,14 +401,14 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderStampsNumber.setXY(29, 263);
     sliderStampsNumber.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
     sliderStampsNumber.setupHorizontalSlider(2, 6, 0, 0, 284);
-    sliderStampsNumber.setValueRange(0, 1000);
+    sliderStampsNumber.setValueRange(0, 284);
     sliderStampsNumber.setValue(0);
     swipeContainerFreqSESSION.add(sliderStampsNumber);
 
     sliderRepeat.setXY(510, 263);
     sliderRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
     sliderRepeat.setupHorizontalSlider(3, 7, 0, 0, 125);
-    sliderRepeat.setValueRange(0, 100);
+    sliderRepeat.setValueRange(0, 125);
     sliderRepeat.setValue(0);
     swipeContainerFreqSESSION.add(sliderRepeat);
 

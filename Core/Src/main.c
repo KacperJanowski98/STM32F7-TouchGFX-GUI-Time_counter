@@ -337,7 +337,7 @@ static uint8_t BSP_QSPI_EnableMemoryMappedMode(QSPI_HandleTypeDef *hqspi);
 
 void detectedThreshold(uint32_t *threshold)
 {
-	*threshold = (rand() % (1000 + 1 - 50)) + 50;
+	*threshold = (rand() % (285 + 1 - 30)) + 30;
 }
 
 /* USER CODE END 0 */

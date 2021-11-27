@@ -501,6 +501,8 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     	radioSlopeDown.setTouchable(false);
     	sliderThreshold.setTouchable(false);
     	buttonDetect.setTouchable(false);
+    	btnAddThreshold.setTouchable(false);
+    	btnOddThreshold.setTouchable(false);
     	imageLockInput.setVisible(true);
     	boxLockInput.setVisible(true);
     }
@@ -510,6 +512,8 @@ void  TimeModeConfigView::setGuiTouchable(bool state)
     	radioSlopeDown.setTouchable(true);
     	sliderThreshold.setTouchable(true);
     	buttonDetect.setTouchable(true);
+    	btnAddThreshold.setTouchable(true);
+    	btnOddThreshold.setTouchable(true);
     	imageLockInput.setVisible(false);
     	boxLockInput.setVisible(false);
     }
@@ -776,6 +780,28 @@ void TimeModeConfigView::updateSessionSetupUI(std::shared_ptr<SessionSetup>& ses
 	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", session->getRepeat());
 	textRepeatVal.invalidate();
 	sliderRepeat.setValue(session->getRepeat());
+}
+
+void TimeModeConfigView::AddThreshold()
+{
+	m_newThreshold = pChannelInput->getThreshold() + 1;
+	if (m_newThreshold <= 285)
+	{
+		pChannelInput->setThreshold(m_newThreshold);
+		setValueSliderThresholdUI(m_newThreshold);
+	    sliderThreshold.setValue(m_newThreshold);
+	}
+}
+
+void TimeModeConfigView::OddThreshold()
+{
+	m_newThreshold = pChannelInput->getThreshold() - 1;
+	if (m_newThreshold >= 0)
+	{
+		pChannelInput->setThreshold(m_newThreshold);
+		setValueSliderThresholdUI(m_newThreshold);
+	    sliderThreshold.setValue(m_newThreshold);
+	}
 }
 
 //

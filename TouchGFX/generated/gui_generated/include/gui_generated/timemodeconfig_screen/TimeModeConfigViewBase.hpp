@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/containers/scrollers/ScrollWheelWithSelectionStyle.hpp>
 #include <gui/containers/ChannelContainer.hpp>
 #include <gui/containers/ChannelContainerCenter.hpp>
@@ -114,6 +115,16 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void AddThreshold()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void OddThreshold()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -138,6 +149,8 @@ protected:
     touchgfx::BoxWithBorder boxWithBorderSlider;
     touchgfx::BoxWithBorder boxWithBorderSlope;
     touchgfx::BoxWithBorder boxWithBorderThreshold;
+    touchgfx::ButtonWithIcon btnAddThreshold;
+    touchgfx::ButtonWithIcon btnOddThreshold;
     touchgfx::TextArea labelINPUT;
     touchgfx::ScrollWheelWithSelectionStyle scrollWheelINPUT;
     touchgfx::DrawableListItems<ChannelContainer, 6> scrollWheelINPUTListItems;

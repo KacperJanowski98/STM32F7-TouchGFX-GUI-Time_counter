@@ -82,6 +82,18 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     boxWithBorderThreshold.setAlpha(25);
     swipeContainerTimeINPUT.add(boxWithBorderThreshold);
 
+    btnAddThreshold.setXY(644, 51);
+    btnAddThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddThreshold.setIconXY(6, 6);
+    btnAddThreshold.setAction(buttonCallback);
+    swipeContainerTimeINPUT.add(btnAddThreshold);
+
+    btnOddThreshold.setXY(644, 330);
+    btnOddThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddThreshold.setIconXY(6, 6);
+    btnOddThreshold.setAction(buttonCallback);
+    swipeContainerTimeINPUT.add(btnOddThreshold);
+
     labelINPUT.setXY(12, 24);
     labelINPUT.setColor(touchgfx::Color::getColorFromRGB(126, 224, 159));
     labelINPUT.setLinespacing(0);
@@ -156,7 +168,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderThreshold.setXY(708, 51);
     sliderThreshold.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_MEDIUM_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
     sliderThreshold.setupVerticalSlider(7, 3, 0, 0, 285);
-    sliderThreshold.setValueRange(0, 1000);
+    sliderThreshold.setValueRange(0, 285);
     sliderThreshold.setValue(0);
     swipeContainerTimeINPUT.add(sliderThreshold);
 
@@ -456,7 +468,7 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderRange.setXY(434, 73);
     sliderRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
     sliderRange.setupHorizontalSlider(2, 6, 0, 0, 284);
-    sliderRange.setValueRange(0, 1000);
+    sliderRange.setValueRange(0, 284);
     sliderRange.setValue(0);
     swipeContainerTimeSESSION.add(sliderRange);
 
@@ -497,14 +509,14 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     sliderStampsNumber.setXY(36, 277);
     sliderStampsNumber.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
     sliderStampsNumber.setupHorizontalSlider(2, 6, 0, 0, 284);
-    sliderStampsNumber.setValueRange(0, 1000);
+    sliderStampsNumber.setValueRange(0, 284);
     sliderStampsNumber.setValue(0);
     swipeContainerTimeSESSION.add(sliderStampsNumber);
 
     sliderRepeat.setXY(512, 275);
     sliderRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_ROUND_KNOB_ID));
     sliderRepeat.setupHorizontalSlider(3, 7, 0, 0, 125);
-    sliderRepeat.setValueRange(0, 100);
+    sliderRepeat.setValueRange(0, 125);
     sliderRepeat.setValue(0);
     swipeContainerTimeSESSION.add(sliderRepeat);
 
@@ -612,6 +624,20 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonBackTime clicked change screen to TimeMode
         //Go to TimeMode with screen transition towards East
         application().gotoTimeModeScreenWipeTransitionEast();
+    }
+    else if (&src == &btnAddThreshold)
+    {
+        //AddThreshold
+        //When btnAddThreshold clicked call virtual function
+        //Call AddThreshold
+        AddThreshold();
+    }
+    else if (&src == &btnOddThreshold)
+    {
+        //OddThreshold
+        //When btnOddThreshold clicked call virtual function
+        //Call OddThreshold
+        OddThreshold();
     }
     else if (&src == &toggleChannel)
     {

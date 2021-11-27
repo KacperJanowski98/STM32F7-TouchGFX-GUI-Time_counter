@@ -126,6 +126,11 @@ public:
      */
     virtual void detectThreshold();
 
+    //:TODO
+    virtual void AddThreshold();
+
+    virtual void OddThreshold();
+
     /**
      * @brief Funkcja ustawiajaca elementy konfiguracji w UI okreslonego kanalu.
      *
@@ -339,6 +344,7 @@ private:
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
+    uint32_t m_newThreshold;
 //    ClockName m_clockSource;
     std::vector<int16_t> activeChannels;
 };
