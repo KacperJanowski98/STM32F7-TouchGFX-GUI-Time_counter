@@ -131,6 +131,18 @@ public:
 
     virtual void OddThreshold();
 
+    virtual void AddRange();
+
+    virtual void OddRange();
+
+    virtual void AddRepeat();
+
+    virtual void OddRepeat();
+
+    virtual void AddStamps();
+
+    virtual void OddStamps();
+
     /**
      * @brief Funkcja ustawiajaca elementy konfiguracji w UI okreslonego kanalu.
      *
@@ -345,6 +357,9 @@ private:
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
     int32_t m_newThreshold;
+    int16_t m_newRange;
+    int16_t m_newRepeat;
+    int16_t m_newStamps;
 //    ClockName m_clockSource;
     std::vector<int16_t> activeChannels;
 };

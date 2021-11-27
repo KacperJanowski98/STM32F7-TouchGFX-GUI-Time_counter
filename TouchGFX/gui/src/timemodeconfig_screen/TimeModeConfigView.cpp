@@ -804,6 +804,72 @@ void TimeModeConfigView::OddThreshold()
 	}
 }
 
+void TimeModeConfigView::AddRange()
+{
+	m_newRange = pSession->getRange() + 1;
+	if (m_newRange <= 284)
+	{
+    	setRangeUI(pSession, m_newRange);
+    	setValueSliderRange(m_newRange);
+    	sliderRange.setValue(m_newRange);
+	}
+}
+
+void TimeModeConfigView::OddRange()
+{
+	m_newRange = pSession->getRange() - 1;
+	if (m_newRange >= 0)
+	{
+    	setRangeUI(pSession, m_newRange);
+    	setValueSliderRange(m_newRange);
+    	sliderRange.setValue(m_newRange);
+	}
+}
+
+void TimeModeConfigView::AddRepeat()
+{
+	m_newRepeat = pSession->getRepeat() + 1;
+	if (m_newRepeat <= 125)
+	{
+    	setRepeatUI(pSession, m_newRepeat);
+    	setValueSliderRepeatUI(m_newRepeat);
+    	sliderRepeat.setValue(m_newRepeat);
+	}
+}
+
+void TimeModeConfigView::OddRepeat()
+{
+	m_newRepeat = pSession->getRepeat() - 1;
+	if (m_newRepeat >= 0)
+	{
+    	setRepeatUI(pSession, m_newRepeat);
+    	setValueSliderRepeatUI(m_newRepeat);
+    	sliderRepeat.setValue(m_newRepeat);
+	}
+}
+
+void TimeModeConfigView::AddStamps()
+{
+	m_newStamps = pSession->getStampsNumber() + 1;
+	if (m_newStamps <= 284)
+	{
+    	setStampsUI(pSession, m_newStamps);
+    	setValueSliderStampsNumberUI(m_newStamps);
+    	sliderStampsNumber.setValue(m_newStamps);
+	}
+}
+
+void TimeModeConfigView::OddStamps()
+{
+	m_newStamps = pSession->getStampsNumber() - 1;
+	if (m_newStamps >= 0)
+	{
+    	setStampsUI(pSession, m_newStamps);
+    	setValueSliderStampsNumberUI(m_newStamps);
+    	sliderStampsNumber.setValue(m_newStamps);
+	}
+}
+
 //
 void TimeModeConfigView::FinishSetupTimeModeSingle()
 {

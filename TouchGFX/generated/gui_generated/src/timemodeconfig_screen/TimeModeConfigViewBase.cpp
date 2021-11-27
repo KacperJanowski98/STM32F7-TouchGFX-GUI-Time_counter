@@ -525,6 +525,42 @@ TimeModeConfigViewBase::TimeModeConfigViewBase() :
     toggleTiMaxRange.setAction(buttonCallback);
     swipeContainerTimeSESSION.add(toggleTiMaxRange);
 
+    btnAddStamps.setXY(292, 336);
+    btnAddStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddStamps.setIconXY(6, 6);
+    btnAddStamps.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnAddStamps);
+
+    btnOddStamps.setXY(50, 336);
+    btnOddStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddStamps.setIconXY(6, 6);
+    btnOddStamps.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnOddStamps);
+
+    btnAddRepeat.setXY(694, 336);
+    btnAddRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddRepeat.setIconXY(6, 6);
+    btnAddRepeat.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnAddRepeat);
+
+    btnOddRepeat.setXY(450, 336);
+    btnOddRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddRepeat.setIconXY(6, 6);
+    btnOddRepeat.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnOddRepeat);
+
+    btnAddRange.setXY(694, 131);
+    btnAddRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddRange.setIconXY(6, 6);
+    btnAddRange.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnAddRange);
+
+    btnOddRange.setXY(450, 130);
+    btnOddRange.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddRange.setIconXY(6, 6);
+    btnOddRange.setAction(buttonCallback);
+    swipeContainerTimeSESSION.add(btnOddRange);
+
     buttonConfigTimeSingle.setXY(119, 130);
     buttonConfigTimeSingle.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigTimeSingle.setLabelText(touchgfx::TypedText(T_SINGLEUSEID84));
@@ -666,6 +702,48 @@ void TimeModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When toggleTiMaxRange clicked call virtual function
         //Call turnTiMaxRange
         turnTiMaxRange();
+    }
+    else if (&src == &btnAddStamps)
+    {
+        //AddStamps
+        //When btnAddStamps clicked call virtual function
+        //Call AddStamps
+        AddStamps();
+    }
+    else if (&src == &btnOddStamps)
+    {
+        //OddStamps
+        //When btnOddStamps clicked call virtual function
+        //Call OddStamps
+        OddStamps();
+    }
+    else if (&src == &btnAddRepeat)
+    {
+        //AddRepeat
+        //When btnAddRepeat clicked call virtual function
+        //Call AddRepeat
+        AddRepeat();
+    }
+    else if (&src == &btnOddRepeat)
+    {
+        //OddRepeat
+        //When btnOddRepeat clicked call virtual function
+        //Call OddRepeat
+        OddRepeat();
+    }
+    else if (&src == &btnAddRange)
+    {
+        //AddRange
+        //When btnAddRange clicked call virtual function
+        //Call AddRange
+        AddRange();
+    }
+    else if (&src == &btnOddRange)
+    {
+        //OddRange
+        //When btnOddRange clicked call virtual function
+        //Call OddRange
+        OddRange();
     }
     else if (&src == &buttonConfigTimeSingle)
     {

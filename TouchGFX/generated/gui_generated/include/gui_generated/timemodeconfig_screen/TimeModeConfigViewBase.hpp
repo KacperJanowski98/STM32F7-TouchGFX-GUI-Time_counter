@@ -125,6 +125,36 @@ public:
         // Override and implement this function in TimeModeConfig
     }
 
+    virtual void AddRange()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void OddRange()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void AddRepeat()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void OddRepeat()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void AddStamps()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
+    virtual void OddStamps()
+    {
+        // Override and implement this function in TimeModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -230,6 +260,12 @@ protected:
     touchgfx::Slider sliderStampsNumber;
     touchgfx::Slider sliderRepeat;
     touchgfx::ToggleButton toggleTiMaxRange;
+    touchgfx::ButtonWithIcon btnAddStamps;
+    touchgfx::ButtonWithIcon btnOddStamps;
+    touchgfx::ButtonWithIcon btnAddRepeat;
+    touchgfx::ButtonWithIcon btnOddRepeat;
+    touchgfx::ButtonWithIcon btnAddRange;
+    touchgfx::ButtonWithIcon btnOddRange;
     touchgfx::ButtonWithLabel buttonConfigTimeSingle;
     touchgfx::ButtonWithLabel buttonConfigTimeConst;
     touchgfx::ButtonWithLabel buttonConfigTimeStamps;
