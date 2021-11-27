@@ -85,6 +85,26 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void AddRepeat()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void OddRepeat()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void AddStamps()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void OddStamps()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -170,6 +190,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard textRepeatVal;
     touchgfx::Slider sliderStampsNumber;
     touchgfx::Slider sliderRepeat;
+    touchgfx::ButtonWithIcon btnAddStamps;
+    touchgfx::ButtonWithIcon btnOddStamps;
+    touchgfx::ButtonWithIcon btnAddRepeat;
+    touchgfx::ButtonWithIcon btnOddRepeat;
     touchgfx::ButtonWithLabel buttonConfigFreqStamps;
     touchgfx::ButtonWithLabel buttonConfigFreqConst;
     touchgfx::ButtonWithLabel buttonConfigFreqSingle;

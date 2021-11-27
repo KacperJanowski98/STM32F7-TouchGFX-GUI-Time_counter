@@ -472,6 +472,50 @@ void FreqModeConfigView::OddThreshold()
 	}
 }
 
+void FreqModeConfigView::AddRepeat()
+{
+	m_newRepeat = pSession->getRepeat() + 1;
+	if (m_newRepeat <= 125)
+	{
+    	setRepeatUI(pSession, m_newRepeat);
+    	setValueSliderRepeatUI(m_newRepeat);
+    	sliderRepeat.setValue(m_newRepeat);
+	}
+}
+
+void FreqModeConfigView::OddRepeat()
+{
+	m_newRepeat = pSession->getRepeat() - 1;
+	if (m_newRepeat >= 0)
+	{
+    	setRepeatUI(pSession, m_newRepeat);
+    	setValueSliderRepeatUI(m_newRepeat);
+    	sliderRepeat.setValue(m_newRepeat);
+	}
+}
+
+void FreqModeConfigView::AddStamps()
+{
+	m_newStamps = pSession->getStampsNumber() + 1;
+	if (m_newStamps <= 284)
+	{
+    	setStampsUI(pSession, m_newStamps);
+    	setValueSliderStampsNumberUI(m_newStamps);
+    	sliderStampsNumber.setValue(m_newStamps);
+	}
+}
+
+void FreqModeConfigView::OddStamps()
+{
+	m_newStamps = pSession->getStampsNumber() - 1;
+	if (m_newStamps >= 0)
+	{
+    	setStampsUI(pSession, m_newStamps);
+    	setValueSliderStampsNumberUI(m_newStamps);
+    	sliderStampsNumber.setValue(m_newStamps);
+	}
+}
+
 void FreqModeConfigView::FinishSetupFreqModeSingle()
 {
 	updateFreqParameterBackend();

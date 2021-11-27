@@ -344,7 +344,7 @@ private:
     int16_t m_channelTiSetup;
     int16_t m_channelTiSetupStart;
     int16_t m_channelTiSetupStop;
-    uint32_t m_newThreshold;
+    int32_t m_newThreshold;
 //    ClockName m_clockSource;
     std::vector<int16_t> activeChannels;
 };

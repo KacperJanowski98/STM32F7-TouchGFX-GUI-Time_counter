@@ -8786,6 +8786,98 @@
                     "Moveable": false
                   },
                   {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "plus_icon_pressed.png",
+                    "IconReleased": "plus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnAddStamps",
+                    "X": 289,
+                    "Y": 321,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "minus_icon_pressed.png",
+                    "IconReleased": "minus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnOddStamps",
+                    "X": 46,
+                    "Y": 321,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "plus_icon_pressed.png",
+                    "IconReleased": "plus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnAddRepeat",
+                    "X": 688,
+                    "Y": 321,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "minus_icon_pressed.png",
+                    "IconReleased": "minus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnOddRepeat",
+                    "X": 448,
+                    "Y": 321,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
                     "Type": "ButtonWithLabel",
                     "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
                     "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
@@ -9064,6 +9156,54 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "OddThreshold"
+            }
+          },
+          {
+            "InteractionName": "AddRepeat",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnAddRepeat"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AddRepeat"
+            }
+          },
+          {
+            "InteractionName": "OddRepeat",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnOddRepeat"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "OddRepeat"
+            }
+          },
+          {
+            "InteractionName": "AddStamps",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnAddStamps"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AddStamps"
+            }
+          },
+          {
+            "InteractionName": "OddStamps",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnOddStamps"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "OddStamps"
             }
           }
         ],

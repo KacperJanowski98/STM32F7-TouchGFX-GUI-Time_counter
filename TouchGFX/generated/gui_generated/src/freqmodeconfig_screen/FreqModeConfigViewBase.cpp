@@ -424,6 +424,30 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderRepeat.setValue(0);
     swipeContainerFreqSESSION.add(sliderRepeat);
 
+    btnAddStamps.setXY(289, 321);
+    btnAddStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddStamps.setIconXY(6, 6);
+    btnAddStamps.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(btnAddStamps);
+
+    btnOddStamps.setXY(46, 321);
+    btnOddStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddStamps.setIconXY(6, 6);
+    btnOddStamps.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(btnOddStamps);
+
+    btnAddRepeat.setXY(688, 321);
+    btnAddRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddRepeat.setIconXY(6, 6);
+    btnAddRepeat.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(btnAddRepeat);
+
+    btnOddRepeat.setXY(448, 321);
+    btnOddRepeat.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddRepeat.setIconXY(6, 6);
+    btnOddRepeat.setAction(buttonCallback);
+    swipeContainerFreqSESSION.add(btnOddRepeat);
+
     buttonConfigFreqStamps.setXY(113, 321);
     buttonConfigFreqStamps.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonConfigFreqStamps.setLabelText(touchgfx::TypedText(T_SINGLEUSEID89));
@@ -526,6 +550,34 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonDetect clicked call virtual function
         //Call detectThreshold
         detectThreshold();
+    }
+    else if (&src == &btnAddStamps)
+    {
+        //AddStamps
+        //When btnAddStamps clicked call virtual function
+        //Call AddStamps
+        AddStamps();
+    }
+    else if (&src == &btnOddStamps)
+    {
+        //OddStamps
+        //When btnOddStamps clicked call virtual function
+        //Call OddStamps
+        OddStamps();
+    }
+    else if (&src == &btnAddRepeat)
+    {
+        //AddRepeat
+        //When btnAddRepeat clicked call virtual function
+        //Call AddRepeat
+        AddRepeat();
+    }
+    else if (&src == &btnOddRepeat)
+    {
+        //OddRepeat
+        //When btnOddRepeat clicked call virtual function
+        //Call OddRepeat
+        OddRepeat();
     }
     else if (&src == &buttonConfigFreqStamps)
     {
