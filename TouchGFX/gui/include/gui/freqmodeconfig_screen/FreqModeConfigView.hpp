@@ -43,6 +43,10 @@ public:
 
     virtual void OddStamps();
 
+    virtual void AddGate();
+
+    virtual void OddGate();
+
     void initUIChannel(std::shared_ptr<FreqModeParameter>& channel);
     void setGuiTouchable(bool state);
     void setChannelStateUI(std::shared_ptr<FreqModeParameter>& channel, bool state);
@@ -113,6 +117,7 @@ private:
     int32_t m_newThreshold;
     int16_t m_newRepeat;
     int16_t m_newStamps;
+    int16_t m_newGate;
 	bool m_hfInput;
 	uint16_t m_gate;
 };

@@ -230,12 +230,16 @@ void FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler(const touchgfx::Abs
 		m_hfInput = false;
 		textGateVal.setVisible(false);
 		sliderGate.setTouchable(false);
+		btnAddGate.setTouchable(false);
+		btnOddGate.setTouchable(false);
 	}
 	else if (&src == &radioHfInputOn)
 	{
 		m_hfInput = true;
 		textGateVal.setVisible(true);
 		sliderGate.setTouchable(true);
+		btnAddGate.setTouchable(true);
+		btnOddGate.setTouchable(true);
 		sliderGate.setValue(m_gate);
 	}
 	radioHfInputOff.invalidate();
@@ -513,6 +517,26 @@ void FreqModeConfigView::OddStamps()
     	setStampsUI(pSession, m_newStamps);
     	setValueSliderStampsNumberUI(m_newStamps);
     	sliderStampsNumber.setValue(m_newStamps);
+	}
+}
+
+void FreqModeConfigView::AddGate()
+{
+	m_newGate = m_gate + 1;
+	if (m_newGate <= 254)
+	{
+		setValueSliderGateUI(m_newGate);
+		sliderGate.setValue(m_newGate);
+	}
+}
+
+void FreqModeConfigView::OddGate()
+{
+	m_newGate = m_gate - 1;
+	if (m_newGate >= 0)
+	{
+		setValueSliderGateUI(m_newGate);
+		sliderGate.setValue(m_newGate);
 	}
 }
 

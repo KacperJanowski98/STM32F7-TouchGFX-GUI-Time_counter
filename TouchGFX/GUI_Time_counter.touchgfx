@@ -5554,6 +5554,16 @@
               "Type": "ActionCustom",
               "FunctionName": "OddStamps"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
           }
         ],
         "Name": "TimeModeConfig",
@@ -8580,6 +8590,52 @@
                     "Moveable": false
                   },
                   {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "minus_icon_pressed.png",
+                    "IconReleased": "minus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnOddGate",
+                    "X": 230,
+                    "Y": 259,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+                    "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+                    "Alpha": 255,
+                    "IconPressed": "plus_icon_pressed.png",
+                    "IconReleased": "plus_icon.png",
+                    "IconX": 6,
+                    "IconY": 6,
+                    "IconHeight": 48,
+                    "IconWidth": 48,
+                    "Name": "btnAddGate",
+                    "X": 508,
+                    "Y": 259,
+                    "Width": 60,
+                    "Height": 60,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
                     "Type": "TextArea",
                     "TextId": "SingleUseId69",
                     "TextRotation": "0",
@@ -8642,10 +8698,9 @@
                     "IndicatorPos": 0,
                     "IndicatorMax": 284,
                     "IndicatorMin": 0,
-                    "ValueMax": 100,
+                    "ValueMax": 284,
                     "ValueMin": 0,
                     "InitValue": 0,
-                    "Style": "Style10",
                     "Name": "sliderGate",
                     "X": 230,
                     "Y": 334,
@@ -9414,6 +9469,30 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "OddStamps"
+            }
+          },
+          {
+            "InteractionName": "AddGate",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnAddGate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AddGate"
+            }
+          },
+          {
+            "InteractionName": "OddGate",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btnOddGate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "OddGate"
             }
           }
         ],

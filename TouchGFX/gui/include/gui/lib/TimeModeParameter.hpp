@@ -48,13 +48,13 @@ public:
 	/**
 	 * @brief Konstrukto.
 	 * 
-	 * @param numberChannel Numer kanalu.
-	 * @param stateChannel Stan kanalu.
-	 * @param slopeChannel Rodzaj zbocza kanalu.
-	 * @param setThreshold Sposob definicji progu wyzwalania.
-	 * @param thresholdVal Wartosc progu wyzwalania kanalu.
-	 * @param startChannel Numer kanalu poczatkowego.
-	 * @param stopChannel Numer kanalu koncowego.
+	 * @param numberChannel	Numer wejscia pomiarowego.
+	 * @param stateChannel	Stan wejscia pomiarowego.
+	 * @param tiState		Stan odcinka czasowego
+	 * @param slopeChannel	Rodzaj zbocza wejscia pomiarowego.
+	 * @param thresholdVal	Wartosc progu wyzwalania wejscia.
+	 * @param startChannel	Numer wejœcia poczatkowego.
+	 * @param stopChannel	Numer wejœcia koncowego.
 	 */
 	explicit TimeModeParameter(uint8_t numberChannel,
 						bool stateChannel,

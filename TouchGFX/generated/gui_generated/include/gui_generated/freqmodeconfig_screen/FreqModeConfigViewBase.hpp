@@ -105,6 +105,16 @@ public:
         // Override and implement this function in FreqModeConfig
     }
 
+    virtual void AddGate()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
+    virtual void OddGate()
+    {
+        // Override and implement this function in FreqModeConfig
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -173,6 +183,8 @@ protected:
     touchgfx::RadioButton radioHfInputOff;
     touchgfx::TextArea textON;
     touchgfx::TextArea textOFF;
+    touchgfx::ButtonWithIcon btnOddGate;
+    touchgfx::ButtonWithIcon btnAddGate;
     touchgfx::TextArea labelGate;
     touchgfx::TextAreaWithOneWildcard textGateVal;
     touchgfx::Slider sliderGate;

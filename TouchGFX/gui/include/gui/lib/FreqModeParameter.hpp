@@ -28,13 +28,10 @@ public:
 	/**
 	 * @brief Konstruktor.
 	 * 
-	 * @param numberChannel Numer kanalu.
-	 * @param stateChannel Stan kanalu.
-	 * @param slopeChannel Rodzaj zbocza kanalu.
-	 * @param setThreshold Sposob definicji progu wyzwalania.
-	 * @param thresholdVal Wartosc progu wyzwalania kanalu.
-	 * @param hfInput Stan HfINPUT.
-	 * @param gate Wartosc bramki.
+	 * @param numberChannel	Numer wejscia pomiarowego.
+	 * @param stateChannel	Stan wejscia pomiarowego.
+	 * @param slopeChannel	Rodzaj zbocza wejscia pomiarowego.
+	 * @param thresholdVal	Wartosc progu wyzwalania wejscia.
 	 */
 	explicit FreqModeParameter(uint8_t numberChannel,
 							bool stateChannel,

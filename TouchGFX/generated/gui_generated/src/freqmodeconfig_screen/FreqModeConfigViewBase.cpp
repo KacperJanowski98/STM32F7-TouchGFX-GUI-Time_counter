@@ -317,6 +317,18 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     textOFF.setTypedText(touchgfx::TypedText(T_SINGLEUSEID68));
     swipeContainerFreqMESSETUP.add(textOFF);
 
+    btnOddGate.setXY(230, 259);
+    btnOddGate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_ID), touchgfx::Bitmap(BITMAP_MINUS_ICON_PRESSED_ID));
+    btnOddGate.setIconXY(6, 6);
+    btnOddGate.setAction(buttonCallback);
+    swipeContainerFreqMESSETUP.add(btnOddGate);
+
+    btnAddGate.setXY(508, 259);
+    btnAddGate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_ID), touchgfx::Bitmap(BITMAP_PLUS_ICON_PRESSED_ID));
+    btnAddGate.setIconXY(6, 6);
+    btnAddGate.setAction(buttonCallback);
+    swipeContainerFreqMESSETUP.add(btnAddGate);
+
     labelGate.setXY(86, 224);
     labelGate.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     labelGate.setLinespacing(0);
@@ -334,7 +346,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     sliderGate.setXY(230, 334);
     sliderGate.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
     sliderGate.setupHorizontalSlider(2, 6, 0, 0, 284);
-    sliderGate.setValueRange(0, 100);
+    sliderGate.setValueRange(0, 284);
     sliderGate.setValue(0);
     swipeContainerFreqMESSETUP.add(sliderGate);
 
@@ -550,6 +562,20 @@ void FreqModeConfigViewBase::buttonCallbackHandler(const touchgfx::AbstractButto
         //When buttonDetect clicked call virtual function
         //Call detectThreshold
         detectThreshold();
+    }
+    else if (&src == &btnOddGate)
+    {
+        //OddGate
+        //When btnOddGate clicked call virtual function
+        //Call OddGate
+        OddGate();
+    }
+    else if (&src == &btnAddGate)
+    {
+        //AddGate
+        //When btnAddGate clicked call virtual function
+        //Call AddGate
+        AddGate();
     }
     else if (&src == &btnAddStamps)
     {
