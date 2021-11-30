@@ -29,7 +29,7 @@ void CalcParamStampsInit(CalcStampParam_t * pCalcParam)
 	pCalcParam->calculateMean = 0.0f;
 	pCalcParam->calculateStdDev = 0.0f;
 	pCalcParam->sizeBuffer = 0;
-	memset(pCalcParam->measureBuffer, 0, 1000 * sizeof(pCalcParam->measureBuffer[0]));
+	memset(pCalcParam->measureBuffer, 0, 300 * sizeof(pCalcParam->measureBuffer[0]));
 }
 
 void calculateMeanStdDevConst(CalcConstParam_t *pCalcParam) {

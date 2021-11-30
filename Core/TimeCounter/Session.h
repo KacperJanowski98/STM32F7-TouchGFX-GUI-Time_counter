@@ -64,7 +64,7 @@ typedef struct
 typedef struct
 {
 	uint16_t sizeBuffer;
-    float measureBuffer[1000];
+    float measureBuffer[300];
     float calculateMean;
     float calculateStdDev;
 } CalcStampParam_t;
