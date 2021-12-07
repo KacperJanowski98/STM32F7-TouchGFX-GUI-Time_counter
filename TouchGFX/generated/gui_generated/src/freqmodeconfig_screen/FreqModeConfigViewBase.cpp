@@ -15,10 +15,10 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     boxLeftBackG.setPosition(-1, 60, 75, 420);
-    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
+    boxLeftBackG.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
     boxRightBackG.setPosition(725, 60, 75, 420);
-    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(49, 67, 87));
+    boxRightBackG.setColor(touchgfx::Color::getColorFromRGB(67, 88, 112));
 
     boxConfigFreq.setPosition(0, 0, 800, 60);
     boxConfigFreq.setColor(touchgfx::Color::getColorFromRGB(88, 114, 140));

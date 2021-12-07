@@ -423,10 +423,14 @@ void TimeModeConfigView::turnTiMaxRange()
 		sliderRange.setValue(sliderRange.getMaxValue());
 		setRangeUI(pSession, sliderRange.getMaxValue());
 		sliderRange.setTouchable(false);
+		btnAddRange.setTouchable(false);
+		btnOddRange.setTouchable(false);
 	}
 	else
 	{
 		sliderRange.setTouchable(true);
+		btnAddRange.setTouchable(true);
+		btnOddRange.setTouchable(true);
 	}
 }
 

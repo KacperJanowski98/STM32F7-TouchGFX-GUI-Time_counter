@@ -443,7 +443,7 @@ int main(void)
   myBinarySemResetParamFHandle = osSemaphoreNew(1, 0, &myBinarySemResetParamF_attributes);
 
   /* creation of myBinarySemCalibration */
-  myBinarySemCalibrationHandle = osSemaphoreNew(1, 01, &myBinarySemCalibration_attributes);
+  myBinarySemCalibrationHandle = osSemaphoreNew(1, 0, &myBinarySemCalibration_attributes);
 
   /* creation of myBinarySemUpdateFreqDisp */
   myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 0, &myBinarySemUpdateFreqDisp_attributes);

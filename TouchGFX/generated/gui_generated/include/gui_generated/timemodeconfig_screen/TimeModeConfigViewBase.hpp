@@ -244,6 +244,7 @@ protected:
     touchgfx::Image imageLock;
     touchgfx::Container swipeContainerTimeSESSION;
     touchgfx::Box boxSESSIONSETUP;
+    touchgfx::BoxWithBorder boxForSession;
     touchgfx::Image imageArrowSL;
     touchgfx::BoxWithBorder boxWithBorderSetupTi;
     touchgfx::BoxWithBorder boxWithBorderSetupR;
