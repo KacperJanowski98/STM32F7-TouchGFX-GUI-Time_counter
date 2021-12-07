@@ -410,49 +410,49 @@ int main(void)
 
   /* Create the semaphores(s) */
   /* creation of myBinarySemGetTimeSingle */
-  myBinarySemGetTimeSingleHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeSingle_attributes);
+  myBinarySemGetTimeSingleHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeSingle_attributes);
 
   /* creation of myBinarySemGetFreqSingle */
-  myBinarySemGetFreqSingleHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqSingle_attributes);
+  myBinarySemGetFreqSingleHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqSingle_attributes);
 
   /* creation of myBinarySemGetTimeConst */
-  myBinarySemGetTimeConstHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeConst_attributes);
+  myBinarySemGetTimeConstHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeConst_attributes);
 
   /* creation of myBinarySemGetFreqConst */
-  myBinarySemGetFreqConstHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqConst_attributes);
+  myBinarySemGetFreqConstHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqConst_attributes);
 
   /* creation of myBinarySemGetTimeStamps */
-  myBinarySemGetTimeStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeStamps_attributes);
+  myBinarySemGetTimeStampsHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeStamps_attributes);
 
   /* creation of myBinarySemGetFreqStamps */
-  myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqStamps_attributes);
+  myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqStamps_attributes);
 
   /* creation of myBinarySemResetParamT */
-  myBinarySemResetParamTHandle = osSemaphoreNew(1, 1, &myBinarySemResetParamT_attributes);
+  myBinarySemResetParamTHandle = osSemaphoreNew(1, 0, &myBinarySemResetParamT_attributes);
 
   /* creation of myBinarySemUpdateTimeDisp */
-  myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateTimeDisp_attributes);
+  myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 0, &myBinarySemUpdateTimeDisp_attributes);
 
   /* creation of myBinarySemDetectThreTime */
-  myBinarySemDetectThreTimeHandle = osSemaphoreNew(1, 1, &myBinarySemDetectThreTime_attributes);
+  myBinarySemDetectThreTimeHandle = osSemaphoreNew(1, 0, &myBinarySemDetectThreTime_attributes);
 
   /* creation of myBinarySemDetectThreFreq */
-  myBinarySemDetectThreFreqHandle = osSemaphoreNew(1, 1, &myBinarySemDetectThreFreq_attributes);
+  myBinarySemDetectThreFreqHandle = osSemaphoreNew(1, 0, &myBinarySemDetectThreFreq_attributes);
 
   /* creation of myBinarySemResetParamF */
-  myBinarySemResetParamFHandle = osSemaphoreNew(1, 1, &myBinarySemResetParamF_attributes);
+  myBinarySemResetParamFHandle = osSemaphoreNew(1, 0, &myBinarySemResetParamF_attributes);
 
   /* creation of myBinarySemCalibration */
-  myBinarySemCalibrationHandle = osSemaphoreNew(1, 1, &myBinarySemCalibration_attributes);
+  myBinarySemCalibrationHandle = osSemaphoreNew(1, 01, &myBinarySemCalibration_attributes);
 
   /* creation of myBinarySemUpdateFreqDisp */
-  myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateFreqDisp_attributes);
+  myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 0, &myBinarySemUpdateFreqDisp_attributes);
 
   /* creation of myBinarySemGetTimeRepeat */
-  myBinarySemGetTimeRepeatHandle = osSemaphoreNew(1, 1, &myBinarySemGetTimeRepeat_attributes);
+  myBinarySemGetTimeRepeatHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeRepeat_attributes);
 
   /* creation of myBinarySemGetFreqRepeat */
-  myBinarySemGetFreqRepeatHandle = osSemaphoreNew(1, 1, &myBinarySemGetFreqRepeat_attributes);
+  myBinarySemGetFreqRepeatHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqRepeat_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
