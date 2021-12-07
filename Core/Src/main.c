@@ -180,82 +180,31 @@ const osThreadAttr_t TaskFreqRepeat_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for myBinarySemGetTimeSingle */
-osSemaphoreId_t myBinarySemGetTimeSingleHandle;
-const osSemaphoreAttr_t myBinarySemGetTimeSingle_attributes = {
-  .name = "myBinarySemGetTimeSingle"
-};
-/* Definitions for myBinarySemGetFreqSingle */
-osSemaphoreId_t myBinarySemGetFreqSingleHandle;
-const osSemaphoreAttr_t myBinarySemGetFreqSingle_attributes = {
-  .name = "myBinarySemGetFreqSingle"
-};
-/* Definitions for myBinarySemGetTimeConst */
-osSemaphoreId_t myBinarySemGetTimeConstHandle;
-const osSemaphoreAttr_t myBinarySemGetTimeConst_attributes = {
-  .name = "myBinarySemGetTimeConst"
-};
-/* Definitions for myBinarySemGetFreqConst */
-osSemaphoreId_t myBinarySemGetFreqConstHandle;
-const osSemaphoreAttr_t myBinarySemGetFreqConst_attributes = {
-  .name = "myBinarySemGetFreqConst"
-};
-/* Definitions for myBinarySemGetTimeStamps */
-osSemaphoreId_t myBinarySemGetTimeStampsHandle;
-const osSemaphoreAttr_t myBinarySemGetTimeStamps_attributes = {
-  .name = "myBinarySemGetTimeStamps"
-};
-/* Definitions for myBinarySemGetFreqStamps */
-osSemaphoreId_t myBinarySemGetFreqStampsHandle;
-const osSemaphoreAttr_t myBinarySemGetFreqStamps_attributes = {
-  .name = "myBinarySemGetFreqStamps"
-};
-/* Definitions for myBinarySemResetParamT */
-osSemaphoreId_t myBinarySemResetParamTHandle;
-const osSemaphoreAttr_t myBinarySemResetParamT_attributes = {
-  .name = "myBinarySemResetParamT"
-};
 /* Definitions for myBinarySemUpdateTimeDisp */
 osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
 const osSemaphoreAttr_t myBinarySemUpdateTimeDisp_attributes = {
   .name = "myBinarySemUpdateTimeDisp"
-};
-/* Definitions for myBinarySemDetectThreTime */
-osSemaphoreId_t myBinarySemDetectThreTimeHandle;
-const osSemaphoreAttr_t myBinarySemDetectThreTime_attributes = {
-  .name = "myBinarySemDetectThreTime"
-};
-/* Definitions for myBinarySemDetectThreFreq */
-osSemaphoreId_t myBinarySemDetectThreFreqHandle;
-const osSemaphoreAttr_t myBinarySemDetectThreFreq_attributes = {
-  .name = "myBinarySemDetectThreFreq"
-};
-/* Definitions for myBinarySemResetParamF */
-osSemaphoreId_t myBinarySemResetParamFHandle;
-const osSemaphoreAttr_t myBinarySemResetParamF_attributes = {
-  .name = "myBinarySemResetParamF"
-};
-/* Definitions for myBinarySemCalibration */
-osSemaphoreId_t myBinarySemCalibrationHandle;
-const osSemaphoreAttr_t myBinarySemCalibration_attributes = {
-  .name = "myBinarySemCalibration"
 };
 /* Definitions for myBinarySemUpdateFreqDisp */
 osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
 const osSemaphoreAttr_t myBinarySemUpdateFreqDisp_attributes = {
   .name = "myBinarySemUpdateFreqDisp"
 };
-/* Definitions for myBinarySemGetTimeRepeat */
-osSemaphoreId_t myBinarySemGetTimeRepeatHandle;
-const osSemaphoreAttr_t myBinarySemGetTimeRepeat_attributes = {
-  .name = "myBinarySemGetTimeRepeat"
-};
-/* Definitions for myBinarySemGetFreqRepeat */
-osSemaphoreId_t myBinarySemGetFreqRepeatHandle;
-const osSemaphoreAttr_t myBinarySemGetFreqRepeat_attributes = {
-  .name = "myBinarySemGetFreqRepeat"
-};
 /* USER CODE BEGIN PV */
+
+uint32_t FlagTimeSingle = 1;
+uint32_t FlagFreqSingle = 2;
+uint32_t FlagTimeConst = 3;
+uint32_t FlagFreqConst = 4;
+uint32_t FlagTimeStamps = 5;
+uint32_t FlagFreqStamps = 6;
+uint32_t FlagResetParamT = 7;
+uint32_t FlagDetectThresholdT = 8;
+uint32_t FlagDetectThresholdF = 9;
+uint32_t FlagResetParamF = 10;
+uint32_t FlagCalibration = 11;
+uint32_t FlagTimeRepeat = 12;
+uint32_t FlagFreqRepeat = 13;
 
 uint8_t conditionT = 1;
 uint16_t conditionRepeatT = 1;
@@ -409,50 +358,11 @@ int main(void)
   /* USER CODE END RTOS_MUTEX */
 
   /* Create the semaphores(s) */
-  /* creation of myBinarySemGetTimeSingle */
-  myBinarySemGetTimeSingleHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeSingle_attributes);
-
-  /* creation of myBinarySemGetFreqSingle */
-  myBinarySemGetFreqSingleHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqSingle_attributes);
-
-  /* creation of myBinarySemGetTimeConst */
-  myBinarySemGetTimeConstHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeConst_attributes);
-
-  /* creation of myBinarySemGetFreqConst */
-  myBinarySemGetFreqConstHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqConst_attributes);
-
-  /* creation of myBinarySemGetTimeStamps */
-  myBinarySemGetTimeStampsHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeStamps_attributes);
-
-  /* creation of myBinarySemGetFreqStamps */
-  myBinarySemGetFreqStampsHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqStamps_attributes);
-
-  /* creation of myBinarySemResetParamT */
-  myBinarySemResetParamTHandle = osSemaphoreNew(1, 0, &myBinarySemResetParamT_attributes);
-
   /* creation of myBinarySemUpdateTimeDisp */
-  myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 0, &myBinarySemUpdateTimeDisp_attributes);
-
-  /* creation of myBinarySemDetectThreTime */
-  myBinarySemDetectThreTimeHandle = osSemaphoreNew(1, 0, &myBinarySemDetectThreTime_attributes);
-
-  /* creation of myBinarySemDetectThreFreq */
-  myBinarySemDetectThreFreqHandle = osSemaphoreNew(1, 0, &myBinarySemDetectThreFreq_attributes);
-
-  /* creation of myBinarySemResetParamF */
-  myBinarySemResetParamFHandle = osSemaphoreNew(1, 0, &myBinarySemResetParamF_attributes);
-
-  /* creation of myBinarySemCalibration */
-  myBinarySemCalibrationHandle = osSemaphoreNew(1, 0, &myBinarySemCalibration_attributes);
+  myBinarySemUpdateTimeDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateTimeDisp_attributes);
 
   /* creation of myBinarySemUpdateFreqDisp */
-  myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 0, &myBinarySemUpdateFreqDisp_attributes);
-
-  /* creation of myBinarySemGetTimeRepeat */
-  myBinarySemGetTimeRepeatHandle = osSemaphoreNew(1, 0, &myBinarySemGetTimeRepeat_attributes);
-
-  /* creation of myBinarySemGetFreqRepeat */
-  myBinarySemGetFreqRepeatHandle = osSemaphoreNew(1, 0, &myBinarySemGetFreqRepeat_attributes);
+  myBinarySemUpdateFreqDispHandle = osSemaphoreNew(1, 1, &myBinarySemUpdateFreqDisp_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -1761,18 +1671,12 @@ void StartTaskTimeSingle(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetTimeSingleHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeSingleHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionT = 0;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
-			  stampsModeTimeFlag = 0;
-			  ResultTimeInit(&ResultTimeBackend);
-			  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagTimeSingle, 0, osWaitForever);
+	  conditionT = 0;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  stampsModeTimeFlag = 0;
+	  ResultTimeInit(&ResultTimeBackend);
+	  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
   }
   /* USER CODE END StartTaskTimeSingle */
 }
@@ -1790,18 +1694,12 @@ void StartTaskFreqSingle(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetFreqSingleHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemGetFreqSingleHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionF = 0;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
-			  stampsModeFreqFlag = 0;
-			  ResultFrequencyInit(&ResultFreqBackend);
-			  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagFreqSingle, 0, osWaitForever);
+	  conditionF = 0;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  stampsModeFreqFlag = 0;
+	  ResultFrequencyInit(&ResultFreqBackend);
+	  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
   }
   /* USER CODE END StartTaskFreqSingle */
 }
@@ -1819,22 +1717,16 @@ void StartTaskTimeConst(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetTimeConstHandle != NULL)
+	  osThreadFlagsWait(FlagTimeConst, 0, osWaitForever);
+	  conditionT = 1;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  stampsModeTimeFlag = 0;
+	  while(conditionT)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeConstHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionT = 1;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
-			  stampsModeTimeFlag = 0;
-			  while(conditionT)
-			  {
-				  ResultTimeInit(&ResultTimeBackend);
-				  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
-				  osDelay(500);
-			  }
-		  }
+		  ResultTimeInit(&ResultTimeBackend);
+		  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
+		  osDelay(500);
 	  }
-    osDelay(1);
   }
   /* USER CODE END StartTaskTimeConst */
 }
@@ -1852,22 +1744,16 @@ void StartTaskFreqConst(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetFreqConstHandle)
+	  osThreadFlagsWait(FlagFreqConst, 0, osWaitForever);
+	  conditionF = 1;
+	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  stampsModeFreqFlag = 0;
+	  while(conditionF)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetFreqConstHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionF = 1;
-			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
-			  stampsModeFreqFlag = 0;
-			  while(conditionF)
-			  {
-				  ResultFrequencyInit(&ResultFreqBackend);
-				  ContinuousFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcConstFreq);
-				  osDelay(500);
-			  }
-		  }
+		  ResultFrequencyInit(&ResultFreqBackend);
+		  ContinuousFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcConstFreq);
+		  osDelay(500);
 	  }
-    osDelay(1);
   }
   /* USER CODE END StartTaskFreqConst */
 }
@@ -1885,18 +1771,12 @@ void StartTaskTimeStamps(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetTimeStampsHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeStampsHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionT = 0;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
-			  stampsModeTimeFlag = 1;
-			  ResultTimeInit(&ResultTimeBackend);
-			  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagTimeStamps, 0, osWaitForever);
+	  conditionT = 0;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  stampsModeTimeFlag = 1;
+	  ResultTimeInit(&ResultTimeBackend);
+	  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
   }
   /* USER CODE END StartTaskTimeStamps */
 }
@@ -1914,18 +1794,12 @@ void StartTaskFreqStamps(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetFreqStampsHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemGetFreqStampsHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionF = 0;
-			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
-			  stampsModeFreqFlag = 1;
-			  ResultFrequencyInit(&ResultFreqBackend);
-			  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagFreqStamps, 0, osWaitForever);
+	  conditionF = 0;
+	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  stampsModeFreqFlag = 1;
+	  ResultFrequencyInit(&ResultFreqBackend);
+	  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
   }
   /* USER CODE END StartTaskFreqStamps */
 }
@@ -1943,20 +1817,14 @@ void StartTaskResetParamT(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemResetParamTHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemResetParamTHandle, (uint32_t) 10) == osOK)
-		  {
-			  TimeModeInit(&TimeBackend);
-			  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
-			  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-			  ResultTimeInit(&ResultTimeBackend);
-			  conditionT = 0;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
-			  stampsModeTimeFlag = 0;
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagResetParamT, 0, osWaitForever);
+	  TimeModeInit(&TimeBackend);
+	  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
+	  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
+	  ResultTimeInit(&ResultTimeBackend);
+	  conditionT = 0;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+	  stampsModeTimeFlag = 0;
   }
   /* USER CODE END StartTaskResetParamT */
 }
@@ -1974,14 +1842,8 @@ void StartTaskDetectThreT(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemDetectThreTimeHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemDetectThreTimeHandle, (uint32_t) 10) == osOK)
-		  {
-			  detectedThreshold(&detectedThresholdTime);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagDetectThresholdT, 0, osWaitForever);
+	  detectedThreshold(&detectedThresholdTime);
   }
   /* USER CODE END StartTaskDetectThreT */
 }
@@ -1999,13 +1861,8 @@ void StartTaskDetectThreF(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemDetectThreFreqHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemDetectThreFreqHandle, (uint32_t) 10) == osOK){
-			  detectedThreshold(&detectedThresholdFreq);
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagDetectThresholdF, 0, osWaitForever);
+	  detectedThreshold(&detectedThresholdFreq);
   }
   /* USER CODE END StartTaskDetectThreF */
 }
@@ -2023,20 +1880,14 @@ void StartTaskResetParamF(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemResetParamFHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemResetParamFHandle, (uint32_t) 10) == osOK)
-		  {
-			  FrequencyModeInit(&FreqBackend);
-			  ResultFreqParameterConstInit(&ResultCalcConstFreq);
-			  ResultFreqStampsInit(&ResultCalcStampsFreq);
-			  ResultFrequencyInit(&ResultFreqBackend);
-			  conditionF = 0;
-			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
-			  stampsModeFreqFlag = 0;
-		  }
-	  }
-    osDelay(1);
+	  osThreadFlagsWait(FlagResetParamF, 0, osWaitForever);
+	  FrequencyModeInit(&FreqBackend);
+	  ResultFreqParameterConstInit(&ResultCalcConstFreq);
+	  ResultFreqStampsInit(&ResultCalcStampsFreq);
+	  ResultFrequencyInit(&ResultFreqBackend);
+	  conditionF = 0;
+	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  stampsModeFreqFlag = 0;
   }
   /* USER CODE END StartTaskResetParamF */
 }
@@ -2054,28 +1905,22 @@ void StartTaskCalibration(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemCalibrationHandle != NULL)
-	  {
-		  if (osSemaphoreAcquire(myBinarySemCalibrationHandle, (uint32_t) 10) == osOK)
-		  {
-			  TimeModeInit(&TimeBackend);
-			  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
-			  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-			  ResultTimeInit(&ResultTimeBackend);
-			  conditionT = 0;
-			  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
-			  stampsModeTimeFlag = 0;
+	  osThreadFlagsWait(FlagCalibration, 0, osWaitForever);
+	  TimeModeInit(&TimeBackend);
+	  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
+	  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
+	  ResultTimeInit(&ResultTimeBackend);
+	  conditionT = 0;
+	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+	  stampsModeTimeFlag = 0;
 
-			  FrequencyModeInit(&FreqBackend);
-			  ResultFreqParameterConstInit(&ResultCalcConstFreq);
-			  ResultFreqStampsInit(&ResultCalcStampsFreq);
-			  ResultFrequencyInit(&ResultFreqBackend);
-			  conditionF = 0;
-			  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
-			  stampsModeFreqFlag = 0;
-		  }
-	  }
-    osDelay(1);
+	  FrequencyModeInit(&FreqBackend);
+	  ResultFreqParameterConstInit(&ResultCalcConstFreq);
+	  ResultFreqStampsInit(&ResultCalcStampsFreq);
+	  ResultFrequencyInit(&ResultFreqBackend);
+	  conditionF = 0;
+	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  stampsModeFreqFlag = 0;
   }
   /* USER CODE END StartTaskCalibration */
 }
@@ -2093,23 +1938,17 @@ void StartTaskTimeRepeat(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetTimeRepeatHandle != NULL)
+	  osThreadFlagsWait(FlagTimeRepeat, 0, osWaitForever);
+	  conditionT = 0;
+	  conditionRepeatT = 1;
+	  stampsModeTimeFlag = 0;
+	  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetTimeRepeatHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionT = 0;
-			  conditionRepeatT = 1;
-			  stampsModeTimeFlag = 0;
-			  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
-			  {
-				  ResultTimeInit(&ResultTimeBackend);
-				  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
-				  conditionRepeatT++;
-				  osDelay(1000);
-			  }
-		  }
+		  ResultTimeInit(&ResultTimeBackend);
+		  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
+		  conditionRepeatT++;
+		  osDelay(1000);
 	  }
-    osDelay(1);
   }
   /* USER CODE END StartTaskTimeRepeat */
 }
@@ -2127,23 +1966,17 @@ void StartTaskFreqRepeat(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if (myBinarySemGetFreqRepeatHandle != NULL)
+	  osThreadFlagsWait(FlagFreqRepeat, 0, osWaitForever);
+	  conditionF = 0;
+	  conditionRepeatF = 1;
+	  stampsModeFreqFlag = 0;
+	  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
 	  {
-		  if (osSemaphoreAcquire(myBinarySemGetFreqRepeatHandle, (uint32_t) 10) == osOK)
-		  {
-			  conditionF = 0;
-			  conditionRepeatF = 1;
-			  stampsModeFreqFlag = 0;
-			  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
-			  {
-				  ResultFrequencyInit(&ResultFreqBackend);
-				  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
-				  conditionRepeatF++;
-				  osDelay(1000);
-			  }
-		  }
+		  ResultFrequencyInit(&ResultFreqBackend);
+		  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
+		  conditionRepeatF++;
+		  osDelay(1000);
 	  }
-    osDelay(1);
   }
   /* USER CODE END StartTaskFreqRepeat */
 }

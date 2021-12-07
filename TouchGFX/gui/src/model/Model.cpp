@@ -1,28 +1,36 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-extern osSemaphoreId_t myBinarySemGetTimeSingleHandle;
-extern osSemaphoreId_t myBinarySemGetFreqSingleHandle;
-
-extern osSemaphoreId_t myBinarySemGetTimeConstHandle;
-extern osSemaphoreId_t myBinarySemGetFreqConstHandle;
-
-extern osSemaphoreId_t myBinarySemGetTimeStampsHandle;
-extern osSemaphoreId_t myBinarySemGetFreqStampsHandle;
-
-extern osSemaphoreId_t myBinarySemGetTimeRepeatHandle;
-extern osSemaphoreId_t myBinarySemGetFreqRepeatHandle;
-
-extern osSemaphoreId_t myBinarySemDetectThreTimeHandle;
-extern osSemaphoreId_t myBinarySemDetectThreFreqHandle;
-
-extern osSemaphoreId_t myBinarySemResetParamTHandle;
-extern osSemaphoreId_t myBinarySemResetParamFHandle;
-
 extern osSemaphoreId_t myBinarySemUpdateTimeDispHandle;
 extern osSemaphoreId_t myBinarySemUpdateFreqDispHandle;
 
-extern osSemaphoreId_t myBinarySemCalibrationHandle;
+extern uint32_t FlagTimeSingle;
+extern uint32_t FlagFreqSingle;
+extern uint32_t FlagTimeConst;
+extern uint32_t FlagFreqConst;
+extern uint32_t FlagTimeStamps;
+extern uint32_t FlagFreqStamps;
+extern uint32_t FlagResetParamT;
+extern uint32_t FlagDetectThresholdT;
+extern uint32_t FlagDetectThresholdF;
+extern uint32_t FlagResetParamF;
+extern uint32_t FlagCalibration;
+extern uint32_t FlagTimeRepeat;
+extern uint32_t FlagFreqRepeat;
+
+extern osThreadId_t TaskTimeSingleHandle;
+extern osThreadId_t TaskFreqSingleHandle;
+extern osThreadId_t TaskTimeConstHandle;
+extern osThreadId_t TaskFreqConstHandle;
+extern osThreadId_t TaskTimeStampsHandle;
+extern osThreadId_t TaskFreqStampsHandle;
+extern osThreadId_t TaskResetParamTHandle;
+extern osThreadId_t TaskDetectThreTHandle;
+extern osThreadId_t TaskDetectThreFHandle;
+extern osThreadId_t TaskResetParamFHandle;
+extern osThreadId_t TaskCalibrationHandle;
+extern osThreadId_t TaskTimeRepeatHandle;
+extern osThreadId_t TaskFreqRepeatHandle;
 
 Model::Model() : modelListener(0)
 {
@@ -58,70 +66,69 @@ void Model::updateScreenContinuousFreqMode()
 	modelListener->updateUIContinuousFreq();
 }
 
-//
 void Model::getDataTimeSingle()
 {
-	osSemaphoreRelease(myBinarySemGetTimeSingleHandle);
+	osThreadFlagsSet(TaskTimeSingleHandle, FlagTimeSingle);
 }
 
 void Model::getDataTimeContinuous()
 {
-	osSemaphoreRelease(myBinarySemGetTimeConstHandle);
+	osThreadFlagsSet(TaskTimeConstHandle, FlagTimeConst);
 }
 
 void Model::getDataTimeStamps()
 {
-	osSemaphoreRelease(myBinarySemGetTimeStampsHandle);
+	osThreadFlagsSet(TaskTimeStampsHandle, FlagTimeStamps);
 }
 
 void Model::getDataTimeRepeat()
 {
-	osSemaphoreRelease(myBinarySemGetTimeRepeatHandle);
+	osThreadFlagsSet(TaskTimeRepeatHandle, FlagTimeRepeat);
 }
 
 void Model::getDataFreqSingle()
 {
-	osSemaphoreRelease(myBinarySemGetFreqSingleHandle);
+	osThreadFlagsSet(TaskFreqSingleHandle, FlagFreqSingle);
 }
 
 void Model::getDataFreqContinuous()
 {
-	osSemaphoreRelease(myBinarySemGetFreqConstHandle);
+	osThreadFlagsSet(TaskFreqConstHandle, FlagFreqConst);
 }
 
 void Model::getDataFreqStamps()
 {
-	osSemaphoreRelease(myBinarySemGetFreqStampsHandle);
+	osThreadFlagsSet(TaskFreqStampsHandle, FlagFreqStamps);
 }
 
 void Model::getDataFreqRepeat()
 {
-	osSemaphoreRelease(myBinarySemGetFreqRepeatHandle);
+	osThreadFlagsSet(TaskFreqRepeatHandle, FlagFreqRepeat);
 }
 
 void Model::getResetTime()
 {
-	osSemaphoreRelease(myBinarySemResetParamTHandle);
+	osThreadFlagsSet(TaskResetParamTHandle, FlagResetParamT);
 	modelListener->updateUIContinuousTime();
 }
 
 void Model::getResetFreq()
 {
-	osSemaphoreRelease(myBinarySemResetParamFHandle);
+	osThreadFlagsSet(TaskResetParamFHandle, FlagResetParamF);
 	modelListener->updateUIContinuousFreq();
 }
 
 void Model::getDetectedTimeThreshold()
 {
-	osSemaphoreRelease(myBinarySemDetectThreTimeHandle);
+	osThreadFlagsSet(TaskDetectThreTHandle, FlagDetectThresholdT);
 }
 
 void Model::getDetectedFreqThreshold()
 {
-	osSemaphoreRelease(myBinarySemDetectThreFreqHandle);
+	osThreadFlagsSet(TaskDetectThreFHandle, FlagDetectThresholdF);
 }
 
 void Model::getCalibration()
 {
-	osSemaphoreRelease(myBinarySemCalibrationHandle);
+	osThreadFlagsSet(TaskCalibrationHandle, FlagCalibration);
 }
