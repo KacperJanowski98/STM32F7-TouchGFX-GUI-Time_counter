@@ -123,37 +123,37 @@ void ResultTimeParameterStampsInit(ResultStampsCalc_t *pResultCalc)
 	pResultCalc->parameters1.calculateMean = 0.0f;
 	pResultCalc->parameters1.calculateStdDev = 0.0;
 	pResultCalc->parameters1.sizeBuffer = 0;
-	memset(pResultCalc->parameters1.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters1.measureBuffer[0]));
+	memset(pResultCalc->parameters1.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters1.measureBuffer[0]));
 
 	pResultCalc->parameters2.calculateMean = 0.0f;
 	pResultCalc->parameters2.calculateStdDev = 0.0;
 	pResultCalc->parameters2.sizeBuffer = 0;
-	memset(pResultCalc->parameters2.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters2.measureBuffer[0]));
+	memset(pResultCalc->parameters2.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters2.measureBuffer[0]));
 
 	pResultCalc->parameters3.calculateMean = 0.0f;
 	pResultCalc->parameters3.calculateStdDev = 0.0;
 	pResultCalc->parameters3.sizeBuffer = 0;
-	memset(pResultCalc->parameters3.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters3.measureBuffer[0]));
+	memset(pResultCalc->parameters3.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters3.measureBuffer[0]));
 
 	pResultCalc->parameters4.calculateMean = 0.0f;
 	pResultCalc->parameters4.calculateStdDev = 0.0;
 	pResultCalc->parameters4.sizeBuffer = 0;
-	memset(pResultCalc->parameters4.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters4.measureBuffer[0]));
+	memset(pResultCalc->parameters4.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters4.measureBuffer[0]));
 
 	pResultCalc->parameters5.calculateMean = 0.0f;
 	pResultCalc->parameters5.calculateStdDev = 0.0;
 	pResultCalc->parameters5.sizeBuffer = 0;
-	memset(pResultCalc->parameters5.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters5.measureBuffer[0]));
+	memset(pResultCalc->parameters5.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters5.measureBuffer[0]));
 
 	pResultCalc->parameters6.calculateMean = 0.0f;
 	pResultCalc->parameters6.calculateStdDev = 0.0;
 	pResultCalc->parameters6.sizeBuffer = 0;
-	memset(pResultCalc->parameters6.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters6.measureBuffer[0]));
+	memset(pResultCalc->parameters6.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters6.measureBuffer[0]));
 
 	pResultCalc->parameters7.calculateMean = 0.0f;
 	pResultCalc->parameters7.calculateStdDev = 0.0;
 	pResultCalc->parameters7.sizeBuffer = 0;
-	memset(pResultCalc->parameters7.measureBuffer, 0, 300 * sizeof(pResultCalc->parameters7.measureBuffer[0]));
+	memset(pResultCalc->parameters7.measureBuffer, 0, 285 * sizeof(pResultCalc->parameters7.measureBuffer[0]));
 }
 
 void ResultTimeInit(ResultTime_t *pResultTime)
