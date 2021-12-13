@@ -403,40 +403,48 @@ void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStam
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
 {
     int8_t distance = stop - start;
-    switch (abs(distance))
+    if (stop != 0 && start != 0)
     {
-    case 1:
-        *min = (rand() % (45 + 1 - 43)) + 43;
-        *max = (rand() % (53 + 1 - 50)) + 50;
-        break;
-    case 2:
-        *min = (rand() % (4 + 1 - 3)) + 3;
-        *max = (rand() % (8 + 1 - 6)) + 6;
-        break;
-    case 3:
-        *min = (rand() % (20 + 1 - 15)) + 15;
-        *max = (rand() % (26 + 1 - 22)) + 22;
-        break;
-    case 4:
-        *min = (rand() % (96 + 1 - 93)) + 93;
-        *max = (rand() % (103 + 1 - 100)) + 100;
-        break;
-    case 5:
-        *min = (rand() % (2 + 1 - 1)) + 1;
-        *max = (rand() % (6 + 1 - 4)) + 4;
-        break;
-    case 6:
-        *min = (rand() % (9 + 1 - 7)) + 7;
-        *max = (rand() % (13 + 1 - 11)) + 11;
-        break;
-    case 7:
-        *min = (rand() % (98 + 1 - 95)) + 95;
-        *max = (rand() % (103 + 1 - 100)) + 100;
-        break;
-    default:
+        switch (abs(distance))
+        {
+        case 1:
+            *min = (rand() % (45 + 1 - 43)) + 43;
+            *max = (rand() % (53 + 1 - 50)) + 50;
+            break;
+        case 2:
+            *min = (rand() % (4 + 1 - 3)) + 3;
+            *max = (rand() % (8 + 1 - 6)) + 6;
+            break;
+        case 3:
+            *min = (rand() % (20 + 1 - 15)) + 15;
+            *max = (rand() % (26 + 1 - 22)) + 22;
+            break;
+        case 4:
+            *min = (rand() % (96 + 1 - 93)) + 93;
+            *max = (rand() % (103 + 1 - 100)) + 100;
+            break;
+        case 5:
+            *min = (rand() % (2 + 1 - 1)) + 1;
+            *max = (rand() % (6 + 1 - 4)) + 4;
+            break;
+        case 6:
+            *min = (rand() % (9 + 1 - 7)) + 7;
+            *max = (rand() % (13 + 1 - 11)) + 11;
+            break;
+        case 7:
+            *min = (rand() % (98 + 1 - 95)) + 95;
+            *max = (rand() % (103 + 1 - 100)) + 100;
+            break;
+        default:
+        	*min = 0;
+        	*max = 0;
+        	break;
+        }
+    }
+    else
+    {
     	*min = 0;
     	*max = 0;
-    	break;
     }
 }
 

@@ -271,9 +271,24 @@ void TimeModeView::setMeasColorTi(bool channelState, touchgfx::TextAreaWithOneWi
 void TimeModeView::setErrorColorTi(uint8_t startIn, uint8_t stopIn, touchgfx::TextAreaWithOneWildcard *labelStart, touchgfx::TextAreaWithOneWildcard *labelStop)
 {
 	int8_t distance = abs(startIn - stopIn);
-	if (distance == 0)
+	if (startIn == 0 && stopIn == 0)
+	{
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
+	else if (distance == 0 && startIn != 0 && stopIn != 0)
 	{
 		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
+	}
+	else if (startIn == 0 && stopIn != 0)
+	{
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
+	else if (stopIn == 0 && startIn != 0)
+	{
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
 	}
 	else
@@ -302,6 +317,12 @@ void TimeModeView::setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferS
         Unicode::snprintf(textBufferStart, sizeStart, "%d", session->stampsNumber);
         Unicode::snprintf(textBufferStop, sizeStop, "%d", session->stampsNumber);
         Unicode::snprintf(textBufferSample, sizeSample, "%d", session->stampsNumber);
+    }
+    if (Ti->startIn == 0 || Ti->stopIn == 0)
+    {
+    	textStart->setVisible(false);
+    	textStop->setVisible(false);
+    	textSample->setVisible(false);
     }
     textStart->invalidate();
     textStop->invalidate();
