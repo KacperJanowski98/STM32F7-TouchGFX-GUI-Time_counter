@@ -228,9 +228,9 @@ void TimeModeView::setLabelColorTi(bool channelState, touchgfx::TextArea *label,
 {
 	if (channelState == true)
 	{
-		label->setColor(touchgfx::Color::getColorFrom24BitRGB(38, 242, 44));
-		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(38, 242, 44));
-		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(38, 242, 44));
+		label->setColor(touchgfx::Color::getColorFrom24BitRGB(42, 237, 148));
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(42, 237, 148));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(42, 237, 148));
 	}
 	else
 	{

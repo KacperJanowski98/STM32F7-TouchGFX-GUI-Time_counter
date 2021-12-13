@@ -320,112 +320,112 @@ FreqModeViewBase::FreqModeViewBase() :
     textStdDevVal8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID241));
 
     textUnitSD1.setPosition(756, 106, 36, 19);
-    textUnitSD1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD1.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD1.setLinespacing(0);
     textUnitSD1Buffer[0] = 0;
     textUnitSD1.setWildcard(textUnitSD1Buffer);
     textUnitSD1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID249));
 
     textUnitSD2.setPosition(756, 153, 36, 19);
-    textUnitSD2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD2.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD2.setLinespacing(0);
     textUnitSD2Buffer[0] = 0;
     textUnitSD2.setWildcard(textUnitSD2Buffer);
     textUnitSD2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID250));
 
     textUnitSD3.setPosition(756, 201, 36, 19);
-    textUnitSD3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD3.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD3.setLinespacing(0);
     textUnitSD3Buffer[0] = 0;
     textUnitSD3.setWildcard(textUnitSD3Buffer);
     textUnitSD3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID251));
 
     textUnitSD4.setPosition(756, 250, 36, 19);
-    textUnitSD4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD4.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD4.setLinespacing(0);
     textUnitSD4Buffer[0] = 0;
     textUnitSD4.setWildcard(textUnitSD4Buffer);
     textUnitSD4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID252));
 
     textUnitSD5.setPosition(756, 297, 36, 19);
-    textUnitSD5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD5.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD5.setLinespacing(0);
     textUnitSD5Buffer[0] = 0;
     textUnitSD5.setWildcard(textUnitSD5Buffer);
     textUnitSD5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID253));
 
     textUnitSD6.setPosition(756, 346, 36, 19);
-    textUnitSD6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD6.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD6.setLinespacing(0);
     textUnitSD6Buffer[0] = 0;
     textUnitSD6.setWildcard(textUnitSD6Buffer);
     textUnitSD6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID254));
 
     textUnitSD7.setPosition(756, 396, 36, 19);
-    textUnitSD7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD7.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD7.setLinespacing(0);
     textUnitSD7Buffer[0] = 0;
     textUnitSD7.setWildcard(textUnitSD7Buffer);
     textUnitSD7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID255));
 
     textUnitSD8.setPosition(756, 442, 36, 19);
-    textUnitSD8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitSD8.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitSD8.setLinespacing(0);
     textUnitSD8Buffer[0] = 0;
     textUnitSD8.setWildcard(textUnitSD8Buffer);
     textUnitSD8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID256));
 
     textUnitMean1.setPosition(630, 106, 36, 19);
-    textUnitMean1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean1.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean1.setLinespacing(0);
     textUnitMean1Buffer[0] = 0;
     textUnitMean1.setWildcard(textUnitMean1Buffer);
     textUnitMean1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID265));
 
     textUnitMean2.setPosition(630, 153, 36, 19);
-    textUnitMean2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean2.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean2.setLinespacing(0);
     textUnitMean2Buffer[0] = 0;
     textUnitMean2.setWildcard(textUnitMean2Buffer);
     textUnitMean2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID266));
 
     textUnitMean3.setPosition(630, 201, 36, 19);
-    textUnitMean3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean3.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean3.setLinespacing(0);
     textUnitMean3Buffer[0] = 0;
     textUnitMean3.setWildcard(textUnitMean3Buffer);
     textUnitMean3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID267));
 
     textUnitMean4.setPosition(630, 250, 36, 19);
-    textUnitMean4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean4.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean4.setLinespacing(0);
     textUnitMean4Buffer[0] = 0;
     textUnitMean4.setWildcard(textUnitMean4Buffer);
     textUnitMean4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID268));
 
     textUnitMean5.setPosition(630, 297, 36, 19);
-    textUnitMean5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean5.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean5.setLinespacing(0);
     textUnitMean5Buffer[0] = 0;
     textUnitMean5.setWildcard(textUnitMean5Buffer);
     textUnitMean5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID269));
 
     textUnitMean6.setPosition(630, 346, 36, 19);
-    textUnitMean6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean6.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean6.setLinespacing(0);
     textUnitMean6Buffer[0] = 0;
     textUnitMean6.setWildcard(textUnitMean6Buffer);
     textUnitMean6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID270));
 
     textUnitMean7.setPosition(630, 396, 36, 19);
-    textUnitMean7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean7.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean7.setLinespacing(0);
     textUnitMean7Buffer[0] = 0;
     textUnitMean7.setWildcard(textUnitMean7Buffer);
     textUnitMean7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID271));
 
     textUnitMean8.setPosition(630, 442, 36, 19);
-    textUnitMean8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textUnitMean8.setColor(touchgfx::Color::getColorFromRGB(29, 222, 203));
     textUnitMean8.setLinespacing(0);
     textUnitMean8Buffer[0] = 0;
     textUnitMean8.setWildcard(textUnitMean8Buffer);
