@@ -47,7 +47,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi1start.setWildcard(textTi1startBuffer);
     textTi1start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID90));
 
-    textTi1stop.setPosition(153, 124, 69, 31);
+    textTi1stop.setPosition(159, 124, 69, 31);
     textTi1stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi1stop.setLinespacing(0);
     textTi1stopBuffer[0] = 0;
@@ -61,7 +61,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi2start.setWildcard(textTi2startBuffer);
     textTi2start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID92));
 
-    textTi2stop.setPosition(153, 171, 69, 31);
+    textTi2stop.setPosition(159, 171, 69, 31);
     textTi2stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi2stop.setLinespacing(0);
     textTi2stopBuffer[0] = 0;
@@ -75,7 +75,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi3start.setWildcard(textTi3startBuffer);
     textTi3start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID94));
 
-    textTi3stop.setPosition(153, 219, 69, 31);
+    textTi3stop.setPosition(159, 219, 69, 31);
     textTi3stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi3stop.setLinespacing(0);
     textTi3stopBuffer[0] = 0;
@@ -89,7 +89,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi4start.setWildcard(textTi4startBuffer);
     textTi4start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID96));
 
-    textTi4stop.setPosition(153, 266, 69, 31);
+    textTi4stop.setPosition(159, 266, 69, 31);
     textTi4stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi4stop.setLinespacing(0);
     textTi4stopBuffer[0] = 0;
@@ -103,7 +103,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi5start.setWildcard(textTi5startBuffer);
     textTi5start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID98));
 
-    textTi5stop.setPosition(153, 315, 69, 31);
+    textTi5stop.setPosition(159, 315, 69, 31);
     textTi5stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi5stop.setLinespacing(0);
     textTi5stopBuffer[0] = 0;
@@ -117,7 +117,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi6start.setWildcard(textTi6startBuffer);
     textTi6start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID100));
 
-    textTi6stop.setPosition(153, 364, 69, 31);
+    textTi6stop.setPosition(159, 364, 69, 31);
     textTi6stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi6stop.setLinespacing(0);
     textTi6stopBuffer[0] = 0;
@@ -131,7 +131,7 @@ TimeModeViewBase::TimeModeViewBase() :
     textTi7start.setWildcard(textTi7startBuffer);
     textTi7start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID102));
 
-    textTi7stop.setPosition(153, 412, 69, 31);
+    textTi7stop.setPosition(159, 412, 69, 31);
     textTi7stop.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textTi7stop.setLinespacing(0);
     textTi7stopBuffer[0] = 0;
@@ -646,6 +646,27 @@ TimeModeViewBase::TimeModeViewBase() :
     imageHome.setXY(18, 20);
     imageHome.setBitmap(touchgfx::Bitmap(BITMAP_MY_HOME_NEW_ID));
 
+    imageArrowTi1.setXY(125, 129);
+    imageArrowTi1.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi2.setXY(125, 176);
+    imageArrowTi2.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi3.setXY(125, 224);
+    imageArrowTi3.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi4.setXY(125, 271);
+    imageArrowTi4.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi5.setXY(125, 320);
+    imageArrowTi5.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi6.setXY(125, 369);
+    imageArrowTi6.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
+    imageArrowTi7.setXY(125, 417);
+    imageArrowTi7.setBitmap(touchgfx::Bitmap(BITMAP_ARROWTI_20_ID));
+
     add(__background);
     add(boxBackgroundTime);
     add(boxWithBorderMain);
@@ -744,6 +765,13 @@ TimeModeViewBase::TimeModeViewBase() :
     add(buttonHistogram);
     add(labelTimeConfig);
     add(imageHome);
+    add(imageArrowTi1);
+    add(imageArrowTi2);
+    add(imageArrowTi3);
+    add(imageArrowTi4);
+    add(imageArrowTi5);
+    add(imageArrowTi6);
+    add(imageArrowTi7);
 }
 
 void TimeModeViewBase::setupScreen()

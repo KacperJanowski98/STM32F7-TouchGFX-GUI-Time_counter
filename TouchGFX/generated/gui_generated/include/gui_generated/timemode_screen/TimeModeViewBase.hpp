@@ -135,6 +135,13 @@ protected:
     touchgfx::Button buttonHistogram;
     touchgfx::TextArea labelTimeConfig;
     touchgfx::Image imageHome;
+    touchgfx::Image imageArrowTi1;
+    touchgfx::Image imageArrowTi2;
+    touchgfx::Image imageArrowTi3;
+    touchgfx::Image imageArrowTi4;
+    touchgfx::Image imageArrowTi5;
+    touchgfx::Image imageArrowTi6;
+    touchgfx::Image imageArrowTi7;
 
     /*
      * Wildcard Buffers
