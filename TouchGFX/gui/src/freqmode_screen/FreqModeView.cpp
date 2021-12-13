@@ -63,27 +63,35 @@ void FreqModeView::setupScreen()
 
     setLabelFreq(textFreq1startBuffer, TEXTFREQ1START_SIZE, FreqBackend.Channel1.numberChanel, &textFreq1start);
     setLabelColorFreq(FreqBackend.Channel1.channelState, &textLabelFreq1, &textFreq1start);
+    setMeasColorFreq(FreqBackend.Channel1.channelState, &textMeanVal1, &textStdDevVal1);
 
     setLabelFreq(textFreq2startBuffer, TEXTFREQ2START_SIZE, FreqBackend.Channel2.numberChanel, &textFreq2start);
     setLabelColorFreq(FreqBackend.Channel2.channelState, &textLabelFreq2, &textFreq2start);
+    setMeasColorFreq(FreqBackend.Channel2.channelState, &textMeanVal2, &textStdDevVal2);
 
     setLabelFreq(textFreq3startBuffer, TEXTFREQ3START_SIZE, FreqBackend.Channel3.numberChanel, &textFreq3start);
     setLabelColorFreq(FreqBackend.Channel3.channelState, &textLabelFreq3, &textFreq3start);
+    setMeasColorFreq(FreqBackend.Channel3.channelState, &textMeanVal3, &textStdDevVal3);
 
     setLabelFreq(textFreq4startBuffer, TEXTFREQ4START_SIZE, FreqBackend.Channel4.numberChanel, &textFreq4start);
     setLabelColorFreq(FreqBackend.Channel4.channelState, &textLabelFreq4, &textFreq4start);
+    setMeasColorFreq(FreqBackend.Channel4.channelState, &textMeanVal4, &textStdDevVal4);
 
     setLabelFreq(textFreq5startBuffer, TEXTFREQ5START_SIZE, FreqBackend.Channel5.numberChanel, &textFreq5start);
     setLabelColorFreq(FreqBackend.Channel5.channelState, &textLabelFreq5, &textFreq5start);
+    setMeasColorFreq(FreqBackend.Channel5.channelState, &textMeanVal5, &textStdDevVal5);
 
     setLabelFreq(textFreq6startBuffer, TEXTFREQ6START_SIZE, FreqBackend.Channel6.numberChanel, &textFreq6start);
     setLabelColorFreq(FreqBackend.Channel6.channelState, &textLabelFreq6, &textFreq6start);
+    setMeasColorFreq(FreqBackend.Channel6.channelState, &textMeanVal6, &textStdDevVal6);
 
     setLabelFreq(textFreq7startBuffer, TEXTFREQ7START_SIZE, FreqBackend.Channel7.numberChanel, &textFreq7start);
     setLabelColorFreq(FreqBackend.Channel7.channelState, &textLabelFreq7, &textFreq7start);
+    setMeasColorFreq(FreqBackend.Channel7.channelState, &textMeanVal7, &textStdDevVal7);
 
     setLabelFreq(textFreq8startBuffer, TEXTFREQ8START_SIZE, FreqBackend.Channel8.numberChanel, &textFreq8start);
     setLabelColorFreq(FreqBackend.Channel8.channelState, &textLabelFreq8, &textFreq8start);
+    setMeasColorFreq(FreqBackend.Channel8.channelState, &textMeanVal8, &textStdDevVal8);
 
     // Sample
 
@@ -228,6 +236,20 @@ void FreqModeView::setLabelColorFreq(bool channelState, touchgfx::TextArea *labe
 	{
 		label->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
+}
+
+void FreqModeView::setMeasColorFreq(bool channelState, touchgfx::TextAreaWithOneWildcard *mean, touchgfx::TextAreaWithOneWildcard *stdDev)
+{
+	if (channelState == true)
+	{
+		mean->setColor(touchgfx::Color::getColorFrom24BitRGB(185, 239, 164));
+		stdDev->setColor(touchgfx::Color::getColorFrom24BitRGB(185, 239, 164));
+	}
+	else
+	{
+		mean->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		stdDev->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 	}
 }
 

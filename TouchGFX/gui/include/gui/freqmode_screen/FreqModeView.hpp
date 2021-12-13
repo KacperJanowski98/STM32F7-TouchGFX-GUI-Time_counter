@@ -21,6 +21,7 @@ protected:
 
     void setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t numberCh, touchgfx::TextAreaWithOneWildcard *text);
     void setLabelColorFreq(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart);
+    void setMeasColorFreq(bool channelState, touchgfx::TextAreaWithOneWildcard *mean, touchgfx::TextAreaWithOneWildcard *stdDev);
     void setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
 						uint16_t sizeSample, SessionSetup_t *session);
     void setMeanResultFreq(MeasFreq_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,

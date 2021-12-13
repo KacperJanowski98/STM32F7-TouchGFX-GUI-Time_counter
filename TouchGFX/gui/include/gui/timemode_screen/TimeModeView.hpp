@@ -25,6 +25,8 @@ protected:
 
     void setLabelTi(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t startIn, touchgfx::TextAreaWithOneWildcard *text);
     void setLabelColorTi(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart, touchgfx::TextArea *labelStop);
+    void setMeasColorTi(bool channelState, touchgfx::TextAreaWithOneWildcard *mean, touchgfx::TextAreaWithOneWildcard *stdDev);
+    void setErrorColorTi(uint8_t startIn, uint8_t stopIn, touchgfx::TextAreaWithOneWildcard *labelStart, touchgfx::TextAreaWithOneWildcard *labelStop);
     void setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferStart, uint16_t sizeStart, touchgfx::TextAreaWithOneWildcard *textStart,
 			touchgfx::Unicode::UnicodeChar *textBufferStop, uint16_t sizeStop, touchgfx::TextAreaWithOneWildcard *textStop,
 			touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,

@@ -55,30 +55,44 @@ void TimeModeView::setupScreen()
     setLabelTi(textTi1startBuffer, TEXTTI1START_SIZE, TimeBackend.TiSetup1.startIn, &textTi1start);
     setLabelTi(textTi1stopBuffer, TEXTTI1STOP_SIZE, TimeBackend.TiSetup1.stopIn, &textTi1stop);
     setLabelColorTi(TimeBackend.TiSetup1.tiState, &textLabelTi1, &textTi1start, &textTi1stop);
+    setMeasColorTi(TimeBackend.TiSetup1.tiState, &textMeanVal1, &textStdDevVal1);
+    setErrorColorTi(TimeBackend.TiSetup1.startIn, TimeBackend.TiSetup1.stopIn, &textStamps1start, &textStamps1stop);
 
     setLabelTi(textTi2startBuffer, TEXTTI2START_SIZE, TimeBackend.TiSetup2.startIn, &textTi2start);
     setLabelTi(textTi2stopBuffer, TEXTTI2STOP_SIZE, TimeBackend.TiSetup2.stopIn, &textTi2stop);
     setLabelColorTi(TimeBackend.TiSetup2.tiState, &textLabelTi2, &textTi2start, &textTi2stop);
+    setMeasColorTi(TimeBackend.TiSetup2.tiState, &textMeanVal2, &textStdDevVal2);
+    setErrorColorTi(TimeBackend.TiSetup2.startIn, TimeBackend.TiSetup2.stopIn, &textStamps2start, &textStamps2stop);
 
     setLabelTi(textTi3startBuffer, TEXTTI3START_SIZE, TimeBackend.TiSetup3.startIn, &textTi3start);
     setLabelTi(textTi3stopBuffer, TEXTTI3STOP_SIZE, TimeBackend.TiSetup3.stopIn, &textTi3stop);
     setLabelColorTi(TimeBackend.TiSetup3.tiState, &textLabelTi3 , &textTi3start, &textTi3stop);
+    setMeasColorTi(TimeBackend.TiSetup3.tiState, &textMeanVal3, &textStdDevVal3);
+    setErrorColorTi(TimeBackend.TiSetup3.startIn, TimeBackend.TiSetup3.stopIn, &textStamps3start, &textStamps3stop);
 
     setLabelTi(textTi4startBuffer, TEXTTI4START_SIZE, TimeBackend.TiSetup4.startIn, &textTi4start);
     setLabelTi(textTi4stopBuffer, TEXTTI4STOP_SIZE, TimeBackend.TiSetup4.stopIn, &textTi4stop);
     setLabelColorTi(TimeBackend.TiSetup4.tiState, &textLabelTi4, &textTi4start, &textTi4stop);
+    setMeasColorTi(TimeBackend.TiSetup4.tiState, &textMeanVal4, &textStdDevVal4);
+    setErrorColorTi(TimeBackend.TiSetup4.startIn, TimeBackend.TiSetup4.stopIn, &textStamps4start, &textStamps4stop);
 
     setLabelTi(textTi5startBuffer, TEXTTI5START_SIZE, TimeBackend.TiSetup5.startIn, &textTi5start);
     setLabelTi(textTi5stopBuffer, TEXTTI5STOP_SIZE, TimeBackend.TiSetup5.stopIn, &textTi5stop);
     setLabelColorTi(TimeBackend.TiSetup5.tiState, &textLabelTi5, &textTi5start, &textTi5stop);
+    setMeasColorTi(TimeBackend.TiSetup5.tiState, &textMeanVal5, &textStdDevVal5);
+    setErrorColorTi(TimeBackend.TiSetup5.startIn, TimeBackend.TiSetup5.stopIn, &textStamps5start, &textStamps5stop);
 
     setLabelTi(textTi6startBuffer, TEXTTI6START_SIZE, TimeBackend.TiSetup6.startIn, &textTi6start);
     setLabelTi(textTi6stopBuffer, TEXTTI6STOP_SIZE, TimeBackend.TiSetup6.stopIn, &textTi6stop);
     setLabelColorTi(TimeBackend.TiSetup6.tiState, &textLabelTi6, &textTi6start, &textTi6stop);
+    setMeasColorTi(TimeBackend.TiSetup6.tiState, &textMeanVal6, &textStdDevVal6);
+    setErrorColorTi(TimeBackend.TiSetup6.startIn, TimeBackend.TiSetup6.stopIn, &textStamps6start, &textStamps6stop);
 
     setLabelTi(textTi7startBuffer, TEXTTI7START_SIZE, TimeBackend.TiSetup7.startIn, &textTi7start);
     setLabelTi(textTi7stopBuffer, TEXTTI7STOP_SIZE, TimeBackend.TiSetup7.stopIn, &textTi7stop);
     setLabelColorTi(TimeBackend.TiSetup7.tiState, &textLabelTi7, &textTi7start, &textTi7stop);
+    setMeasColorTi(TimeBackend.TiSetup7.tiState, &textMeanVal7, &textStdDevVal7);
+    setErrorColorTi(TimeBackend.TiSetup7.startIn, TimeBackend.TiSetup7.stopIn, &textStamps7start, &textStamps7stop);
 
     // Stamps and sample
 
@@ -235,6 +249,35 @@ void TimeModeView::setLabelColorTi(bool channelState, touchgfx::TextArea *label,
 	else
 	{
 		label->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
+}
+
+void TimeModeView::setMeasColorTi(bool channelState, touchgfx::TextAreaWithOneWildcard *mean, touchgfx::TextAreaWithOneWildcard *stdDev)
+{
+	if (channelState == true)
+	{
+		mean->setColor(touchgfx::Color::getColorFrom24BitRGB(185, 239, 164));
+		stdDev->setColor(touchgfx::Color::getColorFrom24BitRGB(185, 239, 164));
+	}
+	else
+	{
+		mean->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		stdDev->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
+}
+
+void TimeModeView::setErrorColorTi(uint8_t startIn, uint8_t stopIn, touchgfx::TextAreaWithOneWildcard *labelStart, touchgfx::TextAreaWithOneWildcard *labelStop)
+{
+	int8_t distance = abs(startIn - stopIn);
+	if (distance == 0)
+	{
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
+		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(219, 80, 74));
+	}
+	else
+	{
 		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 		labelStop->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 	}
