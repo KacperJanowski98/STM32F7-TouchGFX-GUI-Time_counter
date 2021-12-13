@@ -59,7 +59,7 @@ protected:
     touchgfx::TextArea textLabelFreq6;
     touchgfx::TextArea textLabelFreq7;
     touchgfx::TextAreaWithOneWildcard textFreq8start;
-    touchgfx::TextArea textLabeFreq8;
+    touchgfx::TextArea textLabelFreq8;
     touchgfx::TextArea textSampleLabel;
     touchgfx::TextArea textMeanLabel;
     touchgfx::TextArea textStdDevLabel;

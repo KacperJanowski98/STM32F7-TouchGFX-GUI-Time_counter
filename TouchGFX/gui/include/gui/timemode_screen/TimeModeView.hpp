@@ -7,6 +7,7 @@
 #include <gui/lib/TimeModeParameter.hpp>
 #include <gui/lib/SessionSetup.hpp>
 #include <gui/model/Model.hpp>
+#include <touchgfx/Color.hpp>
 
 class TimeModeView : public TimeModeViewBase
 {
@@ -23,6 +24,7 @@ protected:
     void calculateFormatStdDevTime(float stdDev, int *pTotal, int *pFrac);
 
     void setLabelTi(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t startIn, touchgfx::TextAreaWithOneWildcard *text);
+    void setLabelColorTi(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart, touchgfx::TextArea *labelStop);
     void setStampsSampleTi(touchgfx::Unicode::UnicodeChar *textBufferStart, uint16_t sizeStart, touchgfx::TextAreaWithOneWildcard *textStart,
 			touchgfx::Unicode::UnicodeChar *textBufferStop, uint16_t sizeStop, touchgfx::TextAreaWithOneWildcard *textStop,
 			touchgfx::Unicode::UnicodeChar *textBufferSample, uint16_t sizeSample, touchgfx::TextAreaWithOneWildcard *textSample,
@@ -39,11 +41,6 @@ private:
     std::string us;
     std::string ms;
     std::string sec;
-//    const char *ps[3];
-//    const char *ns[3];
-//    const char *us[3];
-//    const char *ms[3];
-//    const char *sec[3];
     int m_total_ti1;
     int m_frac1_ti1;
     int m_frac2_ti1;

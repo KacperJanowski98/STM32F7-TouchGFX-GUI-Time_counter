@@ -3,6 +3,7 @@
 
 #include <gui_generated/freqmode_screen/FreqModeViewBase.hpp>
 #include <gui/freqmode_screen/FreqModePresenter.hpp>
+#include <touchgfx/Color.hpp>
 
 class FreqModeView : public FreqModeViewBase
 {
@@ -19,6 +20,7 @@ protected:
     void calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFrac);
 
     void setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t numberCh, touchgfx::TextAreaWithOneWildcard *text);
+    void setLabelColorFreq(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart);
     void setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
 						uint16_t sizeSample, SessionSetup_t *session);
     void setMeanResultFreq(MeasFreq_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,

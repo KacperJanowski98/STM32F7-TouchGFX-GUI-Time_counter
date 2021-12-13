@@ -62,20 +62,28 @@ void FreqModeView::setupScreen()
     // Label
 
     setLabelFreq(textFreq1startBuffer, TEXTFREQ1START_SIZE, FreqBackend.Channel1.numberChanel, &textFreq1start);
+    setLabelColorFreq(FreqBackend.Channel1.channelState, &textLabelFreq1, &textFreq1start);
 
     setLabelFreq(textFreq2startBuffer, TEXTFREQ2START_SIZE, FreqBackend.Channel2.numberChanel, &textFreq2start);
+    setLabelColorFreq(FreqBackend.Channel2.channelState, &textLabelFreq2, &textFreq2start);
 
     setLabelFreq(textFreq3startBuffer, TEXTFREQ3START_SIZE, FreqBackend.Channel3.numberChanel, &textFreq3start);
+    setLabelColorFreq(FreqBackend.Channel3.channelState, &textLabelFreq3, &textFreq3start);
 
     setLabelFreq(textFreq4startBuffer, TEXTFREQ4START_SIZE, FreqBackend.Channel4.numberChanel, &textFreq4start);
+    setLabelColorFreq(FreqBackend.Channel4.channelState, &textLabelFreq4, &textFreq4start);
 
     setLabelFreq(textFreq5startBuffer, TEXTFREQ5START_SIZE, FreqBackend.Channel5.numberChanel, &textFreq5start);
+    setLabelColorFreq(FreqBackend.Channel5.channelState, &textLabelFreq5, &textFreq5start);
 
     setLabelFreq(textFreq6startBuffer, TEXTFREQ6START_SIZE, FreqBackend.Channel6.numberChanel, &textFreq6start);
+    setLabelColorFreq(FreqBackend.Channel6.channelState, &textLabelFreq6, &textFreq6start);
 
     setLabelFreq(textFreq7startBuffer, TEXTFREQ7START_SIZE, FreqBackend.Channel7.numberChanel, &textFreq7start);
+    setLabelColorFreq(FreqBackend.Channel7.channelState, &textLabelFreq7, &textFreq7start);
 
     setLabelFreq(textFreq8startBuffer, TEXTFREQ8START_SIZE, FreqBackend.Channel8.numberChanel, &textFreq8start);
+    setLabelColorFreq(FreqBackend.Channel8.channelState, &textLabelFreq8, &textFreq8start);
 
     // Sample
 
@@ -207,6 +215,20 @@ void FreqModeView::setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint
 {
 	Unicode::snprintf(textBuffer, size, "%d", numberCh);
 	text->invalidate();
+}
+
+void FreqModeView::setLabelColorFreq(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart)
+{
+	if (channelState == true)
+	{
+		label->setColor(touchgfx::Color::getColorFrom24BitRGB(38, 242, 44));
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(38, 242, 44));
+	}
+	else
+	{
+		label->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+		labelStart->setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+	}
 }
 
 void FreqModeView::setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
