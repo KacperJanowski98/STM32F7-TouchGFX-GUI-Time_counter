@@ -57,7 +57,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     boxINPUT.setColor(touchgfx::Color::getColorFromRGB(40, 69, 102));
     swipeContainerFreqINPUT.add(boxINPUT);
 
-    boxWithBorderScroll.setPosition(32, 73, 100, 300);
+    boxWithBorderScroll.setPosition(32, 73, 100, 308);
     boxWithBorderScroll.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorderScroll.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorderScroll.setBorderSize(4);
@@ -123,7 +123,7 @@ FreqModeConfigViewBase::FreqModeConfigViewBase() :
     textThreshold.setTypedText(touchgfx::TypedText(T_SINGLEUSEID55));
     swipeContainerFreqINPUT.add(textThreshold);
 
-    scrollWheelINPUT.setPosition(32, 75, 100, 300);
+    scrollWheelINPUT.setPosition(32, 81, 100, 287);
     scrollWheelINPUT.setHorizontal(false);
     scrollWheelINPUT.setCircular(false);
     scrollWheelINPUT.setEasingEquation(touchgfx::EasingEquations::circEaseOut);

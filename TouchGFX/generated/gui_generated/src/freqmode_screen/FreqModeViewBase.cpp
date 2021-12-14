@@ -40,98 +40,98 @@ FreqModeViewBase::FreqModeViewBase() :
     buttonReset.setBitmaps(touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_PRESSED_NEW_ID), touchgfx::Bitmap(BITMAP_MY_BLUE_BUTTONS_RESET_NEW_ID));
     buttonReset.setAction(buttonCallback);
 
-    textFreq1start.setPosition(99, 100, 68, 31);
+    textFreq1start.setPosition(92, 100, 68, 31);
     textFreq1start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq1start.setLinespacing(0);
     textFreq1startBuffer[0] = 0;
     textFreq1start.setWildcard(textFreq1startBuffer);
     textFreq1start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID199));
 
-    textFreq2start.setPosition(99, 147, 67, 31);
+    textFreq2start.setPosition(93, 147, 67, 31);
     textFreq2start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq2start.setLinespacing(0);
     textFreq2startBuffer[0] = 0;
     textFreq2start.setWildcard(textFreq2startBuffer);
     textFreq2start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID200));
 
-    textFreq3start.setPosition(99, 195, 68, 31);
+    textFreq3start.setPosition(93, 195, 68, 31);
     textFreq3start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq3start.setLinespacing(0);
     textFreq3startBuffer[0] = 0;
     textFreq3start.setWildcard(textFreq3startBuffer);
     textFreq3start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID201));
 
-    textFreq4start.setPosition(99, 243, 68, 32);
+    textFreq4start.setPosition(93, 243, 68, 32);
     textFreq4start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq4start.setLinespacing(0);
     textFreq4startBuffer[0] = 0;
     textFreq4start.setWildcard(textFreq4startBuffer);
     textFreq4start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID202));
 
-    textFreq5start.setPosition(100, 291, 68, 30);
+    textFreq5start.setPosition(93, 291, 68, 30);
     textFreq5start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq5start.setLinespacing(0);
     textFreq5startBuffer[0] = 0;
     textFreq5start.setWildcard(textFreq5startBuffer);
     textFreq5start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID203));
 
-    textFreq6start.setPosition(100, 340, 68, 31);
+    textFreq6start.setPosition(93, 340, 68, 31);
     textFreq6start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq6start.setLinespacing(0);
     textFreq6startBuffer[0] = 0;
     textFreq6start.setWildcard(textFreq6startBuffer);
     textFreq6start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID204));
 
-    textFreq7start.setPosition(98, 389, 68, 32);
+    textFreq7start.setPosition(93, 389, 68, 32);
     textFreq7start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq7start.setLinespacing(0);
     textFreq7startBuffer[0] = 0;
     textFreq7start.setWildcard(textFreq7startBuffer);
     textFreq7start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID205));
 
-    textLabelFreq1.setPosition(17, 100, 74, 31);
+    textLabelFreq1.setPosition(17, 100, 68, 31);
     textLabelFreq1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq1.setLinespacing(0);
     textLabelFreq1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID206));
 
-    textLabelFreq2.setPosition(17, 147, 74, 31);
+    textLabelFreq2.setPosition(17, 147, 68, 31);
     textLabelFreq2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq2.setLinespacing(0);
     textLabelFreq2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID207));
 
-    textLabelFreq3.setPosition(17, 195, 74, 31);
+    textLabelFreq3.setPosition(17, 195, 68, 31);
     textLabelFreq3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq3.setLinespacing(0);
     textLabelFreq3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID208));
 
-    textLabelFreq4.setPosition(17, 243, 74, 32);
+    textLabelFreq4.setPosition(17, 243, 68, 32);
     textLabelFreq4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq4.setLinespacing(0);
     textLabelFreq4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID209));
 
-    textLabelFreq5.setPosition(17, 290, 74, 31);
+    textLabelFreq5.setPosition(17, 290, 68, 31);
     textLabelFreq5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq5.setLinespacing(0);
     textLabelFreq5.setTypedText(touchgfx::TypedText(T_SINGLEUSEID210));
 
-    textLabelFreq6.setPosition(17, 340, 74, 31);
+    textLabelFreq6.setPosition(17, 340, 68, 31);
     textLabelFreq6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq6.setLinespacing(0);
     textLabelFreq6.setTypedText(touchgfx::TypedText(T_SINGLEUSEID211));
 
-    textLabelFreq7.setPosition(17, 389, 74, 32);
+    textLabelFreq7.setPosition(17, 389, 68, 32);
     textLabelFreq7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq7.setLinespacing(0);
     textLabelFreq7.setTypedText(touchgfx::TypedText(T_SINGLEUSEID212));
 
-    textFreq8start.setPosition(98, 436, 68, 31);
+    textFreq8start.setPosition(93, 436, 68, 31);
     textFreq8start.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textFreq8start.setLinespacing(0);
     textFreq8startBuffer[0] = 0;
     textFreq8start.setWildcard(textFreq8startBuffer);
     textFreq8start.setTypedText(touchgfx::TypedText(T_SINGLEUSEID213));
 
-    textLabelFreq8.setPosition(17, 436, 74, 31);
+    textLabelFreq8.setPosition(17, 436, 68, 31);
     textLabelFreq8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textLabelFreq8.setLinespacing(0);
     textLabelFreq8.setTypedText(touchgfx::TypedText(T_SINGLEUSEID214));
