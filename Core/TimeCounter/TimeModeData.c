@@ -453,32 +453,40 @@ Unit_t setUnitMeanTime(uint8_t start, uint8_t stop)
     int8_t distance = stop - start;
     Unit_t result;
 
-    switch (distance)
+    if (stop != 0 && start != 0)
     {
-    case 1:
-        result = NANO;
-        break;
-    case 2:
-        result = MICRO;
-        break;
-    case 3:
-        result = MICRO;
-        break;
-    case 4:
-        result = MICRO;
-        break;
-    case 5:
-        result = MILLI;
-        break;
-    case 6:
-        result = MILLI;
-        break;
-    case 7:
-        result = MILLI;
-        break;
-    default:
+        switch (distance)
+        {
+        case 1:
+            result = NANO;
+            break;
+        case 2:
+            result = MICRO;
+            break;
+        case 3:
+            result = MICRO;
+            break;
+        case 4:
+            result = MICRO;
+            break;
+        case 5:
+            result = MILLI;
+            break;
+        case 6:
+            result = MILLI;
+            break;
+        case 7:
+            result = MILLI;
+            break;
+        default:
+        	result = NANO;
+        }
+    }
+    else
+    {
     	result = NANO;
     }
+
     return result;
 }
 
