@@ -20,9 +20,14 @@ There are 4 types of measurements in both modes: single, continuous, stamps and 
 
 ![Menu](Image/menu.jpg)
 
-![Config](Image/config_time_mode.jpg)
+![Config1](Image/configure1.jpg)
+
+![Config2](Image/configure2.jpg)
+
+![Config3](Image/configure3.jpg)
+
+![Config4](Image/configure4.jpg)
 
 ![Measure](Image/main_screen_time_mode.jpg)
 
 ![Graph](Image/graph_time_mode.jpg)
-
