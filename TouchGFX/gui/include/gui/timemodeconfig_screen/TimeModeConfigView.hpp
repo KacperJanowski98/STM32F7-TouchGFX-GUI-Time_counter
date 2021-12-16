@@ -235,6 +235,8 @@ public:
      * @param channel Obiekt kanalu.
      */
     void updateStartStopIn(std::shared_ptr<TimeModeParameter>& channel);
+    //:TODO
+    void updateTiSetupScreen();
 
     /**
      * @brief Funkcja aktualizujaca elementu UI na podstawie obiektu kanalu, panelu TI setup, elementy scroll wheel start i stop.

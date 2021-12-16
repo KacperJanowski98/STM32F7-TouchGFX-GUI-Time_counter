@@ -453,6 +453,7 @@ void TimeModeConfigView::ChangeChannelState()
 		imageLockInput.setVisible(false);
 		boxLockInput.setVisible(false);
 	}
+	updateTiSetupScreen();
 	imageLockInput.invalidate();
 	boxLockInput.invalidate();
 }
@@ -740,8 +741,43 @@ void TimeModeConfigView::updateStartStopScroolList(std::shared_ptr<TimeModeParam
 		std::vector<int16_t>::iterator itrStart = std::find(activeChannels.begin(), activeChannels.end(), channel->getStartChannel());
 		std::vector<int16_t>::iterator itrStop = std::find(activeChannels.begin(), activeChannels.end(), channel->getStopChannel());
 
-		scrollWheelStart.animateToItem(std::distance(activeChannels.begin(), itrStart));
-		scrollWheelStop.animateToItem(std::distance(activeChannels.begin(), itrStop));
+		if (itrStart == activeChannels.end())
+		{
+			scrollWheelStart.animateToItem(0);
+			channel->setStartChannel(activeChannels[0]);
+		}
+		else
+		{
+			scrollWheelStart.animateToItem(std::distance(activeChannels.begin(), itrStart));
+		}
+
+		if (itrStop == activeChannels.end())
+		{
+			scrollWheelStop.animateToItem(0);
+			channel->setStopChannel(activeChannels[0]);
+		}
+		else
+		{
+			scrollWheelStop.animateToItem(std::distance(activeChannels.begin(), itrStop));
+		}
+		updateStartStopIn(pChannelTI);
+	}
+
+	if(activeChannels.empty())
+	{
+		channel->setTiState(false);
+		toggleTiSetup.forceState(false);
+		toggleTiSetup.invalidate();
+	}
+}
+
+void TimeModeConfigView::updateTiSetupScreen()
+{
+	std::vector<std::shared_ptr<TimeModeParameter>> vTi {pChannel1, pChannel2, pChannel3, pChannel4, pChannel5, pChannel6, pChannel7};
+
+	for(auto a : vTi)
+	{
+		updateStartStopScroolList(a);
 	}
 }
 
