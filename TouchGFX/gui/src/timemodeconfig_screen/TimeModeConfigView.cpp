@@ -650,6 +650,7 @@ void TimeModeConfigView::setActiveListChannels(int16_t channel, bool chanelState
 		if (std::find(activeChannels.begin(), activeChannels.end(), channel) != activeChannels.end())
 		{
 			activeChannels.erase(std::remove(activeChannels.begin(), activeChannels.end(), channel), activeChannels.end());
+			activeChannels.shrink_to_fit();
 		}
 	}
 

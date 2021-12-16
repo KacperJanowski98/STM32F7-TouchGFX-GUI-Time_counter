@@ -46,7 +46,7 @@ class TimeModeParameter
 {
 public:
 	/**
-	 * @brief Konstrukto.
+	 * @brief Konstruktor.
 	 * 
 	 * @param numberChannel	Numer wejscia pomiarowego.
 	 * @param stateChannel	Stan wejscia pomiarowego.
