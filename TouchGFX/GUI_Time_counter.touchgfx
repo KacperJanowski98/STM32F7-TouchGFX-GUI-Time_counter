@@ -11210,7 +11210,7 @@
             "Name": "textAreaAuthor",
             "X": 124,
             "Y": 263,
-            "Width": 255,
+            "Width": 275,
             "Height": 75,
             "Visible": true,
             "LockPosition": false,
@@ -11376,9 +11376,9 @@
             "TextId": "SingleUseId14",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 182,
+              "Green": 223,
+              "Blue": 240
             },
             "Alpha": 255,
             "AutoSize": false,

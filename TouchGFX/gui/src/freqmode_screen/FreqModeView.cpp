@@ -61,123 +61,123 @@ void FreqModeView::setupScreen()
 
     // Label
 
-    setLabelFreq(textFreq1startBuffer, TEXTFREQ1START_SIZE, FreqBackend.Channel1.numberChanel, &textFreq1start);
-    setLabelColorFreq(FreqBackend.Channel1.channelState, &textLabelFreq1, &textFreq1start);
-    setMeasColorFreq(FreqBackend.Channel1.channelState, &textMeanVal1, &textStdDevVal1);
+    setLabelFreq(textFreq1startBuffer, TEXTFREQ1START_SIZE, DataExchange.FrequencyData.Channel1.numberChanel, &textFreq1start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel1.channelState, &textLabelFreq1, &textFreq1start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel1.channelState, &textMeanVal1, &textStdDevVal1);
 
-    setLabelFreq(textFreq2startBuffer, TEXTFREQ2START_SIZE, FreqBackend.Channel2.numberChanel, &textFreq2start);
-    setLabelColorFreq(FreqBackend.Channel2.channelState, &textLabelFreq2, &textFreq2start);
-    setMeasColorFreq(FreqBackend.Channel2.channelState, &textMeanVal2, &textStdDevVal2);
+    setLabelFreq(textFreq2startBuffer, TEXTFREQ2START_SIZE, DataExchange.FrequencyData.Channel2.numberChanel, &textFreq2start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel2.channelState, &textLabelFreq2, &textFreq2start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel2.channelState, &textMeanVal2, &textStdDevVal2);
 
-    setLabelFreq(textFreq3startBuffer, TEXTFREQ3START_SIZE, FreqBackend.Channel3.numberChanel, &textFreq3start);
-    setLabelColorFreq(FreqBackend.Channel3.channelState, &textLabelFreq3, &textFreq3start);
-    setMeasColorFreq(FreqBackend.Channel3.channelState, &textMeanVal3, &textStdDevVal3);
+    setLabelFreq(textFreq3startBuffer, TEXTFREQ3START_SIZE, DataExchange.FrequencyData.Channel3.numberChanel, &textFreq3start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel3.channelState, &textLabelFreq3, &textFreq3start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel3.channelState, &textMeanVal3, &textStdDevVal3);
 
-    setLabelFreq(textFreq4startBuffer, TEXTFREQ4START_SIZE, FreqBackend.Channel4.numberChanel, &textFreq4start);
-    setLabelColorFreq(FreqBackend.Channel4.channelState, &textLabelFreq4, &textFreq4start);
-    setMeasColorFreq(FreqBackend.Channel4.channelState, &textMeanVal4, &textStdDevVal4);
+    setLabelFreq(textFreq4startBuffer, TEXTFREQ4START_SIZE, DataExchange.FrequencyData.Channel4.numberChanel, &textFreq4start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel4.channelState, &textLabelFreq4, &textFreq4start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel4.channelState, &textMeanVal4, &textStdDevVal4);
 
-    setLabelFreq(textFreq5startBuffer, TEXTFREQ5START_SIZE, FreqBackend.Channel5.numberChanel, &textFreq5start);
-    setLabelColorFreq(FreqBackend.Channel5.channelState, &textLabelFreq5, &textFreq5start);
-    setMeasColorFreq(FreqBackend.Channel5.channelState, &textMeanVal5, &textStdDevVal5);
+    setLabelFreq(textFreq5startBuffer, TEXTFREQ5START_SIZE, DataExchange.FrequencyData.Channel5.numberChanel, &textFreq5start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel5.channelState, &textLabelFreq5, &textFreq5start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel5.channelState, &textMeanVal5, &textStdDevVal5);
 
-    setLabelFreq(textFreq6startBuffer, TEXTFREQ6START_SIZE, FreqBackend.Channel6.numberChanel, &textFreq6start);
-    setLabelColorFreq(FreqBackend.Channel6.channelState, &textLabelFreq6, &textFreq6start);
-    setMeasColorFreq(FreqBackend.Channel6.channelState, &textMeanVal6, &textStdDevVal6);
+    setLabelFreq(textFreq6startBuffer, TEXTFREQ6START_SIZE, DataExchange.FrequencyData.Channel6.numberChanel, &textFreq6start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel6.channelState, &textLabelFreq6, &textFreq6start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel6.channelState, &textMeanVal6, &textStdDevVal6);
 
-    setLabelFreq(textFreq7startBuffer, TEXTFREQ7START_SIZE, FreqBackend.Channel7.numberChanel, &textFreq7start);
-    setLabelColorFreq(FreqBackend.Channel7.channelState, &textLabelFreq7, &textFreq7start);
-    setMeasColorFreq(FreqBackend.Channel7.channelState, &textMeanVal7, &textStdDevVal7);
+    setLabelFreq(textFreq7startBuffer, TEXTFREQ7START_SIZE, DataExchange.FrequencyData.Channel7.numberChanel, &textFreq7start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel7.channelState, &textLabelFreq7, &textFreq7start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel7.channelState, &textMeanVal7, &textStdDevVal7);
 
-    setLabelFreq(textFreq8startBuffer, TEXTFREQ8START_SIZE, FreqBackend.Channel8.numberChanel, &textFreq8start);
-    setLabelColorFreq(FreqBackend.Channel8.channelState, &textLabelFreq8, &textFreq8start);
-    setMeasColorFreq(FreqBackend.Channel8.channelState, &textMeanVal8, &textStdDevVal8);
+    setLabelFreq(textFreq8startBuffer, TEXTFREQ8START_SIZE, DataExchange.FrequencyData.Channel8.numberChanel, &textFreq8start);
+    setLabelColorFreq(DataExchange.FrequencyData.Channel8.channelState, &textLabelFreq8, &textFreq8start);
+    setMeasColorFreq(DataExchange.FrequencyData.Channel8.channelState, &textMeanVal8, &textStdDevVal8);
 
     // Sample
 
-    setSampleFreq(&FreqBackend.Channel1, &textSample1, textSample1Buffer, TEXTSAMPLE1_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel1, &textSample1, textSample1Buffer, TEXTSAMPLE1_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel2, &textSample2, textSample2Buffer, TEXTSAMPLE2_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel2, &textSample2, textSample2Buffer, TEXTSAMPLE2_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel3, &textSample3, textSample3Buffer, TEXTSAMPLE3_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel3, &textSample3, textSample3Buffer, TEXTSAMPLE3_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel4, &textSample4, textSample4Buffer, TEXTSAMPLE4_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel4, &textSample4, textSample4Buffer, TEXTSAMPLE4_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel5, &textSample5, textSample5Buffer, TEXTSAMPLE5_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel5, &textSample5, textSample5Buffer, TEXTSAMPLE5_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel6, &textSample6, textSample6Buffer, TEXTSAMPLE6_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel6, &textSample6, textSample6Buffer, TEXTSAMPLE6_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel7, &textSample7, textSample7Buffer, TEXTSAMPLE7_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel7, &textSample7, textSample7Buffer, TEXTSAMPLE7_SIZE, &DataExchange.FrequencyData.FreqSession);
 
-    setSampleFreq(&FreqBackend.Channel8, &textSample8, textSample8Buffer, TEXTSAMPLE8_SIZE, &FreqBackend.FreqSession);
+    setSampleFreq(&DataExchange.FrequencyData.Channel8, &textSample8, textSample8Buffer, TEXTSAMPLE8_SIZE, &DataExchange.FrequencyData.FreqSession);
 
     // Mean
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure1.mean, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1);
-    setMeanResultFreq(&ResultFreqBackend.measure1, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1, textMeanVal1Buffer, TEXTMEANVAL1_SIZE, &textMeanVal1,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure1.mean, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure1, &m_total_freq1, &m_frac1_freq1, &m_frac2_freq1, textMeanVal1Buffer, TEXTMEANVAL1_SIZE, &textMeanVal1,
     					textUnitMean1Buffer, TEXTUNITMEAN1_SIZE, &textUnitMean1);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure2.mean, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2);
-    setMeanResultFreq(&ResultFreqBackend.measure2, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2, textMeanVal2Buffer, TEXTMEANVAL2_SIZE, &textMeanVal2,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure2.mean, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure2, &m_total_freq2, &m_frac1_freq2, &m_frac2_freq2, textMeanVal2Buffer, TEXTMEANVAL2_SIZE, &textMeanVal2,
     					textUnitMean2Buffer, TEXTUNITMEAN2_SIZE, &textUnitMean2);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure3.mean, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3);
-    setMeanResultFreq(&ResultFreqBackend.measure3, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3, textMeanVal3Buffer, TEXTMEANVAL3_SIZE, &textMeanVal3,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure3.mean, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure3, &m_total_freq3, &m_frac1_freq3, &m_frac2_freq3, textMeanVal3Buffer, TEXTMEANVAL3_SIZE, &textMeanVal3,
     					textUnitMean3Buffer, TEXTUNITMEAN3_SIZE, &textUnitMean3);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure4.mean, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4);
-    setMeanResultFreq(&ResultFreqBackend.measure4, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4, textMeanVal4Buffer, TEXTMEANVAL4_SIZE, &textMeanVal4,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure4.mean, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure4, &m_total_freq4, &m_frac1_freq4, &m_frac2_freq4, textMeanVal4Buffer, TEXTMEANVAL4_SIZE, &textMeanVal4,
     					textUnitMean4Buffer, TEXTUNITMEAN4_SIZE, &textUnitMean4);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure5.mean, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5);
-    setMeanResultFreq(&ResultFreqBackend.measure5, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5, textMeanVal5Buffer, TEXTMEANVAL5_SIZE, &textMeanVal5,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure5.mean, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure5, &m_total_freq5, &m_frac1_freq5, &m_frac2_freq5, textMeanVal5Buffer, TEXTMEANVAL5_SIZE, &textMeanVal5,
     					textUnitMean5Buffer, TEXTUNITMEAN5_SIZE, &textUnitMean5);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure6.mean, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6);
-    setMeanResultFreq(&ResultFreqBackend.measure6, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6, textMeanVal6Buffer, TEXTMEANVAL6_SIZE, &textMeanVal6,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure6.mean, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure6, &m_total_freq6, &m_frac1_freq6, &m_frac2_freq6, textMeanVal6Buffer, TEXTMEANVAL6_SIZE, &textMeanVal6,
     					textUnitMean6Buffer, TEXTUNITMEAN6_SIZE, &textUnitMean6);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure7.mean, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7);
-    setMeanResultFreq(&ResultFreqBackend.measure7, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7, textMeanVal7Buffer, TEXTMEANVAL7_SIZE, &textMeanVal7,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure7.mean, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure7, &m_total_freq7, &m_frac1_freq7, &m_frac2_freq7, textMeanVal7Buffer, TEXTMEANVAL7_SIZE, &textMeanVal7,
     					textUnitMean7Buffer, TEXTUNITMEAN7_SIZE, &textUnitMean7);
 
-    calculateFormatMeanFreq(ResultFreqBackend.measure8.mean, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8);
-    setMeanResultFreq(&ResultFreqBackend.measure8, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8, textMeanVal8Buffer, TEXTMEANVAL8_SIZE, &textMeanVal8,
+    calculateFormatMeanFreq(DataExchange.ResultFrequencyData.measure8.mean, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8);
+    setMeanResultFreq(&DataExchange.ResultFrequencyData.measure8, &m_total_freq8, &m_frac1_freq8, &m_frac2_freq8, textMeanVal8Buffer, TEXTMEANVAL8_SIZE, &textMeanVal8,
     					textUnitMean8Buffer, TEXTUNITMEAN8_SIZE, &textUnitMean8);
 
     // StdDev
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure1.stdDev, &m_totalStdDev1, &m_fracStdDev1);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure1.stdDev, &m_totalStdDev1, &m_fracStdDev1);
     setStdDevResultFreq(textStdDevVal1Buffer, TEXTSTDDEVVAL1_SIZE, &textStdDevVal1, textUnitSD1Buffer, TEXTUNITSD1_SIZE, &textUnitSD1,
-    					&ResultFreqBackend.measure1, &m_totalStdDev1, &m_fracStdDev1);
+    					&DataExchange.ResultFrequencyData.measure1, &m_totalStdDev1, &m_fracStdDev1);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure2.stdDev, &m_totalStdDev2, &m_fracStdDev2);
     setStdDevResultFreq(textStdDevVal2Buffer, TEXTSTDDEVVAL2_SIZE, &textStdDevVal2, textUnitSD2Buffer, TEXTUNITSD2_SIZE, &textUnitSD2,
-    					&ResultFreqBackend.measure2, &m_totalStdDev2, &m_fracStdDev2);
+    					&DataExchange.ResultFrequencyData.measure2, &m_totalStdDev2, &m_fracStdDev2);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure3.stdDev, &m_totalStdDev3, &m_fracStdDev3);
     setStdDevResultFreq(textStdDevVal3Buffer, TEXTSTDDEVVAL3_SIZE, &textStdDevVal3, textUnitSD3Buffer, TEXTUNITSD3_SIZE, &textUnitSD3,
-    					&ResultFreqBackend.measure3, &m_totalStdDev3, &m_fracStdDev3);
+    					&DataExchange.ResultFrequencyData.measure3, &m_totalStdDev3, &m_fracStdDev3);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure4.stdDev, &m_totalStdDev4, &m_fracStdDev4);
     setStdDevResultFreq(textStdDevVal4Buffer, TEXTSTDDEVVAL4_SIZE, &textStdDevVal4, textUnitSD4Buffer, TEXTUNITSD4_SIZE, &textUnitSD4,
-    					&ResultFreqBackend.measure4, &m_totalStdDev4, &m_fracStdDev4);
+    					&DataExchange.ResultFrequencyData.measure4, &m_totalStdDev4, &m_fracStdDev4);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure5.stdDev, &m_totalStdDev5, &m_fracStdDev5);
     setStdDevResultFreq(textStdDevVal5Buffer, TEXTSTDDEVVAL5_SIZE, &textStdDevVal5, textUnitSD5Buffer, TEXTUNITSD5_SIZE, &textUnitSD5,
-    					&ResultFreqBackend.measure5, &m_totalStdDev5, &m_fracStdDev5);
+    					&DataExchange.ResultFrequencyData.measure5, &m_totalStdDev5, &m_fracStdDev5);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure6.stdDev, &m_totalStdDev6, &m_fracStdDev6);
     setStdDevResultFreq(textStdDevVal6Buffer, TEXTSTDDEVVAL6_SIZE, &textStdDevVal6, textUnitSD6Buffer, TEXTUNITSD6_SIZE, &textUnitSD6,
-    					&ResultFreqBackend.measure6, &m_totalStdDev6, &m_fracStdDev6);
+    					&DataExchange.ResultFrequencyData.measure6, &m_totalStdDev6, &m_fracStdDev6);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure7.stdDev, &m_totalStdDev7, &m_fracStdDev7);
     setStdDevResultFreq(textStdDevVal7Buffer, TEXTSTDDEVVAL7_SIZE, &textStdDevVal7, textUnitSD7Buffer, TEXTUNITSD7_SIZE, &textUnitSD7,
-    					&ResultFreqBackend.measure7, &m_totalStdDev7, &m_fracStdDev7);
+    					&DataExchange.ResultFrequencyData.measure7, &m_totalStdDev7, &m_fracStdDev7);
 
-    calculateFormatStdDevFreq(ResultFreqBackend.measure8.stdDev, &m_totalStdDev8, &m_fracStdDev8);
+    calculateFormatStdDevFreq(DataExchange.ResultFrequencyData.measure8.stdDev, &m_totalStdDev8, &m_fracStdDev8);
     setStdDevResultFreq(textStdDevVal8Buffer, TEXTSTDDEVVAL8_SIZE, &textStdDevVal8, textUnitSD8Buffer, TEXTUNITSD8_SIZE, &textUnitSD8,
-    					&ResultFreqBackend.measure8, &m_totalStdDev8, &m_fracStdDev8);
+    					&DataExchange.ResultFrequencyData.measure8, &m_totalStdDev8, &m_fracStdDev8);
 }
 
 void FreqModeView::tearDownScreen()

@@ -34,6 +34,7 @@ extern "C" {
 /* USER CODE BEGIN Includes */
 #include "TimeModeData.h"
 #include "FreqModeData.h"
+#include "MainDataStructure.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

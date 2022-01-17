@@ -9,24 +9,24 @@ TimeModeConfigView::TimeModeConfigView()
 	, sliderValueConfirmedCallback(this, &TimeModeConfigView::sliderValueConfirmedCallbackHandler)
 	, RadioBtnGroupSlopeCallback(this, &TimeModeConfigView::RadioBtnGroupSlopeCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &TimeModeConfigView::RadioBtnGroupClockCallbackHandler)
-	, Channel1(1, TimeBackend.Channel1.channelState, TimeBackend.TiSetup1.tiState, static_cast<SlopeName>(TimeBackend.Channel1.slope),
-			TimeBackend.Channel1.threshold, TimeBackend.TiSetup1.startIn, TimeBackend.TiSetup1.stopIn)
-	, Channel2(2, TimeBackend.Channel2.channelState, TimeBackend.TiSetup2.tiState, static_cast<SlopeName>(TimeBackend.Channel2.slope),
-			TimeBackend.Channel2.threshold, TimeBackend.TiSetup2.startIn, TimeBackend.TiSetup2.stopIn)
-	, Channel3(3, TimeBackend.Channel3.channelState, TimeBackend.TiSetup3.tiState, static_cast<SlopeName>(TimeBackend.Channel3.slope),
-			TimeBackend.Channel3.threshold, TimeBackend.TiSetup3.startIn, TimeBackend.TiSetup3.stopIn)
-	, Channel4(4, TimeBackend.Channel4.channelState, TimeBackend.TiSetup4.tiState, static_cast<SlopeName>(TimeBackend.Channel4.slope),
-		TimeBackend.Channel4.threshold, TimeBackend.TiSetup4.startIn, TimeBackend.TiSetup4.stopIn)
-	, Channel5(5, TimeBackend.Channel5.channelState, TimeBackend.TiSetup5.tiState, static_cast<SlopeName>(TimeBackend.Channel5.slope),
-			TimeBackend.Channel5.threshold, TimeBackend.TiSetup5.startIn, TimeBackend.TiSetup5.stopIn)
-	, Channel6(6, TimeBackend.Channel6.channelState, TimeBackend.TiSetup6.tiState, static_cast<SlopeName>(TimeBackend.Channel6.slope),
-		TimeBackend.Channel6.threshold, TimeBackend.TiSetup6.startIn, TimeBackend.TiSetup6.stopIn)
-	, Channel7(7, TimeBackend.Channel7.channelState, TimeBackend.TiSetup7.tiState, static_cast<SlopeName>(TimeBackend.Channel7.slope),
-			TimeBackend.Channel7.threshold, TimeBackend.TiSetup7.startIn, TimeBackend.TiSetup7.stopIn)
-	, Channel8(8, TimeBackend.Channel8.channelState, false, static_cast<SlopeName>(TimeBackend.Channel8.slope),
-			TimeBackend.Channel8.threshold, 0, 0)
-	, Session(TimeBackend.TimeSession.maxRange, static_cast<ClockName>(TimeBackend.TimeSession.clock),
-			TimeBackend.TimeSession.tiRange, TimeBackend.TimeSession.stampsNumber, TimeBackend.TimeSession.repeat)
+	, Channel1(1, DataExchange.TimeData.Channel1.channelState, DataExchange.TimeData.TiSetup1.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel1.slope),
+			DataExchange.TimeData.Channel1.threshold, DataExchange.TimeData.TiSetup1.startIn, DataExchange.TimeData.TiSetup1.stopIn)
+	, Channel2(2, DataExchange.TimeData.Channel2.channelState, DataExchange.TimeData.TiSetup2.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel2.slope),
+			DataExchange.TimeData.Channel2.threshold, DataExchange.TimeData.TiSetup2.startIn, DataExchange.TimeData.TiSetup2.stopIn)
+	, Channel3(3, DataExchange.TimeData.Channel3.channelState, DataExchange.TimeData.TiSetup3.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel3.slope),
+			DataExchange.TimeData.Channel3.threshold, DataExchange.TimeData.TiSetup3.startIn, DataExchange.TimeData.TiSetup3.stopIn)
+	, Channel4(4, DataExchange.TimeData.Channel4.channelState, DataExchange.TimeData.TiSetup4.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel4.slope),
+			DataExchange.TimeData.Channel4.threshold, DataExchange.TimeData.TiSetup4.startIn, DataExchange.TimeData.TiSetup4.stopIn)
+	, Channel5(5, DataExchange.TimeData.Channel5.channelState, DataExchange.TimeData.TiSetup5.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel5.slope),
+			DataExchange.TimeData.Channel5.threshold, DataExchange.TimeData.TiSetup5.startIn, DataExchange.TimeData.TiSetup5.stopIn)
+	, Channel6(6, DataExchange.TimeData.Channel6.channelState, DataExchange.TimeData.TiSetup6.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel6.slope),
+			DataExchange.TimeData.Channel6.threshold, DataExchange.TimeData.TiSetup6.startIn, DataExchange.TimeData.TiSetup6.stopIn)
+	, Channel7(7, DataExchange.TimeData.Channel7.channelState, DataExchange.TimeData.TiSetup7.tiState, static_cast<SlopeName>(DataExchange.TimeData.Channel7.slope),
+			DataExchange.TimeData.Channel7.threshold, DataExchange.TimeData.TiSetup7.startIn, DataExchange.TimeData.TiSetup7.stopIn)
+	, Channel8(8, DataExchange.TimeData.Channel8.channelState, false, static_cast<SlopeName>(DataExchange.TimeData.Channel8.slope),
+			DataExchange.TimeData.Channel8.threshold, 0, 0)
+	, Session(DataExchange.TimeData.TimeSession.maxRange, static_cast<ClockName>(DataExchange.TimeData.TimeSession.clock),
+			DataExchange.TimeData.TimeSession.tiRange, DataExchange.TimeData.TimeSession.stampsNumber, DataExchange.TimeData.TimeSession.repeat)
 {
 	radioButtonGroupSlope.setRadioButtonSelectedHandler(RadioBtnGroupSlopeCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
@@ -946,30 +946,30 @@ void TimeModeConfigView::FinishSetupTimeModeRepeat()
 
 void TimeModeConfigView::updateTimeParameterBackend()
 {
-	updateChannelBackendStruct(&TimeBackend.Channel1, pChannel1);
-	updateTiBackendStruct(&TimeBackend.TiSetup1, pChannel1);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel1, pChannel1);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup1, pChannel1);
 
-	updateChannelBackendStruct(&TimeBackend.Channel2, pChannel2);
-	updateTiBackendStruct(&TimeBackend.TiSetup2, pChannel2);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel2, pChannel2);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup2, pChannel2);
 
-	updateChannelBackendStruct(&TimeBackend.Channel3, pChannel3);
-	updateTiBackendStruct(&TimeBackend.TiSetup3, pChannel3);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel3, pChannel3);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup3, pChannel3);
 
-	updateChannelBackendStruct(&TimeBackend.Channel4, pChannel4);
-	updateTiBackendStruct(&TimeBackend.TiSetup4, pChannel4);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel4, pChannel4);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup4, pChannel4);
 
-	updateChannelBackendStruct(&TimeBackend.Channel5, pChannel5);
-	updateTiBackendStruct(&TimeBackend.TiSetup5, pChannel5);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel5, pChannel5);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup5, pChannel5);
 
-	updateChannelBackendStruct(&TimeBackend.Channel6, pChannel6);
-	updateTiBackendStruct(&TimeBackend.TiSetup6, pChannel6);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel6, pChannel6);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup6, pChannel6);
 
-	updateChannelBackendStruct(&TimeBackend.Channel7, pChannel7);
-	updateTiBackendStruct(&TimeBackend.TiSetup7, pChannel7);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel7, pChannel7);
+	updateTiBackendStruct(&DataExchange.TimeData.TiSetup7, pChannel7);
 
-	updateChannelBackendStruct(&TimeBackend.Channel8, pChannel8);
+	updateChannelBackendStruct(&DataExchange.TimeData.Channel8, pChannel8);
 
-	updateSessionBackendStruct(&TimeBackend.TimeSession, pSession);
+	updateSessionBackendStruct(&DataExchange.TimeData.TimeSession, pSession);
 }
 
 void TimeModeConfigView::updateChannelBackendStruct(TimeChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel)

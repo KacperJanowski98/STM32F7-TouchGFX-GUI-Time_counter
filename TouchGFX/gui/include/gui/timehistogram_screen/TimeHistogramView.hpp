@@ -5,8 +5,8 @@
 #include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
 
 extern ResultStampsCalc_t ResultCalcStampsTime;
-extern ResultTime_t ResultTimeBackend;
-extern TimeMode_t TimeBackend;
+//extern ResultTime_t ResultTimeBackend;
+//extern TimeMode_t TimeBackend;
 
 extern CalcStampParam_t tempParam;
 extern uint16_t tempStampsNumber;

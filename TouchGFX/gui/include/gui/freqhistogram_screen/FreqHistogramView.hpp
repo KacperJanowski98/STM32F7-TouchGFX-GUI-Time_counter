@@ -4,9 +4,10 @@
 #include <gui_generated/freqhistogram_screen/FreqHistogramViewBase.hpp>
 #include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
 
-extern FrequencyMode_t FreqBackend;
+//extern FrequencyMode_t FreqBackend;
 extern ResultStampsCalcFreq_t ResultCalcStampsFreq;
-extern ResultFreq_t ResultFreqBackend;
+extern DataExchange_t DataExchange;
+//extern ResultFreq_t ResultFreqBackend;
 
 extern CalcStampParam_t tempParamF;
 extern uint16_t tempStampsNumberF;

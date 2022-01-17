@@ -8,15 +8,23 @@ FreqModeConfigView::FreqModeConfigView()
 	, RadioBtnGroupFreqCallback(this, &FreqModeConfigView::RadioBtnGroupFreqCallbackHandler)
 	, RadioBtnGroupHfInputCallback(this, &FreqModeConfigView::RadioBtnGroupHfInputCallbackHandler)
 	, RadioBtnGroupClockCallback(this, &FreqModeConfigView::RadioBtnGroupClockCallbackHandler)
-	, Channel1(FreqBackend.Channel1.numberChanel, FreqBackend.Channel1.channelState, static_cast<SlopeName>(FreqBackend.Channel1.slope), FreqBackend.Channel1.threshold)
-	, Channel2(FreqBackend.Channel2.numberChanel, FreqBackend.Channel2.channelState, static_cast<SlopeName>(FreqBackend.Channel2.slope), FreqBackend.Channel2.threshold)
-	, Channel3(FreqBackend.Channel3.numberChanel, FreqBackend.Channel3.channelState, static_cast<SlopeName>(FreqBackend.Channel3.slope), FreqBackend.Channel3.threshold)
-	, Channel4(FreqBackend.Channel4.numberChanel, FreqBackend.Channel4.channelState, static_cast<SlopeName>(FreqBackend.Channel4.slope), FreqBackend.Channel4.threshold)
-	, Channel5(FreqBackend.Channel5.numberChanel, FreqBackend.Channel5.channelState, static_cast<SlopeName>(FreqBackend.Channel5.slope), FreqBackend.Channel5.threshold)
-	, Channel6(FreqBackend.Channel6.numberChanel, FreqBackend.Channel6.channelState, static_cast<SlopeName>(FreqBackend.Channel6.slope), FreqBackend.Channel6.threshold)
-	, Channel7(FreqBackend.Channel7.numberChanel, FreqBackend.Channel7.channelState, static_cast<SlopeName>(FreqBackend.Channel7.slope), FreqBackend.Channel7.threshold)
-	, Channel8(FreqBackend.Channel8.numberChanel, FreqBackend.Channel8.channelState, static_cast<SlopeName>(FreqBackend.Channel8.slope), FreqBackend.Channel8.threshold)
-    , Session(false, static_cast<ClockName>(FreqBackend.FreqSession.clock), 0, FreqBackend.FreqSession.stampsNumber, FreqBackend.FreqSession.repeat)
+	, Channel1(DataExchange.FrequencyData.Channel1.numberChanel, DataExchange.FrequencyData.Channel1.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel1.slope), DataExchange.FrequencyData.Channel1.threshold)
+	, Channel2(DataExchange.FrequencyData.Channel2.numberChanel, DataExchange.FrequencyData.Channel2.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel2.slope), DataExchange.FrequencyData.Channel2.threshold)
+	, Channel3(DataExchange.FrequencyData.Channel3.numberChanel, DataExchange.FrequencyData.Channel3.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel3.slope), DataExchange.FrequencyData.Channel3.threshold)
+	, Channel4(DataExchange.FrequencyData.Channel4.numberChanel, DataExchange.FrequencyData.Channel4.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel4.slope), DataExchange.FrequencyData.Channel4.threshold)
+	, Channel5(DataExchange.FrequencyData.Channel5.numberChanel, DataExchange.FrequencyData.Channel5.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel5.slope), DataExchange.FrequencyData.Channel5.threshold)
+	, Channel6(DataExchange.FrequencyData.Channel6.numberChanel, DataExchange.FrequencyData.Channel6.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel6.slope), DataExchange.FrequencyData.Channel6.threshold)
+	, Channel7(DataExchange.FrequencyData.Channel7.numberChanel, DataExchange.FrequencyData.Channel7.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel7.slope), DataExchange.FrequencyData.Channel7.threshold)
+	, Channel8(DataExchange.FrequencyData.Channel8.numberChanel, DataExchange.FrequencyData.Channel8.channelState,
+			static_cast<SlopeName>(DataExchange.FrequencyData.Channel8.slope), DataExchange.FrequencyData.Channel8.threshold)
+    , Session(false, static_cast<ClockName>(DataExchange.FrequencyData.FreqSession.clock), 0, DataExchange.FrequencyData.FreqSession.stampsNumber, DataExchange.FrequencyData.FreqSession.repeat)
 {
 	radioButtonGroupHfInput.setRadioButtonSelectedHandler(RadioBtnGroupHfInputCallback);
 	radioButtonGroupClock.setRadioButtonSelectedHandler(RadioBtnGroupClockCallback);
@@ -69,10 +77,10 @@ void FreqModeConfigView::setupScreen()
 	// aktualizacja zrodla zegarowego
 	updateClockSourceUI(pSession->getSourceClock());
 
-	FreqModeConfigView::m_hfInput = FreqBackend.MessSetup.hfInputState;
-	FreqModeConfigView::m_gate = FreqBackend.MessSetup.gate;
+	FreqModeConfigView::m_hfInput = DataExchange.FrequencyData.MessSetup.hfInputState;
+	FreqModeConfigView::m_gate = DataExchange.FrequencyData.MessSetup.gate;
 
-	updateMesSetupUI(FreqBackend.MessSetup.hfInputState);
+	updateMesSetupUI(DataExchange.FrequencyData.MessSetup.hfInputState);
 
 	updateSessionSetupUI(pSession);
 }
@@ -574,26 +582,26 @@ void FreqModeConfigView::FinishSetupFreqModeRepeat()
 
 void FreqModeConfigView::updateFreqParameterBackend()
 {
-	updateChannelBackendStruct(&FreqBackend.Channel1, pChannel1);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel1, pChannel1);
 
-	updateChannelBackendStruct(&FreqBackend.Channel2, pChannel2);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel2, pChannel2);
 
-	updateChannelBackendStruct(&FreqBackend.Channel3, pChannel3);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel3, pChannel3);
 
-	updateChannelBackendStruct(&FreqBackend.Channel4, pChannel4);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel4, pChannel4);
 
-	updateChannelBackendStruct(&FreqBackend.Channel5, pChannel5);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel5, pChannel5);
 
-	updateChannelBackendStruct(&FreqBackend.Channel6, pChannel6);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel6, pChannel6);
 
-	updateChannelBackendStruct(&FreqBackend.Channel7, pChannel7);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel7, pChannel7);
 
-	updateChannelBackendStruct(&FreqBackend.Channel8, pChannel8);
+	updateChannelBackendStruct(&DataExchange.FrequencyData.Channel8, pChannel8);
 
-	FreqBackend.MessSetup.hfInputState = m_hfInput;
-	FreqBackend.MessSetup.gate = m_gate;
+	DataExchange.FrequencyData.MessSetup.hfInputState = m_hfInput;
+	DataExchange.FrequencyData.MessSetup.gate = m_gate;
 
-	updateSessionBackendStruct(&FreqBackend.FreqSession, pSession);
+	updateSessionBackendStruct(&DataExchange.FrequencyData.FreqSession, pSession);
 }
 
 void FreqModeConfigView::updateChannelBackendStruct(FreqChannel_t *pChannelBack, std::shared_ptr<FreqModeParameter> pChannel)

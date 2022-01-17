@@ -229,14 +229,20 @@ uint8_t colorGraphR = 0;
 uint8_t colorGraphG = 0;
 uint8_t colorGraphB = 0;
 
-TimeMode_t TimeBackend;
+//
+DataExchange_t DataExchange;
+//
+
+//TimeMode_t TimeBackend;
+//ResultTime_t ResultTimeBackend;
+//FrequencyMode_t FreqBackend;
+//ResultFreq_t ResultFreqBackend;
+
 ResultConstCalc_t ResultCalcConstTime;
 ResultStampsCalc_t ResultCalcStampsTime;
-ResultTime_t ResultTimeBackend;
-FrequencyMode_t FreqBackend;
 ResultConstCalcFreq_t ResultCalcConstFreq;
 ResultStampsCalcFreq_t ResultCalcStampsFreq;
-ResultFreq_t ResultFreqBackend;
+
 
 uint32_t detectedThresholdTime = 0;
 uint32_t detectedThresholdFreq = 0;
@@ -338,13 +344,14 @@ int main(void)
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
-  TimeModeInit(&TimeBackend);
+  DataExchangeInit(&DataExchange);
+//  TimeModeInit(&TimeBackend);
   ResultTimeParameterConstInit(&ResultCalcConstTime);
   ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-  ResultTimeInit(&ResultTimeBackend);
+//  ResultTimeInit(&ResultTimeBackend);
 
-  FrequencyModeInit(&FreqBackend);
-  ResultFrequencyInit(&ResultFreqBackend);
+//  FrequencyModeInit(&FreqBackend);
+//  ResultFrequencyInit(&ResultFreqBackend);
 
   srand(time(NULL));
 
@@ -1673,10 +1680,13 @@ void StartTaskTimeSingle(void *argument)
   {
 	  osThreadFlagsWait(FlagTimeSingle, 0, osWaitForever);
 	  conditionT = 0;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  conditionRepeatT = DataExchange.TimeData.TimeSession.repeat + 1;
+//	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 	  stampsModeTimeFlag = 0;
-	  ResultTimeInit(&ResultTimeBackend);
-	  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
+	  ResultTimeInit(&DataExchange.ResultTimeData);
+	  SingleTimeMeas(&DataExchange.TimeData, &DataExchange.ResultTimeData);
+//	  ResultTimeInit(&ResultTimeBackend);
+//	  SingleTimeMeas(&TimeBackend, &ResultTimeBackend);
   }
   /* USER CODE END StartTaskTimeSingle */
 }
@@ -1696,10 +1706,13 @@ void StartTaskFreqSingle(void *argument)
   {
 	  osThreadFlagsWait(FlagFreqSingle, 0, osWaitForever);
 	  conditionF = 0;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  conditionRepeatF = DataExchange.FrequencyData.FreqSession.repeat + 1;
+//	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 	  stampsModeFreqFlag = 0;
-	  ResultFrequencyInit(&ResultFreqBackend);
-	  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
+	  ResultFrequencyInit(&DataExchange.ResultFrequencyData);
+	  SingleFreqMeas(&DataExchange.FrequencyData, &DataExchange.ResultFrequencyData);
+//	  ResultFrequencyInit(&ResultFreqBackend);
+//	  SingleFreqMeas(&FreqBackend, &ResultFreqBackend);
   }
   /* USER CODE END StartTaskFreqSingle */
 }
@@ -1719,12 +1732,14 @@ void StartTaskTimeConst(void *argument)
   {
 	  osThreadFlagsWait(FlagTimeConst, 0, osWaitForever);
 	  conditionT = 1;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  conditionRepeatT = DataExchange.TimeData.TimeSession.repeat + 1;
+//	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
 	  stampsModeTimeFlag = 0;
 	  while(conditionT)
 	  {
-		  ResultTimeInit(&ResultTimeBackend);
-		  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
+		  ResultTimeInit(&DataExchange.ResultTimeData);
+		  ContinuousTimeMeas(&DataExchange.TimeData, &DataExchange.ResultTimeData, &ResultCalcConstTime);
+//		  ContinuousTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcConstTime);
 		  osDelay(500);
 	  }
   }
@@ -1746,12 +1761,14 @@ void StartTaskFreqConst(void *argument)
   {
 	  osThreadFlagsWait(FlagFreqConst, 0, osWaitForever);
 	  conditionF = 1;
-	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  conditionRepeatF = DataExchange.FrequencyData.FreqSession.repeat + 1;
 	  stampsModeFreqFlag = 0;
 	  while(conditionF)
 	  {
-		  ResultFrequencyInit(&ResultFreqBackend);
-		  ContinuousFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcConstFreq);
+		  ResultFrequencyInit(&DataExchange.ResultFrequencyData);
+		  ContinuousFreqMeas(&DataExchange.FrequencyData, &DataExchange.ResultFrequencyData, &ResultCalcConstFreq);
+//		  ResultFrequencyInit(&ResultFreqBackend);
+//		  ContinuousFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcConstFreq);
 		  osDelay(500);
 	  }
   }
@@ -1773,10 +1790,12 @@ void StartTaskTimeStamps(void *argument)
   {
 	  osThreadFlagsWait(FlagTimeStamps, 0, osWaitForever);
 	  conditionT = 0;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1;
+	  conditionRepeatT = DataExchange.TimeData.TimeSession.repeat + 1;
 	  stampsModeTimeFlag = 1;
-	  ResultTimeInit(&ResultTimeBackend);
-	  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
+	  ResultTimeInit(&DataExchange.ResultTimeData);
+	  StampsTimeMeas(&DataExchange.TimeData, &DataExchange.ResultTimeData, &ResultCalcStampsTime);
+//	  ResultTimeInit(&ResultTimeBackend);
+//	  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
   }
   /* USER CODE END StartTaskTimeStamps */
 }
@@ -1796,10 +1815,12 @@ void StartTaskFreqStamps(void *argument)
   {
 	  osThreadFlagsWait(FlagFreqStamps, 0, osWaitForever);
 	  conditionF = 0;
-	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  conditionRepeatF = DataExchange.FrequencyData.FreqSession.repeat + 1;
 	  stampsModeFreqFlag = 1;
-	  ResultFrequencyInit(&ResultFreqBackend);
-	  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
+	  ResultFrequencyInit(&DataExchange.ResultFrequencyData);
+	  StampsFreqMeas(&DataExchange.FrequencyData, &DataExchange.ResultFrequencyData, &ResultCalcStampsFreq);
+//	  ResultFrequencyInit(&ResultFreqBackend);
+//	  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
   }
   /* USER CODE END StartTaskFreqStamps */
 }
@@ -1818,12 +1839,14 @@ void StartTaskResetParamT(void *argument)
   for(;;)
   {
 	  osThreadFlagsWait(FlagResetParamT, 0, osWaitForever);
-	  TimeModeInit(&TimeBackend);
+//	  TimeModeInit(&TimeBackend);
+	  TimeModeInit(&DataExchange.TimeData);
 	  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
 	  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-	  ResultTimeInit(&ResultTimeBackend);
+	  ResultTimeInit(&DataExchange.ResultTimeData);
+//	  ResultTimeInit(&ResultTimeBackend);
 	  conditionT = 0;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+	  conditionRepeatT = DataExchange.TimeData.TimeSession.repeat + 1; // przerwanie trybu repeat
 	  stampsModeTimeFlag = 0;
   }
   /* USER CODE END StartTaskResetParamT */
@@ -1881,12 +1904,14 @@ void StartTaskResetParamF(void *argument)
   for(;;)
   {
 	  osThreadFlagsWait(FlagResetParamF, 0, osWaitForever);
-	  FrequencyModeInit(&FreqBackend);
+	  FrequencyModeInit(&DataExchange.FrequencyData);
+//	  FrequencyModeInit(&FreqBackend);
 	  ResultFreqParameterConstInit(&ResultCalcConstFreq);
 	  ResultFreqStampsInit(&ResultCalcStampsFreq);
-	  ResultFrequencyInit(&ResultFreqBackend);
+	  ResultFrequencyInit(&DataExchange.ResultFrequencyData);
+//	  ResultFrequencyInit(&ResultFreqBackend);
 	  conditionF = 0;
-	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  conditionRepeatF = DataExchange.FrequencyData.FreqSession.repeat + 1;
 	  stampsModeFreqFlag = 0;
   }
   /* USER CODE END StartTaskResetParamF */
@@ -1906,20 +1931,23 @@ void StartTaskCalibration(void *argument)
   for(;;)
   {
 	  osThreadFlagsWait(FlagCalibration, 0, osWaitForever);
-	  TimeModeInit(&TimeBackend);
+
+	  DataExchangeInit(&DataExchange);
+
+//	  TimeModeInit(&TimeBackend);
 	  ResultTimeParameterConstInit(&ResultCalcConstTime);	//aby wyczyscic stamp number trzeba kliknac reset w UI
 	  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-	  ResultTimeInit(&ResultTimeBackend);
+//	  ResultTimeInit(&ResultTimeBackend);
 	  conditionT = 0;
-	  conditionRepeatT = TimeBackend.TimeSession.repeat + 1; // przerwanie trybu repeat
+	  conditionRepeatT = DataExchange.TimeData.TimeSession.repeat + 1; // przerwanie trybu repeat
 	  stampsModeTimeFlag = 0;
 
-	  FrequencyModeInit(&FreqBackend);
+//	  FrequencyModeInit(&FreqBackend);
 	  ResultFreqParameterConstInit(&ResultCalcConstFreq);
 	  ResultFreqStampsInit(&ResultCalcStampsFreq);
-	  ResultFrequencyInit(&ResultFreqBackend);
+//	  ResultFrequencyInit(&ResultFreqBackend);
 	  conditionF = 0;
-	  conditionRepeatF = FreqBackend.FreqSession.repeat + 1;
+	  conditionRepeatF = DataExchange.FrequencyData.FreqSession.repeat + 1;
 	  stampsModeFreqFlag = 0;
   }
   /* USER CODE END StartTaskCalibration */
@@ -1942,10 +1970,13 @@ void StartTaskTimeRepeat(void *argument)
 	  conditionT = 0;
 	  conditionRepeatT = 1;
 	  stampsModeTimeFlag = 0;
-	  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
+	  while (conditionRepeatT <= DataExchange.TimeData.TimeSession.repeat)
+//		  while (conditionRepeatT <= TimeBackend.TimeSession.repeat)
 	  {
-		  ResultTimeInit(&ResultTimeBackend);
-		  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
+		  ResultTimeInit(&DataExchange.ResultTimeData);
+		  StampsTimeMeas(&DataExchange.TimeData, &DataExchange.ResultTimeData, &ResultCalcStampsTime);
+//		  ResultTimeInit(&ResultTimeBackend);
+//		  StampsTimeMeas(&TimeBackend, &ResultTimeBackend, &ResultCalcStampsTime);
 		  conditionRepeatT++;
 		  osDelay(1000);
 	  }
@@ -1970,10 +2001,13 @@ void StartTaskFreqRepeat(void *argument)
 	  conditionF = 0;
 	  conditionRepeatF = 1;
 	  stampsModeFreqFlag = 0;
-	  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
+	  while (conditionRepeatF <= DataExchange.FrequencyData.FreqSession.repeat)
+//		  while (conditionRepeatF <= FreqBackend.FreqSession.repeat)
 	  {
-		  ResultFrequencyInit(&ResultFreqBackend);
-		  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
+		  ResultFrequencyInit(&DataExchange.ResultFrequencyData);
+		  StampsFreqMeas(&DataExchange.FrequencyData, &DataExchange.ResultFrequencyData, &ResultCalcStampsFreq);
+//		  ResultFrequencyInit(&ResultFreqBackend);
+//		  StampsFreqMeas(&FreqBackend, &ResultFreqBackend, &ResultCalcStampsFreq);
 		  conditionRepeatF++;
 		  osDelay(1000);
 	  }

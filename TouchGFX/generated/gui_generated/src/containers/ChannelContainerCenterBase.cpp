@@ -10,7 +10,7 @@ ChannelContainerCenterBase::ChannelContainerCenterBase()
     setWidth(100);
     setHeight(60);
     textChannel.setPosition(0, 10, 100, 40);
-    textChannel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textChannel.setColor(touchgfx::Color::getColorFromRGB(182, 223, 240));
     textChannel.setLinespacing(0);
     Unicode::snprintf(textChannelBuffer, TEXTCHANNEL_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID15).getText());
     textChannel.setWildcard(textChannelBuffer);
