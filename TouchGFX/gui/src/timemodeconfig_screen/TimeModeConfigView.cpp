@@ -487,9 +487,9 @@ void TimeModeConfigView::ChangeStateTI()
 void TimeModeConfigView::detectThreshold()
 {
 	presenter->askForDetectedThreshold();
-	setThresholdUI(pChannelInput, detectedThresholdTime);
-	setValueSliderThresholdUI(detectedThresholdTime);
-    sliderThreshold.setValue(detectedThresholdTime);
+	setThresholdUI(pChannelInput, DataExchange.detectedThreshold);
+	setValueSliderThresholdUI(DataExchange.detectedThreshold);
+    sliderThreshold.setValue(DataExchange.detectedThreshold);
 }
 
 void TimeModeConfigView::initUIChannel(std::shared_ptr<TimeModeParameter>& channel)

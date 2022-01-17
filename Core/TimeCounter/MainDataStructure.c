@@ -9,6 +9,7 @@
 
 void DataExchangeInit(DataExchange_t *pDataExchange)
 {
+	pDataExchange->detectedThreshold = 0;
 	TimeModeInit(&pDataExchange->TimeData);
 	ResultTimeInit(&pDataExchange->ResultTimeData);
 	FrequencyModeInit(&pDataExchange->FrequencyData);

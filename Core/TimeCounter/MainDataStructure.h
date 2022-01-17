@@ -14,7 +14,8 @@
 
 typedef struct
 {
-//	uint8_t version;
+	uint8_t version;
+	uint32_t detectedThreshold;
 	TimeMode_t TimeData;
 	ResultTime_t ResultTimeData;
 	FrequencyMode_t FrequencyData;

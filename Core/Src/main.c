@@ -244,8 +244,8 @@ ResultConstCalcFreq_t ResultCalcConstFreq;
 ResultStampsCalcFreq_t ResultCalcStampsFreq;
 
 
-uint32_t detectedThresholdTime = 0;
-uint32_t detectedThresholdFreq = 0;
+//uint32_t detectedThresholdTime = 0;
+//uint32_t detectedThresholdFreq = 0;
 
 /* USER CODE END PV */
 
@@ -1866,7 +1866,7 @@ void StartTaskDetectThreT(void *argument)
   for(;;)
   {
 	  osThreadFlagsWait(FlagDetectThresholdT, 0, osWaitForever);
-	  detectedThreshold(&detectedThresholdTime);
+	  detectedThreshold(&DataExchange.detectedThreshold);
   }
   /* USER CODE END StartTaskDetectThreT */
 }
@@ -1885,7 +1885,7 @@ void StartTaskDetectThreF(void *argument)
   for(;;)
   {
 	  osThreadFlagsWait(FlagDetectThresholdF, 0, osWaitForever);
-	  detectedThreshold(&detectedThresholdFreq);
+	  detectedThreshold(&DataExchange.detectedThreshold);
   }
   /* USER CODE END StartTaskDetectThreF */
 }
