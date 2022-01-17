@@ -4,7 +4,7 @@
 #include <gui_generated/timehistogram_screen/TimeHistogramViewBase.hpp>
 #include <gui/timehistogram_screen/TimeHistogramPresenter.hpp>
 
-extern ResultStampsCalc_t ResultCalcStampsTime;
+//extern ResultStampsCalc_t ResultCalcStampsTime;
 //extern ResultTime_t ResultTimeBackend;
 //extern TimeMode_t TimeBackend;
 

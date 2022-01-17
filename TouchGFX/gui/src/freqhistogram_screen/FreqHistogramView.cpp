@@ -24,7 +24,7 @@ void FreqHistogramView::DisplayGraphF1()
 	stateFlag = DataExchange.FrequencyData.Channel1.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure1.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel1, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters1;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters1;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -38,7 +38,7 @@ void FreqHistogramView::DisplayGraphF2()
 	stateFlag = DataExchange.FrequencyData.Channel2.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure2.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel2, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters2;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters2;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -52,7 +52,7 @@ void FreqHistogramView::DisplayGraphF3()
 	stateFlag = DataExchange.FrequencyData.Channel3.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure3.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel3, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters3;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters3;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -66,7 +66,7 @@ void FreqHistogramView::DisplayGraphF4()
 	stateFlag = DataExchange.FrequencyData.Channel4.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure4.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel4, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters4;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters4;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -80,7 +80,7 @@ void FreqHistogramView::DisplayGraphF5()
 	stateFlag = DataExchange.FrequencyData.Channel5.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure5.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel5, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters5;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters5;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -94,7 +94,7 @@ void FreqHistogramView::DisplayGraphF6()
 	stateFlag = DataExchange.FrequencyData.Channel6.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure6.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel6, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters6;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters6;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -108,7 +108,7 @@ void FreqHistogramView::DisplayGraphF7()
 	stateFlag = DataExchange.FrequencyData.Channel7.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure7.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel7, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters7;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters7;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }
@@ -122,7 +122,7 @@ void FreqHistogramView::DisplayGraphF8()
 	stateFlag = DataExchange.FrequencyData.Channel8.channelState;
 	unitGraph = DataExchange.ResultFrequencyData.measure8.meanUnit;
 	calculateMaxValFreq(DataExchange.FrequencyData.Channel8, &tempMaxRangeF);
-	tempParamF = ResultCalcStampsFreq.parameters8;
+	tempParamF = DataExchange.ResultCalcStampsFreq.parameters8;
 	tempStampsNumberF = DataExchange.FrequencyData.FreqSession.stampsNumber;
 	application().gotoFreqGraphScreenWipeTransitionWest();
 }

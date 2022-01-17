@@ -24,7 +24,7 @@ void TimeHistogramView::DisplayGraph1()
 	unitGraph = DataExchange.ResultTimeData.measure1.meanUnit;
 	stateFlag = DataExchange.TimeData.TiSetup1.tiState;
 	calculateMaxVal(DataExchange.TimeData.TiSetup1, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters1;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters1;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -38,7 +38,7 @@ void TimeHistogramView::DisplayGraph2()
 	stateFlag = DataExchange.TimeData.TiSetup2.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure2.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup2, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters2;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters2;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -52,7 +52,7 @@ void TimeHistogramView::DisplayGraph3()
 	stateFlag = DataExchange.TimeData.TiSetup3.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure3.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup3, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters3;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters3;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -66,7 +66,7 @@ void TimeHistogramView::DisplayGraph4()
 	stateFlag = DataExchange.TimeData.TiSetup4.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure4.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup4, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters4;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters4;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -80,7 +80,7 @@ void TimeHistogramView::DisplayGraph5()
 	stateFlag = DataExchange.TimeData.TiSetup5.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure5.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup5, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters5;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters5;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -94,7 +94,7 @@ void TimeHistogramView::DisplayGraph6()
 	stateFlag = DataExchange.TimeData.TiSetup6.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure6.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup6, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters6;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters6;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }
@@ -108,7 +108,7 @@ void TimeHistogramView::DisplayGraph7()
 	stateFlag = DataExchange.TimeData.TiSetup7.tiState;
 	unitGraph = DataExchange.ResultTimeData.measure7.meanUnit;
 	calculateMaxVal(DataExchange.TimeData.TiSetup7, &tempMaxRange);
-	tempParam = ResultCalcStampsTime.parameters7;
+	tempParam = DataExchange.ResultCalcStampsTime.parameters7;
 	tempStampsNumber = DataExchange.TimeData.TimeSession.stampsNumber;
 	application().gotoTimeGraphTi1ScreenWipeTransitionWest();
 }

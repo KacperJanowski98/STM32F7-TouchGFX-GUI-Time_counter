@@ -5,7 +5,7 @@
 #include <gui/freqhistogram_screen/FreqHistogramPresenter.hpp>
 
 //extern FrequencyMode_t FreqBackend;
-extern ResultStampsCalcFreq_t ResultCalcStampsFreq;
+//extern ResultStampsCalcFreq_t ResultCalcStampsFreq;
 extern DataExchange_t DataExchange;
 //extern ResultFreq_t ResultFreqBackend;
 
