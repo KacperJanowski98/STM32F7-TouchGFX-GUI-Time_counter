@@ -55,6 +55,14 @@ typedef struct
 
 typedef struct
 {
+    float mean;
+    float stdDev;
+    Unit_t meanUnit;
+    Unit_t stdDevUnit;
+} MeasValues_t;
+
+typedef struct
+{
     uint16_t sizeBuffer;
     float measureBuffer[2000];
     float calculateMean;

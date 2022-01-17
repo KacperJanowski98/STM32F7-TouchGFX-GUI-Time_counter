@@ -490,7 +490,7 @@ Unit_t setUnitMeanTime(uint8_t start, uint8_t stop)
     return result;
 }
 
-void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
+void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas)
 {
     uint8_t start = Ti->startIn;
     uint8_t stop = Ti->stopIn;
@@ -500,7 +500,7 @@ void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
     meas->meanUnit = setUnitMeanTime(start, stop);
 }
 
-void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcConstParam_t *pCalcParam)
+void setCalculatedParamConstTime(TimeTi_t *Ti, MeasValues_t *meas, CalcConstParam_t *pCalcParam)
 {
     uint8_t start = Ti->startIn;
     uint8_t stop = Ti->stopIn;
@@ -522,7 +522,7 @@ void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcConstParam_
     meas->stdDevUnit = PICO;
 }
 
-void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasTime_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam)
+void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasValues_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam)
 {
     uint8_t start = Ti->startIn;
     uint8_t stop = Ti->stopIn;
@@ -548,7 +548,7 @@ void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasTime_t *meas, SessionSetup_t
     meas->stdDevUnit = PICO;
 }
 
-void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas)
+void resetParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas)
 {
 	Ti->startIn = 0;
 	Ti->stopIn = 0;

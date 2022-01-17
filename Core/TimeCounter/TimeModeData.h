@@ -46,14 +46,6 @@ typedef struct
 
 typedef struct
 {
-    float mean;
-    float stdDev;
-    Unit_t meanUnit;
-    Unit_t stdDevUnit;
-} MeasTime_t;
-
-typedef struct
-{
 	CalcConstParam_t parameters1;
 	CalcConstParam_t parameters2;
 	CalcConstParam_t parameters3;
@@ -77,13 +69,13 @@ typedef struct
 
 typedef struct
 {
-    MeasTime_t measure1;
-    MeasTime_t measure2;
-    MeasTime_t measure3;
-    MeasTime_t measure4;
-    MeasTime_t measure5;
-    MeasTime_t measure6;
-    MeasTime_t measure7;
+	MeasValues_t measure1;
+	MeasValues_t measure2;
+	MeasValues_t measure3;
+	MeasValues_t measure4;
+	MeasValues_t measure5;
+	MeasValues_t measure6;
+	MeasValues_t measure7;
 } ResultTime_t;
 
 void TimeModeInit(TimeMode_t *pTimeMode);
@@ -104,12 +96,12 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
 
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
-void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
+void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas);
 
-void setCalculatedParamConstTime(TimeTi_t *Ti, MeasTime_t *meas, CalcConstParam_t *pCalcParam);
+void setCalculatedParamConstTime(TimeTi_t *Ti, MeasValues_t *meas, CalcConstParam_t *pCalcParam);
 
-void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasTime_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam);
+void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasValues_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam);
 
-void resetParamSingleTime(TimeTi_t *Ti, MeasTime_t *meas);
+void resetParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas);
 
 #endif /* INC_TIMEMODEDATA_H_ */

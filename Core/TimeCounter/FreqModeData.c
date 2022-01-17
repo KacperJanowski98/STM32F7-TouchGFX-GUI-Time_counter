@@ -486,7 +486,7 @@ Unit_t setUnitMeanFreq(uint8_t numberCh)
 	return result;
 }
 
-void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
+void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasValues_t *pMeasFreq)
 {
 	int min = 0, max = 0;
 	calculateRange(pFreqChannel->numberChanel, &min, &max);
@@ -494,7 +494,7 @@ void setCalculatedParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeas
 	pMeasFreq->meanUnit = setUnitMeanFreq(pFreqChannel->numberChanel);
 }
 
-void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, CalcConstParam_t *pCalcParam)
+void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasValues_t *pMeasFreq, CalcConstParam_t *pCalcParam)
 {
 	int min = 0, max = 0;
 	calculateRange(pFreqChannel->numberChanel, &min, &max);
@@ -514,7 +514,7 @@ void setCalculatedParamConstFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasF
 	pMeasFreq->stdDevUnit = MILLI;
 }
 
-void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam)
+void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasValues_t *pMeasFreq, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam)
 {
 	int min = 0, max = 0;
 	calculateRange(pFreqChannel->numberChanel, &min, &max);
@@ -538,7 +538,7 @@ void setCalculatedParamStampsFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeas
 	pMeasFreq->stdDevUnit = MILLI;
 }
 
-void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasFreq_t *pMeasFreq)
+void resetParamSingleFreq(FreqChannel_t *pFreqChannel, MeasValues_t *pMeasFreq)
 {
 //	pFreqChannel->numberChanel = 0;
 	pMeasFreq->mean = 0.0f;
