@@ -135,28 +135,28 @@ void FreqHistogramView::calculateMaxValFreq(FreqChannel_t freqCh, float *pMaxRan
 		*pMaxRange = 8.0f;
 		break;
 	case 2:
-		*pMaxRange = 16.0f;
+		*pMaxRange = 14.0f;
 		break;
 	case 3:
-		*pMaxRange = 54.0f;
+		*pMaxRange = 50.0f;
 		break;
 	case 4:
-		*pMaxRange = 34.0f;
+		*pMaxRange = 28.0f;
 		break;
 	case 5:
-		*pMaxRange = 52.0f;
+		*pMaxRange = 54.0f;
 		break;
 	case 6:
-		*pMaxRange = 30.0f;
+		*pMaxRange = 24.0f;
 		break;
 	case 7:
-		*pMaxRange = 52.0f;
+		*pMaxRange = 42.0f;
 		break;
 	case 8:
-		*pMaxRange = 10.0f;
+		*pMaxRange = 8.0f;
 		break;
 	default:
-		*pMaxRange = 40.0f;
+		*pMaxRange = 12.0f;
 		break;
 	}
 }

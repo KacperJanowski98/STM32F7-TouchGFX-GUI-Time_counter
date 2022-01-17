@@ -411,36 +411,36 @@ void calculateRange(uint8_t numberCh, int *min, int *max)
 	switch (numberCh)
 	{
 	case 1:
-        *min = (rand() % (3 + 1 - 1)) + 1;
-        *max = (rand() % (7 + 1 - 4)) + 4;
+        *min = (rand() % (4 + 1 - 3)) + 3;
+        *max = (rand() % (7 + 1 - 5)) + 5;
 		break;
 	case 2:
-        *min = (rand() % (10 + 1 - 4)) + 4;
-        *max = (rand() % (14 + 1 - 11)) + 11;
+        *min = (rand() % (10 + 1 - 9)) + 9;
+        *max = (rand() % (12 + 1 - 11)) + 11;
 		break;
 	case 3:
-        *min = (rand() % (45 + 1 - 43)) + 43;
-        *max = (rand() % (53 + 1 - 50)) + 50;
+        *min = (rand() % (45 + 1 - 44)) + 44;
+        *max = (rand() % (48 + 1 - 46)) + 46;
 		break;
 	case 4:
         *min = (rand() % (25 + 1 - 23)) + 23;
-        *max = (rand() % (33 + 1 - 30)) + 30;
+        *max = (rand() % (27 + 1 - 26)) + 26;
 		break;
 	case 5:
-        *min = (rand() % (47 + 1 - 43)) + 43;
-        *max = (rand() % (51 + 1 - 49)) + 49;
+        *min = (rand() % (49 + 1 - 48)) + 48;
+        *max = (rand() % (52 + 1 - 50)) + 50;
 		break;
 	case 6:
-        *min = (rand() % (21 + 1 - 17)) + 17;
-        *max = (rand() % (28 + 1 - 24)) + 24;
+        *min = (rand() % (21 + 1 - 20)) + 20;
+        *max = (rand() % (23 + 1 - 22)) + 22;
 		break;
 	case 7:
-        *min = (rand() % (40 + 1 - 30)) + 30;
-        *max = (rand() % (51 + 1 - 35)) + 45;
+        *min = (rand() % (38 + 1 - 36)) + 36;
+        *max = (rand() % (40 + 1 - 39)) + 39;
 		break;
 	case 8:
-        *min = (rand() % (3 + 1 - 1)) + 1;
-        *max = (rand() % (9 + 1 - 5)) + 5;
+        *min = (rand() % (4 + 1 - 3)) + 3;
+        *max = (rand() % (6 + 1 - 5)) + 5;
 		break;
 	default:
         *min = 0;

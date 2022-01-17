@@ -408,32 +408,32 @@ void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max)
         switch (abs(distance))
         {
         case 1:
-            *min = (rand() % (45 + 1 - 43)) + 43;
-            *max = (rand() % (53 + 1 - 50)) + 50;
+            *min = (rand() % (45 + 1 - 44)) + 44;
+            *max = (rand() % (46 + 1 - 45)) + 45;
             break;
         case 2:
             *min = (rand() % (4 + 1 - 3)) + 3;
-            *max = (rand() % (8 + 1 - 6)) + 6;
+            *max = (rand() % (6 + 1 - 5)) + 5;
             break;
         case 3:
-            *min = (rand() % (20 + 1 - 15)) + 15;
-            *max = (rand() % (26 + 1 - 22)) + 22;
+            *min = (rand() % (20 + 1 - 19)) + 19;
+            *max = (rand() % (21 + 1 - 20)) + 20;
             break;
         case 4:
-            *min = (rand() % (96 + 1 - 93)) + 93;
-            *max = (rand() % (103 + 1 - 100)) + 100;
+            *min = (rand() % (99 + 1 - 98)) + 98;
+            *max = (rand() % (101 + 1 - 99)) + 99;
             break;
         case 5:
-            *min = (rand() % (2 + 1 - 1)) + 1;
-            *max = (rand() % (6 + 1 - 4)) + 4;
+            *min = (rand() % (4 + 1 - 3)) + 3;
+            *max = (rand() % (6 + 1 - 5)) + 5;
             break;
         case 6:
-            *min = (rand() % (9 + 1 - 7)) + 7;
-            *max = (rand() % (13 + 1 - 11)) + 11;
+            *min = (rand() % (9 + 1 - 8)) + 8;
+            *max = (rand() % (11 + 1 - 10)) + 10;
             break;
         case 7:
-            *min = (rand() % (98 + 1 - 95)) + 95;
-            *max = (rand() % (103 + 1 - 100)) + 100;
+            *min = (rand() % (100 + 1 - 99)) + 99;
+            *max = (rand() % (102 + 1 - 101)) + 101;
             break;
         default:
         	*min = 0;

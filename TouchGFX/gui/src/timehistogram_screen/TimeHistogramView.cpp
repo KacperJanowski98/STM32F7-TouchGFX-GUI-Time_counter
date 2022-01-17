@@ -119,22 +119,22 @@ void TimeHistogramView::calculateMaxVal(TimeTi_t ti, float *pMaxRange)
 	switch (abs(distance))
 	{
 	case 1:
-		*pMaxRange = 54.0f;
+		*pMaxRange = 48.0f;
 		break;
 	case 2:
-		*pMaxRange = 10.0f;
+		*pMaxRange = 8.0f;
 		break;
 	case 3:
-		*pMaxRange = 28.0f;
+		*pMaxRange = 22.0f;
 		break;
 	case 4:
-		*pMaxRange = 104.0f;
+		*pMaxRange = 102.0f;
 		break;
 	case 5:
 		*pMaxRange = 8.0f;
 		break;
 	case 6:
-		*pMaxRange = 14.0f;
+		*pMaxRange = 12.0f;
 		break;
 	case 7:
 		*pMaxRange = 104.0f;
