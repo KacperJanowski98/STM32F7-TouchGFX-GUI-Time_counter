@@ -11,8 +11,7 @@ extern uint32_t FlagFreqConst;
 extern uint32_t FlagTimeStamps;
 extern uint32_t FlagFreqStamps;
 extern uint32_t FlagResetParamT;
-extern uint32_t FlagDetectThresholdT;
-extern uint32_t FlagDetectThresholdF;
+extern uint32_t FlagDetectThreshold;
 extern uint32_t FlagResetParamF;
 extern uint32_t FlagCalibration;
 extern uint32_t FlagTimeRepeat;
@@ -25,8 +24,7 @@ extern osThreadId_t TaskFreqConstHandle;
 extern osThreadId_t TaskTimeStampsHandle;
 extern osThreadId_t TaskFreqStampsHandle;
 extern osThreadId_t TaskResetParamTHandle;
-extern osThreadId_t TaskDetectThreTHandle;
-extern osThreadId_t TaskDetectThreFHandle;
+extern osThreadId_t TaskDetectThreHandle;
 extern osThreadId_t TaskResetParamFHandle;
 extern osThreadId_t TaskCalibrationHandle;
 extern osThreadId_t TaskTimeRepeatHandle;
@@ -120,12 +118,12 @@ void Model::getResetFreq()
 
 void Model::getDetectedTimeThreshold()
 {
-	osThreadFlagsSet(TaskDetectThreTHandle, FlagDetectThresholdT);
+	osThreadFlagsSet(TaskDetectThreHandle, FlagDetectThreshold);
 }
 
 void Model::getDetectedFreqThreshold()
 {
-	osThreadFlagsSet(TaskDetectThreFHandle, FlagDetectThresholdF);
+	osThreadFlagsSet(TaskDetectThreHandle, FlagDetectThreshold);
 }
 
 void Model::getCalibration()

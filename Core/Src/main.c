@@ -138,17 +138,10 @@ const osThreadAttr_t TaskResetParamT_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for TaskDetectThreT */
-osThreadId_t TaskDetectThreTHandle;
-const osThreadAttr_t TaskDetectThreT_attributes = {
-  .name = "TaskDetectThreT",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for TaskDetectThreF */
-osThreadId_t TaskDetectThreFHandle;
-const osThreadAttr_t TaskDetectThreF_attributes = {
-  .name = "TaskDetectThreF",
+/* Definitions for TaskDetectThre */
+osThreadId_t TaskDetectThreHandle;
+const osThreadAttr_t TaskDetectThre_attributes = {
+  .name = "TaskDetectThre",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -199,12 +192,11 @@ uint32_t FlagFreqConst = 4;
 uint32_t FlagTimeStamps = 5;
 uint32_t FlagFreqStamps = 6;
 uint32_t FlagResetParamT = 7;
-uint32_t FlagDetectThresholdT = 8;
-uint32_t FlagDetectThresholdF = 9;
-uint32_t FlagResetParamF = 10;
-uint32_t FlagCalibration = 11;
-uint32_t FlagTimeRepeat = 12;
-uint32_t FlagFreqRepeat = 13;
+uint32_t FlagDetectThreshold = 8;
+uint32_t FlagResetParamF = 9;
+uint32_t FlagCalibration = 10;
+uint32_t FlagTimeRepeat = 11;
+uint32_t FlagFreqRepeat = 12;
 
 uint8_t conditionT = 1;
 uint16_t conditionRepeatT = 1;
@@ -258,8 +250,7 @@ void StartTaskFreqConst(void *argument);
 void StartTaskTimeStamps(void *argument);
 void StartTaskFreqStamps(void *argument);
 void StartTaskResetParamT(void *argument);
-void StartTaskDetectThreT(void *argument);
-void StartTaskDetectThreF(void *argument);
+void StartTaskDetectThre(void *argument);
 void StartTaskResetParamF(void *argument);
 void StartTaskCalibration(void *argument);
 void StartTaskTimeRepeat(void *argument);
@@ -399,11 +390,8 @@ int main(void)
   /* creation of TaskResetParamT */
   TaskResetParamTHandle = osThreadNew(StartTaskResetParamT, NULL, &TaskResetParamT_attributes);
 
-  /* creation of TaskDetectThreT */
-  TaskDetectThreTHandle = osThreadNew(StartTaskDetectThreT, NULL, &TaskDetectThreT_attributes);
-
-  /* creation of TaskDetectThreF */
-  TaskDetectThreFHandle = osThreadNew(StartTaskDetectThreF, NULL, &TaskDetectThreF_attributes);
+  /* creation of TaskDetectThre */
+  TaskDetectThreHandle = osThreadNew(StartTaskDetectThre, NULL, &TaskDetectThre_attributes);
 
   /* creation of TaskResetParamF */
   TaskResetParamFHandle = osThreadNew(StartTaskResetParamF, NULL, &TaskResetParamF_attributes);
@@ -1829,42 +1817,23 @@ void StartTaskResetParamT(void *argument)
   /* USER CODE END StartTaskResetParamT */
 }
 
-/* USER CODE BEGIN Header_StartTaskDetectThreT */
+/* USER CODE BEGIN Header_StartTaskDetectThre */
 /**
-* @brief Function implementing the TaskDetectThreT thread.
+* @brief Function implementing the TaskDetectThre thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTaskDetectThreT */
-void StartTaskDetectThreT(void *argument)
+/* USER CODE END Header_StartTaskDetectThre */
+void StartTaskDetectThre(void *argument)
 {
-  /* USER CODE BEGIN StartTaskDetectThreT */
+  /* USER CODE BEGIN StartTaskDetectThre */
   /* Infinite loop */
   for(;;)
   {
-	  osThreadFlagsWait(FlagDetectThresholdT, 0, osWaitForever);
+	  osThreadFlagsWait(FlagDetectThreshold, 0, osWaitForever);
 	  detectedThreshold(&DataExchange.detectedThreshold);
   }
-  /* USER CODE END StartTaskDetectThreT */
-}
-
-/* USER CODE BEGIN Header_StartTaskDetectThreF */
-/**
-* @brief Function implementing the TaskDetectThreF thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTaskDetectThreF */
-void StartTaskDetectThreF(void *argument)
-{
-  /* USER CODE BEGIN StartTaskDetectThreF */
-  /* Infinite loop */
-  for(;;)
-  {
-	  osThreadFlagsWait(FlagDetectThresholdF, 0, osWaitForever);
-	  detectedThreshold(&DataExchange.detectedThreshold);
-  }
-  /* USER CODE END StartTaskDetectThreF */
+  /* USER CODE END StartTaskDetectThre */
 }
 
 /* USER CODE BEGIN Header_StartTaskResetParamF */
