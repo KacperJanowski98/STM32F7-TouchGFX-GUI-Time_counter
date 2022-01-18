@@ -37,6 +37,9 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
+	counterT++;
+	counterF++;
+
 	if (myBinarySemUpdateTimeDispHandle != NULL)
 	{
 		if (osSemaphoreAcquire(myBinarySemUpdateTimeDispHandle, ( uint32_t ) 10) == osOK)
@@ -45,12 +48,24 @@ void Model::tick()
 		}
 	}
 
+	if (counterT == 12)
+	{
+		updateScreenContinuousTimeMode();
+		counterT = 0;
+	}
+
 	if (myBinarySemUpdateFreqDispHandle != NULL)
 	{
 		if (osSemaphoreAcquire(myBinarySemUpdateFreqDispHandle, ( uint32_t ) 10) == osOK)
 		{
 			updateScreenContinuousFreqMode();
 		}
+	}
+
+	if (counterF == 12)
+	{
+		updateScreenContinuousFreqMode();
+		counterF = 0;
 	}
 }
 

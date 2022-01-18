@@ -57,6 +57,8 @@ public:
     void getCalibration();
 protected:
     ModelListener* modelListener;
+    int counterT{0};
+    int counterF{0};
 };
 
 #endif // MODEL_HPP
