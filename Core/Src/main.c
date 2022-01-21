@@ -327,13 +327,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   DataExchangeInit(&DataExchange);
-//  TimeModeInit(&TimeBackend);
-//  ResultTimeParameterConstInit(&ResultCalcConstTime);
-//  ResultTimeParameterStampsInit(&ResultCalcStampsTime);
-//  ResultTimeInit(&ResultTimeBackend);
-
-//  FrequencyModeInit(&FreqBackend);
-//  ResultFrequencyInit(&ResultFreqBackend);
 
   srand(time(NULL));
 

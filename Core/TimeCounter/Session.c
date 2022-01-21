@@ -79,6 +79,6 @@ float calculateSingleMeas(int min, int max)
     }
     else
     {
-    	return ((float)rand()/(float)RAND_MAX) * ((float)(max - min) + (float)min);
+    	return ((float)rand()) / ((double)RAND_MAX) * ((float)max - (float)min) + (float)min;
     }
 }
