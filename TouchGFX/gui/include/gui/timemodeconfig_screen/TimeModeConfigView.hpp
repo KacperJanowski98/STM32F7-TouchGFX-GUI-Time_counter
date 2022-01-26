@@ -126,21 +126,52 @@ public:
      */
     virtual void detectThreshold();
 
-    //:TODO
+    /**
+     * @brief Funkcja zwiekszajaca ustawiona wartosc progu wyzwalania o jeden.
+     * 
+     */
     virtual void AddThreshold();
 
+    /**
+     * @brief Funkcja zmniejszajaca ustawiona wartosc progu wyzwalania o jeden.
+     * 
+     */
     virtual void OddThreshold();
 
+    /**
+     * @brief Funkcja zwiekszajaca ustawiona wartosc zakresu pomiarowego o jeden.
+     * 
+     */
     virtual void AddRange();
 
+    /**
+     * @brief Funkcja zmniejszajaca ustawiona zakresu pomiarowego o jeden.
+     * 
+     */
     virtual void OddRange();
 
+    /**
+     * @brief Funkcja zwiekszajaca ustawiona liczbe powtorzen serii pomiarowych o jeden.
+     * 
+     */
     virtual void AddRepeat();
 
+    /**
+     * @brief Funkcja zmniejszajaca ustawiona liczbe powtorzen serii pomiarowych o jeden.
+     * 
+     */
     virtual void OddRepeat();
 
+    /**
+     * @brief Funkcja zwiekszajaca ustawiona wartosc liczby pomiarow w serii o jeden.
+     * 
+     */
     virtual void AddStamps();
 
+    /**
+     * @brief Funkcja zmniejszajaca ustawiona wartosc liczby pomiarow w serii o jeden.
+     * 
+     */
     virtual void OddStamps();
 
     /**
@@ -203,13 +234,28 @@ public:
      */
     void setThresholdUI(std::shared_ptr<TimeModeParameter>& channel, uint32_t value);
 
-    //:TODO
+    /**
+     * @brief Funkcja ustawiajaca wartosc zakresu pomiarowego w obikcie klasy sesji pomiarowej.
+     * 
+     * @param session Obiekt sesji pomiarowa.
+     * @param value Wartosc do ustawienia.
+     */
     void setRangeUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
 
-    //:TODO
+    /**
+     * @brief Funkcja ustawiajaca wartosc serii pomiarowej w obiekcie klasy sesji pomiarowej.
+     * 
+     * @param session Obiekt sesji pomiarowej. 
+     * @param value Wartosc do ustawienia.
+     */
     void setStampsUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
 
-    //:TODO
+    /**
+     * @brief Funkcja ustawiajaca wartosc powtorzen serii pomiarowej.
+     * 
+     * @param session Obiekt sesji pomiarowej.
+     * @param value Wartosc do ustawienia.
+     */
     void setRepeatUI(std::shared_ptr<SessionSetup>& session, uint16_t value);
     /**
      * @brief Ustawienie elementow UI na podstawie stanu kanalu.
@@ -235,7 +281,11 @@ public:
      * @param channel Obiekt kanalu.
      */
     void updateStartStopIn(std::shared_ptr<TimeModeParameter>& channel);
-    //:TODO
+    
+    /**
+     * @brief Aktualizacja ustwien wejsc pomiarowych w konfiguracji relacji czasowych.
+     * 
+     */
     void updateTiSetupScreen();
 
     /**
@@ -252,25 +302,69 @@ public:
      */
     void updateClockSourceUI(ClockName clk);
 
-    //:TODO
+    /**
+     * @brief Aktualizacja wartosci ustawianych na ekranie konfiguracji sesji pomiarowej.
+     * 
+     * @param session Obiekt klasy sesji pomiarowej.
+     */
     void updateSessionSetupUI(std::shared_ptr<SessionSetup>& session);
 
+    /**
+     * @brief Funkcja odpowiedzialna za przypisanie dokonanej konfiguracji do struktury wymiany danych.
+     * 
+     */
     void updateTimeParameterBackend();
 
-    //:TODO
+    /**
+     * @brief Ustawienie wartosci odczytanej ze slidera odpowiedzialnego za ustawienie progu wyzwalania.
+     * 
+     * @param value Wartosc progu wyzwalania.
+     */
     void setValueSliderThresholdUI(int value);
 
+    /**
+     * @brief Ustawienie wartosci odczytanej ze slidera odpowiedzialnego za ustawienie zakresu pomiarowego.
+     * 
+     * @param value Wartosc zakresu pomiarowego.
+     */
     void setValueSliderRange(int value);
 
+    /**
+     * @brief Ustawienie wartosci odczytanej ze slidera odpowiedzialnego za ustawienie liczby pomiarow w serii pomiarowej.
+     * 
+     * @param value Liczba pomiarow w serii.
+     */
     void setValueSliderStampsNumberUI(int value);
 
+    /**
+     * @brief Ustawienie wartosci odczytanej ze slidera odpowiedzialnego za ustawienie liczby serii pomiarowych.
+     * 
+     * @param value Liczba serii pomiarowych.
+     */
     void setValueSliderRepeatUI(int value);
 
-    //:TODO
+    /**
+     * @brief Ustawienie wartosci odpowiedzialnych za konfiguracje wejsc pomiarowych w strukturze wymiany danych.
+     * 
+     * @param pChannelBack Podstruktura na dane konfiguracyje ze struktury wymiany danych.
+     * @param pChannel Obiekt klasy odpwoiedzialnej za konfiguracje danego wejscia pomiarowego.
+     */
     void updateChannelBackendStruct(TimeChannel_t *pChannelBack, std::shared_ptr<TimeModeParameter> pChannel);
-    //:TODO
+
+    /**
+     * @brief Ustawienie wartosci odpowiedzialnych za konfiguracje relacji czasowych w strukturze wymiany danych.
+     * 
+     * @param pTiBack Podstruktura na dane konfiguracyje ze struktury wymiany danych.
+     * @param pTi Obiekt klasy odpwoiedzialnej za konfiguracje danej relacji czasowej.
+     */
     void updateTiBackendStruct(TimeTi_t *pTiBack, std::shared_ptr<TimeModeParameter> pTi);
-    //:TODO
+
+    /**
+     * @brief Ustawienie wartosci odpowiedzialnych za konfiguracje sesji pomiarowej w strukturze wymiany danych.
+     * 
+     * @param pSessionBack Podstruktura na dane konfiguracyje ze struktury wymiany danych.
+     * @param pSession Obiekt klasy odpwoiedzialnej za konfiguracje sesji pomiarowej.
+     */
     void updateSessionBackendStruct(SessionSetup_t *pSessionBack, std::shared_ptr<SessionSetup> pSession);
 
 protected:
@@ -362,7 +456,7 @@ private:
     int16_t m_newRange;
     int16_t m_newRepeat;
     int16_t m_newStamps;
-//    ClockName m_clockSource;
+
     std::vector<int16_t> activeChannels;
 };
 
