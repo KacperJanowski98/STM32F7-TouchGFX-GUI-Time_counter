@@ -26,6 +26,11 @@ typedef struct
 	ResultStampsCalcFreq_t ResultCalcStampsFreq;
 } DataExchange_t;
 
+/**
+ * @brief Funkcja inicjalizujaca glowna strukture wymiany danych.
+ * 
+ * @param pDataExchange Wskaznik na strukture do inicjalizacji.
+ */
 void DataExchangeInit(DataExchange_t *pDataExchange);
 
 

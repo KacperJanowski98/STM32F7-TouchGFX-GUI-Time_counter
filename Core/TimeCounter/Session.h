@@ -77,16 +77,48 @@ typedef struct
     float calculateStdDev;
 } CalcStampParam_t;
 
+/**
+ * @brief Funckja inicjalizujaca strukture SessionSetup_t.
+ * 
+ * @param pSessionSetup Struktura do inicjalizacja.
+ */
 void SessionInit(SessionSetup_t *pSessionSetup);
 
+/**
+ * @brief Funkcja inicjalizujaca strukture CalcConstParam_t.
+ * 
+ * @param pCalcParam Struktura do inicjalizacja.
+ */
 void CalcParamConstInit(CalcConstParam_t *pCalcParam);
 
+/**
+ * @brief Funkcja inicjalizujaca strukture CalcStampParam_t.
+ * 
+ * @param pCalcParam Struktura do inicjalizacja.
+ */
 void CalcParamStampsInit(CalcStampParam_t * pCalcParam);
 
+/**
+ * @brief Funkcja inicjalizujaca strukture CalcConstParam_t.
+ * 
+ * @param pCalcParam Struktura do inicjalizacja.
+ */
 void calculateMeanStdDevConst(CalcConstParam_t *pCalcParam);
 
+/**
+ * @brief Funkcja inicjalizujaca strukture CalcStampParam_t.
+ * 
+ * @param pCalcParam Struktura do inicjalizacja.
+ */
 void calculateMeanStdDevStamps(CalcStampParam_t *pCalcParam);
 
+/**
+ * @brief Funkcja do pojedynczego pomiaru (funkcja losujaca).
+ * 
+ * @param min Minimalny zakres losowanej wartosci.
+ * @param max Maksymalny zakres losowanej wartosci.
+ * @return float Wartosc losowa w podanym zakresie.
+ */
 float calculateSingleMeas(int min, int max);
 
 #endif /* TIMECOUNTER_SESSION_H_ */

@@ -78,30 +78,112 @@ typedef struct
 	MeasValues_t measure7;
 } ResultTime_t;
 
+/**
+ * @brief Funckja inicjalizujaca struktue TimeMode_t.
+ * 
+ * @param pTimeMode Struktura.
+ */
 void TimeModeInit(TimeMode_t *pTimeMode);
 
+/**
+ * @brief Funkcja inicjalizujaca struktur ResultConstCalc_t.
+ * 
+ * @param pResultCalc Struktura.
+ */
 void ResultTimeParameterConstInit(ResultConstCalc_t *pResultCalc);
 
+/**
+ * @brief Funkcja inicjalizujaca struktur ResultStampsCalc_t.
+ * 
+ * @param pResultCalc Struktura.
+ */
 void ResultTimeParameterStampsInit(ResultStampsCalc_t *pResultCalc);
 
+/**
+ * @brief Funkcja inicjalizujaca struktur ResultTime_t.
+ * 
+ * @param pResultTime Struktura.
+ */
 void ResultTimeInit(ResultTime_t *pResultTime);
 
+/**
+ * @brief Funkcja symulatora odpowiedzialna za pojedynczy pomiar czasu.
+ * 
+ * @param pTimeMode Wskaznik na strukture z konfiguracja trybu pomiaru relacji czasowych.
+ * @param pResultTime Wskaznik na strukture z rezultatami pomiaru czasu.
+ */
 void SingleTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime);
 
+/**
+ * @brief Funkcja symulatora odpowiedzialna za ciagly pomiar czasu.
+ * 
+ * @param pTimeMode Wskaznik na strukture z konfiguracja trybu pomiaru relacji czasowych.
+ * @param pResultTime Wskaznik na strukture z rezultatami pomiaru czasu.
+ * @param pResultCalc Wskaznik na strukture z rezultatami kalkulacji.
+ */
 void ContinuousTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultConstCalc_t *pResultCalc);
 
+/**
+ * @brief Funkcja symulatora odpowiedzialna za pomiar serii z okreslona liczba pomiarow czasu.
+ * 
+ * @param pTimeMode Wskaznik na strukture z konfiguracja trybu pomiaru relacji czasowych.
+ * @param pResultTime Wskaznik na strukture z rezultatami pomiaru czasu.
+ * @param pResultCalc Wskaznik na strukture z rezultatami kalkulacji.
+ */
 void StampsTimeMeas(TimeMode_t *pTimeMode, ResultTime_t *pResultTime, ResultStampsCalc_t *pResultCalc);
 
+/**
+ * @brief Funkcja obliczajaca zakresy pomiarowe relacji czsowych w symulatorze.
+ * 
+ * @param start Numer wejscia pomiarowego rozpoczynajacego pomiar relacji czasowej.
+ * @param stop Numer wejscia pomiarowego konczacego pomiar relacji czasowej.
+ * @param min Najmniejsza wartosc pomiarowa.
+ * @param max Najwieksza wartosc pomiarowa.
+ */
 void calculateMinMax(uint8_t start, uint8_t stop, int *min, int *max);
 
+/**
+ * @brief Funkcja ustawiajaca jednoski pomiarowe w symulowanych pomiarach.
+ * 
+ * @param start Numer wejscia pomiarowego rozpoczynajacego pomiar relacji czasowej.
+ * @param stop Numer wejscia pomiarowego konczacego pomiar relacji czasowej.
+ * @return Unit_t Zwracana jest ustalona jednostka.
+ */
 Unit_t setUnitMeanTime(uint8_t start, uint8_t stop);
 
+/**
+ * @brief Funkcja ustawiajaca obliczone wartosci pomiarowe z pojedynczego pomiaru w strukturze wymiany danych.
+ * 
+ * @param Ti Wskaznik na strukture z dana relacja czasowa.
+ * @param meas  Wskaznik na strukture z wyniakami pomiarow.
+ */
 void setCalculatedParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas);
 
+/**
+ * @brief Funkcja ustawiajaca obliczone wartosci pomiarowe z ciaglego pomiaru w strukturze wymiany danych.
+ * 
+ * @param Ti Struktura z dana relacja czasowa.
+ * @param meas Struktura z wyniakami pomiarow.
+ * @param pCalcParam Wskaznik na strukture z parametrami pomocniczymi w obliczeniach wartosci koncowych.
+ */
 void setCalculatedParamConstTime(TimeTi_t *Ti, MeasValues_t *meas, CalcConstParam_t *pCalcParam);
 
+/**
+ * @brief Funkcja ustawiajaca obliczone wartosci pomiarowe z pomiaru serii pomiarowej w strukturze wymiany danych.
+ * 
+ * @param Ti Struktura z dana relacja czasowa.
+ * @param meas Struktura z wyniakami pomiarow.
+ * @param pSessionSetup Wskaznik na strukture z parametrami konfiguracyjnymi sesji pomiarowej.
+ * @param pCalcParam Wskaznik na strukture z parametrami pomocniczymi w obliczeniach wartosci koncowych.
+ */
 void setCalculatedParamStampsTime(TimeTi_t *Ti, MeasValues_t *meas, SessionSetup_t *pSessionSetup, CalcStampParam_t *pCalcParam);
 
+/**
+ * @brief Funckja odpowiedzialna za inicjalizacje poczatkowych watrosci w strukturach pomiarowych relacji czasowych.
+ * 
+ * @param Ti Struktura z dana relacja czasowa.
+ * @param meas  Struktura z wyniakami pomiarow. 
+ */
 void resetParamSingleTime(TimeTi_t *Ti, MeasValues_t *meas);
 
 #endif /* INC_TIMEMODEDATA_H_ */
