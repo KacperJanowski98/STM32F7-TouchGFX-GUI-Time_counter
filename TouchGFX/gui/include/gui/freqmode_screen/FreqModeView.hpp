@@ -14,19 +14,104 @@ public:
     virtual void tearDownScreen();
     virtual void ResetParameter();
 
+    /**
+     * @brief Aktualizacja wynikow pomiarow wyswietlanych na tym ekranie.
+     * 
+     */
     virtual void updateUIContinuousFreq();
+
 protected:
+
+    /**
+     * @brief Funkcja obliczajaca format wyswietlanych wartosci srednich na podstawie danych ze struktury wymiany danych.
+     * 
+     * @param mean Wartosc srednia ze struktury wymiany dannych.
+     * @param pTotal Wskaznik na czesc calokowita wartosci sreniej.
+     * @param pFrac1 Wskaznik na pierwsza czesc frakcyjna wartosci sreniej.
+     * @param pFrac2 Wskaznik na druga czesc frakcyjna wartosci sredniej.
+     */
     void calculateFormatMeanFreq(float mean, int *pTotal, int *pFrac1, int *pFrac2);
+
+    /**
+     * @brief Funkcja obliczajaca format wyswietlanych odchylen standardowych na podstawie danych ze struktury wymiany danych.
+     * 
+     * @param stdDev Wartosc odchylenia stadardowego.
+     * @param pTotal Wskaznik na czesc calkowita odchylenia standardowego.
+     * @param pFrac Wskaznik na pierwsza czesc frakcyjna wartosci odchylenia standardowego.
+     */
     void calculateFormatStdDevFreq(float stdDev, int *pTotal, int *pFrac);
 
+    /**
+     * @brief Funkcja ustawiajaca wartosci etykiet konfiguracji wejsc pomiarowych do obliczen czestotliwosci.
+     * 
+     * @param textBuffer Bufor na dane do wyswietlenia.
+     * @param size Rozmiar bufora na dane do wyswietlenia.
+     * @param numberCh Numer wejscia pomiarowego.
+     * @param text Komponent GUI ktory podane dane w interfejsie.
+     */
     void setLabelFreq(touchgfx::Unicode::UnicodeChar *textBuffer, uint16_t size, uint8_t numberCh, touchgfx::TextAreaWithOneWildcard *text);
+
+    /**
+     * @brief Funkcja ustawiajaca kolor etykiet konfiguracji wejsc pomiarowych do obliczen czestotliwosci.
+     * 
+     * @param channelState Stan w jakim znjduje sie wejscie pomiarowe.
+     * @param label Etykieta, ktorej modyfikowany jest kolor.
+     * @param labelStart Etykieta, ktorej modyfikowany jest kolor.
+     */
     void setLabelColorFreq(bool channelState, touchgfx::TextArea *label, touchgfx::TextArea *labelStart);
+
+    /**
+     * @brief Funkcja ustawiajaca kolor etykiet z wynikami pomiarow czestotliwosci.
+     * 
+     * @param channelState Stan w jakim znjduje sie wejscie pomiarowe.
+     * @param mean Etykieta, ktorej modyfikowany jest kolor.
+     * @param stdDev Etykieta, ktorej modyfikowany jest kolor.
+     */
     void setMeasColorFreq(bool channelState, touchgfx::TextAreaWithOneWildcard *mean, touchgfx::TextAreaWithOneWildcard *stdDev);
+
+    /**
+     * @brief Funkcja ustawiajaca etykete odpowiedzialna za prezentacje liczby wykonanych pomiarow w serii.
+     * 
+     * @param pFreqCh Wskaznik na strukture konfiguracyjna pomiar czestotliwosci.
+     * @param textSample Etykieta do prezentowania wartosci liczby pomiarow w serii pomiarowej.
+     * @param textSampleBuffer Bufor na wartosc liczby powtorzen w serii.
+     * @param sizeSample Wielkosc bufora.
+     * @param session Wskaznik na strukture z seria pomiarowa.
+     */
     void setSampleFreq(FreqChannel_t *pFreqCh, touchgfx::TextAreaWithOneWildcard *textSample, touchgfx::Unicode::UnicodeChar *textSampleBuffer,
 						uint16_t sizeSample, SessionSetup_t *session);
+
+    /**
+     * @brief Funkcja ustawiajaca etykiety odpowiedzialne za prezentowanie wynikow srednich pomiarow.
+     * 
+     * @param measure Wskaznik na funkcje z wartosciami pomiarowymi.
+     * @param total Czesc calkowita wartosci sredniej.
+     * @param fraction1 Pierwsza czesc frakcyjna wartosci sredniej.
+     * @param fraction2 Druga czesc frakcyjna wartosci sredniej.
+     * @param textMeanBuffer Bufor na wartosc srednia.
+     * @param sizeMean Wielkosc bufora na wartosc srednia.
+     * @param textMean Etykieta do wyswietlenia wartosci sredniej.
+     * @param textUnitMeanBuffer Bufor na jednostke.
+     * @param sizeUnitMean Wielkosc bufora na jednostke.
+     * @param textUnitMean Etykieta do wyswietlenia jednostki.
+     */
     void setMeanResultFreq(MeasValues_t *measure, int *total, int *fraction1, int *fraction2, touchgfx::Unicode::UnicodeChar *textMeanBuffer,
     						uint16_t sizeMean, touchgfx::TextAreaWithOneWildcard *textMean, touchgfx::Unicode::UnicodeChar *textUnitMeanBuffer,
 							uint16_t sizeUnitMean, touchgfx::TextAreaWithOneWildcard *textUnitMean);
+
+    /**
+     * @brief Funkcja ustawiajaca etykiety odpowiedzialne za prezentowanie wynikow obliczen odchylenia standardowego.
+     * 
+     * @param textStdDevBuffer Bufor na wynik odchylenia standardowego do wyswietlenia.
+     * @param sizeStdDev Wielkosc bufora na wynik odchylenia standardowego.
+     * @param textStdDev Etykieta do wyswietlenia wyniku odchylenia standardowego.
+     * @param textUnitStdDevBuffer Bufor na jednostke odchylenia standardowego.
+     * @param sizeUnitStdDev Wielkosc bufora na jednostke.
+     * @param textUnitStdDev Etykieta do wyswietlenia jednostki.
+     * @param measure Wskaznik na funkcje z wartosciami pomiarowymi.
+     * @param total Czesc calkowita wartosci sredniej.
+     * @param fraction Czesc frakcyjna wartosci sredniej.
+     */
     void setStdDevResultFreq(touchgfx::Unicode::UnicodeChar *textStdDevBuffer, uint16_t sizeStdDev, touchgfx::TextAreaWithOneWildcard *textStdDev,
     						touchgfx::Unicode::UnicodeChar *textUnitStdDevBuffer, uint16_t sizeUnitStdDev, touchgfx::TextAreaWithOneWildcard *textUnitStdDev,
 							MeasValues_t *measure, int *total, int *fraction);

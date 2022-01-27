@@ -34,7 +34,15 @@ public:
     virtual void DisplayGraph6();
     virtual void DisplayGraph7();
 protected:
+
+    /**
+     * @brief Funkcja okreslajaca zakres wykresu (os Y).
+     * 
+     * @param ti Struktura z konfiguracja relacji czasowych.
+     * @param pMaxRange Wartosc zakresu wykresu.
+     */
     void calculateMaxVal(TimeTi_t ti, float *pMaxRange);
+
     void setUnitTime(Unit_t unit, char *buffer);
 };
 

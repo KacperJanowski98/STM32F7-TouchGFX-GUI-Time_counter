@@ -36,6 +36,13 @@ public:
     virtual void DisplayGraphF7();
     virtual void DisplayGraphF8();
 protected:
+
+    /**
+     * @brief Funkcja okreslajaca zakres wykresu (os Y).
+     * 
+     * @param freqCh Struktura z konfiguracja wejsc pomiarowych.
+     * @param pMaxRange Wartosc zakresu wykresu.
+     */
     void calculateMaxValFreq(FreqChannel_t freqCh, float *pMaxRange);
 };
 
