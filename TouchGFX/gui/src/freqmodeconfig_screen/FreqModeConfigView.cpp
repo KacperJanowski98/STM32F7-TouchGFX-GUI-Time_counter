@@ -145,7 +145,6 @@ void FreqModeConfigView::scrollWheelINPUTAnimateToHandler(int16_t itemSelected)
 	FreqModeConfigView::setGuiTouchable(CurrentStateUI);
 }
 
-// obsluga sliderow :TODO oprogramowac slidery z panelu sessionsetup
 void FreqModeConfigView::sliderValueStartedChangeCallbackHandler(const touchgfx::Slider& src, int value)
 {
 	if (&src == &sliderThreshold)
@@ -396,7 +395,7 @@ void FreqModeConfigView::setValueSliderStampsNumberUI(int value)
 	Unicode::snprintf(textStampsValBuffer, TEXTSTAMPSVAL_SIZE, "%d", value);
 	textStampsVal.invalidate();
 }
-//
+
 void FreqModeConfigView::setValueSliderRepeatUI(int value)
 {
 	Unicode::snprintf(textRepeatValBuffer, TEXTREPEATVAL_SIZE, "%d", value);
